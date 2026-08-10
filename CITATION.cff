@@ -16,6 +16,11 @@ authors:
     orcid: "https://orcid.org/0000-0002-0886-6314"
     affiliation: "Department of Computer Science, Imam Mohammad Ibn Saud Islamic University (IMSIU), Riyadh, Saudi Arabia"
 repository-code: "https://github.com/MOo207/shacl-risk-grounding"
+doi: 10.5281/zenodo.21869884
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21869883
+    description: "Concept DOI (all versions)"
 license: MIT
 version: 1.0.0
 date-released: 2026-08-10

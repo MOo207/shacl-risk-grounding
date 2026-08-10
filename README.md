@@ -1,5 +1,7 @@
 # shacl-risk-grounding
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21869883.svg)](https://doi.org/10.5281/zenodo.21869883)
+
 Reproducibility package for the manuscript:
 
 > **Grounding Machine Learning and LLM-Based Risk Inference in a Shared SHACL Knowledge Layer: An NFCRM-1:2025 Case Study**
@@ -43,4 +45,7 @@ MIT — see [LICENSE](LICENSE).
 
 ## Citation
 
-See [CITATION.cff](CITATION.cff). A Zenodo DOI badge will appear here after the first release is archived.
+See [CITATION.cff](CITATION.cff).
+
+- Concept DOI (all versions, recommended): [10.5281/zenodo.21869883](https://doi.org/10.5281/zenodo.21869883)
+- Version DOI (v1.0.0): [10.5281/zenodo.21869884](https://doi.org/10.5281/zenodo.21869884)
