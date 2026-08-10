@@ -1,0 +1,484 @@
+{
+  "meta": {
+    "description": "Standalone-LLM (Stage-1a independent inference) metrics recomputed from stored per-case records of the leak-free reconciled tri-stage reruns (no new model calls), plus tri-stage escalation-precision diagnostics. LLM-only prediction = record field 'llm_risk_level'; XGBoost = 'ml_risk_level'; reconciled tri-stage = 'risk_level'.",
+    "metric_definitions": "identical to scripts/run_nslkdd_reconciled_tristage_haiku.py (ladder Very Low<Low<Medium<High<Catastrophic; unsafe = pred<GT or unparseable; McNemar 1-sided binomial, b = XGB unsafe & arm safe, c = arm unsafe & XGB safe)",
+    "created": "2026-07-18T08:21:20",
+    "script": "scripts/compute_llm_only_leakfree.py"
+  },
+  "arms": {
+    "nslkdd_haiku": {
+      "source_file": "results/nslkdd_unified_rerun/reconciled_tristage_haiku_results.json",
+      "n": 100,
+      "validation": {
+        "tristage_recomputed": {
+          "n": 100,
+          "exact_pct": 65.0,
+          "within1_pct": 82.0,
+          "under_escalation_pct": 10.0,
+          "over_escalation_pct": 25.0,
+          "severe_recall_pct": 93.9,
+          "severe_total": 49,
+          "worst_miss_levels": 2,
+          "n_exact": 65,
+          "n_under": 10,
+          "n_over": 25,
+          "n_severe_hit": 46
+        },
+        "tristage_check": {
+          "validated": true,
+          "mismatches": []
+        },
+        "xgb_recomputed": {
+          "n": 100,
+          "exact_pct": 49.0,
+          "within1_pct": 53.0,
+          "under_escalation_pct": 48.0,
+          "over_escalation_pct": 3.0,
+          "severe_recall_pct": 42.9,
+          "severe_total": 49,
+          "worst_miss_levels": 4,
+          "n_exact": 49,
+          "n_under": 48,
+          "n_over": 3,
+          "n_severe_hit": 21
+        },
+        "xgb_check": {
+          "validated": true,
+          "mismatches": []
+        },
+        "stored_mcnemar_tristage_vs_xgb": {
+          "b": 38,
+          "c": 0,
+          "p": 3.637978807091713e-12
+        },
+        "recomputed_mcnemar_unsafe_tristage_vs_xgb": {
+          "b_xgb_unsafe_arm_safe": 38,
+          "c_arm_unsafe_xgb_safe": 0,
+          "p_1sided": 3.637978807091713e-12
+        }
+      },
+      "llm_only_metrics": {
+        "n": 100,
+        "exact_pct": 64.0,
+        "within1_pct": 83.0,
+        "under_escalation_pct": 12.0,
+        "over_escalation_pct": 24.0,
+        "severe_recall_pct": 93.9,
+        "severe_total": 49,
+        "worst_miss_levels": 2,
+        "n_exact": 64,
+        "n_under": 12,
+        "n_over": 24,
+        "n_severe_hit": 46
+      },
+      "n_llm_stage1a_unparseable": 0,
+      "llm_unparseable_caveat": "Records whose Stage-1a llm_risk_level is empty/unparseable are counted as under-escalation AND unsafe (identical to the tri-stage scripts' handling of parse failures). Where this count is large the LLM-only under-escalation figure is dominated by parse failures, not by substantive risk under-calls.",
+      "mcnemar_unsafe_llm_only_vs_xgb": {
+        "b_xgb_unsafe_arm_safe": 38,
+        "c_arm_unsafe_xgb_safe": 2,
+        "p_1sided": 7.466951501555741e-10
+      },
+      "mcnemar_note": "This McNemar is on the UNSAFE indicator (pred<GT or unparseable), matching the NSL-KDD scripts' spine-test semantics. The CIC result files' stored mcnemar_vs_clean_xgboost is a DIFFERENT test (correct/incorrect accuracy-based), so it is not directly comparable to the recomputed unsafe-based value for CIC arms.",
+      "tristage_escalation_precision": {
+        "n_records": 100,
+        "n_escalations_issued": 64,
+        "n_gt_severe": 31,
+        "frac_gt_severe_pct": 48.4,
+        "n_reconciled_eq_gt": 33,
+        "frac_reconciled_eq_gt_pct": 51.6,
+        "n_over_escalated": 22,
+        "frac_over_escalated_pct": 34.4,
+        "mean_level_error_over_escalated": 1.864,
+        "escalated_case_ids": [
+          "nslr_test_000",
+          "nslr_test_001",
+          "nslr_test_007",
+          "nslr_test_008",
+          "nslr_test_009",
+          "nslr_test_010",
+          "nslr_test_012",
+          "nslr_test_015",
+          "nslr_test_016",
+          "nslr_test_017",
+          "nslr_test_018",
+          "nslr_test_020",
+          "nslr_test_021",
+          "nslr_test_022",
+          "nslr_test_024",
+          "nslr_test_026",
+          "nslr_test_027",
+          "nslr_test_029",
+          "nslr_test_030",
+          "nslr_test_031",
+          "nslr_test_032",
+          "nslr_test_033",
+          "nslr_test_034",
+          "nslr_test_036",
+          "nslr_test_037",
+          "nslr_test_038",
+          "nslr_test_042",
+          "nslr_test_043",
+          "nslr_test_046",
+          "nslr_test_048",
+          "nslr_test_049",
+          "nslr_test_051",
+          "nslr_test_052",
+          "nslr_test_055",
+          "nslr_test_056",
+          "nslr_test_058",
+          "nslr_test_059",
+          "nslr_test_060",
+          "nslr_test_061",
+          "nslr_test_062",
+          "nslr_test_063",
+          "nslr_test_064",
+          "nslr_test_066",
+          "nslr_test_067",
+          "nslr_test_068",
+          "nslr_test_069",
+          "nslr_test_071",
+          "nslr_test_072",
+          "nslr_test_074",
+          "nslr_test_075",
+          "nslr_test_076",
+          "nslr_test_078",
+          "nslr_test_080",
+          "nslr_test_081",
+          "nslr_test_084",
+          "nslr_test_085",
+          "nslr_test_090",
+          "nslr_test_091",
+          "nslr_test_092",
+          "nslr_test_093",
+          "nslr_test_094",
+          "nslr_test_095",
+          "nslr_test_096",
+          "nslr_test_098"
+        ]
+      }
+    },
+    "nslkdd_sonnet": {
+      "source_file": "results/nslkdd_unified_rerun/reconciled_tristage_sonnet_results.json",
+      "n": 100,
+      "validation": {
+        "tristage_recomputed": {
+          "n": 100,
+          "exact_pct": 63.0,
+          "within1_pct": 71.0,
+          "under_escalation_pct": 28.0,
+          "over_escalation_pct": 9.0,
+          "severe_recall_pct": 65.3,
+          "severe_total": 49,
+          "worst_miss_levels": 4,
+          "n_exact": 63,
+          "n_under": 28,
+          "n_over": 9,
+          "n_severe_hit": 32
+        },
+        "tristage_check": {
+          "validated": true,
+          "mismatches": []
+        },
+        "xgb_recomputed": {
+          "n": 100,
+          "exact_pct": 49.0,
+          "within1_pct": 53.0,
+          "under_escalation_pct": 48.0,
+          "over_escalation_pct": 3.0,
+          "severe_recall_pct": 42.9,
+          "severe_total": 49,
+          "worst_miss_levels": 4,
+          "n_exact": 49,
+          "n_under": 48,
+          "n_over": 3,
+          "n_severe_hit": 21
+        },
+        "xgb_check": {
+          "validated": true,
+          "mismatches": []
+        },
+        "stored_mcnemar_tristage_vs_xgb": {
+          "b": 20,
+          "c": 0,
+          "p": 9.5367431640625e-07
+        },
+        "recomputed_mcnemar_unsafe_tristage_vs_xgb": {
+          "b_xgb_unsafe_arm_safe": 20,
+          "c_arm_unsafe_xgb_safe": 0,
+          "p_1sided": 9.5367431640625e-07
+        }
+      },
+      "llm_only_metrics": {
+        "n": 100,
+        "exact_pct": 38.0,
+        "within1_pct": 45.0,
+        "under_escalation_pct": 54.0,
+        "over_escalation_pct": 8.0,
+        "severe_recall_pct": 46.9,
+        "severe_total": 49,
+        "worst_miss_levels": 4,
+        "n_exact": 38,
+        "n_under": 54,
+        "n_over": 8,
+        "n_severe_hit": 23
+      },
+      "n_llm_stage1a_unparseable": 48,
+      "llm_unparseable_caveat": "Records whose Stage-1a llm_risk_level is empty/unparseable are counted as under-escalation AND unsafe (identical to the tri-stage scripts' handling of parse failures). Where this count is large the LLM-only under-escalation figure is dominated by parse failures, not by substantive risk under-calls.",
+      "mcnemar_unsafe_llm_only_vs_xgb": {
+        "b_xgb_unsafe_arm_safe": 20,
+        "c_arm_unsafe_xgb_safe": 26,
+        "p_1sided": 0.8490021934051697
+      },
+      "mcnemar_note": "This McNemar is on the UNSAFE indicator (pred<GT or unparseable), matching the NSL-KDD scripts' spine-test semantics. The CIC result files' stored mcnemar_vs_clean_xgboost is a DIFFERENT test (correct/incorrect accuracy-based), so it is not directly comparable to the recomputed unsafe-based value for CIC arms.",
+      "tristage_escalation_precision": {
+        "n_records": 100,
+        "n_escalations_issued": 30,
+        "n_gt_severe": 14,
+        "frac_gt_severe_pct": 46.7,
+        "n_reconciled_eq_gt": 19,
+        "frac_reconciled_eq_gt_pct": 63.3,
+        "n_over_escalated": 6,
+        "frac_over_escalated_pct": 20.0,
+        "mean_level_error_over_escalated": 2.0,
+        "escalated_case_ids": [
+          "nslr_test_000",
+          "nslr_test_001",
+          "nslr_test_007",
+          "nslr_test_008",
+          "nslr_test_009",
+          "nslr_test_010",
+          "nslr_test_012",
+          "nslr_test_014",
+          "nslr_test_016",
+          "nslr_test_017",
+          "nslr_test_020",
+          "nslr_test_021",
+          "nslr_test_022",
+          "nslr_test_024",
+          "nslr_test_025",
+          "nslr_test_026",
+          "nslr_test_027",
+          "nslr_test_076",
+          "nslr_test_078",
+          "nslr_test_080",
+          "nslr_test_081",
+          "nslr_test_090",
+          "nslr_test_091",
+          "nslr_test_092",
+          "nslr_test_093",
+          "nslr_test_094",
+          "nslr_test_095",
+          "nslr_test_096",
+          "nslr_test_097",
+          "nslr_test_098"
+        ]
+      }
+    },
+    "cic_haiku": {
+      "source_file": "results/cic_unified_rerun/reconciled_tristage_haiku_results.json",
+      "n": 120,
+      "validation": {
+        "tristage_recomputed": {
+          "n": 120,
+          "exact_pct": 85.0,
+          "within1_pct": 88.3,
+          "under_escalation_pct": 0.8,
+          "over_escalation_pct": 14.2,
+          "severe_recall_pct": 100.0,
+          "severe_total": 59,
+          "worst_miss_levels": 1,
+          "n_exact": 102,
+          "n_under": 1,
+          "n_over": 17,
+          "n_severe_hit": 59
+        },
+        "tristage_check": {
+          "validated": true,
+          "mismatches": []
+        },
+        "xgb_recomputed": {
+          "n": 120,
+          "exact_pct": 95.0,
+          "within1_pct": 96.7,
+          "under_escalation_pct": 3.3,
+          "over_escalation_pct": 1.7,
+          "severe_recall_pct": 96.6,
+          "severe_total": 59,
+          "worst_miss_levels": 4,
+          "n_exact": 114,
+          "n_under": 4,
+          "n_over": 2,
+          "n_severe_hit": 57
+        },
+        "xgb_check": {
+          "validated": true,
+          "mismatches": []
+        },
+        "stored_mcnemar_tristage_vs_xgb": {
+          "b_xgb_correct_reconciled_wrong": 15,
+          "c_xgb_wrong_reconciled_correct": 3,
+          "n_discordant": 18,
+          "p_value": 0.007537841796875
+        },
+        "recomputed_mcnemar_unsafe_tristage_vs_xgb": {
+          "b_xgb_unsafe_arm_safe": 3,
+          "c_arm_unsafe_xgb_safe": 0,
+          "p_1sided": 0.125
+        }
+      },
+      "llm_only_metrics": {
+        "n": 120,
+        "exact_pct": 70.8,
+        "within1_pct": 85.0,
+        "under_escalation_pct": 16.7,
+        "over_escalation_pct": 12.5,
+        "severe_recall_pct": 89.8,
+        "severe_total": 59,
+        "worst_miss_levels": 2,
+        "n_exact": 85,
+        "n_under": 20,
+        "n_over": 15,
+        "n_severe_hit": 53
+      },
+      "n_llm_stage1a_unparseable": 0,
+      "llm_unparseable_caveat": "Records whose Stage-1a llm_risk_level is empty/unparseable are counted as under-escalation AND unsafe (identical to the tri-stage scripts' handling of parse failures). Where this count is large the LLM-only under-escalation figure is dominated by parse failures, not by substantive risk under-calls.",
+      "mcnemar_unsafe_llm_only_vs_xgb": {
+        "b_xgb_unsafe_arm_safe": 3,
+        "c_arm_unsafe_xgb_safe": 19,
+        "p_1sided": 0.9999394416809082
+      },
+      "mcnemar_note": "This McNemar is on the UNSAFE indicator (pred<GT or unparseable), matching the NSL-KDD scripts' spine-test semantics. The CIC result files' stored mcnemar_vs_clean_xgboost is a DIFFERENT test (correct/incorrect accuracy-based), so it is not directly comparable to the recomputed unsafe-based value for CIC arms.",
+      "tristage_escalation_precision": {
+        "n_records": 120,
+        "n_escalations_issued": 19,
+        "n_gt_severe": 2,
+        "frac_gt_severe_pct": 10.5,
+        "n_reconciled_eq_gt": 3,
+        "frac_reconciled_eq_gt_pct": 15.8,
+        "n_over_escalated": 15,
+        "frac_over_escalated_pct": 78.9,
+        "mean_level_error_over_escalated": 2.533,
+        "escalated_case_ids": [
+          "test_002",
+          "test_010",
+          "test_012",
+          "test_025",
+          "test_026",
+          "test_039",
+          "test_052",
+          "test_056",
+          "test_062",
+          "test_066",
+          "test_069",
+          "test_070",
+          "test_072",
+          "test_074",
+          "test_084",
+          "test_099",
+          "test_102",
+          "test_116",
+          "test_117"
+        ]
+      }
+    },
+    "cic_sonnet": {
+      "source_file": "results/cic_unified_rerun/reconciled_tristage_sonnet_results.json",
+      "n": 120,
+      "validation": {
+        "tristage_recomputed": {
+          "n": 120,
+          "exact_pct": 89.2,
+          "within1_pct": 92.5,
+          "under_escalation_pct": 1.7,
+          "over_escalation_pct": 9.2,
+          "severe_recall_pct": 96.6,
+          "severe_total": 59,
+          "worst_miss_levels": 4,
+          "n_exact": 107,
+          "n_under": 2,
+          "n_over": 11,
+          "n_severe_hit": 57
+        },
+        "tristage_check": {
+          "validated": true,
+          "mismatches": []
+        },
+        "xgb_recomputed": {
+          "n": 120,
+          "exact_pct": 95.0,
+          "within1_pct": 96.7,
+          "under_escalation_pct": 3.3,
+          "over_escalation_pct": 1.7,
+          "severe_recall_pct": 96.6,
+          "severe_total": 59,
+          "worst_miss_levels": 4,
+          "n_exact": 114,
+          "n_under": 4,
+          "n_over": 2,
+          "n_severe_hit": 57
+        },
+        "xgb_check": {
+          "validated": true,
+          "mismatches": []
+        },
+        "stored_mcnemar_tristage_vs_xgb": {
+          "b_xgb_correct_reconciled_wrong": 9,
+          "c_xgb_wrong_reconciled_correct": 2,
+          "n_discordant": 11,
+          "p_value": 0.0654296875
+        },
+        "recomputed_mcnemar_unsafe_tristage_vs_xgb": {
+          "b_xgb_unsafe_arm_safe": 2,
+          "c_arm_unsafe_xgb_safe": 0,
+          "p_1sided": 0.25
+        }
+      },
+      "llm_only_metrics": {
+        "n": 120,
+        "exact_pct": 82.5,
+        "within1_pct": 92.5,
+        "under_escalation_pct": 9.2,
+        "over_escalation_pct": 8.3,
+        "severe_recall_pct": 94.9,
+        "severe_total": 59,
+        "worst_miss_levels": 4,
+        "n_exact": 99,
+        "n_under": 11,
+        "n_over": 10,
+        "n_severe_hit": 56
+      },
+      "n_llm_stage1a_unparseable": 0,
+      "llm_unparseable_caveat": "Records whose Stage-1a llm_risk_level is empty/unparseable are counted as under-escalation AND unsafe (identical to the tri-stage scripts' handling of parse failures). Where this count is large the LLM-only under-escalation figure is dominated by parse failures, not by substantive risk under-calls.",
+      "mcnemar_unsafe_llm_only_vs_xgb": {
+        "b_xgb_unsafe_arm_safe": 2,
+        "c_arm_unsafe_xgb_safe": 9,
+        "p_1sided": 0.994140625
+      },
+      "mcnemar_note": "This McNemar is on the UNSAFE indicator (pred<GT or unparseable), matching the NSL-KDD scripts' spine-test semantics. The CIC result files' stored mcnemar_vs_clean_xgboost is a DIFFERENT test (correct/incorrect accuracy-based), so it is not directly comparable to the recomputed unsafe-based value for CIC arms.",
+      "tristage_escalation_precision": {
+        "n_records": 120,
+        "n_escalations_issued": 11,
+        "n_gt_severe": 0,
+        "frac_gt_severe_pct": 0.0,
+        "n_reconciled_eq_gt": 2,
+        "frac_reconciled_eq_gt_pct": 18.2,
+        "n_over_escalated": 9,
+        "frac_over_escalated_pct": 81.8,
+        "mean_level_error_over_escalated": 2.333,
+        "escalated_case_ids": [
+          "test_002",
+          "test_010",
+          "test_012",
+          "test_017",
+          "test_025",
+          "test_026",
+          "test_084",
+          "test_099",
+          "test_102",
+          "test_116",
+          "test_117"
+        ]
+      }
+    }
+  }
+}

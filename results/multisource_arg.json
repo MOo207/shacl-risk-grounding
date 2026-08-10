@@ -1,0 +1,2566 @@
+{
+  "generated": "2026-08-06T02:16:34.602372",
+  "build_time_seconds": 0.637,
+  "statistics": {
+    "total_nodes": 138,
+    "total_edges": 148,
+    "nodes_by_type": {
+      "Asset": 33,
+      "Software": 34,
+      "CVE": 28,
+      "ATTACKTechnique": 8,
+      "NFCRMControl": 26,
+      "RiskCase": 9
+    },
+    "edges_by_relation": {
+      "HAS_SOFTWARE": 34,
+      "AFFECTED_BY_CVE": 29,
+      "EXPOSED_TO_CVE": 29,
+      "TARGETS_ASSET": 13,
+      "AFFECTS_ASSET": 13,
+      "USES_TECHNIQUE": 9,
+      "MITIGATED_BY": 9,
+      "RELATES_TO_RISK": 12
+    },
+    "cves_in_kev": 5,
+    "attack_techniques_mapped": 9,
+    "nfcrm_controls": 26,
+    "risk_cases": 9
+  },
+  "data_sources": [
+    {
+      "name": "CIC-IDS2018",
+      "type": "Network IDS",
+      "records": "16.2M flows (6 attack types used)"
+    },
+    {
+      "name": "CIC-IDS2018 Testbed CMDB",
+      "type": "Asset Inventory",
+      "records": "33 assets (Sharafaldin et al. 2018 + Rapid7)"
+    },
+    {
+      "name": "CISA KEV",
+      "type": "Threat Intelligence",
+      "records": "1542 CVEs"
+    },
+    {
+      "name": "NVD",
+      "type": "Vulnerability Data",
+      "records": "83 CVEs across 1 CPEs"
+    },
+    {
+      "name": "NFCRM-1:2025",
+      "type": "Standards/Controls",
+      "records": "26 clauses"
+    }
+  ],
+  "risk_summary": [
+    {
+      "id": "RISK-BruteForce",
+      "type": "RiskCase",
+      "attack_type": "BruteForce",
+      "technique_id": "T1110",
+      "nfcrm_clause": "NFCRM-1:2025-\u00a76.7",
+      "impact": 5,
+      "likelihood": 3,
+      "risk_score": 15,
+      "risk_level": "High",
+      "confidence": 1.0,
+      "confidence_basis": "deterministic rule derivation",
+      "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "RISK-FTP-BruteForce",
+      "type": "RiskCase",
+      "attack_type": "FTP-BruteForce",
+      "technique_id": "T1110.001",
+      "nfcrm_clause": "NFCRM-1:2025-\u00a76.7",
+      "impact": 5,
+      "likelihood": 3,
+      "risk_score": 15,
+      "risk_level": "High",
+      "confidence": 1.0,
+      "confidence_basis": "deterministic rule derivation",
+      "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "RISK-SSH-BruteForce",
+      "type": "RiskCase",
+      "attack_type": "SSH-BruteForce",
+      "technique_id": "T1110.001",
+      "nfcrm_clause": "NFCRM-1:2025-\u00a76.7",
+      "impact": 5,
+      "likelihood": 3,
+      "risk_score": 15,
+      "risk_level": "High",
+      "confidence": 1.0,
+      "confidence_basis": "deterministic rule derivation",
+      "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "RISK-DoS",
+      "type": "RiskCase",
+      "attack_type": "DoS",
+      "technique_id": "T1499",
+      "nfcrm_clause": "NFCRM-1:2025-\u00a76.5",
+      "impact": 5,
+      "likelihood": 3,
+      "risk_score": 15,
+      "risk_level": "High",
+      "confidence": 1.0,
+      "confidence_basis": "deterministic rule derivation",
+      "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "RISK-DDoS",
+      "type": "RiskCase",
+      "attack_type": "DDoS",
+      "technique_id": "T1498",
+      "nfcrm_clause": "NFCRM-1:2025-\u00a76.5",
+      "impact": 5,
+      "likelihood": 3,
+      "risk_score": 15,
+      "risk_level": "High",
+      "confidence": 1.0,
+      "confidence_basis": "deterministic rule derivation",
+      "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "RISK-Heartbleed",
+      "type": "RiskCase",
+      "attack_type": "Heartbleed",
+      "technique_id": "T1555",
+      "nfcrm_clause": "NFCRM-1:2025-\u00a76.4",
+      "impact": 5,
+      "likelihood": 3,
+      "risk_score": 15,
+      "risk_level": "High",
+      "confidence": 1.0,
+      "confidence_basis": "deterministic rule derivation",
+      "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "RISK-WebAttack",
+      "type": "RiskCase",
+      "attack_type": "WebAttack",
+      "technique_id": "T1190",
+      "nfcrm_clause": "NFCRM-1:2025-\u00a76.4",
+      "impact": 5,
+      "likelihood": 3,
+      "risk_score": 15,
+      "risk_level": "High",
+      "confidence": 1.0,
+      "confidence_basis": "deterministic rule derivation",
+      "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "RISK-Infiltration",
+      "type": "RiskCase",
+      "attack_type": "Infiltration",
+      "technique_id": "T1566.001",
+      "nfcrm_clause": "NFCRM-1:2025-\u00a76.6",
+      "impact": 4,
+      "likelihood": 3,
+      "risk_score": 12,
+      "risk_level": "Medium",
+      "confidence": 1.0,
+      "confidence_basis": "deterministic rule derivation",
+      "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "RISK-Bot",
+      "type": "RiskCase",
+      "attack_type": "Bot",
+      "technique_id": "T1071.001",
+      "nfcrm_clause": "NFCRM-1:2025-\u00a76.5",
+      "impact": 5,
+      "likelihood": 3,
+      "risk_score": 15,
+      "risk_level": "High",
+      "confidence": 1.0,
+      "confidence_basis": "deterministic rule derivation",
+      "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "SRV-001",
+      "type": "Asset",
+      "hostname": "ftp-srv-01",
+      "ip": "172.31.69.25",
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-vsftpd-2.3.4",
+      "type": "Software",
+      "name": "vsftpd",
+      "version": "2.3.4",
+      "cpe": "cpe:2.3:a:beasts:vsftpd:2.3.4:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "CVE-2011-2523",
+      "type": "CVE",
+      "cvss_v3": 9.8,
+      "cvss_version": "3.1",
+      "severity": "critical",
+      "description": "vsftpd 2.3.4 backdoor opens shell on port 6200/tcp",
+      "cwe": "CWE-78",
+      "in_cisa_kev": false,
+      "published": "2019-11-27T21:15:12.387",
+      "provenance_source": "NVD API 2.0",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-002",
+      "type": "Asset",
+      "hostname": "ssh-srv-01",
+      "ip": "172.31.69.25",
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-OpenSSH-4.7p1 Debian 8ubuntu1",
+      "type": "Software",
+      "name": "OpenSSH",
+      "version": "4.7p1 Debian 8ubuntu1",
+      "cpe": "cpe:2.3:a:openbsd:openssh:4.7p1:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "CVE-2008-0166",
+      "type": "CVE",
+      "cvss_v3": 7.5,
+      "cvss_version": "3.1",
+      "severity": "high",
+      "description": "Debian OpenSSL predictable RNG allows brute-force of private keys",
+      "cwe": "CWE-338",
+      "in_cisa_kev": false,
+      "published": "2008-05-13T17:20:00.000",
+      "provenance_source": "NVD API 2.0",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-003",
+      "type": "Asset",
+      "hostname": "telnet-srv-01",
+      "ip": "172.31.69.25",
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "high",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-Linux_telnetd-netkit",
+      "type": "Software",
+      "name": "Linux telnetd",
+      "version": "netkit",
+      "cpe": "cpe:2.3:a:netkit:telnetd:0.17:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "CVE-2001-0554",
+      "type": "CVE",
+      "cvss_v3": 10.0,
+      "cvss_version": "2.0",
+      "severity": "high",
+      "description": "Buffer overflow in BSD telnetd allows remote root via telnet options",
+      "cwe": "CWE-120",
+      "in_cisa_kev": false,
+      "published": "2001-08-14T04:00:00.000",
+      "provenance_source": "NVD API 2.0",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-004",
+      "type": "Asset",
+      "hostname": "smtp-srv-01",
+      "ip": "172.31.69.25",
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "medium",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-Postfix_SMTP-2.5.1",
+      "type": "Software",
+      "name": "Postfix SMTP",
+      "version": "2.5.1",
+      "cpe": "cpe:2.3:a:postfix:postfix:2.5.1:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-005",
+      "type": "Asset",
+      "hostname": "dns-srv-01",
+      "ip": "172.31.69.25",
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "high",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-ISC_BIND-9.4.2",
+      "type": "Software",
+      "name": "ISC BIND",
+      "version": "9.4.2",
+      "cpe": "cpe:2.3:a:isc:bind:9.4.2:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "CVE-2009-0696",
+      "type": "CVE",
+      "cvss_v3": 4.3,
+      "cvss_version": "2.0",
+      "severity": "medium",
+      "description": "ISC BIND 9.4.x allows remote DoS via crafted dynamic update message",
+      "cwe": "CWE-16",
+      "in_cisa_kev": false,
+      "published": "2009-07-29T17:30:00.920",
+      "provenance_source": "NVD API 2.0",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-006",
+      "type": "Asset",
+      "hostname": "http-srv-01",
+      "ip": "172.31.69.25",
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-Apache_httpd-2.2.8",
+      "type": "Software",
+      "name": "Apache httpd",
+      "version": "2.2.8",
+      "cpe": "cpe:2.3:a:apache:http_server:2.2.8:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "CVE-2007-6750",
+      "type": "CVE",
+      "cvss_v3": 5.0,
+      "cvss_version": "2.0",
+      "severity": "medium",
+      "description": "Apache httpd allows DoS via incomplete HTTP requests (Slowloris)",
+      "cwe": "CWE-399",
+      "in_cisa_kev": false,
+      "published": "2011-12-27T18:55:00.970",
+      "provenance_source": "NVD API 2.0",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "CVE-2011-3192",
+      "type": "CVE",
+      "cvss_v3": 7.8,
+      "cvss_version": "2.0",
+      "severity": "high",
+      "description": "Apache httpd Range header DoS (Apache Killer)",
+      "cwe": "CWE-400",
+      "in_cisa_kev": false,
+      "published": "2011-08-29T15:55:02.017",
+      "provenance_source": "NVD API 2.0",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-007",
+      "type": "Asset",
+      "hostname": "php-srv-01",
+      "ip": "172.31.69.25",
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-PHP-5.2.4",
+      "type": "Software",
+      "name": "PHP",
+      "version": "5.2.4",
+      "cpe": "cpe:2.3:a:php:php:5.2.4:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "CVE-2012-1823",
+      "type": "CVE",
+      "cvss_v3": 9.8,
+      "cvss_version": "3.1",
+      "severity": "critical",
+      "description": "PHP-CGI query string parameter injection allows RCE",
+      "cwe": "CWE-77",
+      "in_cisa_kev": true,
+      "published": "2012-05-11T10:15:48.043",
+      "provenance_source": "NVD API 2.0",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "CVE-2012-2311",
+      "type": "CVE",
+      "cvss_v3": 7.5,
+      "cvss_version": "2.0",
+      "severity": "high",
+      "description": "PHP CGI argument injection via crafted request",
+      "cwe": "CWE-89",
+      "in_cisa_kev": false,
+      "published": "2012-05-11T10:15:48.107",
+      "provenance_source": "NVD API 2.0",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-008",
+      "type": "Asset",
+      "hostname": "dvwa-srv-01",
+      "ip": "172.31.69.25",
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-DVWA_(Damn_Vulnerable_Web_Application)-1.0.7",
+      "type": "Software",
+      "name": "DVWA (Damn Vulnerable Web Application)",
+      "version": "1.0.7",
+      "cpe": "cpe:2.3:a:dvwa:dvwa:1.0.7:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-009",
+      "type": "Asset",
+      "hostname": "mutillidae-srv-01",
+      "ip": "172.31.69.25",
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "high",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-OWASP_Mutillidae_II-2.1.19",
+      "type": "Software",
+      "name": "OWASP Mutillidae II",
+      "version": "2.1.19",
+      "cpe": "cpe:2.3:a:owasp:mutillidae:2.1.19:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-010",
+      "type": "Asset",
+      "hostname": "phpmyadmin-srv-01",
+      "ip": "172.31.69.25",
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "high",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-phpMyAdmin-2.11.x",
+      "type": "Software",
+      "name": "phpMyAdmin",
+      "version": "2.11.x",
+      "cpe": "cpe:2.3:a:phpmyadmin:phpmyadmin:2.11.0:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "CVE-2009-1151",
+      "type": "CVE",
+      "cvss_v3": 9.8,
+      "cvss_version": "3.1",
+      "severity": "critical",
+      "description": "phpMyAdmin setup.php static code injection allows RCE without auth",
+      "cwe": "CWE-94",
+      "in_cisa_kev": true,
+      "published": "2009-03-26T14:30:00.267",
+      "provenance_source": "NVD API 2.0",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-011",
+      "type": "Asset",
+      "hostname": "twiki-srv-01",
+      "ip": "172.31.69.25",
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "high",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-TWiki-4.2.4",
+      "type": "Software",
+      "name": "TWiki",
+      "version": "4.2.4",
+      "cpe": "cpe:2.3:a:twiki:twiki:4.2.4:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "CVE-2008-5305",
+      "type": "CVE",
+      "cvss_v3": 10.0,
+      "cvss_version": "2.0",
+      "severity": "high",
+      "description": "TWiki rev parameter shell metacharacter injection allows RCE",
+      "cwe": "CWE-94",
+      "in_cisa_kev": false,
+      "published": "2008-12-10T00:30:00.283",
+      "provenance_source": "NVD API 2.0",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-012",
+      "type": "Asset",
+      "hostname": "tikiwiki-srv-01",
+      "ip": "172.31.69.25",
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "high",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-TikiWiki_CMS-1.9.5",
+      "type": "Software",
+      "name": "TikiWiki CMS",
+      "version": "1.9.5",
+      "cpe": "cpe:2.3:a:tikiwiki:tikiwiki:1.9.5:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "CVE-2007-5423",
+      "type": "CVE",
+      "cvss_v3": 7.5,
+      "cvss_version": "2.0",
+      "severity": "high",
+      "description": "TikiWiki tiki-graph_formula.php PHP code injection allows RCE",
+      "cwe": "CWE-94",
+      "in_cisa_kev": false,
+      "published": "2007-10-12T23:17:00.000",
+      "provenance_source": "NVD API 2.0",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-013",
+      "type": "Asset",
+      "hostname": "rpcbind-srv-01",
+      "ip": "172.31.69.25",
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "medium",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-rpcbind-RPC #100000",
+      "type": "Software",
+      "name": "rpcbind",
+      "version": "RPC #100000",
+      "cpe": "cpe:2.3:a:sun:rpc:4.0:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-014",
+      "type": "Asset",
+      "hostname": "smb-srv-01",
+      "ip": "172.31.69.25",
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-Samba-3.0.20-Debian",
+      "type": "Software",
+      "name": "Samba",
+      "version": "3.0.20-Debian",
+      "cpe": "cpe:2.3:a:samba:samba:3.0.20:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "CVE-2007-2447",
+      "type": "CVE",
+      "cvss_v3": 6.0,
+      "cvss_version": "2.0",
+      "severity": "medium",
+      "description": "Samba username map script command injection allows remote RCE without auth",
+      "cwe": "",
+      "in_cisa_kev": false,
+      "published": "2007-05-14T21:19:00.000",
+      "provenance_source": "NVD API 2.0",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-015",
+      "type": "Asset",
+      "hostname": "rservices-srv-01",
+      "ip": "172.31.69.25",
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-netkit_r-services_(rexec/rlogin/rsh)-0.17",
+      "type": "Software",
+      "name": "netkit r-services (rexec/rlogin/rsh)",
+      "version": "0.17",
+      "cpe": "cpe:2.3:a:netkit:netkit-rsh:0.17:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "CVE-1999-0651",
+      "type": "CVE",
+      "cvss_v3": 7.5,
+      "cvss_version": "2.0",
+      "severity": "high",
+      "description": "rexec/rlogin/rsh enabled with .rhosts trust allowing unauthenticated remote root",
+      "cwe": "",
+      "in_cisa_kev": false,
+      "published": "1999-01-01T05:00:00.000",
+      "provenance_source": "NVD API 2.0",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-016",
+      "type": "Asset",
+      "hostname": "rmi-srv-01",
+      "ip": "172.31.69.25",
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "high",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-Java_RMI_Registry-GNU Classpath grmiregistry",
+      "type": "Software",
+      "name": "Java RMI Registry",
+      "version": "GNU Classpath grmiregistry",
+      "cpe": "cpe:2.3:a:sun:jre:1.6.0:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "CVE-2011-3556",
+      "type": "CVE",
+      "cvss_v3": 7.5,
+      "cvss_version": "2.0",
+      "severity": "high",
+      "description": "Oracle Java RMI default config allows remote RCE via deserialization",
+      "cwe": "",
+      "in_cisa_kev": false,
+      "published": "2011-10-19T21:55:01.613",
+      "provenance_source": "NVD API 2.0",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-017",
+      "type": "Asset",
+      "hostname": "backdoor-srv-01",
+      "ip": "172.31.69.25",
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-ingreslock_root_backdoor-intentional",
+      "type": "Software",
+      "name": "ingreslock root backdoor",
+      "version": "intentional",
+      "cpe": "cpe:2.3:a:metasploitable:backdoor:1.0:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-018",
+      "type": "Asset",
+      "hostname": "nfs-srv-01",
+      "ip": "172.31.69.25",
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-NFS-v2-v4",
+      "type": "Software",
+      "name": "NFS",
+      "version": "v2-v4",
+      "cpe": "cpe:2.3:a:linux:nfs:2.6.24:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "CVE-1999-0170",
+      "type": "CVE",
+      "cvss_v3": 7.5,
+      "cvss_version": "2.0",
+      "severity": "high",
+      "description": "NFS exports root filesystem allowing remote write and SSH key injection",
+      "cwe": "",
+      "in_cisa_kev": false,
+      "published": "1997-01-01T05:00:00.000",
+      "provenance_source": "NVD API 2.0",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-019",
+      "type": "Asset",
+      "hostname": "ftp2-srv-01",
+      "ip": "172.31.69.25",
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "high",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-ProFTPD-1.3.1",
+      "type": "Software",
+      "name": "ProFTPD",
+      "version": "1.3.1",
+      "cpe": "cpe:2.3:a:proftpd:proftpd:1.3.1:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "CVE-2010-4221",
+      "type": "CVE",
+      "cvss_v3": 10.0,
+      "cvss_version": "2.0",
+      "severity": "high",
+      "description": "ProFTPD TELNET IAC buffer overflow allows remote RCE",
+      "cwe": "CWE-119",
+      "in_cisa_kev": false,
+      "published": "2010-11-09T21:00:06.383",
+      "provenance_source": "NVD API 2.0",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-020",
+      "type": "Asset",
+      "hostname": "mysql-srv-01",
+      "ip": "172.31.69.25",
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-MySQL-5.0.51a-3ubuntu5",
+      "type": "Software",
+      "name": "MySQL",
+      "version": "5.0.51a-3ubuntu5",
+      "cpe": "cpe:2.3:a:mysql:mysql:5.0.51a:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "CVE-2008-0226",
+      "type": "CVE",
+      "cvss_v3": 7.5,
+      "cvss_version": "2.0",
+      "severity": "high",
+      "description": "MySQL 5.0.x allows local privilege escalation via crafted BINLOG command",
+      "cwe": "CWE-119",
+      "in_cisa_kev": false,
+      "published": "2008-01-10T23:46:00.000",
+      "provenance_source": "NVD API 2.0",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-021",
+      "type": "Asset",
+      "hostname": "distcc-srv-01",
+      "ip": "172.31.69.25",
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-distccd-v1 (GCC 4.2.4)",
+      "type": "Software",
+      "name": "distccd",
+      "version": "v1 (GCC 4.2.4)",
+      "cpe": "cpe:2.3:a:distcc:distcc:3.1:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "CVE-2004-2687",
+      "type": "CVE",
+      "cvss_v3": 9.3,
+      "cvss_version": "2.0",
+      "severity": "high",
+      "description": "distccd allows remote code execution via EXEC request without auth",
+      "cwe": "CWE-16",
+      "in_cisa_kev": false,
+      "published": "2004-12-31T05:00:00.000",
+      "provenance_source": "NVD API 2.0",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-022",
+      "type": "Asset",
+      "hostname": "pgsql-srv-01",
+      "ip": "172.31.69.25",
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "high",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-PostgreSQL-8.3.0-8.3.7",
+      "type": "Software",
+      "name": "PostgreSQL",
+      "version": "8.3.0-8.3.7",
+      "cpe": "cpe:2.3:a:postgresql:postgresql:8.3.0:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "CVE-2013-1904",
+      "type": "CVE",
+      "cvss_v3": 5.0,
+      "cvss_version": "2.0",
+      "severity": "medium",
+      "description": "PostgreSQL allows local privilege escalation via crafted SQL",
+      "cwe": "CWE-22",
+      "in_cisa_kev": false,
+      "published": "2014-02-08T00:55:05.957",
+      "provenance_source": "NVD API 2.0",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-023",
+      "type": "Asset",
+      "hostname": "vnc-srv-01",
+      "ip": "172.31.69.25",
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-VNC-Protocol 3.3",
+      "type": "Software",
+      "name": "VNC",
+      "version": "Protocol 3.3",
+      "cpe": "cpe:2.3:a:realvnc:realvnc:4.1.1:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "CVE-2006-2369",
+      "type": "CVE",
+      "cvss_v3": 7.5,
+      "cvss_version": "2.0",
+      "severity": "high",
+      "description": "RealVNC 4.1.1 authentication bypass via NULL auth type",
+      "cwe": "CWE-287",
+      "in_cisa_kev": false,
+      "published": "2006-05-15T16:06:00.000",
+      "provenance_source": "NVD API 2.0",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-024",
+      "type": "Asset",
+      "hostname": "x11-srv-01",
+      "ip": "172.31.69.25",
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "medium",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-X11-Xorg 7.3",
+      "type": "Software",
+      "name": "X11",
+      "version": "Xorg 7.3",
+      "cpe": "cpe:2.3:a:x.org:xorg-server:1.4.0:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "CVE-1999-0526",
+      "type": "CVE",
+      "cvss_v3": 10.0,
+      "cvss_version": "2.0",
+      "severity": "high",
+      "description": "X11 open display allows unauthenticated connection and screen capture",
+      "cwe": "",
+      "in_cisa_kev": false,
+      "published": "1997-07-01T04:00:00.000",
+      "provenance_source": "NVD API 2.0",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-025",
+      "type": "Asset",
+      "hostname": "irc-srv-01",
+      "ip": "172.31.69.25",
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-UnrealIRCd-3.2.8.1",
+      "type": "Software",
+      "name": "UnrealIRCd",
+      "version": "3.2.8.1",
+      "cpe": "cpe:2.3:a:unrealircd:unrealircd:3.2.8.1:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "CVE-2010-2075",
+      "type": "CVE",
+      "cvss_v3": 7.5,
+      "cvss_version": "2.0",
+      "severity": "high",
+      "description": "UnrealIRCd 3.2.8.1 backdoor allows unauthenticated remote command execution via AB prefix",
+      "cwe": "CWE-20",
+      "in_cisa_kev": false,
+      "published": "2010-06-15T14:04:26.327",
+      "provenance_source": "NVD API 2.0",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-026",
+      "type": "Asset",
+      "hostname": "tomcat-srv-01",
+      "ip": "172.31.69.25",
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "high",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-Apache_Tomcat-5.5 (AJP/1.3 on port 8009)",
+      "type": "Software",
+      "name": "Apache Tomcat",
+      "version": "5.5 (AJP/1.3 on port 8009)",
+      "cpe": "cpe:2.3:a:apache:tomcat:5.5.0:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "CVE-2009-0580",
+      "type": "CVE",
+      "cvss_v3": 4.3,
+      "cvss_version": "2.0",
+      "severity": "medium",
+      "description": "Apache Tomcat allows directory traversal via UTF-8 encoded URLs",
+      "cwe": "CWE-200",
+      "in_cisa_kev": false,
+      "published": "2009-06-05T16:00:00.233",
+      "provenance_source": "NVD API 2.0",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-027",
+      "type": "Asset",
+      "hostname": "drb-srv-01",
+      "ip": "172.31.69.25",
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-Ruby_DRb_(Distributed_Ruby)-1.8",
+      "type": "Software",
+      "name": "Ruby DRb (Distributed Ruby)",
+      "version": "1.8",
+      "cpe": "cpe:2.3:a:ruby-lang:ruby:1.8.7:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "CVE-2011-5330",
+      "type": "CVE",
+      "cvss_v3": 9.8,
+      "cvss_version": "3.1",
+      "severity": "critical",
+      "description": "Ruby DRb allows remote RCE via instance_eval/syscall without authentication",
+      "cwe": "",
+      "in_cisa_kev": false,
+      "published": "2019-11-18T18:15:09.727",
+      "provenance_source": "NVD API 2.0",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-028",
+      "type": "Asset",
+      "hostname": "web-dos-target-01",
+      "ip": "172.31.69.28",
+      "os": "Ubuntu 16.04 LTS",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-Apache_httpd-2.4.18 (Ubuntu 16.04 default, 5s keep-alive)",
+      "type": "Software",
+      "name": "Apache httpd",
+      "version": "2.4.18 (Ubuntu 16.04 default, 5s keep-alive)",
+      "cpe": "cpe:2.3:a:apache:http_server:2.4.18:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "CVE-2017-7679",
+      "type": "CVE",
+      "cvss_v3": 9.8,
+      "cvss_version": "3.0",
+      "severity": "critical",
+      "description": "Apache mod_mime buffer overread allows DoS or information disclosure",
+      "cwe": "CWE-126",
+      "in_cisa_kev": false,
+      "published": "2017-06-20T01:29:00.423",
+      "provenance_source": "NVD API 2.0",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-029",
+      "type": "Asset",
+      "hostname": "heartbleed-srv-01",
+      "ip": "18.217.21.148",
+      "os": "Ubuntu 12.04 LTS",
+      "criticality": "critical",
+      "location": "CIC AWS Region (separate EC2 instance)",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-OpenSSL-1.0.1f",
+      "type": "Software",
+      "name": "OpenSSL",
+      "version": "1.0.1f",
+      "cpe": "cpe:2.3:a:openssl:openssl:1.0.1f:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "CVE-2014-0160",
+      "type": "CVE",
+      "cvss_v3": 7.5,
+      "cvss_version": "3.1",
+      "severity": "high",
+      "description": "Heartbleed: OpenSSL TLS heartbeat extension allows remote memory read leaking private keys and session data",
+      "cwe": "CWE-125",
+      "in_cisa_kev": true,
+      "published": "2014-04-07T22:55:03.893",
+      "provenance_source": "NVD API 2.0",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-030",
+      "type": "Asset",
+      "hostname": "infiltration-victim-01",
+      "ip": "172.31.69.24",
+      "os": "Windows Vista (32-bit)",
+      "criticality": "high",
+      "location": "CIC Dept 4 (Secretary/Operations)",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "workstation",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-Adobe_Acrobat_Reader-9.0",
+      "type": "Software",
+      "name": "Adobe Acrobat Reader",
+      "version": "9.0",
+      "cpe": "cpe:2.3:a:adobe:acrobat_reader:9.0:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "CVE-2010-0188",
+      "type": "CVE",
+      "cvss_v3": 7.8,
+      "cvss_version": "3.1",
+      "severity": "high",
+      "description": "Adobe Reader 9 integer overflow via crafted PDF allows RCE \u2014 CIC infiltration initial access vector",
+      "cwe": "",
+      "in_cisa_kev": true,
+      "published": "2010-02-22T13:00:02.127",
+      "provenance_source": "NVD API 2.0",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-031",
+      "type": "Asset",
+      "hostname": "infiltration-victim-02",
+      "ip": "172.31.69.13",
+      "os": "Windows Vista",
+      "criticality": "medium",
+      "location": "CIC Dept 4 (Secretary/Operations)",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "workstation",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-032",
+      "type": "Asset",
+      "hostname": "win-srv-01",
+      "ip": "172.31.69.30",
+      "os": "Windows Server 2012 R2",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-Windows_SMBv1-Windows Server 2012 R2",
+      "type": "Software",
+      "name": "Windows SMBv1",
+      "version": "Windows Server 2012 R2",
+      "cpe": "cpe:2.3:o:microsoft:windows_server_2012:r2:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "CVE-2017-0144",
+      "type": "CVE",
+      "cvss_v3": 8.8,
+      "cvss_version": "3.1",
+      "severity": "high",
+      "description": "EternalBlue: Windows SMBv1 RCE via crafted packets (MS17-010)",
+      "cwe": "",
+      "in_cisa_kev": true,
+      "published": "2017-03-17T00:59:04.010",
+      "provenance_source": "NVD API 2.0",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-IIS-8.5",
+      "type": "Software",
+      "name": "IIS",
+      "version": "8.5",
+      "cpe": "cpe:2.3:a:microsoft:internet_information_services:8.5:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SRV-033",
+      "type": "Asset",
+      "hostname": "win-srv-02",
+      "ip": "172.31.69.31",
+      "os": "Windows Server 2016",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "ontology_asset_type": "hardware",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-Windows_SMBv1-Windows Server 2016",
+      "type": "Software",
+      "name": "Windows SMBv1",
+      "version": "Windows Server 2016",
+      "cpe": "cpe:2.3:o:microsoft:windows_server_2016:-:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "SW-IIS-10.0",
+      "type": "Software",
+      "name": "IIS",
+      "version": "10.0",
+      "cpe": "cpe:2.3:a:microsoft:internet_information_services:10.0:*:*:*:*:*:*:*",
+      "provenance_source": "CIC-IDS2018 testbed CMDB",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "T1110",
+      "type": "ATTACKTechnique",
+      "technique_id": "T1110",
+      "name": "Brute Force",
+      "tactic": "Credential Access",
+      "description": "Adversaries may use brute force techniques to gain access to accounts when passwords are unknown or when password hashes are obtained.(Citation: TrendMicro Pawn Storm Dec 2020) Without knowledge of th",
+      "kill_chain_phases": [
+        "credential-access"
+      ]
+    },
+    {
+      "id": "T1110.001",
+      "type": "ATTACKTechnique",
+      "technique_id": "T1110.001",
+      "name": "Password Guessing (FTP/Patator)",
+      "tactic": "Credential Access",
+      "description": "Adversaries with no prior knowledge of legitimate credentials within the system or environment may guess passwords to attempt access to accounts. Without knowledge of the password for an account, an a",
+      "kill_chain_phases": [
+        "credential-access"
+      ]
+    },
+    {
+      "id": "T1499",
+      "type": "ATTACKTechnique",
+      "technique_id": "T1499",
+      "name": "Endpoint Denial of Service",
+      "tactic": "Impact",
+      "description": "Adversaries may perform Endpoint Denial of Service (DoS) attacks to degrade or block the availability of services to users. Endpoint DoS can be performed by exhausting the system resources those servi",
+      "kill_chain_phases": [
+        "impact"
+      ]
+    },
+    {
+      "id": "T1498",
+      "type": "ATTACKTechnique",
+      "technique_id": "T1498",
+      "name": "Network Denial of Service",
+      "tactic": "Impact",
+      "description": "Adversaries may perform Network Denial of Service (DoS) attacks to degrade or block the availability of targeted resources to users. Network DoS can be performed by exhausting the network bandwidth se",
+      "kill_chain_phases": [
+        "impact"
+      ]
+    },
+    {
+      "id": "T1555",
+      "type": "ATTACKTechnique",
+      "technique_id": "T1555",
+      "name": "Credentials from Password Stores",
+      "tactic": "Credential Access",
+      "description": "Adversaries may search for common password storage locations to obtain user credentials.(Citation: F-Secure The Dukes) Passwords are stored in several places on a system, depending on the operating sy",
+      "kill_chain_phases": [
+        "credential-access"
+      ]
+    },
+    {
+      "id": "T1190",
+      "type": "ATTACKTechnique",
+      "technique_id": "T1190",
+      "name": "Exploit Public-Facing Application",
+      "tactic": "Initial Access",
+      "description": "Adversaries may attempt to exploit a weakness in an Internet-facing host or system to initially access a network. The weakness in the system can be a software bug, a temporary glitch, or a misconfigur",
+      "kill_chain_phases": [
+        "initial-access"
+      ]
+    },
+    {
+      "id": "T1566.001",
+      "type": "ATTACKTechnique",
+      "technique_id": "T1566.001",
+      "name": "Spearphishing Attachment (PDF)",
+      "tactic": "Initial Access",
+      "description": "Adversaries may send spearphishing emails with a malicious attachment in an attempt to gain access to victim systems. Spearphishing attachment is a specific variant of spearphishing. Spearphishing att",
+      "kill_chain_phases": [
+        "initial-access"
+      ]
+    },
+    {
+      "id": "T1071.001",
+      "type": "ATTACKTechnique",
+      "technique_id": "T1071.001",
+      "name": "Web Protocols (Ares C2 port 8080)",
+      "tactic": "Command and Control",
+      "description": "Adversaries may communicate using application layer protocols associated with web traffic to avoid detection/network filtering by blending in with existing traffic. Commands to the remote system, and ",
+      "kill_chain_phases": [
+        "command-and-control"
+      ]
+    },
+    {
+      "id": "NFCRM-5-1",
+      "type": "NFCRMControl",
+      "clause_id": "NFCRM-1:2025-\u00a75.1",
+      "clause_description": "Designate a liaison officer with NCA for cybersecurity risk management activation",
+      "phase": "national_responsibilities",
+      "standard": "NFCRM-1:2025",
+      "provenance_source": "NFCRM-1:2025",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "NFCRM-5-2",
+      "type": "NFCRMControl",
+      "clause_id": "NFCRM-1:2025-\u00a75.2",
+      "clause_description": "Inventory and classify all organization assets (sensitive systems, OT, social media accounts, etc.) per NCA guidance, and review classification periodically",
+      "phase": "national_responsibilities",
+      "standard": "NFCRM-1:2025",
+      "provenance_source": "NFCRM-1:2025",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "NFCRM-5-3",
+      "type": "NFCRMControl",
+      "clause_id": "NFCRM-1:2025-\u00a75.3",
+      "clause_description": "Inventory internet-facing assets",
+      "phase": "national_responsibilities",
+      "standard": "NFCRM-1:2025",
+      "provenance_source": "NFCRM-1:2025",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "NFCRM-5-4",
+      "type": "NFCRMControl",
+      "clause_id": "NFCRM-1:2025-\u00a75.4",
+      "clause_description": "Report identified assets (from 5.2 and 5.3) to NCA periodically via Haseen platform, and update upon any change",
+      "phase": "national_responsibilities",
+      "standard": "NFCRM-1:2025",
+      "provenance_source": "NFCRM-1:2025",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "NFCRM-5-5",
+      "type": "NFCRMControl",
+      "clause_id": "NFCRM-1:2025-\u00a75.5",
+      "clause_description": "Report cybersecurity risks at catastrophic (level 5) and high (level 4) levels to NCA immediately upon identification, per the risk assessment matrix (Figure 2), and share treatment plans periodically",
+      "phase": "national_responsibilities",
+      "standard": "NFCRM-1:2025",
+      "provenance_source": "NFCRM-1:2025",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "NFCRM-5-6",
+      "type": "NFCRMControl",
+      "clause_id": "NFCRM-1:2025-\u00a75.6",
+      "clause_description": "Address risks, vulnerabilities, and observations received from NCA; report on remediation actions periodically via Haseen platform",
+      "phase": "national_responsibilities",
+      "standard": "NFCRM-1:2025",
+      "provenance_source": "NFCRM-1:2025",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "NFCRM-6-1",
+      "type": "NFCRMControl",
+      "clause_id": "NFCRM-1:2025-\u00a76.1",
+      "clause_description": "Develop and operate a continuous program for cybersecurity risk management methodology with dedicated resources",
+      "phase": "methodology_setup",
+      "standard": "NFCRM-1:2025",
+      "provenance_source": "NFCRM-1:2025",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "NFCRM-6-2",
+      "type": "NFCRMControl",
+      "clause_id": "NFCRM-1:2025-\u00a76.2",
+      "clause_description": "Engage stakeholders in various phases (e.g., cybersecurity supervisory committee, IT department)",
+      "phase": "methodology_setup",
+      "standard": "NFCRM-1:2025",
+      "provenance_source": "NFCRM-1:2025",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "NFCRM-6-3",
+      "type": "NFCRMControl",
+      "clause_id": "NFCRM-1:2025-\u00a76.3",
+      "clause_description": "Inventory and classify organization assets",
+      "phase": "identification",
+      "standard": "NFCRM-1:2025",
+      "provenance_source": "NFCRM-1:2025",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "NFCRM-6-4",
+      "type": "NFCRMControl",
+      "clause_id": "NFCRM-1:2025-\u00a76.4",
+      "clause_description": "Inventory cybersecurity vulnerabilities",
+      "phase": "identification",
+      "standard": "NFCRM-1:2025",
+      "provenance_source": "NFCRM-1:2025",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "NFCRM-6-5",
+      "type": "NFCRMControl",
+      "clause_id": "NFCRM-1:2025-\u00a76.5",
+      "clause_description": "Inventory potential cybersecurity threats",
+      "phase": "identification",
+      "standard": "NFCRM-1:2025",
+      "provenance_source": "NFCRM-1:2025",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "NFCRM-6-6",
+      "type": "NFCRMControl",
+      "clause_id": "NFCRM-1:2025-\u00a76.6",
+      "clause_description": "Develop expected cybersecurity risk scenarios based on threats and vulnerabilities",
+      "phase": "identification",
+      "standard": "NFCRM-1:2025",
+      "provenance_source": "NFCRM-1:2025",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "NFCRM-6-7",
+      "type": "NFCRMControl",
+      "clause_id": "NFCRM-1:2025-\u00a76.7",
+      "clause_description": "Identify currently applied controls to address expected risk scenarios",
+      "phase": "identification",
+      "standard": "NFCRM-1:2025",
+      "provenance_source": "NFCRM-1:2025",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "NFCRM-6-8",
+      "type": "NFCRMControl",
+      "clause_id": "NFCRM-1:2025-\u00a76.8",
+      "clause_description": "Determine acceptable risk level for the organization",
+      "phase": "identification",
+      "standard": "NFCRM-1:2025",
+      "provenance_source": "NFCRM-1:2025",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "NFCRM-6-9",
+      "type": "NFCRMControl",
+      "clause_id": "NFCRM-1:2025-\u00a76.9",
+      "clause_description": "Conduct inherent risk analysis for all expected risk scenarios and currently applied controls, assessing likelihood and impact per the risk assessment matrix (Figure 2)",
+      "phase": "assessment",
+      "standard": "NFCRM-1:2025",
+      "provenance_source": "NFCRM-1:2025",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "NFCRM-6-10",
+      "type": "NFCRMControl",
+      "clause_id": "NFCRM-1:2025-\u00a76.10",
+      "clause_description": "Document analysis and assessment results in the cybersecurity risk register",
+      "phase": "assessment",
+      "standard": "NFCRM-1:2025",
+      "provenance_source": "NFCRM-1:2025",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "NFCRM-6-11",
+      "type": "NFCRMControl",
+      "clause_id": "NFCRM-1:2025-\u00a76.11",
+      "clause_description": "Develop cybersecurity risk treatment plans",
+      "phase": "treatment",
+      "standard": "NFCRM-1:2025",
+      "provenance_source": "NFCRM-1:2025",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "NFCRM-6-12",
+      "type": "NFCRMControl",
+      "clause_id": "NFCRM-1:2025-\u00a76.12",
+      "clause_description": "Assess expected residual risk after executing treatment plans to confirm acceptable risk level is reached",
+      "phase": "treatment",
+      "standard": "NFCRM-1:2025",
+      "provenance_source": "NFCRM-1:2025",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "NFCRM-6-13",
+      "type": "NFCRMControl",
+      "clause_id": "NFCRM-1:2025-\u00a76.13",
+      "clause_description": "Make risk treatment decision (accepting, sharing, mitigating, or avoiding) and define related treatment plans",
+      "phase": "treatment",
+      "standard": "NFCRM-1:2025",
+      "provenance_source": "NFCRM-1:2025",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "NFCRM-6-14",
+      "type": "NFCRMControl",
+      "clause_id": "NFCRM-1:2025-\u00a76.14",
+      "clause_description": "Prioritize treatment plans",
+      "phase": "treatment",
+      "standard": "NFCRM-1:2025",
+      "provenance_source": "NFCRM-1:2025",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "NFCRM-6-15",
+      "type": "NFCRMControl",
+      "clause_id": "NFCRM-1:2025-\u00a76.15",
+      "clause_description": "Execute treatment plans",
+      "phase": "treatment",
+      "standard": "NFCRM-1:2025",
+      "provenance_source": "NFCRM-1:2025",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "NFCRM-6-16",
+      "type": "NFCRMControl",
+      "clause_id": "NFCRM-1:2025-\u00a76.16",
+      "clause_description": "Update cybersecurity risk register to include treatment plans and residual risks",
+      "phase": "treatment",
+      "standard": "NFCRM-1:2025",
+      "provenance_source": "NFCRM-1:2025",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "NFCRM-6-17",
+      "type": "NFCRMControl",
+      "clause_id": "NFCRM-1:2025-\u00a76.17",
+      "clause_description": "Develop cybersecurity risk management reports",
+      "phase": "monitoring",
+      "standard": "NFCRM-1:2025",
+      "provenance_source": "NFCRM-1:2025",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "NFCRM-6-18",
+      "type": "NFCRMControl",
+      "clause_id": "NFCRM-1:2025-\u00a76.18",
+      "clause_description": "Establish statistical data collection criteria for risk monitoring",
+      "phase": "monitoring",
+      "standard": "NFCRM-1:2025",
+      "provenance_source": "NFCRM-1:2025",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "NFCRM-6-19",
+      "type": "NFCRMControl",
+      "clause_id": "NFCRM-1:2025-\u00a76.19",
+      "clause_description": "Monitor treatment plan execution periodically and issue related reports",
+      "phase": "monitoring",
+      "standard": "NFCRM-1:2025",
+      "provenance_source": "NFCRM-1:2025",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "NFCRM-6-20",
+      "type": "NFCRMControl",
+      "clause_id": "NFCRM-1:2025-\u00a76.20",
+      "clause_description": "Re-execute risk management methodology periodically, or per NCA guidance, or upon change in: treatment plans, potential threats, expected scenarios, control implementation status, or digital infrastructure",
+      "phase": "monitoring",
+      "standard": "NFCRM-1:2025",
+      "provenance_source": "NFCRM-1:2025",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "RISK-BruteForce",
+      "type": "RiskCase",
+      "attack_type": "BruteForce",
+      "technique_id": "T1110",
+      "nfcrm_clause": "NFCRM-1:2025-\u00a76.7",
+      "impact": 5,
+      "likelihood": 3,
+      "risk_score": 15,
+      "risk_level": "High",
+      "confidence": 1.0,
+      "confidence_basis": "deterministic rule derivation",
+      "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "RISK-FTP-BruteForce",
+      "type": "RiskCase",
+      "attack_type": "FTP-BruteForce",
+      "technique_id": "T1110.001",
+      "nfcrm_clause": "NFCRM-1:2025-\u00a76.7",
+      "impact": 5,
+      "likelihood": 3,
+      "risk_score": 15,
+      "risk_level": "High",
+      "confidence": 1.0,
+      "confidence_basis": "deterministic rule derivation",
+      "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "RISK-SSH-BruteForce",
+      "type": "RiskCase",
+      "attack_type": "SSH-BruteForce",
+      "technique_id": "T1110.001",
+      "nfcrm_clause": "NFCRM-1:2025-\u00a76.7",
+      "impact": 5,
+      "likelihood": 3,
+      "risk_score": 15,
+      "risk_level": "High",
+      "confidence": 1.0,
+      "confidence_basis": "deterministic rule derivation",
+      "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "RISK-DoS",
+      "type": "RiskCase",
+      "attack_type": "DoS",
+      "technique_id": "T1499",
+      "nfcrm_clause": "NFCRM-1:2025-\u00a76.5",
+      "impact": 5,
+      "likelihood": 3,
+      "risk_score": 15,
+      "risk_level": "High",
+      "confidence": 1.0,
+      "confidence_basis": "deterministic rule derivation",
+      "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "RISK-DDoS",
+      "type": "RiskCase",
+      "attack_type": "DDoS",
+      "technique_id": "T1498",
+      "nfcrm_clause": "NFCRM-1:2025-\u00a76.5",
+      "impact": 5,
+      "likelihood": 3,
+      "risk_score": 15,
+      "risk_level": "High",
+      "confidence": 1.0,
+      "confidence_basis": "deterministic rule derivation",
+      "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "RISK-Heartbleed",
+      "type": "RiskCase",
+      "attack_type": "Heartbleed",
+      "technique_id": "T1555",
+      "nfcrm_clause": "NFCRM-1:2025-\u00a76.4",
+      "impact": 5,
+      "likelihood": 3,
+      "risk_score": 15,
+      "risk_level": "High",
+      "confidence": 1.0,
+      "confidence_basis": "deterministic rule derivation",
+      "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "RISK-WebAttack",
+      "type": "RiskCase",
+      "attack_type": "WebAttack",
+      "technique_id": "T1190",
+      "nfcrm_clause": "NFCRM-1:2025-\u00a76.4",
+      "impact": 5,
+      "likelihood": 3,
+      "risk_score": 15,
+      "risk_level": "High",
+      "confidence": 1.0,
+      "confidence_basis": "deterministic rule derivation",
+      "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "RISK-Infiltration",
+      "type": "RiskCase",
+      "attack_type": "Infiltration",
+      "technique_id": "T1566.001",
+      "nfcrm_clause": "NFCRM-1:2025-\u00a76.6",
+      "impact": 4,
+      "likelihood": 3,
+      "risk_score": 12,
+      "risk_level": "Medium",
+      "confidence": 1.0,
+      "confidence_basis": "deterministic rule derivation",
+      "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    },
+    {
+      "id": "RISK-Bot",
+      "type": "RiskCase",
+      "attack_type": "Bot",
+      "technique_id": "T1071.001",
+      "nfcrm_clause": "NFCRM-1:2025-\u00a76.5",
+      "impact": 5,
+      "likelihood": 3,
+      "risk_score": 15,
+      "risk_level": "High",
+      "confidence": 1.0,
+      "confidence_basis": "deterministic rule derivation",
+      "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
+      "provenance_timestamp": "2026-08-06T02:16:33"
+    }
+  ],
+  "edges": [
+    {
+      "source": "SRV-001",
+      "target": "SW-vsftpd-2.3.4",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SW-vsftpd-2.3.4",
+      "target": "CVE-2011-2523",
+      "relation": "AFFECTED_BY_CVE"
+    },
+    {
+      "source": "SRV-001",
+      "target": "CVE-2011-2523",
+      "relation": "EXPOSED_TO_CVE"
+    },
+    {
+      "source": "SRV-002",
+      "target": "SW-OpenSSH-4.7p1 Debian 8ubuntu1",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SW-OpenSSH-4.7p1 Debian 8ubuntu1",
+      "target": "CVE-2008-0166",
+      "relation": "AFFECTED_BY_CVE"
+    },
+    {
+      "source": "SRV-002",
+      "target": "CVE-2008-0166",
+      "relation": "EXPOSED_TO_CVE"
+    },
+    {
+      "source": "SRV-003",
+      "target": "SW-Linux_telnetd-netkit",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SW-Linux_telnetd-netkit",
+      "target": "CVE-2001-0554",
+      "relation": "AFFECTED_BY_CVE"
+    },
+    {
+      "source": "SRV-003",
+      "target": "CVE-2001-0554",
+      "relation": "EXPOSED_TO_CVE"
+    },
+    {
+      "source": "SRV-004",
+      "target": "SW-Postfix_SMTP-2.5.1",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SRV-005",
+      "target": "SW-ISC_BIND-9.4.2",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SW-ISC_BIND-9.4.2",
+      "target": "CVE-2009-0696",
+      "relation": "AFFECTED_BY_CVE"
+    },
+    {
+      "source": "SRV-005",
+      "target": "CVE-2009-0696",
+      "relation": "EXPOSED_TO_CVE"
+    },
+    {
+      "source": "SRV-006",
+      "target": "SW-Apache_httpd-2.2.8",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SW-Apache_httpd-2.2.8",
+      "target": "CVE-2007-6750",
+      "relation": "AFFECTED_BY_CVE"
+    },
+    {
+      "source": "SRV-006",
+      "target": "CVE-2007-6750",
+      "relation": "EXPOSED_TO_CVE"
+    },
+    {
+      "source": "SW-Apache_httpd-2.2.8",
+      "target": "CVE-2011-3192",
+      "relation": "AFFECTED_BY_CVE"
+    },
+    {
+      "source": "SRV-006",
+      "target": "CVE-2011-3192",
+      "relation": "EXPOSED_TO_CVE"
+    },
+    {
+      "source": "SRV-007",
+      "target": "SW-PHP-5.2.4",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SW-PHP-5.2.4",
+      "target": "CVE-2012-1823",
+      "relation": "AFFECTED_BY_CVE"
+    },
+    {
+      "source": "SRV-007",
+      "target": "CVE-2012-1823",
+      "relation": "EXPOSED_TO_CVE"
+    },
+    {
+      "source": "SW-PHP-5.2.4",
+      "target": "CVE-2012-2311",
+      "relation": "AFFECTED_BY_CVE"
+    },
+    {
+      "source": "SRV-007",
+      "target": "CVE-2012-2311",
+      "relation": "EXPOSED_TO_CVE"
+    },
+    {
+      "source": "SRV-008",
+      "target": "SW-DVWA_(Damn_Vulnerable_Web_Application)-1.0.7",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SRV-009",
+      "target": "SW-OWASP_Mutillidae_II-2.1.19",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SRV-010",
+      "target": "SW-phpMyAdmin-2.11.x",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SW-phpMyAdmin-2.11.x",
+      "target": "CVE-2009-1151",
+      "relation": "AFFECTED_BY_CVE"
+    },
+    {
+      "source": "SRV-010",
+      "target": "CVE-2009-1151",
+      "relation": "EXPOSED_TO_CVE"
+    },
+    {
+      "source": "SRV-011",
+      "target": "SW-TWiki-4.2.4",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SW-TWiki-4.2.4",
+      "target": "CVE-2008-5305",
+      "relation": "AFFECTED_BY_CVE"
+    },
+    {
+      "source": "SRV-011",
+      "target": "CVE-2008-5305",
+      "relation": "EXPOSED_TO_CVE"
+    },
+    {
+      "source": "SRV-012",
+      "target": "SW-TikiWiki_CMS-1.9.5",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SW-TikiWiki_CMS-1.9.5",
+      "target": "CVE-2007-5423",
+      "relation": "AFFECTED_BY_CVE"
+    },
+    {
+      "source": "SRV-012",
+      "target": "CVE-2007-5423",
+      "relation": "EXPOSED_TO_CVE"
+    },
+    {
+      "source": "SRV-013",
+      "target": "SW-rpcbind-RPC #100000",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SRV-014",
+      "target": "SW-Samba-3.0.20-Debian",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SW-Samba-3.0.20-Debian",
+      "target": "CVE-2007-2447",
+      "relation": "AFFECTED_BY_CVE"
+    },
+    {
+      "source": "SRV-014",
+      "target": "CVE-2007-2447",
+      "relation": "EXPOSED_TO_CVE"
+    },
+    {
+      "source": "SRV-015",
+      "target": "SW-netkit_r-services_(rexec/rlogin/rsh)-0.17",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SW-netkit_r-services_(rexec/rlogin/rsh)-0.17",
+      "target": "CVE-1999-0651",
+      "relation": "AFFECTED_BY_CVE"
+    },
+    {
+      "source": "SRV-015",
+      "target": "CVE-1999-0651",
+      "relation": "EXPOSED_TO_CVE"
+    },
+    {
+      "source": "SRV-016",
+      "target": "SW-Java_RMI_Registry-GNU Classpath grmiregistry",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SW-Java_RMI_Registry-GNU Classpath grmiregistry",
+      "target": "CVE-2011-3556",
+      "relation": "AFFECTED_BY_CVE"
+    },
+    {
+      "source": "SRV-016",
+      "target": "CVE-2011-3556",
+      "relation": "EXPOSED_TO_CVE"
+    },
+    {
+      "source": "SRV-017",
+      "target": "SW-ingreslock_root_backdoor-intentional",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SRV-018",
+      "target": "SW-NFS-v2-v4",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SW-NFS-v2-v4",
+      "target": "CVE-1999-0170",
+      "relation": "AFFECTED_BY_CVE"
+    },
+    {
+      "source": "SRV-018",
+      "target": "CVE-1999-0170",
+      "relation": "EXPOSED_TO_CVE"
+    },
+    {
+      "source": "SRV-019",
+      "target": "SW-ProFTPD-1.3.1",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SW-ProFTPD-1.3.1",
+      "target": "CVE-2010-4221",
+      "relation": "AFFECTED_BY_CVE"
+    },
+    {
+      "source": "SRV-019",
+      "target": "CVE-2010-4221",
+      "relation": "EXPOSED_TO_CVE"
+    },
+    {
+      "source": "SRV-020",
+      "target": "SW-MySQL-5.0.51a-3ubuntu5",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SW-MySQL-5.0.51a-3ubuntu5",
+      "target": "CVE-2008-0226",
+      "relation": "AFFECTED_BY_CVE"
+    },
+    {
+      "source": "SRV-020",
+      "target": "CVE-2008-0226",
+      "relation": "EXPOSED_TO_CVE"
+    },
+    {
+      "source": "SRV-021",
+      "target": "SW-distccd-v1 (GCC 4.2.4)",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SW-distccd-v1 (GCC 4.2.4)",
+      "target": "CVE-2004-2687",
+      "relation": "AFFECTED_BY_CVE"
+    },
+    {
+      "source": "SRV-021",
+      "target": "CVE-2004-2687",
+      "relation": "EXPOSED_TO_CVE"
+    },
+    {
+      "source": "SRV-022",
+      "target": "SW-PostgreSQL-8.3.0-8.3.7",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SW-PostgreSQL-8.3.0-8.3.7",
+      "target": "CVE-2013-1904",
+      "relation": "AFFECTED_BY_CVE"
+    },
+    {
+      "source": "SRV-022",
+      "target": "CVE-2013-1904",
+      "relation": "EXPOSED_TO_CVE"
+    },
+    {
+      "source": "SRV-023",
+      "target": "SW-VNC-Protocol 3.3",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SW-VNC-Protocol 3.3",
+      "target": "CVE-2006-2369",
+      "relation": "AFFECTED_BY_CVE"
+    },
+    {
+      "source": "SRV-023",
+      "target": "CVE-2006-2369",
+      "relation": "EXPOSED_TO_CVE"
+    },
+    {
+      "source": "SRV-024",
+      "target": "SW-X11-Xorg 7.3",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SW-X11-Xorg 7.3",
+      "target": "CVE-1999-0526",
+      "relation": "AFFECTED_BY_CVE"
+    },
+    {
+      "source": "SRV-024",
+      "target": "CVE-1999-0526",
+      "relation": "EXPOSED_TO_CVE"
+    },
+    {
+      "source": "SRV-025",
+      "target": "SW-UnrealIRCd-3.2.8.1",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SW-UnrealIRCd-3.2.8.1",
+      "target": "CVE-2010-2075",
+      "relation": "AFFECTED_BY_CVE"
+    },
+    {
+      "source": "SRV-025",
+      "target": "CVE-2010-2075",
+      "relation": "EXPOSED_TO_CVE"
+    },
+    {
+      "source": "SRV-026",
+      "target": "SW-Apache_Tomcat-5.5 (AJP/1.3 on port 8009)",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SW-Apache_Tomcat-5.5 (AJP/1.3 on port 8009)",
+      "target": "CVE-2009-0580",
+      "relation": "AFFECTED_BY_CVE"
+    },
+    {
+      "source": "SRV-026",
+      "target": "CVE-2009-0580",
+      "relation": "EXPOSED_TO_CVE"
+    },
+    {
+      "source": "SRV-027",
+      "target": "SW-Ruby_DRb_(Distributed_Ruby)-1.8",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SW-Ruby_DRb_(Distributed_Ruby)-1.8",
+      "target": "CVE-2011-5330",
+      "relation": "AFFECTED_BY_CVE"
+    },
+    {
+      "source": "SRV-027",
+      "target": "CVE-2011-5330",
+      "relation": "EXPOSED_TO_CVE"
+    },
+    {
+      "source": "SRV-028",
+      "target": "SW-Apache_httpd-2.4.18 (Ubuntu 16.04 default, 5s keep-alive)",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SW-Apache_httpd-2.4.18 (Ubuntu 16.04 default, 5s keep-alive)",
+      "target": "CVE-2017-7679",
+      "relation": "AFFECTED_BY_CVE"
+    },
+    {
+      "source": "SRV-028",
+      "target": "CVE-2017-7679",
+      "relation": "EXPOSED_TO_CVE"
+    },
+    {
+      "source": "SRV-029",
+      "target": "SW-OpenSSL-1.0.1f",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SW-OpenSSL-1.0.1f",
+      "target": "CVE-2014-0160",
+      "relation": "AFFECTED_BY_CVE"
+    },
+    {
+      "source": "SRV-029",
+      "target": "CVE-2014-0160",
+      "relation": "EXPOSED_TO_CVE"
+    },
+    {
+      "source": "SRV-030",
+      "target": "SW-Adobe_Acrobat_Reader-9.0",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SW-Adobe_Acrobat_Reader-9.0",
+      "target": "CVE-2010-0188",
+      "relation": "AFFECTED_BY_CVE"
+    },
+    {
+      "source": "SRV-030",
+      "target": "CVE-2010-0188",
+      "relation": "EXPOSED_TO_CVE"
+    },
+    {
+      "source": "SRV-032",
+      "target": "SW-Windows_SMBv1-Windows Server 2012 R2",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SW-Windows_SMBv1-Windows Server 2012 R2",
+      "target": "CVE-2017-0144",
+      "relation": "AFFECTED_BY_CVE"
+    },
+    {
+      "source": "SRV-032",
+      "target": "CVE-2017-0144",
+      "relation": "EXPOSED_TO_CVE"
+    },
+    {
+      "source": "SRV-032",
+      "target": "SW-IIS-8.5",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SRV-033",
+      "target": "SW-Windows_SMBv1-Windows Server 2016",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "SW-Windows_SMBv1-Windows Server 2016",
+      "target": "CVE-2017-0144",
+      "relation": "AFFECTED_BY_CVE"
+    },
+    {
+      "source": "SRV-033",
+      "target": "CVE-2017-0144",
+      "relation": "EXPOSED_TO_CVE"
+    },
+    {
+      "source": "SRV-033",
+      "target": "SW-IIS-10.0",
+      "relation": "HAS_SOFTWARE"
+    },
+    {
+      "source": "T1110",
+      "target": "SRV-001",
+      "relation": "TARGETS_ASSET",
+      "attack_type": "BruteForce"
+    },
+    {
+      "source": "T1110",
+      "target": "SRV-002",
+      "relation": "TARGETS_ASSET",
+      "attack_type": "BruteForce"
+    },
+    {
+      "source": "T1110.001",
+      "target": "SRV-001",
+      "relation": "TARGETS_ASSET",
+      "attack_type": "FTP-BruteForce"
+    },
+    {
+      "source": "T1110.001",
+      "target": "SRV-002",
+      "relation": "TARGETS_ASSET",
+      "attack_type": "SSH-BruteForce"
+    },
+    {
+      "source": "T1499",
+      "target": "SRV-028",
+      "relation": "TARGETS_ASSET",
+      "attack_type": "DoS"
+    },
+    {
+      "source": "T1498",
+      "target": "SRV-028",
+      "relation": "TARGETS_ASSET",
+      "attack_type": "DDoS"
+    },
+    {
+      "source": "T1555",
+      "target": "SRV-029",
+      "relation": "TARGETS_ASSET",
+      "attack_type": "Heartbleed"
+    },
+    {
+      "source": "T1190",
+      "target": "SRV-007",
+      "relation": "TARGETS_ASSET",
+      "attack_type": "WebAttack"
+    },
+    {
+      "source": "T1190",
+      "target": "SRV-008",
+      "relation": "TARGETS_ASSET",
+      "attack_type": "WebAttack"
+    },
+    {
+      "source": "T1566.001",
+      "target": "SRV-030",
+      "relation": "TARGETS_ASSET",
+      "attack_type": "Infiltration"
+    },
+    {
+      "source": "T1566.001",
+      "target": "SRV-031",
+      "relation": "TARGETS_ASSET",
+      "attack_type": "Infiltration"
+    },
+    {
+      "source": "T1071.001",
+      "target": "SRV-032",
+      "relation": "TARGETS_ASSET",
+      "attack_type": "Bot"
+    },
+    {
+      "source": "T1071.001",
+      "target": "SRV-033",
+      "relation": "TARGETS_ASSET",
+      "attack_type": "Bot"
+    },
+    {
+      "source": "RISK-BruteForce",
+      "target": "SRV-001",
+      "relation": "AFFECTS_ASSET"
+    },
+    {
+      "source": "RISK-BruteForce",
+      "target": "SRV-002",
+      "relation": "AFFECTS_ASSET"
+    },
+    {
+      "source": "RISK-BruteForce",
+      "target": "T1110",
+      "relation": "USES_TECHNIQUE"
+    },
+    {
+      "source": "RISK-BruteForce",
+      "target": "NFCRM-6-7",
+      "relation": "MITIGATED_BY"
+    },
+    {
+      "source": "CVE-2011-2523",
+      "target": "RISK-BruteForce",
+      "relation": "RELATES_TO_RISK"
+    },
+    {
+      "source": "CVE-2008-0166",
+      "target": "RISK-BruteForce",
+      "relation": "RELATES_TO_RISK"
+    },
+    {
+      "source": "RISK-FTP-BruteForce",
+      "target": "SRV-001",
+      "relation": "AFFECTS_ASSET"
+    },
+    {
+      "source": "RISK-FTP-BruteForce",
+      "target": "T1110.001",
+      "relation": "USES_TECHNIQUE"
+    },
+    {
+      "source": "RISK-FTP-BruteForce",
+      "target": "NFCRM-6-7",
+      "relation": "MITIGATED_BY"
+    },
+    {
+      "source": "CVE-2011-2523",
+      "target": "RISK-FTP-BruteForce",
+      "relation": "RELATES_TO_RISK"
+    },
+    {
+      "source": "RISK-SSH-BruteForce",
+      "target": "SRV-002",
+      "relation": "AFFECTS_ASSET"
+    },
+    {
+      "source": "RISK-SSH-BruteForce",
+      "target": "T1110.001",
+      "relation": "USES_TECHNIQUE"
+    },
+    {
+      "source": "RISK-SSH-BruteForce",
+      "target": "NFCRM-6-7",
+      "relation": "MITIGATED_BY"
+    },
+    {
+      "source": "CVE-2008-0166",
+      "target": "RISK-SSH-BruteForce",
+      "relation": "RELATES_TO_RISK"
+    },
+    {
+      "source": "RISK-DoS",
+      "target": "SRV-028",
+      "relation": "AFFECTS_ASSET"
+    },
+    {
+      "source": "RISK-DoS",
+      "target": "T1499",
+      "relation": "USES_TECHNIQUE"
+    },
+    {
+      "source": "RISK-DoS",
+      "target": "NFCRM-6-5",
+      "relation": "MITIGATED_BY"
+    },
+    {
+      "source": "CVE-2017-7679",
+      "target": "RISK-DoS",
+      "relation": "RELATES_TO_RISK"
+    },
+    {
+      "source": "RISK-DDoS",
+      "target": "SRV-028",
+      "relation": "AFFECTS_ASSET"
+    },
+    {
+      "source": "RISK-DDoS",
+      "target": "T1498",
+      "relation": "USES_TECHNIQUE"
+    },
+    {
+      "source": "RISK-DDoS",
+      "target": "NFCRM-6-5",
+      "relation": "MITIGATED_BY"
+    },
+    {
+      "source": "CVE-2017-7679",
+      "target": "RISK-DDoS",
+      "relation": "RELATES_TO_RISK"
+    },
+    {
+      "source": "RISK-Heartbleed",
+      "target": "SRV-029",
+      "relation": "AFFECTS_ASSET"
+    },
+    {
+      "source": "RISK-Heartbleed",
+      "target": "T1555",
+      "relation": "USES_TECHNIQUE"
+    },
+    {
+      "source": "RISK-Heartbleed",
+      "target": "NFCRM-6-4",
+      "relation": "MITIGATED_BY"
+    },
+    {
+      "source": "CVE-2014-0160",
+      "target": "RISK-Heartbleed",
+      "relation": "RELATES_TO_RISK"
+    },
+    {
+      "source": "RISK-WebAttack",
+      "target": "SRV-007",
+      "relation": "AFFECTS_ASSET"
+    },
+    {
+      "source": "RISK-WebAttack",
+      "target": "SRV-008",
+      "relation": "AFFECTS_ASSET"
+    },
+    {
+      "source": "RISK-WebAttack",
+      "target": "T1190",
+      "relation": "USES_TECHNIQUE"
+    },
+    {
+      "source": "RISK-WebAttack",
+      "target": "NFCRM-6-4",
+      "relation": "MITIGATED_BY"
+    },
+    {
+      "source": "CVE-2012-1823",
+      "target": "RISK-WebAttack",
+      "relation": "RELATES_TO_RISK"
+    },
+    {
+      "source": "CVE-2012-2311",
+      "target": "RISK-WebAttack",
+      "relation": "RELATES_TO_RISK"
+    },
+    {
+      "source": "RISK-Infiltration",
+      "target": "SRV-030",
+      "relation": "AFFECTS_ASSET"
+    },
+    {
+      "source": "RISK-Infiltration",
+      "target": "SRV-031",
+      "relation": "AFFECTS_ASSET"
+    },
+    {
+      "source": "RISK-Infiltration",
+      "target": "T1566.001",
+      "relation": "USES_TECHNIQUE"
+    },
+    {
+      "source": "RISK-Infiltration",
+      "target": "NFCRM-6-6",
+      "relation": "MITIGATED_BY"
+    },
+    {
+      "source": "CVE-2010-0188",
+      "target": "RISK-Infiltration",
+      "relation": "RELATES_TO_RISK"
+    },
+    {
+      "source": "RISK-Bot",
+      "target": "SRV-032",
+      "relation": "AFFECTS_ASSET"
+    },
+    {
+      "source": "RISK-Bot",
+      "target": "SRV-033",
+      "relation": "AFFECTS_ASSET"
+    },
+    {
+      "source": "RISK-Bot",
+      "target": "T1071.001",
+      "relation": "USES_TECHNIQUE"
+    },
+    {
+      "source": "RISK-Bot",
+      "target": "NFCRM-6-5",
+      "relation": "MITIGATED_BY"
+    },
+    {
+      "source": "CVE-2017-0144",
+      "target": "RISK-Bot",
+      "relation": "RELATES_TO_RISK"
+    },
+    {
+      "source": "CVE-2017-0144",
+      "target": "RISK-Bot",
+      "relation": "RELATES_TO_RISK"
+    }
+  ]
+}

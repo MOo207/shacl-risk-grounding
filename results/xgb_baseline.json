@@ -1,0 +1,203 @@
+{
+  "model_type": "XGBoost",
+  "dataset": "CSE-CIC-IDS2018",
+  "data_source": "data/processed/cleaned_dataset.csv",
+  "hyperparameters": {
+    "max_depth": 6,
+    "learning_rate": 0.1,
+    "n_estimators": 500,
+    "random_state": 42
+  },
+  "split_type": "chronological_70_15_15",
+  "features_used": 77,
+  "label_classes": [
+    "Benign",
+    "BruteForce",
+    "DDoS",
+    "DoS",
+    "Infiltration"
+  ],
+  "val": {
+    "split": "val",
+    "accuracy": 0.9623015873015873,
+    "f1_macro": 0.8506502479679335,
+    "f1_weighted": 0.9549235598626032,
+    "precision_macro": 0.9275709953580273,
+    "recall_macro": 0.8258209953415433,
+    "confusion_matrix": [
+      [
+        587,
+        0,
+        0,
+        1,
+        6
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        433,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        412,
+        0
+      ],
+      [
+        48,
+        0,
+        0,
+        2,
+        23
+      ]
+    ],
+    "per_class_report": {
+      "Benign": {
+        "precision": 0.9244094488188976,
+        "recall": 0.9882154882154882,
+        "f1-score": 0.9552481692432873,
+        "support": 594.0
+      },
+      "BruteForce": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+      },
+      "DDoS": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 433.0
+      },
+      "DoS": {
+        "precision": 0.9927710843373494,
+        "recall": 1.0,
+        "f1-score": 0.9963724304715841,
+        "support": 412.0
+      },
+      "Infiltration": {
+        "precision": 0.7931034482758621,
+        "recall": 0.3150684931506849,
+        "f1-score": 0.45098039215686275,
+        "support": 73.0
+      },
+      "accuracy": 0.9623015873015873,
+      "macro avg": {
+        "precision": 0.9275709953580273,
+        "recall": 0.8258209953415433,
+        "f1-score": 0.8506502479679335,
+        "support": 1512.0
+      },
+      "weighted avg": {
+        "precision": 0.9583448750459994,
+        "recall": 0.9623015873015873,
+        "f1-score": 0.9549235598626032,
+        "support": 1512.0
+      }
+    },
+    "samples": 1512
+  },
+  "test": {
+    "split": "test",
+    "accuracy": 0.958994708994709,
+    "f1_macro": 0.6924633762243134,
+    "f1_weighted": 0.9529656592722657,
+    "precision_macro": 0.7328792638124709,
+    "recall_macro": 0.6744773519163763,
+    "confusion_matrix": [
+      [
+        605,
+        0,
+        0,
+        0,
+        11
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        404,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        409,
+        0
+      ],
+      [
+        48,
+        0,
+        0,
+        2,
+        32
+      ]
+    ],
+    "per_class_report": {
+      "Benign": {
+        "precision": 0.9250764525993884,
+        "recall": 0.9821428571428571,
+        "f1-score": 0.952755905511811,
+        "support": 616.0
+      },
+      "BruteForce": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 1.0
+      },
+      "DDoS": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 404.0
+      },
+      "DoS": {
+        "precision": 0.9951338199513382,
+        "recall": 1.0,
+        "f1-score": 0.9975609756097561,
+        "support": 409.0
+      },
+      "Infiltration": {
+        "precision": 0.7441860465116279,
+        "recall": 0.3902439024390244,
+        "f1-score": 0.512,
+        "support": 82.0
+      },
+      "accuracy": 0.958994708994709,
+      "macro avg": {
+        "precision": 0.7328792638124709,
+        "recall": 0.6744773519163763,
+        "f1-score": 0.6924633762243134,
+        "support": 1512.0
+      },
+      "weighted avg": {
+        "precision": 0.9536243935021653,
+        "recall": 0.958994708994709,
+        "f1-score": 0.9529656592722657,
+        "support": 1512.0
+      }
+    },
+    "samples": 1512
+  },
+  "timestamp": "2026-03-15T12:08:23.499053"
+}

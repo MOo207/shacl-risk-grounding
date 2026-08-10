@@ -1,0 +1,177 @@
+{
+  "description": "3-run variance summary for the permuted-/ablated-CVE control (headline\nsafety-effect-survives-CVE-ablation result). Companion to\nscripts/summarize_nslkdd_replicates.py, which already covers the two primary\ntri-stage arms; this closes the same gap for the CVE-ablation arms, which\npreviously had n=2 replicates only (run3 added to match convention).\n\nRun 1: results/nslkdd_permuted_cve_control.json\nRun 2: results/nslkdd_permuted_cve_control_run2.json\nRun 3: results/nslkdd_permuted_cve_control_run3.json",
+  "n_runs": 3,
+  "files": [
+    "results\\nslkdd_permuted_cve_control.json",
+    "results\\nslkdd_permuted_cve_control_run2.json",
+    "results\\nslkdd_permuted_cve_control_run3.json"
+  ],
+  "arms": {
+    "no_cve": {
+      "reconciled": {
+        "exact_pct": {
+          "runs": [
+            49.0,
+            47.0,
+            54.0
+          ],
+          "mean": 50.0,
+          "sd": 3.605551275463989,
+          "min": 47.0,
+          "max": 54.0
+        },
+        "under_escalation_pct": {
+          "runs": [
+            36.0,
+            34.0,
+            31.0
+          ],
+          "mean": 33.666666666666664,
+          "sd": 2.516611478423583,
+          "min": 31.0,
+          "max": 36.0
+        },
+        "over_escalation_pct": {
+          "runs": [
+            15.0,
+            19.0,
+            15.0
+          ],
+          "mean": 16.333333333333332,
+          "sd": 2.309401076758503,
+          "min": 15.0,
+          "max": 19.0
+        },
+        "severe_recall_pct": {
+          "runs": [
+            73.46938775510205,
+            75.51020408163265,
+            69.38775510204081
+          ],
+          "mean": 72.78911564625851,
+          "sd": 3.1173984319427497,
+          "min": 69.38775510204081,
+          "max": 75.51020408163265
+        }
+      },
+      "mcnemar_vs_xgb": {
+        "b": {
+          "runs": [
+            12,
+            14,
+            17
+          ],
+          "mean": 14.333333333333334,
+          "sd": 2.516611478423583,
+          "min": 12,
+          "max": 17
+        },
+        "c": {
+          "runs": [
+            0,
+            0,
+            0
+          ],
+          "mean": 0,
+          "sd": 0.0,
+          "min": 0,
+          "max": 0
+        },
+        "p_one_sided": {
+          "runs": [
+            0.000244140625,
+            6.103515625e-05,
+            7.62939453125e-06
+          ],
+          "mean": 0.00010426839192708333,
+          "sd": 0.00012404122312680257,
+          "min": 7.62939453125e-06,
+          "max": 0.000244140625
+        }
+      }
+    },
+    "permuted": {
+      "reconciled": {
+        "exact_pct": {
+          "runs": [
+            69.0,
+            71.0,
+            63.0
+          ],
+          "mean": 67.66666666666667,
+          "sd": 4.163331998932265,
+          "min": 63.0,
+          "max": 71.0
+        },
+        "under_escalation_pct": {
+          "runs": [
+            4.0,
+            2.0,
+            6.0
+          ],
+          "mean": 4.0,
+          "sd": 2.0,
+          "min": 2.0,
+          "max": 6.0
+        },
+        "over_escalation_pct": {
+          "runs": [
+            27.0,
+            27.0,
+            31.0
+          ],
+          "mean": 28.333333333333332,
+          "sd": 2.309401076758503,
+          "min": 27.0,
+          "max": 31.0
+        },
+        "severe_recall_pct": {
+          "runs": [
+            97.95918367346938,
+            100.0,
+            95.91836734693878
+          ],
+          "mean": 97.95918367346938,
+          "sd": 2.04081632653061,
+          "min": 95.91836734693878,
+          "max": 100.0
+        }
+      },
+      "mcnemar_vs_xgb": {
+        "b": {
+          "runs": [
+            44,
+            46,
+            42
+          ],
+          "mean": 44,
+          "sd": 2.0,
+          "min": 42,
+          "max": 46
+        },
+        "c": {
+          "runs": [
+            0,
+            0,
+            0
+          ],
+          "mean": 0,
+          "sd": 0.0,
+          "min": 0,
+          "max": 0
+        },
+        "p_one_sided": {
+          "runs": [
+            5.684341886080802e-14,
+            1.4210854715202004e-14,
+            2.2737367544323206e-13
+          ],
+          "mean": 9.947598300641403e-14,
+          "sd": 1.1279516248228237e-13,
+          "min": 1.4210854715202004e-14,
+          "max": 2.2737367544323206e-13
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+[
+  {
+    "rank": 1,
+    "feature": "Fwd Seg Size Min",
+    "mean_abs_shap": 0.03196323278659946
+  },
+  {
+    "rank": 2,
+    "feature": "Init Fwd Win Byts",
+    "mean_abs_shap": 0.029777631836184152
+  },
+  {
+    "rank": 3,
+    "feature": "Dst Port",
+    "mean_abs_shap": 0.021467389105357008
+  },
+  {
+    "rank": 4,
+    "feature": "Fwd IAT Min",
+    "mean_abs_shap": 0.0191071905376894
+  },
+  {
+    "rank": 5,
+    "feature": "Fwd Header Len",
+    "mean_abs_shap": 0.01651578017433075
+  },
+  {
+    "rank": 6,
+    "feature": "Bwd Pkts/s",
+    "mean_abs_shap": 0.009776258248195675
+  },
+  {
+    "rank": 7,
+    "feature": "Subflow Bwd Pkts",
+    "mean_abs_shap": 0.008917364558426937
+  },
+  {
+    "rank": 8,
+    "feature": "Subflow Fwd Byts",
+    "mean_abs_shap": 0.008096234438912756
+  },
+  {
+    "rank": 9,
+    "feature": "Fwd Seg Size Avg",
+    "mean_abs_shap": 0.008093194120486757
+  },
+  {
+    "rank": 10,
+    "feature": "Fwd Pkt Len Max",
+    "mean_abs_shap": 0.007824793785403773
+  },
+  {
+    "rank": 11,
+    "feature": "Flow IAT Min",
+    "mean_abs_shap": 0.007454623370470802
+  },
+  {
+    "rank": 12,
+    "feature": "Fwd Pkt Len Std",
+    "mean_abs_shap": 0.006912791344517092
+  },
+  {
+    "rank": 13,
+    "feature": "ACK Flag Cnt",
+    "mean_abs_shap": 0.006313753652063118
+  },
+  {
+    "rank": 14,
+    "feature": "TotLen Fwd Pkts",
+    "mean_abs_shap": 0.0061110744554792144
+  },
+  {
+    "rank": 15,
+    "feature": "Fwd Pkt Len Mean",
+    "mean_abs_shap": 0.005997856581217133
+  },
+  {
+    "rank": 16,
+    "feature": "Tot Bwd Pkts",
+    "mean_abs_shap": 0.005640563180637755
+  },
+  {
+    "rank": 17,
+    "feature": "Fwd IAT Max",
+    "mean_abs_shap": 0.005491541449237256
+  },
+  {
+    "rank": 18,
+    "feature": "Fwd IAT Tot",
+    "mean_abs_shap": 0.005221804639049119
+  },
+  {
+    "rank": 19,
+    "feature": "Fwd IAT Mean",
+    "mean_abs_shap": 0.005150737335103262
+  },
+  {
+    "rank": 20,
+    "feature": "RST Flag Cnt",
+    "mean_abs_shap": 0.004985217835896309
+  }
+]

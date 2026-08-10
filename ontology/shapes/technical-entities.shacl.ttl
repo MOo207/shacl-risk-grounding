@@ -1,0 +1,230 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix grc: <https://w3id.org/grc/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+################################################################################
+# SHACL Shapes for Technical Assets
+################################################################################
+
+grc:AssetShape a sh:NodeShape ;
+    sh:targetClass grc:Asset ;
+    sh:property [
+        sh:path grc:assetId ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Asset must have exactly one assetId of type string"
+    ] ;
+    sh:property [
+        sh:path grc:assetName ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Asset must have exactly one assetName of type string"
+    ] ;
+    sh:property [
+        sh:path grc:assetType ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:in ("software" "hardware" "network") ;
+        sh:severity sh:Violation ;
+        sh:message "Asset must have exactly one assetType of type string (software, hardware, or network)"
+    ] ;
+    sh:property [
+        sh:path grc:hasVulnerability ;
+        sh:class grc:Vulnerability ;
+        sh:severity sh:Violation ;
+        sh:message "Asset's hasVulnerability property must reference a Vulnerability"
+    ] ;
+    sh:property [
+        sh:path grc:hasControl ;
+        sh:class grc:Control ;
+        sh:severity sh:Violation ;
+        sh:message "Asset's hasControl property must reference a Control"
+    ] ;
+    sh:property [
+        sh:path grc:provenanceSource ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Asset must have a provenanceSource indicating data origin"
+    ] ;
+    sh:property [
+        sh:path grc:provenanceTimestamp ;
+        sh:datatype xsd:dateTime ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Asset must have a provenanceTimestamp of type dateTime"
+    ] .
+
+grc:SoftwareAssetShape a sh:NodeShape ;
+    sh:targetClass grc:SoftwareAsset ;
+    sh:property [
+        sh:path rdf:type ;
+        sh:hasValue grc:SoftwareAsset ;
+        sh:severity sh:Violation ;
+        sh:message "SoftwareAsset must be typed as grc:SoftwareAsset"
+    ] ;
+    sh:closed true ;
+    # Closure is meant to catch cross-type normalisation bugs (a network-only
+    # property landing on a software asset), not to forbid the properties the
+    # ontology declares for this class. grc:softwareName/grc:softwareVersion
+    # were missing from this list, so every conformant SoftwareAsset violated it.
+    sh:ignoredProperties (rdf:type grc:assetId grc:assetName grc:assetType grc:hasVulnerability grc:hasControl grc:provenanceSource grc:provenanceTimestamp grc:softwareName grc:softwareVersion) .
+
+grc:HardwareAssetShape a sh:NodeShape ;
+    sh:targetClass grc:HardwareAsset ;
+    sh:property [
+        sh:path rdf:type ;
+        sh:hasValue grc:HardwareAsset ;
+        sh:severity sh:Violation ;
+        sh:message "HardwareAsset must be typed as grc:HardwareAsset"
+    ] ;
+    sh:closed true ;
+    sh:ignoredProperties (rdf:type grc:assetId grc:assetName grc:assetType grc:hasVulnerability grc:hasControl grc:provenanceSource grc:provenanceTimestamp grc:hostname grc:ipAddress grc:osName grc:osVersion) .
+
+grc:NetworkAssetShape a sh:NodeShape ;
+    sh:targetClass grc:NetworkAsset ;
+    sh:property [
+        sh:path rdf:type ;
+        sh:hasValue grc:NetworkAsset ;
+        sh:severity sh:Violation ;
+        sh:message "NetworkAsset must be typed as grc:NetworkAsset"
+    ] ;
+    sh:closed true ;
+    sh:ignoredProperties (rdf:type grc:assetId grc:assetName grc:assetType grc:hasVulnerability grc:hasControl grc:provenanceSource grc:provenanceTimestamp grc:ipAddress grc:hostname) .
+
+################################################################################
+# SHACL Shapes for Vulnerabilities
+################################################################################
+
+grc:VulnerabilityShape a sh:NodeShape ;
+    sh:targetClass grc:Vulnerability ;
+    sh:property [
+        sh:path grc:cveId ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:pattern "^CVE-[0-9]{4}-[0-9]+$" ;
+        sh:severity sh:Violation ;
+        sh:message "Vulnerability must have exactly one cveId matching pattern CVE-YYYY-NNNNN"
+    ] ;
+    sh:property [
+        sh:path grc:cweId ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:pattern "^CWE-[0-9]+$" ;
+        sh:severity sh:Violation ;
+        sh:message "Vulnerability must have exactly one cweId matching pattern CWE-NNNN"
+    ] ;
+    sh:property [
+        sh:path grc:cvssScore ;
+        sh:datatype xsd:decimal ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minInclusive 0.0 ;
+        sh:maxInclusive 10.0 ;
+        sh:severity sh:Violation ;
+        sh:message "Vulnerability must have exactly one cvssScore of type decimal between 0.0 and 10.0"
+    ] ;
+    sh:property [
+        sh:path grc:severity ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:in ("low" "medium" "high" "critical") ;
+        sh:severity sh:Violation ;
+        sh:message "Vulnerability must have exactly one severity (low, medium, high, or critical)"
+    ] ;
+    sh:property [
+        sh:path grc:provenanceSource ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Vulnerability must have a provenanceSource (e.g., NVD)"
+    ] ;
+    sh:property [
+        sh:path grc:provenanceTimestamp ;
+        sh:datatype xsd:dateTime ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Vulnerability must have a provenanceTimestamp of type dateTime"
+    ] .
+
+################################################################################
+# SHACL Constraint: Every Vulnerability Must Link to an Asset
+################################################################################
+
+# Target correction: this shape previously declared
+#   sh:targetSubjectsOf grc:hasVulnerability
+# whose subjects are Assets (grc:hasVulnerability has rdfs:domain grc:Asset),
+# while the SPARQL body filters $this a grc:Vulnerability. No focus node could
+# satisfy both, so the constraint never fired -- an instance of the same
+# empty-focus-set failure the namespace defect produced library-wide, surviving
+# inside a single shape. sh:targetClass grc:Vulnerability selects the intended
+# focus nodes.
+grc:VulnerabilityMustLinkToAssetConstraint a sh:NodeShape ;
+    sh:targetClass grc:Vulnerability ;
+    sh:message "Every vulnerability must be linked to at least one asset via hasVulnerability property" ;
+    sh:sparql [ a sh:SPARQLConstraint ; sh:select """
+        PREFIX grc: <https://w3id.org/grc/ontology#>
+        SELECT $this ($this AS ?subject)
+        WHERE {
+            $this a grc:Vulnerability .
+            FILTER NOT EXISTS {
+                ?asset grc:hasVulnerability $this .
+                ?asset a grc:Asset .
+            }
+        }
+    """ ] .
+
+################################################################################
+# SHACL Shape: ATT&CK Technique
+#
+# The ARG's 8 technique nodes previously instantiated no declared class and were
+# consequently the only node type no shape targeted, leaving shape coverage at
+# 130/138. grc:AttackTechnique is declared as of ontology v0.3.0 and this shape
+# gives those nodes a target.
+#
+# Constraints are limited to what the ATT&CK ingest actually carries. Note that,
+# unlike Asset, Vulnerability, Control and RiskCase, technique nodes carry no
+# provenance fields; requiring provenance here would manufacture violations from
+# a constraint the source data was never built to satisfy, so the gap is recorded
+# in the paper's prose rather than asserted as a shape.
+################################################################################
+
+grc:AttackTechniqueShape a sh:NodeShape ;
+    sh:targetClass grc:AttackTechnique ;
+    sh:property [
+        # grc:attackTechniqueId predates grc:AttackTechnique (declared under
+        # grc:Threat, which AttackTechnique now subclasses) -- reused here rather
+        # than declaring a second technique-id property, which an earlier
+        # revision of this shape did (grc:techniqueId), producing exactly the
+        # kind of undisclosed duplicate vocabulary this audit exists to catch.
+        sh:path grc:attackTechniqueId ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:pattern "^T[0-9]{4}(\\.[0-9]{3})?$" ;
+        sh:severity sh:Violation ;
+        sh:message "AttackTechnique must have exactly one attackTechniqueId matching ATT&CK notation TNNNN or TNNNN.NNN"
+    ] ;
+    sh:property [
+        sh:path grc:techniqueName ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "AttackTechnique must have exactly one techniqueName"
+    ] ;
+    sh:property [
+        sh:path grc:tactic ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "AttackTechnique must name at least one ATT&CK tactic"
+    ] .

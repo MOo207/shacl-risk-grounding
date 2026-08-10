@@ -1,0 +1,905 @@
+{
+  "meta": {
+    "description": "Task 15 sensitivity analysis: bound how much of the NSL-KDD flagship safety finding (Tri-stage LLM Haiku vs Pure ML/XGBoost under-escalation McNemar, thesis Table safety-synthesis) survives once cases whose generated NL description names the true attack class or a distinctive named attack are excluded.",
+    "source_test_set": "results/nslkdd_ablation/test_set.json",
+    "source_nl_generator": "scripts/_archive/run_slm_nslkdd_classification.py :: features_to_nl_nslkdd()",
+    "full_set_safety_source": "results/safety_table_haiku.json (NSL-KDD (N=50))",
+    "n_total": 50,
+    "n_leaky": 30,
+    "n_clean": 20,
+    "n_leaky_named_attack": 11,
+    "n_leaky_class_name_only": 19,
+    "tagging_method": "Regex over the actual generated nl_description text stored in test_set.json (the exact string shown to the LLM). A case is tagged leaky only if a matched pattern names the case's TRUE attack class (mismatched/hedge mentions that name the WRONG class are not counted as leaky)."
+  },
+  "leaky_by_true_class": {
+    "Probe": {
+      "n": 10,
+      "leaky": 7
+    },
+    "DoS": {
+      "n": 10,
+      "leaky": 8
+    },
+    "Normal": {
+      "n": 10,
+      "leaky": 0
+    },
+    "U2R": {
+      "n": 10,
+      "leaky": 10
+    },
+    "R2L": {
+      "n": 10,
+      "leaky": 5
+    }
+  },
+  "per_case_tags": [
+    {
+      "case_id": "nsl_000",
+      "true_attack_class": "Probe",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "(Probe)",
+          "names_class": "Probe",
+          "trigger": "literal class-name token '(Probe)'",
+          "category": "class-name"
+        },
+        {
+          "matched_text": "network reconnaissance",
+          "names_class": "Probe",
+          "trigger": "literal class-category phrase 'network reconnaissance'",
+          "category": "class-name"
+        }
+      ]
+    },
+    {
+      "case_id": "nsl_001",
+      "true_attack_class": "Probe",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "(Probe)",
+          "names_class": "Probe",
+          "trigger": "literal class-name token '(Probe)'",
+          "category": "class-name"
+        },
+        {
+          "matched_text": "network reconnaissance",
+          "names_class": "Probe",
+          "trigger": "literal class-category phrase 'network reconnaissance'",
+          "category": "class-name"
+        }
+      ]
+    },
+    {
+      "case_id": "nsl_002",
+      "true_attack_class": "DoS",
+      "leaky": false,
+      "triggers": []
+    },
+    {
+      "case_id": "nsl_003",
+      "true_attack_class": "DoS",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "(DoS)",
+          "names_class": "DoS",
+          "trigger": "literal class-name token '(DoS)'",
+          "category": "class-name"
+        },
+        {
+          "matched_text": "denial-of-service",
+          "names_class": "DoS",
+          "trigger": "literal class-category phrase 'denial-of-service'",
+          "category": "class-name"
+        }
+      ]
+    },
+    {
+      "case_id": "nsl_004",
+      "true_attack_class": "Normal",
+      "leaky": false,
+      "triggers": []
+    },
+    {
+      "case_id": "nsl_005",
+      "true_attack_class": "U2R",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "httptunnel",
+          "names_class": "U2R",
+          "trigger": "distinctive named-attack substring 'httptunnel'",
+          "category": "named-attack"
+        },
+        {
+          "matched_text": "(U2R)",
+          "names_class": "U2R",
+          "trigger": "literal class-name token '(U2R)'",
+          "category": "class-name"
+        },
+        {
+          "matched_text": "user-to-root",
+          "names_class": "U2R",
+          "trigger": "literal class-category phrase 'user-to-root'",
+          "category": "class-name"
+        }
+      ]
+    },
+    {
+      "case_id": "nsl_006",
+      "true_attack_class": "Probe",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "(Probe)",
+          "names_class": "Probe",
+          "trigger": "literal class-name token '(Probe)'",
+          "category": "class-name"
+        },
+        {
+          "matched_text": "network reconnaissance",
+          "names_class": "Probe",
+          "trigger": "literal class-category phrase 'network reconnaissance'",
+          "category": "class-name"
+        }
+      ]
+    },
+    {
+      "case_id": "nsl_007",
+      "true_attack_class": "Normal",
+      "leaky": false,
+      "triggers": []
+    },
+    {
+      "case_id": "nsl_008",
+      "true_attack_class": "Probe",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "(Probe)",
+          "names_class": "Probe",
+          "trigger": "literal class-name token '(Probe)'",
+          "category": "class-name"
+        },
+        {
+          "matched_text": "network reconnaissance",
+          "names_class": "Probe",
+          "trigger": "literal class-category phrase 'network reconnaissance'",
+          "category": "class-name"
+        }
+      ]
+    },
+    {
+      "case_id": "nsl_009",
+      "true_attack_class": "DoS",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "(DoS)",
+          "names_class": "DoS",
+          "trigger": "literal class-name token '(DoS)'",
+          "category": "class-name"
+        },
+        {
+          "matched_text": "denial-of-service",
+          "names_class": "DoS",
+          "trigger": "literal class-category phrase 'denial-of-service'",
+          "category": "class-name"
+        }
+      ]
+    },
+    {
+      "case_id": "nsl_010",
+      "true_attack_class": "R2L",
+      "leaky": false,
+      "triggers": []
+    },
+    {
+      "case_id": "nsl_011",
+      "true_attack_class": "Probe",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "(Probe)",
+          "names_class": "Probe",
+          "trigger": "literal class-name token '(Probe)'",
+          "category": "class-name"
+        },
+        {
+          "matched_text": "network reconnaissance",
+          "names_class": "Probe",
+          "trigger": "literal class-category phrase 'network reconnaissance'",
+          "category": "class-name"
+        }
+      ]
+    },
+    {
+      "case_id": "nsl_012",
+      "true_attack_class": "DoS",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "(DoS)",
+          "names_class": "DoS",
+          "trigger": "literal class-name token '(DoS)'",
+          "category": "class-name"
+        },
+        {
+          "matched_text": "denial-of-service",
+          "names_class": "DoS",
+          "trigger": "literal class-category phrase 'denial-of-service'",
+          "category": "class-name"
+        }
+      ]
+    },
+    {
+      "case_id": "nsl_013",
+      "true_attack_class": "Normal",
+      "leaky": false,
+      "triggers": []
+    },
+    {
+      "case_id": "nsl_014",
+      "true_attack_class": "R2L",
+      "leaky": false,
+      "triggers": []
+    },
+    {
+      "case_id": "nsl_015",
+      "true_attack_class": "R2L",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "(R2L)",
+          "names_class": "R2L",
+          "trigger": "literal class-name token '(R2L)'",
+          "category": "class-name"
+        },
+        {
+          "matched_text": "remote-to-local",
+          "names_class": "R2L",
+          "trigger": "literal class-category phrase 'remote-to-local'",
+          "category": "class-name"
+        }
+      ]
+    },
+    {
+      "case_id": "nsl_016",
+      "true_attack_class": "DoS",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "mailbomb",
+          "names_class": "DoS",
+          "trigger": "distinctive named-attack substring 'mailbomb'",
+          "category": "named-attack"
+        },
+        {
+          "matched_text": "denial-of-service",
+          "names_class": "DoS",
+          "trigger": "literal class-category phrase 'denial-of-service'",
+          "category": "class-name"
+        }
+      ]
+    },
+    {
+      "case_id": "nsl_017",
+      "true_attack_class": "Probe",
+      "leaky": false,
+      "triggers": []
+    },
+    {
+      "case_id": "nsl_018",
+      "true_attack_class": "R2L",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "SNMP community string guessing",
+          "names_class": "R2L",
+          "trigger": "distinctive named-attack phrase 'snmpguess/snmpgetattack (SNMP community string guessing)'",
+          "category": "named-attack"
+        },
+        {
+          "matched_text": "(R2L)",
+          "names_class": "R2L",
+          "trigger": "literal class-name token '(R2L)'",
+          "category": "class-name"
+        },
+        {
+          "matched_text": "remote-to-local",
+          "names_class": "R2L",
+          "trigger": "literal class-category phrase 'remote-to-local'",
+          "category": "class-name"
+        }
+      ]
+    },
+    {
+      "case_id": "nsl_019",
+      "true_attack_class": "Normal",
+      "leaky": false,
+      "triggers": []
+    },
+    {
+      "case_id": "nsl_020",
+      "true_attack_class": "U2R",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "httptunnel",
+          "names_class": "U2R",
+          "trigger": "distinctive named-attack substring 'httptunnel'",
+          "category": "named-attack"
+        },
+        {
+          "matched_text": "(U2R)",
+          "names_class": "U2R",
+          "trigger": "literal class-name token '(U2R)'",
+          "category": "class-name"
+        },
+        {
+          "matched_text": "user-to-root",
+          "names_class": "U2R",
+          "trigger": "literal class-category phrase 'user-to-root'",
+          "category": "class-name"
+        }
+      ]
+    },
+    {
+      "case_id": "nsl_021",
+      "true_attack_class": "DoS",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "(DoS)",
+          "names_class": "DoS",
+          "trigger": "literal class-name token '(DoS)'",
+          "category": "class-name"
+        },
+        {
+          "matched_text": "denial-of-service",
+          "names_class": "DoS",
+          "trigger": "literal class-category phrase 'denial-of-service'",
+          "category": "class-name"
+        }
+      ]
+    },
+    {
+      "case_id": "nsl_022",
+      "true_attack_class": "R2L",
+      "leaky": false,
+      "triggers": []
+    },
+    {
+      "case_id": "nsl_023",
+      "true_attack_class": "U2R",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "httptunnel",
+          "names_class": "U2R",
+          "trigger": "distinctive named-attack substring 'httptunnel'",
+          "category": "named-attack"
+        },
+        {
+          "matched_text": "(U2R)",
+          "names_class": "U2R",
+          "trigger": "literal class-name token '(U2R)'",
+          "category": "class-name"
+        },
+        {
+          "matched_text": "user-to-root",
+          "names_class": "U2R",
+          "trigger": "literal class-category phrase 'user-to-root'",
+          "category": "class-name"
+        }
+      ]
+    },
+    {
+      "case_id": "nsl_024",
+      "true_attack_class": "U2R",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "rootkit installation",
+          "names_class": "U2R",
+          "trigger": "distinctive named-attack phrase 'rootkit installation'",
+          "category": "named-attack"
+        }
+      ]
+    },
+    {
+      "case_id": "nsl_025",
+      "true_attack_class": "R2L",
+      "leaky": false,
+      "triggers": []
+    },
+    {
+      "case_id": "nsl_026",
+      "true_attack_class": "Probe",
+      "leaky": false,
+      "triggers": []
+    },
+    {
+      "case_id": "nsl_027",
+      "true_attack_class": "Probe",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "(Probe)",
+          "names_class": "Probe",
+          "trigger": "literal class-name token '(Probe)'",
+          "category": "class-name"
+        },
+        {
+          "matched_text": "network reconnaissance",
+          "names_class": "Probe",
+          "trigger": "literal class-category phrase 'network reconnaissance'",
+          "category": "class-name"
+        }
+      ]
+    },
+    {
+      "case_id": "nsl_028",
+      "true_attack_class": "Probe",
+      "leaky": false,
+      "triggers": []
+    },
+    {
+      "case_id": "nsl_029",
+      "true_attack_class": "U2R",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "(U2R)",
+          "names_class": "U2R",
+          "trigger": "literal class-name token '(U2R)'",
+          "category": "class-name"
+        },
+        {
+          "matched_text": "user-to-root",
+          "names_class": "U2R",
+          "trigger": "literal class-category phrase 'user-to-root'",
+          "category": "class-name"
+        }
+      ]
+    },
+    {
+      "case_id": "nsl_030",
+      "true_attack_class": "U2R",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "httptunnel",
+          "names_class": "U2R",
+          "trigger": "distinctive named-attack substring 'httptunnel'",
+          "category": "named-attack"
+        },
+        {
+          "matched_text": "(U2R)",
+          "names_class": "U2R",
+          "trigger": "literal class-name token '(U2R)'",
+          "category": "class-name"
+        },
+        {
+          "matched_text": "user-to-root",
+          "names_class": "U2R",
+          "trigger": "literal class-category phrase 'user-to-root'",
+          "category": "class-name"
+        }
+      ]
+    },
+    {
+      "case_id": "nsl_031",
+      "true_attack_class": "R2L",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "SNMP community string guessing",
+          "names_class": "R2L",
+          "trigger": "distinctive named-attack phrase 'snmpguess/snmpgetattack (SNMP community string guessing)'",
+          "category": "named-attack"
+        },
+        {
+          "matched_text": "(R2L)",
+          "names_class": "R2L",
+          "trigger": "literal class-name token '(R2L)'",
+          "category": "class-name"
+        },
+        {
+          "matched_text": "remote-to-local",
+          "names_class": "R2L",
+          "trigger": "literal class-category phrase 'remote-to-local'",
+          "category": "class-name"
+        }
+      ]
+    },
+    {
+      "case_id": "nsl_032",
+      "true_attack_class": "R2L",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "SNMP community string guessing",
+          "names_class": "R2L",
+          "trigger": "distinctive named-attack phrase 'snmpguess/snmpgetattack (SNMP community string guessing)'",
+          "category": "named-attack"
+        },
+        {
+          "matched_text": "(R2L)",
+          "names_class": "R2L",
+          "trigger": "literal class-name token '(R2L)'",
+          "category": "class-name"
+        },
+        {
+          "matched_text": "remote-to-local",
+          "names_class": "R2L",
+          "trigger": "literal class-category phrase 'remote-to-local'",
+          "category": "class-name"
+        }
+      ]
+    },
+    {
+      "case_id": "nsl_033",
+      "true_attack_class": "U2R",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "(U2R)",
+          "names_class": "U2R",
+          "trigger": "literal class-name token '(U2R)'",
+          "category": "class-name"
+        },
+        {
+          "matched_text": "user-to-root",
+          "names_class": "U2R",
+          "trigger": "literal class-category phrase 'user-to-root'",
+          "category": "class-name"
+        }
+      ]
+    },
+    {
+      "case_id": "nsl_034",
+      "true_attack_class": "DoS",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "(DoS)",
+          "names_class": "DoS",
+          "trigger": "literal class-name token '(DoS)'",
+          "category": "class-name"
+        },
+        {
+          "matched_text": "denial-of-service",
+          "names_class": "DoS",
+          "trigger": "literal class-category phrase 'denial-of-service'",
+          "category": "class-name"
+        }
+      ]
+    },
+    {
+      "case_id": "nsl_035",
+      "true_attack_class": "U2R",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "httptunnel",
+          "names_class": "U2R",
+          "trigger": "distinctive named-attack substring 'httptunnel'",
+          "category": "named-attack"
+        },
+        {
+          "matched_text": "(U2R)",
+          "names_class": "U2R",
+          "trigger": "literal class-name token '(U2R)'",
+          "category": "class-name"
+        },
+        {
+          "matched_text": "user-to-root",
+          "names_class": "U2R",
+          "trigger": "literal class-category phrase 'user-to-root'",
+          "category": "class-name"
+        }
+      ]
+    },
+    {
+      "case_id": "nsl_036",
+      "true_attack_class": "U2R",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "(U2R)",
+          "names_class": "U2R",
+          "trigger": "literal class-name token '(U2R)'",
+          "category": "class-name"
+        },
+        {
+          "matched_text": "user-to-root",
+          "names_class": "U2R",
+          "trigger": "literal class-category phrase 'user-to-root'",
+          "category": "class-name"
+        }
+      ]
+    },
+    {
+      "case_id": "nsl_037",
+      "true_attack_class": "Normal",
+      "leaky": false,
+      "triggers": []
+    },
+    {
+      "case_id": "nsl_038",
+      "true_attack_class": "Probe",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "(Probe)",
+          "names_class": "Probe",
+          "trigger": "literal class-name token '(Probe)'",
+          "category": "class-name"
+        },
+        {
+          "matched_text": "network reconnaissance",
+          "names_class": "Probe",
+          "trigger": "literal class-category phrase 'network reconnaissance'",
+          "category": "class-name"
+        }
+      ]
+    },
+    {
+      "case_id": "nsl_039",
+      "true_attack_class": "R2L",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "(R2L)",
+          "names_class": "R2L",
+          "trigger": "literal class-name token '(R2L)'",
+          "category": "class-name"
+        },
+        {
+          "matched_text": "remote-to-local",
+          "names_class": "R2L",
+          "trigger": "literal class-category phrase 'remote-to-local'",
+          "category": "class-name"
+        }
+      ]
+    },
+    {
+      "case_id": "nsl_040",
+      "true_attack_class": "Normal",
+      "leaky": false,
+      "triggers": []
+    },
+    {
+      "case_id": "nsl_041",
+      "true_attack_class": "R2L",
+      "leaky": false,
+      "triggers": []
+    },
+    {
+      "case_id": "nsl_042",
+      "true_attack_class": "Normal",
+      "leaky": false,
+      "triggers": []
+    },
+    {
+      "case_id": "nsl_043",
+      "true_attack_class": "Normal",
+      "leaky": false,
+      "triggers": []
+    },
+    {
+      "case_id": "nsl_044",
+      "true_attack_class": "DoS",
+      "leaky": false,
+      "triggers": []
+    },
+    {
+      "case_id": "nsl_045",
+      "true_attack_class": "DoS",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "(DoS)",
+          "names_class": "DoS",
+          "trigger": "literal class-name token '(DoS)'",
+          "category": "class-name"
+        },
+        {
+          "matched_text": "denial-of-service",
+          "names_class": "DoS",
+          "trigger": "literal class-category phrase 'denial-of-service'",
+          "category": "class-name"
+        }
+      ]
+    },
+    {
+      "case_id": "nsl_046",
+      "true_attack_class": "DoS",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "(DoS)",
+          "names_class": "DoS",
+          "trigger": "literal class-name token '(DoS)'",
+          "category": "class-name"
+        },
+        {
+          "matched_text": "denial-of-service",
+          "names_class": "DoS",
+          "trigger": "literal class-category phrase 'denial-of-service'",
+          "category": "class-name"
+        }
+      ]
+    },
+    {
+      "case_id": "nsl_047",
+      "true_attack_class": "Normal",
+      "leaky": false,
+      "triggers": []
+    },
+    {
+      "case_id": "nsl_048",
+      "true_attack_class": "Normal",
+      "leaky": false,
+      "triggers": []
+    },
+    {
+      "case_id": "nsl_049",
+      "true_attack_class": "U2R",
+      "leaky": true,
+      "triggers": [
+        {
+          "matched_text": "httptunnel",
+          "names_class": "U2R",
+          "trigger": "distinctive named-attack substring 'httptunnel'",
+          "category": "named-attack"
+        },
+        {
+          "matched_text": "(U2R)",
+          "names_class": "U2R",
+          "trigger": "literal class-name token '(U2R)'",
+          "category": "class-name"
+        },
+        {
+          "matched_text": "user-to-root",
+          "names_class": "U2R",
+          "trigger": "literal class-category phrase 'user-to-root'",
+          "category": "class-name"
+        }
+      ]
+    }
+  ],
+  "safety_comparison": {
+    "full_set_N50": {
+      "tri_stage_llm_haiku": {
+        "n": 50,
+        "exact": 78.0,
+        "within1": 80.0,
+        "under": 16.0,
+        "over": 6.0,
+        "severe_recall": 82.5,
+        "sev_tot": 40,
+        "worst_miss": 4
+      },
+      "pure_ml_xgboost": {
+        "n": 50,
+        "exact": 56.00000000000001,
+        "within1": 56.00000000000001,
+        "under": 44.0,
+        "over": 0.0,
+        "severe_recall": 45.0,
+        "sev_tot": 40,
+        "worst_miss": 4
+      },
+      "unsafe_mcnemar_llm_vs_ml": {
+        "b": 14,
+        "c": 0,
+        "p": 6.103515625e-05,
+        "n_pairs": 50
+      }
+    },
+    "clean_subset": {
+      "n_clean": 20,
+      "clean_case_ids": [
+        "nsl_002",
+        "nsl_004",
+        "nsl_007",
+        "nsl_010",
+        "nsl_013",
+        "nsl_014",
+        "nsl_017",
+        "nsl_019",
+        "nsl_022",
+        "nsl_025",
+        "nsl_026",
+        "nsl_028",
+        "nsl_037",
+        "nsl_040",
+        "nsl_041",
+        "nsl_042",
+        "nsl_043",
+        "nsl_044",
+        "nsl_047",
+        "nsl_048"
+      ],
+      "tri_stage_llm_haiku": {
+        "n": 20,
+        "exact": 50.0,
+        "within1": 55.00000000000001,
+        "under": 35.0,
+        "over": 15.0,
+        "severe_recall": 40.0,
+        "sev_tot": 10,
+        "worst_miss": 4
+      },
+      "pure_ml_xgboost": {
+        "n": 20,
+        "exact": 60.0,
+        "within1": 60.0,
+        "under": 40.0,
+        "over": 0.0,
+        "severe_recall": 20.0,
+        "sev_tot": 10,
+        "worst_miss": 4
+      },
+      "unsafe_mcnemar_llm_vs_ml": {
+        "b": 1,
+        "c": 0,
+        "p": 0.5,
+        "n_pairs": 20
+      },
+      "ref_tri_stage_llm_sonnet": {
+        "n": 20,
+        "exact": 75.0,
+        "within1": 75.0,
+        "under": 25.0,
+        "over": 0.0,
+        "severe_recall": 50.0,
+        "sev_tot": 10,
+        "worst_miss": 4
+      },
+      "ref_unsafe_mcnemar_sonnet_vs_ml": {
+        "b": 3,
+        "c": 0,
+        "p": 0.125
+      }
+    },
+    "leaky_subset_excluded_case_ids": [
+      "nsl_000",
+      "nsl_001",
+      "nsl_003",
+      "nsl_005",
+      "nsl_006",
+      "nsl_008",
+      "nsl_009",
+      "nsl_011",
+      "nsl_012",
+      "nsl_015",
+      "nsl_016",
+      "nsl_018",
+      "nsl_020",
+      "nsl_021",
+      "nsl_023",
+      "nsl_024",
+      "nsl_027",
+      "nsl_029",
+      "nsl_030",
+      "nsl_031",
+      "nsl_032",
+      "nsl_033",
+      "nsl_034",
+      "nsl_035",
+      "nsl_036",
+      "nsl_038",
+      "nsl_039",
+      "nsl_045",
+      "nsl_046",
+      "nsl_049"
+    ]
+  },
+  "interpretation": "See console output / assistant report for narrative interpretation; this file holds only the computed numbers and per-case tags."
+}

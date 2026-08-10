@@ -1,0 +1,233 @@
+{
+  "source_module": "pipeline.nfcrm",
+  "clause": "NFCRM-1:2025 §6.9",
+  "attack_type_defaults": [
+    {
+      "attack_type": "Benign",
+      "likelihood": 0,
+      "L_time_period": 0,
+      "L_exploitability": 0,
+      "impact": 0,
+      "C": 0,
+      "I": 0,
+      "A": 0,
+      "risk_score": 0,
+      "risk_level_en": "N/A (non-attack)",
+      "risk_level_ar": "غير قابل للتطبيق"
+    },
+    {
+      "attack_type": "BruteForce",
+      "likelihood": 5,
+      "L_time_period": 5,
+      "L_exploitability": 5,
+      "impact": 4,
+      "C": 4,
+      "I": 3,
+      "A": 2,
+      "risk_score": 20,
+      "risk_level_en": "Catastrophic",
+      "risk_level_ar": "كارثي"
+    },
+    {
+      "attack_type": "DDoS",
+      "likelihood": 5,
+      "L_time_period": 4,
+      "L_exploitability": 5,
+      "impact": 5,
+      "C": 1,
+      "I": 1,
+      "A": 5,
+      "risk_score": 25,
+      "risk_level_en": "Catastrophic",
+      "risk_level_ar": "كارثي"
+    },
+    {
+      "attack_type": "DoS",
+      "likelihood": 5,
+      "L_time_period": 4,
+      "L_exploitability": 5,
+      "impact": 4,
+      "C": 1,
+      "I": 1,
+      "A": 4,
+      "risk_score": 20,
+      "risk_level_en": "Catastrophic",
+      "risk_level_ar": "كارثي"
+    },
+    {
+      "attack_type": "Infiltration",
+      "likelihood": 3,
+      "L_time_period": 3,
+      "L_exploitability": 3,
+      "impact": 5,
+      "C": 5,
+      "I": 5,
+      "A": 3,
+      "risk_score": 15,
+      "risk_level_en": "High",
+      "risk_level_ar": "مرتفع"
+    },
+    {
+      "attack_type": "WebAttack",
+      "likelihood": 5,
+      "L_time_period": 4,
+      "L_exploitability": 5,
+      "impact": 4,
+      "C": 4,
+      "I": 4,
+      "A": 2,
+      "risk_score": 20,
+      "risk_level_en": "Catastrophic",
+      "risk_level_ar": "كارثي"
+    }
+  ],
+  "demo_enriched": [
+    {
+      "flow_id": 1,
+      "true_label": "DDoS",
+      "predicted_label": "DDoS",
+      "nfcrm_6_9": {
+        "clause": "NFCRM-1:2025 §6.9",
+        "likelihood": {
+          "value": 5,
+          "time_period": 4,
+          "exploitability": 5,
+          "rationale": "Likelihood = max(time_period=4, exploitability=5) = 5 per NFCRM-1:2025 Figure 5. Defaults for DDoS reflect public threat-intelligence consensus."
+        },
+        "impact": {
+          "value": 5,
+          "confidentiality": 1,
+          "integrity": 1,
+          "availability": 5,
+          "rationale": "Impact = max(C=1, I=1, A=5) = 5 per NFCRM-1:2025 Figure 4 (worst-case CIA dimension). Defaults for DDoS reflect typical CIA exposure pattern of the attack class."
+        },
+        "risk_score": 25,
+        "risk_level_en": "Catastrophic",
+        "risk_level_ar": "كارثي"
+      }
+    },
+    {
+      "flow_id": 2,
+      "true_label": "BruteForce",
+      "predicted_label": "BruteForce",
+      "nfcrm_6_9": {
+        "clause": "NFCRM-1:2025 §6.9",
+        "likelihood": {
+          "value": 5,
+          "time_period": 5,
+          "exploitability": 5,
+          "rationale": "Likelihood = max(time_period=5, exploitability=5) = 5 per NFCRM-1:2025 Figure 5. Defaults for BruteForce reflect public threat-intelligence consensus."
+        },
+        "impact": {
+          "value": 4,
+          "confidentiality": 4,
+          "integrity": 3,
+          "availability": 2,
+          "rationale": "Impact = max(C=4, I=3, A=2) = 4 per NFCRM-1:2025 Figure 4 (worst-case CIA dimension). Defaults for BruteForce reflect typical CIA exposure pattern of the attack class."
+        },
+        "risk_score": 20,
+        "risk_level_en": "Catastrophic",
+        "risk_level_ar": "كارثي"
+      }
+    },
+    {
+      "flow_id": 3,
+      "true_label": "DoS",
+      "predicted_label": "DoS",
+      "nfcrm_6_9": {
+        "clause": "NFCRM-1:2025 §6.9",
+        "likelihood": {
+          "value": 5,
+          "time_period": 4,
+          "exploitability": 5,
+          "rationale": "Likelihood = max(time_period=4, exploitability=5) = 5 per NFCRM-1:2025 Figure 5. Defaults for DoS reflect public threat-intelligence consensus."
+        },
+        "impact": {
+          "value": 4,
+          "confidentiality": 1,
+          "integrity": 1,
+          "availability": 4,
+          "rationale": "Impact = max(C=1, I=1, A=4) = 4 per NFCRM-1:2025 Figure 4 (worst-case CIA dimension). Defaults for DoS reflect typical CIA exposure pattern of the attack class."
+        },
+        "risk_score": 20,
+        "risk_level_en": "Catastrophic",
+        "risk_level_ar": "كارثي"
+      }
+    },
+    {
+      "flow_id": 4,
+      "true_label": "WebAttack",
+      "predicted_label": "WebAttack",
+      "nfcrm_6_9": {
+        "clause": "NFCRM-1:2025 §6.9",
+        "likelihood": {
+          "value": 5,
+          "time_period": 4,
+          "exploitability": 5,
+          "rationale": "Likelihood = max(time_period=4, exploitability=5) = 5 per NFCRM-1:2025 Figure 5. Defaults for WebAttack reflect public threat-intelligence consensus."
+        },
+        "impact": {
+          "value": 4,
+          "confidentiality": 4,
+          "integrity": 4,
+          "availability": 2,
+          "rationale": "Impact = max(C=4, I=4, A=2) = 4 per NFCRM-1:2025 Figure 4 (worst-case CIA dimension). Defaults for WebAttack reflect typical CIA exposure pattern of the attack class."
+        },
+        "risk_score": 20,
+        "risk_level_en": "Catastrophic",
+        "risk_level_ar": "كارثي"
+      }
+    },
+    {
+      "flow_id": 5,
+      "true_label": "Infiltration",
+      "predicted_label": "Infiltration",
+      "nfcrm_6_9": {
+        "clause": "NFCRM-1:2025 §6.9",
+        "likelihood": {
+          "value": 3,
+          "time_period": 3,
+          "exploitability": 3,
+          "rationale": "Likelihood = max(time_period=3, exploitability=3) = 3 per NFCRM-1:2025 Figure 5. Defaults for Infiltration reflect public threat-intelligence consensus."
+        },
+        "impact": {
+          "value": 5,
+          "confidentiality": 5,
+          "integrity": 5,
+          "availability": 3,
+          "rationale": "Impact = max(C=5, I=5, A=3) = 5 per NFCRM-1:2025 Figure 4 (worst-case CIA dimension). Defaults for Infiltration reflect typical CIA exposure pattern of the attack class."
+        },
+        "risk_score": 15,
+        "risk_level_en": "High",
+        "risk_level_ar": "مرتفع"
+      }
+    }
+  ],
+  "slm_aggregate": {
+    "source": "results/slm_nl_classification.json",
+    "n_predictions": 60,
+    "by_risk_level": {
+      "N/A (non-attack)": {
+        "total": 16,
+        "by_attack": {
+          "Benign": 16
+        }
+      },
+      "High": {
+        "total": 12,
+        "by_attack": {
+          "Infiltration": 12
+        }
+      },
+      "Catastrophic": {
+        "total": 29,
+        "by_attack": {
+          "DDoS": 8,
+          "BruteForce": 4,
+          "WebAttack": 9,
+          "DoS": 8
+        }
+      }
+    }
+  }
+}

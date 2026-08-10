@@ -1,0 +1,4404 @@
+{
+  "seed": 42,
+  "n_cases": 80,
+  "n_set_a": 50,
+  "n_set_b": 30,
+  "cases": [
+    {
+      "case_id": "case_000",
+      "feature_row_index": 12964,
+      "true_attack_class": "Benign",
+      "rf_predicted_class": "Benign",
+      "asset": {
+        "id": "WS-018",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": null,
+      "ground_truth_risk_level": "Very Low",
+      "masked_fields": [
+        "true_attack_class"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_001",
+      "feature_row_index": 12616,
+      "true_attack_class": "Benign",
+      "rf_predicted_class": "Benign",
+      "asset": {
+        "id": "WS-016",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": null,
+      "ground_truth_risk_level": "Very Low",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_002",
+      "feature_row_index": 12661,
+      "true_attack_class": "Benign",
+      "rf_predicted_class": "Benign",
+      "asset": {
+        "id": "WS-012",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": null,
+      "ground_truth_risk_level": "Very Low",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_003",
+      "feature_row_index": 13236,
+      "true_attack_class": "Benign",
+      "rf_predicted_class": "Infiltration",
+      "asset": {
+        "id": "WS-004",
+        "type": "workstation",
+        "criticality": "high",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": null,
+      "ground_truth_risk_level": "Very Low",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_004",
+      "feature_row_index": 12463,
+      "true_attack_class": "Benign",
+      "rf_predicted_class": "Infiltration",
+      "asset": {
+        "id": "SRV-005",
+        "type": "server",
+        "criticality": "critical",
+        "ip_segment": "172.31.69.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": null,
+      "ground_truth_risk_level": "Very Low",
+      "masked_fields": [
+        "true_attack_class",
+        "asset_type"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_005",
+      "feature_row_index": 12241,
+      "true_attack_class": "Benign",
+      "rf_predicted_class": "Benign",
+      "asset": {
+        "id": "WS-038",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": null,
+      "ground_truth_risk_level": "Very Low",
+      "masked_fields": [
+        "true_attack_class"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_006",
+      "feature_row_index": 13052,
+      "true_attack_class": "Benign",
+      "rf_predicted_class": "Benign",
+      "asset": {
+        "id": "WS-019",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": null,
+      "ground_truth_risk_level": "Very Low",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_007",
+      "feature_row_index": 13729,
+      "true_attack_class": "Benign",
+      "rf_predicted_class": "Infiltration",
+      "asset": {
+        "id": "WS-002",
+        "type": "workstation",
+        "criticality": "high",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": null,
+      "ground_truth_risk_level": "Very Low",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_008",
+      "feature_row_index": 13646,
+      "true_attack_class": "Benign",
+      "rf_predicted_class": "Benign",
+      "asset": {
+        "id": "WS-022",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": null,
+      "ground_truth_risk_level": "Very Low",
+      "masked_fields": [
+        "true_attack_class",
+        "cvss_components"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_009",
+      "feature_row_index": 14015,
+      "true_attack_class": "Benign",
+      "rf_predicted_class": "Infiltration",
+      "asset": {
+        "id": "WS-009",
+        "type": "workstation",
+        "criticality": "high",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": null,
+      "ground_truth_risk_level": "Very Low",
+      "masked_fields": [
+        "true_attack_class"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_010",
+      "feature_row_index": 12491,
+      "true_attack_class": "Benign",
+      "rf_predicted_class": "Benign",
+      "asset": {
+        "id": "WS-024",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": null,
+      "ground_truth_risk_level": "Very Low",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_011",
+      "feature_row_index": 13227,
+      "true_attack_class": "Benign",
+      "rf_predicted_class": "Benign",
+      "asset": {
+        "id": "WS-014",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": null,
+      "ground_truth_risk_level": "Very Low",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_012",
+      "feature_row_index": 12787,
+      "true_attack_class": "Benign",
+      "rf_predicted_class": "Benign",
+      "asset": {
+        "id": "WS-005",
+        "type": "workstation",
+        "criticality": "high",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": null,
+      "ground_truth_risk_level": "Very Low",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_013",
+      "feature_row_index": 12332,
+      "true_attack_class": "Benign",
+      "rf_predicted_class": "Benign",
+      "asset": {
+        "id": "SRV-004",
+        "type": "server",
+        "criticality": "high",
+        "ip_segment": "172.31.69.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": null,
+      "ground_truth_risk_level": "Very Low",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_014",
+      "feature_row_index": 12421,
+      "true_attack_class": "Benign",
+      "rf_predicted_class": "Benign",
+      "asset": {
+        "id": "WS-032",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": null,
+      "ground_truth_risk_level": "Very Low",
+      "masked_fields": [
+        "true_attack_class"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_015",
+      "feature_row_index": 13364,
+      "true_attack_class": "Benign",
+      "rf_predicted_class": "Infiltration",
+      "asset": {
+        "id": "WS-031",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": null,
+      "ground_truth_risk_level": "Very Low",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_016",
+      "feature_row_index": 12989,
+      "true_attack_class": "BruteForce",
+      "rf_predicted_class": "BruteForce",
+      "asset": {
+        "id": "WS-003",
+        "type": "workstation",
+        "criticality": "high",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2026-23760",
+        "shortDescription": "SmarterTools SmarterMail contains an authentication bypass using an alternate path or channel vulnerability in the password reset API. The force-reset-password endpoint permits anonymous requests and fails to verify the existing password or a reset token when resetting system administrator accounts. This could allow an unauthenticated attacker to supply a target administrator username and a new password to reset the account, resulting in full administrative compromise of the SmarterMail instance.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "SmarterTools",
+        "product": "SmarterMail",
+        "cvss_v3": 9.8,
+        "severity": "CRITICAL",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Catastrophic",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_017",
+      "feature_row_index": 12191,
+      "true_attack_class": "BruteForce",
+      "rf_predicted_class": "BruteForce",
+      "asset": {
+        "id": "WS-017",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2025-14611",
+        "shortDescription": "Gladinet CentreStack and TrioFox contain a hardcoded cryptographic keys vulnerability for their implementation of the AES cryptoscheme. This vulnerability degrades security for public exposed endpoints that may make use of it and may offer arbitrary local file inclusion when provided a specially crafted request without authentication.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Gladinet",
+        "product": "CentreStack and Triofox",
+        "cvss_v3": 9.8,
+        "severity": "CRITICAL",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [
+        "true_attack_class",
+        "asset_criticality"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_018",
+      "feature_row_index": 13849,
+      "true_attack_class": "BruteForce",
+      "rf_predicted_class": "BruteForce",
+      "asset": {
+        "id": "WS-028",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2019-19006",
+        "shortDescription": "Sangoma FreePBX contains an improper authentication vulnerability that potentially allows unauthorized users to bypass password authentication and access services provided by the FreePBX admin.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Sangoma",
+        "product": "FreePBX",
+        "cvss_v3": 9.8,
+        "severity": "CRITICAL",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_019",
+      "feature_row_index": 12514,
+      "true_attack_class": "BruteForce",
+      "rf_predicted_class": "BruteForce",
+      "asset": {
+        "id": "SRV-001",
+        "type": "server",
+        "criticality": "high",
+        "ip_segment": "172.31.69.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2026-24858",
+        "shortDescription": "Fortinet FortiAnalyzer, FortiManager, FortiOS, and FortiProxy contain an authentication bypass using an alternate path or channel that could allow an attacker with a FortiCloud account and a registered device to log into other devices registered to other accounts, if FortiCloud SSO authentication is enabled on those devices.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Fortinet",
+        "product": "Multiple Products",
+        "cvss_v3": 9.8,
+        "severity": "CRITICAL",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Catastrophic",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_020",
+      "feature_row_index": 13828,
+      "true_attack_class": "BruteForce",
+      "rf_predicted_class": "BruteForce",
+      "asset": {
+        "id": "WS-036",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2023-50224",
+        "shortDescription": "TP-Link TL-WR841N contains an authentication bypass by spoofing vulnerability within the httpd service, which listens on TCP port 80 by default, leading to the disclose of stored credentials. The impacted products could be end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue product utilization.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "TP-Link",
+        "product": "TL-WR841N",
+        "cvss_v3": null,
+        "severity": null,
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [
+        "true_attack_class",
+        "arg_neighborhood"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_021",
+      "feature_row_index": 12245,
+      "true_attack_class": "BruteForce",
+      "rf_predicted_class": "BruteForce",
+      "asset": {
+        "id": "WS-011",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2025-2746",
+        "shortDescription": "Kentico Xperience CMS contains an authentication bypass using an alternate path or channel vulnerability that could allow an attacker to control administrative objects.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Kentico",
+        "product": "Xperience CMS",
+        "cvss_v3": 9.8,
+        "severity": "CRITICAL",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_022",
+      "feature_row_index": 12452,
+      "true_attack_class": "BruteForce",
+      "rf_predicted_class": "BruteForce",
+      "asset": {
+        "id": "WS-026",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2016-7836",
+        "shortDescription": "SKYSEA Client View contains an improper authentication vulnerability that allows remote code execution via a flaw in processing authentication on the TCP connection with the management console program.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "SKYSEA",
+        "product": "Client View",
+        "cvss_v3": 9.8,
+        "severity": "CRITICAL",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_023",
+      "feature_row_index": 13520,
+      "true_attack_class": "BruteForce",
+      "rf_predicted_class": "BruteForce",
+      "asset": {
+        "id": "WS-041",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2025-34026",
+        "shortDescription": "Versa Concerto SD-WAN orchestration platform contains an improper authentication vulnerability in the Traefik reverse proxy configuration, allowing at attacker to access administrative endpoints. The internal Actuator endpoint can be leveraged for access to heap dumps and trace logs.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Versa",
+        "product": "Concerto",
+        "cvss_v3": 7.5,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_024",
+      "feature_row_index": 13618,
+      "true_attack_class": "BruteForce",
+      "rf_predicted_class": "BruteForce",
+      "asset": {
+        "id": "WS-034",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2017-7921",
+        "shortDescription": "Multiple Hikvision products contain an improper authentication vulnerability that could allow a malicious user to escalate privileges on the system and gain access to sensitive information.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Hikvision",
+        "product": "Multiple Products",
+        "cvss_v3": 9.8,
+        "severity": "CRITICAL",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_025",
+      "feature_row_index": 13012,
+      "true_attack_class": "BruteForce",
+      "rf_predicted_class": "BruteForce",
+      "asset": {
+        "id": "WS-023",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2021-22681",
+        "shortDescription": "Multiple Rockwell products contain an insufficient protected credentials vulnerability. Studio 5000 Logix Designer software may allow a key to be discovered. This key is used to verify Logix controllers are communicating with Rockwell Automation design software. If successfully exploited, this vulnerability could allow an unauthorized application to connect with Logix controllers. To leverage this vulnerability, an unauthorized user would require network access to the controller.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Rockwell",
+        "product": "Multiple Products",
+        "cvss_v3": 9.8,
+        "severity": "CRITICAL",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_026",
+      "feature_row_index": 13394,
+      "true_attack_class": "BruteForce",
+      "rf_predicted_class": "BruteForce",
+      "asset": {
+        "id": "WS-021",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2015-7755",
+        "shortDescription": "Juniper ScreenOS contains an improper authentication vulnerability that could allow unauthorized remote administrative access to the device.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Juniper",
+        "product": "ScreenOS",
+        "cvss_v3": 9.8,
+        "severity": "CRITICAL",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [
+        "true_attack_class"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_027",
+      "feature_row_index": 12408,
+      "true_attack_class": "BruteForce",
+      "rf_predicted_class": "BruteForce",
+      "asset": {
+        "id": "WS-013",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2025-57819",
+        "shortDescription": "Sangoma FreePBX contains an authentication bypass vulnerability due to insufficiently sanitized user-supplied data allows unauthenticated access to FreePBX Administrator leading to arbitrary database manipulation and remote code execution.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Sangoma",
+        "product": "FreePBX",
+        "cvss_v3": 9.8,
+        "severity": "CRITICAL",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [
+        "true_attack_class",
+        "arg_neighborhood"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_028",
+      "feature_row_index": 14030,
+      "true_attack_class": "BruteForce",
+      "rf_predicted_class": "BruteForce",
+      "asset": {
+        "id": "WS-015",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2026-22769",
+        "shortDescription": "Dell RecoverPoint for Virtual Machines (RP4VMs) contains an use of hard-coded credentials vulnerability that could allow an unauthenticated remote attacker to gain unauthorized access to the underlying operating system and root-level persistence.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Dell",
+        "product": "RecoverPoint for Virtual Machines (RP4VMs)",
+        "cvss_v3": 10.0,
+        "severity": "CRITICAL",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_029",
+      "feature_row_index": 13958,
+      "true_attack_class": "BruteForce",
+      "rf_predicted_class": "BruteForce",
+      "asset": {
+        "id": "WS-035",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2025-2747",
+        "shortDescription": "Kentico Xperience CMS contains an authentication bypass using an alternate path or channel vulnerability that could allow an attacker to control administrative objects.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Kentico",
+        "product": "Xperience CMS",
+        "cvss_v3": 9.8,
+        "severity": "CRITICAL",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [
+        "true_attack_class",
+        "arg_neighborhood"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_030",
+      "feature_row_index": 13702,
+      "true_attack_class": "BruteForce",
+      "rf_predicted_class": "BruteForce",
+      "asset": {
+        "id": "WS-039",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2026-1603",
+        "shortDescription": "Ivanti Endpoint Manager (EPM) contains an authentication bypass using an alternate path or channel vulnerability that could allow a remote unauthenticated attacker to leak specific stored credential data.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Ivanti",
+        "product": " Endpoint Manager (EPM)",
+        "cvss_v3": 8.6,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_031",
+      "feature_row_index": 12503,
+      "true_attack_class": "BruteForce",
+      "rf_predicted_class": "BruteForce",
+      "asset": {
+        "id": "WS-029",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2026-20127",
+        "shortDescription": "Cisco Catalyst SD-WAN Controller, formerly SD-WAN vSmart, and Cisco Catalyst SD-WAN Manager, formerly SD-WAN vManage, contain an authentication bypass vulnerability could allow an unauthenticated, remote attacker to bypass authentication and obtain administrative privileges on an affected system. This vulnerability exists because the peering authentication mechanism in an affected system is not working properly. An attacker could exploit this vulnerability by sending crafted requests to an affected system. A successful exploit could allow the attacker to log in to an affected Cisco Catalyst SD-WAN Controller as an internal, high-privileged, non-root user account. Using this account, the attacker could access NETCONF, which would then allow the attacker to manipulate network configuration for the SD-WAN fabric.",
+        "requiredAction": "Please adhere to CISA\u2019s guidelines to assess exposure and mitigate risks associated with Cisco SD-WAN devices as outlines in CISA\u2019s Emergency Directive 26-03 (URL listed below in Notes) and CISA\u2019s \u201cHunt & Hardening Guidance for Cisco SD-WAN Devices (URL listed below in Notes). Adhere to the applicable BOD 22-01 guidance for cloud services or discontinue use of the product if mitigations are not available.",
+        "vendor": "Cisco",
+        "product": "Catalyst SD-WAN Controller and Manager",
+        "cvss_v3": 10.0,
+        "severity": "CRITICAL",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [
+        "true_attack_class"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_032",
+      "feature_row_index": 13773,
+      "true_attack_class": "DoS",
+      "rf_predicted_class": "DoS",
+      "asset": {
+        "id": "WS-025",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2025-48543",
+        "shortDescription": "Android Runtime contains a use-after-free vulnerability potentially allowing a chrome sandbox escape leading to local privilege escalation.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Android",
+        "product": "Runtime",
+        "cvss_v3": 8.8,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [
+        "true_attack_class",
+        "asset_criticality"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_033",
+      "feature_row_index": 13186,
+      "true_attack_class": "DoS",
+      "rf_predicted_class": "DoS",
+      "asset": {
+        "id": "WS-037",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2016-10033",
+        "shortDescription": "PHPMailer contains a command injection vulnerability because it fails to sanitize user-supplied input. Specifically, this issue affects the 'mail()' function of 'class.phpmailer.php' script. An attacker can exploit this issue to execute arbitrary code within the context of the application. Failed exploit attempts will result in a denial-of-service condition.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "PHP",
+        "product": "PHPMailer",
+        "cvss_v3": 9.8,
+        "severity": "CRITICAL",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [
+        "true_attack_class",
+        "control_coverage"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_034",
+      "feature_row_index": 12114,
+      "true_attack_class": "DoS",
+      "rf_predicted_class": "DoS",
+      "asset": {
+        "id": "WS-006",
+        "type": "workstation",
+        "criticality": "high",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2025-43529",
+        "shortDescription": "Apple iOS, iPadOS, macOS, and other Apple products contain a use-after-free vulnerability in WebKit. Processing maliciously crafted web content may lead to memory corruption. This vulnerability could impact HTML parsers that use WebKit, including but not limited to Apple Safari and non-Apple products which rely on WebKit for HTML processing.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Apple",
+        "product": "Multiple Products",
+        "cvss_v3": 8.8,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Catastrophic",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_035",
+      "feature_row_index": 12271,
+      "true_attack_class": "DoS",
+      "rf_predicted_class": "DoS",
+      "asset": {
+        "id": "WS-042",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2025-62221",
+        "shortDescription": "Microsoft Windows Cloud Files Mini Filter Driver contains a use after free vulnerability that can allow an authorized attacker to elevate privileges locally.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Microsoft",
+        "product": "Windows",
+        "cvss_v3": 7.8,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_036",
+      "feature_row_index": 14078,
+      "true_attack_class": "DoS",
+      "rf_predicted_class": "DoS",
+      "asset": {
+        "id": "WS-040",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2025-42599",
+        "shortDescription": "Qualitia Active! Mail contains a stack-based buffer overflow vulnerability that allows a remote, unauthenticated attacker to execute arbitrary or trigger a denial-of-service via a specially crafted request.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Qualitia",
+        "product": "Active! Mail",
+        "cvss_v3": 9.8,
+        "severity": "CRITICAL",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [
+        "true_attack_class",
+        "control_coverage"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_037",
+      "feature_row_index": 13282,
+      "true_attack_class": "DoS",
+      "rf_predicted_class": "DoS",
+      "asset": {
+        "id": "SRV-003",
+        "type": "server",
+        "criticality": "critical",
+        "ip_segment": "172.31.69.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2025-27038",
+        "shortDescription": "Multiple Qualcomm chipsets contain a use-after-free vulnerability. This vulnerability allows for memory corruption while rendering graphics using Adreno GPU drivers in Chrome.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Qualcomm",
+        "product": "Multiple Chipsets",
+        "cvss_v3": 7.5,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Catastrophic",
+      "masked_fields": [
+        "true_attack_class",
+        "asset_type"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_038",
+      "feature_row_index": 13700,
+      "true_attack_class": "DoS",
+      "rf_predicted_class": "DoS",
+      "asset": {
+        "id": "WS-020",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2025-32701",
+        "shortDescription": "Microsoft Windows Common Log File System (CLFS) Driver contains a use-after-free vulnerability that allows an authorized attacker to elevate privileges locally.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Microsoft",
+        "product": "Windows",
+        "cvss_v3": 7.8,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [
+        "true_attack_class"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_039",
+      "feature_row_index": 12611,
+      "true_attack_class": "DoS",
+      "rf_predicted_class": "DoS",
+      "asset": {
+        "id": "WS-030",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2013-3893",
+        "shortDescription": "Microsoft Internet Explorer contains a memory corruption vulnerability that allows for remote code execution. The impacted products could be end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue product utilization.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Microsoft",
+        "product": "Internet Explorer",
+        "cvss_v3": 8.8,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [
+        "true_attack_class",
+        "control_coverage"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_040",
+      "feature_row_index": 13658,
+      "true_attack_class": "DoS",
+      "rf_predicted_class": "DoS",
+      "asset": {
+        "id": "NET-001",
+        "type": "firewall",
+        "criticality": "critical",
+        "ip_segment": "172.31.69.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2023-41974",
+        "shortDescription": "Apple iOS and iPadOS contain a use-after-free vulnerability. An app may be able to execute arbitrary code with kernel privileges.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Apple",
+        "product": "iOS and iPadOS",
+        "cvss_v3": 7.8,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Catastrophic",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_041",
+      "feature_row_index": 13310,
+      "true_attack_class": "DoS",
+      "rf_predicted_class": "DoS",
+      "asset": {
+        "id": "WS-027",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2026-2441",
+        "shortDescription": "Google Chromium CSS contains a use-after-free vulnerability that could allow a remote attacker to potentially exploit heap corruption via a crafted HTML page. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Google",
+        "product": "Chromium",
+        "cvss_v3": 8.8,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_042",
+      "feature_row_index": 13625,
+      "true_attack_class": "DoS",
+      "rf_predicted_class": "DoS",
+      "asset": {
+        "id": "NET-002",
+        "type": "ids",
+        "criticality": "high",
+        "ip_segment": "172.31.69.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2025-30400",
+        "shortDescription": "Microsoft Windows DWM Core Library contains a use-after-free vulnerability that allows an authorized attacker to elevate privileges locally.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Microsoft",
+        "product": "Windows",
+        "cvss_v3": 7.8,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Catastrophic",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_043",
+      "feature_row_index": 13208,
+      "true_attack_class": "DoS",
+      "rf_predicted_class": "DoS",
+      "asset": {
+        "id": "WS-001",
+        "type": "workstation",
+        "criticality": "high",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2025-29824",
+        "shortDescription": "Microsoft Windows Common Log File System (CLFS) Driver contains a use-after-free vulnerability that allows an authorized attacker to elevate privileges locally.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Microsoft",
+        "product": "Windows",
+        "cvss_v3": 7.8,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Catastrophic",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_044",
+      "feature_row_index": 13080,
+      "true_attack_class": "DoS",
+      "rf_predicted_class": "DoS",
+      "asset": {
+        "id": "WS-007",
+        "type": "workstation",
+        "criticality": "high",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2026-21525",
+        "shortDescription": "Microsoft Windows Remote Access Connection Manager contains a NULL pointer dereference that could allow an unauthorized attacker to deny service locally.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Microsoft",
+        "product": "Windows",
+        "cvss_v3": 6.2,
+        "severity": "MEDIUM",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Catastrophic",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_045",
+      "feature_row_index": 12354,
+      "true_attack_class": "DoS",
+      "rf_predicted_class": "DoS",
+      "asset": {
+        "id": "WS-008",
+        "type": "workstation",
+        "criticality": "high",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2025-32709",
+        "shortDescription": "Microsoft Windows Ancillary Function Driver for WinSock contains a use-after-free vulnerability that allows an authorized attacker to escalate privileges to administrator.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Microsoft",
+        "product": "Windows",
+        "cvss_v3": 7.8,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Catastrophic",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_046",
+      "feature_row_index": 13291,
+      "true_attack_class": "DoS",
+      "rf_predicted_class": "DoS",
+      "asset": {
+        "id": "WS-010",
+        "type": "workstation",
+        "criticality": "high",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2023-43000",
+        "shortDescription": "Apple macOS, iOS, iPadOS, and Safari 16.6 contain a use-after-free vulnerability due to the processing of maliciously crafted web content that may lead to memory corruption.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Apple",
+        "product": "Multiple Products",
+        "cvss_v3": 8.8,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Catastrophic",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_047",
+      "feature_row_index": 12206,
+      "true_attack_class": "DoS",
+      "rf_predicted_class": "DoS",
+      "asset": {
+        "id": "SRV-002",
+        "type": "server",
+        "criticality": "critical",
+        "ip_segment": "172.31.69.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2026-1731",
+        "shortDescription": "BeyondTrust Remote Support (RS) and Privileged Remote Access (PRA)contain an OS command injection vulnerability. Successful exploitation could allow an unauthenticated remote attacker to execute operating system commands in the context of the site user. Successful exploitation requires no authentication or user interaction and may lead to system compromise, including unauthorized access, data exfiltration, and service disruption.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "BeyondTrust",
+        "product": "Remote Support (RS) and Privileged Remote Access (PRA)",
+        "cvss_v3": 9.8,
+        "severity": "CRITICAL",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Catastrophic",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_048",
+      "feature_row_index": 12715,
+      "true_attack_class": "DDoS",
+      "rf_predicted_class": "DDoS",
+      "asset": {
+        "id": "NET-003",
+        "type": "switch",
+        "criticality": "critical",
+        "ip_segment": "172.31.69.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2023-29552",
+        "shortDescription": "The Service Location Protocol (SLP) contains a denial-of-service (DoS) vulnerability that could allow an unauthenticated, remote attacker to register services and use spoofed UDP traffic to conduct a denial-of-service (DoS) attack with a significant amplification factor.",
+        "requiredAction": "Apply mitigations per vendor instructions or disable SLP service or port 427/UDP on all systems running on untrusted networks, including those directly connected to the Internet.",
+        "vendor": "IETF",
+        "product": "Service Location Protocol (SLP)",
+        "cvss_v3": 7.5,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Catastrophic",
+      "masked_fields": [
+        "true_attack_class"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_049",
+      "feature_row_index": 13738,
+      "true_attack_class": "DDoS",
+      "rf_predicted_class": "DDoS",
+      "asset": {
+        "id": "WS-033",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2023-33009",
+        "shortDescription": "Zyxel ATP, USG FLEX, USG FLEX 50(W), USG20(W)-VPN, VPN, and ZyWALL/USG firewalls contain a buffer overflow vulnerability in the notification function that could allow an unauthenticated attacker to cause denial-of-service (DoS) conditions and remote code execution on an affected device.",
+        "requiredAction": "Apply updates per vendor instructions.",
+        "vendor": "Zyxel",
+        "product": "Multiple Firewalls",
+        "cvss_v3": 9.8,
+        "severity": "CRITICAL",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_050",
+      "feature_row_index": 13455,
+      "true_attack_class": "DDoS",
+      "rf_predicted_class": "DDoS",
+      "asset": {
+        "id": "WS-018",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2024-20353",
+        "shortDescription": "Cisco Adaptive Security Appliance (ASA) and Firepower Threat Defense (FTD) contain an infinite loop vulnerability that can lead to remote denial of service condition.",
+        "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Cisco",
+        "product": "Adaptive Security Appliance (ASA) and Firepower Threat Defense (FTD)",
+        "cvss_v3": 8.6,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_051",
+      "feature_row_index": 12667,
+      "true_attack_class": "DDoS",
+      "rf_predicted_class": "DDoS",
+      "asset": {
+        "id": "WS-016",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2023-6549",
+        "shortDescription": "Citrix NetScaler ADC and NetScaler Gateway contain a buffer overflow vulnerability that allows for a denial-of-service when configured as a Gateway (VPN virtual server, ICA Proxy, CVPN, RDP Proxy) or AAA virtual server.",
+        "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Citrix",
+        "product": "NetScaler ADC and NetScaler Gateway",
+        "cvss_v3": 8.2,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [
+        "true_attack_class"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_052",
+      "feature_row_index": 12569,
+      "true_attack_class": "DDoS",
+      "rf_predicted_class": "DDoS",
+      "asset": {
+        "id": "WS-012",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2016-6366",
+        "shortDescription": "A buffer overflow vulnerability in the Simple Network Management Protocol (SNMP) code of Cisco ASA software could allow an attacker to cause a reload of the affected system or to remotely execute code.",
+        "requiredAction": "Apply updates per vendor instructions.",
+        "vendor": "Cisco",
+        "product": "Adaptive Security Appliance (ASA)",
+        "cvss_v3": 8.8,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_053",
+      "feature_row_index": 12342,
+      "true_attack_class": "DDoS",
+      "rf_predicted_class": "DDoS",
+      "asset": {
+        "id": "WS-004",
+        "type": "workstation",
+        "criticality": "high",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2023-33010",
+        "shortDescription": "Zyxel ATP, USG FLEX, USG FLEX 50(W), USG20(W)-VPN, VPN, and ZyWALL/USG firewalls contain a buffer overflow vulnerability in the ID processing function that could allow an unauthenticated attacker to cause denial-of-service (DoS) conditions and remote code execution on an affected device.",
+        "requiredAction": "Apply updates per vendor instructions.",
+        "vendor": "Zyxel",
+        "product": "Multiple Firewalls",
+        "cvss_v3": 9.8,
+        "severity": "CRITICAL",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Catastrophic",
+      "masked_fields": [
+        "true_attack_class"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_054",
+      "feature_row_index": 12726,
+      "true_attack_class": "DDoS",
+      "rf_predicted_class": "DDoS",
+      "asset": {
+        "id": "SRV-005",
+        "type": "server",
+        "criticality": "critical",
+        "ip_segment": "172.31.69.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2017-6742",
+        "shortDescription": "The Simple Network Management Protocol (SNMP) subsystem of Cisco IOS and IOS XE contains a vulnerability that could allow an authenticated, remote attacker to remotely execute code on an affected system or cause an affected system to reload.",
+        "requiredAction": "Apply updates per vendor instructions.",
+        "vendor": "Cisco",
+        "product": "IOS and IOS XE Software",
+        "cvss_v3": 8.8,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Catastrophic",
+      "masked_fields": [
+        "true_attack_class",
+        "asset_type"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_055",
+      "feature_row_index": 12392,
+      "true_attack_class": "DDoS",
+      "rf_predicted_class": "DDoS",
+      "asset": {
+        "id": "WS-038",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2023-44487",
+        "shortDescription": "HTTP/2 contains a rapid reset vulnerability that allows for a distributed denial-of-service attack (DDoS).",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "IETF",
+        "product": "HTTP/2",
+        "cvss_v3": 7.5,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [
+        "true_attack_class"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_056",
+      "feature_row_index": 12875,
+      "true_attack_class": "DDoS",
+      "rf_predicted_class": "DDoS",
+      "asset": {
+        "id": "WS-019",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2025-20352",
+        "shortDescription": "Cisco IOS and IOS XE contains a stack-based buffer overflow vulnerability in the Simple Network Management Protocol (SNMP) subsystem that could allow for denial of service or remote code execution. A successful exploit could allow a low-privileged attacker to cause the affected system to reload, resulting in a DoS condition, or allow a high-privileged attacker to execute arbitrary code as the root user and obtain full control of the affected system.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Cisco",
+        "product": "IOS and IOS XE",
+        "cvss_v3": 7.7,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_057",
+      "feature_row_index": 12399,
+      "true_attack_class": "DDoS",
+      "rf_predicted_class": "DDoS",
+      "asset": {
+        "id": "WS-002",
+        "type": "workstation",
+        "criticality": "high",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2025-7775",
+        "shortDescription": "Citrix NetScaler ADC and NetScaler Gateway contain a memory overflow vulnerability that could allow for remote code execution and/or denial of service.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Citrix",
+        "product": "NetScaler",
+        "cvss_v3": 9.8,
+        "severity": "CRITICAL",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Catastrophic",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_058",
+      "feature_row_index": 12574,
+      "true_attack_class": "DDoS",
+      "rf_predicted_class": "DDoS",
+      "asset": {
+        "id": "WS-022",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2022-0028",
+        "shortDescription": "A Palo Alto Networks PAN-OS URL filtering policy misconfiguration could allow a network-based attacker to conduct reflected and amplified TCP denial-of-service (RDoS) attacks.",
+        "requiredAction": "Apply updates per vendor instructions.",
+        "vendor": "Palo Alto Networks",
+        "product": "PAN-OS",
+        "cvss_v3": 8.6,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_059",
+      "feature_row_index": 12389,
+      "true_attack_class": "DDoS",
+      "rf_predicted_class": "DDoS",
+      "asset": {
+        "id": "WS-009",
+        "type": "workstation",
+        "criticality": "high",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2016-6367",
+        "shortDescription": "A vulnerability in the command-line interface (CLI) parser of Cisco ASA software could allow an authenticated, local attacker to create a denial-of-service (DoS) condition or potentially execute code.",
+        "requiredAction": "Apply updates per vendor instructions.",
+        "vendor": "Cisco",
+        "product": "Adaptive Security Appliance (ASA)",
+        "cvss_v3": 7.8,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Catastrophic",
+      "masked_fields": [
+        "true_attack_class",
+        "control_coverage"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_060",
+      "feature_row_index": 14140,
+      "true_attack_class": "DDoS",
+      "rf_predicted_class": "DDoS",
+      "asset": {
+        "id": "WS-024",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2024-20481",
+        "shortDescription": "Cisco Adaptive Security Appliance (ASA) and Firepower Threat Defense (FTD) contain a missing release of resource after effective lifetime vulnerability that could allow an unauthenticated, remote attacker to cause a denial-of-service (DoS) of the RAVPN service.",
+        "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Cisco",
+        "product": "Adaptive Security Appliance (ASA) and Firepower Threat Defense (FTD)",
+        "cvss_v3": 5.8,
+        "severity": "MEDIUM",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_061",
+      "feature_row_index": 13353,
+      "true_attack_class": "DDoS",
+      "rf_predicted_class": "DDoS",
+      "asset": {
+        "id": "WS-014",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2004-1464",
+        "shortDescription": "Cisco IOS contains an unspecified vulnerability that may block further telnet, reverse telnet, Remote Shell (RSH), Secure Shell (SSH), and in some cases, Hypertext Transport Protocol (HTTP) access to the Cisco device.",
+        "requiredAction": "Apply updates per vendor instructions.",
+        "vendor": "Cisco",
+        "product": "IOS",
+        "cvss_v3": 5.9,
+        "severity": "MEDIUM",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "High",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_062",
+      "feature_row_index": 13645,
+      "true_attack_class": "DDoS",
+      "rf_predicted_class": "DDoS",
+      "asset": {
+        "id": "WS-005",
+        "type": "workstation",
+        "criticality": "high",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2025-61932",
+        "shortDescription": "Motex LANSCOPE Endpoint Manager contains an improper verification of source of a communication channel vulnerability allowing an attacker to execute arbitrary code by sending specially crafted packets.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Motex",
+        "product": "LANSCOPE Endpoint Manager",
+        "cvss_v3": null,
+        "severity": null,
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Catastrophic",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_063",
+      "feature_row_index": 13615,
+      "true_attack_class": "DDoS",
+      "rf_predicted_class": "DDoS",
+      "asset": {
+        "id": "SRV-004",
+        "type": "server",
+        "criticality": "high",
+        "ip_segment": "172.31.69.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2025-6543",
+        "shortDescription": "Citrix NetScaler ADC and Gateway contain a buffer overflow vulnerability leading to unintended control flow and Denial of Service. NetScaler must be configured as Gateway (VPN virtual server, ICA Proxy, CVPN, RDP Proxy) OR AAA virtual server.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Citrix",
+        "product": "NetScaler ADC and Gateway",
+        "cvss_v3": 9.8,
+        "severity": "CRITICAL",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Catastrophic",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_064",
+      "feature_row_index": 12881,
+      "true_attack_class": "Infiltration",
+      "rf_predicted_class": "Infiltration",
+      "asset": {
+        "id": "WS-032",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2026-25108",
+        "shortDescription": "Soliton Systems K.K FileZen contains an OS command injection vulnerability when an user logs-in to the affected product and sends a specially crafted HTTP request.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Soliton Systems K.K",
+        "product": "FileZen",
+        "cvss_v3": 8.8,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Medium",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_065",
+      "feature_row_index": 12507,
+      "true_attack_class": "Infiltration",
+      "rf_predicted_class": "Infiltration",
+      "asset": {
+        "id": "WS-031",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2021-22175",
+        "shortDescription": "GitLab contains a server-side request forgery (SSRF) vulnerability when requests to the internal network for webhooks are enabled.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "GitLab",
+        "product": "GitLab",
+        "cvss_v3": 6.8,
+        "severity": "MEDIUM",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Medium",
+      "masked_fields": [
+        "true_attack_class",
+        "arg_neighborhood"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_066",
+      "feature_row_index": 13666,
+      "true_attack_class": "Infiltration",
+      "rf_predicted_class": "Benign",
+      "asset": {
+        "id": "WS-003",
+        "type": "workstation",
+        "criticality": "high",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2026-22719",
+        "shortDescription": "Broadcom VMware Aria Operations formerly known as vRealize Operations (vROps) contains a command injection vulnerability that allows an unauthenticated attacker to execute arbitrary commands, potentially leading to remote code execution during support\u2011assisted product migration.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Broadcom",
+        "product": "VMware Aria Operations",
+        "cvss_v3": 8.1,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Medium",
+      "masked_fields": [
+        "true_attack_class",
+        "arg_neighborhood"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_067",
+      "feature_row_index": 12336,
+      "true_attack_class": "Infiltration",
+      "rf_predicted_class": "Infiltration",
+      "asset": {
+        "id": "WS-017",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2022-20775",
+        "shortDescription": "Cisco SD-WAN CLI contains a path traversal vulnerability that could allow an authenticated local attacker to gain elevated privileges via improper access controls on commands within the application CLI. A successful exploit could allow the attacker to execute arbitrary commands as the root user.",
+        "requiredAction": "Please adhere to CISA\u2019s guidelines to assess exposure and mitigate risks associated with Cisco SD-WAN devices as outlines in CISA\u2019s Emergency Directive 26-03 (URL listed below in Notes) and CISA\u2019s \u201cHunt & Hardening Guidance for Cisco SD-WAN Devices (URL listed below in Notes). Adhere to the applicable BOD 22-01 guidance for cloud services or discontinue use of the product if mitigations are not available.",
+        "vendor": "Cisco",
+        "product": "SD-WAN",
+        "cvss_v3": 7.8,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Medium",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_068",
+      "feature_row_index": 14085,
+      "true_attack_class": "Infiltration",
+      "rf_predicted_class": "Infiltration",
+      "asset": {
+        "id": "WS-028",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2024-43468",
+        "shortDescription": "Microsoft Configuration Manager contains an SQL injection vulnerability. An unauthenticated attacker could exploit this vulnerability by sending specially crafted requests to the target environment which are processed in an unsafe manner enabling the attacker to execute commands on the server and/or underlying database.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Microsoft",
+        "product": "Configuration Manager",
+        "cvss_v3": 9.8,
+        "severity": "CRITICAL",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Medium",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_069",
+      "feature_row_index": 13074,
+      "true_attack_class": "Infiltration",
+      "rf_predicted_class": "Infiltration",
+      "asset": {
+        "id": "SRV-001",
+        "type": "server",
+        "criticality": "high",
+        "ip_segment": "172.31.69.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2020-7796",
+        "shortDescription": "Synacor Zimbra Collaboration Suite (ZCS) contains a server-side request forgery vulnerability if WebEx zimlet installed and zimlet JSP is enabled.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Synacor",
+        "product": "Zimbra Collaboration Suite",
+        "cvss_v3": 9.8,
+        "severity": "CRITICAL",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Medium",
+      "masked_fields": [
+        "true_attack_class",
+        "asset_type"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_070",
+      "feature_row_index": 13410,
+      "true_attack_class": "Infiltration",
+      "rf_predicted_class": "Infiltration",
+      "asset": {
+        "id": "WS-036",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2008-0015",
+        "shortDescription": "Microsoft Windows Video ActiveX Control contains a remote code execution vulnerability. An attacker could exploit the vulnerability by constructing a specially crafted Web page. When a user views the Web page, the vulnerability could allow remote code execution. An attacker who successfully exploited this vulnerability could gain the same user rights as the logged-on user.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Microsoft",
+        "product": "Windows",
+        "cvss_v3": 8.8,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Medium",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_071",
+      "feature_row_index": 12345,
+      "true_attack_class": "Infiltration",
+      "rf_predicted_class": "Infiltration",
+      "asset": {
+        "id": "WS-011",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2025-49113",
+        "shortDescription": "RoundCube Webmail contains a deserialization of untrusted data vulnerability that allows remote code execution by authenticated users because the _from parameter in a URL is not validated in program/actions/settings/upload.php.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Roundcube",
+        "product": "Webmail",
+        "cvss_v3": 9.9,
+        "severity": "CRITICAL",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Medium",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_072",
+      "feature_row_index": 13298,
+      "true_attack_class": "Infiltration",
+      "rf_predicted_class": "Infiltration",
+      "asset": {
+        "id": "WS-026",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2026-3909",
+        "shortDescription": "Google Skia contains an out-of-bounds write vulnerability that could allow a remote attacker to perform out of bounds memory access via a crafted HTML page. This vulnerability affects Google Chrome and ChromeOS, Android, Flutter, and possibly other products.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Google",
+        "product": "Skia",
+        "cvss_v3": 8.8,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Medium",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_073",
+      "feature_row_index": 12707,
+      "true_attack_class": "Infiltration",
+      "rf_predicted_class": "Infiltration",
+      "asset": {
+        "id": "WS-041",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2025-68613",
+        "shortDescription": "n8n contains an improper control of dynamically managed code resources vulnerability in its workflow expression evaluation system that allows for remote code execution.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "n8n",
+        "product": "n8n",
+        "cvss_v3": 9.9,
+        "severity": "CRITICAL",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Medium",
+      "masked_fields": [
+        "true_attack_class"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_074",
+      "feature_row_index": 12743,
+      "true_attack_class": "Infiltration",
+      "rf_predicted_class": "Infiltration",
+      "asset": {
+        "id": "WS-034",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2026-20700",
+        "shortDescription": "Apple iOS, macOS, tvOS, watchOS, and visionOS contain an improper restriction of operations within the bounds of a memory buffer vulnerability that could allow an attacker with memory write the capability to execute arbitrary code.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Apple",
+        "product": "Multiple Products",
+        "cvss_v3": 7.8,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Medium",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_075",
+      "feature_row_index": 14086,
+      "true_attack_class": "Infiltration",
+      "rf_predicted_class": "Infiltration",
+      "asset": {
+        "id": "WS-023",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2026-21533",
+        "shortDescription": "Microsoft Windows Remote Desktop Services contains an improper privilege management vulnerability that could allow an authorized attacker to elevate privileges locally.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Microsoft",
+        "product": "Windows",
+        "cvss_v3": 7.8,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Medium",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_076",
+      "feature_row_index": 12144,
+      "true_attack_class": "Infiltration",
+      "rf_predicted_class": "Infiltration",
+      "asset": {
+        "id": "WS-021",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2025-26399",
+        "shortDescription": "SolarWinds Web Help Desk contain a deserialization of untrusted data vulnerability in AjaxProxy that could allow an attacker to run commands on the host machine.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "SolarWinds",
+        "product": "Web Help Desk",
+        "cvss_v3": 9.8,
+        "severity": "CRITICAL",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Medium",
+      "masked_fields": [
+        "true_attack_class"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_077",
+      "feature_row_index": 13401,
+      "true_attack_class": "Infiltration",
+      "rf_predicted_class": "Infiltration",
+      "asset": {
+        "id": "WS-013",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2024-7694",
+        "shortDescription": "TeamT5 ThreatSonar Anti-Ransomware contains an unrestricted upload of file with dangerous type vulnerability. ThreatSonar Anti-Ransomware does not properly validate the content of uploaded files. Remote attackers with administrator privileges on the product platform can upload malicious files, which can be used to execute arbitrary system commands on the server.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "TeamT5",
+        "product": "ThreatSonar Anti-Ransomware",
+        "cvss_v3": 7.2,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Medium",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_078",
+      "feature_row_index": 12837,
+      "true_attack_class": "Infiltration",
+      "rf_predicted_class": "Benign",
+      "asset": {
+        "id": "WS-015",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2026-3910",
+        "shortDescription": "Google Chromium V8 contains an improper restriction of operations within the bounds of a memory buffer vulnerability that could allow a remote attacker to execute arbitrary code inside a sandbox via a crafted HTML page. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Google",
+        "product": "Chromium V8",
+        "cvss_v3": 8.8,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Medium",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_079",
+      "feature_row_index": 13864,
+      "true_attack_class": "Infiltration",
+      "rf_predicted_class": "Infiltration",
+      "asset": {
+        "id": "WS-035",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2021-22054",
+        "shortDescription": "Omnissa Workspace One UEM formerly known as VMware Workspace One UEM contains a server-side request forgery (SSRF) vulnerability that could allow a malicious actor with network access to UEM to send their requests without authentication and to gain access to sensitive information.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Omnissa",
+        "product": "Workspace One UEM",
+        "cvss_v3": 7.5,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Medium",
+      "masked_fields": [
+        "true_attack_class"
+      ],
+      "subset": "B"
+    }
+  ]
+}

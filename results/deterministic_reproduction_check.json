@@ -1,0 +1,44 @@
+{
+  "purpose": "Independent reproduction check of deterministic pipeline claims (ontology/shape counts, corpus SHACL conformance). Reproduces reported figures through the released validator against the persisted corpus artefact -- does not independently re-derive the corpus from primary CIC-IDS2018 data.",
+  "ontology": {
+    "classes": 29,
+    "object_properties": 28,
+    "datatype_properties": 44
+  },
+  "shapes_by_file": {
+    "control-recommendation.shacl.ttl": 1,
+    "grc-entities.shacl.ttl": 8,
+    "risk-scenario.shacl.ttl": 1,
+    "technical-entities.shacl.ttl": 7
+  },
+  "shapes_total": 17,
+  "corpus_validation_with_clause_context": {
+    "with_clause_context": true,
+    "triples": 4854,
+    "targeted": 557,
+    "clean": 526,
+    "violations": 31,
+    "violations_by_message": {
+      "Every RiskCase must be linked to at least one Vulnerability or SecurityEvent": 30,
+      "Vulnerability must have exactly one cweId matching pattern CWE-NNNN": 1
+    },
+    "conforming_share_pct": 94.4
+  },
+  "corpus_validation_without_clause_context": {
+    "with_clause_context": false,
+    "triples": 4854,
+    "targeted": 557,
+    "clean": 522,
+    "violations": 35,
+    "violations_by_message": {
+      "Every RiskCase must be linked to at least one Vulnerability or SecurityEvent": 30,
+      "Vulnerability must have exactly one cweId matching pattern CWE-NNNN": 1,
+      "nfcrmClause NFCRM-1:2025-\u00a76.10 is not a clause of NFCRM-1:2025 (no grc:Clause individual carries this grc:clauseRefNFCRM)": 1,
+      "nfcrmClause NFCRM-1:2025-\u00a76.7 is not a clause of NFCRM-1:2025 (no grc:Clause individual carries this grc:clauseRefNFCRM)": 1,
+      "nfcrmClause NFCRM-1:2025-\u00a75.2 is not a clause of NFCRM-1:2025 (no grc:Clause individual carries this grc:clauseRefNFCRM)": 1,
+      "nfcrmClause NFCRM-1:2025-\u00a76.17 is not a clause of NFCRM-1:2025 (no grc:Clause individual carries this grc:clauseRefNFCRM)": 1
+    },
+    "conforming_share_pct": 93.7
+  },
+  "reproducibility_note": "Validating without merging the clause-individuals graph first (with_clause_context() in scripts/clause_context.py) yields a different, lower conformance figure -- both are internally consistent pyshacl runs, only one matches the pipeline as designed."
+}

@@ -1,0 +1,275 @@
+{
+  "n": 60,
+  "levels": [
+    "Very Low",
+    "Low",
+    "Medium",
+    "High",
+    "Catastrophic"
+  ],
+  "ground_truth_distribution": {
+    "Very Low": 10,
+    "High": 10,
+    "Medium": 23,
+    "Low": 1,
+    "Catastrophic": 16
+  },
+  "paradigms": {
+    "Pure Rule": {
+      "file": "rule_n60.jsonl",
+      "missing": 0,
+      "risk_level_accuracy": 0.4833,
+      "severe_recall_high_plus": 0.5385,
+      "under_escalation_rate": 0.4333,
+      "over_escalation_rate": 0.0833,
+      "max_under_escalation_steps": 4,
+      "confusion_matrix": {
+        "Very Low": {
+          "Very Low": 5,
+          "Medium": 3,
+          "High": 1,
+          "Catastrophic": 1
+        },
+        "Low": {
+          "Very Low": 1
+        },
+        "Medium": {
+          "Medium": 10,
+          "Very Low": 13
+        },
+        "High": {
+          "Very Low": 6,
+          "High": 4
+        },
+        "Catastrophic": {
+          "Very Low": 6,
+          "Catastrophic": 10
+        }
+      }
+    },
+    "Pure ML (RF)": {
+      "file": "ml_rf_n60.jsonl",
+      "missing": 0,
+      "risk_level_accuracy": 0.9,
+      "severe_recall_high_plus": 1.0,
+      "under_escalation_rate": 0.1,
+      "over_escalation_rate": 0.0,
+      "max_under_escalation_steps": 2,
+      "confusion_matrix": {
+        "Very Low": {
+          "Very Low": 10
+        },
+        "Low": {
+          "Very Low": 1
+        },
+        "Medium": {
+          "Medium": 18,
+          "Very Low": 5
+        },
+        "High": {
+          "High": 10
+        },
+        "Catastrophic": {
+          "Catastrophic": 16
+        }
+      }
+    },
+    "Pure ML (XGBoost)": {
+      "file": "ml_xgb_n60.jsonl",
+      "missing": 0,
+      "risk_level_accuracy": 0.95,
+      "severe_recall_high_plus": 1.0,
+      "under_escalation_rate": 0.05,
+      "over_escalation_rate": 0.0,
+      "max_under_escalation_steps": 2,
+      "confusion_matrix": {
+        "Very Low": {
+          "Very Low": 10
+        },
+        "Low": {
+          "Low": 1
+        },
+        "Medium": {
+          "Medium": 20,
+          "Very Low": 3
+        },
+        "High": {
+          "High": 10
+        },
+        "Catastrophic": {
+          "Catastrophic": 16
+        }
+      }
+    },
+    "Tri-stage RF": {
+      "file": "tristage_rf_n60.jsonl",
+      "missing": 0,
+      "risk_level_accuracy": 0.9,
+      "severe_recall_high_plus": 1.0,
+      "under_escalation_rate": 0.1,
+      "over_escalation_rate": 0.0,
+      "max_under_escalation_steps": 2,
+      "confusion_matrix": {
+        "Very Low": {
+          "Very Low": 10
+        },
+        "Low": {
+          "Very Low": 1
+        },
+        "Medium": {
+          "Medium": 18,
+          "Very Low": 5
+        },
+        "High": {
+          "High": 10
+        },
+        "Catastrophic": {
+          "Catastrophic": 16
+        }
+      }
+    },
+    "Tri-stage XGBoost": {
+      "file": "tristage_xgb_n60.jsonl",
+      "missing": 0,
+      "risk_level_accuracy": 0.95,
+      "severe_recall_high_plus": 1.0,
+      "under_escalation_rate": 0.05,
+      "over_escalation_rate": 0.0,
+      "max_under_escalation_steps": 2,
+      "confusion_matrix": {
+        "Very Low": {
+          "Very Low": 10
+        },
+        "Low": {
+          "Low": 1
+        },
+        "Medium": {
+          "Medium": 20,
+          "Very Low": 3
+        },
+        "High": {
+          "High": 10
+        },
+        "Catastrophic": {
+          "Catastrophic": 16
+        }
+      }
+    },
+    "Pure LLM (Haiku)": {
+      "file": "pure_llm_haiku.jsonl",
+      "missing": 0,
+      "risk_level_accuracy": 0.7333,
+      "severe_recall_high_plus": 0.9615,
+      "under_escalation_rate": 0.0667,
+      "over_escalation_rate": 0.2,
+      "max_under_escalation_steps": 1,
+      "confusion_matrix": {
+        "Very Low": {
+          "Medium": 3,
+          "Very Low": 2,
+          "High": 2,
+          "Catastrophic": 3
+        },
+        "Low": {
+          "Very Low": 1
+        },
+        "Medium": {
+          "Medium": 18,
+          "Catastrophic": 3,
+          "High": 1,
+          "Low": 1
+        },
+        "High": {
+          "High": 9,
+          "Medium": 1
+        },
+        "Catastrophic": {
+          "Catastrophic": 15,
+          "High": 1
+        }
+      }
+    },
+    "Pure LLM (Sonnet)": {
+      "file": "pure_llm.jsonl",
+      "missing": 0,
+      "risk_level_accuracy": 0.7833,
+      "severe_recall_high_plus": 0.9615,
+      "under_escalation_rate": 0.05,
+      "over_escalation_rate": 0.1667,
+      "max_under_escalation_steps": 1,
+      "confusion_matrix": {
+        "Very Low": {
+          "Medium": 5,
+          "High": 2,
+          "Catastrophic": 3
+        },
+        "Low": {
+          "Low": 1
+        },
+        "Medium": {
+          "Medium": 23
+        },
+        "High": {
+          "High": 9,
+          "Medium": 1
+        },
+        "Catastrophic": {
+          "Catastrophic": 14,
+          "High": 2
+        }
+      }
+    },
+    "Tri-stage LLM (Haiku)": {
+      "file": "tristage_llm_haiku.jsonl",
+      "missing": 0,
+      "risk_level_accuracy": 1.0,
+      "severe_recall_high_plus": 1.0,
+      "under_escalation_rate": 0.0,
+      "over_escalation_rate": 0.0,
+      "max_under_escalation_steps": 0,
+      "confusion_matrix": {
+        "Very Low": {
+          "Very Low": 10
+        },
+        "Low": {
+          "Low": 1
+        },
+        "Medium": {
+          "Medium": 23
+        },
+        "High": {
+          "High": 10
+        },
+        "Catastrophic": {
+          "Catastrophic": 16
+        }
+      }
+    },
+    "Tri-stage LLM (Sonnet)": {
+      "file": "tristage_llm_sonnet.jsonl",
+      "missing": 0,
+      "risk_level_accuracy": 1.0,
+      "severe_recall_high_plus": 1.0,
+      "under_escalation_rate": 0.0,
+      "over_escalation_rate": 0.0,
+      "max_under_escalation_steps": 0,
+      "confusion_matrix": {
+        "Very Low": {
+          "Very Low": 10
+        },
+        "Low": {
+          "Low": 1
+        },
+        "Medium": {
+          "Medium": 23
+        },
+        "High": {
+          "High": 10
+        },
+        "Catastrophic": {
+          "Catastrophic": 16
+        }
+      }
+    }
+  }
+}

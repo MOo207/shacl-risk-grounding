@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this reproducibility package, please cite it as below."
+title: "Grounding Machine Learning and LLM-Based Risk Inference in a Shared SHACL Knowledge Layer: An NFCRM-1:2025 Case Study"
+type: software
+authors:
+  - family-names: "Alamawy"
+    given-names: "Mohammed Ismail"
+    email: "461020996@stu.iu.edu.sa"
+    affiliation: "Faculty of Computer and Information Systems, Islamic University of Madinah, Madinah, Saudi Arabia"
+  - family-names: "Hamdi"
+    given-names: "Fayçal"
+    orcid: "https://orcid.org/0000-0002-5314-1419"
+    affiliation: "Faculty of Computer and Information Systems, Islamic University of Madinah, Madinah, Saudi Arabia"
+  - family-names: "Binsalleeh"
+    given-names: "Hamad"
+    orcid: "https://orcid.org/0000-0002-0886-6314"
+    affiliation: "Department of Computer Science, Imam Mohammad Ibn Saud Islamic University (IMSIU), Riyadh, Saudi Arabia"
+repository-code: "https://github.com/MOo207/shacl-risk-grounding"
+license: MIT
+version: 1.0.0
+date-released: 2026-08-10

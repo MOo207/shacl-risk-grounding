@@ -1,0 +1,223 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix grc: <https://w3id.org/grc/ontology#> .
+
+################################################################################
+# NFCRM-1:2025 clauses as first-class resources (clause-as-resource remodelling).
+#
+# Each clause of the standard's SS5 (national responsibilities) and SS6
+# (methodology) sections is an individual of grc:Clause, carrying its
+# canonical identifier (grc:clauseId, "SS5.1" notation as used by the
+# generation pipeline and SHACL shapes), title, and description.
+# Source of truth: data/external/nfcrm_clause_mapping.json.
+#
+# IRIs use dash notation (clause-SS5-1) rather than dotted local names to
+# avoid Turtle PN_LOCAL edge cases; the dotted canonical form lives in the
+# grc:clauseId literal.
+#
+# This file is the single source of the clause set. The clause-bearing shapes
+# in risk-scenario.shacl.ttl and control-recommendation.shacl.ttl join against
+# the grc:Clause individuals below with a SPARQL constraint; they do not carry
+# their own copy of the identifier list. Adding or removing a clause here
+# therefore changes validation behaviour with no edit to any shape file.
+#
+# Consequence worth stating: the constraint is fail-closed. A validator that
+# does not load this graph rejects every clause reference rather than accepting
+# any, so an unloaded clause set is observable rather than silent.
+################################################################################
+
+<https://w3id.org/grc/nfcrm-clauses> a owl:Ontology ;
+    rdfs:label "NFCRM-1:2025 clause set"@en ;
+    rdfs:comment "The 26 clauses of NFCRM-1:2025 (SS5.1-SS5.6, SS6.1-SS6.20) as first-class resources."@en ;
+    owl:versionInfo "1.0.0" .
+
+grc:Clause a owl:Class ;
+    rdfs:label "NFCRM-1:2025 Clause"@en ;
+    rdfs:comment "A machine-enumerable clause of NFCRM-1:2025. Individuals below enumerate the standard's SS5 and SS6 clauses."@en .
+
+grc:clauseId a owl:DatatypeProperty ;
+    rdfs:domain grc:Clause ;
+    rdfs:range xsd:string ;
+    rdfs:label "clause identifier"@en ;
+    rdfs:comment "Canonical clause identifier in SS-notation (e.g., SS6.9)."@en .
+
+# --- Section 5: national responsibilities ---
+
+grc:clause-SS5-1 a grc:Clause ;
+    grc:clauseId "SS5.1" ;
+    rdfs:label "Liaison officer" ;
+    rdfs:comment "Designate a liaison officer with NCA for cybersecurity risk management activation" .
+
+grc:clause-SS5-2 a grc:Clause ;
+    grc:clauseId "SS5.2" ;
+    rdfs:label "Asset inventory" ;
+    rdfs:comment "Inventory and classify all organization assets (sensitive systems, OT, social media accounts, etc.) per NCA guidance, and review classification periodically" .
+
+grc:clause-SS5-3 a grc:Clause ;
+    grc:clauseId "SS5.3" ;
+    rdfs:label "Internet-facing assets" ;
+    rdfs:comment "Inventory internet-facing assets" .
+
+grc:clause-SS5-4 a grc:Clause ;
+    grc:clauseId "SS5.4" ;
+    rdfs:label "Report to NCA via Haseen" ;
+    rdfs:comment "Report identified assets (from 5.2 and 5.3) to NCA periodically via Haseen platform, and update upon any change" .
+
+grc:clause-SS5-5 a grc:Clause ;
+    grc:clauseId "SS5.5" ;
+    rdfs:label "Report high/catastrophic risks" ;
+    rdfs:comment "Report cybersecurity risks at catastrophic (level 5) and high (level 4) levels to NCA immediately upon identification, per the risk assessment matrix (Figure 2), and share treatment plans periodically" .
+
+grc:clause-SS5-6 a grc:Clause ;
+    grc:clauseId "SS5.6" ;
+    rdfs:label "Address NCA feedback" ;
+    rdfs:comment "Address risks, vulnerabilities, and observations received from NCA; report on remediation actions periodically via Haseen platform" .
+
+# --- Section 6: methodology ---
+
+grc:clause-SS6-1 a grc:Clause ;
+    grc:clauseId "SS6.1" ;
+    rdfs:label "Continuous program" ;
+    rdfs:comment "Develop and operate a continuous program for cybersecurity risk management methodology with dedicated resources" .
+
+grc:clause-SS6-2 a grc:Clause ;
+    grc:clauseId "SS6.2" ;
+    rdfs:label "Stakeholder engagement" ;
+    rdfs:comment "Engage stakeholders in various phases (e.g., cybersecurity supervisory committee, IT department)" .
+
+grc:clause-SS6-3 a grc:Clause ;
+    grc:clauseId "SS6.3" ;
+    rdfs:label "Asset inventory" ;
+    rdfs:comment "Inventory and classify organization assets" .
+
+grc:clause-SS6-4 a grc:Clause ;
+    grc:clauseId "SS6.4" ;
+    rdfs:label "Vulnerability inventory" ;
+    rdfs:comment "Inventory cybersecurity vulnerabilities" .
+
+grc:clause-SS6-5 a grc:Clause ;
+    grc:clauseId "SS6.5" ;
+    rdfs:label "Threat inventory" ;
+    rdfs:comment "Inventory potential cybersecurity threats" .
+
+grc:clause-SS6-6 a grc:Clause ;
+    grc:clauseId "SS6.6" ;
+    rdfs:label "Risk scenarios" ;
+    rdfs:comment "Develop expected cybersecurity risk scenarios based on threats and vulnerabilities" .
+
+grc:clause-SS6-7 a grc:Clause ;
+    grc:clauseId "SS6.7" ;
+    rdfs:label "Current controls" ;
+    rdfs:comment "Identify currently applied controls to address expected risk scenarios" .
+
+grc:clause-SS6-8 a grc:Clause ;
+    grc:clauseId "SS6.8" ;
+    rdfs:label "Acceptable risk level" ;
+    rdfs:comment "Determine acceptable risk level for the organization" .
+
+grc:clause-SS6-9 a grc:Clause ;
+    grc:clauseId "SS6.9" ;
+    rdfs:label "Inherent risk analysis" ;
+    rdfs:comment "Conduct inherent risk analysis for all expected risk scenarios and currently applied controls, assessing likelihood and impact per the risk assessment matrix (Figure 2)" .
+
+grc:clause-SS6-10 a grc:Clause ;
+    grc:clauseId "SS6.10" ;
+    rdfs:label "Risk register" ;
+    rdfs:comment "Document analysis and assessment results in the cybersecurity risk register" .
+
+grc:clause-SS6-11 a grc:Clause ;
+    grc:clauseId "SS6.11" ;
+    rdfs:label "Treatment plans" ;
+    rdfs:comment "Develop cybersecurity risk treatment plans" .
+
+grc:clause-SS6-12 a grc:Clause ;
+    grc:clauseId "SS6.12" ;
+    rdfs:label "Residual risk" ;
+    rdfs:comment "Assess expected residual risk after executing treatment plans to confirm acceptable risk level is reached" .
+
+grc:clause-SS6-13 a grc:Clause ;
+    grc:clauseId "SS6.13" ;
+    rdfs:label "Treatment decision" ;
+    rdfs:comment "Make risk treatment decision (accepting, sharing, mitigating, or avoiding) and define related treatment plans" .
+
+grc:clause-SS6-14 a grc:Clause ;
+    grc:clauseId "SS6.14" ;
+    rdfs:label "Prioritize treatment plans" ;
+    rdfs:comment "Prioritize treatment plans" .
+
+grc:clause-SS6-15 a grc:Clause ;
+    grc:clauseId "SS6.15" ;
+    rdfs:label "Execute treatment plans" ;
+    rdfs:comment "Execute treatment plans" .
+
+grc:clause-SS6-16 a grc:Clause ;
+    grc:clauseId "SS6.16" ;
+    rdfs:label "Update risk register" ;
+    rdfs:comment "Update cybersecurity risk register to include treatment plans and residual risks" .
+
+grc:clause-SS6-17 a grc:Clause ;
+    grc:clauseId "SS6.17" ;
+    rdfs:label "Reports" ;
+    rdfs:comment "Develop cybersecurity risk management reports" .
+
+grc:clause-SS6-18 a grc:Clause ;
+    grc:clauseId "SS6.18" ;
+    rdfs:label "Statistical criteria" ;
+    rdfs:comment "Establish statistical data collection criteria for risk monitoring" .
+
+grc:clause-SS6-19 a grc:Clause ;
+    grc:clauseId "SS6.19" ;
+    rdfs:label "Periodic follow-up" ;
+    rdfs:comment "Monitor treatment plan execution periodically and issue related reports" .
+
+grc:clause-SS6-20 a grc:Clause ;
+    grc:clauseId "SS6.20" ;
+    rdfs:label "Re-execute on change" ;
+    rdfs:comment "Re-execute risk management methodology periodically, or per NCA guidance, or upon change in: treatment plans, potential threats, expected scenarios, control implementation status, or digital infrastructure" .
+
+################################################################################
+# Alternate notation bridge.
+#
+# Three clause notations exist across this project: the canonical SS-form carried
+# by grc:clauseId ("SS6.7"), the long form used by NFCRMControl instances in the
+# ARG ("NFCRM-1:2025-§6.7"), and the dash form used in some node identifiers
+# ("NFCRM-6-7"). grc:clauseId remains canonical; the long form is declared below
+# so grc:NFCRMControlShape can validate references referentially by joining this
+# graph, rather than by matching a syntactic pattern that accepts any well-formed
+# but nonexistent identifier such as NFCRM-1:2025-§99.99.
+################################################################################
+
+grc:clause-SS5-1 grc:clauseRefNFCRM "NFCRM-1:2025-§5.1" .
+grc:clause-SS5-2 grc:clauseRefNFCRM "NFCRM-1:2025-§5.2" .
+grc:clause-SS5-3 grc:clauseRefNFCRM "NFCRM-1:2025-§5.3" .
+grc:clause-SS5-4 grc:clauseRefNFCRM "NFCRM-1:2025-§5.4" .
+grc:clause-SS5-5 grc:clauseRefNFCRM "NFCRM-1:2025-§5.5" .
+grc:clause-SS5-6 grc:clauseRefNFCRM "NFCRM-1:2025-§5.6" .
+grc:clause-SS6-1 grc:clauseRefNFCRM "NFCRM-1:2025-§6.1" .
+grc:clause-SS6-2 grc:clauseRefNFCRM "NFCRM-1:2025-§6.2" .
+grc:clause-SS6-3 grc:clauseRefNFCRM "NFCRM-1:2025-§6.3" .
+grc:clause-SS6-4 grc:clauseRefNFCRM "NFCRM-1:2025-§6.4" .
+grc:clause-SS6-5 grc:clauseRefNFCRM "NFCRM-1:2025-§6.5" .
+grc:clause-SS6-6 grc:clauseRefNFCRM "NFCRM-1:2025-§6.6" .
+grc:clause-SS6-7 grc:clauseRefNFCRM "NFCRM-1:2025-§6.7" .
+grc:clause-SS6-8 grc:clauseRefNFCRM "NFCRM-1:2025-§6.8" .
+grc:clause-SS6-9 grc:clauseRefNFCRM "NFCRM-1:2025-§6.9" .
+grc:clause-SS6-10 grc:clauseRefNFCRM "NFCRM-1:2025-§6.10" .
+grc:clause-SS6-11 grc:clauseRefNFCRM "NFCRM-1:2025-§6.11" .
+grc:clause-SS6-12 grc:clauseRefNFCRM "NFCRM-1:2025-§6.12" .
+grc:clause-SS6-13 grc:clauseRefNFCRM "NFCRM-1:2025-§6.13" .
+grc:clause-SS6-14 grc:clauseRefNFCRM "NFCRM-1:2025-§6.14" .
+grc:clause-SS6-15 grc:clauseRefNFCRM "NFCRM-1:2025-§6.15" .
+grc:clause-SS6-16 grc:clauseRefNFCRM "NFCRM-1:2025-§6.16" .
+grc:clause-SS6-17 grc:clauseRefNFCRM "NFCRM-1:2025-§6.17" .
+grc:clause-SS6-18 grc:clauseRefNFCRM "NFCRM-1:2025-§6.18" .
+grc:clause-SS6-19 grc:clauseRefNFCRM "NFCRM-1:2025-§6.19" .
+grc:clause-SS6-20 grc:clauseRefNFCRM "NFCRM-1:2025-§6.20" .
+
+grc:clauseRefNFCRM a owl:DatatypeProperty ;
+    rdfs:domain grc:Clause ;
+    rdfs:range xsd:string ;
+    rdfs:label "clause reference, NFCRM long notation"@en ;
+    rdfs:comment "The same clause in NFCRM-1:2025-§N.N notation. grc:clauseId remains the canonical identifier."@en .

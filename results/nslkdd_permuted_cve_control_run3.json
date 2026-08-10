@@ -1,0 +1,62 @@
+{
+  "pre_registration": "Permuted-/ablated-CVE control for the NSL-KDD leak-free safety replication.\n\nPRE-REGISTRATION (fixed before any live call in this run):\n  Motivation: round-4 review proved CVE identity in test_sample.json maps\n  injectively to attack class and CVE presence separates Normal from attack\n  (results/cve_presence_heuristic.json: the bare presence heuristic scores\n  0% under-escalation / 100% severe recall). This control isolates how much\n  of the reconciled tri-stage Haiku result (10.0% under-esc, 93.9% severe\n  recall) the CVE channel contributes.\n\n  Arms (both Haiku, claude-haiku-4-5-20251001, identical Stage-1a prompt,\n  parser, and scoring as scripts/run_nslkdd_reconciled_tristage_haiku.py):\n    no_cve    -- cve_block replaced by \"No CVE context.\" on ALL 100 cases.\n    permuted  -- paired_cve values shuffled across the 80 attack cases\n                 (numpy default_rng seed 42), Normal cases stay CVE-free.\n                 Breaks CVE-identity->class; preserves presence->attack.\n  Scoring: identical metric definitions (exact, under-esc, over-esc,\n  severe recall over GT in {High, Catastrophic}); reconciled level =\n  max(LLM level, xgb_risk_level) per the pre-registered most-severe-wins\n  rule; directional McNemar b/c vs XGBoost, one-sided sign test.\n  Unparseable outputs score as the XGBoost passthrough (reconciled arm)\n  and as under-escalation-if-below-GT via Very Low (LLM-only arm), the\n  same convention as the primary run; unparseable counts are reported.\n  Interpretation rule fixed in advance: if the no-CVE reconciled arm's\n  under-escalation is within 5 percentage points of the primary run's\n  10.0%, the safety result does NOT depend on the CVE channel; if it\n  reverts toward XGBoost's 48.0%, the CVE channel is load-bearing.\n",
+  "model": "claude-haiku-4-5-20251001",
+  "arms": {
+    "no_cve": {
+      "llm_only": {
+        "exact_pct": 40.0,
+        "under_escalation_pct": 48.0,
+        "over_escalation_pct": 12.0,
+        "severe_recall_pct": 44.89795918367347,
+        "severe_total": 49
+      },
+      "reconciled": {
+        "exact_pct": 54.0,
+        "under_escalation_pct": 31.0,
+        "over_escalation_pct": 15.0,
+        "severe_recall_pct": 69.38775510204081,
+        "severe_total": 49
+      },
+      "reconciled_mcnemar_vs_xgb": {
+        "b": 17,
+        "c": 0,
+        "p_one_sided": 7.62939453125e-06
+      },
+      "llm_only_mcnemar_vs_xgb": {
+        "b": 17,
+        "c": 17,
+        "p_one_sided": 0.5679168797796592
+      },
+      "unparseable": 0,
+      "elapsed_s": 2169.1
+    },
+    "permuted": {
+      "llm_only": {
+        "exact_pct": 57.0,
+        "under_escalation_pct": 13.0,
+        "over_escalation_pct": 30.0,
+        "severe_recall_pct": 89.79591836734694,
+        "severe_total": 49
+      },
+      "reconciled": {
+        "exact_pct": 63.0,
+        "under_escalation_pct": 6.0,
+        "over_escalation_pct": 31.0,
+        "severe_recall_pct": 95.91836734693878,
+        "severe_total": 49
+      },
+      "reconciled_mcnemar_vs_xgb": {
+        "b": 42,
+        "c": 0,
+        "p_one_sided": 2.2737367544323206e-13
+      },
+      "llm_only_mcnemar_vs_xgb": {
+        "b": 42,
+        "c": 7,
+        "p_one_sided": 1.8122891631833227e-07
+      },
+      "unparseable": 0,
+      "elapsed_s": 2488.7
+    }
+  }
+}

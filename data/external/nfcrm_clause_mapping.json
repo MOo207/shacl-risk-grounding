@@ -1,0 +1,81 @@
+{
+  "standard": "NFCRM-1:2025",
+  "issuer": "National Cybersecurity Authority (NCA)",
+  "version": "1.0",
+  "release_date": "2025",
+  "phases": {
+    "national_responsibilities": {
+      "section": "5",
+      "clauses": [
+        {"id": "§5.1", "title": "Liaison officer", "description": "Designate a liaison officer with NCA for cybersecurity risk management activation"},
+        {"id": "§5.2", "title": "Asset inventory", "description": "Inventory and classify all organization assets (sensitive systems, OT, social media accounts, etc.) per NCA guidance, and review classification periodically"},
+        {"id": "§5.3", "title": "Internet-facing assets", "description": "Inventory internet-facing assets"},
+        {"id": "§5.4", "title": "Report to NCA via Haseen", "description": "Report identified assets (from 5.2 and 5.3) to NCA periodically via Haseen platform, and update upon any change"},
+        {"id": "§5.5", "title": "Report high/catastrophic risks", "description": "Report cybersecurity risks at catastrophic (level 5) and high (level 4) levels to NCA immediately upon identification, per the risk assessment matrix (Figure 2), and share treatment plans periodically"},
+        {"id": "§5.6", "title": "Address NCA feedback", "description": "Address risks, vulnerabilities, and observations received from NCA; report on remediation actions periodically via Haseen platform"}
+      ]
+    },
+    "methodology_setup": {
+      "section": "6.1-6.2",
+      "clauses": [
+        {"id": "§6.1", "title": "Continuous program", "description": "Develop and operate a continuous program for cybersecurity risk management methodology with dedicated resources"},
+        {"id": "§6.2", "title": "Stakeholder engagement", "description": "Engage stakeholders in various phases (e.g., cybersecurity supervisory committee, IT department)"}
+      ]
+    },
+    "identification": {
+      "section": "6.3-6.8",
+      "clauses": [
+        {"id": "§6.3", "title": "Asset inventory", "description": "Inventory and classify organization assets"},
+        {"id": "§6.4", "title": "Vulnerability inventory", "description": "Inventory cybersecurity vulnerabilities"},
+        {"id": "§6.5", "title": "Threat inventory", "description": "Inventory potential cybersecurity threats"},
+        {"id": "§6.6", "title": "Risk scenarios", "description": "Develop expected cybersecurity risk scenarios based on threats and vulnerabilities"},
+        {"id": "§6.7", "title": "Current controls", "description": "Identify currently applied controls to address expected risk scenarios"},
+        {"id": "§6.8", "title": "Acceptable risk level", "description": "Determine acceptable risk level for the organization"}
+      ]
+    },
+    "assessment": {
+      "section": "6.9-6.10",
+      "clauses": [
+        {"id": "§6.9", "title": "Inherent risk analysis", "description": "Conduct inherent risk analysis for all expected risk scenarios and currently applied controls, assessing likelihood and impact per the risk assessment matrix (Figure 2)"},
+        {"id": "§6.10", "title": "Risk register", "description": "Document analysis and assessment results in the cybersecurity risk register"}
+      ]
+    },
+    "treatment": {
+      "section": "6.11-6.16",
+      "clauses": [
+        {"id": "§6.11", "title": "Treatment plans", "description": "Develop cybersecurity risk treatment plans"},
+        {"id": "§6.12", "title": "Residual risk", "description": "Assess expected residual risk after executing treatment plans to confirm acceptable risk level is reached"},
+        {"id": "§6.13", "title": "Treatment decision", "description": "Make risk treatment decision (accepting, sharing, mitigating, or avoiding) and define related treatment plans"},
+        {"id": "§6.14", "title": "Prioritize treatment plans", "description": "Prioritize treatment plans"},
+        {"id": "§6.15", "title": "Execute treatment plans", "description": "Execute treatment plans"},
+        {"id": "§6.16", "title": "Update risk register", "description": "Update cybersecurity risk register to include treatment plans and residual risks"}
+      ]
+    },
+    "monitoring": {
+      "section": "6.17-6.20",
+      "clauses": [
+        {"id": "§6.17", "title": "Reports", "description": "Develop cybersecurity risk management reports"},
+        {"id": "§6.18", "title": "Statistical criteria", "description": "Establish statistical data collection criteria for risk monitoring"},
+        {"id": "§6.19", "title": "Periodic follow-up", "description": "Monitor treatment plan execution periodically and issue related reports"},
+        {"id": "§6.20", "title": "Re-execute on change", "description": "Re-execute risk management methodology periodically, or per NCA guidance, or upon change in: treatment plans, potential threats, expected scenarios, control implementation status, or digital infrastructure"}
+      ]
+    }
+  },
+  "risk_matrix": {
+    "type": "5x5",
+    "formula": "Impact × Likelihood",
+    "levels": {
+      "Very Low": "1-4",
+      "Low": "5-9",
+      "Medium": "10-14",
+      "High": "15-19",
+      "Catastrophic": "20-25"
+    }
+  },
+  "pipeline_mapping": {
+    "pre_inference": "Identification Phase (§6.3-6.8)",
+    "ml_inference": "Assessment Phase (§6.9-6.10)",
+    "post_inference": "Treatment Phase (§6.11-6.16)",
+    "continuous": "Monitoring Phase (§6.17-6.20)"
+  }
+}

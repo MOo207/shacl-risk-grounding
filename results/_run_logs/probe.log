@@ -1,0 +1,24 @@
+[1/20] nslr_test_005: kdd_named=True orig=Probe pert=Probe
+[2/20] nslr_test_006: kdd_named=True orig=Probe pert=DoS
+[3/20] nslr_test_011: kdd_named=True orig=Probe pert=Probe
+[4/20] nslr_test_013: kdd_named=True orig=Probe pert=Probe
+[5/20] nslr_test_008: kdd_named=True orig=Normal pert=Normal
+[6/20] nslr_test_009: kdd_named=True orig=Probe pert=Normal
+[7/20] nslr_test_010: kdd_named=True orig=DoS pert=DoS
+[8/20] nslr_test_015: kdd_named=True orig=Normal pert=Normal
+[9/20] nslr_test_001: kdd_named=True orig=Probe pert=Probe
+[10/20] nslr_test_003: kdd_named=True orig=DoS pert=DoS
+[11/20] nslr_test_004: kdd_named=True orig=Probe pert=Probe
+[12/20] nslr_test_020: kdd_named=True orig=R2L pert=Probe
+[13/20] nslr_test_002: kdd_named=True orig=Probe pert=Normal
+[14/20] nslr_test_012: kdd_named=True orig=Probe pert=DoS
+[15/20] nslr_test_016: kdd_named=True orig=R2L pert=R2L
+[16/20] nslr_test_017: kdd_named=True orig=DoS pert=DoS
+[17/20] nslr_test_000: kdd_named=True orig=DoS pert=Probe
+[18/20] nslr_test_007: kdd_named=True orig=R2L pert=R2L
+[19/20] nslr_test_014: kdd_named=True orig=Normal pert=Normal
+[20/20] nslr_test_021: kdd_named=True orig=DoS pert=Probe
+
+Probe A: 20/20 named the KDD family
+Probe B: 13/20 agreement over parsed pairs
+Saved -> D:\01_Projects\INTERSYMBOLIC-GRC\results\nslkdd_memorization_probe.json

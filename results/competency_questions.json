@@ -1,0 +1,422 @@
+{
+  "purpose": "Competency-question evaluation of the GRC ontology + ARG (DKE review finding M7)",
+  "method": "ARG JSON (results/multisource_arg.json, 138 nodes / 148 edges) converted faithfully to RDF (results/arg_instance.ttl) using ontology vocabulary where defined and an arg: extension namespace where the ontology lacks a term; SPARQL executed with rdflib over ontology + instance graph. No source-data repair; dangling edge targets preserved. Ontology v0.3.0: TARGETS_ASSET and USES_TECHNIQUE now map to grc:targetsAsset and grc:usesTechnique rather than the arg: namespace, closing two of the five gaps this evaluation originally reported.",
+  "graph_files": {
+    "ontology": "ontology\\ttl\\grc-ontology.ttl",
+    "arg_source_json": "results\\multisource_arg.json",
+    "arg_converted_ttl": "results\\arg_instance.ttl"
+  },
+  "ontology_vocabulary_gaps_found": [
+    "No ontology property for RiskCase->Asset affectedness (ARG AFFECTS_ASSET; grc:affects has domain Impact, and no Impact nodes exist in the ARG); used arg:affectsAsset.",
+    "No datatype property for CISA-KEV membership, asset criticality, or numeric risk score; used arg:inCisaKev / arg:criticality / arg:riskScore.",
+    "grc:mitigates (Control->Vulnerability) is defined but never instantiated in the ARG (CQ10 empty)."
+  ],
+  "ontology_vocabulary_gaps_closed_at_v0_3_0": [
+    "Threat->Asset targeting: grc:targetsAsset (was arg:targetsAsset).",
+    "RiskCase->Threat technique use: grc:usesTechnique (was arg:usesTechnique).",
+    "ATT&CK tactic on AttackTechnique nodes: grc:tactic (was arg:tactic)."
+  ],
+  "data_integrity_findings": [
+    "FIXED at source (build_multisource_arg.py): all 9 MITIGATED_BY edge targets previously used clause-style ids ('NFCRM-6.7') while control nodes used dash-style ids ('NFCRM-6-7'), leaving every MITIGATED_BY edge dangling in the raw JSON. CQ4/CQ8 (strict join) exposed this and CQ8b demonstrated the chain resolved after in-query normalisation; the builder now normalises the clause reference when the edge is created, so CQ8 answers directly and CQ4 is empty because no High/Critical RiskCase lacks a resolvable control -- an empty-and-correct answer, not a dangling one.",
+    "Repaired SHACL validation (see results/shacl_validation.json) reports conforms=false with 39 violations on this graph, all data-completeness rather than conversion defects: 22 NFCRM control nodes are neither mitigating a vulnerability nor associated with a RiskCase, 9 RiskCases have no AuditLog (none exist in the testbed graph), and 8 CVEs carry no CWE because NVD assigns none."
+  ],
+  "competency_questions": [
+    {
+      "id": "CQ1",
+      "question": "Which assets are exposed to a vulnerability with CVSS >= 9.0, and to which CVE?",
+      "sparql": "SELECT DISTINCT ?host ?cve ?score WHERE {\n              ?asset a grc:Asset ; grc:hostname ?host ; grc:hasVulnerability ?v .\n              ?v grc:cveId ?cve ; grc:cvssScore ?score .\n              FILTER(?score >= 9.0)\n            } ORDER BY DESC(?score) ?host",
+      "status": "answered",
+      "n_results": 10,
+      "results": [
+        {
+          "host": "ftp2-srv-01",
+          "cve": "CVE-2010-4221",
+          "score": "10.0"
+        },
+        {
+          "host": "telnet-srv-01",
+          "cve": "CVE-2001-0554",
+          "score": "10.0"
+        },
+        {
+          "host": "twiki-srv-01",
+          "cve": "CVE-2008-5305",
+          "score": "10.0"
+        },
+        {
+          "host": "x11-srv-01",
+          "cve": "CVE-1999-0526",
+          "score": "10.0"
+        },
+        {
+          "host": "drb-srv-01",
+          "cve": "CVE-2011-5330",
+          "score": "9.8"
+        },
+        {
+          "host": "ftp-srv-01",
+          "cve": "CVE-2011-2523",
+          "score": "9.8"
+        },
+        {
+          "host": "php-srv-01",
+          "cve": "CVE-2012-1823",
+          "score": "9.8"
+        },
+        {
+          "host": "phpmyadmin-srv-01",
+          "cve": "CVE-2009-1151",
+          "score": "9.8"
+        },
+        {
+          "host": "web-dos-target-01",
+          "cve": "CVE-2017-7679",
+          "score": "9.8"
+        },
+        {
+          "host": "distcc-srv-01",
+          "cve": "CVE-2004-2687",
+          "score": "9.3"
+        }
+      ]
+    },
+    {
+      "id": "CQ2",
+      "question": "Which CVEs in the graph are listed in CISA KEV, and which assets are exposed to them?",
+      "sparql": "SELECT ?cve (GROUP_CONCAT(DISTINCT ?host; separator=\", \") AS ?exposedAssets) WHERE {\n              ?v a grc:Vulnerability ; grc:cveId ?cve ; arg:inCisaKev true .\n              OPTIONAL { ?asset grc:hasVulnerability ?v ; grc:hostname ?host . }\n            } GROUP BY ?cve ORDER BY ?cve",
+      "note": "Requires arg:inCisaKev -- the ontology itself has no KEV-membership property (gap).",
+      "status": "answered",
+      "n_results": 5,
+      "results": [
+        {
+          "cve": "CVE-2009-1151",
+          "exposedAssets": "phpmyadmin-srv-01"
+        },
+        {
+          "cve": "CVE-2010-0188",
+          "exposedAssets": "infiltration-victim-01"
+        },
+        {
+          "cve": "CVE-2012-1823",
+          "exposedAssets": "php-srv-01"
+        },
+        {
+          "cve": "CVE-2014-0160",
+          "exposedAssets": "heartbleed-srv-01"
+        },
+        {
+          "cve": "CVE-2017-0144",
+          "exposedAssets": "win-srv-01, win-srv-02"
+        }
+      ]
+    },
+    {
+      "id": "CQ3",
+      "question": "Which RiskCases reference NFCRM clause SS6.7, and at what risk level?",
+      "sparql": "SELECT ?risk ?clause ?level WHERE {\n              ?r a grc:RiskCase ; grc:riskId ?risk ; grc:nfcrmClause ?clause ; grc:riskLevel ?level .\n              FILTER(CONTAINS(?clause, \"6.7\"))\n            } ORDER BY ?risk",
+      "status": "answered",
+      "n_results": 3,
+      "results": [
+        {
+          "risk": "RISK-BruteForce",
+          "clause": "NFCRM-1:2025-§6.7",
+          "level": "High"
+        },
+        {
+          "risk": "RISK-FTP-BruteForce",
+          "clause": "NFCRM-1:2025-§6.7",
+          "level": "High"
+        },
+        {
+          "risk": "RISK-SSH-BruteForce",
+          "clause": "NFCRM-1:2025-§6.7",
+          "level": "High"
+        }
+      ]
+    },
+    {
+      "id": "CQ4",
+      "question": "Which High/Critical RiskCases lack a resolvable mitigating control (associatedWithControl edge that reaches an actual NFCRMControl node)?",
+      "sparql": "SELECT ?risk ?level WHERE {\n              ?r a grc:RiskCase ; grc:riskId ?risk ; grc:riskLevel ?level .\n              FILTER(?level IN (\"High\", \"Critical\"))\n              FILTER NOT EXISTS { ?r grc:associatedWithControl ?c . ?c a grc:NFCRMControl . }\n            } ORDER BY ?risk",
+      "note": "Strict join: control IRI must be a typed NFCRMControl node, not a dangling reference.",
+      "status": "empty",
+      "n_results": 0,
+      "results": []
+    },
+    {
+      "id": "CQ5",
+      "question": "What is the propagation path from CVE-2014-0160 (Heartbleed) to exposed assets via the software they host?",
+      "sparql": "SELECT ?cve ?sw ?swVersion ?host WHERE {\n              ?v grc:cveId ?cve ; grc:concerns ?s .\n              FILTER(?cve = \"CVE-2014-0160\")\n              ?s grc:softwareName ?sw . OPTIONAL { ?s grc:softwareVersion ?swVersion }\n              ?asset grc:hostsSoftware ?s ; grc:hostname ?host .\n            } ORDER BY ?host",
+      "status": "answered",
+      "n_results": 1,
+      "results": [
+        {
+          "cve": "CVE-2014-0160",
+          "sw": "OpenSSL",
+          "swVersion": "1.0.1f",
+          "host": "heartbleed-srv-01"
+        }
+      ]
+    },
+    {
+      "id": "CQ6",
+      "question": "Which software components are affected by more than one CVE?",
+      "sparql": "SELECT ?sw ?version (COUNT(DISTINCT ?v) AS ?nCves) WHERE {\n              ?v a grc:Vulnerability ; grc:concerns ?s .\n              ?s grc:softwareName ?sw . OPTIONAL { ?s grc:softwareVersion ?version }\n            } GROUP BY ?sw ?version HAVING (COUNT(DISTINCT ?v) > 1)\n            ORDER BY DESC(?nCves)",
+      "status": "answered",
+      "n_results": 2,
+      "results": [
+        {
+          "sw": "PHP",
+          "version": "5.2.4",
+          "nCves": "2"
+        },
+        {
+          "sw": "Apache httpd",
+          "version": "2.2.8",
+          "nCves": "2"
+        }
+      ]
+    },
+    {
+      "id": "CQ7",
+      "question": "Which ATT&CK techniques target critical-criticality assets?",
+      "sparql": "SELECT DISTINCT ?tid ?tname ?host WHERE {\n              ?t a grc:AttackTechnique ; grc:attackTechniqueId ?tid ; rdfs:label ?tname ;\n                 grc:targetsAsset ?asset .\n              ?asset grc:hostname ?host ; arg:criticality \"critical\" .\n            } ORDER BY ?tid ?host",
+      "note": "grc:targetsAsset is now a declared ontology property (v0.3.0); arg:criticality remains a gap (no ontology datatype property for asset criticality).",
+      "status": "answered",
+      "n_results": 11,
+      "results": [
+        {
+          "tid": "T1071.001",
+          "tname": "Web Protocols (Ares C2 port 8080)",
+          "host": "win-srv-01"
+        },
+        {
+          "tid": "T1071.001",
+          "tname": "Web Protocols (Ares C2 port 8080)",
+          "host": "win-srv-02"
+        },
+        {
+          "tid": "T1110",
+          "tname": "Brute Force",
+          "host": "ftp-srv-01"
+        },
+        {
+          "tid": "T1110",
+          "tname": "Brute Force",
+          "host": "ssh-srv-01"
+        },
+        {
+          "tid": "T1110.001",
+          "tname": "Password Guessing (FTP/Patator)",
+          "host": "ftp-srv-01"
+        },
+        {
+          "tid": "T1110.001",
+          "tname": "Password Guessing (FTP/Patator)",
+          "host": "ssh-srv-01"
+        },
+        {
+          "tid": "T1190",
+          "tname": "Exploit Public-Facing Application",
+          "host": "dvwa-srv-01"
+        },
+        {
+          "tid": "T1190",
+          "tname": "Exploit Public-Facing Application",
+          "host": "php-srv-01"
+        },
+        {
+          "tid": "T1498",
+          "tname": "Network Denial of Service",
+          "host": "web-dos-target-01"
+        },
+        {
+          "tid": "T1499",
+          "tname": "Endpoint Denial of Service",
+          "host": "web-dos-target-01"
+        },
+        {
+          "tid": "T1555",
+          "tname": "Credentials from Password Stores",
+          "host": "heartbleed-srv-01"
+        }
+      ]
+    },
+    {
+      "id": "CQ8",
+      "question": "For each RiskCase: which ATT&CK technique does it use, which asset does it affect, and which NFCRM control mitigates it (strict join to a control node)?",
+      "sparql": "SELECT ?risk ?tid ?host ?ctrlClause WHERE {\n              ?r a grc:RiskCase ; grc:riskId ?risk .\n              OPTIONAL { ?r grc:usesTechnique ?t . ?t grc:attackTechniqueId ?tid . }\n              OPTIONAL { ?r arg:affectsAsset ?a . ?a grc:hostname ?host . }\n              OPTIONAL { ?r grc:associatedWithControl ?c .\n                         ?c a grc:NFCRMControl ; grc:nfcrmClause ?ctrlClause . }\n            } ORDER BY ?risk ?host",
+      "note": "Exposes the raw-data ID mismatch: MITIGATED_BY targets 'NFCRM-6.7' but control node ids are 'NFCRM-6-7'.",
+      "status": "answered",
+      "n_results": 13,
+      "results": [
+        {
+          "risk": "RISK-Bot",
+          "tid": "T1071.001",
+          "host": "win-srv-01",
+          "ctrlClause": "NFCRM-1:2025-§6.5"
+        },
+        {
+          "risk": "RISK-Bot",
+          "tid": "T1071.001",
+          "host": "win-srv-02",
+          "ctrlClause": "NFCRM-1:2025-§6.5"
+        },
+        {
+          "risk": "RISK-BruteForce",
+          "tid": "T1110",
+          "host": "ftp-srv-01",
+          "ctrlClause": "NFCRM-1:2025-§6.7"
+        },
+        {
+          "risk": "RISK-BruteForce",
+          "tid": "T1110",
+          "host": "ssh-srv-01",
+          "ctrlClause": "NFCRM-1:2025-§6.7"
+        },
+        {
+          "risk": "RISK-DDoS",
+          "tid": "T1498",
+          "host": "web-dos-target-01",
+          "ctrlClause": "NFCRM-1:2025-§6.5"
+        },
+        {
+          "risk": "RISK-DoS",
+          "tid": "T1499",
+          "host": "web-dos-target-01",
+          "ctrlClause": "NFCRM-1:2025-§6.5"
+        },
+        {
+          "risk": "RISK-FTP-BruteForce",
+          "tid": "T1110.001",
+          "host": "ftp-srv-01",
+          "ctrlClause": "NFCRM-1:2025-§6.7"
+        },
+        {
+          "risk": "RISK-Heartbleed",
+          "tid": "T1555",
+          "host": "heartbleed-srv-01",
+          "ctrlClause": "NFCRM-1:2025-§6.4"
+        },
+        {
+          "risk": "RISK-Infiltration",
+          "tid": "T1566.001",
+          "host": "infiltration-victim-01",
+          "ctrlClause": "NFCRM-1:2025-§6.6"
+        },
+        {
+          "risk": "RISK-Infiltration",
+          "tid": "T1566.001",
+          "host": "infiltration-victim-02",
+          "ctrlClause": "NFCRM-1:2025-§6.6"
+        },
+        {
+          "risk": "RISK-SSH-BruteForce",
+          "tid": "T1110.001",
+          "host": "ssh-srv-01",
+          "ctrlClause": "NFCRM-1:2025-§6.7"
+        },
+        {
+          "risk": "RISK-WebAttack",
+          "tid": "T1190",
+          "host": "dvwa-srv-01",
+          "ctrlClause": "NFCRM-1:2025-§6.4"
+        },
+        {
+          "risk": "RISK-WebAttack",
+          "tid": "T1190",
+          "host": "php-srv-01",
+          "ctrlClause": "NFCRM-1:2025-§6.4"
+        }
+      ]
+    },
+    {
+      "id": "CQ8b",
+      "question": "(CQ8 with edge-target ID normalisation applied in-query) Same traceability chain after normalising 'NFCRM-6.7' to node id 'NFCRM-6-7'.",
+      "sparql": "SELECT DISTINCT ?risk ?ctrlClause ?ctrlDesc WHERE {\n              ?r a grc:RiskCase ; grc:riskId ?risk ; grc:associatedWithControl ?cRef .\n              BIND(IRI(REPLACE(STR(?cRef), \"(NFCRM-[0-9]+)\\\\.\", \"$1-\")) AS ?cFix)\n              ?cFix a grc:NFCRMControl ; grc:nfcrmClause ?ctrlClause ; grc:controlName ?ctrlDesc .\n            } ORDER BY ?risk",
+      "note": "Demonstrates the chain IS answerable once the source ID-format defect is normalised.",
+      "status": "answered",
+      "n_results": 9,
+      "results": [
+        {
+          "risk": "RISK-Bot",
+          "ctrlClause": "NFCRM-1:2025-§6.5",
+          "ctrlDesc": "Inventory potential cybersecurity threats"
+        },
+        {
+          "risk": "RISK-BruteForce",
+          "ctrlClause": "NFCRM-1:2025-§6.7",
+          "ctrlDesc": "Identify currently applied controls to address expected risk scenarios"
+        },
+        {
+          "risk": "RISK-DDoS",
+          "ctrlClause": "NFCRM-1:2025-§6.5",
+          "ctrlDesc": "Inventory potential cybersecurity threats"
+        },
+        {
+          "risk": "RISK-DoS",
+          "ctrlClause": "NFCRM-1:2025-§6.5",
+          "ctrlDesc": "Inventory potential cybersecurity threats"
+        },
+        {
+          "risk": "RISK-FTP-BruteForce",
+          "ctrlClause": "NFCRM-1:2025-§6.7",
+          "ctrlDesc": "Identify currently applied controls to address expected risk scenarios"
+        },
+        {
+          "risk": "RISK-Heartbleed",
+          "ctrlClause": "NFCRM-1:2025-§6.4",
+          "ctrlDesc": "Inventory cybersecurity vulnerabilities"
+        },
+        {
+          "risk": "RISK-Infiltration",
+          "ctrlClause": "NFCRM-1:2025-§6.6",
+          "ctrlDesc": "Develop expected cybersecurity risk scenarios based on threats and vulnerabilities"
+        },
+        {
+          "risk": "RISK-SSH-BruteForce",
+          "ctrlClause": "NFCRM-1:2025-§6.7",
+          "ctrlDesc": "Identify currently applied controls to address expected risk scenarios"
+        },
+        {
+          "risk": "RISK-WebAttack",
+          "ctrlClause": "NFCRM-1:2025-§6.4",
+          "ctrlDesc": "Inventory cybersecurity vulnerabilities"
+        }
+      ]
+    },
+    {
+      "id": "CQ9",
+      "question": "Which assets host software but have no known CVE exposure (clean assets)?",
+      "sparql": "SELECT DISTINCT ?host WHERE {\n              ?asset a grc:Asset ; grc:hostname ?host ; grc:hostsSoftware ?s .\n              FILTER NOT EXISTS { ?asset grc:hasVulnerability ?v . }\n            } ORDER BY ?host",
+      "status": "answered",
+      "n_results": 5,
+      "results": [
+        {
+          "host": "backdoor-srv-01"
+        },
+        {
+          "host": "dvwa-srv-01"
+        },
+        {
+          "host": "mutillidae-srv-01"
+        },
+        {
+          "host": "rpcbind-srv-01"
+        },
+        {
+          "host": "smtp-srv-01"
+        }
+      ]
+    },
+    {
+      "id": "CQ10",
+      "question": "Which vulnerabilities are directly mitigated by a control via the ontology's grc:mitigates (Control->Vulnerability) property?",
+      "sparql": "SELECT ?ctrl ?cve WHERE {\n              ?c grc:mitigates ?v . ?c grc:controlId ?ctrl . ?v grc:cveId ?cve .\n            }",
+      "note": "Expected EMPTY: the ARG carries only risk-level MITIGATED_BY edges; the ontology's vulnerability-level grc:mitigates property is never instantiated (instantiation gap).",
+      "status": "empty",
+      "n_results": 0,
+      "results": []
+    }
+  ]
+}

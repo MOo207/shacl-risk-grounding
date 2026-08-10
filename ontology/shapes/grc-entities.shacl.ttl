@@ -1,0 +1,286 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix grc: <https://w3id.org/grc/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+################################################################################
+# SHACL Shapes for Controls (NFCRM-1:2025 and ISO/IEC 27005)
+################################################################################
+
+grc:ControlShape a sh:NodeShape ;
+    sh:targetClass grc:Control ;
+    sh:property [
+        sh:path grc:controlId ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Control must have exactly one controlId of type string"
+    ] ;
+    sh:property [
+        sh:path grc:controlName ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Control must have exactly one controlName of type string"
+    ] ;
+    sh:property [
+        sh:path grc:provenanceSource ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Control must have a provenanceSource (e.g., NFCRM-1:2025, ISO/IEC 27005)"
+    ] ;
+    sh:property [
+        sh:path grc:provenanceTimestamp ;
+        sh:datatype xsd:dateTime ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Control must have a provenanceTimestamp of type dateTime"
+    ] .
+
+grc:NFCRMControlShape a sh:NodeShape ;
+    sh:targetClass grc:NFCRMControl ;
+    sh:property [
+        sh:path grc:nfcrmClause ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "NFCRMControl must have exactly one nfcrmClause of type string"
+    ] ;
+    sh:property [
+        sh:path rdf:type ;
+        sh:hasValue grc:NFCRMControl ;
+        sh:severity sh:Violation ;
+        sh:message "NFCRMControl must be typed as grc:NFCRMControl"
+    ] ;
+    sh:property [
+        sh:path grc:mitigates ;
+        sh:class grc:Vulnerability ;
+        sh:severity sh:Violation ;
+        sh:message "NFCRMControl's mitigates property must reference a Vulnerability"
+    ] ;
+    # Referential, not syntactic. The retired constraint was
+    #   sh:pattern "^NFCRM-1:2025-§[0-9]+(\\.[0-9]+)*$"
+    # which accepts any well-formed identifier, including NFCRM-1:2025-§99.99 --
+    # a clause that does not exist. NFCRMControl instances cite clauses in the
+    # long notation, so the join runs against grc:clauseRefNFCRM, the alternate
+    # declared on each grc:Clause individual in nfcrm-clauses.ttl alongside the
+    # canonical grc:clauseId. The notation bridge lives in the graph rather than
+    # in a regular expression here.
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:severity sh:Violation ;
+        sh:message "nfcrmClause {?value} is not a clause of NFCRM-1:2025 (no grc:Clause individual carries this grc:clauseRefNFCRM)" ;
+        sh:select """
+            PREFIX grc: <https://w3id.org/grc/ontology#>
+            SELECT $this ?value
+            WHERE {
+                $this grc:nfcrmClause ?value .
+                FILTER NOT EXISTS {
+                    ?c a grc:Clause ; grc:clauseRefNFCRM ?ref .
+                    FILTER(STR(?ref) = STR(?value))
+                }
+            }
+        """
+    ] .
+
+grc:ISO27005ControlShape a sh:NodeShape ;
+    sh:targetClass grc:ISO27005Control ;
+    sh:property [
+        sh:path grc:iso27005Clause ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:pattern "^ISO/IEC 27005:[0-9]+(\\.[0-9]+)*$" ;
+        sh:severity sh:Violation ;
+        sh:message "ISO27005Control must have exactly one iso27005Clause matching pattern ISO/IEC 27005:NN[.NN]"
+    ] ;
+    sh:property [
+        sh:path rdf:type ;
+        sh:hasValue grc:ISO27005Control ;
+        sh:severity sh:Violation ;
+        sh:message "ISO27005Control must be typed as grc:ISO27005Control"
+    ] ;
+    sh:property [
+        sh:path grc:mitigates ;
+        sh:class grc:Vulnerability ;
+        sh:severity sh:Violation ;
+        sh:message "ISO27005Control's mitigates property must reference a Vulnerability"
+    ] .
+
+################################################################################
+# SHACL Constraint: Every Control Must Either Mitigate a Vulnerability or Be Associated with a Risk Case
+################################################################################
+
+grc:ControlMustHavePurposeConstraint a sh:NodeShape ;
+    sh:targetClass grc:Control ;
+    sh:message "Every control must either mitigate a vulnerability or be associated with a risk case" ;
+    sh:sparql [ a sh:SPARQLConstraint ; sh:select """
+        PREFIX grc: <https://w3id.org/grc/ontology#>
+        SELECT $this ($this AS ?subject)
+        WHERE {
+            $this a grc:Control .
+            FILTER NOT EXISTS {
+                { $this grc:mitigates ?vuln . ?vuln a grc:Vulnerability . }
+                UNION
+                { ?risk grc:associatedWithControl $this . ?risk a grc:RiskCase . }
+            }
+        }
+    """ ] .
+
+################################################################################
+# SHACL Shapes for Risk Cases
+################################################################################
+
+grc:RiskCaseShape a sh:NodeShape ;
+    sh:targetClass grc:RiskCase ;
+    sh:property [
+        sh:path grc:riskId ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "RiskCase must have exactly one riskId of type string"
+    ] ;
+    sh:property [
+        sh:path grc:riskLevel ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        # NFCRM-1:2025 §6.9 bands Likelihood x Impact into five levels, Very Low
+        # (1-2) through Catastrophic (20-25). The enumeration previously read
+        # (low medium high critical), which could express neither the standard's
+        # top band nor its bottom one, so every RiskCase the §6.9 rule engine
+        # emits at those bands was unrepresentable.
+        sh:in ("very low" "low" "medium" "high" "catastrophic") ;
+        sh:severity sh:Violation ;
+        sh:message "RiskCase must have exactly one riskLevel (very low, low, medium, high, or catastrophic) per NFCRM-1:2025 §6.9"
+    ] ;
+    sh:property [
+        sh:path grc:likelihood ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:in ("very low" "low" "medium" "high" "very high") ;
+        sh:severity sh:Violation ;
+        sh:message "RiskCase must have exactly one likelihood (very low, low, medium, high, or very high)"
+    ] ;
+    sh:property [
+        sh:path grc:impact ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:in ("negligible" "minor" "moderate" "major" "catastrophic") ;
+        sh:severity sh:Violation ;
+        sh:message "RiskCase must have exactly one impact (negligible, minor, moderate, major, or catastrophic)"
+    ] ;
+    sh:property [
+        sh:path grc:confidence ;
+        sh:datatype xsd:decimal ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minInclusive 0.0 ;
+        sh:maxInclusive 1.0 ;
+        sh:severity sh:Violation ;
+        sh:message "RiskCase must have exactly one confidence of type decimal between 0.0 and 1.0"
+    ] ;
+    sh:property [
+        sh:path grc:associatedWithControl ;
+        sh:class grc:Control ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "RiskCase must be associated with at least one Control"
+    ] ;
+    sh:property [
+        sh:path grc:provenanceSource ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "RiskCase must have a provenanceSource indicating assessment origin"
+    ] ;
+    sh:property [
+        sh:path grc:provenanceTimestamp ;
+        sh:datatype xsd:dateTime ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "RiskCase must have a provenanceTimestamp of type dateTime"
+    ] .
+
+################################################################################
+# SHACL Constraint: Risk Case Must Link to Vulnerability or Event
+################################################################################
+
+grc:RiskCaseMustLinkToVulnerabilityOrEventConstraint a sh:NodeShape ;
+    sh:targetClass grc:RiskCase ;
+    sh:message "Every RiskCase must be linked to at least one Vulnerability or SecurityEvent" ;
+    sh:sparql [ a sh:SPARQLConstraint ; sh:select """
+        PREFIX grc: <https://w3id.org/grc/ontology#>
+        SELECT $this ($this AS ?subject)
+        WHERE {
+            $this a grc:RiskCase .
+            FILTER NOT EXISTS {
+                { ?vuln grc:relatesToRisk $this . ?vuln a grc:Vulnerability . }
+                UNION
+                { ?event grc:triggersEvent $this . ?event a grc:SecurityEvent . }
+            }
+        }
+    """ ] .
+
+################################################################################
+# SHACL Shapes for Audit Logs
+################################################################################
+
+grc:AuditLogShape a sh:NodeShape ;
+    sh:targetClass grc:AuditLog ;
+    sh:property [
+        sh:path grc:auditTimestamp ;
+        sh:datatype xsd:dateTime ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "AuditLog must have exactly one auditTimestamp of type dateTime"
+    ] ;
+    sh:property [
+        sh:path grc:auditor ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "AuditLog must have exactly one auditor of type string"
+    ] ;
+    sh:property [
+        sh:path grc:provenanceSource ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "AuditLog must have a provenanceSource indicating log origin"
+    ] ;
+    sh:property [
+        sh:path grc:provenanceTimestamp ;
+        sh:datatype xsd:dateTime ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "AuditLog must have a provenanceTimestamp of type dateTime"
+    ] .
+
+################################################################################
+# SHACL Constraint: Every RiskCase Must Have an Associated AuditLog
+################################################################################
+
+grc:RiskCaseMustHaveAuditLogConstraint a sh:NodeShape ;
+    sh:targetClass grc:RiskCase ;
+    sh:message "Every RiskCase must have at least one associated AuditLog" ;
+    sh:sparql [ a sh:SPARQLConstraint ; sh:select """
+        PREFIX grc: <https://w3id.org/grc/ontology#>
+        SELECT $this ($this AS ?subject)
+        WHERE {
+            $this a grc:RiskCase .
+            FILTER NOT EXISTS {
+                $this grc:auditedBy ?audit .
+                ?audit a grc:AuditLog .
+            }
+        }
+    """ ] .

@@ -1,0 +1,285 @@
+{
+  "generated_at": "2026-05-19T17:37:29.276976+00:00",
+  "per_class_set_b": {
+    "Benign": {
+      "class": "Benign",
+      "arms": {
+        "Rule": {
+          "n": 6,
+          "correct": 0,
+          "accuracy": 0.0,
+          "ci_95": [
+            0.0,
+            0.39
+          ]
+        },
+        "ML": {
+          "n": 6,
+          "correct": 6,
+          "accuracy": 1.0,
+          "ci_95": [
+            0.61,
+            1.0
+          ]
+        },
+        "Rule+ML": {
+          "n": 6,
+          "correct": 6,
+          "accuracy": 1.0,
+          "ci_95": [
+            0.61,
+            1.0
+          ]
+        },
+        "Haiku": {
+          "n": 5,
+          "correct": 0,
+          "accuracy": 0.0,
+          "ci_95": [
+            0.0,
+            0.434
+          ]
+        },
+        "Sonnet": {
+          "n": 5,
+          "correct": 0,
+          "accuracy": 0.0,
+          "ci_95": [
+            0.0,
+            0.434
+          ]
+        }
+      },
+      "mcnemar_sonnet_vs_ml": {
+        "n_shared": 5,
+        "b_sonnet_right_ml_wrong": 0,
+        "c_ml_right_sonnet_wrong": 5,
+        "p_one_sided": 1.0
+      }
+    },
+    "BruteForce": {
+      "class": "BruteForce",
+      "arms": {
+        "Rule": {
+          "n": 6,
+          "correct": 0,
+          "accuracy": 0.0,
+          "ci_95": [
+            0.0,
+            0.39
+          ]
+        },
+        "ML": {
+          "n": 6,
+          "correct": 0,
+          "accuracy": 0.0,
+          "ci_95": [
+            0.0,
+            0.39
+          ]
+        },
+        "Rule+ML": {
+          "n": 6,
+          "correct": 0,
+          "accuracy": 0.0,
+          "ci_95": [
+            0.0,
+            0.39
+          ]
+        },
+        "Haiku": {
+          "n": 5,
+          "correct": 0,
+          "accuracy": 0.0,
+          "ci_95": [
+            0.0,
+            0.434
+          ]
+        },
+        "Sonnet": {
+          "n": 5,
+          "correct": 1,
+          "accuracy": 0.2,
+          "ci_95": [
+            0.036,
+            0.624
+          ]
+        }
+      },
+      "mcnemar_sonnet_vs_ml": {
+        "n_shared": 5,
+        "b_sonnet_right_ml_wrong": 1,
+        "c_ml_right_sonnet_wrong": 0,
+        "p_one_sided": 0.5
+      }
+    },
+    "DDoS": {
+      "class": "DDoS",
+      "arms": {
+        "Rule": {
+          "n": 6,
+          "correct": 0,
+          "accuracy": 0.0,
+          "ci_95": [
+            0.0,
+            0.39
+          ]
+        },
+        "ML": {
+          "n": 6,
+          "correct": 0,
+          "accuracy": 0.0,
+          "ci_95": [
+            0.0,
+            0.39
+          ]
+        },
+        "Rule+ML": {
+          "n": 6,
+          "correct": 0,
+          "accuracy": 0.0,
+          "ci_95": [
+            0.0,
+            0.39
+          ]
+        },
+        "Haiku": {
+          "n": 5,
+          "correct": 4,
+          "accuracy": 0.8,
+          "ci_95": [
+            0.376,
+            0.964
+          ]
+        },
+        "Sonnet": {
+          "n": 5,
+          "correct": 4,
+          "accuracy": 0.8,
+          "ci_95": [
+            0.376,
+            0.964
+          ]
+        }
+      },
+      "mcnemar_sonnet_vs_ml": {
+        "n_shared": 5,
+        "b_sonnet_right_ml_wrong": 4,
+        "c_ml_right_sonnet_wrong": 0,
+        "p_one_sided": 0.0625
+      }
+    },
+    "DoS": {
+      "class": "DoS",
+      "arms": {
+        "Rule": {
+          "n": 6,
+          "correct": 0,
+          "accuracy": 0.0,
+          "ci_95": [
+            0.0,
+            0.39
+          ]
+        },
+        "ML": {
+          "n": 6,
+          "correct": 0,
+          "accuracy": 0.0,
+          "ci_95": [
+            0.0,
+            0.39
+          ]
+        },
+        "Rule+ML": {
+          "n": 6,
+          "correct": 0,
+          "accuracy": 0.0,
+          "ci_95": [
+            0.0,
+            0.39
+          ]
+        },
+        "Haiku": {
+          "n": 5,
+          "correct": 0,
+          "accuracy": 0.0,
+          "ci_95": [
+            0.0,
+            0.434
+          ]
+        },
+        "Sonnet": {
+          "n": 5,
+          "correct": 1,
+          "accuracy": 0.2,
+          "ci_95": [
+            0.036,
+            0.624
+          ]
+        }
+      },
+      "mcnemar_sonnet_vs_ml": {
+        "n_shared": 5,
+        "b_sonnet_right_ml_wrong": 1,
+        "c_ml_right_sonnet_wrong": 0,
+        "p_one_sided": 0.5
+      }
+    },
+    "Infiltration": {
+      "class": "Infiltration",
+      "arms": {
+        "Rule": {
+          "n": 6,
+          "correct": 0,
+          "accuracy": 0.0,
+          "ci_95": [
+            0.0,
+            0.39
+          ]
+        },
+        "ML": {
+          "n": 6,
+          "correct": 0,
+          "accuracy": 0.0,
+          "ci_95": [
+            0.0,
+            0.39
+          ]
+        },
+        "Rule+ML": {
+          "n": 6,
+          "correct": 0,
+          "accuracy": 0.0,
+          "ci_95": [
+            0.0,
+            0.39
+          ]
+        },
+        "Haiku": {
+          "n": 5,
+          "correct": 5,
+          "accuracy": 1.0,
+          "ci_95": [
+            0.566,
+            1.0
+          ]
+        },
+        "Sonnet": {
+          "n": 5,
+          "correct": 5,
+          "accuracy": 1.0,
+          "ci_95": [
+            0.566,
+            1.0
+          ]
+        }
+      },
+      "mcnemar_sonnet_vs_ml": {
+        "n_shared": 5,
+        "b_sonnet_right_ml_wrong": 5,
+        "c_ml_right_sonnet_wrong": 0,
+        "p_one_sided": 0.03125
+      }
+    }
+  }
+}

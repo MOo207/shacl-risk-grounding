@@ -1,0 +1,333 @@
+{
+  "n_boot": 1000,
+  "seed": 42,
+  "datasets": [
+    {
+      "name": "CIC-IDS2018",
+      "source_file": "slm_nl_classification.json",
+      "n_samples": 180,
+      "overall": {
+        "point": 0.4777777777777778,
+        "lo": 0.40555555555555556,
+        "hi": 0.5555555555555556
+      },
+      "per_class": {
+        "<empty>": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0,
+          "tp": 0,
+          "fp": 22,
+          "fn": 0
+        },
+        "Benign": {
+          "precision": 0.2391304347826087,
+          "recall": 0.36666666666666664,
+          "f1": 0.2894736842105263,
+          "support": 30,
+          "tp": 11,
+          "fp": 35,
+          "fn": 19
+        },
+        "BruteForce": {
+          "precision": 0.8,
+          "recall": 0.26666666666666666,
+          "f1": 0.4,
+          "support": 30,
+          "tp": 8,
+          "fp": 2,
+          "fn": 22
+        },
+        "DDoS": {
+          "precision": 0.8461538461538461,
+          "recall": 0.36666666666666664,
+          "f1": 0.5116279069767441,
+          "support": 30,
+          "tp": 11,
+          "fp": 2,
+          "fn": 19
+        },
+        "DoS": {
+          "precision": 0.8181818181818182,
+          "recall": 0.9,
+          "f1": 0.8571428571428572,
+          "support": 30,
+          "tp": 27,
+          "fp": 6,
+          "fn": 3
+        },
+        "Infiltration": {
+          "precision": 0.375,
+          "recall": 0.4,
+          "f1": 0.38709677419354843,
+          "support": 30,
+          "tp": 12,
+          "fp": 20,
+          "fn": 18
+        },
+        "WebAttack": {
+          "precision": 0.7083333333333334,
+          "recall": 0.5666666666666667,
+          "f1": 0.6296296296296297,
+          "support": 30,
+          "tp": 17,
+          "fp": 7,
+          "fn": 13
+        }
+      },
+      "per_class_ci": {
+        "<empty>": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "Benign": {
+          "point": 0.36666666666666664,
+          "lo": 0.2,
+          "hi": 0.5333333333333333
+        },
+        "BruteForce": {
+          "point": 0.26666666666666666,
+          "lo": 0.1,
+          "hi": 0.43333333333333335
+        },
+        "DDoS": {
+          "point": 0.36666666666666664,
+          "lo": 0.2,
+          "hi": 0.5333333333333333
+        },
+        "DoS": {
+          "point": 0.9,
+          "lo": 0.7666666666666667,
+          "hi": 1.0
+        },
+        "Infiltration": {
+          "point": 0.4,
+          "lo": 0.23333333333333334,
+          "hi": 0.6
+        },
+        "WebAttack": {
+          "point": 0.5666666666666667,
+          "lo": 0.4,
+          "hi": 0.7333333333333333
+        }
+      },
+      "macro_f1": 0.4392815503076151,
+      "confusion_matrix": {
+        "<empty>": {
+          "<empty>": 0,
+          "Benign": 0,
+          "BruteForce": 0,
+          "DDoS": 0,
+          "DoS": 0,
+          "Infiltration": 0,
+          "WebAttack": 0
+        },
+        "Benign": {
+          "<empty>": 0,
+          "Benign": 11,
+          "BruteForce": 0,
+          "DDoS": 1,
+          "DoS": 1,
+          "Infiltration": 16,
+          "WebAttack": 1
+        },
+        "BruteForce": {
+          "<empty>": 8,
+          "Benign": 3,
+          "BruteForce": 8,
+          "DDoS": 1,
+          "DoS": 2,
+          "Infiltration": 4,
+          "WebAttack": 4
+        },
+        "DDoS": {
+          "<empty>": 10,
+          "Benign": 9,
+          "BruteForce": 0,
+          "DDoS": 11,
+          "DoS": 0,
+          "Infiltration": 0,
+          "WebAttack": 0
+        },
+        "DoS": {
+          "<empty>": 1,
+          "Benign": 0,
+          "BruteForce": 0,
+          "DDoS": 0,
+          "DoS": 27,
+          "Infiltration": 0,
+          "WebAttack": 2
+        },
+        "Infiltration": {
+          "<empty>": 2,
+          "Benign": 14,
+          "BruteForce": 2,
+          "DDoS": 0,
+          "DoS": 0,
+          "Infiltration": 12,
+          "WebAttack": 0
+        },
+        "WebAttack": {
+          "<empty>": 1,
+          "Benign": 9,
+          "BruteForce": 0,
+          "DDoS": 0,
+          "DoS": 3,
+          "Infiltration": 0,
+          "WebAttack": 17
+        }
+      }
+    },
+    {
+      "name": "NSL-KDD",
+      "source_file": "slm_nslkdd_nl_classification.json",
+      "n_samples": 50,
+      "overall": {
+        "point": 0.74,
+        "lo": 0.6,
+        "hi": 0.86
+      },
+      "per_class": {
+        "<empty>": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0,
+          "tp": 0,
+          "fp": 1,
+          "fn": 0
+        },
+        "DoS": {
+          "precision": 0.625,
+          "recall": 1.0,
+          "f1": 0.7692307692307693,
+          "support": 10,
+          "tp": 10,
+          "fp": 6,
+          "fn": 0
+        },
+        "Normal": {
+          "precision": 0.5,
+          "recall": 0.6,
+          "f1": 0.5454545454545454,
+          "support": 10,
+          "tp": 6,
+          "fp": 6,
+          "fn": 4
+        },
+        "Probe": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 10,
+          "tp": 10,
+          "fp": 0,
+          "fn": 0
+        },
+        "R2L": {
+          "precision": 1.0,
+          "recall": 0.4,
+          "f1": 0.5714285714285715,
+          "support": 10,
+          "tp": 4,
+          "fp": 0,
+          "fn": 6
+        },
+        "U2R": {
+          "precision": 1.0,
+          "recall": 0.7,
+          "f1": 0.8235294117647058,
+          "support": 10,
+          "tp": 7,
+          "fp": 0,
+          "fn": 3
+        }
+      },
+      "per_class_ci": {
+        "<empty>": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "DoS": {
+          "point": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "Normal": {
+          "point": 0.6,
+          "lo": 0.3,
+          "hi": 0.9
+        },
+        "Probe": {
+          "point": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "R2L": {
+          "point": 0.4,
+          "lo": 0.1,
+          "hi": 0.7
+        },
+        "U2R": {
+          "point": 0.7,
+          "lo": 0.4,
+          "hi": 0.9
+        }
+      },
+      "macro_f1": 0.6182738829797653,
+      "confusion_matrix": {
+        "<empty>": {
+          "<empty>": 0,
+          "DoS": 0,
+          "Normal": 0,
+          "Probe": 0,
+          "R2L": 0,
+          "U2R": 0
+        },
+        "DoS": {
+          "<empty>": 0,
+          "DoS": 10,
+          "Normal": 0,
+          "Probe": 0,
+          "R2L": 0,
+          "U2R": 0
+        },
+        "Normal": {
+          "<empty>": 0,
+          "DoS": 4,
+          "Normal": 6,
+          "Probe": 0,
+          "R2L": 0,
+          "U2R": 0
+        },
+        "Probe": {
+          "<empty>": 0,
+          "DoS": 0,
+          "Normal": 0,
+          "Probe": 10,
+          "R2L": 0,
+          "U2R": 0
+        },
+        "R2L": {
+          "<empty>": 0,
+          "DoS": 2,
+          "Normal": 4,
+          "Probe": 0,
+          "R2L": 4,
+          "U2R": 0
+        },
+        "U2R": {
+          "<empty>": 1,
+          "DoS": 0,
+          "Normal": 2,
+          "Probe": 0,
+          "R2L": 0,
+          "U2R": 7
+        }
+      }
+    }
+  ]
+}

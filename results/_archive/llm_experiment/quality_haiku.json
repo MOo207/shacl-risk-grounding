@@ -1,0 +1,303 @@
+{
+  "n": 30,
+  "mean_clause_count": 0.9,
+  "pct_cve_mentioned": 80.0,
+  "pct_asset_mentioned": 100.0,
+  "mean_narrative_words": 67.63333333333334,
+  "per_case": [
+    {
+      "case_id": "case_001",
+      "clause_count": 1,
+      "clauses_cited": [
+        "\u00a76.9"
+      ],
+      "cve_mentioned": false,
+      "asset_mentioned": true,
+      "narrative_words": 74
+    },
+    {
+      "case_id": "case_002",
+      "clause_count": 0,
+      "clauses_cited": [],
+      "cve_mentioned": false,
+      "asset_mentioned": true,
+      "narrative_words": 59
+    },
+    {
+      "case_id": "case_003",
+      "clause_count": 1,
+      "clauses_cited": [
+        "\u00a76.9"
+      ],
+      "cve_mentioned": false,
+      "asset_mentioned": true,
+      "narrative_words": 75
+    },
+    {
+      "case_id": "case_016",
+      "clause_count": 1,
+      "clauses_cited": [
+        "\u00a76.9"
+      ],
+      "cve_mentioned": true,
+      "asset_mentioned": true,
+      "narrative_words": 75
+    },
+    {
+      "case_id": "case_018",
+      "clause_count": 1,
+      "clauses_cited": [
+        "\u00a76.9"
+      ],
+      "cve_mentioned": true,
+      "asset_mentioned": true,
+      "narrative_words": 72
+    },
+    {
+      "case_id": "case_019",
+      "clause_count": 1,
+      "clauses_cited": [
+        "\u00a76.9"
+      ],
+      "cve_mentioned": true,
+      "asset_mentioned": true,
+      "narrative_words": 73
+    },
+    {
+      "case_id": "case_049",
+      "clause_count": 1,
+      "clauses_cited": [
+        "\u00a76.9"
+      ],
+      "cve_mentioned": true,
+      "asset_mentioned": true,
+      "narrative_words": 55
+    },
+    {
+      "case_id": "case_050",
+      "clause_count": 1,
+      "clauses_cited": [
+        "\u00a76.9"
+      ],
+      "cve_mentioned": true,
+      "asset_mentioned": true,
+      "narrative_words": 69
+    },
+    {
+      "case_id": "case_052",
+      "clause_count": 1,
+      "clauses_cited": [
+        "\u00a76.9"
+      ],
+      "cve_mentioned": true,
+      "asset_mentioned": true,
+      "narrative_words": 81
+    },
+    {
+      "case_id": "case_034",
+      "clause_count": 0,
+      "clauses_cited": [],
+      "cve_mentioned": true,
+      "asset_mentioned": true,
+      "narrative_words": 67
+    },
+    {
+      "case_id": "case_035",
+      "clause_count": 1,
+      "clauses_cited": [
+        "\u00a76.9"
+      ],
+      "cve_mentioned": true,
+      "asset_mentioned": true,
+      "narrative_words": 80
+    },
+    {
+      "case_id": "case_040",
+      "clause_count": 1,
+      "clauses_cited": [
+        "\u00a76.9"
+      ],
+      "cve_mentioned": true,
+      "asset_mentioned": true,
+      "narrative_words": 59
+    },
+    {
+      "case_id": "case_064",
+      "clause_count": 1,
+      "clauses_cited": [
+        "\u00a76.9"
+      ],
+      "cve_mentioned": true,
+      "asset_mentioned": true,
+      "narrative_words": 73
+    },
+    {
+      "case_id": "case_067",
+      "clause_count": 0,
+      "clauses_cited": [],
+      "cve_mentioned": true,
+      "asset_mentioned": true,
+      "narrative_words": 67
+    },
+    {
+      "case_id": "case_068",
+      "clause_count": 1,
+      "clauses_cited": [
+        "\u00a76.9"
+      ],
+      "cve_mentioned": true,
+      "asset_mentioned": true,
+      "narrative_words": 59
+    },
+    {
+      "case_id": "case_000",
+      "clause_count": 1,
+      "clauses_cited": [
+        "\u00a76.9"
+      ],
+      "cve_mentioned": false,
+      "asset_mentioned": true,
+      "narrative_words": 70
+    },
+    {
+      "case_id": "case_004",
+      "clause_count": 1,
+      "clauses_cited": [
+        "\u00a76.9"
+      ],
+      "cve_mentioned": false,
+      "asset_mentioned": true,
+      "narrative_words": 72
+    },
+    {
+      "case_id": "case_005",
+      "clause_count": 1,
+      "clauses_cited": [
+        "\u00a76.9"
+      ],
+      "cve_mentioned": false,
+      "asset_mentioned": true,
+      "narrative_words": 79
+    },
+    {
+      "case_id": "case_017",
+      "clause_count": 1,
+      "clauses_cited": [
+        "\u00a76.9"
+      ],
+      "cve_mentioned": true,
+      "asset_mentioned": true,
+      "narrative_words": 58
+    },
+    {
+      "case_id": "case_020",
+      "clause_count": 1,
+      "clauses_cited": [
+        "\u00a76.9"
+      ],
+      "cve_mentioned": true,
+      "asset_mentioned": true,
+      "narrative_words": 67
+    },
+    {
+      "case_id": "case_026",
+      "clause_count": 1,
+      "clauses_cited": [
+        "\u00a76.9"
+      ],
+      "cve_mentioned": true,
+      "asset_mentioned": true,
+      "narrative_words": 65
+    },
+    {
+      "case_id": "case_048",
+      "clause_count": 1,
+      "clauses_cited": [
+        "\u00a76.9"
+      ],
+      "cve_mentioned": true,
+      "asset_mentioned": true,
+      "narrative_words": 71
+    },
+    {
+      "case_id": "case_051",
+      "clause_count": 1,
+      "clauses_cited": [
+        "\u00a76.9"
+      ],
+      "cve_mentioned": true,
+      "asset_mentioned": true,
+      "narrative_words": 49
+    },
+    {
+      "case_id": "case_053",
+      "clause_count": 1,
+      "clauses_cited": [
+        "\u00a76.9"
+      ],
+      "cve_mentioned": true,
+      "asset_mentioned": true,
+      "narrative_words": 60
+    },
+    {
+      "case_id": "case_032",
+      "clause_count": 1,
+      "clauses_cited": [
+        "\u00a76.9"
+      ],
+      "cve_mentioned": true,
+      "asset_mentioned": true,
+      "narrative_words": 52
+    },
+    {
+      "case_id": "case_033",
+      "clause_count": 1,
+      "clauses_cited": [
+        "\u00a76.9"
+      ],
+      "cve_mentioned": true,
+      "asset_mentioned": true,
+      "narrative_words": 70
+    },
+    {
+      "case_id": "case_036",
+      "clause_count": 1,
+      "clauses_cited": [
+        "\u00a76.9"
+      ],
+      "cve_mentioned": true,
+      "asset_mentioned": true,
+      "narrative_words": 74
+    },
+    {
+      "case_id": "case_065",
+      "clause_count": 1,
+      "clauses_cited": [
+        "\u00a76.9"
+      ],
+      "cve_mentioned": true,
+      "asset_mentioned": true,
+      "narrative_words": 65
+    },
+    {
+      "case_id": "case_066",
+      "clause_count": 1,
+      "clauses_cited": [
+        "\u00a76.9"
+      ],
+      "cve_mentioned": true,
+      "asset_mentioned": true,
+      "narrative_words": 61
+    },
+    {
+      "case_id": "case_069",
+      "clause_count": 1,
+      "clauses_cited": [
+        "\u00a76.9"
+      ],
+      "cve_mentioned": true,
+      "asset_mentioned": true,
+      "narrative_words": 78
+    }
+  ]
+}

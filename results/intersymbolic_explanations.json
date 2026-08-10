@@ -1,0 +1,344 @@
+[
+  {
+    "flow_id": 1,
+    "true_label": "DDoS",
+    "predicted_label": "DDoS",
+    "correct_prediction": true,
+    "layer1": {
+      "all_rules": {
+        "high_volume_flow": false,
+        "short_duration": false,
+        "suspicious_iat": false,
+        "syn_flood_indicator": false,
+        "large_data_transfer": false,
+        "high_pps": true
+      },
+      "active_rules": [
+        "high_pps"
+      ],
+      "symbolic_hint": "possible_attack"
+    },
+    "layer2": {
+      "top3_features": [
+        {
+          "feature": "Init Fwd Win Byts",
+          "mean_abs_shap": 0.06545394321522596,
+          "rank": 1
+        },
+        {
+          "feature": "Fwd Seg Size Min",
+          "mean_abs_shap": 0.025696835780387547,
+          "rank": 2
+        },
+        {
+          "feature": "Dst Port",
+          "mean_abs_shap": 0.02218829749320697,
+          "rank": 3
+        }
+      ]
+    },
+    "layer3": {
+      "predicted_attack_type": "DDoS",
+      "cve_examples": [
+        "CVE-2023-44487",
+        "CVE-2022-26143"
+      ],
+      "risk_level": "CRITICAL",
+      "nfcrm_clause": "NFCRM-1:2025 \u00a76.9 (Inherent Risk Analysis)",
+      "iso_clause": "ISO/IEC 27005:2022 \u00a78.3 (Risk Analysis)",
+      "recommended_control": "DDoS mitigation service + CDN scrubbing",
+      "nca_reference": "NCA-ECC-3-1-2",
+      "risk_case": "RC-DDOS-CRITICAL"
+    },
+    "layer4_optional": {
+      "status": "OK",
+      "backend": "claude_api_haiku-4.5",
+      "nl_explanation": "System detected DDoS attack pattern (high packets-per-second, large initial window bytes) triggering NFCRM-1:2025 \u00a76.9 inherent risk threshold at CRITICAL level. This requires documented risk acceptance or immediate mitigation per regulatory control mapping. Recommend DDoS mitigation service + CDN scrubbing deployment before incident escalates."
+    },
+    "key_flow_stats": {
+      "Flow Duration": 33426.0,
+      "Dst Port": 80.0,
+      "Tot Fwd Pkts": 3.0,
+      "Tot Bwd Pkts": 4.0,
+      "Flow Pkts/s": 209.4178185,
+      "SYN Flag Cnt": 0.0,
+      "TotLen Fwd Pkts": 316.0,
+      "Init Fwd Win Byts": 65535.0,
+      "Fwd Seg Size Min": 20.0
+    }
+  },
+  {
+    "flow_id": 2,
+    "true_label": "BruteForce",
+    "predicted_label": "BruteForce",
+    "correct_prediction": true,
+    "layer1": {
+      "all_rules": {
+        "high_volume_flow": false,
+        "short_duration": false,
+        "suspicious_iat": true,
+        "syn_flood_indicator": false,
+        "large_data_transfer": false,
+        "high_pps": true
+      },
+      "active_rules": [
+        "suspicious_iat",
+        "high_pps"
+      ],
+      "symbolic_hint": "possible_attack"
+    },
+    "layer2": {
+      "top3_features": [
+        {
+          "feature": "Init Fwd Win Byts",
+          "mean_abs_shap": 0.055430205426753774,
+          "rank": 1
+        },
+        {
+          "feature": "Dst Port",
+          "mean_abs_shap": 0.04475611245011363,
+          "rank": 2
+        },
+        {
+          "feature": "Fwd Seg Size Min",
+          "mean_abs_shap": 0.03452112461357193,
+          "rank": 3
+        }
+      ]
+    },
+    "layer3": {
+      "predicted_attack_type": "BruteForce",
+      "cve_examples": [
+        "CVE-2023-23397",
+        "CVE-2022-26134"
+      ],
+      "risk_level": "HIGH",
+      "nfcrm_clause": "NFCRM-1:2025 \u00a76.7 (Access Control Enforcement)",
+      "iso_clause": "ISO/IEC 27005:2022 \u00a78.2 (Risk Identification)",
+      "recommended_control": "Account lockout + MFA enforcement",
+      "nca_reference": "NCA-ECC-2-3-1",
+      "risk_case": "RC-BRUTEFORCE-HIGH"
+    },
+    "layer4_optional": {
+      "status": "OK",
+      "backend": "claude_api_haiku-4.5",
+      "nl_explanation": "**BruteForce attack detected on network flow analysis.** System identified suspicious connection patterns (rapid, low-volume initial packets to specific ports) consistent with account credential attempts, mapped to NFCRM-1:2025 Access Control Enforcement requirements as a HIGH-risk control gap. **Recommend immediate deployment of account lockout policies and multi-factor authentication to close this gap.**"
+    },
+    "key_flow_stats": {
+      "Flow Duration": 93.0,
+      "Dst Port": 80.0,
+      "Tot Fwd Pkts": 2.0,
+      "Tot Bwd Pkts": 0.0,
+      "Flow Pkts/s": 21505.376344086,
+      "SYN Flag Cnt": 0.0,
+      "TotLen Fwd Pkts": 0.0,
+      "Init Fwd Win Byts": 2053.0,
+      "Fwd Seg Size Min": 20.0
+    }
+  },
+  {
+    "flow_id": 3,
+    "true_label": "DoS",
+    "predicted_label": "DoS",
+    "correct_prediction": true,
+    "layer1": {
+      "all_rules": {
+        "high_volume_flow": false,
+        "short_duration": false,
+        "suspicious_iat": true,
+        "syn_flood_indicator": false,
+        "large_data_transfer": false,
+        "high_pps": true
+      },
+      "active_rules": [
+        "suspicious_iat",
+        "high_pps"
+      ],
+      "symbolic_hint": "possible_attack"
+    },
+    "layer2": {
+      "top3_features": [
+        {
+          "feature": "Fwd Seg Size Min",
+          "mean_abs_shap": 0.07763721446690744,
+          "rank": 1
+        },
+        {
+          "feature": "Init Fwd Win Byts",
+          "mean_abs_shap": 0.04347152533035695,
+          "rank": 2
+        },
+        {
+          "feature": "Fwd Header Len",
+          "mean_abs_shap": 0.03733149953640572,
+          "rank": 3
+        }
+      ]
+    },
+    "layer3": {
+      "predicted_attack_type": "DoS",
+      "cve_examples": [
+        "CVE-2023-44487 (HTTP/2 Rapid Reset)",
+        "CVE-2022-3602"
+      ],
+      "risk_level": "HIGH",
+      "nfcrm_clause": "NFCRM-1:2025 \u00a76.9 (Inherent Risk Analysis)",
+      "iso_clause": "ISO/IEC 27005:2022 \u00a78.3 (Risk Analysis)",
+      "recommended_control": "Rate limiting + traffic scrubbing",
+      "nca_reference": "NCA-ECC-3-1-2",
+      "risk_case": "RC-DOS-HIGH"
+    },
+    "layer4_optional": {
+      "status": "OK",
+      "backend": "claude_api_haiku-4.5",
+      "nl_explanation": "System detected Denial of Service attack attempt using abnormal network timing and volume patterns. NFCRM-1:2025 \u00a76.9 classifies this as HIGH inherent risk requiring immediate compensating controls. Rate limiting and traffic scrubbing have been deployed to restore normal operations and mitigate asset availability impact."
+    },
+    "key_flow_stats": {
+      "Flow Duration": 10080.0,
+      "Dst Port": 80.0,
+      "Tot Fwd Pkts": 2.0,
+      "Tot Bwd Pkts": 0.0,
+      "Flow Pkts/s": 198.4126984,
+      "SYN Flag Cnt": 0.0,
+      "TotLen Fwd Pkts": 0.0,
+      "Init Fwd Win Byts": 225.0,
+      "Fwd Seg Size Min": 32.0
+    }
+  },
+  {
+    "flow_id": 4,
+    "true_label": "WebAttack",
+    "predicted_label": "WebAttack",
+    "correct_prediction": true,
+    "layer1": {
+      "all_rules": {
+        "high_volume_flow": false,
+        "short_duration": false,
+        "suspicious_iat": false,
+        "syn_flood_indicator": false,
+        "large_data_transfer": false,
+        "high_pps": false
+      },
+      "active_rules": [],
+      "symbolic_hint": "benign_pattern"
+    },
+    "layer2": {
+      "top3_features": [
+        {
+          "feature": "Fwd Seg Size Min",
+          "mean_abs_shap": 0.023134148350009213,
+          "rank": 1
+        },
+        {
+          "feature": "Init Fwd Win Byts",
+          "mean_abs_shap": 0.022022123679944095,
+          "rank": 2
+        },
+        {
+          "feature": "ECE Flag Cnt",
+          "mean_abs_shap": 0.020810347608694952,
+          "rank": 3
+        }
+      ]
+    },
+    "layer3": {
+      "predicted_attack_type": "WebAttack",
+      "cve_examples": [
+        "CVE-2023-34362 (SQL Injection)",
+        "CVE-2021-44228 (Log4Shell XSS)"
+      ],
+      "risk_level": "HIGH",
+      "nfcrm_clause": "NFCRM-1:2025 \u00a76.4 (Vulnerability Inventory)",
+      "iso_clause": "ISO/IEC 27005:2022 \u00a78.3 (Risk Analysis)",
+      "recommended_control": "WAF + input validation + parameterised queries",
+      "nca_reference": "NCA-ECC-4-2-1",
+      "risk_case": "RC-WEBATTACK-HIGH"
+    },
+    "layer4_optional": {
+      "status": "OK",
+      "backend": "claude_api_haiku-4.5",
+      "nl_explanation": "A WebAttack was detected in this network flow based on three key traffic patterns: minimum forward segment size, initial forward window bytes, and ECE flag count. Under NFCRM-1:2025 Section 6.4 (Vulnerability Inventory), this assessment maps to a HIGH risk level requiring immediate documentation. Recommended controls are Web Application Firewall deployment, input validation, and parameterized database queries to close this vulnerability."
+    },
+    "key_flow_stats": {
+      "Flow Duration": 5010641.0,
+      "Dst Port": 80.0,
+      "Tot Fwd Pkts": 4.0,
+      "Tot Bwd Pkts": 4.0,
+      "Flow Pkts/s": 1.5966021114,
+      "SYN Flag Cnt": 0.0,
+      "TotLen Fwd Pkts": 483.0,
+      "Init Fwd Win Byts": 8192.0,
+      "Fwd Seg Size Min": 20.0
+    }
+  },
+  {
+    "flow_id": 5,
+    "true_label": "Infiltration",
+    "predicted_label": "Infiltration",
+    "correct_prediction": true,
+    "layer1": {
+      "all_rules": {
+        "high_volume_flow": false,
+        "short_duration": true,
+        "suspicious_iat": true,
+        "syn_flood_indicator": false,
+        "large_data_transfer": false,
+        "high_pps": true
+      },
+      "active_rules": [
+        "short_duration",
+        "suspicious_iat",
+        "high_pps"
+      ],
+      "symbolic_hint": "possible_attack"
+    },
+    "layer2": {
+      "top3_features": [
+        {
+          "feature": "Dst Port",
+          "mean_abs_shap": 0.030275521636628527,
+          "rank": 1
+        },
+        {
+          "feature": "Fwd IAT Min",
+          "mean_abs_shap": 0.024535657754904728,
+          "rank": 2
+        },
+        {
+          "feature": "Fwd Seg Size Min",
+          "mean_abs_shap": 0.024167108293981315,
+          "rank": 3
+        }
+      ]
+    },
+    "layer3": {
+      "predicted_attack_type": "Infiltration",
+      "cve_examples": [
+        "CVE-2023-20198",
+        "CVE-2022-30190 (Follina)"
+      ],
+      "risk_level": "CRITICAL",
+      "nfcrm_clause": "NFCRM-1:2025 \u00a76.5 (Threat Detection)",
+      "iso_clause": null,
+      "recommended_control": "Network segmentation + EDR + privileged access management",
+      "nca_reference": "NCA-ECC-5-1-3",
+      "risk_case": "RC-INFILTRATION-CRITICAL"
+    },
+    "layer4_optional": {
+      "status": "OK",
+      "backend": "claude_api_haiku-4.5",
+      "nl_explanation": "System detected infiltration activity meeting CRITICAL risk threshold per NFCRM-1:2025 \u00a76.5 threat detection requirements. The detection resulted from automated analysis of network flow patterns\u2014specifically unusual timing intervals, high packet rates, and anomalous destination ports\u2014that matched established intrusion signatures. Immediate implementation of network segmentation, endpoint monitoring, and restricted privileged access controls is required to contain the threat."
+    },
+    "key_flow_stats": {
+      "Flow Duration": 2.0,
+      "Dst Port": 54045.0,
+      "Tot Fwd Pkts": 1.0,
+      "Tot Bwd Pkts": 1.0,
+      "Flow Pkts/s": 1000000.0,
+      "SYN Flag Cnt": 0.0,
+      "TotLen Fwd Pkts": 0.0,
+      "Init Fwd Win Byts": 1024.0,
+      "Fwd Seg Size Min": 24.0
+    }
+  }
+]

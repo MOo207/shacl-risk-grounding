@@ -1,0 +1,496 @@
+{
+  "dataset": "cicids",
+  "model": "qwen3.5:0.8b",
+  "samples": 96,
+  "accuracy": 0.0,
+  "per_class_accuracy": {
+    "Benign": 0.0,
+    "BruteForce": 0.0,
+    "DDoS": 0.0,
+    "DoS": 0.0,
+    "Infiltration": 0.0,
+    "WebAttack": 0.0
+  },
+  "results": [
+    {
+      "true": "Benign",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Benign",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Benign",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Benign",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Benign",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Benign",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Benign",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Benign",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Benign",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Benign",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Benign",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Benign",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Benign",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Benign",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Benign",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Benign",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DDoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DDoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DDoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DDoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DDoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DDoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DDoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DDoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DDoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DDoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DDoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DDoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DDoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DDoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DDoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DDoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "DoS",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "",
+      "correct": false
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "",
+      "correct": false
+    }
+  ]
+}

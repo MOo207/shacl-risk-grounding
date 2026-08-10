@@ -1,0 +1,379 @@
+{
+  "mode": "evaluation",
+  "model": "glm-4.7",
+  "backend": "zai_api",
+  "dataset": "nslkdd",
+  "n_samples": 50,
+  "n_valid": 50,
+  "n_errors": 0,
+  "accuracy": 0.74,
+  "per_class_accuracy": {
+    "Normal": 0.6,
+    "DoS": 1.0,
+    "Probe": 1.0,
+    "R2L": 0.4,
+    "U2R": 0.7
+  },
+  "per_class_counts": {
+    "Normal": 10,
+    "DoS": 10,
+    "Probe": 10,
+    "R2L": 10,
+    "U2R": 10
+  },
+  "elapsed_seconds": 908.7836451530457,
+  "note": "NL feature conversion layer applied to NSL-KDD 5-class problem. Priority hierarchy for NL dispatch: U2R (root_shell/su_attempted/num_root/hot>5) > R2L (num_failed_logins / auth-service without login) > DoS (flag=REJ/S0 + count>=50 + rerror/serror) > Probe (diff_srv_rate/ICMP sweep) > Normal. 10 few-shot examples (2 per class) embedded in prompt.",
+  "results": [
+    {
+      "true": "DoS",
+      "raw_label": "back",
+      "predicted": "DoS",
+      "correct": true,
+      "nl_description": "HTTP connection (flag=SF, duration=0s, sent=54540B to server, dst_host_count=255). A very large payload sent to an HTTP server with saturation of the destination host (255 recent connections, low service diversity diff_srv=0%) is characteristic of a 'back' denial-of-service attack -- sending malformed HTTP requests (e.g., with '/' repeated thousands of times) to crash/overload Apache. This is a DoS attack even though the TCP connection may complete (flag=SF)."
+    },
+    {
+      "true": "R2L",
+      "raw_label": "guess_passwd",
+      "predicted": "R2L",
+      "correct": true,
+      "nl_description": "Connection via TCP to 'telnet' (flag=S3, duration=60s, sent=120B, received=188B). 1 failed login attempt(s) recorded -- repeated authentication failures on a remote service are a primary indicator of a remote-to-local (R2L) brute-force or password-guessing attack. User did not gain access."
+    },
+    {
+      "true": "R2L",
+      "raw_label": "warezmaster",
+      "predicted": "R2L",
+      "correct": true,
+      "nl_description": "FTP connection lasting 281s with significant data transfer (sent=162B, received=599B, logged_in=1). A long-running FTP session lasting several minutes with a data channel transfer is characteristic of unauthorized file upload/download -- remote-to-local (R2L) file exfiltration or warezmaster-style unauthorized data transfer."
+    },
+    {
+      "true": "U2R",
+      "raw_label": "httptunnel",
+      "predicted": "U2R",
+      "correct": true,
+      "nl_description": "Connection via TCP to 'other' service (flag=REJ, duration=0s, dst_host_count=255, rerror_rate=100%, diff_srv_rate=0%). A rejected TCP connection to an unclassified 'other' service with zero data exchange, low service diversity, and low connection count is a signature of the httptunnel attack -- a user-to-root (U2R) technique that establishes a covert TCP tunnel to escalate privileges, bypassing firewall rules. The connection is rejected but reveals privilege-escalation intent."
+    },
+    {
+      "true": "DoS",
+      "raw_label": "neptune",
+      "predicted": "DoS",
+      "correct": true,
+      "nl_description": "Connection via TCP to 'private' service (flag=REJ, duration=0s): TCP flag=REJ (connection rejected or unanswered -- server unresponsive); 278 connections to same host in 2 seconds (flood rate); REJ error rate=100%; 255 connections to destination host (saturation); zero bytes in both directions (pure connection exhaustion). Low service diversity (diff_srv_rate=6%) confirms this is the same service being targeted repeatedly -- characteristic of a denial-of-service (DoS) flood attack."
+    },
+    {
+      "true": "U2R",
+      "raw_label": "buffer_overflow",
+      "predicted": "U2R",
+      "correct": true,
+      "nl_description": "Connection via TCP to 'telnet' service (flag=SF, duration=71s, sent=2783B, received=15242B): root shell was obtained; 10 hot indicator(s) (privileged/sensitive operations detected); 2 compromised condition(s). These are hallmark indicators of user-to-root (U2R) privilege escalation -- an attacker exploiting a local vulnerability to gain superuser control. Session authenticated -- exploitation occurred from within an established login session."
+    },
+    {
+      "true": "Probe",
+      "raw_label": "satan",
+      "predicted": "Probe",
+      "correct": true,
+      "nl_description": "Connection via TCP to 'private' (flag=REJ, duration=0s, count=155, dst_host_count=255): diff_srv_rate=100% (scanning many different services); dst_host_diff_srv_rate=44% (destination host targeted with diverse services); same_srv_rate=1% across 155 connections (port sweep -- low service locality); Connection flag=REJ with varied services -- typical of active port scanner being rejected by firewalled ports. This pattern is consistent with network reconnaissance (Probe) -- systematic scanning to discover open ports and reachable services before an attack."
+    },
+    {
+      "true": "Probe",
+      "raw_label": "mscan",
+      "predicted": "Probe",
+      "correct": true,
+      "nl_description": "Connection via TCP to 'pop_3' (flag=RSTO, duration=1s, count=3, dst_host_count=232): diff_srv_rate=100% (scanning many different services); Connection flag=RSTO with varied services -- typical of active port scanner being rejected by firewalled ports; dst_host_rerror_rate=87% across 232 destination connections, count=3 (mscan pattern: single service probed at high rejection rate across many hosts, not a same-host flood). This pattern is consistent with network reconnaissance (Probe) -- systematic scanning to discover open ports and reachable services before an attack."
+    },
+    {
+      "true": "R2L",
+      "raw_label": "guess_passwd",
+      "predicted": "Normal",
+      "correct": false,
+      "nl_description": "Connection via TCP to 'telnet' service (flag=SF, duration=13s, sent=118B, received=2425B). Connection completed normally (SF flag -- both sides exchanged data and closed cleanly). User is authenticated (logged_in=1) -- valid session in progress. No SYN or REJ errors detected. Low connection rate: 1 connections to same host, 26 to destination -- consistent with individual user activity, not flooding."
+    },
+    {
+      "true": "DoS",
+      "raw_label": "neptune",
+      "predicted": "DoS",
+      "correct": true,
+      "nl_description": "Connection via TCP to 'private' service (flag=REJ, duration=0s): TCP flag=REJ (connection rejected or unanswered -- server unresponsive); 115 connections to same host in 2 seconds (flood rate); REJ error rate=100%; 255 connections to destination host (saturation); zero bytes in both directions (pure connection exhaustion). Low service diversity (diff_srv_rate=6%) confirms this is the same service being targeted repeatedly -- characteristic of a denial-of-service (DoS) flood attack."
+    },
+    {
+      "true": "DoS",
+      "raw_label": "apache2",
+      "predicted": "DoS",
+      "correct": true,
+      "nl_description": "HTTP connection (flag=RSTR, duration=2066s, sent=56504B to server, dst_host_count=255). A very large payload sent to an HTTP server with saturation of the destination host (255 recent connections, low service diversity diff_srv=0%) is characteristic of a 'back' denial-of-service attack -- sending malformed HTTP requests (e.g., with '/' repeated thousands of times) to crash/overload Apache. This is a DoS attack even though the TCP connection may complete (flag=SF)."
+    },
+    {
+      "true": "Normal",
+      "raw_label": "normal",
+      "predicted": "Normal",
+      "correct": true,
+      "nl_description": "Connection via TCP to 'http' service (flag=SF, duration=0s, sent=192B, received=3717B). Connection completed normally (SF flag -- both sides exchanged data and closed cleanly). User is authenticated (logged_in=1) -- valid session in progress. No SYN or REJ errors detected. Low connection rate: 1 connections to same host, 1 to destination -- consistent with individual user activity, not flooding. Balanced data exchange (sent 192B, received 3717B) -- typical of normal request-response."
+    },
+    {
+      "true": "R2L",
+      "raw_label": "snmpguess",
+      "predicted": "R2L",
+      "correct": true,
+      "nl_description": "UDP connection to 'private' service (src=45B, dst=0B, count=2, dst_host_count=255). Short UDP packets to an unknown/private service with zero server response are characteristic of SNMP community string guessing (snmpguess/snmpgetattack) -- a remote-to-local (R2L) attack that attempts to authenticate to SNMP services using default or guessed community strings to gain read/write access."
+    },
+    {
+      "true": "Normal",
+      "raw_label": "normal",
+      "predicted": "Normal",
+      "correct": true,
+      "nl_description": "Connection via TCP to 'http' service (flag=SF, duration=0s, sent=251B, received=1407B). Connection completed normally (SF flag -- both sides exchanged data and closed cleanly). User is authenticated (logged_in=1) -- valid session in progress. No SYN or REJ errors detected. Low connection rate: 3 connections to same host, 30 to destination -- consistent with individual user activity, not flooding. Balanced data exchange (sent 251B, received 1407B) -- typical of normal request-response."
+    },
+    {
+      "true": "Normal",
+      "raw_label": "normal",
+      "predicted": "Normal",
+      "correct": true,
+      "nl_description": "Connection via TCP to 'http' service (flag=SF, duration=0s, sent=241B, received=1894B). Connection completed normally (SF flag -- both sides exchanged data and closed cleanly). User is authenticated (logged_in=1) -- valid session in progress. No SYN or REJ errors detected. Low connection rate: 6 connections to same host, 99 to destination -- consistent with individual user activity, not flooding. Balanced data exchange (sent 241B, received 1894B) -- typical of normal request-response."
+    },
+    {
+      "true": "Normal",
+      "raw_label": "normal",
+      "predicted": "Normal",
+      "correct": true,
+      "nl_description": "Connection via TCP to 'http' service (flag=SF, duration=0s, sent=285B, received=347B). Connection completed normally (SF flag -- both sides exchanged data and closed cleanly). User is authenticated (logged_in=1) -- valid session in progress. No SYN or REJ errors detected. NOTE: 255 recent connections observed to destination host (high saturation level) -- this may indicate automated or malicious traffic despite normal-looking flow features. Balanced data exchange (sent 285B, received 347B) -- typical of normal request-response."
+    },
+    {
+      "true": "U2R",
+      "raw_label": "httptunnel",
+      "predicted": "U2R",
+      "correct": true,
+      "nl_description": "Connection via TCP to 'other' service (flag=REJ, duration=0s, dst_host_count=255, rerror_rate=50%, diff_srv_rate=100%). A rejected TCP connection to an unclassified 'other' service with zero data exchange, low service diversity, and low connection count is a signature of the httptunnel attack -- a user-to-root (U2R) technique that establishes a covert TCP tunnel to escalate privileges, bypassing firewall rules. The connection is rejected but reveals privilege-escalation intent."
+    },
+    {
+      "true": "U2R",
+      "raw_label": "httptunnel",
+      "predicted": "U2R",
+      "correct": true,
+      "nl_description": "Connection via TCP to 'other' service (flag=REJ, duration=0s, dst_host_count=117, rerror_rate=100%, diff_srv_rate=0%). A rejected TCP connection to an unclassified 'other' service with zero data exchange, low service diversity, and low connection count is a signature of the httptunnel attack -- a user-to-root (U2R) technique that establishes a covert TCP tunnel to escalate privileges, bypassing firewall rules. The connection is rejected but reveals privilege-escalation intent."
+    },
+    {
+      "true": "U2R",
+      "raw_label": "rootkit",
+      "predicted": "Normal",
+      "correct": false,
+      "nl_description": "Connection via TCP to 'ftp_data' service (flag=SF, duration=0s, sent=195B, received=0B). Connection completed normally (SF flag -- both sides exchanged data and closed cleanly). No SYN or REJ errors detected. Low connection rate: 1 connections to same host, 19 to destination -- consistent with individual user activity, not flooding."
+    },
+    {
+      "true": "DoS",
+      "raw_label": "neptune",
+      "predicted": "DoS",
+      "correct": true,
+      "nl_description": "Connection via TCP to 'private' service (flag=REJ, duration=0s): TCP flag=REJ (connection rejected or unanswered -- server unresponsive); 198 connections to same host in 2 seconds (flood rate); REJ error rate=100%; 255 connections to destination host (saturation); zero bytes in both directions (pure connection exhaustion). Low service diversity (diff_srv_rate=6%) confirms this is the same service being targeted repeatedly -- characteristic of a denial-of-service (DoS) flood attack."
+    },
+    {
+      "true": "Normal",
+      "raw_label": "normal",
+      "predicted": "DoS",
+      "correct": false,
+      "nl_description": "Connection via TCP to 'http' service (flag=SF, duration=0s, sent=215B, received=9412B). Connection completed normally (SF flag -- both sides exchanged data and closed cleanly). User is authenticated (logged_in=1) -- valid session in progress. No SYN or REJ errors detected. NOTE: 255 recent connections observed to destination host (high saturation level) -- this may indicate automated or malicious traffic despite normal-looking flow features."
+    },
+    {
+      "true": "DoS",
+      "raw_label": "neptune",
+      "predicted": "DoS",
+      "correct": true,
+      "nl_description": "Connection via TCP to 'private' service (flag=REJ, duration=0s): TCP flag=REJ (connection rejected or unanswered -- server unresponsive); 281 connections to same host in 2 seconds (flood rate); REJ error rate=100%; 255 connections to destination host (saturation); zero bytes in both directions (pure connection exhaustion). Low service diversity (diff_srv_rate=6%) confirms this is the same service being targeted repeatedly -- characteristic of a denial-of-service (DoS) flood attack."
+    },
+    {
+      "true": "Probe",
+      "raw_label": "mscan",
+      "predicted": "Probe",
+      "correct": true,
+      "nl_description": "Connection via TCP to 'pop_3' (flag=RSTO, duration=1s, count=3, dst_host_count=155): diff_srv_rate=100% (scanning many different services); Connection flag=RSTO with varied services -- typical of active port scanner being rejected by firewalled ports; dst_host_rerror_rate=90% across 155 destination connections, count=3 (mscan pattern: single service probed at high rejection rate across many hosts, not a same-host flood). This pattern is consistent with network reconnaissance (Probe) -- systematic scanning to discover open ports and reachable services before an attack."
+    },
+    {
+      "true": "R2L",
+      "raw_label": "guess_passwd",
+      "predicted": "DoS",
+      "correct": false,
+      "nl_description": "Connection via TCP to 'pop_3' service (flag=SF, duration=4s, sent=28B, received=93B). Connection completed normally (SF flag -- both sides exchanged data and closed cleanly). User is authenticated (logged_in=1) -- valid session in progress. No SYN or REJ errors detected. NOTE: 255 recent connections observed to destination host (high saturation level) -- this may indicate automated or malicious traffic despite normal-looking flow features. Balanced data exchange (sent 28B, received 93B) -- typical of normal request-response."
+    },
+    {
+      "true": "R2L",
+      "raw_label": "warezmaster",
+      "predicted": "Normal",
+      "correct": false,
+      "nl_description": "Connection via TCP to 'ftp_data' service (flag=SF, duration=0s, sent=12B, received=0B). Connection completed normally (SF flag -- both sides exchanged data and closed cleanly). No SYN or REJ errors detected."
+    },
+    {
+      "true": "Normal",
+      "raw_label": "normal",
+      "predicted": "DoS",
+      "correct": false,
+      "nl_description": "Connection via TCP to 'http' service (flag=SF, duration=0s, sent=209B, received=354B). Connection completed normally (SF flag -- both sides exchanged data and closed cleanly). User is authenticated (logged_in=1) -- valid session in progress. No SYN or REJ errors detected. NOTE: 255 recent connections observed to destination host (high saturation level) -- this may indicate automated or malicious traffic despite normal-looking flow features. Balanced data exchange (sent 209B, received 354B) -- typical of normal request-response."
+    },
+    {
+      "true": "U2R",
+      "raw_label": "httptunnel",
+      "predicted": "U2R",
+      "correct": true,
+      "nl_description": "Connection via TCP to 'other' service (flag=REJ, duration=0s, dst_host_count=81, rerror_rate=100%, diff_srv_rate=0%). A rejected TCP connection to an unclassified 'other' service with zero data exchange, low service diversity, and low connection count is a signature of the httptunnel attack -- a user-to-root (U2R) technique that establishes a covert TCP tunnel to escalate privileges, bypassing firewall rules. The connection is rejected but reveals privilege-escalation intent."
+    },
+    {
+      "true": "Probe",
+      "raw_label": "satan",
+      "predicted": "Probe",
+      "correct": true,
+      "nl_description": "Connection via UDP to 'other' (flag=SF, duration=0s, count=51, dst_host_count=255): diff_srv_rate=100% (scanning many different services); dst_host_diff_srv_rate=100% (destination host targeted with diverse services); same_srv_rate=2% across 51 connections (port sweep -- low service locality). This pattern is consistent with network reconnaissance (Probe) -- systematic scanning to discover open ports and reachable services before an attack."
+    },
+    {
+      "true": "R2L",
+      "raw_label": "snmpgetattack",
+      "predicted": "Normal",
+      "correct": false,
+      "nl_description": "Connection via UDP to 'private' service (flag=SF, duration=0s, sent=105B, received=146B). Connection completed normally (SF flag -- both sides exchanged data and closed cleanly). No SYN or REJ errors detected. Balanced data exchange (sent 105B, received 146B) -- typical of normal request-response."
+    },
+    {
+      "true": "Normal",
+      "raw_label": "normal",
+      "predicted": "Normal",
+      "correct": true,
+      "nl_description": "Connection via TCP to 'http' service (flag=SF, duration=0s, sent=304B, received=3007B). Connection completed normally (SF flag -- both sides exchanged data and closed cleanly). User is authenticated (logged_in=1) -- valid session in progress. No SYN or REJ errors detected. Balanced data exchange (sent 304B, received 3007B) -- typical of normal request-response."
+    },
+    {
+      "true": "Probe",
+      "raw_label": "portsweep",
+      "predicted": "Probe",
+      "correct": true,
+      "nl_description": "Connection via TCP to 'private' (flag=RSTR, duration=0s, count=1, dst_host_count=255): dst_host_diff_srv_rate=84% (destination host targeted with diverse services); dst_host_rerror_rate=82% across 255 destination connections, count=1 (mscan pattern: single service probed at high rejection rate across many hosts, not a same-host flood). This pattern is consistent with network reconnaissance (Probe) -- systematic scanning to discover open ports and reachable services before an attack."
+    },
+    {
+      "true": "DoS",
+      "raw_label": "neptune",
+      "predicted": "DoS",
+      "correct": true,
+      "nl_description": "Connection via TCP to 'vmnet' service (flag=S0, duration=0s): TCP flag=S0 (connection rejected or unanswered -- server unresponsive); 178 connections to same host in 2 seconds (flood rate); SYN error rate=100% (SYN flood); 255 connections to destination host (saturation); zero bytes in both directions (pure connection exhaustion). Low service diversity (diff_srv_rate=10%) confirms this is the same service being targeted repeatedly -- characteristic of a denial-of-service (DoS) flood attack."
+    },
+    {
+      "true": "R2L",
+      "raw_label": "guess_passwd",
+      "predicted": "Normal",
+      "correct": false,
+      "nl_description": "Connection via TCP to 'pop_3' service (flag=SF, duration=4s, sent=28B, received=93B). Connection completed normally (SF flag -- both sides exchanged data and closed cleanly). User is authenticated (logged_in=1) -- valid session in progress. No SYN or REJ errors detected. NOTE: 255 recent connections observed to destination host (high saturation level) -- this may indicate automated or malicious traffic despite normal-looking flow features. Balanced data exchange (sent 28B, received 93B) -- typical of normal request-response."
+    },
+    {
+      "true": "Normal",
+      "raw_label": "normal",
+      "predicted": "Normal",
+      "correct": true,
+      "nl_description": "Connection via TCP to 'http' service (flag=SF, duration=0s, sent=230B, received=494B). Connection completed normally (SF flag -- both sides exchanged data and closed cleanly). User is authenticated (logged_in=1) -- valid session in progress. No SYN or REJ errors detected. Low connection rate: 1 connections to same host, 15 to destination -- consistent with individual user activity, not flooding. Balanced data exchange (sent 230B, received 494B) -- typical of normal request-response."
+    },
+    {
+      "true": "Probe",
+      "raw_label": "mscan",
+      "predicted": "Probe",
+      "correct": true,
+      "nl_description": "Connection via TCP to 'telnet' service (flag=RSTO, duration=1s, sent=0B, received=15B). Low connection rate: 1 connections to same host, 148 to destination -- consistent with individual user activity, not flooding. Despite appearing normal, dst_host_rerror_rate=91% indicates 91% of connections to this destination host are being rejected -- consistent with mscan port scanner probing a single service across many hosts."
+    },
+    {
+      "true": "Normal",
+      "raw_label": "normal",
+      "predicted": "DoS",
+      "correct": false,
+      "nl_description": "Connection via TCP to 'http' service (flag=SF, duration=0s, sent=356B, received=398B). Connection completed normally (SF flag -- both sides exchanged data and closed cleanly). User is authenticated (logged_in=1) -- valid session in progress. No SYN or REJ errors detected. NOTE: 255 recent connections observed to destination host (high saturation level) -- this may indicate automated or malicious traffic despite normal-looking flow features. Balanced data exchange (sent 356B, received 398B) -- typical of normal request-response."
+    },
+    {
+      "true": "U2R",
+      "raw_label": "rootkit",
+      "predicted": "Normal",
+      "correct": false,
+      "nl_description": "Connection via TCP to 'ftp_data' service (flag=SF, duration=0s, sent=283618B, received=0B). Connection completed normally (SF flag -- both sides exchanged data and closed cleanly). No SYN or REJ errors detected. Low connection rate: 1 connections to same host, 20 to destination -- consistent with individual user activity, not flooding."
+    },
+    {
+      "true": "R2L",
+      "raw_label": "snmpguess",
+      "predicted": "DoS",
+      "correct": false,
+      "nl_description": "Connection via UDP to 'private' service (flag=SF, duration=0s, sent=43B, received=43B). Connection completed normally (SF flag -- both sides exchanged data and closed cleanly). No SYN or REJ errors detected. NOTE: 255 recent connections observed to destination host (high saturation level) -- this may indicate automated or malicious traffic despite normal-looking flow features. Balanced data exchange (sent 43B, received 43B) -- typical of normal request-response."
+    },
+    {
+      "true": "Probe",
+      "raw_label": "mscan",
+      "predicted": "Probe",
+      "correct": true,
+      "nl_description": "Connection via TCP to 'sunrpc' (flag=REJ, duration=0s, count=3, dst_host_count=85): diff_srv_rate=100% (scanning many different services); Connection flag=REJ with varied services -- typical of active port scanner being rejected by firewalled ports; dst_host_rerror_rate=88% across 85 destination connections, count=3 (mscan pattern: single service probed at high rejection rate across many hosts, not a same-host flood). This pattern is consistent with network reconnaissance (Probe) -- systematic scanning to discover open ports and reachable services before an attack."
+    },
+    {
+      "true": "U2R",
+      "raw_label": "buffer_overflow",
+      "predicted": "U2R",
+      "correct": true,
+      "nl_description": "Connection via TCP to 'telnet' service (flag=SF, duration=26s, sent=156B, received=1561B): root shell was obtained; 7 hot indicator(s) (privileged/sensitive operations detected); 1 compromised condition(s). These are hallmark indicators of user-to-root (U2R) privilege escalation -- an attacker exploiting a local vulnerability to gain superuser control. Session authenticated -- exploitation occurred from within an established login session."
+    },
+    {
+      "true": "DoS",
+      "raw_label": "neptune",
+      "predicted": "DoS",
+      "correct": true,
+      "nl_description": "Connection via TCP to 'http_443' service (flag=REJ, duration=0s): TCP flag=REJ (connection rejected or unanswered -- server unresponsive); 120 connections to same host in 2 seconds (flood rate); REJ error rate=100%; 255 connections to destination host (saturation); zero bytes in both directions (pure connection exhaustion). Low service diversity (diff_srv_rate=7%) confirms this is the same service being targeted repeatedly -- characteristic of a denial-of-service (DoS) flood attack."
+    },
+    {
+      "true": "Probe",
+      "raw_label": "ipsweep",
+      "predicted": "Probe",
+      "correct": true,
+      "nl_description": "Connection via ICMP to 'eco_i' (flag=SF, duration=0s, count=1, dst_host_count=1): ICMP echo (18B payload) -- classic ping sweep / host discovery scan. This pattern is consistent with network reconnaissance (Probe) -- systematic scanning to discover open ports and reachable services before an attack."
+    },
+    {
+      "true": "DoS",
+      "raw_label": "mailbomb",
+      "predicted": "DoS",
+      "correct": true,
+      "nl_description": "SMTP connection (flag=SF, duration=1s, sent=2599B, received=293B, dst_host_count=255, diff_srv=0%). A large volume of email sent to a saturated destination host (255 recent connections) via SMTP with a fixed-size payload is characteristic of a mailbomb denial-of-service attack -- flooding a mail server with messages to exhaust its resources and prevent legitimate email delivery."
+    },
+    {
+      "true": "U2R",
+      "raw_label": "loadmodule",
+      "predicted": "U2R",
+      "correct": true,
+      "nl_description": "Connection via TCP to 'telnet' service (flag=SF, duration=75s, sent=277B, received=1087B): root shell was obtained; 2 shell prompt(s) spawned; 2 hot indicator(s) (privileged/sensitive operations detected); 1 compromised condition(s). These are hallmark indicators of user-to-root (U2R) privilege escalation -- an attacker exploiting a local vulnerability to gain superuser control. Session authenticated -- exploitation occurred from within an established login session."
+    },
+    {
+      "true": "Probe",
+      "raw_label": "saint",
+      "predicted": "Probe",
+      "correct": true,
+      "nl_description": "Connection via ICMP to 'eco_i' (flag=SF, duration=0s, count=1, dst_host_count=2): ICMP echo (20B payload) -- classic ping sweep / host discovery scan. This pattern is consistent with network reconnaissance (Probe) -- systematic scanning to discover open ports and reachable services before an attack."
+    },
+    {
+      "true": "Normal",
+      "raw_label": "normal",
+      "predicted": "DoS",
+      "correct": false,
+      "nl_description": "Connection via UDP to 'private' service (flag=SF, duration=0s, sent=105B, received=105B). Connection completed normally (SF flag -- both sides exchanged data and closed cleanly). No SYN or REJ errors detected. NOTE: 255 recent connections observed to destination host (high saturation level) -- this may indicate automated or malicious traffic despite normal-looking flow features. Balanced data exchange (sent 105B, received 105B) -- typical of normal request-response."
+    },
+    {
+      "true": "U2R",
+      "raw_label": "httptunnel",
+      "predicted": "",
+      "correct": false,
+      "nl_description": "Connection via TCP to 'other' service (flag=REJ, duration=0s, dst_host_count=255, rerror_rate=100%, diff_srv_rate=0%). A rejected TCP connection to an unclassified 'other' service with zero data exchange, low service diversity, and low connection count is a signature of the httptunnel attack -- a user-to-root (U2R) technique that establishes a covert TCP tunnel to escalate privileges, bypassing firewall rules. The connection is rejected but reveals privilege-escalation intent."
+    },
+    {
+      "true": "DoS",
+      "raw_label": "neptune",
+      "predicted": "DoS",
+      "correct": true,
+      "nl_description": "Connection via TCP to 'finger' service (flag=RSTO, duration=0s): REJ error rate=100%; 255 connections to destination host (saturation). Low service diversity (diff_srv_rate=8%) confirms this is the same service being targeted repeatedly -- characteristic of a denial-of-service (DoS) flood attack."
+    },
+    {
+      "true": "Probe",
+      "raw_label": "mscan",
+      "predicted": "Probe",
+      "correct": true,
+      "nl_description": "Connection via TCP to 'telnet' service (flag=S0, duration=0s, sent=0B, received=0B)."
+    },
+    {
+      "true": "R2L",
+      "raw_label": "snmpguess",
+      "predicted": "R2L",
+      "correct": true,
+      "nl_description": "UDP connection to 'private' service (src=42B, dst=0B, count=3, dst_host_count=255). Short UDP packets to an unknown/private service with zero server response are characteristic of SNMP community string guessing (snmpguess/snmpgetattack) -- a remote-to-local (R2L) attack that attempts to authenticate to SNMP services using default or guessed community strings to gain read/write access."
+    }
+  ],
+  "timestamp": "2026-04-05T14:59:45.780739"
+}

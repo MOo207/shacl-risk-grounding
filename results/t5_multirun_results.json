@@ -1,0 +1,25 @@
+{
+  "runs": [
+    "run1",
+    "run2",
+    "run3",
+    "run4"
+  ],
+  "run_accuracies": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "mean": 1.0,
+  "std": 0.0,
+  "range": 0.0,
+  "flipped_cases": [],
+  "flipped_case_detail": {},
+  "n_cases_per_run": [
+    60,
+    60,
+    60,
+    60
+  ]
+}

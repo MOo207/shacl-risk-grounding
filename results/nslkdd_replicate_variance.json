@@ -1,0 +1,187 @@
+{
+  "description": "Summarize 3-run variance for the NSL-KDD reconciled tri-stage LLM arms.\n\nRun 1 = original results (results/nslkdd_unified_rerun/reconciled_tristage_*_test.jsonl);\nruns 2-3 = replicates under results/nslkdd_unified_rerun/replicates/.\nRecomputes the five headline metrics per run from per-case records and emits\nmean, sample sd, min, max per metric per arm (DKE round 5, item 6).",
+  "arms": {
+    "tristage_haiku": {
+      "n_runs": 3,
+      "files": [
+        "results\\nslkdd_unified_rerun\\reconciled_tristage_haiku_test.jsonl",
+        "results\\nslkdd_unified_rerun\\replicates\\reconciled_tristage_haiku_test_run2.jsonl",
+        "results\\nslkdd_unified_rerun\\replicates\\reconciled_tristage_haiku_test_run3.jsonl"
+      ],
+      "per_run": [
+        {
+          "n": 100,
+          "under_escalation_pct": 10.0,
+          "over_escalation_pct": 25.0,
+          "exact_pct": 65.0,
+          "severe_recall_pct": 93.87755102040816,
+          "parse_fail_pct": 0.0
+        },
+        {
+          "n": 100,
+          "under_escalation_pct": 10.0,
+          "over_escalation_pct": 24.0,
+          "exact_pct": 66.0,
+          "severe_recall_pct": 95.91836734693877,
+          "parse_fail_pct": 1.0
+        },
+        {
+          "n": 100,
+          "under_escalation_pct": 4.0,
+          "over_escalation_pct": 23.0,
+          "exact_pct": 73.0,
+          "severe_recall_pct": 97.95918367346938,
+          "parse_fail_pct": 0.0
+        }
+      ],
+      "summary": {
+        "under_escalation_pct": {
+          "runs": [
+            10.0,
+            10.0,
+            4.0
+          ],
+          "mean": 8.0,
+          "sd": 3.4641016151377544,
+          "min": 4.0,
+          "max": 10.0
+        },
+        "over_escalation_pct": {
+          "runs": [
+            25.0,
+            24.0,
+            23.0
+          ],
+          "mean": 24.0,
+          "sd": 1.0,
+          "min": 23.0,
+          "max": 25.0
+        },
+        "exact_pct": {
+          "runs": [
+            65.0,
+            66.0,
+            73.0
+          ],
+          "mean": 68.0,
+          "sd": 4.358898943540674,
+          "min": 65.0,
+          "max": 73.0
+        },
+        "severe_recall_pct": {
+          "runs": [
+            93.87755102040816,
+            95.91836734693877,
+            97.95918367346938
+          ],
+          "mean": 95.91836734693877,
+          "sd": 2.04081632653061,
+          "min": 93.87755102040816,
+          "max": 97.95918367346938
+        },
+        "parse_fail_pct": {
+          "runs": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "mean": 0.3333333333333333,
+          "sd": 0.5773502691896257,
+          "min": 0.0,
+          "max": 1.0
+        }
+      }
+    },
+    "tristage_sonnet": {
+      "n_runs": 3,
+      "files": [
+        "results\\nslkdd_unified_rerun\\reconciled_tristage_sonnet_test.jsonl",
+        "results\\nslkdd_unified_rerun\\replicates\\reconciled_tristage_sonnet_test_run2.jsonl",
+        "results\\nslkdd_unified_rerun\\replicates\\reconciled_tristage_sonnet_test_run3.jsonl"
+      ],
+      "per_run": [
+        {
+          "n": 100,
+          "under_escalation_pct": 28.000000000000004,
+          "over_escalation_pct": 9.0,
+          "exact_pct": 63.0,
+          "severe_recall_pct": 65.3061224489796,
+          "parse_fail_pct": 48.0
+        },
+        {
+          "n": 100,
+          "under_escalation_pct": 9.0,
+          "over_escalation_pct": 21.0,
+          "exact_pct": 70.0,
+          "severe_recall_pct": 93.87755102040816,
+          "parse_fail_pct": 0.0
+        },
+        {
+          "n": 100,
+          "under_escalation_pct": 10.0,
+          "over_escalation_pct": 21.0,
+          "exact_pct": 69.0,
+          "severe_recall_pct": 93.87755102040816,
+          "parse_fail_pct": 0.0
+        }
+      ],
+      "summary": {
+        "under_escalation_pct": {
+          "runs": [
+            28.000000000000004,
+            9.0,
+            10.0
+          ],
+          "mean": 15.666666666666668,
+          "sd": 10.69267662156363,
+          "min": 9.0,
+          "max": 28.000000000000004
+        },
+        "over_escalation_pct": {
+          "runs": [
+            9.0,
+            21.0,
+            21.0
+          ],
+          "mean": 17.0,
+          "sd": 6.928203230275509,
+          "min": 9.0,
+          "max": 21.0
+        },
+        "exact_pct": {
+          "runs": [
+            63.0,
+            70.0,
+            69.0
+          ],
+          "mean": 67.33333333333333,
+          "sd": 3.7859388972001824,
+          "min": 63.0,
+          "max": 70.0
+        },
+        "severe_recall_pct": {
+          "runs": [
+            65.3061224489796,
+            93.87755102040816,
+            93.87755102040816
+          ],
+          "mean": 84.35374149659864,
+          "sd": 16.49572197684645,
+          "min": 65.3061224489796,
+          "max": 93.87755102040816
+        },
+        "parse_fail_pct": {
+          "runs": [
+            48.0,
+            0.0,
+            0.0
+          ],
+          "mean": 16.0,
+          "sd": 27.712812921102035,
+          "min": 0.0,
+          "max": 48.0
+        }
+      }
+    }
+  }
+}

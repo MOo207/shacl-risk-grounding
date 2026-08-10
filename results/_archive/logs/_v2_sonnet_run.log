@@ -1,0 +1,141 @@
+Model: claude-sonnet-4-6 | Cases: 100 | SHACL: True
+  [1/100] v2_case_000 (B): High vs GT=Very Low [MISS] (58283ms)
+  [2/100] v2_case_001 (A): Very Low vs GT=Very Low [OK] (39641ms)
+  [3/100] v2_case_002 (A): Very Low vs GT=Very Low [OK] (27605ms)
+  [4/100] v2_case_003 (A): Very Low vs GT=Very Low [OK] (41472ms)
+  [5/100] v2_case_004 (B): Catastrophic vs GT=Very Low [MISS] (68751ms)
+  [6/100] v2_case_005 (A): Very Low vs GT=Very Low [OK] (35963ms)
+  [7/100] v2_case_006 (A): Very Low vs GT=Very Low [OK] (50009ms)
+  [8/100] v2_case_007 (A): Very Low vs GT=Very Low [OK] (49833ms)
+  [9/100] v2_case_008 (A): Very Low vs GT=Very Low [OK] (44287ms)
+  [10/100] v2_case_009 (A): Very Low vs GT=Very Low [OK] (43394ms)
+  [11/100] v2_case_010 (A): Very Low vs GT=Very Low [OK] (33657ms)
+  [12/100] v2_case_011 (B): High vs GT=Very Low [MISS] (60064ms)
+  [13/100] v2_case_012 (B): Catastrophic vs GT=Very Low [MISS] (79742ms)
+  [14/100] v2_case_013 (B): High vs GT=Very Low [MISS] (82518ms)
+  [15/100] v2_case_014 (B): High vs GT=Very Low [MISS] (65256ms)
+  [16/100] v2_case_015 (B): High vs GT=Very Low [MISS] (53150ms)
+  [17/100] v2_case_016 (A): Very Low vs GT=Very Low [OK] (57968ms)
+  [18/100] v2_case_017 (B): High vs GT=Very Low [MISS] (51518ms)
+  [19/100] v2_case_018 (B): Medium vs GT=Very Low [MISS] (66808ms)
+  [20/100] v2_case_019 (B): High vs GT=Very Low [MISS] (86131ms)
+  [21/100] v2_case_020 (B): Medium vs GT=Catastrophic [MISS] (51124ms)
+  [22/100] v2_case_021 (B): Medium vs GT=Catastrophic [MISS] (44531ms)
+  [23/100] v2_case_022 (B): Catastrophic vs GT=Catastrophic [OK] (81287ms)
+  [24/100] v2_case_023 (A): High vs GT=High [OK] (32958ms)
+  [25/100] v2_case_024 (A): Catastrophic vs GT=Catastrophic [OK] (37372ms)
+  [26/100] v2_case_025 (A): Catastrophic vs GT=Catastrophic [OK] (39748ms)
+  [27/100] v2_case_026 (A): High vs GT=High [OK] (39716ms)
+  [28/100] v2_case_027 (A): High vs GT=High [OK] (33728ms)
+  [29/100] v2_case_028 (A): Catastrophic vs GT=Catastrophic [OK] (43972ms)
+  [30/100] v2_case_029 (B): High vs GT=High [OK] (46959ms)
+  [31/100] v2_case_030 (A): High vs GT=High [OK] (38818ms)
+  [32/100] v2_case_031 (B): Medium vs GT=Catastrophic [MISS] (60040ms)
+  [33/100] v2_case_032 (B): Medium vs GT=High [MISS] (51955ms)
+  [34/100] v2_case_033 (A): High vs GT=High [OK] (16332ms)
+  [35/100] v2_case_034 (B): High vs GT=High [OK] (75480ms)
+  [36/100] v2_case_035 (A): High vs GT=High [OK] (33641ms)
+  [37/100] v2_case_036 (A): High vs GT=High [OK] (39408ms)
+  [38/100] v2_case_037 (B): High vs GT=Catastrophic [MISS] (37820ms)
+  [39/100] v2_case_038 (B): Medium vs GT=High [MISS] (41529ms)
+  [40/100] v2_case_039 (B): Medium vs GT=High [MISS] (47389ms)
+  [41/100] v2_case_040 (A): High vs GT=High [OK] (38093ms)
+  [42/100] v2_case_041 (A): High vs GT=High [OK] (59203ms)
+  [43/100] v2_case_042 (A): Catastrophic vs GT=Catastrophic [OK] (38890ms)
+  [44/100] v2_case_043 (B): Medium vs GT=High [MISS] (47674ms)
+  [45/100] v2_case_044 (B): Medium vs GT=High [MISS] (45509ms)
+  [46/100] v2_case_045 (A): High vs GT=High [OK] (43182ms)
+  [47/100] v2_case_046 (A): Catastrophic vs GT=Catastrophic [OK] (46950ms)
+  [48/100] v2_case_047 (B): Medium vs GT=High [MISS] (71205ms)
+  [49/100] v2_case_048 (B): Medium vs GT=High [MISS] (43984ms)
+  [50/100] v2_case_049 (A): Catastrophic vs GT=Catastrophic [OK] (40456ms)
+  [51/100] v2_case_050 (A): Catastrophic vs GT=Catastrophic [OK] (42856ms)
+  [52/100] v2_case_051 (B): Medium vs GT=High [MISS] (52637ms)
+  [53/100] v2_case_052 (B): Medium vs GT=High [MISS] (50221ms)
+  [54/100] v2_case_053 (B): Medium vs GT=High [MISS] (60038ms)
+  [55/100] v2_case_054 (B): Catastrophic vs GT=Catastrophic [OK] (48956ms)
+  [56/100] v2_case_055 (A): Catastrophic vs GT=Catastrophic [OK] (47257ms)
+  [57/100] v2_case_056 (A): Catastrophic vs GT=Catastrophic [OK] (42854ms)
+  [58/100] v2_case_057 (B): Medium vs GT=High [MISS] (50761ms)
+  [59/100] v2_case_058 (B): Medium vs GT=Catastrophic [MISS] (49153ms)
+  [60/100] v2_case_059 (A): High vs GT=High [OK] (44823ms)
+  [61/100] v2_case_060 (B): High vs GT=High [OK] (55423ms)
+  [62/100] v2_case_061 (B): High vs GT=High [OK] (49736ms)
+  [63/100] v2_case_062 (A): Catastrophic vs GT=Catastrophic [OK] (61518ms)
+  [64/100] v2_case_063 (B): Medium vs GT=High [MISS] (49353ms)
+  [65/100] v2_case_064 (A): High vs GT=High [OK] (37836ms)
+  [66/100] v2_case_065 (A): High vs GT=High [OK] (37413ms)
+  [67/100] v2_case_066 (B): High vs GT=Catastrophic [MISS] (103833ms)
+  [68/100] v2_case_067 (B): High vs GT=High [OK] (74754ms)
+  [69/100] v2_case_068 (B): High vs GT=High [OK] (64657ms)
+  [70/100] v2_case_069 (B): High vs GT=High [OK] (57522ms)
+  [71/100] v2_case_070 (A): Catastrophic vs GT=Catastrophic [OK] (81659ms)
+  [72/100] v2_case_071 (A): Catastrophic vs GT=Catastrophic [OK] (77895ms)
+  [73/100] v2_case_072 (A): Catastrophic vs GT=Catastrophic [OK] (36430ms)
+  [74/100] v2_case_073 (B): High vs GT=High [OK] (47130ms)
+  [75/100] v2_case_074 (B): Catastrophic vs GT=Catastrophic [OK] (45780ms)
+  [76/100] v2_case_075 (A): Catastrophic vs GT=Catastrophic [OK] (36479ms)
+  [77/100] v2_case_076 (B): High vs GT=High [OK] (58013ms)
+  [78/100] v2_case_077 (A): High vs GT=High [OK] (34663ms)
+  [79/100] v2_case_078 (A): Catastrophic vs GT=Catastrophic [OK] (51857ms)
+  [80/100] v2_case_079 (A): High vs GT=High [OK] (55209ms)
+  [81/100] v2_case_080 (B): Medium vs GT=Medium [OK] (55742ms)
+  [82/100] v2_case_081 (A): Medium vs GT=Medium [OK] (35994ms)
+  [83/100] v2_case_082 (B): Medium vs GT=Medium [OK] (38933ms)
+  [84/100] v2_case_083 (A): Medium vs GT=Medium [OK] (61498ms)
+  [85/100] v2_case_084 (A): Medium vs GT=Medium [OK] (36847ms)
+  [86/100] v2_case_085 (B): Medium vs GT=Medium [OK] (69335ms)
+  [87/100] v2_case_086 (B): Medium vs GT=Medium [OK] (86321ms)
+  [retry 1/2] CLI exit 1:  — sleeping 10s...
+  [retry 2/2] CLI exit 1:  — sleeping 20s...
+CLI failed after 3 retries: exit 1: 
+  [88/100] v2_case_087 (A): PARSE_ERR vs GT=High [MISS] (4209964ms)
+  [retry 1/2] CLI exit 1:  — sleeping 10s...
+  [retry 2/2] CLI exit 1:  — sleeping 20s...
+CLI failed after 3 retries: exit 1: 
+  [89/100] v2_case_088 (A): PARSE_ERR vs GT=Medium [MISS] (79345ms)
+  [retry 1/2] CLI exit 1:  — sleeping 10s...
+  [retry 2/2] CLI exit 1:  — sleeping 20s...
+CLI failed after 3 retries: exit 1: 
+  [90/100] v2_case_089 (B): PARSE_ERR vs GT=Medium [MISS] (931687ms)
+  [retry 1/2] CLI exit 1:  — sleeping 10s...
+  [retry 2/2] CLI exit 1:  — sleeping 20s...
+CLI failed after 3 retries: exit 1: 
+  [91/100] v2_case_090 (A): PARSE_ERR vs GT=Medium [MISS] (70017ms)
+  [retry 1/2] CLI exit 1:  — sleeping 10s...
+  [retry 2/2] CLI exit 1:  — sleeping 20s...
+CLI failed after 3 retries: exit 1: 
+  [92/100] v2_case_091 (B): PARSE_ERR vs GT=Medium [MISS] (62444ms)
+  [retry 1/2] CLI exit 1:  — sleeping 10s...
+  [retry 2/2] CLI exit 1:  — sleeping 20s...
+CLI failed after 3 retries: exit 1: 
+  [93/100] v2_case_092 (B): PARSE_ERR vs GT=Medium [MISS] (61588ms)
+  [retry 1/2] CLI exit 1:  — sleeping 10s...
+  [retry 2/2] CLI exit 1:  — sleeping 20s...
+CLI failed after 3 retries: exit 1: 
+  [94/100] v2_case_093 (A): PARSE_ERR vs GT=Medium [MISS] (69871ms)
+  [retry 1/2] CLI exit 1:  — sleeping 10s...
+  [retry 2/2] CLI exit 1:  — sleeping 20s...
+CLI failed after 3 retries: exit 1: 
+  [95/100] v2_case_094 (B): PARSE_ERR vs GT=Medium [MISS] (65541ms)
+  [retry 1/2] CLI exit 1:  — sleeping 10s...
+  [retry 2/2] CLI exit 1:  — sleeping 20s...
+CLI failed after 3 retries: exit 1: 
+  [96/100] v2_case_095 (A): PARSE_ERR vs GT=Medium [MISS] (63758ms)
+  [retry 1/2] CLI exit 1:  — sleeping 10s...
+  [retry 2/2] CLI exit 1:  — sleeping 20s...
+CLI failed after 3 retries: exit 1: 
+  [97/100] v2_case_096 (B): PARSE_ERR vs GT=Medium [MISS] (68478ms)
+  [retry 1/2] CLI exit 1:  — sleeping 10s...
+  [retry 2/2] timeout after 180s
+CLI failed after 3 retries: exit 1: 
+  [98/100] v2_case_097 (B): PARSE_ERR vs GT=Medium [MISS] (1204097ms)
+  [retry 1/2] CLI exit 1:  — sleeping 10s...
+  [retry 2/2] CLI exit 1:  — sleeping 20s...
+CLI failed after 3 retries: exit 1: 
+  [99/100] v2_case_098 (A): PARSE_ERR vs GT=Medium [MISS] (61735ms)
+  [retry 1/2] CLI exit 1:  — sleeping 10s...
+  [retry 2/2] CLI exit 1:  — sleeping 20s...
+CLI failed after 3 retries: exit 1: 
+  [100/100] v2_case_099 (A): PARSE_ERR vs GT=High [MISS] (63381ms)
+Done: 100 artifacts -> results/llm_experiment/raw/run_v2_arm_rule_llm_sonnet.jsonl

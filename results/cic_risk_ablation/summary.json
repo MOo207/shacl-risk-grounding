@@ -1,0 +1,84 @@
+{
+  "arms": {
+    "ML": {
+      "n": 60,
+      "risk_level_accuracy": 0.75,
+      "shacl_conform_rate": null,
+      "grc_completeness": 0.0,
+      "grounding_depth": null,
+      "parse_errors": 0,
+      "per_class_accuracy": {
+        "Benign": 1.0,
+        "BruteForce": 1.0,
+        "DDoS": 0.5,
+        "DoS": 1.0,
+        "Infiltration": 0.0,
+        "WebAttack": 1.0
+      }
+    },
+    "SHACL": {
+      "n": 60,
+      "risk_level_accuracy": 0.4333,
+      "shacl_conform_rate": 1.0,
+      "grc_completeness": 1.0,
+      "grounding_depth": null,
+      "parse_errors": 0,
+      "per_class_accuracy": {
+        "Benign": 0.5,
+        "BruteForce": 0.2,
+        "DDoS": 0.3,
+        "DoS": 0.9,
+        "Infiltration": 0.0,
+        "WebAttack": 0.7
+      }
+    },
+    "LLM": {
+      "n": 60,
+      "risk_level_accuracy": 0.55,
+      "shacl_conform_rate": null,
+      "grc_completeness": 0.9833,
+      "grounding_depth": 2.78,
+      "parse_errors": 0,
+      "per_class_accuracy": {
+        "Benign": 0.3,
+        "BruteForce": 0.8,
+        "DDoS": 0.6,
+        "DoS": 0.9,
+        "Infiltration": 0.0,
+        "WebAttack": 0.7
+      }
+    },
+    "Tri-ML+SHACL": {
+      "n": 60,
+      "risk_level_accuracy": 0.75,
+      "shacl_conform_rate": 1.0,
+      "grc_completeness": 1.0,
+      "grounding_depth": null,
+      "parse_errors": 0,
+      "per_class_accuracy": {
+        "Benign": 1.0,
+        "BruteForce": 1.0,
+        "DDoS": 0.5,
+        "DoS": 1.0,
+        "Infiltration": 0.0,
+        "WebAttack": 1.0
+      }
+    },
+    "Tri-LLM+SHACL": {
+      "n": 60,
+      "risk_level_accuracy": 0.75,
+      "shacl_conform_rate": 1.0,
+      "grc_completeness": 1.0,
+      "grounding_depth": 2.83,
+      "parse_errors": 0,
+      "per_class_accuracy": {
+        "Benign": 1.0,
+        "BruteForce": 1.0,
+        "DDoS": 0.5,
+        "DoS": 1.0,
+        "Infiltration": 0.0,
+        "WebAttack": 1.0
+      }
+    }
+  }
+}

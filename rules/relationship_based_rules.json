@@ -1,0 +1,56 @@
+[
+  {
+    "rule_id": "REL-001",
+    "name": "Zero-day Vulnerability Chain",
+    "category": "relationship_based",
+    "priority": 95,
+    "description": "Multiple assets share zero-day vulnerability",
+    "conditions": [
+      {
+        "field": "vulnerability_type",
+        "operator": "==",
+        "value": "zero-day",
+        "description": ""
+      },
+      {
+        "field": "affected_assets_count",
+        "operator": ">",
+        "value": 5,
+        "description": ""
+      }
+    ],
+    "score_modifier": -50,
+    "explanation_template": "Zero-day vulnerability {vulnerability_id} affects {affected_assets_count} assets, creating widespread risk.",
+    "enabled": true
+  },
+  {
+    "rule_id": "REL-002",
+    "name": "Critical Asset Exposed to Untrusted Network",
+    "category": "relationship_based",
+    "priority": 90,
+    "description": "Critical asset connected to untrusted network",
+    "conditions": [
+      {
+        "field": "asset_criticality",
+        "operator": "==",
+        "value": "critical",
+        "description": ""
+      },
+      {
+        "field": "network_trust",
+        "operator": "==",
+        "value": "untrusted",
+        "description": ""
+      },
+      {
+        "field": "network_category",
+        "operator": "==",
+        "value": "internet",
+        "description": ""
+      }
+    ],
+    "score_modifier": -45,
+    "explanation_template": "Critical asset {asset_id} is connected to untrusted network {network_name}. This is a severe risk.",
+    "enabled": true
+  }
+]

@@ -1,0 +1,872 @@
+{
+  "meta": {
+    "description": "CIC-IDS2018 unified-ablation leakage audit, mirroring scripts/tag_nslkdd_leakage_and_clean_subset.py. Audits the N=60 LLM-evaluated subset (10/class, the case_ids in results/unified_ablation/pure_llm.jsonl) for two distinct leakage channels.",
+    "n_cases": 60,
+    "case_ids": [
+      "ua_046",
+      "ua_026",
+      "ua_044",
+      "ua_014",
+      "ua_039",
+      "ua_003",
+      "ua_048",
+      "ua_053",
+      "ua_018",
+      "ua_054",
+      "ua_059",
+      "ua_036",
+      "ua_009",
+      "ua_028",
+      "ua_008",
+      "ua_045",
+      "ua_015",
+      "ua_007",
+      "ua_002",
+      "ua_024",
+      "ua_063",
+      "ua_001",
+      "ua_056",
+      "ua_012",
+      "ua_013",
+      "ua_034",
+      "ua_000",
+      "ua_022",
+      "ua_037",
+      "ua_025",
+      "ua_047",
+      "ua_057",
+      "ua_049",
+      "ua_038",
+      "ua_042",
+      "ua_016",
+      "ua_030",
+      "ua_017",
+      "ua_010",
+      "ua_029",
+      "ua_019",
+      "ua_032",
+      "ua_051",
+      "ua_006",
+      "ua_055",
+      "ua_043",
+      "ua_027",
+      "ua_020",
+      "ua_011",
+      "ua_021",
+      "ua_035",
+      "ua_050",
+      "ua_052",
+      "ua_023",
+      "ua_031",
+      "ua_041",
+      "ua_033",
+      "ua_005",
+      "ua_040",
+      "ua_004"
+    ],
+    "n_nl_leaky": 22,
+    "n_cve_leaky": 21,
+    "n_any_leaky": 33,
+    "nl_leakage_source": "scripts/_archive/run_slm_nl_classification.py :: features_to_nl()",
+    "cve_leakage_source": "results/multisource_arg.json CVE.description field, attached via CVE_BY_CLASS mapping in build_unified_ablation_testset.py"
+  },
+  "leaky_by_true_class": {
+    "DoS": {
+      "n": 10,
+      "nl_leaky": 8,
+      "cve_leaky": 10,
+      "any_leaky": 10
+    },
+    "DDoS": {
+      "n": 10,
+      "nl_leaky": 4,
+      "cve_leaky": 0,
+      "any_leaky": 4
+    },
+    "WebAttack": {
+      "n": 10,
+      "nl_leaky": 7,
+      "cve_leaky": 0,
+      "any_leaky": 7
+    },
+    "BruteForce": {
+      "n": 10,
+      "nl_leaky": 1,
+      "cve_leaky": 4,
+      "any_leaky": 5
+    },
+    "Benign": {
+      "n": 10,
+      "nl_leaky": 0,
+      "cve_leaky": 0,
+      "any_leaky": 0
+    },
+    "Infiltration": {
+      "n": 10,
+      "nl_leaky": 2,
+      "cve_leaky": 7,
+      "any_leaky": 7
+    }
+  },
+  "per_case_tags": [
+    {
+      "case_id": "ua_046",
+      "true_attack_class": "DoS",
+      "nl_leaky": true,
+      "nl_triggers": [
+        {
+          "matched_text": "denial-of-service (DoS)",
+          "trigger": "features_to_nl() DoS-signature template names 'denial-of-service (DoS)'"
+        }
+      ],
+      "cve_leaky": true,
+      "cve_triggers": [
+        {
+          "matched_text": "DoS",
+          "trigger": "CVE description contains literal token 'DoS'"
+        }
+      ],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_026",
+      "true_attack_class": "DDoS",
+      "nl_leaky": true,
+      "nl_triggers": [
+        {
+          "matched_text": "distributed denial-of-service (DDoS)",
+          "trigger": "features_to_nl() DDoS-signature template names 'distributed denial-of-service (DDoS)'"
+        }
+      ],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_044",
+      "true_attack_class": "WebAttack",
+      "nl_leaky": true,
+      "nl_triggers": [
+        {
+          "matched_text": "web attack",
+          "trigger": "features_to_nl() WebAttack-signature template names 'web attack'"
+        }
+      ],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_014",
+      "true_attack_class": "BruteForce",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": false
+    },
+    {
+      "case_id": "ua_039",
+      "true_attack_class": "BruteForce",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": true,
+      "cve_triggers": [
+        {
+          "matched_text": "brute-force",
+          "trigger": "CVE description contains literal token 'brute-force'"
+        }
+      ],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_003",
+      "true_attack_class": "DDoS",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": false
+    },
+    {
+      "case_id": "ua_048",
+      "true_attack_class": "WebAttack",
+      "nl_leaky": true,
+      "nl_triggers": [
+        {
+          "matched_text": "web attack",
+          "trigger": "features_to_nl() WebAttack-signature template names 'web attack'"
+        }
+      ],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_053",
+      "true_attack_class": "WebAttack",
+      "nl_leaky": true,
+      "nl_triggers": [
+        {
+          "matched_text": "web attack",
+          "trigger": "features_to_nl() WebAttack-signature template names 'web attack'"
+        }
+      ],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_018",
+      "true_attack_class": "DoS",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": true,
+      "cve_triggers": [
+        {
+          "matched_text": "DoS",
+          "trigger": "CVE description contains literal token 'DoS'"
+        }
+      ],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_054",
+      "true_attack_class": "BruteForce",
+      "nl_leaky": true,
+      "nl_triggers": [
+        {
+          "matched_text": "brute-force",
+          "trigger": "features_to_nl() BruteForce-signature template names 'brute-force'"
+        }
+      ],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_059",
+      "true_attack_class": "Benign",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": false
+    },
+    {
+      "case_id": "ua_036",
+      "true_attack_class": "DoS",
+      "nl_leaky": true,
+      "nl_triggers": [
+        {
+          "matched_text": "denial-of-service (DoS)",
+          "trigger": "features_to_nl() DoS-signature template names 'denial-of-service (DoS)'"
+        }
+      ],
+      "cve_leaky": true,
+      "cve_triggers": [
+        {
+          "matched_text": "DoS",
+          "trigger": "CVE description contains literal token 'DoS'"
+        }
+      ],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_009",
+      "true_attack_class": "DoS",
+      "nl_leaky": true,
+      "nl_triggers": [
+        {
+          "matched_text": "denial-of-service (DoS)",
+          "trigger": "features_to_nl() DoS-signature template names 'denial-of-service (DoS)'"
+        }
+      ],
+      "cve_leaky": true,
+      "cve_triggers": [
+        {
+          "matched_text": "DoS",
+          "trigger": "CVE description contains literal token 'DoS'"
+        }
+      ],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_028",
+      "true_attack_class": "Infiltration",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": false
+    },
+    {
+      "case_id": "ua_008",
+      "true_attack_class": "DoS",
+      "nl_leaky": true,
+      "nl_triggers": [
+        {
+          "matched_text": "denial-of-service (DoS)",
+          "trigger": "features_to_nl() DoS-signature template names 'denial-of-service (DoS)'"
+        }
+      ],
+      "cve_leaky": true,
+      "cve_triggers": [
+        {
+          "matched_text": "DoS",
+          "trigger": "CVE description contains literal token 'DoS'"
+        }
+      ],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_045",
+      "true_attack_class": "Infiltration",
+      "nl_leaky": true,
+      "nl_triggers": [
+        {
+          "matched_text": "infiltration",
+          "trigger": "features_to_nl() Infiltration-signature template names 'infiltration'"
+        }
+      ],
+      "cve_leaky": true,
+      "cve_triggers": [
+        {
+          "matched_text": "backdoor",
+          "trigger": "CVE description contains 'backdoor'/'infiltrat*'"
+        }
+      ],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_015",
+      "true_attack_class": "Benign",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": false
+    },
+    {
+      "case_id": "ua_007",
+      "true_attack_class": "DDoS",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": false
+    },
+    {
+      "case_id": "ua_002",
+      "true_attack_class": "WebAttack",
+      "nl_leaky": true,
+      "nl_triggers": [
+        {
+          "matched_text": "web attack",
+          "trigger": "features_to_nl() WebAttack-signature template names 'web attack'"
+        }
+      ],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_024",
+      "true_attack_class": "Benign",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": false
+    },
+    {
+      "case_id": "ua_063",
+      "true_attack_class": "DDoS",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": false
+    },
+    {
+      "case_id": "ua_001",
+      "true_attack_class": "BruteForce",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": true,
+      "cve_triggers": [
+        {
+          "matched_text": "brute-force",
+          "trigger": "CVE description contains literal token 'brute-force'"
+        }
+      ],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_056",
+      "true_attack_class": "WebAttack",
+      "nl_leaky": true,
+      "nl_triggers": [
+        {
+          "matched_text": "web attack",
+          "trigger": "features_to_nl() WebAttack-signature template names 'web attack'"
+        }
+      ],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_012",
+      "true_attack_class": "DDoS",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": false
+    },
+    {
+      "case_id": "ua_013",
+      "true_attack_class": "Infiltration",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": true,
+      "cve_triggers": [
+        {
+          "matched_text": "backdoor",
+          "trigger": "CVE description contains 'backdoor'/'infiltrat*'"
+        }
+      ],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_034",
+      "true_attack_class": "DDoS",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": false
+    },
+    {
+      "case_id": "ua_000",
+      "true_attack_class": "Benign",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": false
+    },
+    {
+      "case_id": "ua_022",
+      "true_attack_class": "Infiltration",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": true,
+      "cve_triggers": [
+        {
+          "matched_text": "backdoor",
+          "trigger": "CVE description contains 'backdoor'/'infiltrat*'"
+        }
+      ],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_037",
+      "true_attack_class": "DDoS",
+      "nl_leaky": true,
+      "nl_triggers": [
+        {
+          "matched_text": "distributed denial-of-service (DDoS)",
+          "trigger": "features_to_nl() DDoS-signature template names 'distributed denial-of-service (DDoS)'"
+        }
+      ],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_025",
+      "true_attack_class": "WebAttack",
+      "nl_leaky": true,
+      "nl_triggers": [
+        {
+          "matched_text": "web attack",
+          "trigger": "features_to_nl() WebAttack-signature template names 'web attack'"
+        }
+      ],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_047",
+      "true_attack_class": "BruteForce",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": false
+    },
+    {
+      "case_id": "ua_057",
+      "true_attack_class": "DDoS",
+      "nl_leaky": true,
+      "nl_triggers": [
+        {
+          "matched_text": "distributed denial-of-service (DDoS)",
+          "trigger": "features_to_nl() DDoS-signature template names 'distributed denial-of-service (DDoS)'"
+        }
+      ],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_049",
+      "true_attack_class": "DoS",
+      "nl_leaky": true,
+      "nl_triggers": [
+        {
+          "matched_text": "denial-of-service (DoS)",
+          "trigger": "features_to_nl() DoS-signature template names 'denial-of-service (DoS)'"
+        }
+      ],
+      "cve_leaky": true,
+      "cve_triggers": [
+        {
+          "matched_text": "DoS",
+          "trigger": "CVE description contains literal token 'DoS'"
+        }
+      ],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_038",
+      "true_attack_class": "DDoS",
+      "nl_leaky": true,
+      "nl_triggers": [
+        {
+          "matched_text": "distributed denial-of-service (DDoS)",
+          "trigger": "features_to_nl() DDoS-signature template names 'distributed denial-of-service (DDoS)'"
+        }
+      ],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_042",
+      "true_attack_class": "Infiltration",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": true,
+      "cve_triggers": [
+        {
+          "matched_text": "backdoor",
+          "trigger": "CVE description contains 'backdoor'/'infiltrat*'"
+        }
+      ],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_016",
+      "true_attack_class": "BruteForce",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": false
+    },
+    {
+      "case_id": "ua_030",
+      "true_attack_class": "DoS",
+      "nl_leaky": true,
+      "nl_triggers": [
+        {
+          "matched_text": "denial-of-service (DoS)",
+          "trigger": "features_to_nl() DoS-signature template names 'denial-of-service (DoS)'"
+        }
+      ],
+      "cve_leaky": true,
+      "cve_triggers": [
+        {
+          "matched_text": "DoS",
+          "trigger": "CVE description contains literal token 'DoS'"
+        }
+      ],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_017",
+      "true_attack_class": "Infiltration",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": true,
+      "cve_triggers": [
+        {
+          "matched_text": "backdoor",
+          "trigger": "CVE description contains 'backdoor'/'infiltrat*'"
+        }
+      ],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_010",
+      "true_attack_class": "DoS",
+      "nl_leaky": true,
+      "nl_triggers": [
+        {
+          "matched_text": "denial-of-service (DoS)",
+          "trigger": "features_to_nl() DoS-signature template names 'denial-of-service (DoS)'"
+        }
+      ],
+      "cve_leaky": true,
+      "cve_triggers": [
+        {
+          "matched_text": "DoS",
+          "trigger": "CVE description contains literal token 'DoS'"
+        }
+      ],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_029",
+      "true_attack_class": "WebAttack",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": false
+    },
+    {
+      "case_id": "ua_019",
+      "true_attack_class": "BruteForce",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": true,
+      "cve_triggers": [
+        {
+          "matched_text": "brute-force",
+          "trigger": "CVE description contains literal token 'brute-force'"
+        }
+      ],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_032",
+      "true_attack_class": "Infiltration",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": false
+    },
+    {
+      "case_id": "ua_051",
+      "true_attack_class": "WebAttack",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": false
+    },
+    {
+      "case_id": "ua_006",
+      "true_attack_class": "Benign",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": false
+    },
+    {
+      "case_id": "ua_055",
+      "true_attack_class": "DDoS",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": false
+    },
+    {
+      "case_id": "ua_043",
+      "true_attack_class": "DoS",
+      "nl_leaky": true,
+      "nl_triggers": [
+        {
+          "matched_text": "denial-of-service (DoS)",
+          "trigger": "features_to_nl() DoS-signature template names 'denial-of-service (DoS)'"
+        }
+      ],
+      "cve_leaky": true,
+      "cve_triggers": [
+        {
+          "matched_text": "DoS",
+          "trigger": "CVE description contains literal token 'DoS'"
+        }
+      ],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_027",
+      "true_attack_class": "Benign",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": false
+    },
+    {
+      "case_id": "ua_020",
+      "true_attack_class": "DoS",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": true,
+      "cve_triggers": [
+        {
+          "matched_text": "DoS",
+          "trigger": "CVE description contains literal token 'DoS'"
+        }
+      ],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_011",
+      "true_attack_class": "WebAttack",
+      "nl_leaky": true,
+      "nl_triggers": [
+        {
+          "matched_text": "web attack",
+          "trigger": "features_to_nl() WebAttack-signature template names 'web attack'"
+        }
+      ],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_021",
+      "true_attack_class": "Infiltration",
+      "nl_leaky": true,
+      "nl_triggers": [
+        {
+          "matched_text": "infiltration",
+          "trigger": "features_to_nl() Infiltration-signature template names 'infiltration'"
+        }
+      ],
+      "cve_leaky": true,
+      "cve_triggers": [
+        {
+          "matched_text": "backdoor",
+          "trigger": "CVE description contains 'backdoor'/'infiltrat*'"
+        }
+      ],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_035",
+      "true_attack_class": "Benign",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": false
+    },
+    {
+      "case_id": "ua_050",
+      "true_attack_class": "WebAttack",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": false
+    },
+    {
+      "case_id": "ua_052",
+      "true_attack_class": "Benign",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": false
+    },
+    {
+      "case_id": "ua_023",
+      "true_attack_class": "BruteForce",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": false
+    },
+    {
+      "case_id": "ua_031",
+      "true_attack_class": "BruteForce",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": false
+    },
+    {
+      "case_id": "ua_041",
+      "true_attack_class": "BruteForce",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": true,
+      "cve_triggers": [
+        {
+          "matched_text": "brute-force",
+          "trigger": "CVE description contains literal token 'brute-force'"
+        }
+      ],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_033",
+      "true_attack_class": "Infiltration",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": true,
+      "cve_triggers": [
+        {
+          "matched_text": "backdoor",
+          "trigger": "CVE description contains 'backdoor'/'infiltrat*'"
+        }
+      ],
+      "any_leaky": true
+    },
+    {
+      "case_id": "ua_005",
+      "true_attack_class": "Benign",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": false
+    },
+    {
+      "case_id": "ua_040",
+      "true_attack_class": "Benign",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": false
+    },
+    {
+      "case_id": "ua_004",
+      "true_attack_class": "Infiltration",
+      "nl_leaky": false,
+      "nl_triggers": [],
+      "cve_leaky": false,
+      "cve_triggers": [],
+      "any_leaky": false
+    }
+  ],
+  "discussion": {
+    "nl_description_channel": "SAME category of problem as NSL-KDD. features_to_nl() contains hand-written signature branches (DoS/DDoS/BruteForce/WebAttack/Infiltration) that TEMPLATE the attack category name directly into the generated prose (e.g. 'denial-of-service (DoS) attack tools', 'distributed denial-of-service (DDoS) flooding tools', 'automated HTTP brute-force credential stuffing', 'automated web attack tooling', 'associated with infiltration'). This is a templated label insertion, not inherent domain content \u2014 a case that hits one of these five signature branches gets an unambiguous class-name hint for free, independent of the actual ML/LLM inference task. However, it is PARTIALLY mitigated in the tri-stage arms (tristage_llm_haiku/sonnet) because those arms are already given the ground-truth-adjacent ML-predicted attack class explicitly in the prompt ('Attack class (from ML classifier): {attack_class}') \u2014 so NL leakage does not add new information there. It DOES matter for the pure_llm arm, where attack class is withheld and must be inferred from nl_description + CVE, making pure_llm's inference task easier than advertised for leaky cases.",
+    "cve_description_channel": "DIFFERENT and more defensible situation than a templated label insertion, but still measurable lexical leakage. The paired CVE descriptions are real third-party CISA-KEV-style vulnerability summaries (e.g. 'Apache httpd allows DoS via incomplete HTTP requests'), not synthetic prose written by this pipeline. A CVE being 'about' a denial-of-service bug and literally containing the substring 'DoS' is inherent to CVE-grounded framing, not an artifact of the experiment design. That said, it is NOT harmless: for the DoS class specifically, all 3 candidate CVEs (CVE-2007-6750, CVE-2009-0696, CVE-2011-3192) literally contain 'DoS' in their description, so every DoS case in the pool is CVE-leaky by construction (a fixed property of the small CVE_BY_CLASS pool, not sampling variance). BruteForce is partially leaky (1 of 2 candidate CVEs contains 'brute-force'). WebAttack and DDoS CVE text does not contain the literal class token. Recommendation for the redesign: report NL-channel and CVE-channel leakage separately, and consider paraphrasing/redacting the class-naming clause from CVE descriptions before they are shown to the LLM if a fully leakage-free pure_llm arm is required; the tri-stage arms are less affected since they already receive the class label directly."
+  }
+}

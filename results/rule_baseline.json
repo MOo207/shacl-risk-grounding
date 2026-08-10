@@ -1,0 +1,69 @@
+{
+  "baseline_type": "SigmaRules",
+  "dataset": "CSE-CIC-IDS2018",
+  "data_source": "data/processed/cleaned_dataset.csv",
+  "n_rules": 6,
+  "test": {
+    "split": "test",
+    "samples": 1512,
+    "coverage": 0.08068783068783068,
+    "covered_flows": 122,
+    "accuracy": 0.36904761904761907,
+    "f1_macro": 0.09272183449651046,
+    "precision_macro": 0.06690647482014388,
+    "recall_macro": 0.15097402597402598,
+    "per_class_report": {
+      "Benign": {
+        "precision": 0.4014388489208633,
+        "recall": 0.9058441558441559,
+        "f1-score": 0.5563310069790628,
+        "support": 616.0
+      },
+      "Bot": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+      },
+      "BruteForce": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 1.0
+      },
+      "DDoS": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 404.0
+      },
+      "DoS": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 409.0
+      },
+      "Infiltration": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 82.0
+      },
+      "accuracy": 0.36904761904761907,
+      "macro avg": {
+        "precision": 0.06690647482014388,
+        "recall": 0.15097402597402598,
+        "f1-score": 0.09272183449651046,
+        "support": 1512.0
+      },
+      "weighted avg": {
+        "precision": 0.16354916067146283,
+        "recall": 0.36904761904761907,
+        "f1-score": 0.22665337321369225,
+        "support": 1512.0
+      }
+    },
+    "covered_precision_macro": 0.0
+  },
+  "timestamp": "2026-03-15T12:08:24.798565"
+}

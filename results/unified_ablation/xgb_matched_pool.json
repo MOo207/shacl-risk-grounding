@@ -1,0 +1,150 @@
+{
+  "description": "XGBoost \u00a76.9 risk-level accuracy scored on the exact case-id pools answered by the tri-stage LLM arms (matched-pool comparison), vs. the tri-stage arms' own accuracy on those same pools.",
+  "xgb_acc_pool164": 0.9329268292682927,
+  "xgb_acc_pool148": 0.9391891891891891,
+  "xgb_correct_pool164": 153,
+  "xgb_correct_pool148": 139,
+  "n_pool164": 164,
+  "n_pool148": 148,
+  "xgb_per_class_pool148_sonnet": {
+    "Benign": {
+      "correct": 19,
+      "total": 22,
+      "accuracy": 0.8636363636363636
+    },
+    "BruteForce": {
+      "correct": 26,
+      "total": 26,
+      "accuracy": 1.0
+    },
+    "DDoS": {
+      "correct": 27,
+      "total": 27,
+      "accuracy": 1.0
+    },
+    "DoS": {
+      "correct": 23,
+      "total": 23,
+      "accuracy": 1.0
+    },
+    "Infiltration": {
+      "correct": 16,
+      "total": 22,
+      "accuracy": 0.7272727272727273
+    },
+    "WebAttack": {
+      "correct": 28,
+      "total": 28,
+      "accuracy": 1.0
+    }
+  },
+  "xgb_per_class_pool164_haiku": {
+    "Benign": {
+      "correct": 25,
+      "total": 28,
+      "accuracy": 0.8928571428571429
+    },
+    "BruteForce": {
+      "correct": 30,
+      "total": 30,
+      "accuracy": 1.0
+    },
+    "DDoS": {
+      "correct": 27,
+      "total": 27,
+      "accuracy": 1.0
+    },
+    "DoS": {
+      "correct": 24,
+      "total": 24,
+      "accuracy": 1.0
+    },
+    "Infiltration": {
+      "correct": 19,
+      "total": 27,
+      "accuracy": 0.7037037037037037
+    },
+    "WebAttack": {
+      "correct": 28,
+      "total": 28,
+      "accuracy": 1.0
+    }
+  },
+  "tristage_sonnet_acc_pool148": 0.9662162162162162,
+  "tristage_sonnet_correct_pool148": 143,
+  "tristage_sonnet_n_pool148": 148,
+  "tristage_haiku_acc_pool164": 0.9634146341463414,
+  "tristage_haiku_correct_pool164": 158,
+  "tristage_haiku_n_pool164": 164,
+  "missing_ids_by_class": {
+    "sonnet_pool148": {
+      "Infiltration": 8,
+      "WebAttack": 2,
+      "DoS": 7,
+      "BruteForce": 4,
+      "Benign": 8,
+      "DDoS": 3
+    },
+    "haiku_pool164": {
+      "Infiltration": 3,
+      "WebAttack": 2,
+      "DoS": 6,
+      "DDoS": 3,
+      "Benign": 2
+    }
+  },
+  "sonnet_missing_ids": [
+    "ua_058",
+    "ua_060",
+    "ua_061",
+    "ua_062",
+    "ua_064",
+    "ua_065",
+    "ua_066",
+    "ua_067",
+    "ua_068",
+    "ua_069",
+    "ua_070",
+    "ua_071",
+    "ua_072",
+    "ua_073",
+    "ua_074",
+    "ua_075",
+    "ua_076",
+    "ua_077",
+    "ua_078",
+    "ua_079",
+    "ua_080",
+    "ua_081",
+    "ua_082",
+    "ua_083",
+    "ua_084",
+    "ua_085",
+    "ua_086",
+    "ua_087",
+    "ua_088",
+    "ua_089",
+    "ua_090",
+    "ua_091"
+  ],
+  "haiku_missing_ids": [
+    "ua_164",
+    "ua_165",
+    "ua_166",
+    "ua_167",
+    "ua_168",
+    "ua_169",
+    "ua_170",
+    "ua_171",
+    "ua_172",
+    "ua_173",
+    "ua_174",
+    "ua_175",
+    "ua_176",
+    "ua_177",
+    "ua_178",
+    "ua_179"
+  ],
+  "sonnet_missing_n": 32,
+  "haiku_missing_n": 16
+}

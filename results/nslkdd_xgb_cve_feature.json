@@ -1,0 +1,1034 @@
+{
+  "description": "Matched-information XGBoost baseline: plain features + binary cve_present.\n\nReviewer-requested control (DKE round 5, item 3 / methodology W2). The LLM\narms receive a class-paired CVE block in-prompt; the CVE channel is\nclass-indexed BY TEST-SET CONSTRUCTION (attack cases are paired with a CVE\nfor their mapped NFCRM class, Normal cases receive none -- verified:\nresults/nslkdd_unified_rerun/test_sample.json has paired_cve non-null iff\ntrue_attack_class != Normal). This script gives XGBoost the same information\nchannel as one extra binary feature, cve_present = (label != 'Normal') at\ntrain time, mirroring the pairing rule, and (paired_cve is not None) at test\ntime.\n\nPre-registered interpretation rule, fixed before running: if XGBoost+CVE\nmatches the tri-stage arm's safety metrics, the non-channel-independent share\nof the safety headline is fully explained by the presence bit and the LLM's\nuse of the channel is not shown to be non-trivial; if it does not match, the\nLLM extracts more than the presence bit. Either outcome is reported verbatim.\n\nTraining/eval reuse scripts/build_nslkdd_unified_rerun.py's exact pipeline:\nsame load_raw/encode_for_ml, same XGBClassifier hyperparameters\n(n_estimators=100, random_state=42, tree_method='hist', n_jobs=1), same\nSec 6.9 risk mapping via compute_risk_score.",
+  "xgb_params": {
+    "n_estimators": 100,
+    "random_state": 42,
+    "tree_method": "hist",
+    "n_jobs": 1,
+    "extra_feature": "cve_present (binary)"
+  },
+  "train_rule": "cve_present = (label != 'Normal'), mirroring test-set CVE pairing",
+  "metrics_xgb_cve": {
+    "n": 100,
+    "under_escalation_pct": 27.0,
+    "over_escalation_pct": 3.0,
+    "exact_pct": 70.0,
+    "severe_recall_pct": 77.55102040816327,
+    "n_severe": 49
+  },
+  "metrics_plain_xgb_reference": {
+    "n": 100,
+    "under_escalation_pct": 48.0,
+    "over_escalation_pct": 3.0,
+    "exact_pct": 49.0,
+    "severe_recall_pct": 42.857142857142854,
+    "n_severe": 49
+  },
+  "mcnemar_cve_vs_plain": {
+    "b_plain_correct_cve_wrong": 0,
+    "c_plain_wrong_cve_correct": 21,
+    "p_value": 9.5367431640625e-07
+  },
+  "records": [
+    {
+      "case_id": "nslr_test_000",
+      "true_class": "U2R",
+      "criticality": "Critical",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "High",
+      "ground_truth": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_001",
+      "true_class": "Probe",
+      "criticality": "Critical",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "High",
+      "ground_truth": "High"
+    },
+    {
+      "case_id": "nslr_test_002",
+      "true_class": "R2L",
+      "criticality": "Medium",
+      "cve_present": true,
+      "plain_xgb_risk": "High",
+      "xgb_cve_pred_class": "R2L",
+      "xgb_cve_risk": "High",
+      "ground_truth": "High"
+    },
+    {
+      "case_id": "nslr_test_003",
+      "true_class": "Probe",
+      "criticality": "Critical",
+      "cve_present": true,
+      "plain_xgb_risk": "Catastrophic",
+      "xgb_cve_pred_class": "DoS",
+      "xgb_cve_risk": "Catastrophic",
+      "ground_truth": "High"
+    },
+    {
+      "case_id": "nslr_test_004",
+      "true_class": "Probe",
+      "criticality": "Medium",
+      "cve_present": true,
+      "plain_xgb_risk": "Medium",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Medium",
+      "ground_truth": "Medium"
+    },
+    {
+      "case_id": "nslr_test_005",
+      "true_class": "DoS",
+      "criticality": "Low",
+      "cve_present": true,
+      "plain_xgb_risk": "Medium",
+      "xgb_cve_pred_class": "DoS",
+      "xgb_cve_risk": "Medium",
+      "ground_truth": "Medium"
+    },
+    {
+      "case_id": "nslr_test_006",
+      "true_class": "DoS",
+      "criticality": "Medium",
+      "cve_present": true,
+      "plain_xgb_risk": "High",
+      "xgb_cve_pred_class": "DoS",
+      "xgb_cve_risk": "High",
+      "ground_truth": "High"
+    },
+    {
+      "case_id": "nslr_test_007",
+      "true_class": "U2R",
+      "criticality": "Critical",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "R2L",
+      "xgb_cve_risk": "Catastrophic",
+      "ground_truth": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_008",
+      "true_class": "Normal",
+      "criticality": "Medium",
+      "cve_present": false,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Normal",
+      "xgb_cve_risk": "Very Low",
+      "ground_truth": "Very Low"
+    },
+    {
+      "case_id": "nslr_test_009",
+      "true_class": "Normal",
+      "criticality": "Critical",
+      "cve_present": false,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Normal",
+      "xgb_cve_risk": "Very Low",
+      "ground_truth": "Very Low"
+    },
+    {
+      "case_id": "nslr_test_010",
+      "true_class": "Normal",
+      "criticality": "High",
+      "cve_present": false,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Normal",
+      "xgb_cve_risk": "Very Low",
+      "ground_truth": "Very Low"
+    },
+    {
+      "case_id": "nslr_test_011",
+      "true_class": "DoS",
+      "criticality": "Medium",
+      "cve_present": true,
+      "plain_xgb_risk": "High",
+      "xgb_cve_pred_class": "DoS",
+      "xgb_cve_risk": "High",
+      "ground_truth": "High"
+    },
+    {
+      "case_id": "nslr_test_012",
+      "true_class": "R2L",
+      "criticality": "Low",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Low",
+      "ground_truth": "Medium"
+    },
+    {
+      "case_id": "nslr_test_013",
+      "true_class": "DoS",
+      "criticality": "Low",
+      "cve_present": true,
+      "plain_xgb_risk": "Medium",
+      "xgb_cve_pred_class": "DoS",
+      "xgb_cve_risk": "Medium",
+      "ground_truth": "Medium"
+    },
+    {
+      "case_id": "nslr_test_014",
+      "true_class": "U2R",
+      "criticality": "Low",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "U2R",
+      "xgb_cve_risk": "Medium",
+      "ground_truth": "Medium"
+    },
+    {
+      "case_id": "nslr_test_015",
+      "true_class": "Normal",
+      "criticality": "Medium",
+      "cve_present": false,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Normal",
+      "xgb_cve_risk": "Very Low",
+      "ground_truth": "Very Low"
+    },
+    {
+      "case_id": "nslr_test_016",
+      "true_class": "R2L",
+      "criticality": "Medium",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "R2L",
+      "xgb_cve_risk": "High",
+      "ground_truth": "High"
+    },
+    {
+      "case_id": "nslr_test_017",
+      "true_class": "R2L",
+      "criticality": "High",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "DoS",
+      "xgb_cve_risk": "Catastrophic",
+      "ground_truth": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_018",
+      "true_class": "Normal",
+      "criticality": "High",
+      "cve_present": false,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Normal",
+      "xgb_cve_risk": "Very Low",
+      "ground_truth": "Very Low"
+    },
+    {
+      "case_id": "nslr_test_019",
+      "true_class": "DoS",
+      "criticality": "Critical",
+      "cve_present": true,
+      "plain_xgb_risk": "Catastrophic",
+      "xgb_cve_pred_class": "DoS",
+      "xgb_cve_risk": "Catastrophic",
+      "ground_truth": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_020",
+      "true_class": "Probe",
+      "criticality": "High",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Medium",
+      "ground_truth": "Medium"
+    },
+    {
+      "case_id": "nslr_test_021",
+      "true_class": "U2R",
+      "criticality": "Low",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Low",
+      "ground_truth": "Medium"
+    },
+    {
+      "case_id": "nslr_test_022",
+      "true_class": "DoS",
+      "criticality": "Medium",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "DoS",
+      "xgb_cve_risk": "High",
+      "ground_truth": "High"
+    },
+    {
+      "case_id": "nslr_test_023",
+      "true_class": "Probe",
+      "criticality": "High",
+      "cve_present": true,
+      "plain_xgb_risk": "Catastrophic",
+      "xgb_cve_pred_class": "DoS",
+      "xgb_cve_risk": "Catastrophic",
+      "ground_truth": "Medium"
+    },
+    {
+      "case_id": "nslr_test_024",
+      "true_class": "R2L",
+      "criticality": "High",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Medium",
+      "ground_truth": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_025",
+      "true_class": "Normal",
+      "criticality": "Low",
+      "cve_present": false,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Normal",
+      "xgb_cve_risk": "Very Low",
+      "ground_truth": "Very Low"
+    },
+    {
+      "case_id": "nslr_test_026",
+      "true_class": "Probe",
+      "criticality": "Low",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Low",
+      "ground_truth": "Low"
+    },
+    {
+      "case_id": "nslr_test_027",
+      "true_class": "U2R",
+      "criticality": "High",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Medium",
+      "ground_truth": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_028",
+      "true_class": "Normal",
+      "criticality": "High",
+      "cve_present": false,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Normal",
+      "xgb_cve_risk": "Very Low",
+      "ground_truth": "Very Low"
+    },
+    {
+      "case_id": "nslr_test_029",
+      "true_class": "R2L",
+      "criticality": "Low",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Low",
+      "ground_truth": "Medium"
+    },
+    {
+      "case_id": "nslr_test_030",
+      "true_class": "Normal",
+      "criticality": "Low",
+      "cve_present": false,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Normal",
+      "xgb_cve_risk": "Very Low",
+      "ground_truth": "Very Low"
+    },
+    {
+      "case_id": "nslr_test_031",
+      "true_class": "Probe",
+      "criticality": "Medium",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Medium",
+      "ground_truth": "Medium"
+    },
+    {
+      "case_id": "nslr_test_032",
+      "true_class": "U2R",
+      "criticality": "Critical",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "High",
+      "ground_truth": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_033",
+      "true_class": "DoS",
+      "criticality": "Low",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "DoS",
+      "xgb_cve_risk": "Medium",
+      "ground_truth": "Medium"
+    },
+    {
+      "case_id": "nslr_test_034",
+      "true_class": "U2R",
+      "criticality": "Medium",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Medium",
+      "ground_truth": "High"
+    },
+    {
+      "case_id": "nslr_test_035",
+      "true_class": "Normal",
+      "criticality": "High",
+      "cve_present": false,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Normal",
+      "xgb_cve_risk": "Very Low",
+      "ground_truth": "Very Low"
+    },
+    {
+      "case_id": "nslr_test_036",
+      "true_class": "R2L",
+      "criticality": "High",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "DoS",
+      "xgb_cve_risk": "Catastrophic",
+      "ground_truth": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_037",
+      "true_class": "R2L",
+      "criticality": "Low",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Low",
+      "ground_truth": "Medium"
+    },
+    {
+      "case_id": "nslr_test_038",
+      "true_class": "DoS",
+      "criticality": "Medium",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Medium",
+      "ground_truth": "High"
+    },
+    {
+      "case_id": "nslr_test_039",
+      "true_class": "Normal",
+      "criticality": "Critical",
+      "cve_present": false,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Normal",
+      "xgb_cve_risk": "Very Low",
+      "ground_truth": "Very Low"
+    },
+    {
+      "case_id": "nslr_test_040",
+      "true_class": "Probe",
+      "criticality": "High",
+      "cve_present": true,
+      "plain_xgb_risk": "Medium",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Medium",
+      "ground_truth": "Medium"
+    },
+    {
+      "case_id": "nslr_test_041",
+      "true_class": "DoS",
+      "criticality": "Medium",
+      "cve_present": true,
+      "plain_xgb_risk": "High",
+      "xgb_cve_pred_class": "DoS",
+      "xgb_cve_risk": "High",
+      "ground_truth": "High"
+    },
+    {
+      "case_id": "nslr_test_042",
+      "true_class": "Normal",
+      "criticality": "Critical",
+      "cve_present": false,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Normal",
+      "xgb_cve_risk": "Very Low",
+      "ground_truth": "Very Low"
+    },
+    {
+      "case_id": "nslr_test_043",
+      "true_class": "U2R",
+      "criticality": "Critical",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "High",
+      "ground_truth": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_044",
+      "true_class": "DoS",
+      "criticality": "Medium",
+      "cve_present": true,
+      "plain_xgb_risk": "High",
+      "xgb_cve_pred_class": "DoS",
+      "xgb_cve_risk": "High",
+      "ground_truth": "High"
+    },
+    {
+      "case_id": "nslr_test_045",
+      "true_class": "Normal",
+      "criticality": "High",
+      "cve_present": false,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Normal",
+      "xgb_cve_risk": "Very Low",
+      "ground_truth": "Very Low"
+    },
+    {
+      "case_id": "nslr_test_046",
+      "true_class": "U2R",
+      "criticality": "High",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Medium",
+      "ground_truth": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_047",
+      "true_class": "DoS",
+      "criticality": "Low",
+      "cve_present": true,
+      "plain_xgb_risk": "Medium",
+      "xgb_cve_pred_class": "DoS",
+      "xgb_cve_risk": "Medium",
+      "ground_truth": "Medium"
+    },
+    {
+      "case_id": "nslr_test_048",
+      "true_class": "R2L",
+      "criticality": "High",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "R2L",
+      "xgb_cve_risk": "Catastrophic",
+      "ground_truth": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_049",
+      "true_class": "Normal",
+      "criticality": "Critical",
+      "cve_present": false,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Normal",
+      "xgb_cve_risk": "Very Low",
+      "ground_truth": "Very Low"
+    },
+    {
+      "case_id": "nslr_test_050",
+      "true_class": "DoS",
+      "criticality": "Critical",
+      "cve_present": true,
+      "plain_xgb_risk": "Catastrophic",
+      "xgb_cve_pred_class": "DoS",
+      "xgb_cve_risk": "Catastrophic",
+      "ground_truth": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_051",
+      "true_class": "Normal",
+      "criticality": "Medium",
+      "cve_present": false,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Normal",
+      "xgb_cve_risk": "Very Low",
+      "ground_truth": "Very Low"
+    },
+    {
+      "case_id": "nslr_test_052",
+      "true_class": "Normal",
+      "criticality": "Critical",
+      "cve_present": false,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Normal",
+      "xgb_cve_risk": "Very Low",
+      "ground_truth": "Very Low"
+    },
+    {
+      "case_id": "nslr_test_053",
+      "true_class": "DoS",
+      "criticality": "High",
+      "cve_present": true,
+      "plain_xgb_risk": "Catastrophic",
+      "xgb_cve_pred_class": "DoS",
+      "xgb_cve_risk": "Catastrophic",
+      "ground_truth": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_054",
+      "true_class": "Normal",
+      "criticality": "High",
+      "cve_present": false,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Normal",
+      "xgb_cve_risk": "Very Low",
+      "ground_truth": "Very Low"
+    },
+    {
+      "case_id": "nslr_test_055",
+      "true_class": "R2L",
+      "criticality": "High",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Medium",
+      "ground_truth": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_056",
+      "true_class": "Normal",
+      "criticality": "Critical",
+      "cve_present": false,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Normal",
+      "xgb_cve_risk": "Very Low",
+      "ground_truth": "Very Low"
+    },
+    {
+      "case_id": "nslr_test_057",
+      "true_class": "R2L",
+      "criticality": "Medium",
+      "cve_present": true,
+      "plain_xgb_risk": "High",
+      "xgb_cve_pred_class": "R2L",
+      "xgb_cve_risk": "High",
+      "ground_truth": "High"
+    },
+    {
+      "case_id": "nslr_test_058",
+      "true_class": "DoS",
+      "criticality": "Medium",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Medium",
+      "ground_truth": "High"
+    },
+    {
+      "case_id": "nslr_test_059",
+      "true_class": "U2R",
+      "criticality": "Low",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Low",
+      "ground_truth": "Medium"
+    },
+    {
+      "case_id": "nslr_test_060",
+      "true_class": "Probe",
+      "criticality": "Critical",
+      "cve_present": true,
+      "plain_xgb_risk": "High",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "High",
+      "ground_truth": "High"
+    },
+    {
+      "case_id": "nslr_test_061",
+      "true_class": "U2R",
+      "criticality": "Critical",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "High",
+      "ground_truth": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_062",
+      "true_class": "Probe",
+      "criticality": "Low",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Low",
+      "ground_truth": "Low"
+    },
+    {
+      "case_id": "nslr_test_063",
+      "true_class": "Probe",
+      "criticality": "Medium",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Medium",
+      "ground_truth": "Medium"
+    },
+    {
+      "case_id": "nslr_test_064",
+      "true_class": "Probe",
+      "criticality": "Medium",
+      "cve_present": true,
+      "plain_xgb_risk": "Medium",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Medium",
+      "ground_truth": "Medium"
+    },
+    {
+      "case_id": "nslr_test_065",
+      "true_class": "R2L",
+      "criticality": "Critical",
+      "cve_present": true,
+      "plain_xgb_risk": "Catastrophic",
+      "xgb_cve_pred_class": "R2L",
+      "xgb_cve_risk": "Catastrophic",
+      "ground_truth": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_066",
+      "true_class": "Probe",
+      "criticality": "Medium",
+      "cve_present": true,
+      "plain_xgb_risk": "Medium",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Medium",
+      "ground_truth": "Medium"
+    },
+    {
+      "case_id": "nslr_test_067",
+      "true_class": "R2L",
+      "criticality": "Medium",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Medium",
+      "ground_truth": "High"
+    },
+    {
+      "case_id": "nslr_test_068",
+      "true_class": "R2L",
+      "criticality": "Critical",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "DoS",
+      "xgb_cve_risk": "Catastrophic",
+      "ground_truth": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_069",
+      "true_class": "U2R",
+      "criticality": "Critical",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "U2R",
+      "xgb_cve_risk": "Catastrophic",
+      "ground_truth": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_070",
+      "true_class": "R2L",
+      "criticality": "Critical",
+      "cve_present": true,
+      "plain_xgb_risk": "Catastrophic",
+      "xgb_cve_pred_class": "R2L",
+      "xgb_cve_risk": "Catastrophic",
+      "ground_truth": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_071",
+      "true_class": "Probe",
+      "criticality": "High",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Medium",
+      "ground_truth": "Medium"
+    },
+    {
+      "case_id": "nslr_test_072",
+      "true_class": "Probe",
+      "criticality": "Critical",
+      "cve_present": true,
+      "plain_xgb_risk": "High",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "High",
+      "ground_truth": "High"
+    },
+    {
+      "case_id": "nslr_test_073",
+      "true_class": "Probe",
+      "criticality": "High",
+      "cve_present": true,
+      "plain_xgb_risk": "Catastrophic",
+      "xgb_cve_pred_class": "DoS",
+      "xgb_cve_risk": "Catastrophic",
+      "ground_truth": "Medium"
+    },
+    {
+      "case_id": "nslr_test_074",
+      "true_class": "U2R",
+      "criticality": "Critical",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "High",
+      "ground_truth": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_075",
+      "true_class": "Probe",
+      "criticality": "Low",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Low",
+      "ground_truth": "Low"
+    },
+    {
+      "case_id": "nslr_test_076",
+      "true_class": "R2L",
+      "criticality": "High",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "R2L",
+      "xgb_cve_risk": "Catastrophic",
+      "ground_truth": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_077",
+      "true_class": "DoS",
+      "criticality": "Medium",
+      "cve_present": true,
+      "plain_xgb_risk": "High",
+      "xgb_cve_pred_class": "DoS",
+      "xgb_cve_risk": "High",
+      "ground_truth": "High"
+    },
+    {
+      "case_id": "nslr_test_078",
+      "true_class": "U2R",
+      "criticality": "Medium",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Medium",
+      "ground_truth": "High"
+    },
+    {
+      "case_id": "nslr_test_079",
+      "true_class": "Probe",
+      "criticality": "Critical",
+      "cve_present": true,
+      "plain_xgb_risk": "High",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "High",
+      "ground_truth": "High"
+    },
+    {
+      "case_id": "nslr_test_080",
+      "true_class": "R2L",
+      "criticality": "Low",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Low",
+      "ground_truth": "Medium"
+    },
+    {
+      "case_id": "nslr_test_081",
+      "true_class": "U2R",
+      "criticality": "Low",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Low",
+      "ground_truth": "Medium"
+    },
+    {
+      "case_id": "nslr_test_082",
+      "true_class": "DoS",
+      "criticality": "High",
+      "cve_present": true,
+      "plain_xgb_risk": "Catastrophic",
+      "xgb_cve_pred_class": "DoS",
+      "xgb_cve_risk": "Catastrophic",
+      "ground_truth": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_083",
+      "true_class": "DoS",
+      "criticality": "Medium",
+      "cve_present": true,
+      "plain_xgb_risk": "High",
+      "xgb_cve_pred_class": "DoS",
+      "xgb_cve_risk": "High",
+      "ground_truth": "High"
+    },
+    {
+      "case_id": "nslr_test_084",
+      "true_class": "Normal",
+      "criticality": "Critical",
+      "cve_present": false,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Normal",
+      "xgb_cve_risk": "Very Low",
+      "ground_truth": "Very Low"
+    },
+    {
+      "case_id": "nslr_test_085",
+      "true_class": "Probe",
+      "criticality": "Critical",
+      "cve_present": true,
+      "plain_xgb_risk": "High",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "High",
+      "ground_truth": "High"
+    },
+    {
+      "case_id": "nslr_test_086",
+      "true_class": "DoS",
+      "criticality": "Medium",
+      "cve_present": true,
+      "plain_xgb_risk": "High",
+      "xgb_cve_pred_class": "DoS",
+      "xgb_cve_risk": "High",
+      "ground_truth": "High"
+    },
+    {
+      "case_id": "nslr_test_087",
+      "true_class": "Normal",
+      "criticality": "Low",
+      "cve_present": false,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Normal",
+      "xgb_cve_risk": "Very Low",
+      "ground_truth": "Very Low"
+    },
+    {
+      "case_id": "nslr_test_088",
+      "true_class": "DoS",
+      "criticality": "Low",
+      "cve_present": true,
+      "plain_xgb_risk": "Medium",
+      "xgb_cve_pred_class": "DoS",
+      "xgb_cve_risk": "Medium",
+      "ground_truth": "Medium"
+    },
+    {
+      "case_id": "nslr_test_089",
+      "true_class": "U2R",
+      "criticality": "Medium",
+      "cve_present": true,
+      "plain_xgb_risk": "High",
+      "xgb_cve_pred_class": "U2R",
+      "xgb_cve_risk": "High",
+      "ground_truth": "High"
+    },
+    {
+      "case_id": "nslr_test_090",
+      "true_class": "U2R",
+      "criticality": "High",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Medium",
+      "ground_truth": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_091",
+      "true_class": "R2L",
+      "criticality": "High",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Medium",
+      "ground_truth": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_092",
+      "true_class": "U2R",
+      "criticality": "High",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "U2R",
+      "xgb_cve_risk": "Catastrophic",
+      "ground_truth": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_093",
+      "true_class": "U2R",
+      "criticality": "Low",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Low",
+      "ground_truth": "Medium"
+    },
+    {
+      "case_id": "nslr_test_094",
+      "true_class": "DoS",
+      "criticality": "Low",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Low",
+      "ground_truth": "Medium"
+    },
+    {
+      "case_id": "nslr_test_095",
+      "true_class": "R2L",
+      "criticality": "Low",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "R2L",
+      "xgb_cve_risk": "Medium",
+      "ground_truth": "Medium"
+    },
+    {
+      "case_id": "nslr_test_096",
+      "true_class": "R2L",
+      "criticality": "Critical",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "High",
+      "ground_truth": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_097",
+      "true_class": "Normal",
+      "criticality": "High",
+      "cve_present": false,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Normal",
+      "xgb_cve_risk": "Very Low",
+      "ground_truth": "Very Low"
+    },
+    {
+      "case_id": "nslr_test_098",
+      "true_class": "U2R",
+      "criticality": "Low",
+      "cve_present": true,
+      "plain_xgb_risk": "Very Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Low",
+      "ground_truth": "Medium"
+    },
+    {
+      "case_id": "nslr_test_099",
+      "true_class": "Probe",
+      "criticality": "Low",
+      "cve_present": true,
+      "plain_xgb_risk": "Low",
+      "xgb_cve_pred_class": "Probe",
+      "xgb_cve_risk": "Low",
+      "ground_truth": "Low"
+    }
+  ]
+}

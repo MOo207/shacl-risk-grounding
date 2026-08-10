@@ -1,0 +1,242 @@
+{
+  "seed": 42,
+  "n_cases": 80,
+  "n_set_a": 50,
+  "n_set_b": 30,
+  "cases": [
+    {
+      "case_id": "case_000",
+      "feature_row_index": 12964,
+      "true_attack_class": "Benign",
+      "rf_predicted_class": "Benign",
+      "asset": {
+        "id": "WS-018",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": null,
+      "ground_truth_risk_level": "Very Low",
+      "masked_fields": [
+        "cvss_components"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_001",
+      "feature_row_index": 12616,
+      "true_attack_class": "Benign",
+      "rf_predicted_class": "Benign",
+      "asset": {
+        "id": "WS-016",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": null,
+      "ground_truth_risk_level": "Very Low",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_002",
+      "feature_row_index": 12661,
+      "true_attack_class": "Benign",
+      "rf_predicted_class": "Benign",
+      "asset": {
+        "id": "WS-012",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": null,
+      "ground_truth_risk_level": "Very Low",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_003",
+      "feature_row_index": 13236,
+      "true_attack_class": "Benign",
+      "rf_predicted_class": "Infiltration",
+      "asset": {
+        "id": "WS-004",
+        "type": "workstation",
+        "criticality": "high",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": null,
+      "ground_truth_risk_level": "Very Low",
+      "masked_fields": [],
+      "subset": "A"
+    },
+    {
+      "case_id": "case_004",
+      "feature_row_index": 12463,
+      "true_attack_class": "Benign",
+      "rf_predicted_class": "Infiltration",
+      "asset": {
+        "id": "SRV-005",
+        "type": "server",
+        "criticality": "critical",
+        "ip_segment": "172.31.69.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": null,
+      "ground_truth_risk_level": "Very Low",
+      "masked_fields": [
+        "control_coverage"
+      ],
+      "subset": "B"
+    }
+  ]
+}

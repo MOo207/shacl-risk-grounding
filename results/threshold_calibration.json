@@ -1,0 +1,253 @@
+{
+  "confidence_threshold": 0.7,
+  "dataset": "data/processed/cleaned_dataset.csv",
+  "baseline_f1_macro": 0.8899946328659789,
+  "calibrations": {
+    "rule_1_syn_ddos": {
+      "rule_name": "rule_1_syn_ddos",
+      "description": "Override rule: rule_1_syn_ddos",
+      "baseline_f1": 0.8899946328659789,
+      "best_threshold": null,
+      "best_f1": 0.8899946328659789,
+      "enabled": false,
+      "improvement": 0.0,
+      "all_results": [
+        {
+          "threshold_key": "syn_ddos",
+          "multiplier": 0.7,
+          "threshold_value": 140.0,
+          "f1": 0.8899946328659789,
+          "improvement": 0.0
+        },
+        {
+          "threshold_key": "syn_ddos",
+          "multiplier": 0.8,
+          "threshold_value": 160.0,
+          "f1": 0.8899946328659789,
+          "improvement": 0.0
+        },
+        {
+          "threshold_key": "syn_ddos",
+          "multiplier": 0.9,
+          "threshold_value": 180.0,
+          "f1": 0.8899946328659789,
+          "improvement": 0.0
+        },
+        {
+          "threshold_key": "syn_ddos",
+          "multiplier": 1.0,
+          "threshold_value": 200.0,
+          "f1": 0.8899946328659789,
+          "improvement": 0.0
+        },
+        {
+          "threshold_key": "syn_ddos",
+          "multiplier": 1.1,
+          "threshold_value": 220.00000000000003,
+          "f1": 0.8899946328659789,
+          "improvement": 0.0
+        },
+        {
+          "threshold_key": "syn_ddos",
+          "multiplier": 1.2,
+          "threshold_value": 240.0,
+          "f1": 0.8899946328659789,
+          "improvement": 0.0
+        },
+        {
+          "threshold_key": "syn_ddos",
+          "multiplier": 1.3,
+          "threshold_value": 260.0,
+          "f1": 0.8899946328659789,
+          "improvement": 0.0
+        }
+      ]
+    },
+    "rule_2_flow_dos": {
+      "rule_name": "rule_2_flow_dos",
+      "description": "Override rule: rule_2_flow_dos",
+      "baseline_f1": 0.8899946328659789,
+      "best_threshold": null,
+      "best_f1": 0.8899946328659789,
+      "enabled": false,
+      "improvement": 0.0,
+      "all_results": [
+        {
+          "threshold_key": "flow_dos",
+          "multiplier": 0.7,
+          "threshold_value": 350.0,
+          "f1": 0.6514604179527729,
+          "improvement": -0.23853421491320603
+        },
+        {
+          "threshold_key": "flow_dos",
+          "multiplier": 0.8,
+          "threshold_value": 400.0,
+          "f1": 0.6563767690000611,
+          "improvement": -0.23361786386591776
+        },
+        {
+          "threshold_key": "flow_dos",
+          "multiplier": 0.9,
+          "threshold_value": 450.0,
+          "f1": 0.6649156541911636,
+          "improvement": -0.2250789786748153
+        },
+        {
+          "threshold_key": "flow_dos",
+          "multiplier": 1.0,
+          "threshold_value": 500.0,
+          "f1": 0.6724401050637563,
+          "improvement": -0.21755452780222262
+        },
+        {
+          "threshold_key": "flow_dos",
+          "multiplier": 1.1,
+          "threshold_value": 550.0,
+          "f1": 0.6782110772990394,
+          "improvement": -0.2117835555669395
+        },
+        {
+          "threshold_key": "flow_dos",
+          "multiplier": 1.2,
+          "threshold_value": 600.0,
+          "f1": 0.6838433562190973,
+          "improvement": -0.2061512766468816
+        },
+        {
+          "threshold_key": "flow_dos",
+          "multiplier": 1.3,
+          "threshold_value": 650.0,
+          "f1": 0.6877248737577103,
+          "improvement": -0.2022697591082686
+        }
+      ]
+    },
+    "rule_3_bruteforce": {
+      "rule_name": "rule_3_bruteforce",
+      "description": "Override rule: rule_3_bruteforce",
+      "baseline_f1": 0.8899946328659789,
+      "best_threshold": null,
+      "best_f1": 0.8899946328659789,
+      "enabled": false,
+      "improvement": 0.0,
+      "all_results": [
+        {
+          "threshold_key": "bruteforce_fwd",
+          "multiplier": 0.7,
+          "threshold_value": 2.0999999999999996,
+          "f1": 0.8899946328659789,
+          "improvement": 0.0
+        },
+        {
+          "threshold_key": "bruteforce_fwd",
+          "multiplier": 0.8,
+          "threshold_value": 2.4000000000000004,
+          "f1": 0.8899946328659789,
+          "improvement": 0.0
+        },
+        {
+          "threshold_key": "bruteforce_fwd",
+          "multiplier": 0.9,
+          "threshold_value": 2.7,
+          "f1": 0.8899946328659789,
+          "improvement": 0.0
+        },
+        {
+          "threshold_key": "bruteforce_fwd",
+          "multiplier": 1.0,
+          "threshold_value": 3.0,
+          "f1": 0.8899946328659789,
+          "improvement": 0.0
+        },
+        {
+          "threshold_key": "bruteforce_fwd",
+          "multiplier": 1.1,
+          "threshold_value": 3.3000000000000003,
+          "f1": 0.8899946328659789,
+          "improvement": 0.0
+        },
+        {
+          "threshold_key": "bruteforce_fwd",
+          "multiplier": 1.2,
+          "threshold_value": 3.5999999999999996,
+          "f1": 0.8899946328659789,
+          "improvement": 0.0
+        },
+        {
+          "threshold_key": "bruteforce_fwd",
+          "multiplier": 1.3,
+          "threshold_value": 3.9000000000000004,
+          "f1": 0.8899946328659789,
+          "improvement": 0.0
+        }
+      ]
+    },
+    "rule_4_infiltration": {
+      "rule_name": "rule_4_infiltration",
+      "description": "Override rule: rule_4_infiltration",
+      "baseline_f1": 0.8899946328659789,
+      "best_threshold": null,
+      "best_f1": 0.8899946328659789,
+      "enabled": false,
+      "improvement": 0.0,
+      "all_results": [
+        {
+          "threshold_key": "infiltration_len",
+          "multiplier": 0.7,
+          "threshold_value": 140000.0,
+          "f1": 0.8899946328659789,
+          "improvement": 0.0
+        },
+        {
+          "threshold_key": "infiltration_len",
+          "multiplier": 0.8,
+          "threshold_value": 160000.0,
+          "f1": 0.8899946328659789,
+          "improvement": 0.0
+        },
+        {
+          "threshold_key": "infiltration_len",
+          "multiplier": 0.9,
+          "threshold_value": 180000.0,
+          "f1": 0.8899946328659789,
+          "improvement": 0.0
+        },
+        {
+          "threshold_key": "infiltration_len",
+          "multiplier": 1.0,
+          "threshold_value": 200000.0,
+          "f1": 0.8899946328659789,
+          "improvement": 0.0
+        },
+        {
+          "threshold_key": "infiltration_len",
+          "multiplier": 1.1,
+          "threshold_value": 220000.00000000003,
+          "f1": 0.8899946328659789,
+          "improvement": 0.0
+        },
+        {
+          "threshold_key": "infiltration_len",
+          "multiplier": 1.2,
+          "threshold_value": 240000.0,
+          "f1": 0.8899946328659789,
+          "improvement": 0.0
+        },
+        {
+          "threshold_key": "infiltration_len",
+          "multiplier": 1.3,
+          "threshold_value": 260000.0,
+          "f1": 0.8899946328659789,
+          "improvement": 0.0
+        }
+      ]
+    }
+  },
+  "summary": {
+    "total_rules": 4,
+    "enabled_rules": 0,
+    "disabled_rules": 4
+  },
+  "timestamp": "2026-03-15T15:44:49.768072"
+}

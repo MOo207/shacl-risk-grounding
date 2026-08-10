@@ -1,0 +1,18 @@
+{
+  "purpose": "Real pyshacl validation of the persisted GRC artefact corpus against ontology/shapes/. Replaces a Python stand-in whose own comment read 'simplified - full validation would use pyshacl with RDF' and which validated artefacts built from the same template that produced them.",
+  "corpus_file": "results/grc_artifact_corpus.json",
+  "rdf_file": "results/grc_artifact_corpus.ttl",
+  "rdf_triples": 4854,
+  "shape_triples": 541,
+  "total_artefacts": 364,
+  "artefacts_targeted_by_a_shape": 557,
+  "conforms": false,
+  "total_violations": 31,
+  "artefacts_with_violations": 31,
+  "artefacts_clean": 526,
+  "conforming_share_of_targeted_percent": 94.4,
+  "violations_by_message": {
+    "Every RiskCase must be linked to at least one Vulnerability or SecurityEvent": 30,
+    "Vulnerability must have exactly one cweId matching pattern CWE-NNNN": 1
+  }
+}

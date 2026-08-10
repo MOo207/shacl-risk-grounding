@@ -1,0 +1,377 @@
+{
+  "clause_references": "Identification: §6.3, §6.4, §6.5; Assessment: §6.9, §6.10; Treatment: §6.8, §6.11, §6.12, §6.13, §6.14, §6.15, §6.16; Monitoring: §6.17, §6.18, §6.20",
+  "acceptable_risk_config": {
+    "acceptable_level_en": "Low",
+    "rationale": "Default thesis-demo threshold. A real organisation would set this per its risk appetite and the §6.5 sensitivity of the asset.",
+    "approved_by": "thesis-demo",
+    "clause_reference": "NFCRM-1:2025 §6.8"
+  },
+  "identification": {
+    "n_assets_6_3": 50,
+    "n_vulnerabilities_6_4": 32,
+    "n_threats_6_5": 6
+  },
+  "assessment_register_6_10": [
+    {
+      "entry_id": "RR-CLASS-DDoS",
+      "scenario": {
+        "scenario_id": "CLASS-DDoS",
+        "asset_id": "GENERIC-ASSET",
+        "asset_name": "Generic CIC-IDS2018 target",
+        "asset_classification": "Sensitive system",
+        "threat_id": "T1498",
+        "threat_description": "Network Denial of Service",
+        "vulnerability_id": null,
+        "vulnerability_description": null,
+        "attack_type": "DDoS",
+        "rationale": ""
+      },
+      "inherent_risk_score": 25,
+      "inherent_risk_level_en": "Catastrophic",
+      "inherent_risk_level_ar": "كارثي",
+      "likelihood_value": 5,
+      "likelihood_time_period": 4,
+      "likelihood_exploitability": 5,
+      "impact_value": 5,
+      "impact_confidentiality": 1,
+      "impact_integrity": 1,
+      "impact_availability": 5,
+      "likelihood_rationale": "Likelihood = max(time_period=4, exploitability=5) = 5 per NFCRM-1:2025 Figure 5. Defaults for DDoS reflect public threat-intelligence consensus.",
+      "impact_rationale": "Impact = max(C=1, I=1, A=5) = 5 per NFCRM-1:2025 Figure 4 (worst-case CIA dimension). Defaults for DDoS reflect typical CIA exposure pattern of the attack class.",
+      "currently_applied_controls": [
+        "CDN scrubbing service",
+        "ISP-level black-holing"
+      ],
+      "treatment_decision": "Mitigate",
+      "treatment_plan": "Mitigation: apply additional controls to reduce likelihood by 0 band(s) and impact by 4 band(s). Target residual: Low.",
+      "treatment_priority": 0,
+      "residual_likelihood": 5,
+      "residual_impact": 1,
+      "residual_risk_score": 5,
+      "residual_risk_level_en": "Low",
+      "treatment_status": "planned",
+      "last_updated": "2026-05-08T22:34:24.839133+00:00",
+      "clause_reference": "NFCRM-1:2025 §6.10"
+    },
+    {
+      "entry_id": "RR-CLASS-DoS",
+      "scenario": {
+        "scenario_id": "CLASS-DoS",
+        "asset_id": "GENERIC-ASSET",
+        "asset_name": "Generic CIC-IDS2018 target",
+        "asset_classification": "Sensitive system",
+        "threat_id": "T1499",
+        "threat_description": "Endpoint Denial of Service",
+        "vulnerability_id": null,
+        "vulnerability_description": null,
+        "attack_type": "DoS",
+        "rationale": ""
+      },
+      "inherent_risk_score": 20,
+      "inherent_risk_level_en": "Catastrophic",
+      "inherent_risk_level_ar": "كارثي",
+      "likelihood_value": 5,
+      "likelihood_time_period": 4,
+      "likelihood_exploitability": 5,
+      "impact_value": 4,
+      "impact_confidentiality": 1,
+      "impact_integrity": 1,
+      "impact_availability": 4,
+      "likelihood_rationale": "Likelihood = max(time_period=4, exploitability=5) = 5 per NFCRM-1:2025 Figure 5. Defaults for DoS reflect public threat-intelligence consensus.",
+      "impact_rationale": "Impact = max(C=1, I=1, A=4) = 4 per NFCRM-1:2025 Figure 4 (worst-case CIA dimension). Defaults for DoS reflect typical CIA exposure pattern of the attack class.",
+      "currently_applied_controls": [
+        "Rate limiting",
+        "Reverse-proxy timeouts"
+      ],
+      "treatment_decision": "Mitigate",
+      "treatment_plan": "Mitigation: apply additional controls to reduce likelihood by 0 band(s) and impact by 3 band(s). Target residual: Low.",
+      "treatment_priority": 0,
+      "residual_likelihood": 5,
+      "residual_impact": 1,
+      "residual_risk_score": 5,
+      "residual_risk_level_en": "Low",
+      "treatment_status": "planned",
+      "last_updated": "2026-05-08T22:34:24.839093+00:00",
+      "clause_reference": "NFCRM-1:2025 §6.10"
+    },
+    {
+      "entry_id": "RR-CLASS-BruteForce",
+      "scenario": {
+        "scenario_id": "CLASS-BruteForce",
+        "asset_id": "GENERIC-ASSET",
+        "asset_name": "Generic CIC-IDS2018 target",
+        "asset_classification": "Sensitive system",
+        "threat_id": "T1110",
+        "threat_description": "Brute Force",
+        "vulnerability_id": null,
+        "vulnerability_description": null,
+        "attack_type": "BruteForce",
+        "rationale": ""
+      },
+      "inherent_risk_score": 20,
+      "inherent_risk_level_en": "Catastrophic",
+      "inherent_risk_level_ar": "كارثي",
+      "likelihood_value": 5,
+      "likelihood_time_period": 5,
+      "likelihood_exploitability": 5,
+      "impact_value": 4,
+      "impact_confidentiality": 4,
+      "impact_integrity": 3,
+      "impact_availability": 2,
+      "likelihood_rationale": "Likelihood = max(time_period=5, exploitability=5) = 5 per NFCRM-1:2025 Figure 5. Defaults for BruteForce reflect public threat-intelligence consensus.",
+      "impact_rationale": "Impact = max(C=4, I=3, A=2) = 4 per NFCRM-1:2025 Figure 4 (worst-case CIA dimension). Defaults for BruteForce reflect typical CIA exposure pattern of the attack class.",
+      "currently_applied_controls": [
+        "Account lockout",
+        "Login throttling"
+      ],
+      "treatment_decision": "Mitigate",
+      "treatment_plan": "Mitigation: apply additional controls to reduce likelihood by 0 band(s) and impact by 3 band(s). Target residual: Low.",
+      "treatment_priority": 0,
+      "residual_likelihood": 5,
+      "residual_impact": 1,
+      "residual_risk_score": 5,
+      "residual_risk_level_en": "Low",
+      "treatment_status": "planned",
+      "last_updated": "2026-05-08T22:34:24.839151+00:00",
+      "clause_reference": "NFCRM-1:2025 §6.10"
+    },
+    {
+      "entry_id": "RR-CLASS-WebAttack",
+      "scenario": {
+        "scenario_id": "CLASS-WebAttack",
+        "asset_id": "GENERIC-ASSET",
+        "asset_name": "Generic CIC-IDS2018 target",
+        "asset_classification": "Sensitive system",
+        "threat_id": "T1190",
+        "threat_description": "Exploit Public-Facing Application",
+        "vulnerability_id": null,
+        "vulnerability_description": null,
+        "attack_type": "WebAttack",
+        "rationale": ""
+      },
+      "inherent_risk_score": 20,
+      "inherent_risk_level_en": "Catastrophic",
+      "inherent_risk_level_ar": "كارثي",
+      "likelihood_value": 5,
+      "likelihood_time_period": 4,
+      "likelihood_exploitability": 5,
+      "impact_value": 4,
+      "impact_confidentiality": 4,
+      "impact_integrity": 4,
+      "impact_availability": 2,
+      "likelihood_rationale": "Likelihood = max(time_period=4, exploitability=5) = 5 per NFCRM-1:2025 Figure 5. Defaults for WebAttack reflect public threat-intelligence consensus.",
+      "impact_rationale": "Impact = max(C=4, I=4, A=2) = 4 per NFCRM-1:2025 Figure 4 (worst-case CIA dimension). Defaults for WebAttack reflect typical CIA exposure pattern of the attack class.",
+      "currently_applied_controls": [
+        "WAF (OWASP CRS)",
+        "Parameterised queries"
+      ],
+      "treatment_decision": "Mitigate",
+      "treatment_plan": "Mitigation: apply additional controls to reduce likelihood by 0 band(s) and impact by 3 band(s). Target residual: Low.",
+      "treatment_priority": 0,
+      "residual_likelihood": 5,
+      "residual_impact": 1,
+      "residual_risk_score": 5,
+      "residual_risk_level_en": "Low",
+      "treatment_status": "planned",
+      "last_updated": "2026-05-08T22:34:24.839164+00:00",
+      "clause_reference": "NFCRM-1:2025 §6.10"
+    },
+    {
+      "entry_id": "RR-CLASS-Infiltration",
+      "scenario": {
+        "scenario_id": "CLASS-Infiltration",
+        "asset_id": "GENERIC-ASSET",
+        "asset_name": "Generic CIC-IDS2018 target",
+        "asset_classification": "Sensitive system",
+        "threat_id": "T1570",
+        "threat_description": "Lateral Tool Transfer",
+        "vulnerability_id": null,
+        "vulnerability_description": null,
+        "attack_type": "Infiltration",
+        "rationale": ""
+      },
+      "inherent_risk_score": 15,
+      "inherent_risk_level_en": "High",
+      "inherent_risk_level_ar": "مرتفع",
+      "likelihood_value": 3,
+      "likelihood_time_period": 3,
+      "likelihood_exploitability": 3,
+      "impact_value": 5,
+      "impact_confidentiality": 5,
+      "impact_integrity": 5,
+      "impact_availability": 3,
+      "likelihood_rationale": "Likelihood = max(time_period=3, exploitability=3) = 3 per NFCRM-1:2025 Figure 5. Defaults for Infiltration reflect public threat-intelligence consensus.",
+      "impact_rationale": "Impact = max(C=5, I=5, A=3) = 5 per NFCRM-1:2025 Figure 4 (worst-case CIA dimension). Defaults for Infiltration reflect typical CIA exposure pattern of the attack class.",
+      "currently_applied_controls": [
+        "EDR agent",
+        "Network segmentation"
+      ],
+      "treatment_decision": "Mitigate",
+      "treatment_plan": "Mitigation: apply additional controls to reduce likelihood by 2 band(s) and impact by 0 band(s). Target residual: Low.",
+      "treatment_priority": 0,
+      "residual_likelihood": 1,
+      "residual_impact": 5,
+      "residual_risk_score": 5,
+      "residual_risk_level_en": "Low",
+      "treatment_status": "planned",
+      "last_updated": "2026-05-08T22:34:24.839176+00:00",
+      "clause_reference": "NFCRM-1:2025 §6.10"
+    }
+  ],
+  "treatment_decisions_6_8_11_13": [
+    {
+      "entry_id": "RR-CLASS-DDoS",
+      "treatment_required": true,
+      "treatment": {
+        "decision": "Mitigate",
+        "plan_description": "Mitigation: apply additional controls to reduce likelihood by 0 band(s) and impact by 4 band(s). Target residual: Low.",
+        "likelihood_reduction": 0,
+        "impact_reduction": 4,
+        "priority": 0,
+        "status": "planned",
+        "rationale": "Inherent Catastrophic exceeds acceptable Low; Mitigate is the lowest-cost decision that does not eliminate operational use of the asset.",
+        "clause_reference": "NFCRM-1:2025 §6.11"
+      },
+      "decision_rationale": "Inherent risk level (Catastrophic) exceeds the acceptable level (Low) by 3 band(s); treatment is required per §6.11. Suggested treatment options: Mitigate (apply additional controls), Share (transfer via insurance/contract), or Avoid (eliminate the risk source)."
+    },
+    {
+      "entry_id": "RR-CLASS-DoS",
+      "treatment_required": true,
+      "treatment": {
+        "decision": "Mitigate",
+        "plan_description": "Mitigation: apply additional controls to reduce likelihood by 0 band(s) and impact by 3 band(s). Target residual: Low.",
+        "likelihood_reduction": 0,
+        "impact_reduction": 3,
+        "priority": 0,
+        "status": "planned",
+        "rationale": "Inherent Catastrophic exceeds acceptable Low; Mitigate is the lowest-cost decision that does not eliminate operational use of the asset.",
+        "clause_reference": "NFCRM-1:2025 §6.11"
+      },
+      "decision_rationale": "Inherent risk level (Catastrophic) exceeds the acceptable level (Low) by 3 band(s); treatment is required per §6.11. Suggested treatment options: Mitigate (apply additional controls), Share (transfer via insurance/contract), or Avoid (eliminate the risk source)."
+    },
+    {
+      "entry_id": "RR-CLASS-BruteForce",
+      "treatment_required": true,
+      "treatment": {
+        "decision": "Mitigate",
+        "plan_description": "Mitigation: apply additional controls to reduce likelihood by 0 band(s) and impact by 3 band(s). Target residual: Low.",
+        "likelihood_reduction": 0,
+        "impact_reduction": 3,
+        "priority": 0,
+        "status": "planned",
+        "rationale": "Inherent Catastrophic exceeds acceptable Low; Mitigate is the lowest-cost decision that does not eliminate operational use of the asset.",
+        "clause_reference": "NFCRM-1:2025 §6.11"
+      },
+      "decision_rationale": "Inherent risk level (Catastrophic) exceeds the acceptable level (Low) by 3 band(s); treatment is required per §6.11. Suggested treatment options: Mitigate (apply additional controls), Share (transfer via insurance/contract), or Avoid (eliminate the risk source)."
+    },
+    {
+      "entry_id": "RR-CLASS-WebAttack",
+      "treatment_required": true,
+      "treatment": {
+        "decision": "Mitigate",
+        "plan_description": "Mitigation: apply additional controls to reduce likelihood by 0 band(s) and impact by 3 band(s). Target residual: Low.",
+        "likelihood_reduction": 0,
+        "impact_reduction": 3,
+        "priority": 0,
+        "status": "planned",
+        "rationale": "Inherent Catastrophic exceeds acceptable Low; Mitigate is the lowest-cost decision that does not eliminate operational use of the asset.",
+        "clause_reference": "NFCRM-1:2025 §6.11"
+      },
+      "decision_rationale": "Inherent risk level (Catastrophic) exceeds the acceptable level (Low) by 3 band(s); treatment is required per §6.11. Suggested treatment options: Mitigate (apply additional controls), Share (transfer via insurance/contract), or Avoid (eliminate the risk source)."
+    },
+    {
+      "entry_id": "RR-CLASS-Infiltration",
+      "treatment_required": true,
+      "treatment": {
+        "decision": "Mitigate",
+        "plan_description": "Mitigation: apply additional controls to reduce likelihood by 2 band(s) and impact by 0 band(s). Target residual: Low.",
+        "likelihood_reduction": 2,
+        "impact_reduction": 0,
+        "priority": 0,
+        "status": "planned",
+        "rationale": "Inherent High exceeds acceptable Low; Mitigate is the lowest-cost decision that does not eliminate operational use of the asset.",
+        "clause_reference": "NFCRM-1:2025 §6.11"
+      },
+      "decision_rationale": "Inherent risk level (High) exceeds the acceptable level (Low) by 2 band(s); treatment is required per §6.11. Suggested treatment options: Mitigate (apply additional controls), Share (transfer via insurance/contract), or Avoid (eliminate the risk source)."
+    }
+  ],
+  "monitoring_report_6_17": {
+    "generated_at": "2026-05-08T22:34:24.839522+00:00",
+    "clause_reference": "NFCRM-1:2025 §6.17 + §6.18",
+    "n_entries": 5,
+    "inherent_distribution": {
+      "Catastrophic": 4,
+      "High": 1
+    },
+    "residual_distribution": {
+      "Low": 5
+    },
+    "treatment_status_distribution": {
+      "planned": 5
+    },
+    "treatment_decision_distribution": {
+      "Mitigate": 5
+    },
+    "above_acceptable_count": 0,
+    "above_acceptable_rationale": "Counts entries whose residual risk strictly exceeds the acceptable level (Low). These warrant escalation per §6.5 (immediate notification of catastrophic-level risks to NCA)."
+  },
+  "monitoring_statistical_criteria_6_18": [
+    {
+      "id": "STAT-01",
+      "name": "Risk-level distribution",
+      "computed_from": "register entries grouped by inherent_risk_level_en",
+      "unit": "count per level"
+    },
+    {
+      "id": "STAT-02",
+      "name": "Treatment-status distribution",
+      "computed_from": "register entries grouped by treatment_status",
+      "unit": "count per status"
+    },
+    {
+      "id": "STAT-03",
+      "name": "Residual-risk-level distribution",
+      "computed_from": "register entries grouped by residual_risk_level_en (post-treatment)",
+      "unit": "count per level"
+    },
+    {
+      "id": "STAT-04",
+      "name": "Treatment-decision mix",
+      "computed_from": "register entries grouped by treatment_decision",
+      "unit": "count per decision"
+    },
+    {
+      "id": "STAT-05",
+      "name": "Above-acceptable count",
+      "computed_from": "register entries where residual_risk exceeds acceptable_level",
+      "unit": "count"
+    }
+  ],
+  "monitoring_triggers_6_20": {
+    "clause_reference": "NFCRM-1:2025 §6.20",
+    "any_triggered": true,
+    "treatment_plan_changes": [
+      "RR-CLASS-BruteForce: plan/decision/status changed",
+      "RR-CLASS-DDoS: plan/decision/status changed",
+      "RR-CLASS-DoS: plan/decision/status changed",
+      "RR-CLASS-Infiltration: plan/decision/status changed",
+      "RR-CLASS-WebAttack: plan/decision/status changed"
+    ],
+    "threat_changes": [],
+    "scenario_changes": [
+      "removed entry: RR-DEMO-001-DDoS",
+      "removed entry: RR-DEMO-002-BruteForce",
+      "removed entry: RR-DEMO-003-DoS",
+      "removed entry: RR-DEMO-004-WebAttack",
+      "removed entry: RR-DEMO-005-Infiltration"
+    ],
+    "control_changes": [
+      "RR-CLASS-BruteForce: controls changed (2 -> 2)",
+      "RR-CLASS-DDoS: controls changed (2 -> 2)",
+      "RR-CLASS-DoS: controls changed (2 -> 2)",
+      "RR-CLASS-Infiltration: controls changed (2 -> 2)",
+      "RR-CLASS-WebAttack: controls changed (2 -> 2)"
+    ],
+    "infrastructure_changes": []
+  }
+}

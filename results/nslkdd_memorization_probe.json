@@ -1,0 +1,284 @@
+{
+  "description": "NSL-KDD memorization probes for the channel-independent safety effect.\n\nReviewer-requested (DKE round 5, item 7 / methodology W7). Two cheap probes,\n40 Haiku calls total, interpretation rules pre-registered here BEFORE running:\n\nProbe A -- dataset identification. 20 neutral NL descriptions (the exact\nstrings the Stage-1a arm reads, CVE and asset context stripped) are sent with\nthe question \"Which public benchmark dataset, if any, does this connection\nrecord most likely come from?\". Rule: if the model names NSL-KDD / KDD Cup 99\n/ KDDTest in >=50% of cases, benchmark recognition is demonstrated and the\npaper must downgrade the channel-independent effect to \"possibly\nmemorisation-assisted\"; below 20%, recognition is weak; between, ambiguous.\n\nProbe B -- perturbation stability. The same 20 cases have non-diagnostic\nnumeric features jittered (duration +/-7%, src/dst_bytes +/-10%,\ndst_host_count +/-10%; zeros stay zero; categoricals untouched), the neutral\nNL is re-rendered, and the Stage-1a classification prompt is re-run. Rule:\nhigh class-agreement with the unperturbed run (>=80%) means the inference\nrides feature *patterns* rather than exact memorized rows (memorization of\nrow-level values not supported); low agreement means the inference is\nbrittle and row-memorization cannot be separated from pattern use.\n\nModel: claude-haiku-4-5-20251001 via the Claude CLI wrapper (as all\nexperiments in this project; disclosed as CLI access).",
+  "model": "claude-haiku-4-5-20251001",
+  "n_probe_cases": 20,
+  "probe_a_dataset_identification": {
+    "n_named_kdd_family": 20,
+    "rate": 1.0,
+    "records": [
+      {
+        "case_id": "nslr_test_005",
+        "true_class": "DoS",
+        "response": "NSL-KDD",
+        "named_kdd_family": true
+      },
+      {
+        "case_id": "nslr_test_006",
+        "true_class": "DoS",
+        "response": "NSL-KDD",
+        "named_kdd_family": true
+      },
+      {
+        "case_id": "nslr_test_011",
+        "true_class": "DoS",
+        "response": "NSL-KDD\n\nThe S0 flag, same-host/destination-host connection statistics (36/5 counts), service diversity rates (14%, 19%), and SYN/REJ error rates are characteristic feature patterns of NSL-KDD's computed statistical feature set.",
+        "named_kdd_family": true
+      },
+      {
+        "case_id": "nslr_test_013",
+        "true_class": "DoS",
+        "response": "NSL-KDD",
+        "named_kdd_family": true
+      },
+      {
+        "case_id": "nslr_test_008",
+        "true_class": "Normal",
+        "response": "NSL-KDD\n\nThe host/service window features, error-rate taxonomy (SYN/REJ at service and destination levels), and \"authenticated session\" field match NSL-KDD's feature engineering exactly.",
+        "named_kdd_family": true
+      },
+      {
+        "case_id": "nslr_test_009",
+        "true_class": "Normal",
+        "response": "NSL-KDD",
+        "named_kdd_family": true
+      },
+      {
+        "case_id": "nslr_test_010",
+        "true_class": "Normal",
+        "response": "NSL-KDD\n\nThe destination-host 2-second window aggregates, combined with explicit SYN/REJ error rates at connection and service level, plus the \"authenticated session\" field, are signature NSL-KDD features. CIC-IDS2018 and UNSW-NB15 use different feature sets (flow-based with packet/byte statistics, ",
+        "named_kdd_family": true
+      },
+      {
+        "case_id": "nslr_test_015",
+        "true_class": "Normal",
+        "response": "NSL-KDD\n\nThe \"same-host\" and \"destination-host 2-second window\" statistics, combined with SYN/REJ error rates and service diversity percentages, are diagnostic features of NSL-KDD's engineered feature set—not found in flow-based datasets like CIC-IDS2018 or UNSW-NB15.",
+        "named_kdd_family": true
+      },
+      {
+        "case_id": "nslr_test_001",
+        "true_class": "Probe",
+        "response": "NSL-KDD",
+        "named_kdd_family": true
+      },
+      {
+        "case_id": "nslr_test_003",
+        "true_class": "Probe",
+        "response": "NSL-KDD\n\nThe \"destination-host 2-second window\" statistics with SYN-error rates are signature NSL-KDD engineered features. This S0 flag + 100% SYN-error + 0B data pattern indicates a SYN flood, typical of NSL-KDD's DoS dataset subset.",
+        "named_kdd_family": true
+      },
+      {
+        "case_id": "nslr_test_004",
+        "true_class": "Probe",
+        "response": "NSL-KDD\n\n(94% REJ-error rate on zero-duration connections is a signature artifact of NSL-KDD's synthetic generation; CIC-IDS2018 and UNSW-NB15 capture more realistic connection distributions.)",
+        "named_kdd_family": true
+      },
+      {
+        "case_id": "nslr_test_020",
+        "true_class": "Probe",
+        "response": "NSL-KDD",
+        "named_kdd_family": true
+      },
+      {
+        "case_id": "nslr_test_002",
+        "true_class": "R2L",
+        "response": "NSL-KDD\n\nThe 2-second destination-host window, same-host/service diversity metrics, and SYN/REJ error rates are characteristic NSL-KDD engineered features.",
+        "named_kdd_family": true
+      },
+      {
+        "case_id": "nslr_test_012",
+        "true_class": "R2L",
+        "response": "NSL-KDD\n\nThe SF flag, SYN/REJ error metrics, same-host/destination-host 2-second window statistics, and service field format are definitive NSL-KDD signatures.",
+        "named_kdd_family": true
+      },
+      {
+        "case_id": "nslr_test_016",
+        "true_class": "R2L",
+        "response": "NSL-KDD",
+        "named_kdd_family": true
+      },
+      {
+        "case_id": "nslr_test_017",
+        "true_class": "R2L",
+        "response": "NSL-KDD\n\n(The 2-second destination-host aggregation window and SF flag are NSL-KDD signatures.)",
+        "named_kdd_family": true
+      },
+      {
+        "case_id": "nslr_test_000",
+        "true_class": "U2R",
+        "response": "NSL-KDD",
+        "named_kdd_family": true
+      },
+      {
+        "case_id": "nslr_test_007",
+        "true_class": "U2R",
+        "response": "NSL-KDD",
+        "named_kdd_family": true
+      },
+      {
+        "case_id": "nslr_test_014",
+        "true_class": "U2R",
+        "response": "NSL-KDD",
+        "named_kdd_family": true
+      },
+      {
+        "case_id": "nslr_test_021",
+        "true_class": "U2R",
+        "response": "NSL-KDD",
+        "named_kdd_family": true
+      }
+    ]
+  },
+  "probe_b_perturbation_stability": {
+    "n_both_parsed": 20,
+    "n_agree": 13,
+    "agreement_rate_over_parsed": 0.65,
+    "jitter_spec": {
+      "duration": 0.07,
+      "src_bytes": 0.1,
+      "dst_bytes": 0.1,
+      "dst_host_count": 0.1
+    },
+    "records": [
+      {
+        "case_id": "nslr_test_005",
+        "true_class": "DoS",
+        "class_unperturbed": "Probe",
+        "class_perturbed": "Probe",
+        "agree": true
+      },
+      {
+        "case_id": "nslr_test_006",
+        "true_class": "DoS",
+        "class_unperturbed": "Probe",
+        "class_perturbed": "DoS",
+        "agree": false
+      },
+      {
+        "case_id": "nslr_test_011",
+        "true_class": "DoS",
+        "class_unperturbed": "Probe",
+        "class_perturbed": "Probe",
+        "agree": true
+      },
+      {
+        "case_id": "nslr_test_013",
+        "true_class": "DoS",
+        "class_unperturbed": "Probe",
+        "class_perturbed": "Probe",
+        "agree": true
+      },
+      {
+        "case_id": "nslr_test_008",
+        "true_class": "Normal",
+        "class_unperturbed": "Normal",
+        "class_perturbed": "Normal",
+        "agree": true
+      },
+      {
+        "case_id": "nslr_test_009",
+        "true_class": "Normal",
+        "class_unperturbed": "Probe",
+        "class_perturbed": "Normal",
+        "agree": false
+      },
+      {
+        "case_id": "nslr_test_010",
+        "true_class": "Normal",
+        "class_unperturbed": "DoS",
+        "class_perturbed": "DoS",
+        "agree": true
+      },
+      {
+        "case_id": "nslr_test_015",
+        "true_class": "Normal",
+        "class_unperturbed": "Normal",
+        "class_perturbed": "Normal",
+        "agree": true
+      },
+      {
+        "case_id": "nslr_test_001",
+        "true_class": "Probe",
+        "class_unperturbed": "Probe",
+        "class_perturbed": "Probe",
+        "agree": true
+      },
+      {
+        "case_id": "nslr_test_003",
+        "true_class": "Probe",
+        "class_unperturbed": "DoS",
+        "class_perturbed": "DoS",
+        "agree": true
+      },
+      {
+        "case_id": "nslr_test_004",
+        "true_class": "Probe",
+        "class_unperturbed": "Probe",
+        "class_perturbed": "Probe",
+        "agree": true
+      },
+      {
+        "case_id": "nslr_test_020",
+        "true_class": "Probe",
+        "class_unperturbed": "R2L",
+        "class_perturbed": "Probe",
+        "agree": false
+      },
+      {
+        "case_id": "nslr_test_002",
+        "true_class": "R2L",
+        "class_unperturbed": "Probe",
+        "class_perturbed": "Normal",
+        "agree": false
+      },
+      {
+        "case_id": "nslr_test_012",
+        "true_class": "R2L",
+        "class_unperturbed": "Probe",
+        "class_perturbed": "DoS",
+        "agree": false
+      },
+      {
+        "case_id": "nslr_test_016",
+        "true_class": "R2L",
+        "class_unperturbed": "R2L",
+        "class_perturbed": "R2L",
+        "agree": true
+      },
+      {
+        "case_id": "nslr_test_017",
+        "true_class": "R2L",
+        "class_unperturbed": "DoS",
+        "class_perturbed": "DoS",
+        "agree": true
+      },
+      {
+        "case_id": "nslr_test_000",
+        "true_class": "U2R",
+        "class_unperturbed": "DoS",
+        "class_perturbed": "Probe",
+        "agree": false
+      },
+      {
+        "case_id": "nslr_test_007",
+        "true_class": "U2R",
+        "class_unperturbed": "R2L",
+        "class_perturbed": "R2L",
+        "agree": true
+      },
+      {
+        "case_id": "nslr_test_014",
+        "true_class": "U2R",
+        "class_unperturbed": "Normal",
+        "class_perturbed": "Normal",
+        "agree": true
+      },
+      {
+        "case_id": "nslr_test_021",
+        "true_class": "U2R",
+        "class_unperturbed": "DoS",
+        "class_perturbed": "Probe",
+        "agree": false
+      }
+    ]
+  }
+}

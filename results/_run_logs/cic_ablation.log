@@ -1,0 +1,75 @@
+Loaded 120 cases from D:\01_Projects\INTERSYMBOLIC-GRC\results\cic_unified_rerun\test_sample.json (CVE-ABLATED arm)
+  [72/120] test_071: Catastrophic vs GT=Catastrophic [OK] (36780ms)
+  [73/120] test_072: Very Low vs GT=Very Low [OK] (35502ms)
+  [74/120] test_073: Catastrophic vs GT=Catastrophic [OK] (33583ms)
+  [75/120] test_074: Medium vs GT=High [MISS] (19416ms)
+  [76/120] test_075: High vs GT=High [OK] (35581ms)
+  [77/120] test_076: High vs GT=High [OK] (14869ms)
+  [78/120] test_077: High vs GT=High [OK] (18068ms)
+  [79/120] test_078: Low vs GT=Low [OK] (19846ms)
+  [80/120] test_079: Medium vs GT=Medium [OK] (21361ms)
+  [81/120] test_080: High vs GT=High [OK] (19080ms)
+  [82/120] test_081: Catastrophic vs GT=Catastrophic [OK] (22772ms)
+  [83/120] test_082: Catastrophic vs GT=Catastrophic [OK] (24534ms)
+  [84/120] test_083: Catastrophic vs GT=Catastrophic [OK] (18681ms)
+  [85/120] test_084: Very Low vs GT=Medium [MISS] (15078ms)
+  [86/120] test_085: Medium vs GT=Medium [OK] (26951ms)
+  [87/120] test_086: Catastrophic vs GT=Catastrophic [OK] (22294ms)
+  [88/120] test_087: Catastrophic vs GT=Catastrophic [OK] (13176ms)
+  [89/120] test_088: Medium vs GT=Medium [OK] (30749ms)
+  [90/120] test_089: Medium vs GT=Medium [OK] (31034ms)
+  [91/120] test_090: Medium vs GT=Medium [OK] (43447ms)
+  [92/120] test_091: Catastrophic vs GT=Catastrophic [OK] (16574ms)
+  [93/120] test_092: Medium vs GT=Medium [OK] (17974ms)
+  [94/120] test_093: Catastrophic vs GT=Catastrophic [OK] (29653ms)
+  [95/120] test_094: Catastrophic vs GT=Catastrophic [OK] (31150ms)
+  [96/120] test_095: Medium vs GT=Medium [OK] (18835ms)
+  [97/120] test_096: Medium vs GT=Medium [OK] (27237ms)
+  [98/120] test_097: Catastrophic vs GT=Catastrophic [OK] (20048ms)
+  [99/120] test_098: Catastrophic vs GT=Catastrophic [OK] (23771ms)
+  [100/120] test_099: Very Low vs GT=Very Low [OK] (16771ms)
+  [101/120] test_100: Medium vs GT=Medium [OK] (23838ms)
+  [102/120] test_101: Medium vs GT=Medium [OK] (29439ms)
+  [103/120] test_102: Very Low vs GT=Very Low [OK] (24738ms)
+  [104/120] test_103: Catastrophic vs GT=Catastrophic [OK] (37116ms)
+  [105/120] test_104: Catastrophic vs GT=Catastrophic [OK] (17670ms)
+  [106/120] test_105: Medium vs GT=Medium [OK] (52709ms)
+  [107/120] test_106: High vs GT=High [OK] (82941ms)
+  [108/120] test_107: Catastrophic vs GT=Catastrophic [OK] (41236ms)
+  [109/120] test_108: Catastrophic vs GT=Catastrophic [OK] (25092ms)
+  [110/120] test_109: High vs GT=High [OK] (51979ms)
+  [111/120] test_110: Low vs GT=Low [OK] (26053ms)
+  [112/120] test_111: Catastrophic vs GT=Catastrophic [OK] (30097ms)
+  [113/120] test_112: Catastrophic vs GT=Catastrophic [OK] (62142ms)
+  [114/120] test_113: High vs GT=High [OK] (40575ms)
+  [115/120] test_114: Medium vs GT=Medium [OK] (43243ms)
+  [116/120] test_115: Catastrophic vs GT=Catastrophic [OK] (31738ms)
+  [117/120] test_116: Very Low vs GT=Very Low [OK] (24947ms)
+  [118/120] test_117: Very Low vs GT=Medium [MISS] (34664ms)
+  [119/120] test_118: Medium vs GT=Medium [OK] (43019ms)
+  [120/120] test_119: Catastrophic vs GT=Catastrophic [OK] (35634ms)
+
+=== SUMMARY (CVE-ABLATED) ===
+{
+  "metrics": {
+    "n": 120,
+    "exact_match_pct": 95.0,
+    "within1_pct": 96.66666666666667,
+    "under_escalation_pct": 3.3333333333333335,
+    "over_escalation_pct": 1.6666666666666667,
+    "severe_recall_pct": 96.61016949152543,
+    "severe_total": 59,
+    "worst_miss_levels": 4
+  },
+  "mcnemar": {
+    "b_xgb_correct_tri_wrong": 0,
+    "c_xgb_wrong_tri_correct": 0,
+    "n_discordant": 0,
+    "p_value": 1.0
+  },
+  "api_errors": 0,
+  "parse_failures": 0
+}
+
+Saved: D:\01_Projects\INTERSYMBOLIC-GRC\results\cic_unified_rerun\tristage_haiku_cve_ablated_raw.jsonl
+Saved: D:\01_Projects\INTERSYMBOLIC-GRC\results\cic_unified_rerun\tristage_haiku_cve_ablated_results.json

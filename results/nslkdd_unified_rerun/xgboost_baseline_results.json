@@ -1,0 +1,53 @@
+{
+  "meta": {
+    "description": "Fixed, reproducible XGBoost baseline for the NSL-KDD unified rerun, evaluated on the fresh held-out test sample (results/nslkdd_unified_rerun/test_sample.json, N=100, 20/class).",
+    "xgb_params": {
+      "n_estimators": 100,
+      "random_state": 42,
+      "eval_metric": "mlogloss",
+      "tree_method": "hist",
+      "n_jobs": 1
+    },
+    "fix_applied": "Original build_nslkdd_ablation_testset.py::train_ml_models() left tree_method and n_jobs unset, which selects the (possibly multi-threaded) histogram method whose parallel float-summation order is not guaranteed deterministic run-to-run even with random_state fixed. Pinning tree_method='hist' explicitly (not 'auto') and n_jobs=1 (single-threaded) removes that source of nondeterminism while remaining fast (~10-30s per 126k-row train, vs. tree_method='exact' which is deterministic but far slower on this ~123-column one-hot-encoded feature matrix). Empirically verified in this environment (xgboost 3.2.0): default settings, tree_method='exact'+n_jobs=1, and tree_method='hist'+n_jobs=1 all independently reproduced 50/50 identical predictions across two from-scratch retrains -- the originally reported 24/50 (48%) mismatch was not reproducible in this session and is most likely attributable to an xgboost/sklearn version difference between when results/nslkdd_ablation/test_set.json was first generated and the later verification retrain, not to true algorithmic nondeterminism. tree_method='hist'+n_jobs=1 is still pinned here as the safer, explicit, single-threaded default going forward.",
+    "train_source": "data/raw/NSL-KDD/KDDTrain+.txt",
+    "eval_source": "data/raw/NSL-KDD/KDDTest+.txt",
+    "risk_level_mapping": "identical NFCRM SS6.9 lookup (pipeline.nfcrm.risk_score.compute_risk_score) as scripts/safety_table_haiku.py / scripts/run_nslkdd_cost_sensitive_baseline.py",
+    "under_over_escalation_metric": "identical to scripts/safety_table_haiku.py::metrics()"
+  },
+  "reproducibility_verification": {
+    "n_eval": 100,
+    "n_match": 100,
+    "match_rate": 1.0,
+    "max_predicted_proba_abs_diff": 0.0,
+    "fully_reproducible": true,
+    "xgb_params": {
+      "n_estimators": 100,
+      "random_state": 42,
+      "eval_metric": "mlogloss",
+      "tree_method": "hist",
+      "n_jobs": 1
+    },
+    "fix_applied": "Original build_nslkdd_ablation_testset.py::train_ml_models() left tree_method and n_jobs unset, which selects the (possibly multi-threaded) histogram method whose parallel float-summation order is not guaranteed deterministic run-to-run even with random_state fixed. Pinning tree_method='hist' explicitly (not 'auto') and n_jobs=1 (single-threaded) removes that source of nondeterminism while remaining fast (~10-30s per 126k-row train, vs. tree_method='exact' which is deterministic but far slower on this ~123-column one-hot-encoded feature matrix). Empirically verified in this environment (xgboost 3.2.0): default settings, tree_method='exact'+n_jobs=1, and tree_method='hist'+n_jobs=1 all independently reproduced 50/50 identical predictions across two from-scratch retrains -- the originally reported 24/50 (48%) mismatch was not reproducible in this session and is most likely attributable to an xgboost/sklearn version difference between when results/nslkdd_ablation/test_set.json was first generated and the later verification retrain, not to true algorithmic nondeterminism. tree_method='hist'+n_jobs=1 is still pinned here as the safer, explicit, single-threaded default going forward."
+  },
+  "leakage_validation": {
+    "n_cases_checked": 150,
+    "n_leaky_cases": 0,
+    "total_regex_hits": 0,
+    "zero_leaks_confirmed": true,
+    "patterns_source": "named-attack + class-name patterns copied verbatim from scripts/tag_nslkdd_leakage_and_clean_subset.py, plus an additional broader interpretive-language ban (flood/scan/brute-force/exfiltrate/privilege escalation/reconnaissance/attack/exploit/malicious/compromise) since this is validating a NEW generator, not just re-scoring the old one."
+  },
+  "held_out_test_xgboost_baseline_metrics": {
+    "n": 100,
+    "exact_pct": 49.0,
+    "within1_pct": 53.0,
+    "under_escalation_pct": 48.0,
+    "over_escalation_pct": 3.0,
+    "severe_recall_pct": 42.9,
+    "severe_total": 49,
+    "worst_miss_levels": 4
+  },
+  "sample_sizes": {
+    "calibration_n": 50,
+    "test_n": 100
+  }
+}

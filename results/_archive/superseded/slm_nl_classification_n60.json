@@ -1,0 +1,391 @@
+{
+  "mode": "evaluation",
+  "model": "glm-4.7",
+  "backend": "zai_api",
+  "dataset": "cicids",
+  "n_samples": 60,
+  "n_valid": 60,
+  "n_errors": 0,
+  "accuracy": 0.55,
+  "per_class_accuracy": {
+    "Benign": 0.4,
+    "BruteForce": 0.4,
+    "DDoS": 0.7,
+    "DoS": 0.7,
+    "Infiltration": 0.4,
+    "WebAttack": 0.7
+  },
+  "per_class_counts": {
+    "Benign": 10,
+    "BruteForce": 10,
+    "DDoS": 10,
+    "DoS": 10,
+    "Infiltration": 10,
+    "WebAttack": 10
+  },
+  "elapsed_seconds": 1389.40012216568,
+  "note": "NL feature conversion layer v2 (W17) applied. v2 adds class-discriminating signals: DDoS asymmetry ratio, brute-force auth-port bidirectional pattern, web response asymmetry, infiltration long-session cue. Few-shot prompting (12 examples) added. Fixes the 0% accuracy design error in cicids_slm.json.",
+  "results": [
+    {
+      "true": "Benign",
+      "predicted": "Benign",
+      "correct": true,
+      "nl_description": "Network flow targeting HTTP (web). Duration: 5.3s. Packets: 3 forward, 1 backward. TCP initial window: 8192 bytes. No payload data and minimal packet exchange \u2014 consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe."
+    },
+    {
+      "true": "Benign",
+      "predicted": "Infiltration",
+      "correct": false,
+      "nl_description": "Flow targeting non-standard port 51438 \u2014 unusual destination for normal traffic, may indicate backdoor communication, command-and-control (C2) channel, or lateral movement associated with infiltration. Very brief contact (0.00 ms) \u2014 possible reconnaissance probe or C2 beacon. Packets: 2 forward, 0 backward. Window: 114."
+    },
+    {
+      "true": "DoS",
+      "predicted": "DDoS",
+      "correct": false,
+      "nl_description": "Network flow targeting HTTP (web). Duration: 0.0s. Packets: 3 forward, 4 backward. TCP initial window: 26883 bytes. Bytes: 337 sent, 935 received. Packet rate: 417 pkt/s. Short HTTP probe with non-standard TCP window \u2014 may be DoS variant, DDoS flood packet, or scan."
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "Benign",
+      "correct": false,
+      "nl_description": "Network flow targeting DNS. Duration: 0.31 ms (very short). Packets: 1 forward, 1 backward. Bytes: 43 sent, 59 received."
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "BruteForce",
+      "correct": true,
+      "nl_description": "Sustained HTTP session lasting 57 seconds with 203 forward requests and 104 server responses \u2014 an extended bidirectional exchange on a web server lasting nearly a minute is characteristic of automated HTTP brute-force credential stuffing (repeated login attempts against a web application). Data transferred: 54.8 KB sent, 185.5 KB received (avg packet size 799 bytes). Consistent with repeated HTTP POST login requests. TCP window: 8192 bytes \u2014 full TCP handshake completed (real connections, not spoofed)."
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "WebAttack",
+      "correct": true,
+      "nl_description": "HTTP session to port 80, duration 5.0 seconds, 4 client requests and 4 server responses \u2014 slow, deliberate HTTP exchange typical of automated web attack tooling (SQL injection probes, XSS payloads, or directory traversal). Client sent 603 bytes in 4 packets (avg 150 B/pkt) \u2014 oversized HTTP requests may contain injection payloads. TCP window: 8192 bytes, PPS: 1.6 \u2014 very low rate consistent with scripted web attack tool."
+    },
+    {
+      "true": "DoS",
+      "predicted": "DoS",
+      "correct": true,
+      "nl_description": "HTTP flow to port 80 with TCP initial window of exactly 225 bytes \u2014 this specific window size is a known signature of Slowloris and slow-rate denial-of-service (DoS) attack tools. Flow: 2 forward packet(s), 0 backward, duration 26.1 ms. Minimal payload, no server response \u2014 consistent with DoS connection exhaustion."
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "Infiltration",
+      "correct": true,
+      "nl_description": "Flow targeting non-standard port 51678 \u2014 unusual destination for normal traffic, may indicate backdoor communication, command-and-control (C2) channel, or lateral movement associated with infiltration. Very brief contact (0.00 ms) \u2014 possible reconnaissance probe or C2 beacon. Packets: 2 forward, 0 backward. Window: 31."
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "BruteForce",
+      "correct": true,
+      "nl_description": "Sustained HTTP session lasting 57 seconds with 153 forward requests and 104 server responses \u2014 an extended bidirectional exchange on a web server lasting nearly a minute is characteristic of automated HTTP brute-force credential stuffing (repeated login attempts against a web application). Data transferred: 53.7 KB sent, 70.8 KB received (avg packet size 494 bytes). Consistent with repeated HTTP POST login requests. TCP window: 8192 bytes \u2014 full TCP handshake completed (real connections, not spoofed)."
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "WebAttack",
+      "correct": true,
+      "nl_description": "HTTP session to port 80, duration 5.0 seconds, 4 client requests and 4 server responses \u2014 slow, deliberate HTTP exchange typical of automated web attack tooling (SQL injection probes, XSS payloads, or directory traversal). Server response (1910 bytes) exceeds client payload (709 bytes) \u2014 enlarged server response is consistent with successful SQL injection or data disclosure. TCP window: 8192 bytes, PPS: 1.6 \u2014 very low rate consistent with scripted web attack tool."
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "Benign",
+      "correct": false,
+      "nl_description": "Network flow targeting DNS. Duration: 0.23 ms (very short). Packets: 1 forward, 1 backward. Bytes: 30 sent, 46 received."
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "WebAttack",
+      "correct": true,
+      "nl_description": "HTTP session to port 80, duration 5.0 seconds, 4 client requests and 4 server responses \u2014 slow, deliberate HTTP exchange typical of automated web attack tooling (SQL injection probes, XSS payloads, or directory traversal). Server response (526 bytes) exceeds client payload (483 bytes) \u2014 enlarged server response is consistent with successful SQL injection or data disclosure. TCP window: 8192 bytes, PPS: 1.6 \u2014 very low rate consistent with scripted web attack tool."
+    },
+    {
+      "true": "DoS",
+      "predicted": "DoS",
+      "correct": true,
+      "nl_description": "HTTP flow to port 80 with TCP initial window of exactly 225 bytes \u2014 this specific window size is a known signature of Slowloris and slow-rate denial-of-service (DoS) attack tools. Flow: 2 forward packet(s), 0 backward, duration 1.5 ms. Minimal payload, no server response \u2014 consistent with DoS connection exhaustion."
+    },
+    {
+      "true": "Benign",
+      "predicted": "Benign",
+      "correct": true,
+      "nl_description": "Network flow targeting RDP. Duration: 2.0s. Packets: 10 forward, 7 backward. TCP initial window: 8192 bytes. Bytes: 670 sent, 301 received."
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "WebAttack",
+      "correct": true,
+      "nl_description": "HTTP session to port 80, duration 5.0 seconds, 4 client requests and 4 server responses \u2014 slow, deliberate HTTP exchange typical of automated web attack tooling (SQL injection probes, XSS payloads, or directory traversal). Client sent 660 bytes in 4 packets (avg 165 B/pkt) \u2014 oversized HTTP requests may contain injection payloads. TCP window: 8192 bytes, PPS: 1.6 \u2014 very low rate consistent with scripted web attack tool."
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "BruteForce",
+      "correct": true,
+      "nl_description": "Sustained HTTP session lasting 56 seconds with 153 forward requests and 104 server responses \u2014 an extended bidirectional exchange on a web server lasting nearly a minute is characteristic of automated HTTP brute-force credential stuffing (repeated login attempts against a web application). Data transferred: 53.7 KB sent, 70.8 KB received (avg packet size 494 bytes). Consistent with repeated HTTP POST login requests. TCP window: 8192 bytes \u2014 full TCP handshake completed (real connections, not spoofed)."
+    },
+    {
+      "true": "Benign",
+      "predicted": "Infiltration",
+      "correct": false,
+      "nl_description": "Flow targeting non-standard port 50811 \u2014 unusual destination for normal traffic, may indicate backdoor communication, command-and-control (C2) channel, or lateral movement associated with infiltration. Very brief contact (0.09 ms) \u2014 possible reconnaissance probe or C2 beacon. Packets: 3 forward, 0 backward. Window: 64."
+    },
+    {
+      "true": "Benign",
+      "predicted": "Infiltration",
+      "correct": false,
+      "nl_description": "Network flow targeting unknown port. Duration: 1.9 min. Packets: 3 forward, 0 backward."
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "Infiltration",
+      "correct": true,
+      "nl_description": "Flow targeting non-standard port 54045 \u2014 unusual destination for normal traffic, may indicate backdoor communication, command-and-control (C2) channel, or lateral movement associated with infiltration. Very brief contact (0.00 ms) \u2014 possible reconnaissance probe or C2 beacon. Packets: 1 forward, 1 backward. Window: 1024."
+    },
+    {
+      "true": "Benign",
+      "predicted": "Benign",
+      "correct": true,
+      "nl_description": "Network flow targeting DNS. Duration: 1.06 ms (very short). Packets: 1 forward, 1 backward. Bytes: 29 sent, 61 received."
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "Infiltration",
+      "correct": true,
+      "nl_description": "Flow targeting non-standard port 20222 \u2014 unusual destination for normal traffic, may indicate backdoor communication, command-and-control (C2) channel, or lateral movement associated with infiltration. Very brief contact (0.27 ms) \u2014 possible reconnaissance probe or C2 beacon. Packets: 1 forward, 1 backward. Window: 1024."
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "Benign",
+      "correct": false,
+      "nl_description": "Network flow targeting HTTP (web). Duration: 0.14 ms (very short). Packets: 3 forward, 0 backward. TCP initial window: 2053 bytes. Short HTTP probe with non-standard TCP window \u2014 may be DoS variant, DDoS flood packet, or scan. No payload data and minimal packet exchange \u2014 consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe."
+    },
+    {
+      "true": "DoS",
+      "predicted": "DoS",
+      "correct": true,
+      "nl_description": "HTTP flow to port 80 with TCP initial window of exactly 225 bytes \u2014 this specific window size is a known signature of Slowloris and slow-rate denial-of-service (DoS) attack tools. Flow: 2 forward packet(s), 0 backward, duration 11.9 ms. Minimal payload, no server response \u2014 consistent with DoS connection exhaustion."
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "Benign",
+      "correct": false,
+      "nl_description": "Network flow targeting HTTP (web). Duration: 0.07 ms (very short). Packets: 2 forward, 0 backward. TCP initial window: 2053 bytes. Short HTTP probe with non-standard TCP window \u2014 may be DoS variant, DDoS flood packet, or scan. No payload data and minimal packet exchange \u2014 consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe."
+    },
+    {
+      "true": "DDoS",
+      "predicted": "DDoS",
+      "correct": true,
+      "nl_description": "HTTP flow to port 80 with maximum TCP window (65535 bytes) \u2014 maximum window size combined with a very short flow (8.7 ms) is characteristic of distributed denial-of-service (DDoS) flooding tools (e.g., LOIC, HOIC). Packet exchange: 3 forward, 4 backward. Some server responses observed."
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "Benign",
+      "correct": false,
+      "nl_description": "Network flow targeting HTTP (web). Duration: 0.23 ms (very short). Packets: 2 forward, 1 backward. TCP initial window: 2051 bytes. Short HTTP probe with non-standard TCP window \u2014 may be DoS variant, DDoS flood packet, or scan. No payload data and minimal packet exchange \u2014 consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe."
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "Benign",
+      "correct": false,
+      "nl_description": "Network flow targeting HTTP (web). Duration: 0.11 ms (very short). Packets: 2 forward, 0 backward. TCP initial window: 2047 bytes. Short HTTP probe with non-standard TCP window \u2014 may be DoS variant, DDoS flood packet, or scan. No payload data and minimal packet exchange \u2014 consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe."
+    },
+    {
+      "true": "DDoS",
+      "predicted": "DDoS",
+      "correct": true,
+      "nl_description": "HTTP flow to port 80 with maximum TCP window (65535 bytes) \u2014 maximum window size combined with a very short flow (2.6 ms) is characteristic of distributed denial-of-service (DDoS) flooding tools (e.g., LOIC, HOIC). Packet exchange: 3 forward, 4 backward. Some server responses observed."
+    },
+    {
+      "true": "Benign",
+      "predicted": "Infiltration",
+      "correct": false,
+      "nl_description": "Flow targeting non-standard port 53017 \u2014 unusual destination for normal traffic, may indicate backdoor communication, command-and-control (C2) channel, or lateral movement associated with infiltration. Very brief contact (1.25 ms) \u2014 possible reconnaissance probe or C2 beacon. Packets: 5 forward, 2 backward. Window: 65535."
+    },
+    {
+      "true": "DoS",
+      "predicted": "DoS",
+      "correct": true,
+      "nl_description": "HTTP flow to port 80 with TCP initial window of exactly 225 bytes \u2014 this specific window size is a known signature of Slowloris and slow-rate denial-of-service (DoS) attack tools. Flow: 2 forward packet(s), 0 backward, duration 10.1 ms. Minimal payload, no server response \u2014 consistent with DoS connection exhaustion."
+    },
+    {
+      "true": "DDoS",
+      "predicted": "DoS",
+      "correct": false,
+      "nl_description": "Network flow targeting HTTP (web). Duration: 2.70 ms (very short). Packets: 2 forward, 0 backward. TCP initial window: 32738 bytes. Short HTTP probe with non-standard TCP window \u2014 may be DoS variant, DDoS flood packet, or scan. No payload data and minimal packet exchange \u2014 consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe."
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "Infiltration",
+      "correct": false,
+      "nl_description": "Network flow targeting port 500. Duration: 1.5 min. Packets: 6 forward, 0 backward. Bytes: 3000 sent, 0 received."
+    },
+    {
+      "true": "DDoS",
+      "predicted": "DDoS",
+      "correct": true,
+      "nl_description": "Network flow targeting HTTP (web). Duration: 1.69 ms (very short). Packets: 2 forward, 0 backward. TCP initial window: 32738 bytes. Short HTTP probe with non-standard TCP window \u2014 may be DoS variant, DDoS flood packet, or scan. No payload data and minimal packet exchange \u2014 consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe."
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "WebAttack",
+      "correct": true,
+      "nl_description": "HTTP session to port 80, duration 5.0 seconds, 4 client requests and 4 server responses \u2014 slow, deliberate HTTP exchange typical of automated web attack tooling (SQL injection probes, XSS payloads, or directory traversal). Server response (1806 bytes) exceeds client payload (487 bytes) \u2014 enlarged server response is consistent with successful SQL injection or data disclosure. TCP window: 8192 bytes, PPS: 1.6 \u2014 very low rate consistent with scripted web attack tool."
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "Infiltration",
+      "correct": false,
+      "nl_description": "Network flow targeting unknown port. Duration: 1.9 min. Packets: 3 forward, 0 backward."
+    },
+    {
+      "true": "DoS",
+      "predicted": "DoS",
+      "correct": true,
+      "nl_description": "HTTP flow to port 80 with TCP initial window of exactly 225 bytes \u2014 this specific window size is a known signature of Slowloris and slow-rate denial-of-service (DoS) attack tools. Flow: 2 forward packet(s), 0 backward, duration 48.6 ms. Minimal payload, no server response \u2014 consistent with DoS connection exhaustion."
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "WebAttack",
+      "correct": true,
+      "nl_description": "HTTP session to port 80, duration 8.2 seconds, 11 client requests and 8 server responses \u2014 slow, deliberate HTTP exchange typical of automated web attack tooling (SQL injection probes, XSS payloads, or directory traversal). Server response (9011 bytes) exceeds client payload (2307 bytes) \u2014 enlarged server response is consistent with successful SQL injection or data disclosure. TCP window: 8192 bytes, PPS: 2.3 \u2014 very low rate consistent with scripted web attack tool."
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "Infiltration",
+      "correct": true,
+      "nl_description": "Network flow targeting unknown port. Duration: 1.7s. Packets: 4 forward, 4 backward."
+    },
+    {
+      "true": "DoS",
+      "predicted": "WebAttack",
+      "correct": false,
+      "nl_description": "HTTP session to port 80, duration 6.9 seconds, 5 client requests and 3 server responses \u2014 slow, deliberate HTTP exchange typical of automated web attack tooling (SQL injection probes, XSS payloads, or directory traversal). Server response (972 bytes) exceeds client payload (461 bytes) \u2014 enlarged server response is consistent with successful SQL injection or data disclosure. TCP window: 26883 bytes, PPS: 1.2 \u2014 very low rate consistent with scripted web attack tool."
+    },
+    {
+      "true": "DDoS",
+      "predicted": "",
+      "correct": false,
+      "nl_description": "Network flow targeting HTTP (web). Duration: 6.31 ms (very short). Packets: 2 forward, 0 backward. TCP initial window: 32738 bytes. Short HTTP probe with non-standard TCP window \u2014 may be DoS variant, DDoS flood packet, or scan. No payload data and minimal packet exchange \u2014 consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe."
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "Benign",
+      "correct": false,
+      "nl_description": "Network flow targeting DNS. Duration: 0.86 ms (very short). Packets: 1 forward, 1 backward. Bytes: 31 sent, 106 received."
+    },
+    {
+      "true": "Benign",
+      "predicted": "Infiltration",
+      "correct": false,
+      "nl_description": "Flow targeting non-standard port 52230 \u2014 unusual destination for normal traffic, may indicate backdoor communication, command-and-control (C2) channel, or lateral movement associated with infiltration. Packets: 5 forward, 2 backward. Window: 65535."
+    },
+    {
+      "true": "DDoS",
+      "predicted": "DDoS",
+      "correct": true,
+      "nl_description": "HTTP flow to port 80 with maximum TCP window (65535 bytes) \u2014 maximum window size combined with a very short flow (1.5 ms) is characteristic of distributed denial-of-service (DDoS) flooding tools (e.g., LOIC, HOIC). Packet exchange: 3 forward, 4 backward. Some server responses observed."
+    },
+    {
+      "true": "Benign",
+      "predicted": "Benign",
+      "correct": true,
+      "nl_description": "Network flow targeting HTTP (web). Duration: 0.93 ms (very short). Packets: 3 forward, 4 backward. TCP initial window: 8192 bytes. Bytes: 148 sent, 243 received. Packet rate: 7551 pkt/s. Short HTTP probe with non-standard TCP window \u2014 may be DoS variant, DDoS flood packet, or scan."
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "Benign",
+      "correct": false,
+      "nl_description": "Network flow targeting port 646. Duration: 0.23 ms (very short). Packets: 1 forward, 1 backward. TCP initial window: 1024 bytes. No payload data and minimal packet exchange \u2014 consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe."
+    },
+    {
+      "true": "DoS",
+      "predicted": "DoS",
+      "correct": true,
+      "nl_description": "HTTP flow to port 80 with TCP initial window of exactly 225 bytes \u2014 this specific window size is a known signature of Slowloris and slow-rate denial-of-service (DoS) attack tools. Flow: 2 forward packet(s), 0 backward, duration 0.5 ms. Minimal payload, no server response \u2014 consistent with DoS connection exhaustion."
+    },
+    {
+      "true": "DoS",
+      "predicted": "DoS",
+      "correct": true,
+      "nl_description": "HTTP flow to port 80 with TCP initial window of exactly 225 bytes \u2014 this specific window size is a known signature of Slowloris and slow-rate denial-of-service (DoS) attack tools. Flow: 2 forward packet(s), 0 backward, duration 0.3 ms. Minimal payload, no server response \u2014 consistent with DoS connection exhaustion."
+    },
+    {
+      "true": "DDoS",
+      "predicted": "DDoS",
+      "correct": true,
+      "nl_description": "Network flow targeting HTTP (web). Duration: 0.0s. Packets: 2 forward, 0 backward. TCP initial window: 32738 bytes. Short HTTP probe with non-standard TCP window \u2014 may be DoS variant, DDoS flood packet, or scan. No payload data and minimal packet exchange \u2014 consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe."
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "Benign",
+      "correct": false,
+      "nl_description": "Network flow targeting DNS. Duration: 0.0s. Packets: 1 forward, 1 backward. Bytes: 70 sent, 152 received."
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "Benign",
+      "correct": false,
+      "nl_description": "Network flow targeting HTTP (web). Duration: 0.09 ms (very short). Packets: 2 forward, 0 backward. TCP initial window: 2053 bytes. Short HTTP probe with non-standard TCP window \u2014 may be DoS variant, DDoS flood packet, or scan. No payload data and minimal packet exchange \u2014 consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe."
+    },
+    {
+      "true": "DDoS",
+      "predicted": "",
+      "correct": false,
+      "nl_description": "Network flow targeting HTTP (web). Duration: 3.06 ms (very short). Packets: 2 forward, 0 backward. TCP initial window: 32738 bytes. Short HTTP probe with non-standard TCP window \u2014 may be DoS variant, DDoS flood packet, or scan. No payload data and minimal packet exchange \u2014 consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe."
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "",
+      "correct": false,
+      "nl_description": "Network flow targeting HTTP (web). Duration: 0.09 ms (very short). Packets: 2 forward, 0 backward. TCP initial window: 2047 bytes. Short HTTP probe with non-standard TCP window \u2014 may be DoS variant, DDoS flood packet, or scan. No payload data and minimal packet exchange \u2014 consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe."
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "WebAttack",
+      "correct": true,
+      "nl_description": "HTTP session to port 80, duration 5.0 seconds, 5 client requests and 3 server responses \u2014 slow, deliberate HTTP exchange typical of automated web attack tooling (SQL injection probes, XSS payloads, or directory traversal). Server response (4012 bytes) exceeds client payload (694 bytes) \u2014 enlarged server response is consistent with successful SQL injection or data disclosure. TCP window: 8192 bytes, PPS: 1.6 \u2014 very low rate consistent with scripted web attack tool."
+    },
+    {
+      "true": "DDoS",
+      "predicted": "DDoS",
+      "correct": true,
+      "nl_description": "HTTP flow to port 80 with maximum TCP window (65535 bytes) \u2014 maximum window size combined with a very short flow (33.4 ms) is characteristic of distributed denial-of-service (DDoS) flooding tools (e.g., LOIC, HOIC). Packet exchange: 3 forward, 4 backward. Some server responses observed."
+    },
+    {
+      "true": "Benign",
+      "predicted": "Infiltration",
+      "correct": false,
+      "nl_description": "Flow targeting non-standard port 52391 \u2014 unusual destination for normal traffic, may indicate backdoor communication, command-and-control (C2) channel, or lateral movement associated with infiltration. Very brief contact (0.00 ms) \u2014 possible reconnaissance probe or C2 beacon. Packets: 2 forward, 0 backward. Window: 5435."
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "Benign",
+      "correct": false,
+      "nl_description": "Network flow targeting HTTP (web). Duration: 1.9 min. Packets: 16 forward, 14 backward. TCP initial window: 8192 bytes. Bytes: 445 sent, 706 received."
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "BruteForce",
+      "correct": true,
+      "nl_description": "Sustained HTTP session lasting 57 seconds with 153 forward requests and 104 server responses \u2014 an extended bidirectional exchange on a web server lasting nearly a minute is characteristic of automated HTTP brute-force credential stuffing (repeated login attempts against a web application). Data transferred: 53.7 KB sent, 70.8 KB received (avg packet size 494 bytes). Consistent with repeated HTTP POST login requests. TCP window: 8192 bytes \u2014 full TCP handshake completed (real connections, not spoofed)."
+    },
+    {
+      "true": "DDoS",
+      "predicted": "DDoS",
+      "correct": true,
+      "nl_description": "Network flow targeting HTTP (web). Duration: 1.07 ms (very short). Packets: 2 forward, 0 backward. TCP initial window: 32738 bytes. Short HTTP probe with non-standard TCP window \u2014 may be DoS variant, DDoS flood packet, or scan. No payload data and minimal packet exchange \u2014 consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe."
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "Benign",
+      "correct": false,
+      "nl_description": "Network flow targeting HTTP (web). Duration: 5.0s. Packets: 3 forward, 1 backward. TCP initial window: 8192 bytes. No payload data and minimal packet exchange \u2014 consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe."
+    },
+    {
+      "true": "DoS",
+      "predicted": "WebAttack",
+      "correct": false,
+      "nl_description": "Network flow targeting HTTP (web). Duration: 11.8s. Packets: 4 forward, 4 backward. TCP initial window: 26883 bytes. Bytes: 343 sent, 972 received."
+    }
+  ],
+  "timestamp": "2026-04-05T15:09:34.497996"
+}

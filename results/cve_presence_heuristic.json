@@ -1,0 +1,10 @@
+{
+  "heuristic": "CVE present -> Catastrophic, else Very Low",
+  "n": 100,
+  "exact_pct": 46.0,
+  "under_escalation_pct": 0.0,
+  "over_escalation_pct": 54.0,
+  "severe_recall_pct": 100.0,
+  "severe_total": 49,
+  "note": "no-LLM no-ML string check on prompt CVE presence; computed from nslkdd_unified_rerun/test_sample.json"
+}

@@ -1,0 +1,38 @@
+{
+  "generated": "2026-03-17T17:34:10.205264",
+  "total_samples": 1000,
+  "total_time_seconds": 1.313,
+  "pipeline_time_seconds": 0.34,
+  "throughput_samples_per_second": 2943.8,
+  "average_latency_ms": 0.34,
+  "per_stage_timing": {
+    "load_data": 0.2666,
+    "pre_inference": 0.001,
+    "ml_train": 0.9731,
+    "ml_predict": 0.0681,
+    "post_annotation": 0.0037,
+    "grc_generation": 0.0003
+  },
+  "per_stage_throughput": {
+    "load_data": 3751.0,
+    "pre_inference": 1000000.0,
+    "ml_train": 1028.0,
+    "ml_predict": 14684.0,
+    "post_annotation": 270270.0,
+    "grc_generation": 3333333.0
+  },
+  "artifacts_generated": {
+    "risk_cases": 698,
+    "audit_logs": 698,
+    "control_links": 698
+  },
+  "prediction_distribution": {
+    "Benign": 302,
+    "BruteForce": 50,
+    "DDoS": 163,
+    "DoS": 163,
+    "Infiltration": 320,
+    "WebAttack": 2
+  },
+  "note": "Pipeline time excludes ML training (one-time cost). Throughput measures inference pipeline only."
+}

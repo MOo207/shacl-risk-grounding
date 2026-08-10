@@ -1,0 +1,122 @@
+[
+  {
+    "rule_id": "EVT-001",
+    "name": "Critical CVE in Asset",
+    "category": "event_based",
+    "priority": 100,
+    "description": "Asset has a critical CVE with no patch applied",
+    "conditions": [
+      {
+        "field": "cve_severity",
+        "operator": "==",
+        "value": "critical",
+        "description": ""
+      },
+      {
+        "field": "patch_status",
+        "operator": "==",
+        "value": "unpatched",
+        "description": ""
+      }
+    ],
+    "score_modifier": -50,
+    "explanation_template": "Asset {asset_id} has Critical CVE {cve_id} but no patch applied. This is a severe risk.",
+    "enabled": true
+  },
+  {
+    "rule_id": "EVT-002",
+    "name": "Privileged Account No MFA",
+    "category": "event_based",
+    "priority": 90,
+    "description": "Privileged account lacks multi-factor authentication",
+    "conditions": [
+      {
+        "field": "account_type",
+        "operator": "==",
+        "value": "privileged",
+        "description": ""
+      },
+      {
+        "field": "mfa_enabled",
+        "operator": "==",
+        "value": false,
+        "description": ""
+      }
+    ],
+    "score_modifier": -40,
+    "explanation_template": "Privileged account {account_id} has no MFA enabled. This is a critical vulnerability.",
+    "enabled": true
+  },
+  {
+    "rule_id": "EVT-003",
+    "name": "Internet-facing Asset No Firewall",
+    "category": "event_based",
+    "priority": 85,
+    "description": "Asset exposed to internet without firewall rule",
+    "conditions": [
+      {
+        "field": "internet_facing",
+        "operator": "==",
+        "value": true,
+        "description": ""
+      },
+      {
+        "field": "firewall_rules",
+        "operator": "==",
+        "value": 0,
+        "description": ""
+      }
+    ],
+    "score_modifier": -35,
+    "explanation_template": "Asset {asset_id} is internet-facing with no firewall rules. This increases attack surface.",
+    "enabled": true
+  },
+  {
+    "rule_id": "EVT-004",
+    "name": "PII Data Without Encryption",
+    "category": "event_based",
+    "priority": 95,
+    "description": "Asset stores PII data without encryption at rest",
+    "conditions": [
+      {
+        "field": "data_classification",
+        "operator": "==",
+        "value": "PII",
+        "description": ""
+      },
+      {
+        "field": "encryption_at_rest",
+        "operator": "==",
+        "value": false,
+        "description": ""
+      }
+    ],
+    "score_modifier": -45,
+    "explanation_template": "Asset {asset_id} stores PII data without encryption at rest. This is a severe compliance issue.",
+    "enabled": true
+  },
+  {
+    "rule_id": "EVT-005",
+    "name": "Anomalous Traffic Pattern",
+    "category": "event_based",
+    "priority": 70,
+    "description": "Unusual network traffic pattern detected",
+    "conditions": [
+      {
+        "field": "traffic_anomaly",
+        "operator": "==",
+        "value": true,
+        "description": ""
+      },
+      {
+        "field": "anomaly_score",
+        "operator": ">",
+        "value": 0.8,
+        "description": ""
+      }
+    ],
+    "score_modifier": -20,
+    "explanation_template": "Asset {asset_id} shows anomalous traffic pattern with score {anomaly_score}. Review is required.",
+    "enabled": true
+  }
+]

@@ -1,0 +1,1709 @@
+{
+  "meta": {
+    "description": "Class-weighted XGBoost baselines on the clean leak-free NSL-KDD N=100 held-out pool (results/nslkdd_unified_rerun/test_sample.json), addressing review finding M11 (unweighted XGBoost as possible strawman). Identical train data, feature pipeline, seed, XGB params, eval pool, NFCRM SS6.9 risk mapping, and safety metrics as scripts/build_nslkdd_unified_rerun.py; ONLY the class-imbalance handling differs between variants.",
+    "xgb_params": {
+      "n_estimators": 100,
+      "random_state": 42,
+      "eval_metric": "mlogloss",
+      "verbosity": 0,
+      "tree_method": "hist",
+      "n_jobs": 1
+    },
+    "train_source": "data\\raw\\NSL-KDD\\KDDTrain+.txt",
+    "eval_pool": "results\\nslkdd_unified_rerun\\test_sample.json",
+    "train_class_distribution": {
+      "DoS": 45927,
+      "Normal": 67343,
+      "Probe": 11656,
+      "R2L": 995,
+      "U2R": 52
+    },
+    "balanced_class_weights_applied": {
+      "DoS": 0.5486,
+      "Normal": 0.3741,
+      "Probe": 2.1615,
+      "R2L": 25.3212,
+      "U2R": 484.5115
+    },
+    "weighting_definitions": {
+      "default_unweighted": "no sample_weight (published baseline)",
+      "balanced": "sklearn compute_sample_weight(class_weight='balanced') -> w_i = n_samples / (n_classes * count(class_i)); Elkan 2001",
+      "sqrt_balanced": "element-wise sqrt of the 'balanced' weights (milder reweighting)"
+    },
+    "smote": {
+      "run": false,
+      "skip_reason": "imbalanced-learn (imblearn) not installed in this environment; SMOTE variant skipped."
+    },
+    "library_versions": {
+      "xgboost": "3.2.0",
+      "sklearn": "1.6.1"
+    },
+    "created": "2026-07-18T08:02:38.243807"
+  },
+  "reproduction_check": {
+    "per_case_prediction_match": "100/100",
+    "published_baseline_metrics": {
+      "n": 100,
+      "exact_pct": 49.0,
+      "within1_pct": 53.0,
+      "under_escalation_pct": 48.0,
+      "over_escalation_pct": 3.0,
+      "severe_recall_pct": 42.9,
+      "severe_total": 49,
+      "worst_miss_levels": 4
+    },
+    "retrained_default_metrics": {
+      "n": 100,
+      "exact_pct": 49.0,
+      "within1_pct": 53.0,
+      "under_escalation_pct": 48.0,
+      "over_escalation_pct": 3.0,
+      "severe_recall_pct": 42.9,
+      "severe_total": 49,
+      "worst_miss_levels": 4,
+      "attack_class_accuracy_pct": 48.0
+    },
+    "passed": true
+  },
+  "variants": {
+    "default_unweighted": {
+      "n": 100,
+      "exact_pct": 49.0,
+      "within1_pct": 53.0,
+      "under_escalation_pct": 48.0,
+      "over_escalation_pct": 3.0,
+      "severe_recall_pct": 42.9,
+      "severe_total": 49,
+      "worst_miss_levels": 4,
+      "attack_class_accuracy_pct": 48.0
+    },
+    "balanced": {
+      "n": 100,
+      "exact_pct": 49.0,
+      "within1_pct": 52.0,
+      "under_escalation_pct": 48.0,
+      "over_escalation_pct": 3.0,
+      "severe_recall_pct": 38.8,
+      "severe_total": 49,
+      "worst_miss_levels": 4,
+      "attack_class_accuracy_pct": 49.0
+    },
+    "sqrt_balanced": {
+      "n": 100,
+      "exact_pct": 51.0,
+      "within1_pct": 55.0,
+      "under_escalation_pct": 46.0,
+      "over_escalation_pct": 3.0,
+      "severe_recall_pct": 42.9,
+      "severe_total": 49,
+      "worst_miss_levels": 4,
+      "attack_class_accuracy_pct": 50.0
+    }
+  },
+  "per_case_records": {
+    "balanced": [
+      {
+        "case_id": "nslr_test_000",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_001",
+        "true_class": "Probe",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "High",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_002",
+        "true_class": "R2L",
+        "pred_class": "R2L",
+        "risk_level": "High",
+        "ground_truth": "High",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_003",
+        "true_class": "Probe",
+        "pred_class": "DoS",
+        "risk_level": "Catastrophic",
+        "ground_truth": "High",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_004",
+        "true_class": "Probe",
+        "pred_class": "Probe",
+        "risk_level": "Medium",
+        "ground_truth": "Medium",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_005",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "Medium",
+        "ground_truth": "Medium",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_006",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "High",
+        "ground_truth": "High",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_007",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_008",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_009",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_010",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_011",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "High",
+        "ground_truth": "High",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_012",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_013",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "Medium",
+        "ground_truth": "Medium",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_014",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_015",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_016",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "High",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_017",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_018",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_019",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "Catastrophic",
+        "ground_truth": "Catastrophic",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_020",
+        "true_class": "Probe",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_021",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_022",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "High",
+        "ground_truth": "High",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_023",
+        "true_class": "Probe",
+        "pred_class": "DoS",
+        "risk_level": "Catastrophic",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_024",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_025",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_026",
+        "true_class": "Probe",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Low",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_027",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_028",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_029",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_030",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_031",
+        "true_class": "Probe",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_032",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_033",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "Medium",
+        "ground_truth": "Medium",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_034",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "High",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_035",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_036",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_037",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_038",
+        "true_class": "DoS",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "High",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_039",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_040",
+        "true_class": "Probe",
+        "pred_class": "Probe",
+        "risk_level": "Medium",
+        "ground_truth": "Medium",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_041",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "High",
+        "ground_truth": "High",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_042",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_043",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_044",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "High",
+        "ground_truth": "High",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_045",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_046",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_047",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "Medium",
+        "ground_truth": "Medium",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_048",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_049",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_050",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "Catastrophic",
+        "ground_truth": "Catastrophic",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_051",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_052",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_053",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "Catastrophic",
+        "ground_truth": "Catastrophic",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_054",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_055",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_056",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_057",
+        "true_class": "R2L",
+        "pred_class": "R2L",
+        "risk_level": "High",
+        "ground_truth": "High",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_058",
+        "true_class": "DoS",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "High",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_059",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_060",
+        "true_class": "Probe",
+        "pred_class": "Probe",
+        "risk_level": "High",
+        "ground_truth": "High",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_061",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_062",
+        "true_class": "Probe",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Low",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_063",
+        "true_class": "Probe",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_064",
+        "true_class": "Probe",
+        "pred_class": "Probe",
+        "risk_level": "Medium",
+        "ground_truth": "Medium",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_065",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_066",
+        "true_class": "Probe",
+        "pred_class": "Probe",
+        "risk_level": "Medium",
+        "ground_truth": "Medium",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_067",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "High",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_068",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_069",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_070",
+        "true_class": "R2L",
+        "pred_class": "R2L",
+        "risk_level": "Catastrophic",
+        "ground_truth": "Catastrophic",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_071",
+        "true_class": "Probe",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_072",
+        "true_class": "Probe",
+        "pred_class": "Probe",
+        "risk_level": "High",
+        "ground_truth": "High",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_073",
+        "true_class": "Probe",
+        "pred_class": "DoS",
+        "risk_level": "Catastrophic",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_074",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_075",
+        "true_class": "Probe",
+        "pred_class": "Probe",
+        "risk_level": "Low",
+        "ground_truth": "Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_076",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_077",
+        "true_class": "DoS",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "High",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_078",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "High",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_079",
+        "true_class": "Probe",
+        "pred_class": "Probe",
+        "risk_level": "High",
+        "ground_truth": "High",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_080",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_081",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_082",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "Catastrophic",
+        "ground_truth": "Catastrophic",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_083",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "High",
+        "ground_truth": "High",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_084",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_085",
+        "true_class": "Probe",
+        "pred_class": "Probe",
+        "risk_level": "High",
+        "ground_truth": "High",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_086",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "High",
+        "ground_truth": "High",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_087",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_088",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "Medium",
+        "ground_truth": "Medium",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_089",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "High",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_090",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_091",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_092",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_093",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_094",
+        "true_class": "DoS",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_095",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_096",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_097",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_098",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_099",
+        "true_class": "Probe",
+        "pred_class": "Probe",
+        "risk_level": "Low",
+        "ground_truth": "Low",
+        "correct": true
+      }
+    ],
+    "sqrt_balanced": [
+      {
+        "case_id": "nslr_test_000",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_001",
+        "true_class": "Probe",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "High",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_002",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "High",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_003",
+        "true_class": "Probe",
+        "pred_class": "DoS",
+        "risk_level": "Catastrophic",
+        "ground_truth": "High",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_004",
+        "true_class": "Probe",
+        "pred_class": "Probe",
+        "risk_level": "Medium",
+        "ground_truth": "Medium",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_005",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "Medium",
+        "ground_truth": "Medium",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_006",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "High",
+        "ground_truth": "High",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_007",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_008",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_009",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_010",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_011",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "High",
+        "ground_truth": "High",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_012",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_013",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "Medium",
+        "ground_truth": "Medium",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_014",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_015",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_016",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "High",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_017",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_018",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_019",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "Catastrophic",
+        "ground_truth": "Catastrophic",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_020",
+        "true_class": "Probe",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_021",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_022",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "High",
+        "ground_truth": "High",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_023",
+        "true_class": "Probe",
+        "pred_class": "DoS",
+        "risk_level": "Catastrophic",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_024",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_025",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_026",
+        "true_class": "Probe",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Low",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_027",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_028",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_029",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_030",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_031",
+        "true_class": "Probe",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_032",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_033",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "Medium",
+        "ground_truth": "Medium",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_034",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "High",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_035",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_036",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_037",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_038",
+        "true_class": "DoS",
+        "pred_class": "Probe",
+        "risk_level": "Medium",
+        "ground_truth": "High",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_039",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_040",
+        "true_class": "Probe",
+        "pred_class": "Probe",
+        "risk_level": "Medium",
+        "ground_truth": "Medium",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_041",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "High",
+        "ground_truth": "High",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_042",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_043",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_044",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "High",
+        "ground_truth": "High",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_045",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_046",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_047",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "Medium",
+        "ground_truth": "Medium",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_048",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_049",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_050",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "Catastrophic",
+        "ground_truth": "Catastrophic",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_051",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_052",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_053",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "Catastrophic",
+        "ground_truth": "Catastrophic",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_054",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_055",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_056",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_057",
+        "true_class": "R2L",
+        "pred_class": "R2L",
+        "risk_level": "High",
+        "ground_truth": "High",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_058",
+        "true_class": "DoS",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "High",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_059",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_060",
+        "true_class": "Probe",
+        "pred_class": "Probe",
+        "risk_level": "High",
+        "ground_truth": "High",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_061",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_062",
+        "true_class": "Probe",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Low",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_063",
+        "true_class": "Probe",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_064",
+        "true_class": "Probe",
+        "pred_class": "Probe",
+        "risk_level": "Medium",
+        "ground_truth": "Medium",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_065",
+        "true_class": "R2L",
+        "pred_class": "R2L",
+        "risk_level": "Catastrophic",
+        "ground_truth": "Catastrophic",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_066",
+        "true_class": "Probe",
+        "pred_class": "Probe",
+        "risk_level": "Medium",
+        "ground_truth": "Medium",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_067",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "High",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_068",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_069",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_070",
+        "true_class": "R2L",
+        "pred_class": "R2L",
+        "risk_level": "Catastrophic",
+        "ground_truth": "Catastrophic",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_071",
+        "true_class": "Probe",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_072",
+        "true_class": "Probe",
+        "pred_class": "Probe",
+        "risk_level": "High",
+        "ground_truth": "High",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_073",
+        "true_class": "Probe",
+        "pred_class": "DoS",
+        "risk_level": "Catastrophic",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_074",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_075",
+        "true_class": "Probe",
+        "pred_class": "Probe",
+        "risk_level": "Low",
+        "ground_truth": "Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_076",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_077",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "High",
+        "ground_truth": "High",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_078",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "High",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_079",
+        "true_class": "Probe",
+        "pred_class": "Probe",
+        "risk_level": "High",
+        "ground_truth": "High",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_080",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_081",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_082",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "Catastrophic",
+        "ground_truth": "Catastrophic",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_083",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "High",
+        "ground_truth": "High",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_084",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_085",
+        "true_class": "Probe",
+        "pred_class": "Probe",
+        "risk_level": "High",
+        "ground_truth": "High",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_086",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "High",
+        "ground_truth": "High",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_087",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_088",
+        "true_class": "DoS",
+        "pred_class": "DoS",
+        "risk_level": "Medium",
+        "ground_truth": "Medium",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_089",
+        "true_class": "U2R",
+        "pred_class": "R2L",
+        "risk_level": "High",
+        "ground_truth": "High",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_090",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_091",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_092",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_093",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_094",
+        "true_class": "DoS",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_095",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_096",
+        "true_class": "R2L",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Catastrophic",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_097",
+        "true_class": "Normal",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Very Low",
+        "correct": true
+      },
+      {
+        "case_id": "nslr_test_098",
+        "true_class": "U2R",
+        "pred_class": "Normal",
+        "risk_level": "Very Low",
+        "ground_truth": "Medium",
+        "correct": false
+      },
+      {
+        "case_id": "nslr_test_099",
+        "true_class": "Probe",
+        "pred_class": "Probe",
+        "risk_level": "Low",
+        "ground_truth": "Low",
+        "correct": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "description": "Cost-sensitive (class-weighted) XGBoost baseline for NSL-KDD N=50 safety evaluation, addressing thesis Construct-Validity Threat CV-4 ('No Cost-Sensitive ML Baseline').",
+    "methodology": {
+      "model": "XGBClassifier(n_estimators=100, random_state=42, eval_metric='mlogloss')",
+      "class_weighting": "sklearn.utils.class_weight.compute_sample_weight(class_weight='balanced', y) -> per-sample weight = n_samples / (n_classes * class_count), passed as sample_weight to XGBClassifier.fit(); cost-sensitive reweighting per Elkan 2001",
+      "class_weights_applied": {
+        "DoS": 0.5486,
+        "Normal": 0.3741,
+        "Probe": 2.1615,
+        "R2L": 25.3212,
+        "U2R": 484.5115
+      },
+      "train_source": "data/raw/NSL-KDD/KDDTrain+.txt",
+      "eval_source": "data/raw/NSL-KDD/KDDTest+.txt",
+      "eval_subset": "identical N=50 (10/class) stratified sample, seed=42, as results/nslkdd_ablation/test_set.json",
+      "seed": 42,
+      "features": "same one-hot-encoded feature set (protocol_type/service/flag + numeric columns) as build_nslkdd_ablation_testset.py::encode_for_ml",
+      "risk_level_mapping": "identical NFCRM SS6.9 lookup (pipeline.nfcrm.risk_score.compute_risk_score) as the existing ml_xgb / tristage arms",
+      "under_over_escalation_metric": "identical to scripts/safety_table_haiku.py::metrics() (under = predicted risk level index < ground-truth index)"
+    },
+    "reproducibility": {
+      "default_loss_retrain_matches_frozen_predictions": false,
+      "match_rate_vs_frozen_xgb_predicted_class": 0.48,
+      "note": "Retrain did NOT exactly match frozen predictions (see match_rate); treat cost-sensitive vs baseline delta as directionally informative, not exact."
+    }
+  },
+  "cost_sensitive_xgboost": {
+    "n": 50,
+    "risk_level_accuracy_pct": 30.0,
+    "under_escalation_pct": 60.0,
+    "over_escalation_pct": 10.0,
+    "severe_recall_pct": 35.0,
+    "exact_pct": 30.0,
+    "within1_pct": 40.0,
+    "worst_miss_levels": 4
+  },
+  "default_loss_xgboost_retrained_this_run": {
+    "under_escalation_pct": 60.0,
+    "severe_recall_pct": 35.0,
+    "worst_miss_levels": 4
+  },
+  "default_loss_xgboost_original_frozen_file": {
+    "source": "results/nslkdd_ablation/ml_xgb.jsonl",
+    "under_escalation_pct": 44.0,
+    "severe_recall_pct": 45.0,
+    "worst_miss_levels": 4
+  },
+  "thesis_reference_numbers": {
+    "xgboost_default_loss_under_escalation_pct": 44.0,
+    "xgboost_default_loss_severe_recall_pct": 45.0,
+    "tristage_llm_haiku_under_escalation_pct": 16.0,
+    "tristage_llm_haiku_severe_recall_pct": 82.5,
+    "existing_mcnemar_tristage_llm_vs_xgboost": {
+      "b": 14,
+      "c": 0,
+      "p": 6.1e-05
+    }
+  },
+  "mcnemar_tristage_llm_haiku_vs_cost_sensitive_xgboost": {
+    "n_pairs": 50,
+    "b_ml_unsafe_llm_safe": 24,
+    "c_llm_unsafe_ml_safe": 2,
+    "p_one_sided": 5.245208740234375e-06
+  },
+  "plain_language_comparison": "Class-weighted (cost-sensitive) XGBoost under-escalates 60.0% of cases with 35.0% severe recall, vs the existing default-loss XGBoost baseline's 44% under-escalation / 45% severe recall, and vs the tri-stage LLM (Haiku)'s 16% under-escalation / 82.5% severe recall. Cost-sensitive reweighting does not meaningfully narrow the safety gap versus default-loss XGBoost; the LLM-grounded pipeline remains substantially safer."
+}

@@ -1,0 +1,90 @@
+{
+  "sym_gt_distribution": {
+    "Very Low": 10,
+    "High": 11,
+    "Catastrophic": 27,
+    "Medium": 12
+  },
+  "arms": {
+    "ML": {
+      "n": 60,
+      "risk_level_acc_flat": 0.75,
+      "risk_level_acc_symgt": 0.95,
+      "delta_pp": 20.0,
+      "cases_improved": 12,
+      "cases_regressed": 0,
+      "per_class_acc_symgt": {
+        "Benign": 1.0,
+        "BruteForce": 1.0,
+        "DDoS": 1.0,
+        "DoS": 1.0,
+        "Infiltration": 0.7,
+        "WebAttack": 1.0
+      }
+    },
+    "SHACL": {
+      "n": 60,
+      "risk_level_acc_flat": 0.4333,
+      "risk_level_acc_symgt": 0.4833,
+      "delta_pp": 5.0,
+      "cases_improved": 3,
+      "cases_regressed": 0,
+      "per_class_acc_symgt": {
+        "Benign": 0.5,
+        "BruteForce": 0.2,
+        "DDoS": 0.4,
+        "DoS": 0.9,
+        "Infiltration": 0.2,
+        "WebAttack": 0.7
+      }
+    },
+    "LLM": {
+      "n": 60,
+      "risk_level_acc_flat": 0.55,
+      "risk_level_acc_symgt": 0.7667,
+      "delta_pp": 21.7,
+      "cases_improved": 14,
+      "cases_regressed": 1,
+      "per_class_acc_symgt": {
+        "Benign": 0.3,
+        "BruteForce": 0.8,
+        "DDoS": 0.9,
+        "DoS": 0.9,
+        "Infiltration": 1.0,
+        "WebAttack": 0.7
+      }
+    },
+    "Tri-ML+SHACL": {
+      "n": 60,
+      "risk_level_acc_flat": 0.75,
+      "risk_level_acc_symgt": 1.0,
+      "delta_pp": 25.0,
+      "cases_improved": 15,
+      "cases_regressed": 0,
+      "per_class_acc_symgt": {
+        "Benign": 1.0,
+        "BruteForce": 1.0,
+        "DDoS": 1.0,
+        "DoS": 1.0,
+        "Infiltration": 1.0,
+        "WebAttack": 1.0
+      }
+    },
+    "Tri-LLM+SHACL": {
+      "n": 60,
+      "risk_level_acc_flat": 0.75,
+      "risk_level_acc_symgt": 1.0,
+      "delta_pp": 25.0,
+      "cases_improved": 15,
+      "cases_regressed": 0,
+      "per_class_acc_symgt": {
+        "Benign": 1.0,
+        "BruteForce": 1.0,
+        "DDoS": 1.0,
+        "DoS": 1.0,
+        "Infiltration": 1.0,
+        "WebAttack": 1.0
+      }
+    }
+  }
+}

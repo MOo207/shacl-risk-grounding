@@ -1,0 +1,35 @@
+{
+  "generated": "2026-08-06T02:16:34.602372",
+  "conforms": false,
+  "total_rdf_triples": 1233,
+  "total_shacl_triples": 541,
+  "total_nodes": 138,
+  "nodes_targeted_by_a_shape": 138,
+  "nodes_untargeted_by_type": {},
+  "nodes_with_violations": 39,
+  "nodes_targeted_and_clean": 99,
+  "total_violations": 39,
+  "violations_by_shape": {
+    "nd95db1f786e04bcdb037dd108f917206b47": 8,
+    "RiskCaseMustHaveAuditLogConstraint": 9,
+    "ControlMustHavePurposeConstraint": 22
+  },
+  "violations_by_message": {
+    "Every RiskCase must have at least one associated AuditLog": 9,
+    "Vulnerability must have exactly one cweId matching pattern CWE-NNNN": 8,
+    "Every control must either mitigate a vulnerability or be associated with a risk case": 22
+  },
+  "shape_coverage_percent": 100.0,
+  "conforming_share_of_targeted_percent": 71.7,
+  "validation_time_seconds": 1.582,
+  "total_time_seconds": 1.707,
+  "results_text_excerpt": "Validation Report\nConforms: False\nResults (39):\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:datatype xsd:string ; sh:message Literal(\"Vulnerability must have exactly one cweId matching pattern CWE-NNNN\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path grc:cweId ; sh:pattern Literal(\"^CWE-[0-9]+$\") ; sh:severity sh:Violation ]\n\tFocus Node: grc:CVE-1999-0170\n\tResult Path: grc:cweId\n\tMessage: Vulnerability must have exactly one cweId matching pattern CWE-NNNN\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:datatype xsd:string ; sh:message Literal(\"Vulnerability must have exactly one cweId matching pattern CWE-NNNN\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path grc:cweId ; sh:pattern Literal(\"^CWE-[0-9]+$\") ; sh:severity sh:Violation ]\n\tFocus Node: grc:CVE-1999-0526\n\tResult Path: grc:cweId\n\tMessage: Vulnerability must have exactly one cweId matching pattern CWE-NNNN\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:datatype xsd:string ; sh:message Literal(\"Vulnerability must have exactly one cweId matching pattern CWE-NNNN\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path grc:cweId ; sh:pattern Literal(\"^CWE-[0-9]+$\") ; sh:severity sh:Violation ]\n\tFocus Node: grc:CVE-1999-0651\n\tResult Path: grc:cweId\n\tMessage: Vulnerability must have exactly one cweId matching pattern CWE-NNNN\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:datatype xsd:string ; sh:message Literal(\"Vulnerability must have exactly one cweId matching pattern CWE-NNNN\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path grc:cweId ; sh:pattern Li",
+  "node_type_coverage": {
+    "Asset": 33,
+    "Software": 34,
+    "CVE": 28,
+    "NFCRMControl": 26,
+    "RiskCase": 9,
+    "ATTACKTechnique": 8
+  }
+}

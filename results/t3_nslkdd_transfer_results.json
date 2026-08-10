@@ -1,0 +1,226 @@
+{
+  "experiment": "T3_NSL-KDD_R4_Transfer",
+  "description": "Tests whether CIC-IDS2018 SHAP-calibrated R4 rule (ML=Benign + Bwd Pkts/s > 30 → Infiltration) transfers to NSL-KDD. NSL-KDD lacks 'Bwd Pkts/s' — mapped to dst_bytes/duration (backward byte rate). Condition A = existing tristage_llm_sonnet (10 bespoke NL override rules). Condition B = XGBoost + CIC R4 only (no LLM, no bespoke rules).",
+  "timestamp": "2026-05-28T16:35:48.108737",
+  "cic_r4_rule": {
+    "trigger": "ML=Benign AND Bwd_Pkts/s > 30",
+    "action": "override to Infiltration",
+    "confidence_gate": 0.75,
+    "shap_rank": 16,
+    "cic_precision_train": 0.489
+  },
+  "nslkdd_r4_mapping": {
+    "cic_feature": "Bwd Pkts/s",
+    "nslkdd_proxy": "dst_bytes / max(duration, 0.001)",
+    "mapping_quality": "approximate — NSL-KDD lacks per-direction packet counts",
+    "semantic_note": "CIC Bwd Pkts/s captures C2 callback packet rate. NSL-KDD dst_bytes/duration captures backward byte throughput. Both measure server-to-client channel intensity but at different granularity. Packet rate > 30/s ≈ byte rate > 1,500-6,000 B/s depending on packet size.",
+    "data_quality_note": "NSL-KDD stores duration in INTEGER seconds (0 means <1s, not instantaneous). 41/50 test cases have duration=0. The backward rate proxy is undefined for these cases. Analysis uses raw dst_bytes as the ground-truth proxy when duration=0 dominates. This granularity gap is itself evidence of feature incompatibility between datasets."
+  },
+  "condition_A": {
+    "description": "Tri-stage LLM (Sonnet 4.6) with 10 bespoke NSL-KDD override rules",
+    "n": 50,
+    "correct": 44,
+    "accuracy": 0.88,
+    "per_class": {
+      "Probe": {
+        "n": 10,
+        "correct": 9,
+        "accuracy": 0.9
+      },
+      "DoS": {
+        "n": 10,
+        "correct": 9,
+        "accuracy": 0.9
+      },
+      "Normal": {
+        "n": 10,
+        "correct": 10,
+        "accuracy": 1.0
+      },
+      "U2R": {
+        "n": 10,
+        "correct": 9,
+        "accuracy": 0.9
+      },
+      "R2L": {
+        "n": 10,
+        "correct": 7,
+        "accuracy": 0.7
+      }
+    }
+  },
+  "condition_B": {
+    "description": "Tri-stage XGBoost + CIC R4 rule only (no LLM, no bespoke rules). Threshold sweep over dst_bytes/duration.",
+    "threshold_sweep_with_conf_gate": [
+      {
+        "threshold": 10,
+        "accuracy": 0.58,
+        "correct": 29,
+        "n": 50,
+        "overrides": 1,
+        "ov_correct": 1,
+        "ov_wrong": 0
+      },
+      {
+        "threshold": 30,
+        "accuracy": 0.58,
+        "correct": 29,
+        "n": 50,
+        "overrides": 1,
+        "ov_correct": 1,
+        "ov_wrong": 0
+      },
+      {
+        "threshold": 100,
+        "accuracy": 0.58,
+        "correct": 29,
+        "n": 50,
+        "overrides": 1,
+        "ov_correct": 1,
+        "ov_wrong": 0
+      },
+      {
+        "threshold": 300,
+        "accuracy": 0.58,
+        "correct": 29,
+        "n": 50,
+        "overrides": 1,
+        "ov_correct": 1,
+        "ov_wrong": 0
+      },
+      {
+        "threshold": 1000,
+        "accuracy": 0.58,
+        "correct": 29,
+        "n": 50,
+        "overrides": 1,
+        "ov_correct": 1,
+        "ov_wrong": 0
+      },
+      {
+        "threshold": 3000,
+        "accuracy": 0.56,
+        "correct": 28,
+        "n": 50,
+        "overrides": 0,
+        "ov_correct": 0,
+        "ov_wrong": 0
+      }
+    ],
+    "threshold_sweep_no_conf_gate": [
+      {
+        "threshold": 10,
+        "accuracy": 0.5,
+        "correct": 25,
+        "n": 50,
+        "overrides": 17,
+        "ov_correct": 7,
+        "ov_wrong": 10
+      },
+      {
+        "threshold": 30,
+        "accuracy": 0.46,
+        "correct": 23,
+        "n": 50,
+        "overrides": 15,
+        "ov_correct": 5,
+        "ov_wrong": 10
+      },
+      {
+        "threshold": 100,
+        "accuracy": 0.46,
+        "correct": 23,
+        "n": 50,
+        "overrides": 15,
+        "ov_correct": 5,
+        "ov_wrong": 10
+      },
+      {
+        "threshold": 300,
+        "accuracy": 0.44,
+        "correct": 22,
+        "n": 50,
+        "overrides": 14,
+        "ov_correct": 4,
+        "ov_wrong": 10
+      },
+      {
+        "threshold": 1000,
+        "accuracy": 0.44,
+        "correct": 22,
+        "n": 50,
+        "overrides": 14,
+        "ov_correct": 4,
+        "ov_wrong": 10
+      },
+      {
+        "threshold": 3000,
+        "accuracy": 0.42,
+        "correct": 21,
+        "n": 50,
+        "overrides": 13,
+        "ov_correct": 3,
+        "ov_wrong": 10
+      }
+    ],
+    "best_threshold_b_per_s": 10,
+    "best_accuracy": 0.58,
+    "best_correct": 29,
+    "n": 50
+  },
+  "xgb_baseline": {
+    "description": "Pure XGBoost, no rules",
+    "accuracy": 0.56,
+    "correct": 28,
+    "n": 50
+  },
+  "delta_cond_b_vs_cond_a": -0.3,
+  "delta_cond_b_vs_xgb_baseline": 0.02,
+  "behavioral_signature_analysis": {
+    "r2l_u2r_dst_bytes": {
+      "n": 20,
+      "max": 5285,
+      "median": 0,
+      "zeros": 11,
+      "pct_zero": 0.55
+    },
+    "normal_dst_bytes": {
+      "n": 10,
+      "max": 5466,
+      "median": 1056,
+      "zeros": 0,
+      "pct_zero": 0.0
+    },
+    "mannwhitney_u": 44.0,
+    "mannwhitney_p": 0.012279598109819132,
+    "conclusion": "R2L/U2R cases in NSL-KDD are predominantly ZERO dst_bytes (server returns nothing — SNMP no-response, REJ flags, zero-duration UDP probes). 11/17 Normal-predicted R2L/U2R cases have dst_bytes=0. This is the opposite of CIC Infiltration's elevated backward traffic. Mann-Whitney p=0.012 confirms Normal and R2L/U2R do differ on dst_bytes, but in the wrong direction for R4 transfer: Normal cases have HIGHER dst_bytes than R2L/U2R (Normal always has nonzero dst_bytes from HTTP responses; R2L/U2R frequently has zero). The R4 behavioral signature does NOT transfer.",
+    "data_artifact_note": "NSL-KDD duration=0 means <1s (integer second precision). 41/50 test cases have duration=0, making dst_bytes/duration = dst_bytes * 1000 (via the 0.001 floor). The inflated rate values (e.g., 43,000 B/s for a 43-byte UDP packet) are an artifact of coarse NSL-KDD duration encoding. Using raw dst_bytes as the discriminator is the correct approach for this dataset."
+  },
+  "generalization_verdict": {
+    "verdict": "DOES NOT GENERALIZE",
+    "confidence": "high",
+    "rationale": "R4's behavioral signature (ML=Benign, elevated backward traffic) targets C2-callback patterns in CIC Infiltration where the attacker's C2 server generates measurable server-to-client packet rate. In NSL-KDD, R2L (the closest analog) includes SNMP guessing (dst_bytes=0, no server response), FTP login attempts (very low dst_bytes), and POP3 reconnaissance — all characterized by LOW or ZERO backward traffic. 11/20 (55%) of NSL-KDD R2L/U2R cases have dst_bytes=0. The R4 threshold (>30 Bwd Pkts/s ≈ >1500+ B/s) fires zero valid overrides on the NSL-KDD test set at any reasonable threshold.",
+    "publishable_finding": "Cross-dataset feature semantics differ structurally: CIC Infiltration involves C2-callback flows with measurable server-to-client traffic (backward rate > 30 pkts/s), while NSL-KDD R2L involves credential-guessing attacks with near-zero server response. This semantic divergence explains why SHAP-calibrated rules learned on CIC network flow features do not transfer to NSL-KDD connection-record features without re-calibration."
+  },
+  "raw_dst_bytes_analysis": {
+    "note": "Avoids duration=0 inflation artifact. Uses raw dst_bytes as proxy for backward traffic presence.",
+    "normal_dst_bytes": [86, 115, 132, 280, 976, 1056, 1175, 1708, 1761, 5466],
+    "r2l_u2r_dst_bytes_xgb_normal_predicted": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 43, 93, 93, 157, 188, 3881],
+    "normal_median": 1056,
+    "r2l_u2r_median": 0,
+    "key_inversion": "Normal cases have higher dst_bytes than R2L/U2R confusion zone. Normal (HTTP responses) median=1056B; R2L/U2R (SNMP probes, REJ-flag attacks) median=0B. Threshold cannot separate them without injuring either precision or recall — any threshold above 0 causes Normal false-positives; any threshold below 86 fires on nothing useful.",
+    "threshold_sweep_raw_dst_bytes_conf_gate_0_75": [
+      {"threshold": 0,    "accuracy": 0.58, "overrides": 1, "ov_correct": 1, "ov_wrong": 0},
+      {"threshold": 10,   "accuracy": 0.58, "overrides": 1, "ov_correct": 1, "ov_wrong": 0},
+      {"threshold": 50,   "accuracy": 0.58, "overrides": 1, "ov_correct": 1, "ov_wrong": 0},
+      {"threshold": 100,  "accuracy": 0.58, "overrides": 1, "ov_correct": 1, "ov_wrong": 0},
+      {"threshold": 157,  "accuracy": 0.58, "overrides": 1, "ov_correct": 1, "ov_wrong": 0},
+      {"threshold": 200,  "accuracy": 0.58, "overrides": 1, "ov_correct": 1, "ov_wrong": 0},
+      {"threshold": 500,  "accuracy": 0.58, "overrides": 1, "ov_correct": 1, "ov_wrong": 0},
+      {"threshold": 1000, "accuracy": 0.58, "overrides": 1, "ov_correct": 1, "ov_wrong": 0},
+      {"threshold": 5000, "accuracy": 0.56, "overrides": 0, "ov_correct": 0, "ov_wrong": 0}
+    ],
+    "conclusion": "With conf gate < 0.75, only ONE case (nsl_033, a telnet U2R with 3881 dst_bytes) is in the eligible zone. R4 fires on it correctly (1/1 precision) but this is a single lucky match that improves accuracy from 56% to 58% — still far below the 88% achieved with bespoke rules."
+  },
+  "why_sonnet_still_works": "The LLM tri-stage achieves 88.0% on NSL-KDD not via R4 transfer but via natural-language override rules (10 bespoke markers) explicitly targeting NSL-KDD behavioral signatures (root_shell, num_failed_logins, httptunnel keyword, mailbomb keyword, SNMP guessing, POP3 authentication, slow-rate connection duration thresholds). These are dataset-specific adaptations that constitute engineering, not cross-dataset generalization."
+}

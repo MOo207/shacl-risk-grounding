@@ -1,0 +1,153 @@
+Loaded 120 cases from D:\01_Projects\INTERSYMBOLIC-GRC\results\cic_unified_rerun\test_sample.json
+  [1/120] test_000: Medium vs GT=Medium [OK] (19755ms)
+  [2/120] test_001: Catastrophic vs GT=Catastrophic [OK] (18383ms)
+  [3/120] test_002: Very Low vs GT=Very Low [OK] (28125ms)
+  [4/120] test_003: Catastrophic vs GT=Catastrophic [OK] (25786ms)
+  [5/120] test_004: Medium vs GT=Medium [OK] [ARBITRATED] (19422ms)
+  [6/120] test_005: Medium vs GT=Medium [OK] (20907ms)
+  [7/120] test_006: Catastrophic vs GT=Catastrophic [OK] (19732ms)
+  [8/120] test_007: High vs GT=Very Low [MISS] [ARBITRATED] (20873ms)
+  [9/120] test_008: Medium vs GT=Medium [OK] (20672ms)
+  [10/120] test_009: Catastrophic vs GT=Catastrophic [OK] [ARBITRATED] (31553ms)
+  [11/120] test_010: Low vs GT=Very Low [MISS] [ARBITRATED] (24245ms)
+  [12/120] test_011: Catastrophic vs GT=Catastrophic [OK] (35235ms)
+  [13/120] test_012: Very Low vs GT=Very Low [OK] (37900ms)
+  [14/120] test_013: Medium vs GT=Medium [OK] (27387ms)
+  [15/120] test_014: Low vs GT=Low [OK] [ARBITRATED] (23110ms)
+  [16/120] test_015: High vs GT=High [OK] [ARBITRATED] (19263ms)
+  [17/120] test_016: Medium vs GT=Medium [OK] [ARBITRATED] (19419ms)
+  [18/120] test_017: Very Low vs GT=Very Low [OK] (24259ms)
+  [19/120] test_018: Medium vs GT=Medium [OK] [ARBITRATED] (13612ms)
+  [20/120] test_019: Catastrophic vs GT=Catastrophic [OK] (26855ms)
+  [21/120] test_020: Medium vs GT=Medium [OK] (19924ms)
+  [22/120] test_021: Medium vs GT=Medium [OK] (20753ms)
+  [23/120] test_022: Catastrophic vs GT=Catastrophic [OK] (26856ms)
+  [24/120] test_023: Medium vs GT=Medium [OK] (30363ms)
+  [25/120] test_024: High vs GT=High [OK] (20248ms)
+  [26/120] test_025: Medium vs GT=Very Low [MISS] [ARBITRATED] (25989ms)
+  [27/120] test_026: High vs GT=Very Low [MISS] [ARBITRATED] (22116ms)
+  [28/120] test_027: High vs GT=High [OK] [ARBITRATED] (27604ms)
+  [29/120] test_028: Medium vs GT=Medium [OK] (25398ms)
+  [30/120] test_029: Medium vs GT=Medium [OK] (21630ms)
+  [31/120] test_030: Catastrophic vs GT=Catastrophic [OK] (35254ms)
+  [32/120] test_031: Catastrophic vs GT=Catastrophic [OK] (29489ms)
+  [33/120] test_032: Medium vs GT=Medium [OK] [ARBITRATED] (16210ms)
+  [34/120] test_033: Catastrophic vs GT=Medium [MISS] [ARBITRATED] (21977ms)
+  [35/120] test_034: Catastrophic vs GT=Catastrophic [OK] (22370ms)
+  [36/120] test_035: Medium vs GT=Medium [OK] [ARBITRATED] (28770ms)
+  [37/120] test_036: Catastrophic vs GT=Catastrophic [OK] (33449ms)
+  [38/120] test_037: Medium vs GT=Medium [OK] (38968ms)
+  [39/120] test_038: Medium vs GT=Medium [OK] [ARBITRATED] (19866ms)
+  [40/120] test_039: High vs GT=Very Low [MISS] [ARBITRATED] (23315ms)
+  [41/120] test_040: High vs GT=High [OK] (19162ms)
+  [42/120] test_041: Catastrophic vs GT=Catastrophic [OK] (25429ms)
+  [43/120] test_042: Catastrophic vs GT=Catastrophic [OK] (25266ms)
+  [44/120] test_043: Catastrophic vs GT=Catastrophic [OK] (23380ms)
+  [45/120] test_044: High vs GT=High [OK] [ARBITRATED] (18802ms)
+  [46/120] test_045: High vs GT=High [OK] [ARBITRATED] (15314ms)
+  [47/120] test_046: Very Low vs GT=Very Low [OK] (22179ms)
+  [48/120] test_047: High vs GT=High [OK] [ARBITRATED] (24097ms)
+  [49/120] test_048: High vs GT=High [OK] (18552ms)
+  [50/120] test_049: Medium vs GT=Medium [OK] [ARBITRATED] (21041ms)
+  [51/120] test_050: Medium vs GT=Medium [OK] [ARBITRATED] (15791ms)
+  [52/120] test_051: Catastrophic vs GT=Catastrophic [OK] (44607ms)
+  [53/120] test_052: Catastrophic vs GT=Very Low [MISS] [ARBITRATED] (26895ms)
+  [54/120] test_053: Catastrophic vs GT=Catastrophic [OK] [ARBITRATED] (17552ms)
+  [55/120] test_054: Catastrophic vs GT=Catastrophic [OK] [ARBITRATED] (21453ms)
+  [56/120] test_055: Medium vs GT=Medium [OK] [ARBITRATED] (19422ms)
+  [57/120] test_056: Very Low vs GT=Very Low [OK] (20732ms)
+  [58/120] test_057: Catastrophic vs GT=Catastrophic [OK] (15100ms)
+  [59/120] test_058: Catastrophic vs GT=Catastrophic [OK] (18222ms)
+  [60/120] test_059: High vs GT=High [OK] (18168ms)
+  [61/120] test_060: Medium vs GT=Medium [OK] (21026ms)
+  [62/120] test_061: Catastrophic vs GT=Catastrophic [OK] (21404ms)
+  [63/120] test_062: Catastrophic vs GT=Very Low [MISS] [ARBITRATED] (18864ms)
+  [64/120] test_063: Medium vs GT=Medium [OK] [ARBITRATED] (26863ms)
+  [65/120] test_064: Catastrophic vs GT=Catastrophic [OK] [ARBITRATED] (21979ms)
+  [66/120] test_065: Low vs GT=Very Low [MISS] [ARBITRATED] (56838ms)
+  [67/120] test_066: High vs GT=Very Low [MISS] [ARBITRATED] (17990ms)
+  [68/120] test_067: Low vs GT=Low [OK] [ARBITRATED] (20783ms)
+  [69/120] test_068: Low vs GT=Very Low [MISS] [ARBITRATED] (19601ms)
+  [70/120] test_069: Medium vs GT=Very Low [MISS] [ARBITRATED] (22997ms)
+  [71/120] test_070: High vs GT=Catastrophic [MISS] [ARBITRATED] (20747ms)
+  [72/120] test_071: Catastrophic vs GT=Catastrophic [OK] [ARBITRATED] (21779ms)
+  [73/120] test_072: Medium vs GT=Very Low [MISS] [ARBITRATED] (20946ms)
+  [74/120] test_073: Catastrophic vs GT=Catastrophic [OK] (16022ms)
+  [75/120] test_074: Medium vs GT=High [MISS] (30364ms)
+  [76/120] test_075: High vs GT=High [OK] [ARBITRATED] (15851ms)
+  [77/120] test_076: High vs GT=High [OK] (31470ms)
+  [78/120] test_077: High vs GT=High [OK] (21531ms)
+  [79/120] test_078: Low vs GT=Low [OK] [ARBITRATED] (18523ms)
+  [80/120] test_079: Medium vs GT=Medium [OK] (21316ms)
+  [81/120] test_080: Catastrophic vs GT=High [MISS] [ARBITRATED] (34451ms)
+  [82/120] test_081: Catastrophic vs GT=Catastrophic [OK] (19398ms)
+  [83/120] test_082: Catastrophic vs GT=Catastrophic [OK] (31860ms)
+  [84/120] test_083: Catastrophic vs GT=Catastrophic [OK] (18690ms)
+  [85/120] test_084: Very Low vs GT=Medium [MISS] (23446ms)
+  [86/120] test_085: Medium vs GT=Medium [OK] [ARBITRATED] (17322ms)
+  [87/120] test_086: Catastrophic vs GT=Catastrophic [OK] (17159ms)
+  [88/120] test_087: Catastrophic vs GT=Catastrophic [OK] (18095ms)
+  [89/120] test_088: Medium vs GT=Medium [OK] (20952ms)
+  [90/120] test_089: Medium vs GT=Medium [OK] (35220ms)
+  [91/120] test_090: Medium vs GT=Medium [OK] (27888ms)
+  [92/120] test_091: Catastrophic vs GT=Catastrophic [OK] (25926ms)
+  [93/120] test_092: Medium vs GT=Medium [OK] [ARBITRATED] (15591ms)
+  [94/120] test_093: Catastrophic vs GT=Catastrophic [OK] (49567ms)
+  [95/120] test_094: Catastrophic vs GT=Catastrophic [OK] (18410ms)
+  [96/120] test_095: Medium vs GT=Medium [OK] [ARBITRATED] (25185ms)
+  [97/120] test_096: Medium vs GT=Medium [OK] [ARBITRATED] (19147ms)
+  [98/120] test_097: Catastrophic vs GT=Catastrophic [OK] (23601ms)
+  [99/120] test_098: Catastrophic vs GT=Catastrophic [OK] [ARBITRATED] (49899ms)
+  [100/120] test_099: Medium vs GT=Very Low [MISS] [ARBITRATED] (27130ms)
+  [101/120] test_100: Medium vs GT=Medium [OK] (25697ms)
+  [102/120] test_101: Medium vs GT=Medium [OK] (24018ms)
+  [103/120] test_102: High vs GT=Very Low [MISS] [ARBITRATED] (22234ms)
+  [104/120] test_103: Catastrophic vs GT=Catastrophic [OK] (31466ms)
+  [105/120] test_104: Catastrophic vs GT=Catastrophic [OK] [ARBITRATED] (36155ms)
+  [106/120] test_105: Medium vs GT=Medium [OK] [ARBITRATED] (21286ms)
+  [107/120] test_106: High vs GT=High [OK] (21315ms)
+  [108/120] test_107: Catastrophic vs GT=Catastrophic [OK] (42447ms)
+  [109/120] test_108: Catastrophic vs GT=Catastrophic [OK] (24711ms)
+  [110/120] test_109: High vs GT=High [OK] [ARBITRATED] (16199ms)
+  [111/120] test_110: Low vs GT=Low [OK] [ARBITRATED] (14269ms)
+  [112/120] test_111: Catastrophic vs GT=Catastrophic [OK] (22707ms)
+  [113/120] test_112: Catastrophic vs GT=Catastrophic [OK] (19512ms)
+  [114/120] test_113: High vs GT=High [OK] (20205ms)
+  [115/120] test_114: Medium vs GT=Medium [OK] (48948ms)
+  [116/120] test_115: Catastrophic vs GT=Catastrophic [OK] [ARBITRATED] (66475ms)
+  [117/120] test_116: High vs GT=Very Low [MISS] [ARBITRATED] (25593ms)
+  [118/120] test_117: Very Low vs GT=Medium [MISS] (33087ms)
+  [119/120] test_118: Medium vs GT=Medium [OK] (40018ms)
+  [120/120] test_119: Catastrophic vs GT=Catastrophic [OK] (39295ms)
+
+=== SUMMARY ===
+{
+  "metrics": {
+    "n": 120,
+    "exact_match_pct": 82.5,
+    "within1_pct": 87.5,
+    "under_escalation_pct": 3.3333333333333335,
+    "over_escalation_pct": 14.166666666666666,
+    "severe_recall_pct": 98.30508474576271,
+    "severe_total": 59,
+    "worst_miss_levels": 2
+  },
+  "mcnemar": {
+    "b_xgb_correct_reconciled_wrong": 15,
+    "c_xgb_wrong_reconciled_correct": 0,
+    "n_discordant": 15,
+    "p_value": 6.103515625e-05
+  },
+  "grc": {
+    "n": 120,
+    "complete": 120,
+    "completeness_pct": 100.0
+  },
+  "api_errors": 0,
+  "parse_failures": 0,
+  "leak_check_failures": 0,
+  "n_disagreements": 83
+}
+
+Saved: D:\01_Projects\INTERSYMBOLIC-GRC\results\cic_unified_rerun\reconciled_tristage_haiku_cve_ablated_raw.jsonl
+Saved: D:\01_Projects\INTERSYMBOLIC-GRC\results\cic_unified_rerun\reconciled_tristage_haiku_cve_ablated_results.json

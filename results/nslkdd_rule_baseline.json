@@ -1,0 +1,63 @@
+{
+  "baseline_type": "SigmaRules",
+  "dataset": "nslkdd",
+  "data_source": "data/processed/nslkdd_cleaned.csv",
+  "n_rules": 6,
+  "test": {
+    "split": "test",
+    "samples": 22184,
+    "coverage": 0.0,
+    "covered_flows": 0,
+    "accuracy": 0.4404075009015507,
+    "f1_macro": 0.12230080741065281,
+    "precision_macro": 0.08808150018031013,
+    "recall_macro": 0.2,
+    "per_class_report": {
+      "DoS": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 7155.0
+      },
+      "Normal": {
+        "precision": 0.4404075009015507,
+        "recall": 1.0,
+        "f1-score": 0.6115040370532641,
+        "support": 9770.0
+      },
+      "Probe": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 2305.0
+      },
+      "R2L": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 2754.0
+      },
+      "U2R": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 200.0
+      },
+      "accuracy": 0.4404075009015507,
+      "macro avg": {
+        "precision": 0.08808150018031013,
+        "recall": 0.2,
+        "f1-score": 0.12230080741065281,
+        "support": 22184.0
+      },
+      "weighted avg": {
+        "precision": 0.19395876685034935,
+        "recall": 0.4404075009015507,
+        "f1-score": 0.2693109647498373,
+        "support": 22184.0
+      }
+    },
+    "covered_precision_macro": 0.0
+  },
+  "timestamp": "2026-03-15T14:49:17.684441"
+}

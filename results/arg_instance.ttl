@@ -1,0 +1,1044 @@
+@prefix arg: <http://example.org/grc/arg#> .
+@prefix grc: <https://w3id.org/grc/ontology#> .
+@prefix inst: <http://example.org/grc/instance/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+inst:NFCRM-5-1 a grc:NFCRMControl ;
+    grc:controlId "NFCRM-5-1" ;
+    grc:controlName "Designate a liaison officer with NCA for cybersecurity risk management activation" ;
+    grc:nfcrmClause "NFCRM-1:2025-§5.1" .
+
+inst:NFCRM-5-2 a grc:NFCRMControl ;
+    grc:controlId "NFCRM-5-2" ;
+    grc:controlName "Inventory and classify all organization assets (sensitive systems, OT, social media accounts, etc.) per NCA guidance, and review classification periodically" ;
+    grc:nfcrmClause "NFCRM-1:2025-§5.2" .
+
+inst:NFCRM-5-3 a grc:NFCRMControl ;
+    grc:controlId "NFCRM-5-3" ;
+    grc:controlName "Inventory internet-facing assets" ;
+    grc:nfcrmClause "NFCRM-1:2025-§5.3" .
+
+inst:NFCRM-5-4 a grc:NFCRMControl ;
+    grc:controlId "NFCRM-5-4" ;
+    grc:controlName "Report identified assets (from 5.2 and 5.3) to NCA periodically via Haseen platform, and update upon any change" ;
+    grc:nfcrmClause "NFCRM-1:2025-§5.4" .
+
+inst:NFCRM-5-5 a grc:NFCRMControl ;
+    grc:controlId "NFCRM-5-5" ;
+    grc:controlName "Report cybersecurity risks at catastrophic (level 5) and high (level 4) levels to NCA immediately upon identification, per the risk assessment matrix (Figure 2), and share treatment plans periodically" ;
+    grc:nfcrmClause "NFCRM-1:2025-§5.5" .
+
+inst:NFCRM-5-6 a grc:NFCRMControl ;
+    grc:controlId "NFCRM-5-6" ;
+    grc:controlName "Address risks, vulnerabilities, and observations received from NCA; report on remediation actions periodically via Haseen platform" ;
+    grc:nfcrmClause "NFCRM-1:2025-§5.6" .
+
+inst:NFCRM-6-1 a grc:NFCRMControl ;
+    grc:controlId "NFCRM-6-1" ;
+    grc:controlName "Develop and operate a continuous program for cybersecurity risk management methodology with dedicated resources" ;
+    grc:nfcrmClause "NFCRM-1:2025-§6.1" .
+
+inst:NFCRM-6-10 a grc:NFCRMControl ;
+    grc:controlId "NFCRM-6-10" ;
+    grc:controlName "Document analysis and assessment results in the cybersecurity risk register" ;
+    grc:nfcrmClause "NFCRM-1:2025-§6.10" .
+
+inst:NFCRM-6-11 a grc:NFCRMControl ;
+    grc:controlId "NFCRM-6-11" ;
+    grc:controlName "Develop cybersecurity risk treatment plans" ;
+    grc:nfcrmClause "NFCRM-1:2025-§6.11" .
+
+inst:NFCRM-6-12 a grc:NFCRMControl ;
+    grc:controlId "NFCRM-6-12" ;
+    grc:controlName "Assess expected residual risk after executing treatment plans to confirm acceptable risk level is reached" ;
+    grc:nfcrmClause "NFCRM-1:2025-§6.12" .
+
+inst:NFCRM-6-13 a grc:NFCRMControl ;
+    grc:controlId "NFCRM-6-13" ;
+    grc:controlName "Make risk treatment decision (accepting, sharing, mitigating, or avoiding) and define related treatment plans" ;
+    grc:nfcrmClause "NFCRM-1:2025-§6.13" .
+
+inst:NFCRM-6-14 a grc:NFCRMControl ;
+    grc:controlId "NFCRM-6-14" ;
+    grc:controlName "Prioritize treatment plans" ;
+    grc:nfcrmClause "NFCRM-1:2025-§6.14" .
+
+inst:NFCRM-6-15 a grc:NFCRMControl ;
+    grc:controlId "NFCRM-6-15" ;
+    grc:controlName "Execute treatment plans" ;
+    grc:nfcrmClause "NFCRM-1:2025-§6.15" .
+
+inst:NFCRM-6-16 a grc:NFCRMControl ;
+    grc:controlId "NFCRM-6-16" ;
+    grc:controlName "Update cybersecurity risk register to include treatment plans and residual risks" ;
+    grc:nfcrmClause "NFCRM-1:2025-§6.16" .
+
+inst:NFCRM-6-17 a grc:NFCRMControl ;
+    grc:controlId "NFCRM-6-17" ;
+    grc:controlName "Develop cybersecurity risk management reports" ;
+    grc:nfcrmClause "NFCRM-1:2025-§6.17" .
+
+inst:NFCRM-6-18 a grc:NFCRMControl ;
+    grc:controlId "NFCRM-6-18" ;
+    grc:controlName "Establish statistical data collection criteria for risk monitoring" ;
+    grc:nfcrmClause "NFCRM-1:2025-§6.18" .
+
+inst:NFCRM-6-19 a grc:NFCRMControl ;
+    grc:controlId "NFCRM-6-19" ;
+    grc:controlName "Monitor treatment plan execution periodically and issue related reports" ;
+    grc:nfcrmClause "NFCRM-1:2025-§6.19" .
+
+inst:NFCRM-6-2 a grc:NFCRMControl ;
+    grc:controlId "NFCRM-6-2" ;
+    grc:controlName "Engage stakeholders in various phases (e.g., cybersecurity supervisory committee, IT department)" ;
+    grc:nfcrmClause "NFCRM-1:2025-§6.2" .
+
+inst:NFCRM-6-20 a grc:NFCRMControl ;
+    grc:controlId "NFCRM-6-20" ;
+    grc:controlName "Re-execute risk management methodology periodically, or per NCA guidance, or upon change in: treatment plans, potential threats, expected scenarios, control implementation status, or digital infrastructure" ;
+    grc:nfcrmClause "NFCRM-1:2025-§6.20" .
+
+inst:NFCRM-6-3 a grc:NFCRMControl ;
+    grc:controlId "NFCRM-6-3" ;
+    grc:controlName "Inventory and classify organization assets" ;
+    grc:nfcrmClause "NFCRM-1:2025-§6.3" .
+
+inst:NFCRM-6-8 a grc:NFCRMControl ;
+    grc:controlId "NFCRM-6-8" ;
+    grc:controlName "Determine acceptable risk level for the organization" ;
+    grc:nfcrmClause "NFCRM-1:2025-§6.8" .
+
+inst:NFCRM-6-9 a grc:NFCRMControl ;
+    grc:controlId "NFCRM-6-9" ;
+    grc:controlName "Conduct inherent risk analysis for all expected risk scenarios and currently applied controls, assessing likelihood and impact per the risk assessment matrix (Figure 2)" ;
+    grc:nfcrmClause "NFCRM-1:2025-§6.9" .
+
+inst:SRV-003 a grc:Asset,
+        grc:Server ;
+    arg:criticality "high" ;
+    grc:assetId "SRV-003" ;
+    grc:assetType "server" ;
+    grc:hasVulnerability inst:CVE-2001-0554 ;
+    grc:hostname "telnet-srv-01" ;
+    grc:hostsSoftware inst:SW-Linux_telnetd-netkit ;
+    grc:ipAddress "172.31.69.25" ;
+    grc:osName "Ubuntu 8.04 LTS (Metasploitable 2)" .
+
+inst:SRV-004 a grc:Asset,
+        grc:Server ;
+    arg:criticality "medium" ;
+    grc:assetId "SRV-004" ;
+    grc:assetType "server" ;
+    grc:hostname "smtp-srv-01" ;
+    grc:hostsSoftware inst:SW-Postfix_SMTP-2.5.1 ;
+    grc:ipAddress "172.31.69.25" ;
+    grc:osName "Ubuntu 8.04 LTS (Metasploitable 2)" .
+
+inst:SRV-005 a grc:Asset,
+        grc:Server ;
+    arg:criticality "high" ;
+    grc:assetId "SRV-005" ;
+    grc:assetType "server" ;
+    grc:hasVulnerability inst:CVE-2009-0696 ;
+    grc:hostname "dns-srv-01" ;
+    grc:hostsSoftware inst:SW-ISC_BIND-9.4.2 ;
+    grc:ipAddress "172.31.69.25" ;
+    grc:osName "Ubuntu 8.04 LTS (Metasploitable 2)" .
+
+inst:SRV-006 a grc:Asset,
+        grc:Server ;
+    arg:criticality "critical" ;
+    grc:assetId "SRV-006" ;
+    grc:assetType "server" ;
+    grc:hasVulnerability inst:CVE-2007-6750,
+        inst:CVE-2011-3192 ;
+    grc:hostname "http-srv-01" ;
+    grc:hostsSoftware inst:SW-Apache_httpd-2.2.8 ;
+    grc:ipAddress "172.31.69.25" ;
+    grc:osName "Ubuntu 8.04 LTS (Metasploitable 2)" .
+
+inst:SRV-009 a grc:Asset,
+        grc:Server ;
+    arg:criticality "high" ;
+    grc:assetId "SRV-009" ;
+    grc:assetType "server" ;
+    grc:hostname "mutillidae-srv-01" ;
+    grc:hostsSoftware inst:SW-OWASP_Mutillidae_II-2.1.19 ;
+    grc:ipAddress "172.31.69.25" ;
+    grc:osName "Ubuntu 8.04 LTS (Metasploitable 2)" .
+
+inst:SRV-010 a grc:Asset,
+        grc:Server ;
+    arg:criticality "high" ;
+    grc:assetId "SRV-010" ;
+    grc:assetType "server" ;
+    grc:hasVulnerability inst:CVE-2009-1151 ;
+    grc:hostname "phpmyadmin-srv-01" ;
+    grc:hostsSoftware inst:SW-phpMyAdmin-2.11.x ;
+    grc:ipAddress "172.31.69.25" ;
+    grc:osName "Ubuntu 8.04 LTS (Metasploitable 2)" .
+
+inst:SRV-011 a grc:Asset,
+        grc:Server ;
+    arg:criticality "high" ;
+    grc:assetId "SRV-011" ;
+    grc:assetType "server" ;
+    grc:hasVulnerability inst:CVE-2008-5305 ;
+    grc:hostname "twiki-srv-01" ;
+    grc:hostsSoftware inst:SW-TWiki-4.2.4 ;
+    grc:ipAddress "172.31.69.25" ;
+    grc:osName "Ubuntu 8.04 LTS (Metasploitable 2)" .
+
+inst:SRV-012 a grc:Asset,
+        grc:Server ;
+    arg:criticality "high" ;
+    grc:assetId "SRV-012" ;
+    grc:assetType "server" ;
+    grc:hasVulnerability inst:CVE-2007-5423 ;
+    grc:hostname "tikiwiki-srv-01" ;
+    grc:hostsSoftware inst:SW-TikiWiki_CMS-1.9.5 ;
+    grc:ipAddress "172.31.69.25" ;
+    grc:osName "Ubuntu 8.04 LTS (Metasploitable 2)" .
+
+inst:SRV-013 a grc:Asset,
+        grc:Server ;
+    arg:criticality "medium" ;
+    grc:assetId "SRV-013" ;
+    grc:assetType "server" ;
+    grc:hostname "rpcbind-srv-01" ;
+    grc:hostsSoftware <http://example.org/grc/instance/SW-rpcbind-RPC_#100000> ;
+    grc:ipAddress "172.31.69.25" ;
+    grc:osName "Ubuntu 8.04 LTS (Metasploitable 2)" .
+
+inst:SRV-014 a grc:Asset,
+        grc:Server ;
+    arg:criticality "critical" ;
+    grc:assetId "SRV-014" ;
+    grc:assetType "server" ;
+    grc:hasVulnerability inst:CVE-2007-2447 ;
+    grc:hostname "smb-srv-01" ;
+    grc:hostsSoftware inst:SW-Samba-3.0.20-Debian ;
+    grc:ipAddress "172.31.69.25" ;
+    grc:osName "Ubuntu 8.04 LTS (Metasploitable 2)" .
+
+inst:SRV-015 a grc:Asset,
+        grc:Server ;
+    arg:criticality "critical" ;
+    grc:assetId "SRV-015" ;
+    grc:assetType "server" ;
+    grc:hasVulnerability inst:CVE-1999-0651 ;
+    grc:hostname "rservices-srv-01" ;
+    grc:hostsSoftware <http://example.org/grc/instance/SW-netkit_r-services_(rexec/rlogin/rsh)-0.17> ;
+    grc:ipAddress "172.31.69.25" ;
+    grc:osName "Ubuntu 8.04 LTS (Metasploitable 2)" .
+
+inst:SRV-016 a grc:Asset,
+        grc:Server ;
+    arg:criticality "high" ;
+    grc:assetId "SRV-016" ;
+    grc:assetType "server" ;
+    grc:hasVulnerability inst:CVE-2011-3556 ;
+    grc:hostname "rmi-srv-01" ;
+    grc:hostsSoftware inst:SW-Java_RMI_Registry-GNU_Classpath_grmiregistry ;
+    grc:ipAddress "172.31.69.25" ;
+    grc:osName "Ubuntu 8.04 LTS (Metasploitable 2)" .
+
+inst:SRV-017 a grc:Asset,
+        grc:Server ;
+    arg:criticality "critical" ;
+    grc:assetId "SRV-017" ;
+    grc:assetType "server" ;
+    grc:hostname "backdoor-srv-01" ;
+    grc:hostsSoftware inst:SW-ingreslock_root_backdoor-intentional ;
+    grc:ipAddress "172.31.69.25" ;
+    grc:osName "Ubuntu 8.04 LTS (Metasploitable 2)" .
+
+inst:SRV-018 a grc:Asset,
+        grc:Server ;
+    arg:criticality "critical" ;
+    grc:assetId "SRV-018" ;
+    grc:assetType "server" ;
+    grc:hasVulnerability inst:CVE-1999-0170 ;
+    grc:hostname "nfs-srv-01" ;
+    grc:hostsSoftware inst:SW-NFS-v2-v4 ;
+    grc:ipAddress "172.31.69.25" ;
+    grc:osName "Ubuntu 8.04 LTS (Metasploitable 2)" .
+
+inst:SRV-019 a grc:Asset,
+        grc:Server ;
+    arg:criticality "high" ;
+    grc:assetId "SRV-019" ;
+    grc:assetType "server" ;
+    grc:hasVulnerability inst:CVE-2010-4221 ;
+    grc:hostname "ftp2-srv-01" ;
+    grc:hostsSoftware inst:SW-ProFTPD-1.3.1 ;
+    grc:ipAddress "172.31.69.25" ;
+    grc:osName "Ubuntu 8.04 LTS (Metasploitable 2)" .
+
+inst:SRV-020 a grc:Asset,
+        grc:Server ;
+    arg:criticality "critical" ;
+    grc:assetId "SRV-020" ;
+    grc:assetType "server" ;
+    grc:hasVulnerability inst:CVE-2008-0226 ;
+    grc:hostname "mysql-srv-01" ;
+    grc:hostsSoftware inst:SW-MySQL-5.0.51a-3ubuntu5 ;
+    grc:ipAddress "172.31.69.25" ;
+    grc:osName "Ubuntu 8.04 LTS (Metasploitable 2)" .
+
+inst:SRV-021 a grc:Asset,
+        grc:Server ;
+    arg:criticality "critical" ;
+    grc:assetId "SRV-021" ;
+    grc:assetType "server" ;
+    grc:hasVulnerability inst:CVE-2004-2687 ;
+    grc:hostname "distcc-srv-01" ;
+    grc:hostsSoftware inst:SW-distccd-v1_\(GCC_4.2.4\) ;
+    grc:ipAddress "172.31.69.25" ;
+    grc:osName "Ubuntu 8.04 LTS (Metasploitable 2)" .
+
+inst:SRV-022 a grc:Asset,
+        grc:Server ;
+    arg:criticality "high" ;
+    grc:assetId "SRV-022" ;
+    grc:assetType "server" ;
+    grc:hasVulnerability inst:CVE-2013-1904 ;
+    grc:hostname "pgsql-srv-01" ;
+    grc:hostsSoftware inst:SW-PostgreSQL-8.3.0-8.3.7 ;
+    grc:ipAddress "172.31.69.25" ;
+    grc:osName "Ubuntu 8.04 LTS (Metasploitable 2)" .
+
+inst:SRV-023 a grc:Asset,
+        grc:Server ;
+    arg:criticality "critical" ;
+    grc:assetId "SRV-023" ;
+    grc:assetType "server" ;
+    grc:hasVulnerability inst:CVE-2006-2369 ;
+    grc:hostname "vnc-srv-01" ;
+    grc:hostsSoftware inst:SW-VNC-Protocol_3.3 ;
+    grc:ipAddress "172.31.69.25" ;
+    grc:osName "Ubuntu 8.04 LTS (Metasploitable 2)" .
+
+inst:SRV-024 a grc:Asset,
+        grc:Server ;
+    arg:criticality "medium" ;
+    grc:assetId "SRV-024" ;
+    grc:assetType "server" ;
+    grc:hasVulnerability inst:CVE-1999-0526 ;
+    grc:hostname "x11-srv-01" ;
+    grc:hostsSoftware inst:SW-X11-Xorg_7.3 ;
+    grc:ipAddress "172.31.69.25" ;
+    grc:osName "Ubuntu 8.04 LTS (Metasploitable 2)" .
+
+inst:SRV-025 a grc:Asset,
+        grc:Server ;
+    arg:criticality "critical" ;
+    grc:assetId "SRV-025" ;
+    grc:assetType "server" ;
+    grc:hasVulnerability inst:CVE-2010-2075 ;
+    grc:hostname "irc-srv-01" ;
+    grc:hostsSoftware inst:SW-UnrealIRCd-3.2.8.1 ;
+    grc:ipAddress "172.31.69.25" ;
+    grc:osName "Ubuntu 8.04 LTS (Metasploitable 2)" .
+
+inst:SRV-026 a grc:Asset,
+        grc:Server ;
+    arg:criticality "high" ;
+    grc:assetId "SRV-026" ;
+    grc:assetType "server" ;
+    grc:hasVulnerability inst:CVE-2009-0580 ;
+    grc:hostname "tomcat-srv-01" ;
+    grc:hostsSoftware <http://example.org/grc/instance/SW-Apache_Tomcat-5.5_(AJP/1.3_on_port_8009)> ;
+    grc:ipAddress "172.31.69.25" ;
+    grc:osName "Ubuntu 8.04 LTS (Metasploitable 2)" .
+
+inst:SRV-027 a grc:Asset,
+        grc:Server ;
+    arg:criticality "critical" ;
+    grc:assetId "SRV-027" ;
+    grc:assetType "server" ;
+    grc:hasVulnerability inst:CVE-2011-5330 ;
+    grc:hostname "drb-srv-01" ;
+    grc:hostsSoftware inst:SW-Ruby_DRb_\(Distributed_Ruby\)-1.8 ;
+    grc:ipAddress "172.31.69.25" ;
+    grc:osName "Ubuntu 8.04 LTS (Metasploitable 2)" .
+
+inst:CVE-1999-0170 a grc:Vulnerability ;
+    arg:inCisaKev false ;
+    rdfs:comment "NFS exports root filesystem allowing remote write and SSH key injection" ;
+    grc:concerns inst:SW-NFS-v2-v4 ;
+    grc:cveId "CVE-1999-0170" ;
+    grc:cvssScore 7.5 ;
+    grc:severity "high" .
+
+inst:CVE-1999-0526 a grc:Vulnerability ;
+    arg:inCisaKev false ;
+    rdfs:comment "X11 open display allows unauthenticated connection and screen capture" ;
+    grc:concerns inst:SW-X11-Xorg_7.3 ;
+    grc:cveId "CVE-1999-0526" ;
+    grc:cvssScore 10.0 ;
+    grc:severity "high" .
+
+inst:CVE-1999-0651 a grc:Vulnerability ;
+    arg:inCisaKev false ;
+    rdfs:comment "rexec/rlogin/rsh enabled with .rhosts trust allowing unauthenticated remote root" ;
+    grc:concerns <http://example.org/grc/instance/SW-netkit_r-services_(rexec/rlogin/rsh)-0.17> ;
+    grc:cveId "CVE-1999-0651" ;
+    grc:cvssScore 7.5 ;
+    grc:severity "high" .
+
+inst:CVE-2001-0554 a grc:Vulnerability ;
+    arg:inCisaKev false ;
+    rdfs:comment "Buffer overflow in BSD telnetd allows remote root via telnet options" ;
+    grc:concerns inst:SW-Linux_telnetd-netkit ;
+    grc:cveId "CVE-2001-0554" ;
+    grc:cvssScore 10.0 ;
+    grc:cweId "CWE-120" ;
+    grc:severity "high" .
+
+inst:CVE-2004-2687 a grc:Vulnerability ;
+    arg:inCisaKev false ;
+    rdfs:comment "distccd allows remote code execution via EXEC request without auth" ;
+    grc:concerns inst:SW-distccd-v1_\(GCC_4.2.4\) ;
+    grc:cveId "CVE-2004-2687" ;
+    grc:cvssScore 9.3 ;
+    grc:cweId "CWE-16" ;
+    grc:severity "high" .
+
+inst:CVE-2006-2369 a grc:Vulnerability ;
+    arg:inCisaKev false ;
+    rdfs:comment "RealVNC 4.1.1 authentication bypass via NULL auth type" ;
+    grc:concerns inst:SW-VNC-Protocol_3.3 ;
+    grc:cveId "CVE-2006-2369" ;
+    grc:cvssScore 7.5 ;
+    grc:cweId "CWE-287" ;
+    grc:severity "high" .
+
+inst:CVE-2007-2447 a grc:Vulnerability ;
+    arg:inCisaKev false ;
+    rdfs:comment "Samba username map script command injection allows remote RCE without auth" ;
+    grc:concerns inst:SW-Samba-3.0.20-Debian ;
+    grc:cveId "CVE-2007-2447" ;
+    grc:cvssScore 6.0 ;
+    grc:severity "medium" .
+
+inst:CVE-2007-5423 a grc:Vulnerability ;
+    arg:inCisaKev false ;
+    rdfs:comment "TikiWiki tiki-graph_formula.php PHP code injection allows RCE" ;
+    grc:concerns inst:SW-TikiWiki_CMS-1.9.5 ;
+    grc:cveId "CVE-2007-5423" ;
+    grc:cvssScore 7.5 ;
+    grc:cweId "CWE-94" ;
+    grc:severity "high" .
+
+inst:CVE-2007-6750 a grc:Vulnerability ;
+    arg:inCisaKev false ;
+    rdfs:comment "Apache httpd allows DoS via incomplete HTTP requests (Slowloris)" ;
+    grc:concerns inst:SW-Apache_httpd-2.2.8 ;
+    grc:cveId "CVE-2007-6750" ;
+    grc:cvssScore 5.0 ;
+    grc:cweId "CWE-399" ;
+    grc:severity "medium" .
+
+inst:CVE-2008-0166 a grc:Vulnerability ;
+    arg:inCisaKev false ;
+    rdfs:comment "Debian OpenSSL predictable RNG allows brute-force of private keys" ;
+    grc:concerns inst:SW-OpenSSH-4.7p1_Debian_8ubuntu1 ;
+    grc:cveId "CVE-2008-0166" ;
+    grc:cvssScore 7.5 ;
+    grc:cweId "CWE-338" ;
+    grc:relatesToRisk inst:RISK-BruteForce,
+        inst:RISK-SSH-BruteForce ;
+    grc:severity "high" .
+
+inst:CVE-2008-0226 a grc:Vulnerability ;
+    arg:inCisaKev false ;
+    rdfs:comment "MySQL 5.0.x allows local privilege escalation via crafted BINLOG command" ;
+    grc:concerns inst:SW-MySQL-5.0.51a-3ubuntu5 ;
+    grc:cveId "CVE-2008-0226" ;
+    grc:cvssScore 7.5 ;
+    grc:cweId "CWE-119" ;
+    grc:severity "high" .
+
+inst:CVE-2008-5305 a grc:Vulnerability ;
+    arg:inCisaKev false ;
+    rdfs:comment "TWiki rev parameter shell metacharacter injection allows RCE" ;
+    grc:concerns inst:SW-TWiki-4.2.4 ;
+    grc:cveId "CVE-2008-5305" ;
+    grc:cvssScore 10.0 ;
+    grc:cweId "CWE-94" ;
+    grc:severity "high" .
+
+inst:CVE-2009-0580 a grc:Vulnerability ;
+    arg:inCisaKev false ;
+    rdfs:comment "Apache Tomcat allows directory traversal via UTF-8 encoded URLs" ;
+    grc:concerns <http://example.org/grc/instance/SW-Apache_Tomcat-5.5_(AJP/1.3_on_port_8009)> ;
+    grc:cveId "CVE-2009-0580" ;
+    grc:cvssScore 4.3 ;
+    grc:cweId "CWE-200" ;
+    grc:severity "medium" .
+
+inst:CVE-2009-0696 a grc:Vulnerability ;
+    arg:inCisaKev false ;
+    rdfs:comment "ISC BIND 9.4.x allows remote DoS via crafted dynamic update message" ;
+    grc:concerns inst:SW-ISC_BIND-9.4.2 ;
+    grc:cveId "CVE-2009-0696" ;
+    grc:cvssScore 4.3 ;
+    grc:cweId "CWE-16" ;
+    grc:severity "medium" .
+
+inst:CVE-2009-1151 a grc:Vulnerability ;
+    arg:inCisaKev true ;
+    rdfs:comment "phpMyAdmin setup.php static code injection allows RCE without auth" ;
+    grc:concerns inst:SW-phpMyAdmin-2.11.x ;
+    grc:cveId "CVE-2009-1151" ;
+    grc:cvssScore 9.8 ;
+    grc:cweId "CWE-94" ;
+    grc:severity "critical" .
+
+inst:CVE-2010-0188 a grc:Vulnerability ;
+    arg:inCisaKev true ;
+    rdfs:comment "Adobe Reader 9 integer overflow via crafted PDF allows RCE — CIC infiltration initial access vector" ;
+    grc:concerns inst:SW-Adobe_Acrobat_Reader-9.0 ;
+    grc:cveId "CVE-2010-0188" ;
+    grc:cvssScore 7.8 ;
+    grc:relatesToRisk inst:RISK-Infiltration ;
+    grc:severity "high" .
+
+inst:CVE-2010-2075 a grc:Vulnerability ;
+    arg:inCisaKev false ;
+    rdfs:comment "UnrealIRCd 3.2.8.1 backdoor allows unauthenticated remote command execution via AB prefix" ;
+    grc:concerns inst:SW-UnrealIRCd-3.2.8.1 ;
+    grc:cveId "CVE-2010-2075" ;
+    grc:cvssScore 7.5 ;
+    grc:cweId "CWE-20" ;
+    grc:severity "high" .
+
+inst:CVE-2010-4221 a grc:Vulnerability ;
+    arg:inCisaKev false ;
+    rdfs:comment "ProFTPD TELNET IAC buffer overflow allows remote RCE" ;
+    grc:concerns inst:SW-ProFTPD-1.3.1 ;
+    grc:cveId "CVE-2010-4221" ;
+    grc:cvssScore 10.0 ;
+    grc:cweId "CWE-119" ;
+    grc:severity "high" .
+
+inst:CVE-2011-2523 a grc:Vulnerability ;
+    arg:inCisaKev false ;
+    rdfs:comment "vsftpd 2.3.4 backdoor opens shell on port 6200/tcp" ;
+    grc:concerns inst:SW-vsftpd-2.3.4 ;
+    grc:cveId "CVE-2011-2523" ;
+    grc:cvssScore 9.8 ;
+    grc:cweId "CWE-78" ;
+    grc:relatesToRisk inst:RISK-BruteForce,
+        inst:RISK-FTP-BruteForce ;
+    grc:severity "critical" .
+
+inst:CVE-2011-3192 a grc:Vulnerability ;
+    arg:inCisaKev false ;
+    rdfs:comment "Apache httpd Range header DoS (Apache Killer)" ;
+    grc:concerns inst:SW-Apache_httpd-2.2.8 ;
+    grc:cveId "CVE-2011-3192" ;
+    grc:cvssScore 7.8 ;
+    grc:cweId "CWE-400" ;
+    grc:severity "high" .
+
+inst:CVE-2011-3556 a grc:Vulnerability ;
+    arg:inCisaKev false ;
+    rdfs:comment "Oracle Java RMI default config allows remote RCE via deserialization" ;
+    grc:concerns inst:SW-Java_RMI_Registry-GNU_Classpath_grmiregistry ;
+    grc:cveId "CVE-2011-3556" ;
+    grc:cvssScore 7.5 ;
+    grc:severity "high" .
+
+inst:CVE-2011-5330 a grc:Vulnerability ;
+    arg:inCisaKev false ;
+    rdfs:comment "Ruby DRb allows remote RCE via instance_eval/syscall without authentication" ;
+    grc:concerns inst:SW-Ruby_DRb_\(Distributed_Ruby\)-1.8 ;
+    grc:cveId "CVE-2011-5330" ;
+    grc:cvssScore 9.8 ;
+    grc:severity "critical" .
+
+inst:CVE-2012-1823 a grc:Vulnerability ;
+    arg:inCisaKev true ;
+    rdfs:comment "PHP-CGI query string parameter injection allows RCE" ;
+    grc:concerns inst:SW-PHP-5.2.4 ;
+    grc:cveId "CVE-2012-1823" ;
+    grc:cvssScore 9.8 ;
+    grc:cweId "CWE-77" ;
+    grc:relatesToRisk inst:RISK-WebAttack ;
+    grc:severity "critical" .
+
+inst:CVE-2012-2311 a grc:Vulnerability ;
+    arg:inCisaKev false ;
+    rdfs:comment "PHP CGI argument injection via crafted request" ;
+    grc:concerns inst:SW-PHP-5.2.4 ;
+    grc:cveId "CVE-2012-2311" ;
+    grc:cvssScore 7.5 ;
+    grc:cweId "CWE-89" ;
+    grc:relatesToRisk inst:RISK-WebAttack ;
+    grc:severity "high" .
+
+inst:CVE-2013-1904 a grc:Vulnerability ;
+    arg:inCisaKev false ;
+    rdfs:comment "PostgreSQL allows local privilege escalation via crafted SQL" ;
+    grc:concerns inst:SW-PostgreSQL-8.3.0-8.3.7 ;
+    grc:cveId "CVE-2013-1904" ;
+    grc:cvssScore 5.0 ;
+    grc:cweId "CWE-22" ;
+    grc:severity "medium" .
+
+inst:CVE-2014-0160 a grc:Vulnerability ;
+    arg:inCisaKev true ;
+    rdfs:comment "Heartbleed: OpenSSL TLS heartbeat extension allows remote memory read leaking private keys and session data" ;
+    grc:concerns inst:SW-OpenSSL-1.0.1f ;
+    grc:cveId "CVE-2014-0160" ;
+    grc:cvssScore 7.5 ;
+    grc:cweId "CWE-125" ;
+    grc:relatesToRisk inst:RISK-Heartbleed ;
+    grc:severity "high" .
+
+inst:CVE-2017-7679 a grc:Vulnerability ;
+    arg:inCisaKev false ;
+    rdfs:comment "Apache mod_mime buffer overread allows DoS or information disclosure" ;
+    grc:concerns <http://example.org/grc/instance/SW-Apache_httpd-2.4.18_(Ubuntu_16.04_default,_5s_keep-alive)> ;
+    grc:cveId "CVE-2017-7679" ;
+    grc:cvssScore 9.8 ;
+    grc:cweId "CWE-126" ;
+    grc:relatesToRisk inst:RISK-DDoS,
+        inst:RISK-DoS ;
+    grc:severity "critical" .
+
+inst:NFCRM-6-6 a grc:NFCRMControl ;
+    grc:controlId "NFCRM-6-6" ;
+    grc:controlName "Develop expected cybersecurity risk scenarios based on threats and vulnerabilities" ;
+    grc:nfcrmClause "NFCRM-1:2025-§6.6" .
+
+inst:RISK-Bot a grc:RiskCase ;
+    arg:affectsAsset inst:SRV-032,
+        inst:SRV-033 ;
+    arg:riskScore 15 ;
+    grc:associatedWithControl inst:NFCRM-6-5 ;
+    grc:impact "5" ;
+    grc:likelihood "3" ;
+    grc:nfcrmClause "NFCRM-1:2025-§6.5" ;
+    grc:riskId "RISK-Bot" ;
+    grc:riskLevel "High" ;
+    grc:usesTechnique inst:T1071.001 .
+
+inst:RISK-DDoS a grc:RiskCase ;
+    arg:affectsAsset inst:SRV-028 ;
+    arg:riskScore 15 ;
+    grc:associatedWithControl inst:NFCRM-6-5 ;
+    grc:impact "5" ;
+    grc:likelihood "3" ;
+    grc:nfcrmClause "NFCRM-1:2025-§6.5" ;
+    grc:riskId "RISK-DDoS" ;
+    grc:riskLevel "High" ;
+    grc:usesTechnique inst:T1498 .
+
+inst:RISK-DoS a grc:RiskCase ;
+    arg:affectsAsset inst:SRV-028 ;
+    arg:riskScore 15 ;
+    grc:associatedWithControl inst:NFCRM-6-5 ;
+    grc:impact "5" ;
+    grc:likelihood "3" ;
+    grc:nfcrmClause "NFCRM-1:2025-§6.5" ;
+    grc:riskId "RISK-DoS" ;
+    grc:riskLevel "High" ;
+    grc:usesTechnique inst:T1499 .
+
+inst:RISK-FTP-BruteForce a grc:RiskCase ;
+    arg:affectsAsset inst:SRV-001 ;
+    arg:riskScore 15 ;
+    grc:associatedWithControl inst:NFCRM-6-7 ;
+    grc:impact "5" ;
+    grc:likelihood "3" ;
+    grc:nfcrmClause "NFCRM-1:2025-§6.7" ;
+    grc:riskId "RISK-FTP-BruteForce" ;
+    grc:riskLevel "High" ;
+    grc:usesTechnique inst:T1110.001 .
+
+inst:RISK-Heartbleed a grc:RiskCase ;
+    arg:affectsAsset inst:SRV-029 ;
+    arg:riskScore 15 ;
+    grc:associatedWithControl inst:NFCRM-6-4 ;
+    grc:impact "5" ;
+    grc:likelihood "3" ;
+    grc:nfcrmClause "NFCRM-1:2025-§6.4" ;
+    grc:riskId "RISK-Heartbleed" ;
+    grc:riskLevel "High" ;
+    grc:usesTechnique inst:T1555 .
+
+inst:RISK-Infiltration a grc:RiskCase ;
+    arg:affectsAsset inst:SRV-030,
+        inst:SRV-031 ;
+    arg:riskScore 12 ;
+    grc:associatedWithControl inst:NFCRM-6-6 ;
+    grc:impact "4" ;
+    grc:likelihood "3" ;
+    grc:nfcrmClause "NFCRM-1:2025-§6.6" ;
+    grc:riskId "RISK-Infiltration" ;
+    grc:riskLevel "Medium" ;
+    grc:usesTechnique inst:T1566.001 .
+
+inst:RISK-SSH-BruteForce a grc:RiskCase ;
+    arg:affectsAsset inst:SRV-002 ;
+    arg:riskScore 15 ;
+    grc:associatedWithControl inst:NFCRM-6-7 ;
+    grc:impact "5" ;
+    grc:likelihood "3" ;
+    grc:nfcrmClause "NFCRM-1:2025-§6.7" ;
+    grc:riskId "RISK-SSH-BruteForce" ;
+    grc:riskLevel "High" ;
+    grc:usesTechnique inst:T1110.001 .
+
+inst:SW-DVWA_\(Damn_Vulnerable_Web_Application\)-1.0.7 a grc:SoftwareAsset ;
+    grc:softwareName "DVWA (Damn Vulnerable Web Application)" ;
+    grc:softwareVersion "1.0.7" .
+
+inst:SW-IIS-10.0 a grc:SoftwareAsset ;
+    grc:softwareName "IIS" ;
+    grc:softwareVersion "10.0" .
+
+inst:SW-IIS-8.5 a grc:SoftwareAsset ;
+    grc:softwareName "IIS" ;
+    grc:softwareVersion "8.5" .
+
+inst:SW-OWASP_Mutillidae_II-2.1.19 a grc:SoftwareAsset ;
+    grc:softwareName "OWASP Mutillidae II" ;
+    grc:softwareVersion "2.1.19" .
+
+inst:SW-Postfix_SMTP-2.5.1 a grc:SoftwareAsset ;
+    grc:softwareName "Postfix SMTP" ;
+    grc:softwareVersion "2.5.1" .
+
+inst:SW-ingreslock_root_backdoor-intentional a grc:SoftwareAsset ;
+    grc:softwareName "ingreslock root backdoor" ;
+    grc:softwareVersion "intentional" .
+
+<http://example.org/grc/instance/SW-rpcbind-RPC_#100000> a grc:SoftwareAsset ;
+    grc:softwareName "rpcbind" ;
+    grc:softwareVersion "RPC #100000" .
+
+inst:T1071.001 a grc:AttackTechnique ;
+    rdfs:label "Web Protocols (Ares C2 port 8080)" ;
+    grc:attackTechniqueId "T1071.001" ;
+    grc:tactic "Command and Control" ;
+    grc:targetsAsset inst:SRV-032,
+        inst:SRV-033 .
+
+inst:T1110 a grc:AttackTechnique ;
+    rdfs:label "Brute Force" ;
+    grc:attackTechniqueId "T1110" ;
+    grc:tactic "Credential Access" ;
+    grc:targetsAsset inst:SRV-001,
+        inst:SRV-002 .
+
+inst:T1190 a grc:AttackTechnique ;
+    rdfs:label "Exploit Public-Facing Application" ;
+    grc:attackTechniqueId "T1190" ;
+    grc:tactic "Initial Access" ;
+    grc:targetsAsset inst:SRV-007,
+        inst:SRV-008 .
+
+inst:T1498 a grc:AttackTechnique ;
+    rdfs:label "Network Denial of Service" ;
+    grc:attackTechniqueId "T1498" ;
+    grc:tactic "Impact" ;
+    grc:targetsAsset inst:SRV-028 .
+
+inst:T1499 a grc:AttackTechnique ;
+    rdfs:label "Endpoint Denial of Service" ;
+    grc:attackTechniqueId "T1499" ;
+    grc:tactic "Impact" ;
+    grc:targetsAsset inst:SRV-028 .
+
+inst:T1555 a grc:AttackTechnique ;
+    rdfs:label "Credentials from Password Stores" ;
+    grc:attackTechniqueId "T1555" ;
+    grc:tactic "Credential Access" ;
+    grc:targetsAsset inst:SRV-029 .
+
+inst:T1566.001 a grc:AttackTechnique ;
+    rdfs:label "Spearphishing Attachment (PDF)" ;
+    grc:attackTechniqueId "T1566.001" ;
+    grc:tactic "Initial Access" ;
+    grc:targetsAsset inst:SRV-030,
+        inst:SRV-031 .
+
+inst:CVE-2017-0144 a grc:Vulnerability ;
+    arg:inCisaKev true ;
+    rdfs:comment "EternalBlue: Windows SMBv1 RCE via crafted packets (MS17-010)" ;
+    grc:concerns inst:SW-Windows_SMBv1-Windows_Server_2012_R2,
+        inst:SW-Windows_SMBv1-Windows_Server_2016 ;
+    grc:cveId "CVE-2017-0144" ;
+    grc:cvssScore 8.8 ;
+    grc:relatesToRisk inst:RISK-Bot ;
+    grc:severity "high" .
+
+inst:NFCRM-6-4 a grc:NFCRMControl ;
+    grc:controlId "NFCRM-6-4" ;
+    grc:controlName "Inventory cybersecurity vulnerabilities" ;
+    grc:nfcrmClause "NFCRM-1:2025-§6.4" .
+
+inst:RISK-BruteForce a grc:RiskCase ;
+    arg:affectsAsset inst:SRV-001,
+        inst:SRV-002 ;
+    arg:riskScore 15 ;
+    grc:associatedWithControl inst:NFCRM-6-7 ;
+    grc:impact "5" ;
+    grc:likelihood "3" ;
+    grc:nfcrmClause "NFCRM-1:2025-§6.7" ;
+    grc:riskId "RISK-BruteForce" ;
+    grc:riskLevel "High" ;
+    grc:usesTechnique inst:T1110 .
+
+inst:RISK-WebAttack a grc:RiskCase ;
+    arg:affectsAsset inst:SRV-007,
+        inst:SRV-008 ;
+    arg:riskScore 15 ;
+    grc:associatedWithControl inst:NFCRM-6-4 ;
+    grc:impact "5" ;
+    grc:likelihood "3" ;
+    grc:nfcrmClause "NFCRM-1:2025-§6.4" ;
+    grc:riskId "RISK-WebAttack" ;
+    grc:riskLevel "High" ;
+    grc:usesTechnique inst:T1190 .
+
+inst:SRV-007 a grc:Asset,
+        grc:Server ;
+    arg:criticality "critical" ;
+    grc:assetId "SRV-007" ;
+    grc:assetType "server" ;
+    grc:hasVulnerability inst:CVE-2012-1823,
+        inst:CVE-2012-2311 ;
+    grc:hostname "php-srv-01" ;
+    grc:hostsSoftware inst:SW-PHP-5.2.4 ;
+    grc:ipAddress "172.31.69.25" ;
+    grc:osName "Ubuntu 8.04 LTS (Metasploitable 2)" .
+
+inst:SRV-008 a grc:Asset,
+        grc:Server ;
+    arg:criticality "critical" ;
+    grc:assetId "SRV-008" ;
+    grc:assetType "server" ;
+    grc:hostname "dvwa-srv-01" ;
+    grc:hostsSoftware inst:SW-DVWA_\(Damn_Vulnerable_Web_Application\)-1.0.7 ;
+    grc:ipAddress "172.31.69.25" ;
+    grc:osName "Ubuntu 8.04 LTS (Metasploitable 2)" .
+
+inst:SRV-029 a grc:Asset,
+        grc:Server ;
+    arg:criticality "critical" ;
+    grc:assetId "SRV-029" ;
+    grc:assetType "server" ;
+    grc:hasVulnerability inst:CVE-2014-0160 ;
+    grc:hostname "heartbleed-srv-01" ;
+    grc:hostsSoftware inst:SW-OpenSSL-1.0.1f ;
+    grc:ipAddress "18.217.21.148" ;
+    grc:osName "Ubuntu 12.04 LTS" .
+
+inst:SRV-030 a grc:Asset,
+        grc:Server ;
+    arg:criticality "high" ;
+    grc:assetId "SRV-030" ;
+    grc:assetType "workstation" ;
+    grc:hasVulnerability inst:CVE-2010-0188 ;
+    grc:hostname "infiltration-victim-01" ;
+    grc:hostsSoftware inst:SW-Adobe_Acrobat_Reader-9.0 ;
+    grc:ipAddress "172.31.69.24" ;
+    grc:osName "Windows Vista (32-bit)" .
+
+inst:SRV-031 a grc:Asset,
+        grc:Server ;
+    arg:criticality "medium" ;
+    grc:assetId "SRV-031" ;
+    grc:assetType "workstation" ;
+    grc:hostname "infiltration-victim-02" ;
+    grc:ipAddress "172.31.69.13" ;
+    grc:osName "Windows Vista" .
+
+inst:SRV-032 a grc:Asset,
+        grc:Server ;
+    arg:criticality "critical" ;
+    grc:assetId "SRV-032" ;
+    grc:assetType "server" ;
+    grc:hasVulnerability inst:CVE-2017-0144 ;
+    grc:hostname "win-srv-01" ;
+    grc:hostsSoftware inst:SW-IIS-8.5,
+        inst:SW-Windows_SMBv1-Windows_Server_2012_R2 ;
+    grc:ipAddress "172.31.69.30" ;
+    grc:osName "Windows Server 2012 R2" .
+
+inst:SRV-033 a grc:Asset,
+        grc:Server ;
+    arg:criticality "critical" ;
+    grc:assetId "SRV-033" ;
+    grc:assetType "server" ;
+    grc:hasVulnerability inst:CVE-2017-0144 ;
+    grc:hostname "win-srv-02" ;
+    grc:hostsSoftware inst:SW-IIS-10.0,
+        inst:SW-Windows_SMBv1-Windows_Server_2016 ;
+    grc:ipAddress "172.31.69.31" ;
+    grc:osName "Windows Server 2016" .
+
+inst:SW-Adobe_Acrobat_Reader-9.0 a grc:SoftwareAsset ;
+    grc:softwareName "Adobe Acrobat Reader" ;
+    grc:softwareVersion "9.0" .
+
+<http://example.org/grc/instance/SW-Apache_Tomcat-5.5_(AJP/1.3_on_port_8009)> a grc:SoftwareAsset ;
+    grc:softwareName "Apache Tomcat" ;
+    grc:softwareVersion "5.5 (AJP/1.3 on port 8009)" .
+
+<http://example.org/grc/instance/SW-Apache_httpd-2.4.18_(Ubuntu_16.04_default,_5s_keep-alive)> a grc:SoftwareAsset ;
+    grc:softwareName "Apache httpd" ;
+    grc:softwareVersion "2.4.18 (Ubuntu 16.04 default, 5s keep-alive)" .
+
+inst:SW-ISC_BIND-9.4.2 a grc:SoftwareAsset ;
+    grc:softwareName "ISC BIND" ;
+    grc:softwareVersion "9.4.2" .
+
+inst:SW-Java_RMI_Registry-GNU_Classpath_grmiregistry a grc:SoftwareAsset ;
+    grc:softwareName "Java RMI Registry" ;
+    grc:softwareVersion "GNU Classpath grmiregistry" .
+
+inst:SW-Linux_telnetd-netkit a grc:SoftwareAsset ;
+    grc:softwareName "Linux telnetd" ;
+    grc:softwareVersion "netkit" .
+
+inst:SW-MySQL-5.0.51a-3ubuntu5 a grc:SoftwareAsset ;
+    grc:softwareName "MySQL" ;
+    grc:softwareVersion "5.0.51a-3ubuntu5" .
+
+inst:SW-NFS-v2-v4 a grc:SoftwareAsset ;
+    grc:softwareName "NFS" ;
+    grc:softwareVersion "v2-v4" .
+
+inst:SW-OpenSSH-4.7p1_Debian_8ubuntu1 a grc:SoftwareAsset ;
+    grc:softwareName "OpenSSH" ;
+    grc:softwareVersion "4.7p1 Debian 8ubuntu1" .
+
+inst:SW-OpenSSL-1.0.1f a grc:SoftwareAsset ;
+    grc:softwareName "OpenSSL" ;
+    grc:softwareVersion "1.0.1f" .
+
+inst:SW-PostgreSQL-8.3.0-8.3.7 a grc:SoftwareAsset ;
+    grc:softwareName "PostgreSQL" ;
+    grc:softwareVersion "8.3.0-8.3.7" .
+
+inst:SW-ProFTPD-1.3.1 a grc:SoftwareAsset ;
+    grc:softwareName "ProFTPD" ;
+    grc:softwareVersion "1.3.1" .
+
+inst:SW-Ruby_DRb_\(Distributed_Ruby\)-1.8 a grc:SoftwareAsset ;
+    grc:softwareName "Ruby DRb (Distributed Ruby)" ;
+    grc:softwareVersion "1.8" .
+
+inst:SW-Samba-3.0.20-Debian a grc:SoftwareAsset ;
+    grc:softwareName "Samba" ;
+    grc:softwareVersion "3.0.20-Debian" .
+
+inst:SW-TWiki-4.2.4 a grc:SoftwareAsset ;
+    grc:softwareName "TWiki" ;
+    grc:softwareVersion "4.2.4" .
+
+inst:SW-TikiWiki_CMS-1.9.5 a grc:SoftwareAsset ;
+    grc:softwareName "TikiWiki CMS" ;
+    grc:softwareVersion "1.9.5" .
+
+inst:SW-UnrealIRCd-3.2.8.1 a grc:SoftwareAsset ;
+    grc:softwareName "UnrealIRCd" ;
+    grc:softwareVersion "3.2.8.1" .
+
+inst:SW-VNC-Protocol_3.3 a grc:SoftwareAsset ;
+    grc:softwareName "VNC" ;
+    grc:softwareVersion "Protocol 3.3" .
+
+inst:SW-Windows_SMBv1-Windows_Server_2012_R2 a grc:SoftwareAsset ;
+    grc:softwareName "Windows SMBv1" ;
+    grc:softwareVersion "Windows Server 2012 R2" .
+
+inst:SW-Windows_SMBv1-Windows_Server_2016 a grc:SoftwareAsset ;
+    grc:softwareName "Windows SMBv1" ;
+    grc:softwareVersion "Windows Server 2016" .
+
+inst:SW-X11-Xorg_7.3 a grc:SoftwareAsset ;
+    grc:softwareName "X11" ;
+    grc:softwareVersion "Xorg 7.3" .
+
+inst:SW-distccd-v1_\(GCC_4.2.4\) a grc:SoftwareAsset ;
+    grc:softwareName "distccd" ;
+    grc:softwareVersion "v1 (GCC 4.2.4)" .
+
+<http://example.org/grc/instance/SW-netkit_r-services_(rexec/rlogin/rsh)-0.17> a grc:SoftwareAsset ;
+    grc:softwareName "netkit r-services (rexec/rlogin/rsh)" ;
+    grc:softwareVersion "0.17" .
+
+inst:SW-phpMyAdmin-2.11.x a grc:SoftwareAsset ;
+    grc:softwareName "phpMyAdmin" ;
+    grc:softwareVersion "2.11.x" .
+
+inst:SW-vsftpd-2.3.4 a grc:SoftwareAsset ;
+    grc:softwareName "vsftpd" ;
+    grc:softwareVersion "2.3.4" .
+
+inst:T1110.001 a grc:AttackTechnique ;
+    rdfs:label "Password Guessing (FTP/Patator)" ;
+    grc:attackTechniqueId "T1110.001" ;
+    grc:tactic "Credential Access" ;
+    grc:targetsAsset inst:SRV-001,
+        inst:SRV-002 .
+
+inst:NFCRM-6-5 a grc:NFCRMControl ;
+    grc:controlId "NFCRM-6-5" ;
+    grc:controlName "Inventory potential cybersecurity threats" ;
+    grc:nfcrmClause "NFCRM-1:2025-§6.5" .
+
+inst:NFCRM-6-7 a grc:NFCRMControl ;
+    grc:controlId "NFCRM-6-7" ;
+    grc:controlName "Identify currently applied controls to address expected risk scenarios" ;
+    grc:nfcrmClause "NFCRM-1:2025-§6.7" .
+
+inst:SW-Apache_httpd-2.2.8 a grc:SoftwareAsset ;
+    grc:softwareName "Apache httpd" ;
+    grc:softwareVersion "2.2.8" .
+
+inst:SW-PHP-5.2.4 a grc:SoftwareAsset ;
+    grc:softwareName "PHP" ;
+    grc:softwareVersion "5.2.4" .
+
+inst:SRV-001 a grc:Asset,
+        grc:Server ;
+    arg:criticality "critical" ;
+    grc:assetId "SRV-001" ;
+    grc:assetType "server" ;
+    grc:hasVulnerability inst:CVE-2011-2523 ;
+    grc:hostname "ftp-srv-01" ;
+    grc:hostsSoftware inst:SW-vsftpd-2.3.4 ;
+    grc:ipAddress "172.31.69.25" ;
+    grc:osName "Ubuntu 8.04 LTS (Metasploitable 2)" .
+
+inst:SRV-002 a grc:Asset,
+        grc:Server ;
+    arg:criticality "critical" ;
+    grc:assetId "SRV-002" ;
+    grc:assetType "server" ;
+    grc:hasVulnerability inst:CVE-2008-0166 ;
+    grc:hostname "ssh-srv-01" ;
+    grc:hostsSoftware inst:SW-OpenSSH-4.7p1_Debian_8ubuntu1 ;
+    grc:ipAddress "172.31.69.25" ;
+    grc:osName "Ubuntu 8.04 LTS (Metasploitable 2)" .
+
+inst:SRV-028 a grc:Asset,
+        grc:Server ;
+    arg:criticality "critical" ;
+    grc:assetId "SRV-028" ;
+    grc:assetType "server" ;
+    grc:hasVulnerability inst:CVE-2017-7679 ;
+    grc:hostname "web-dos-target-01" ;
+    grc:hostsSoftware <http://example.org/grc/instance/SW-Apache_httpd-2.4.18_(Ubuntu_16.04_default,_5s_keep-alive)> ;
+    grc:ipAddress "172.31.69.28" ;
+    grc:osName "Ubuntu 16.04 LTS" .
+

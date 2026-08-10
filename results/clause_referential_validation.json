@@ -1,0 +1,37 @@
+{
+  "description": "Referential clause validation, applied retroactively to stored LLM outputs.",
+  "timestamp": "2026-08-05T23:17:26.176111+00:00",
+  "valid_clause_count": 26,
+  "totals": {
+    "n_artifacts": 198,
+    "n_artifacts_with_parse": 195,
+    "n_refs": 1447,
+    "n_syntactic_pass": 1447,
+    "n_out_of_enumeration": 0,
+    "n_syntactic_fail": 0
+  },
+  "per_file": {
+    "exp2_risk_generation": {
+      "file": "results/llm_risk_generation.json",
+      "n_artifacts": 99,
+      "n_artifacts_with_parse": 96,
+      "n_refs": 397,
+      "n_syntactic_pass": 397,
+      "n_out_of_enumeration": 0,
+      "n_syntactic_fail": 0,
+      "out_of_enumeration_ids": [],
+      "syntactic_fail_ids": []
+    },
+    "exp3_control_recommendation": {
+      "file": "results/llm_control_recommendation.json",
+      "n_artifacts": 99,
+      "n_artifacts_with_parse": 99,
+      "n_refs": 1050,
+      "n_syntactic_pass": 1050,
+      "n_out_of_enumeration": 0,
+      "n_syntactic_fail": 0,
+      "out_of_enumeration_ids": [],
+      "syntactic_fail_ids": []
+    }
+  }
+}

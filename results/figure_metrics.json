@@ -1,0 +1,152 @@
+{
+  "figure3": {
+    "grc_corpus": {
+      "RiskCase": {
+        "conforming": 150,
+        "non_conforming": 30
+      },
+      "AuditLog": {
+        "conforming": 180,
+        "non_conforming": 0
+      },
+      "Control": {
+        "conforming": 4,
+        "non_conforming": 0
+      }
+    },
+    "control_recommendation": {
+      "total": 99,
+      "JSON Schema": {
+        "accepted": 99,
+        "rejected": 0
+      },
+      "SHACL": {
+        "accepted": 71,
+        "rejected": 28
+      }
+    }
+  },
+  "figure4": {
+    "cic_tradeoff": [
+      {
+        "label": "XGBoost",
+        "exact_accuracy": 95.0,
+        "under_escalation": 3.33,
+        "marker": "o",
+        "annotation_offset": [
+          -45,
+          -16
+        ]
+      },
+      {
+        "label": "Haiku + CVE",
+        "exact_accuracy": 85.0,
+        "under_escalation": 0.83,
+        "marker": "s",
+        "annotation_offset": [
+          -12,
+          -16
+        ]
+      },
+      {
+        "label": "Sonnet + CVE",
+        "exact_accuracy": 89.1667,
+        "under_escalation": 1.67,
+        "marker": "^",
+        "annotation_offset": [
+          5,
+          7
+        ]
+      },
+      {
+        "label": "Haiku, CVE removed",
+        "exact_accuracy": 82.5,
+        "under_escalation": 3.33,
+        "marker": "D",
+        "annotation_offset": [
+          4,
+          8
+        ]
+      }
+    ],
+    "nsl_tradeoff": [
+      {
+        "label": "XGBoost",
+        "exact_accuracy": 49.0,
+        "under_escalation": 48.0,
+        "marker": "o",
+        "annotation_offset": [
+          5,
+          -13
+        ]
+      },
+      {
+        "label": "Haiku + CVE",
+        "exact_accuracy": 65.0,
+        "under_escalation": 10.0,
+        "marker": "s",
+        "annotation_offset": [
+          5,
+          -13
+        ]
+      },
+      {
+        "label": "Sonnet + CVE",
+        "exact_accuracy": 63.0,
+        "under_escalation": 28.0,
+        "marker": "^",
+        "annotation_offset": [
+          -55,
+          8
+        ]
+      },
+      {
+        "label": "Haiku, CVE removed",
+        "exact_accuracy": 49.0,
+        "under_escalation": 36.0,
+        "marker": "D",
+        "annotation_offset": [
+          5,
+          7
+        ]
+      },
+      {
+        "label": "XGBoost + CVE-presence",
+        "exact_accuracy": 70.0,
+        "under_escalation": 27.0,
+        "marker": "P",
+        "annotation_offset": [
+          -76,
+          -15
+        ]
+      }
+    ],
+    "nsl_cve_decomposition": [
+      {
+        "label": "XGBoost",
+        "under_escalation": 48.0,
+        "severe_recall": 42.9
+      },
+      {
+        "label": "Haiku\nCVE removed",
+        "under_escalation": 36.0,
+        "severe_recall": 73.5
+      },
+      {
+        "label": "XGBoost +\nCVE-presence",
+        "under_escalation": 27.0,
+        "severe_recall": 77.6
+      },
+      {
+        "label": "Haiku +\nclass-paired CVE",
+        "under_escalation": 10.0,
+        "severe_recall": 93.9
+      },
+      {
+        "label": "Haiku +\npermuted CVE",
+        "under_escalation": 4.0,
+        "severe_recall": 98.0
+      }
+    ]
+  }
+}

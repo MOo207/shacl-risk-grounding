@@ -1,0 +1,353 @@
+===== RUN 1 : tristage_llm_haiku : Fri May 29 11:33:49 AST 2026 =====
+Loading existing test set from D:\01_Projects\INTERSYMBOLIC-GRC\results\nslkdd_ablation\test_set.json
+  50 cases | classes: {'Normal': 10, 'DoS': 10, 'Probe': 10, 'R2L': 10, 'U2R': 10}
+
+--- tristage_llm_haiku ---
+  Model: claude-haiku-4-5-20251001 | Cases: 50 | offset=0
+  [1/50] nsl_000: High vs GT=High [OK] (28755ms)
+  [2/50] nsl_001: High vs GT=High [OK] (59486ms)
+  [3/50] nsl_002: Medium vs GT=Catastrophic [MISS] (31884ms)
+  [4/50] nsl_003: Catastrophic vs GT=Catastrophic [OK] (24629ms)
+  [5/50] nsl_004: Very Low vs GT=Very Low [OK] (21040ms)
+  [6/50] nsl_005: Catastrophic vs GT=Catastrophic [OK] (26294ms)
+  [7/50] nsl_006: High vs GT=High [OK] (23805ms)
+  [8/50] nsl_007: Very Low vs GT=Very Low [OK] (22209ms)
+  [9/50] nsl_008: High vs GT=High [OK] (29353ms)
+  [10/50] nsl_009: Catastrophic vs GT=Catastrophic [OK] (22877ms)
+  [11/50] nsl_010: Very Low vs GT=Catastrophic [MISS] (45716ms)
+  [12/50] nsl_011: High vs GT=High [OK] (20804ms)
+  [13/50] nsl_012: Catastrophic vs GT=Catastrophic [OK] (23806ms)
+  [14/50] nsl_013: Very Low vs GT=Very Low [OK] (34496ms)
+  [15/50] nsl_014: Very Low vs GT=Catastrophic [MISS] (22643ms)
+  [16/50] nsl_015: Catastrophic vs GT=Catastrophic [OK] (19528ms)
+  [17/50] nsl_016: High vs GT=High [OK] (20796ms)
+  [18/50] nsl_017: High vs GT=High [OK] (25336ms)
+  [19/50] nsl_018: Catastrophic vs GT=Catastrophic [OK] (23929ms)
+  [20/50] nsl_019: Very Low vs GT=Very Low [OK] (25515ms)
+  [21/50] nsl_020: Catastrophic vs GT=Catastrophic [OK] (20771ms)
+  [22/50] nsl_021: Catastrophic vs GT=Catastrophic [OK] (30511ms)
+  [23/50] nsl_022: Very Low vs GT=Catastrophic [MISS] (55110ms)
+  [24/50] nsl_023: Catastrophic vs GT=Catastrophic [OK] (22666ms)
+  [25/50] nsl_024: Catastrophic vs GT=Catastrophic [OK] (24777ms)
+  [26/50] nsl_025: Catastrophic vs GT=Catastrophic [OK] (21530ms)
+  [27/50] nsl_026: Very Low vs GT=High [MISS] (41474ms)
+  [28/50] nsl_027: High vs GT=High [OK] (34134ms)
+  [29/50] nsl_028: High vs GT=High [OK] (24378ms)
+  [30/50] nsl_029: Catastrophic vs GT=Catastrophic [OK] (31302ms)
+  [31/50] nsl_030: Catastrophic vs GT=Catastrophic [OK] (27379ms)
+  [32/50] nsl_031: Catastrophic vs GT=Catastrophic [OK] (18778ms)
+  [33/50] nsl_032: Catastrophic vs GT=Catastrophic [OK] (22296ms)
+  [34/50] nsl_033: Catastrophic vs GT=Catastrophic [OK] (27254ms)
+  [35/50] nsl_034: Catastrophic vs GT=Catastrophic [OK] (44086ms)
+  [36/50] nsl_035: Catastrophic vs GT=Catastrophic [OK] (26818ms)
+  [37/50] nsl_036: Catastrophic vs GT=Catastrophic [OK] (18872ms)
+  [38/50] nsl_037: Very Low vs GT=Very Low [OK] (55764ms)
+  [39/50] nsl_038: High vs GT=High [OK] (28115ms)
+  [40/50] nsl_039: Catastrophic vs GT=Catastrophic [OK] (21362ms)
+  [41/50] nsl_040: Very Low vs GT=Very Low [OK] (44047ms)
+  [42/50] nsl_041: Catastrophic vs GT=Catastrophic [OK] (37639ms)
+  [43/50] nsl_042: Very Low vs GT=Very Low [OK] (30953ms)
+  [44/50] nsl_043: Very Low vs GT=Very Low [OK] (36958ms)
+  [45/50] nsl_044: Catastrophic vs GT=Catastrophic [OK] (24115ms)
+  [46/50] nsl_045: Catastrophic vs GT=Catastrophic [OK] (29897ms)
+  [47/50] nsl_046: Catastrophic vs GT=Catastrophic [OK] (28142ms)
+  [48/50] nsl_047: Very Low vs GT=Very Low [OK] (34495ms)
+  [49/50] nsl_048: Very Low vs GT=Very Low [OK] (23864ms)
+  [50/50] nsl_049: Catastrophic vs GT=Catastrophic [OK] (21480ms)
+
+Paradigm                      Accuracy      GRC     N  SHACLfil  ParseErr
+------------------------------------------------------------------------
+  rule                              —         —
+  shacl_only                        —         —
+  ml_rf                             —         —
+  ml_xgb                            —         —
+  tristage_rf                       —         —
+  tristage_xgb                      —         —
+  pure_llm                          —         —
+  tristage_llm_haiku            90.0%     Full    50        0         0
+  tristage_llm_sonnet               —         —
+----- done tristage_llm_haiku run1 rc=0 : Fri May 29 11:58:12 AST 2026 -----
+===== RUN 1 : tristage_llm_sonnet : Fri May 29 11:58:12 AST 2026 =====
+Loading existing test set from D:\01_Projects\INTERSYMBOLIC-GRC\results\nslkdd_ablation\test_set.json
+  50 cases | classes: {'Normal': 10, 'DoS': 10, 'Probe': 10, 'R2L': 10, 'U2R': 10}
+
+--- tristage_llm_sonnet ---
+  Model: claude-sonnet-4-6 | Cases: 50 | offset=0
+  [1/50] nsl_000: High vs GT=High [OK] (51451ms)
+  [2/50] nsl_001: High vs GT=High [OK] (34112ms)
+  [3/50] nsl_002: Medium vs GT=Catastrophic [MISS] (53324ms)
+  [4/50] nsl_003: Catastrophic vs GT=Catastrophic [OK] (33258ms)
+  [5/50] nsl_004: Very Low vs GT=Very Low [OK] (45760ms)
+  [6/50] nsl_005: Catastrophic vs GT=Catastrophic [OK] (49091ms)
+  [7/50] nsl_006: High vs GT=High [OK] (36433ms)
+  [8/50] nsl_007: Very Low vs GT=Very Low [OK] (30225ms)
+  [9/50] nsl_008: High vs GT=High [OK] (42507ms)
+  [10/50] nsl_009: Catastrophic vs GT=Catastrophic [OK] (37437ms)
+  [11/50] nsl_010: Very Low vs GT=Catastrophic [MISS] (35752ms)
+  [12/50] nsl_011: High vs GT=High [OK] (31517ms)
+  [13/50] nsl_012: Catastrophic vs GT=Catastrophic [OK] (46917ms)
+  [14/50] nsl_013: Very Low vs GT=Very Low [OK] (32076ms)
+  [15/50] nsl_014: Very Low vs GT=Catastrophic [MISS] (42875ms)
+  [16/50] nsl_015: Catastrophic vs GT=Catastrophic [OK] (38113ms)
+  [17/50] nsl_016: High vs GT=High [OK] (33283ms)
+  [18/50] nsl_017: High vs GT=High [OK] (42204ms)
+  [19/50] nsl_018: Catastrophic vs GT=Catastrophic [OK] (34767ms)
+  [20/50] nsl_019: Very Low vs GT=Very Low [OK] (36871ms)
+  [21/50] nsl_020: Catastrophic vs GT=Catastrophic [OK] (34354ms)
+  [22/50] nsl_021: Catastrophic vs GT=Catastrophic [OK] (41908ms)
+  [23/50] nsl_022: Very Low vs GT=Catastrophic [MISS] (46554ms)
+  [24/50] nsl_023: Catastrophic vs GT=Catastrophic [OK] (38285ms)
+  [25/50] nsl_024: Catastrophic vs GT=Catastrophic [OK] (45545ms)
+  [26/50] nsl_025: Catastrophic vs GT=Catastrophic [OK] (39703ms)
+  [27/50] nsl_026: Very Low vs GT=High [MISS] (139463ms)
+  [28/50] nsl_027: High vs GT=High [OK] (42560ms)
+  [29/50] nsl_028: High vs GT=High [OK] (117129ms)
+  [30/50] nsl_029: Catastrophic vs GT=Catastrophic [OK] (42213ms)
+  [31/50] nsl_030: Catastrophic vs GT=Catastrophic [OK] (39467ms)
+  [32/50] nsl_031: Catastrophic vs GT=Catastrophic [OK] (37803ms)
+  [33/50] nsl_032: Catastrophic vs GT=Catastrophic [OK] (39219ms)
+  [34/50] nsl_033: Catastrophic vs GT=Catastrophic [OK] (39016ms)
+  [35/50] nsl_034: Catastrophic vs GT=Catastrophic [OK] (70352ms)
+  [36/50] nsl_035: Catastrophic vs GT=Catastrophic [OK] (34391ms)
+  [37/50] nsl_036: Catastrophic vs GT=Catastrophic [OK] (38943ms)
+  [38/50] nsl_037: Very Low vs GT=Very Low [OK] (50900ms)
+  [39/50] nsl_038: High vs GT=High [OK] (41808ms)
+  [40/50] nsl_039: Catastrophic vs GT=Catastrophic [OK] (34888ms)
+  [41/50] nsl_040: Very Low vs GT=Very Low [OK] (37967ms)
+  [42/50] nsl_041: Catastrophic vs GT=Catastrophic [OK] (43563ms)
+  [43/50] nsl_042: Very Low vs GT=Very Low [OK] (28529ms)
+  [44/50] nsl_043: Very Low vs GT=Very Low [OK] (69179ms)
+  [45/50] nsl_044: Catastrophic vs GT=Catastrophic [OK] (39353ms)
+  [46/50] nsl_045: Catastrophic vs GT=Catastrophic [OK] (71594ms)
+  [47/50] nsl_046: Catastrophic vs GT=Catastrophic [OK] (68728ms)
+  [48/50] nsl_047: Very Low vs GT=Very Low [OK] (41336ms)
+  [49/50] nsl_048: Very Low vs GT=Very Low [OK] (39357ms)
+  [50/50] nsl_049: Catastrophic vs GT=Catastrophic [OK] (38235ms)
+
+Paradigm                      Accuracy      GRC     N  SHACLfil  ParseErr
+------------------------------------------------------------------------
+  rule                              —         —
+  shacl_only                        —         —
+  ml_rf                             —         —
+  ml_xgb                            —         —
+  tristage_rf                       —         —
+  tristage_xgb                      —         —
+  pure_llm                          —         —
+  tristage_llm_haiku            90.0%     Full    50        0         0
+  tristage_llm_sonnet           90.0%     Full    50        0         0
+----- done tristage_llm_sonnet run1 rc=0 : Fri May 29 12:36:15 AST 2026 -----
+===== RUN 2 : tristage_llm_haiku : Fri May 29 12:36:15 AST 2026 =====
+Loading existing test set from D:\01_Projects\INTERSYMBOLIC-GRC\results\nslkdd_ablation\test_set.json
+  50 cases | classes: {'Normal': 10, 'DoS': 10, 'Probe': 10, 'R2L': 10, 'U2R': 10}
+
+--- tristage_llm_haiku ---
+  Model: claude-haiku-4-5-20251001 | Cases: 50 | offset=0
+  [1/50] nsl_000: High vs GT=High [OK] (25255ms)
+  [2/50] nsl_001: High vs GT=High [OK] (40792ms)
+  [3/50] nsl_002: Medium vs GT=Catastrophic [MISS] (49508ms)
+  [4/50] nsl_003: Catastrophic vs GT=Catastrophic [OK] (21966ms)
+  [5/50] nsl_004: Very Low vs GT=Very Low [OK] (31724ms)
+  [6/50] nsl_005: Catastrophic vs GT=Catastrophic [OK] (20736ms)
+  [7/50] nsl_006: High vs GT=High [OK] (26510ms)
+  [8/50] nsl_007: Very Low vs GT=Very Low [OK] (37532ms)
+  [9/50] nsl_008: High vs GT=High [OK] (58110ms)
+  [10/50] nsl_009: Catastrophic vs GT=Catastrophic [OK] (42842ms)
+  [11/50] nsl_010: Very Low vs GT=Catastrophic [MISS] (22808ms)
+  [12/50] nsl_011: High vs GT=High [OK] (25603ms)
+  [13/50] nsl_012: Catastrophic vs GT=Catastrophic [OK] (56651ms)
+  [14/50] nsl_013: Very Low vs GT=Very Low [OK] (26389ms)
+  [15/50] nsl_014: Very Low vs GT=Catastrophic [MISS] (38203ms)
+  [16/50] nsl_015: Catastrophic vs GT=Catastrophic [OK] (21697ms)
+  [17/50] nsl_016: High vs GT=High [OK] (24050ms)
+  [18/50] nsl_017: High vs GT=High [OK] (34129ms)
+  [19/50] nsl_018: Catastrophic vs GT=Catastrophic [OK] (20076ms)
+  [20/50] nsl_019: Very Low vs GT=Very Low [OK] (19963ms)
+  [21/50] nsl_020: Catastrophic vs GT=Catastrophic [OK] (20480ms)
+  [22/50] nsl_021: Catastrophic vs GT=Catastrophic [OK] (33480ms)
+  [23/50] nsl_022: Very Low vs GT=Catastrophic [MISS] (44159ms)
+  [24/50] nsl_023: Catastrophic vs GT=Catastrophic [OK] (38290ms)
+  [25/50] nsl_024: Catastrophic vs GT=Catastrophic [OK] (32018ms)
+  [26/50] nsl_025: Catastrophic vs GT=Catastrophic [OK] (25117ms)
+  [27/50] nsl_026: Very Low vs GT=High [MISS] (48636ms)
+  [28/50] nsl_027: High vs GT=High [OK] (33722ms)
+  [29/50] nsl_028: High vs GT=High [OK] (36705ms)
+  [30/50] nsl_029: Catastrophic vs GT=Catastrophic [OK] (26511ms)
+  [31/50] nsl_030: Catastrophic vs GT=Catastrophic [OK] (54796ms)
+  [32/50] nsl_031: Catastrophic vs GT=Catastrophic [OK] (18163ms)
+  [33/50] nsl_032: Catastrophic vs GT=Catastrophic [OK] (23803ms)
+  [34/50] nsl_033: Catastrophic vs GT=Catastrophic [OK] (18947ms)
+  [35/50] nsl_034: Catastrophic vs GT=Catastrophic [OK] (38802ms)
+  [36/50] nsl_035: Catastrophic vs GT=Catastrophic [OK] (31588ms)
+  [37/50] nsl_036: Catastrophic vs GT=Catastrophic [OK] (23407ms)
+  [38/50] nsl_037: Very Low vs GT=Very Low [OK] (40471ms)
+  [39/50] nsl_038: High vs GT=High [OK] (52000ms)
+  [40/50] nsl_039: Catastrophic vs GT=Catastrophic [OK] (32612ms)
+  [41/50] nsl_040: Very Low vs GT=Very Low [OK] (66928ms)
+  [42/50] nsl_041: Catastrophic vs GT=Catastrophic [OK] (40969ms)
+  [43/50] nsl_042: Very Low vs GT=Very Low [OK] (23568ms)
+  [44/50] nsl_043: Very Low vs GT=Very Low [OK] (32540ms)
+  [45/50] nsl_044: Catastrophic vs GT=Catastrophic [OK] (22917ms)
+  [46/50] nsl_045: Catastrophic vs GT=Catastrophic [OK] (42851ms)
+  [47/50] nsl_046: Catastrophic vs GT=Catastrophic [OK] (33339ms)
+  [48/50] nsl_047: Very Low vs GT=Very Low [OK] (37742ms)
+  [49/50] nsl_048: Very Low vs GT=Very Low [OK] (40518ms)
+  [50/50] nsl_049: Catastrophic vs GT=Catastrophic [OK] (24009ms)
+
+Paradigm                      Accuracy      GRC     N  SHACLfil  ParseErr
+------------------------------------------------------------------------
+  rule                              —         —
+  shacl_only                        —         —
+  ml_rf                             —         —
+  ml_xgb                            —         —
+  tristage_rf                       —         —
+  tristage_xgb                      —         —
+  pure_llm                          —         —
+  tristage_llm_haiku            90.0%     Full    50        0         0
+  tristage_llm_sonnet               —         —
+----- done tristage_llm_haiku run2 rc=0 : Fri May 29 13:04:21 AST 2026 -----
+===== RUN 2 : tristage_llm_sonnet : Fri May 29 13:04:21 AST 2026 =====
+Loading existing test set from D:\01_Projects\INTERSYMBOLIC-GRC\results\nslkdd_ablation\test_set.json
+  50 cases | classes: {'Normal': 10, 'DoS': 10, 'Probe': 10, 'R2L': 10, 'U2R': 10}
+
+--- tristage_llm_sonnet ---
+  Model: claude-sonnet-4-6 | Cases: 50 | offset=0
+  [1/50] nsl_000: High vs GT=High [OK] (52585ms)
+  [2/50] nsl_001: High vs GT=High [OK] (44048ms)
+  [3/50] nsl_002: Medium vs GT=Catastrophic [MISS] (64636ms)
+  [4/50] nsl_003: Catastrophic vs GT=Catastrophic [OK] (42053ms)
+  [5/50] nsl_004: Very Low vs GT=Very Low [OK] (32753ms)
+  [6/50] nsl_005: Catastrophic vs GT=Catastrophic [OK] (37694ms)
+  [7/50] nsl_006: High vs GT=High [OK] (35662ms)
+  [retry 1/2] timeout after 180s
+  [8/50] nsl_007: Very Low vs GT=Very Low [OK] (10881478ms)
+  [9/50] nsl_008: High vs GT=High [OK] (46335ms)
+  [10/50] nsl_009: Catastrophic vs GT=Catastrophic [OK] (123704ms)
+  [11/50] nsl_010: Very Low vs GT=Catastrophic [MISS] (44035ms)
+  [12/50] nsl_011: High vs GT=High [OK] (35249ms)
+  [13/50] nsl_012: Catastrophic vs GT=Catastrophic [OK] (73784ms)
+  [14/50] nsl_013: Very Low vs GT=Very Low [OK] (26752ms)
+  [15/50] nsl_014: Very Low vs GT=Catastrophic [MISS] (67510ms)
+  [16/50] nsl_015: Catastrophic vs GT=Catastrophic [OK] (42765ms)
+  [17/50] nsl_016: High vs GT=High [OK] (29876ms)
+  [18/50] nsl_017: High vs GT=High [OK] (36789ms)
+  [19/50] nsl_018: Catastrophic vs GT=Catastrophic [OK] (45207ms)
+  [20/50] nsl_019: Very Low vs GT=Very Low [OK] (28670ms)
+  [21/50] nsl_020: Catastrophic vs GT=Catastrophic [OK] (43838ms)
+  [22/50] nsl_021: Catastrophic vs GT=Catastrophic [OK] (41811ms)
+  [23/50] nsl_022: Very Low vs GT=Catastrophic [MISS] (40788ms)
+  [24/50] nsl_023: Catastrophic vs GT=Catastrophic [OK] (31401ms)
+  [25/50] nsl_024: Catastrophic vs GT=Catastrophic [OK] (35313ms)
+  [26/50] nsl_025: Catastrophic vs GT=Catastrophic [OK] (35781ms)
+  [27/50] nsl_026: Very Low vs GT=High [MISS] (71680ms)
+  [28/50] nsl_027: High vs GT=High [OK] (45027ms)
+  [29/50] nsl_028: High vs GT=High [OK] (70851ms)
+  [30/50] nsl_029: Catastrophic vs GT=Catastrophic [OK] (34127ms)
+  [31/50] nsl_030: Catastrophic vs GT=Catastrophic [OK] (34700ms)
+  [32/50] nsl_031: Catastrophic vs GT=Catastrophic [OK] (33995ms)
+  [33/50] nsl_032: Catastrophic vs GT=Catastrophic [OK] (38618ms)
+  [34/50] nsl_033: Catastrophic vs GT=Catastrophic [OK] (23559ms)
+  [35/50] nsl_034: Catastrophic vs GT=Catastrophic [OK] (49462ms)
+  [36/50] nsl_035: Catastrophic vs GT=Catastrophic [OK] (47555ms)
+  [37/50] nsl_036: Catastrophic vs GT=Catastrophic [OK] (33239ms)
+  [38/50] nsl_037: Very Low vs GT=Very Low [OK] (49505ms)
+  [39/50] nsl_038: High vs GT=High [OK] (44971ms)
+  [40/50] nsl_039: Catastrophic vs GT=Catastrophic [OK] (28917ms)
+  [41/50] nsl_040: Very Low vs GT=Very Low [OK] (34526ms)
+  [42/50] nsl_041: Catastrophic vs GT=Catastrophic [OK] (39629ms)
+  [43/50] nsl_042: Very Low vs GT=Very Low [OK] (30689ms)
+  [44/50] nsl_043: Very Low vs GT=Very Low [OK] (58998ms)
+  [45/50] nsl_044: Catastrophic vs GT=Catastrophic [OK] (37876ms)
+  [46/50] nsl_045: Catastrophic vs GT=Catastrophic [OK] (62762ms)
+  [47/50] nsl_046: Catastrophic vs GT=Catastrophic [OK] (63402ms)
+  [48/50] nsl_047: Very Low vs GT=Very Low [OK] (43656ms)
+  [49/50] nsl_048: Very Low vs GT=Very Low [OK] (33964ms)
+  [50/50] nsl_049: Catastrophic vs GT=Catastrophic [OK] (36169ms)
+
+Paradigm                      Accuracy      GRC     N  SHACLfil  ParseErr
+------------------------------------------------------------------------
+  rule                              —         —
+  shacl_only                        —         —
+  ml_rf                             —         —
+  ml_xgb                            —         —
+  tristage_rf                       —         —
+  tristage_xgb                      —         —
+  pure_llm                          —         —
+  tristage_llm_haiku            90.0%     Full    50        0         0
+  tristage_llm_sonnet           90.0%     Full    50        0         0
+----- done tristage_llm_sonnet run2 rc=0 : Fri May 29 16:42:11 AST 2026 -----
+===== RUN 3 : tristage_llm_haiku : Fri May 29 16:42:11 AST 2026 =====
+Loading existing test set from D:\01_Projects\INTERSYMBOLIC-GRC\results\nslkdd_ablation\test_set.json
+  50 cases | classes: {'Normal': 10, 'DoS': 10, 'Probe': 10, 'R2L': 10, 'U2R': 10}
+
+--- tristage_llm_haiku ---
+  Model: claude-haiku-4-5-20251001 | Cases: 50 | offset=0
+  [1/50] nsl_000: High vs GT=High [OK] (24851ms)
+  [2/50] nsl_001: High vs GT=High [OK] (26493ms)
+  [3/50] nsl_002: Medium vs GT=Catastrophic [MISS] (26929ms)
+  [4/50] nsl_003: Catastrophic vs GT=Catastrophic [OK] (32331ms)
+  [5/50] nsl_004: Very Low vs GT=Very Low [OK] (23068ms)
+  [6/50] nsl_005: Catastrophic vs GT=Catastrophic [OK] (26144ms)
+  [7/50] nsl_006: High vs GT=High [OK] (22742ms)
+  [8/50] nsl_007: Very Low vs GT=Very Low [OK] (34954ms)
+  [9/50] nsl_008: High vs GT=High [OK] (42992ms)
+  [10/50] nsl_009: Catastrophic vs GT=Catastrophic [OK] (22989ms)
+  [11/50] nsl_010: Very Low vs GT=Catastrophic [MISS] (75658ms)
+  [retry 1/2] timeout after 180s
+  [retry 2/2] timeout after 180s
+CLI timed out after 3 retries (180s each)
+  [12/50] nsl_011: PARSE_ERR vs GT=High [MISS] (551021ms)
+  [retry 1/2] timeout after 180s
+  [retry 2/2] timeout after 180s
+  [13/50] nsl_012: Catastrophic vs GT=Catastrophic [OK] (504600ms)
+  [14/50] nsl_013: Very Low vs GT=Very Low [OK] (129370ms)
+  [15/50] nsl_014: Very Low vs GT=Catastrophic [MISS] (37135ms)
+  [16/50] nsl_015: Catastrophic vs GT=Catastrophic [OK] (68444ms)
+  [retry 1/2] timeout after 180s
+  [17/50] nsl_016: High vs GT=High [OK] (307357ms)
+  [18/50] nsl_017: High vs GT=High [OK] (117575ms)
+  [19/50] nsl_018: Catastrophic vs GT=Catastrophic [OK] (25801ms)
+  [20/50] nsl_019: Very Low vs GT=Very Low [OK] (26060ms)
+  [21/50] nsl_020: Catastrophic vs GT=Catastrophic [OK] (19664ms)
+  [22/50] nsl_021: Catastrophic vs GT=Catastrophic [OK] (34872ms)
+  [23/50] nsl_022: Very Low vs GT=Catastrophic [MISS] (51568ms)
+  [24/50] nsl_023: Catastrophic vs GT=Catastrophic [OK] (23587ms)
+  [25/50] nsl_024: Catastrophic vs GT=Catastrophic [OK] (24737ms)
+  [26/50] nsl_025: Catastrophic vs GT=Catastrophic [OK] (28719ms)
+  [27/50] nsl_026: Very Low vs GT=High [MISS] (48902ms)
+  [28/50] nsl_027: High vs GT=High [OK] (51322ms)
+  [29/50] nsl_028: High vs GT=High [OK] (58264ms)
+  [30/50] nsl_029: Catastrophic vs GT=Catastrophic [OK] (24477ms)
+  [31/50] nsl_030: Catastrophic vs GT=Catastrophic [OK] (19251ms)
+  [32/50] nsl_031: Catastrophic vs GT=Catastrophic [OK] (23343ms)
+  [33/50] nsl_032: Catastrophic vs GT=Catastrophic [OK] (27851ms)
+  [34/50] nsl_033: Catastrophic vs GT=Catastrophic [OK] (57610ms)
+  [35/50] nsl_034: Catastrophic vs GT=Catastrophic [OK] (24452ms)
+  [36/50] nsl_035: Catastrophic vs GT=Catastrophic [OK] (20836ms)
+  [37/50] nsl_036: Catastrophic vs GT=Catastrophic [OK] (46362ms)
+  [38/50] nsl_037: Very Low vs GT=Very Low [OK] (65473ms)
+  [39/50] nsl_038: High vs GT=High [OK] (44778ms)
+  [40/50] nsl_039: Catastrophic vs GT=Catastrophic [OK] (22423ms)
+  [41/50] nsl_040: Very Low vs GT=Very Low [OK] (31159ms)
+  [42/50] nsl_041: Catastrophic vs GT=Catastrophic [OK] (76322ms)
+  [43/50] nsl_042: Very Low vs GT=Very Low [OK] (26754ms)
+  [44/50] nsl_043: Very Low vs GT=Very Low [OK] (72296ms)
+  [45/50] nsl_044: Catastrophic vs GT=Catastrophic [OK] (21777ms)
+  [46/50] nsl_045: Catastrophic vs GT=Catastrophic [OK] (27097ms)
+  [47/50] nsl_046: Catastrophic vs GT=Catastrophic [OK] (22455ms)
+  [48/50] nsl_047: Very Low vs GT=Very Low [OK] (32996ms)
+  [49/50] nsl_048: Very Low vs GT=Very Low [OK] (32748ms)
+  [50/50] nsl_049: Catastrophic vs GT=Catastrophic [OK] (54494ms)
+
+Paradigm                      Accuracy      GRC     N  SHACLfil  ParseErr
+------------------------------------------------------------------------
+  rule                              —         —
+  shacl_only                        —         —
+  ml_rf                             —         —
+  ml_xgb                            —         —
+  tristage_rf                       —         —
+  tristage_xgb                      —         —
+  pure_llm                          —         —
+  tristage_llm_haiku            88.0%     Full    50        0         1
+  tristage_llm_sonnet               —         —
+----- done tristage_llm_haiku run3 rc=0 : Fri May 29 17:36:17 AST 2026 -----
+===== RUN 3 : tristage_llm_sonnet : Fri May 29 17:36:17 AST 2026 =====

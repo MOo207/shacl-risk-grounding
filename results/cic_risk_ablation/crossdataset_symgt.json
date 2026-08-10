@@ -1,0 +1,72 @@
+{
+  "description": "Reproduction of the two CIC cross-dataset sym-GT cells in tab:cross-dataset-tristage, pooled over CIC LLM-arm runs 1-3 (results/cic_risk_ablation/runs/run{1,2,3}/llm.jsonl, N=60 each, identical case_id set/order per run -> pooled N=180). Scoring reuses symbolic_risk()/cve_info()/load_test_set() from scripts/run_cic_risk_ablation.py verbatim (same function that produced results/cic_risk_ablation/summary_symgt.json).",
+  "sym_gt_formula": "sym_gt_i = symbolic_risk(true_attack_class_i, criticality_i, cvss_i, in_kev_i, n_controls_i)['risk_level']; a row is sym-correct if its risk_level (case 1) or re-derived risk_level (case 2) equals sym_gt_i.",
+  "cell_1_llm_pure": {
+    "label": "LLM (pure) -- CIC column, tab:cross-dataset-tristage",
+    "formula": "sym-GT accuracy of the pure-LLM arm's OWN self-reported risk_level field (run_llm_arm() sets risk_level = LLM's artifact['risk_level'] directly, no symbolic post-processing), pooled across runs 1-3.",
+    "per_run": [
+      {
+        "run": "run1",
+        "n": 60,
+        "correct": 46,
+        "acc": 0.7667
+      },
+      {
+        "run": "run2",
+        "n": 60,
+        "correct": 43,
+        "acc": 0.7167
+      },
+      {
+        "run": "run3",
+        "n": 60,
+        "correct": 40,
+        "acc": 0.6667
+      }
+    ],
+    "pooled_n": 180,
+    "pooled_correct": 129,
+    "pooled_acc": 0.7167,
+    "wilson_ci_95": [
+      0.6468,
+      0.7774
+    ]
+  },
+  "cell_2_tristage_llm_class": {
+    "label": "Tri-stage (LLM-class) -- CIC column, tab:cross-dataset-tristage",
+    "formula": "The LLM arm's inferred class (attack_class_used) is re-run through symbolic_risk() (the same deterministic engine used to build sym-GT) using that case's true criticality/CVSS/KEV/n_controls, and the resulting risk_level is compared to sym-GT. This differs from cell_1 in that it discards the LLM's own self-reported risk_level and instead re-derives risk deterministically from the LLM's classification only.",
+    "per_run": [
+      {
+        "run": "run1",
+        "n": 60,
+        "correct": 43,
+        "acc": 0.7167
+      },
+      {
+        "run": "run2",
+        "n": 60,
+        "correct": 44,
+        "acc": 0.7333
+      },
+      {
+        "run": "run3",
+        "n": 60,
+        "correct": 42,
+        "acc": 0.7
+      }
+    ],
+    "pooled_n": 180,
+    "pooled_correct": 129,
+    "pooled_acc": 0.7167,
+    "wilson_ci_95": [
+      0.6468,
+      0.7774
+    ]
+  },
+  "reproduction_of_printed_71_7_pct": {
+    "printed_value": "71.7% (129/180)",
+    "cell_2_reengine_matches_exactly": true,
+    "cell_1_pure_matches_exactly": true,
+    "outcome": "MATCHED by cell_2 (re-engineered LLM-class derivation)"
+  }
+}

@@ -1,0 +1,289 @@
+{
+  "discrimination": {
+    "per_class": {
+      "BruteForce": {
+        "n_assets": 2,
+        "distinct_levels": [
+          "Catastrophic"
+        ],
+        "n_distinct_levels": 1,
+        "score_min": 25,
+        "score_max": 25
+      },
+      "Infiltration": {
+        "n_assets": 24,
+        "distinct_levels": [
+          "Catastrophic",
+          "High",
+          "Medium"
+        ],
+        "n_distinct_levels": 3,
+        "score_min": 12,
+        "score_max": 25
+      },
+      "WebAttack": {
+        "n_assets": 2,
+        "distinct_levels": [
+          "Catastrophic"
+        ],
+        "n_distinct_levels": 1,
+        "score_min": 25,
+        "score_max": 25
+      },
+      "DoS": {
+        "n_assets": 1,
+        "distinct_levels": [
+          "Catastrophic"
+        ],
+        "n_distinct_levels": 1,
+        "score_min": 20,
+        "score_max": 20
+      },
+      "DDoS": {
+        "n_assets": 1,
+        "distinct_levels": [
+          "Catastrophic"
+        ],
+        "n_distinct_levels": 1,
+        "score_min": 20,
+        "score_max": 20
+      }
+    },
+    "n_attack_classes": 5,
+    "constant_model_distinct_levels": 5,
+    "asset_specific_distinct_levels": 7,
+    "discrimination_gain": 2
+  },
+  "residual": {
+    "n_scenarios": 30,
+    "n_residual_reduced": 11,
+    "n_residual_level_changed": 2,
+    "example_level_changes": [
+      {
+        "asset_id": "SRV-028",
+        "attack_type": "DoS",
+        "inherent": "20 (Catastrophic)",
+        "residual": "15 (High)",
+        "n_controls": 1
+      },
+      {
+        "asset_id": "SRV-028",
+        "attack_type": "DDoS",
+        "inherent": "20 (Catastrophic)",
+        "residual": "15 (High)",
+        "n_controls": 1
+      }
+    ]
+  },
+  "epss_external": {
+    "n_cves_paired": 28,
+    "spearman_rho_band_vs_epss": 0.412,
+    "spearman_p_permutation": 0.0295,
+    "spearman_rho_ci95": [
+      -0.02,
+      0.72
+    ],
+    "n_permutations": 20000,
+    "n_bootstrap": 10000,
+    "seed": 42,
+    "interpretation": "EPSS is independent of the CVSS+KEV exploitability band, so a positive rho is non-circular evidence that the band tracks real-world exploitation probability.",
+    "detail": [
+      {
+        "cve": "CVE-2011-2523",
+        "cvss": 10.0,
+        "kev": false,
+        "exploitability_band": 4,
+        "epss": 0.94282
+      },
+      {
+        "cve": "CVE-2008-0166",
+        "cvss": 7.8,
+        "kev": false,
+        "exploitability_band": 3,
+        "epss": 0.04353
+      },
+      {
+        "cve": "CVE-2001-0554",
+        "cvss": 10.0,
+        "kev": false,
+        "exploitability_band": 4,
+        "epss": 0.16672
+      },
+      {
+        "cve": "CVE-2009-0696",
+        "cvss": 7.1,
+        "kev": false,
+        "exploitability_band": 3,
+        "epss": 0.33301
+      },
+      {
+        "cve": "CVE-2007-6750",
+        "cvss": 5.0,
+        "kev": false,
+        "exploitability_band": 2,
+        "epss": 0.81732
+      },
+      {
+        "cve": "CVE-2011-3192",
+        "cvss": 7.8,
+        "kev": false,
+        "exploitability_band": 3,
+        "epss": 0.90865
+      },
+      {
+        "cve": "CVE-2012-1823",
+        "cvss": 7.5,
+        "kev": true,
+        "exploitability_band": 5,
+        "epss": 0.94363
+      },
+      {
+        "cve": "CVE-2012-2311",
+        "cvss": 7.5,
+        "kev": false,
+        "exploitability_band": 3,
+        "epss": 0.74532
+      },
+      {
+        "cve": "CVE-2009-1151",
+        "cvss": 7.5,
+        "kev": true,
+        "exploitability_band": 5,
+        "epss": 0.93271
+      },
+      {
+        "cve": "CVE-2008-5305",
+        "cvss": 10.0,
+        "kev": false,
+        "exploitability_band": 4,
+        "epss": 0.04122
+      },
+      {
+        "cve": "CVE-2007-5423",
+        "cvss": 7.5,
+        "kev": false,
+        "exploitability_band": 3,
+        "epss": 0.88077
+      },
+      {
+        "cve": "CVE-2007-2447",
+        "cvss": 10.0,
+        "kev": false,
+        "exploitability_band": 4,
+        "epss": 0.49575
+      },
+      {
+        "cve": "CVE-1999-0651",
+        "cvss": 10.0,
+        "kev": false,
+        "exploitability_band": 4,
+        "epss": 0.50061
+      },
+      {
+        "cve": "CVE-2011-3556",
+        "cvss": 7.5,
+        "kev": false,
+        "exploitability_band": 3,
+        "epss": 0.87065
+      },
+      {
+        "cve": "CVE-1999-0170",
+        "cvss": 10.0,
+        "kev": false,
+        "exploitability_band": 4,
+        "epss": 0.28135
+      },
+      {
+        "cve": "CVE-2010-4221",
+        "cvss": 10.0,
+        "kev": false,
+        "exploitability_band": 4,
+        "epss": 0.92052
+      },
+      {
+        "cve": "CVE-2008-0226",
+        "cvss": 7.5,
+        "kev": false,
+        "exploitability_band": 3,
+        "epss": 0.92203
+      },
+      {
+        "cve": "CVE-2004-2687",
+        "cvss": 10.0,
+        "kev": false,
+        "exploitability_band": 4,
+        "epss": 0.90467
+      },
+      {
+        "cve": "CVE-2013-1904",
+        "cvss": 6.5,
+        "kev": false,
+        "exploitability_band": 2,
+        "epss": 0.0034
+      },
+      {
+        "cve": "CVE-2006-2369",
+        "cvss": 7.5,
+        "kev": false,
+        "exploitability_band": 3,
+        "epss": 0.92336
+      },
+      {
+        "cve": "CVE-1999-0526",
+        "cvss": 7.5,
+        "kev": false,
+        "exploitability_band": 3,
+        "epss": 0.72652
+      },
+      {
+        "cve": "CVE-2010-2075",
+        "cvss": 10.0,
+        "kev": false,
+        "exploitability_band": 4,
+        "epss": 0.87203
+      },
+      {
+        "cve": "CVE-2009-0580",
+        "cvss": 5.0,
+        "kev": false,
+        "exploitability_band": 2,
+        "epss": 0.88173
+      },
+      {
+        "cve": "CVE-2011-5330",
+        "cvss": 10.0,
+        "kev": false,
+        "exploitability_band": 4,
+        "epss": 0.00324
+      },
+      {
+        "cve": "CVE-2017-7679",
+        "cvss": 7.5,
+        "kev": false,
+        "exploitability_band": 3,
+        "epss": 0.30062
+      },
+      {
+        "cve": "CVE-2014-0160",
+        "cvss": 10.0,
+        "kev": true,
+        "exploitability_band": 5,
+        "epss": 0.94464
+      },
+      {
+        "cve": "CVE-2010-0188",
+        "cvss": 9.3,
+        "kev": true,
+        "exploitability_band": 5,
+        "epss": 0.93552
+      },
+      {
+        "cve": "CVE-2017-0144",
+        "cvss": 9.3,
+        "kev": true,
+        "exploitability_band": 5,
+        "epss": 0.94318
+      }
+    ]
+  }
+}

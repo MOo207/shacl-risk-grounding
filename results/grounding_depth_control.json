@@ -1,0 +1,157 @@
+{
+  "experiment": "Grounding-depth control (Exp3 task, Exp2 context)",
+  "pre_registered": true,
+  "pre_registration": "docs/superpowers/plans/2026-07-26-dke-review-remediation.md Task 3 Step 1",
+  "timestamp": "2026-07-26T12:57:59.296092",
+  "summary": {
+    "model": "haiku",
+    "design": "pre-registered paired grounding-depth control; same task/validators/scoring as Exp3; manipulation = 2-hop ARG subgraph added to prompt; 99 stored Exp3 (asset, threat, cve) triples reused verbatim",
+    "n": 2,
+    "parseable_pct": 100.0,
+    "json_schema_valid_pct": 100.0,
+    "shacl_valid_pct": 100.0,
+    "sparse_shacl_valid_pct": 100.0,
+    "paired_mcnemar": {
+      "b_rich_only_valid": 0,
+      "c_sparse_only_valid": 0,
+      "p_two_sided": 1.0
+    },
+    "threat_class_violation_count": 0,
+    "violation_counts": {},
+    "avg_latency_seconds": 32.86
+  },
+  "results": [
+    {
+      "case_index": 0,
+      "sparse_run": 1,
+      "asset_id": "SRV-001",
+      "threat_class": "DDoS",
+      "cve_id": "CVE-2011-2523",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "sparse_shacl_valid": true,
+      "latency_seconds": 33.61,
+      "raw_response": "```json\n{\n  \"target_asset\": \"SRV-001\",\n  \"threat_class\": \"DDoS\",\n  \"recommendations\": [\n    {\n      \"control_clause_id\": \"SS6.5\",\n      \"control_name\": \"Threat inventory\",\n      \"justification\": \"Document DDoS as active threat against critical asset. Baseline for risk lifecycle.\"\n    },\n    {\n      \"control_clause_id\": \"SS6.6\",\n      \"control_name\": \"Risk scenario identification\",\n      \"justification\": \"Map DDoS attack vectors (volumetric, protocol-layer, application) against SRV-001; establish",
+      "parsed_response": {
+        "target_asset": "SRV-001",
+        "threat_class": "DDoS",
+        "recommendations": [
+          {
+            "control_clause_id": "SS6.5",
+            "control_name": "Threat inventory",
+            "justification": "Document DDoS as active threat against critical asset. Baseline for risk lifecycle."
+          },
+          {
+            "control_clause_id": "SS6.6",
+            "control_name": "Risk scenario identification",
+            "justification": "Map DDoS attack vectors (volumetric, protocol-layer, application) against SRV-001; establish impact on CIC testbed availability."
+          },
+          {
+            "control_clause_id": "SS6.7",
+            "control_name": "Current controls assessment",
+            "justification": "Critical gap: Metasploitable 2 + CVE-2011-2523 (CVSS 10.0) reveal insufficient baseline controls. No documented DDoS protections evident."
+          },
+          {
+            "control_clause_id": "SS6.9",
+            "control_name": "Inherent risk analysis",
+            "justification": "High impact (critical asset) \u00d7 realistic threat likelihood = High risk. 5\u00d75 matrix: DDoS on critical server scores 15+ (catastrophic downtime for CIC infrastructure)."
+          },
+          {
+            "control_clause_id": "SS6.11",
+            "control_name": "Treatment plans",
+            "justification": "Develop mitigations: rate limiting, traffic filtering, DDoS mitigation service (ISP or cloud-based), network segmentation, redundancy. Address CVE-2011-2523 (patch or decommission vsftpd 2.3.4)."
+          },
+          {
+            "control_clause_id": "SS6.14",
+            "control_name": "Prioritization",
+            "justification": "SRV-001 criticality + DDoS threat + known exploitable vulnerability (CVE-2011-2523) = highest priority treatment slot."
+          },
+          {
+            "control_clause_id": "SS6.15",
+            "control_name": "Treatment execution",
+            "justification": "Deploy: failover load balancer, WAF, ingress filtering, BGP blackhole route automation, incident response runbook for DDoS events."
+          },
+          {
+            "control_clause_id": "SS6.19",
+            "control_name": "Periodic follow-up",
+            "justification": "Monitor DDoS control effectiveness monthly; simulate DDoS quarterly; track incident logs; adjust thresholds based on traffic baseline."
+          }
+        ]
+      }
+    },
+    {
+      "case_index": 1,
+      "sparse_run": 1,
+      "asset_id": "SRV-002",
+      "threat_class": "Infiltration",
+      "cve_id": "CVE-2008-0166",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "sparse_shacl_valid": true,
+      "latency_seconds": 32.11,
+      "raw_response": "```json\n{\n  \"target_asset\": \"SRV-002\",\n  \"threat_class\": \"Infiltration\",\n  \"recommendations\": [\n    {\n      \"control_clause_id\": \"SS6.4\",\n      \"control_name\": \"Vulnerability inventory\",\n      \"justification\": \"CVE-2008-0166 (Debian OpenSSL predictable RNG, CVSS 7.8) must be formally inventoried on SRV-002; enables SSH key brute-force\"\n    },\n    {\n      \"control_clause_id\": \"SS6.5\",\n      \"control_name\": \"Threat inventory\",\n      \"justification\": \"Formalize infiltration threat via T1110/T1110.0",
+      "parsed_response": {
+        "target_asset": "SRV-002",
+        "threat_class": "Infiltration",
+        "recommendations": [
+          {
+            "control_clause_id": "SS6.4",
+            "control_name": "Vulnerability inventory",
+            "justification": "CVE-2008-0166 (Debian OpenSSL predictable RNG, CVSS 7.8) must be formally inventoried on SRV-002; enables SSH key brute-force"
+          },
+          {
+            "control_clause_id": "SS6.5",
+            "control_name": "Threat inventory",
+            "justification": "Formalize infiltration threat via T1110/T1110.001 (brute-force credential access) targeting critical asset; three risk cases active"
+          },
+          {
+            "control_clause_id": "SS6.6",
+            "control_name": "Risk scenario identification",
+            "justification": "Document attack scenarios: SSH-BruteForce (RISK-SSH-BruteForce), FTP-BruteForce (RISK-FTP-BruteForce) exploiting weak OpenSSL RNG"
+          },
+          {
+            "control_clause_id": "SS6.7",
+            "control_name": "Current controls assessment",
+            "justification": "Ubuntu 8.04 LTS (EOL, no vendor patches) lacks rate-limiting, MFA, modern SSH hardening; existing controls insufficient for critical asset"
+          },
+          {
+            "control_clause_id": "SS6.9",
+            "control_name": "Inherent risk analysis",
+            "justification": "5x5 matrix: Impact=5 (critical), Likelihood=3 (known CVE + proven brute-force feasibility) = Risk Score 15 (High)"
+          },
+          {
+            "control_clause_id": "SS6.10",
+            "control_name": "Risk register",
+            "justification": "Formally register RISK-SSH-BruteForce, RISK-FTP-BruteForce, RISK-BruteForce as linked to CVE-2008-0166 infiltration pathway"
+          },
+          {
+            "control_clause_id": "SS6.11",
+            "control_name": "Treatment plans",
+            "justification": "Mitigate via: (1) OS upgrade w/ OpenSSL patch, (2) SSH key-based auth + MFA, (3) connection rate-limiting, (4) IP whitelisting"
+          },
+          {
+            "control_clause_id": "SS6.12",
+            "control_name": "Residual risk calculation",
+            "justification": "Post-mitigation: after patching + hardening, recalculate likelihood and residual risk; brute-force resistance improves to low-medium"
+          },
+          {
+            "control_clause_id": "SS6.14",
+            "control_name": "Prioritization",
+            "justification": "Rank as Critical/Immediate: critical asset + high inherent risk + network-exposed vulnerable service + proof-of-concept exploitability"
+          },
+          {
+            "control_clause_id": "SS6.15",
+            "control_name": "Treatment execution",
+            "justification": "Execute immediately: patch OS/OpenSSL, deploy host IDS, restrict SSH (port 22) and FTP (port 21) to authorized sources, audit active sessions"
+          }
+        ]
+      }
+    }
+  ]
+}

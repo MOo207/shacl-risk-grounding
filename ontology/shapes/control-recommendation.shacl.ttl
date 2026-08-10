@@ -1,0 +1,62 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix grc: <https://w3id.org/grc/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+################################################################################
+# SHACL Shape for LLM-Generated Control Recommendations
+# Validates structured output from LLM control recommendation pipelines
+################################################################################
+
+grc:ControlRecommendationShape a sh:NodeShape ;
+    sh:targetClass grc:ControlRecommendation ;
+    sh:property [
+        sh:path grc:targetAsset ;
+        sh:class grc:Asset ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "ControlRecommendation must reference at least one targetAsset of class Asset"
+    ] ;
+    sh:property [
+        sh:path grc:threatClass ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:in ("BruteForce" "DDoS" "DoS" "Infiltration" "WebAttack" "Benign") ;
+        sh:severity sh:Violation ;
+        sh:message "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)"
+    ] ;
+    sh:property [
+        sh:path grc:controlClauseId ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "ControlRecommendation must have at least one controlClauseId of type string"
+    ] ;
+    sh:property [
+        sh:path grc:justification ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "ControlRecommendation must have at least one justification of type string"
+    ] ;
+    # Referential clause validation joined against the grc:Clause individuals in
+    # ontology/ttl/nfcrm-clauses.ttl rather than restated as an sh:in literal
+    # list here. See the corresponding note in risk-scenario.shacl.ttl: the
+    # inlined enumeration was a second hand-maintained copy of the clause set.
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:severity sh:Violation ;
+        sh:message "controlClauseId {?value} is not a clause of NFCRM-1:2025 (no grc:Clause individual carries this grc:clauseId)" ;
+        sh:select """
+            PREFIX grc: <https://w3id.org/grc/ontology#>
+            SELECT $this ?value
+            WHERE {
+                $this grc:controlClauseId ?value .
+                FILTER NOT EXISTS {
+                    ?c a grc:Clause ; grc:clauseId ?cid .
+                    FILTER(STR(?cid) = STR(?value))
+                }
+            }
+        """
+    ] .

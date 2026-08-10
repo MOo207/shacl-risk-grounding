@@ -1,0 +1,212 @@
+{
+  "purpose": "Scaling behaviour of the OWL/SHACL constraint layer as the ARG grows. Threat-side data is real (CISA KEV + NVD + MITRE ATT&CK + NFCRM-1:2025); organisation-side inventory is synthetic and seeded. Supports claims about validation cost and conformance at scale, not about real enterprise topology.",
+  "cve_pool_size": 148,
+  "shape_triples": 541,
+  "seed": 42,
+  "rows": [
+    {
+      "n_assets": 100,
+      "seed": 42,
+      "nodes": 376,
+      "edges": 1835,
+      "edge_node_ratio": 4.88,
+      "nodes_by_type": {
+        "Asset": 100,
+        "Software": 85,
+        "CVE": 85,
+        "NFCRMControl": 26,
+        "ATTACKTechnique": 40,
+        "RiskCase": 20,
+        "AuditLog": 20
+      },
+      "build_seconds": 0.004,
+      "rdf_convert_seconds": 0.063,
+      "rdf_triples": 4103,
+      "shacl_validate_seconds": 3.928,
+      "shacl_validate_seconds_without_sparql": 0.426,
+      "sparql_constraint_share": 0.892,
+      "conforms": false,
+      "nodes_targeted": 356,
+      "shape_coverage_percent": 94.7,
+      "nodes_with_violations": 25,
+      "total_violations": 25,
+      "violations_by_message": {
+        "Every RiskCase must have at least one associated AuditLog": 20,
+        "Vulnerability must have exactly one cweId matching pattern CWE-NNNN": 5
+      },
+      "microseconds_per_triple": 957.28,
+      "topology": {
+        "assets_sampled_for_depth": 100,
+        "assets_reaching_a_control": 100,
+        "mean_hops_asset_to_control": 3,
+        "max_hops_asset_to_control": 3,
+        "mean_degree": 10.43,
+        "median_degree": 6.0,
+        "max_degree": 217,
+        "isolated_nodes": 24,
+        "node_types_present": {
+          "Asset": 100,
+          "Software": 85,
+          "CVE": 85,
+          "NFCRMControl": 26,
+          "ATTACKTechnique": 40,
+          "RiskCase": 20,
+          "AuditLog": 20
+        }
+      }
+    },
+    {
+      "n_assets": 500,
+      "seed": 42,
+      "nodes": 842,
+      "edges": 8403,
+      "edge_node_ratio": 9.98,
+      "nodes_by_type": {
+        "Asset": 500,
+        "Software": 118,
+        "CVE": 118,
+        "NFCRMControl": 26,
+        "ATTACKTechnique": 40,
+        "RiskCase": 20,
+        "AuditLog": 20
+      },
+      "build_seconds": 0.038,
+      "rdf_convert_seconds": 0.51,
+      "rdf_triples": 12468,
+      "shacl_validate_seconds": 8.705,
+      "shacl_validate_seconds_without_sparql": 1.164,
+      "sparql_constraint_share": 0.866,
+      "conforms": false,
+      "nodes_targeted": 822,
+      "shape_coverage_percent": 97.6,
+      "nodes_with_violations": 28,
+      "total_violations": 28,
+      "violations_by_message": {
+        "Every RiskCase must have at least one associated AuditLog": 20,
+        "Vulnerability must have exactly one cweId matching pattern CWE-NNNN": 8
+      },
+      "microseconds_per_triple": 698.16,
+      "topology": {
+        "assets_sampled_for_depth": 200,
+        "assets_reaching_a_control": 200,
+        "mean_hops_asset_to_control": 3,
+        "max_hops_asset_to_control": 3,
+        "mean_degree": 20.55,
+        "median_degree": 11.0,
+        "max_degree": 1046,
+        "isolated_nodes": 24,
+        "node_types_present": {
+          "Asset": 500,
+          "Software": 118,
+          "CVE": 118,
+          "NFCRMControl": 26,
+          "ATTACKTechnique": 40,
+          "RiskCase": 20,
+          "AuditLog": 20
+        }
+      }
+    },
+    {
+      "n_assets": 1000,
+      "seed": 42,
+      "nodes": 1346,
+      "edges": 15703,
+      "edge_node_ratio": 11.666,
+      "nodes_by_type": {
+        "Asset": 1000,
+        "Software": 120,
+        "CVE": 120,
+        "NFCRMControl": 26,
+        "ATTACKTechnique": 40,
+        "RiskCase": 20,
+        "AuditLog": 20
+      },
+      "build_seconds": 0.081,
+      "rdf_convert_seconds": 0.851,
+      "rdf_triples": 21494,
+      "shacl_validate_seconds": 10.274,
+      "shacl_validate_seconds_without_sparql": 1.733,
+      "sparql_constraint_share": 0.831,
+      "conforms": false,
+      "nodes_targeted": 1326,
+      "shape_coverage_percent": 98.5,
+      "nodes_with_violations": 28,
+      "total_violations": 28,
+      "violations_by_message": {
+        "Every RiskCase must have at least one associated AuditLog": 20,
+        "Vulnerability must have exactly one cweId matching pattern CWE-NNNN": 8
+      },
+      "microseconds_per_triple": 477.99,
+      "topology": {
+        "assets_sampled_for_depth": 200,
+        "assets_reaching_a_control": 200,
+        "mean_hops_asset_to_control": 3,
+        "max_hops_asset_to_control": 3,
+        "mean_degree": 23.76,
+        "median_degree": 11.0,
+        "max_degree": 2012,
+        "isolated_nodes": 24,
+        "node_types_present": {
+          "Asset": 1000,
+          "Software": 120,
+          "CVE": 120,
+          "NFCRMControl": 26,
+          "ATTACKTechnique": 40,
+          "RiskCase": 20,
+          "AuditLog": 20
+        }
+      }
+    },
+    {
+      "n_assets": 2500,
+      "seed": 42,
+      "nodes": 2846,
+      "edges": 36880,
+      "edge_node_ratio": 12.959,
+      "nodes_by_type": {
+        "Asset": 2500,
+        "Software": 120,
+        "CVE": 120,
+        "NFCRMControl": 26,
+        "ATTACKTechnique": 40,
+        "RiskCase": 20,
+        "AuditLog": 20
+      },
+      "build_seconds": 0.234,
+      "rdf_convert_seconds": 2.204,
+      "rdf_triples": 47622,
+      "shacl_validate_seconds": 17.119,
+      "shacl_validate_seconds_without_sparql": 3.543,
+      "sparql_constraint_share": 0.793,
+      "conforms": false,
+      "nodes_targeted": 2826,
+      "shape_coverage_percent": 99.3,
+      "nodes_with_violations": 28,
+      "total_violations": 28,
+      "violations_by_message": {
+        "Every RiskCase must have at least one associated AuditLog": 20,
+        "Vulnerability must have exactly one cweId matching pattern CWE-NNNN": 8
+      },
+      "microseconds_per_triple": 359.48,
+      "topology": {
+        "assets_sampled_for_depth": 200,
+        "assets_reaching_a_control": 200,
+        "mean_hops_asset_to_control": 3,
+        "max_hops_asset_to_control": 3,
+        "mean_degree": 26.14,
+        "median_degree": 10.0,
+        "max_degree": 5046,
+        "isolated_nodes": 24,
+        "node_types_present": {
+          "Asset": 2500,
+          "Software": 120,
+          "CVE": 120,
+          "NFCRMControl": 26,
+          "ATTACKTechnique": 40,
+          "RiskCase": 20,
+          "AuditLog": 20
+        }
+      }
+    }
+  ]
+}

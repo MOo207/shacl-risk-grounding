@@ -1,0 +1,759 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix grc: <https://w3id.org/grc/ontology#> .
+
+<https://w3id.org/grc/ontology> a owl:Ontology ;
+    rdfs:label "GRC Ontology for Cybersecurity Risk Assessment"@en ;
+    rdfs:comment """An ontology representing technical entities (Asset, Vulnerability, Control) and
+GRC entities (RiskCase, AuditLog) aligned with NFCRM-1:2025 and ISO/IEC 27005.
+Extended with SafecareOnto-aligned classes (Hannou et al. 2022) for modular cyber-physical
+risk propagation using the butterfly effect model.
+
+The ontology distinguishes tangible and intangible assets in a containment hierarchy:
+  ComplexBuilding --[composedOf]--> SimpleBuilding
+    --[hostsDevice]--> Server (tangible HardwareAsset)
+      --[hostsSoftware]--> OS SoftwareAsset (e.g., Windows Server 2019)
+        --[hostsSoftware]--> Application SoftwareAsset (e.g., SharePoint, IIS)
+
+A vulnerability in any SoftwareAsset (e.g., CVE-2025-53770 on SharePoint) can be
+assessed against all assets that share the same softwareName/softwareVersion,
+the same vendorName, or the same osName/osVersion — enabling lateral risk propagation
+across vendor supply chains and software stacks."""@en ;
+    owl:imports <https://w3id.org/grc/nfcrm-clauses> ;
+    owl:versionInfo "0.3.0" .
+
+################################################################################
+# SECTION 1 — Core Technical Entity Classes (v0.1.0 preserved)
+################################################################################
+
+grc:Asset a owl:Class ;
+    rdfs:label "Asset"@en ;
+    rdfs:comment "A technical asset (software, hardware, or system component) that requires cybersecurity risk assessment"@en ;
+    rdfs:subClassOf owl:Thing .
+
+grc:SoftwareAsset a owl:Class ;
+    rdfs:label "Software Asset"@en ;
+    rdfs:comment """A software application or component — an intangible asset hosted on a
+HardwareAsset.  May be an operating system (e.g., Windows Server 2019),
+a middleware layer, or an application (e.g., SharePoint, IIS, vsftpd).
+Vulnerabilities on a SoftwareAsset propagate to all Servers running the
+same softwareName + softwareVersion combination."""@en ;
+    rdfs:subClassOf grc:Asset .
+
+grc:HardwareAsset a owl:Class ;
+    rdfs:label "Hardware Asset"@en ;
+    rdfs:comment "A physical hardware device — the tangible hosting layer for SoftwareAssets."@en ;
+    rdfs:subClassOf grc:Asset .
+
+grc:NetworkAsset a owl:Class ;
+    rdfs:label "Network Asset"@en ;
+    rdfs:comment "A network component or infrastructure element"@en ;
+    rdfs:subClassOf grc:Asset .
+
+grc:Vulnerability a owl:Class ;
+    rdfs:label "Vulnerability"@en ;
+    rdfs:comment "A security weakness that can be exploited by threats"@en ;
+    rdfs:subClassOf owl:Thing .
+
+grc:Control a owl:Class ;
+    rdfs:label "Control"@en ;
+    rdfs:comment "A security control measure aligned with NFCRM-1:2025 or ISO/IEC 27005"@en ;
+    rdfs:subClassOf owl:Thing .
+
+grc:NFCRMControl a owl:Class ;
+    rdfs:label "NFCRM Control"@en ;
+    rdfs:comment "A control defined in NFCRM-1:2025 framework"@en ;
+    rdfs:subClassOf grc:Control .
+
+grc:ISO27005Control a owl:Class ;
+    rdfs:label "ISO/IEC 27005 Control"@en ;
+    rdfs:comment "A control defined in ISO/IEC 27005 standard"@en ;
+    rdfs:subClassOf grc:Control .
+
+################################################################################
+# SECTION 2 — GRC Entity Classes (v0.1.0 preserved)
+################################################################################
+
+grc:RiskCase a owl:Class ;
+    rdfs:label "Risk Case"@en ;
+    rdfs:comment "A documented risk case with assessment, impact, and treatment decisions"@en ;
+    rdfs:subClassOf owl:Thing .
+
+grc:AuditLog a owl:Class ;
+    rdfs:label "Audit Log"@en ;
+    rdfs:comment "An audit log entry recording compliance-related activities"@en ;
+    rdfs:subClassOf owl:Thing .
+
+grc:ContinuityPlan a owl:Class ;
+    rdfs:label "Continuity Plan"@en ;
+    rdfs:comment "A business continuity plan linked to risk cases"@en ;
+    rdfs:subClassOf owl:Thing .
+
+################################################################################
+# SECTION 3 — Event and Context Classes (v0.1.0 preserved)
+################################################################################
+
+grc:SecurityEvent a owl:Class ;
+    rdfs:label "Security Event"@en ;
+    rdfs:comment "A security-related event detected from logs or monitoring systems"@en ;
+    rdfs:subClassOf owl:Thing .
+
+grc:Threat a owl:Class ;
+    rdfs:label "Threat"@en ;
+    rdfs:comment "A potential source of harm aligned with threat models (e.g., MITRE ATT&CK)"@en ;
+    rdfs:subClassOf owl:Thing .
+
+################################################################################
+# SECTION 4 — SafecareOnto Business Asset Classes (v0.2.0)
+#
+# Reference: Hannou et al. (2022) SafecareOnto.  BusinessAsset represents
+# mission-critical intangible services and operations.  Their disruption is
+# the top of the butterfly effect cascade.
+################################################################################
+
+grc:BusinessAsset a owl:Class ;
+    rdfs:label "Business Asset"@en ;
+    rdfs:comment """A mission-critical intangible asset (service or operation) at the top of
+the dependency hierarchy.  Corresponds to SafecareOnto:BusinessAsset.
+impactScore cascades here when supporting infrastructure is compromised."""@en ;
+    rdfs:subClassOf owl:Thing .
+
+grc:Service a owl:Class ;
+    rdfs:label "Service"@en ;
+    rdfs:comment """An IT or business service that depends on one or more SupportingAssets or
+Operations.  Corresponds to SafecareOnto:Service.
+Example: 'IT Operations Service' that depends on web-srv-01, ftp-srv-01, db-srv-01."""@en ;
+    rdfs:subClassOf grc:BusinessAsset .
+
+grc:Operation a owl:Class ;
+    rdfs:label "Operation"@en ;
+    rdfs:comment """An elementary business task or process step; atomic unit of a Service.
+Corresponds to SafecareOnto:Operation."""@en ;
+    rdfs:subClassOf grc:BusinessAsset .
+
+################################################################################
+# SECTION 5 — SafecareOnto Supporting Asset Classes (v0.2.0)
+#
+# SupportingAssets form the infrastructure layer under BusinessAssets.
+# They inherit from grc:Asset so all existing data properties apply.
+#
+# Tangible layer:   ComplexBuilding → SimpleBuilding → Server (physical)
+# Intangible layer: Server -[hostsSoftware]→ OS SoftwareAsset
+#                   OS SoftwareAsset -[hostsSoftware]→ Application SoftwareAsset
+#
+# This two-level software stack is key: a CVE on SharePoint (application)
+# also implicates the Windows Server 2019 OS layer and all other servers
+# running the same OS/application combination.
+################################################################################
+
+grc:SupportingAsset a owl:Class ;
+    rdfs:label "Supporting Asset"@en ;
+    rdfs:comment """Infrastructure asset that supports one or more BusinessAssets.
+Corresponds to SafecareOnto:SupportingAsset."""@en ;
+    rdfs:subClassOf grc:Asset .
+
+grc:Building a owl:Class ;
+    rdfs:label "Building"@en ;
+    rdfs:comment """A physical site or room that physically hosts Devices (HardwareAssets).
+Corresponds to SafecareOnto:Building."""@en ;
+    rdfs:subClassOf grc:SupportingAsset .
+
+grc:SimpleBuilding a owl:Class ;
+    rdfs:label "Simple Building"@en ;
+    rdfs:comment """A single room or floor — leaf node in the physical containment hierarchy.
+Corresponds to SafecareOnto:SimpleBuilding."""@en ;
+    rdfs:subClassOf grc:Building .
+
+grc:ComplexBuilding a owl:Class ;
+    rdfs:label "Complex Building"@en ;
+    rdfs:comment """A building containing multiple rooms/floors (SimpleBuildings).
+Corresponds to SafecareOnto:ComplexBuilding.
+Butterfly effect traverses composedOf edges upward."""@en ;
+    rdfs:subClassOf grc:Building .
+
+grc:NetworkSegment a owl:Class ;
+    rdfs:label "Network Segment"@en ;
+    rdfs:comment """A logical network zone (e.g., DMZ, VLAN) connecting devices.
+Dual-typed as SupportingAsset and NetworkAsset so existing SHACL shapes apply.
+leadsTo edges model communication paths and lateral movement risk."""@en ;
+    rdfs:subClassOf grc:SupportingAsset ;
+    rdfs:subClassOf grc:NetworkAsset .
+
+grc:Server a owl:Class ;
+    rdfs:label "Server"@en ;
+    rdfs:comment """A tangible server with OS, hostname, and IP address.
+Subclass of HardwareAsset carrying osName/osVersion data properties.
+A Server hosts an OS SoftwareAsset (e.g., Windows Server 2019) which in turn
+hosts application SoftwareAssets (e.g., SharePoint, IIS).
+Corresponds to SafecareOnto:Device / Server profile."""@en ;
+    rdfs:subClassOf grc:HardwareAsset .
+
+################################################################################
+# SECTION 6 — Incident and Impact Classes (v0.2.0)
+#
+# Completes the SafecareOnto event chain:
+#   Threat --[exploits]--> Vulnerability --[concerns]--> SoftwareAsset
+#   SoftwareAsset is hosted on Server via hostsSoftware
+#   Incident --[occursOn]--> Asset --[generates]--> Impact --[affects]--> Asset
+################################################################################
+
+grc:Incident a owl:Class ;
+    rdfs:label "Incident"@en ;
+    rdfs:comment """A materialised security incident (physical or cyber) occurring on an Asset
+and realising a Threat.  Corresponds to SafecareOnto:Incident.
+Incidents are butterfly effect entry points, linked via grc:occursOn."""@en ;
+    rdfs:subClassOf owl:Thing .
+
+grc:Impact a owl:Class ;
+    rdfs:label "Impact"@en ;
+    rdfs:comment """A cascading impact result generated by an Incident and affecting Assets.
+Corresponds to SafecareOnto:Impact.  Carries an impactScore:
+  impactScore(a) = 1 - max(protectionDegree of controls on a) in [0,1].
+impactScore = 0.0 signals a propagation barrier (full protection)."""@en ;
+    rdfs:subClassOf owl:Thing .
+
+################################################################################
+# SECTION 7 — Object Properties — v0.1.0 (preserved)
+################################################################################
+
+grc:hasVulnerability a owl:ObjectProperty ;
+    rdfs:label "has vulnerability"@en ;
+    rdfs:domain grc:Asset ;
+    rdfs:range grc:Vulnerability .
+
+grc:hasControl a owl:ObjectProperty ;
+    rdfs:label "has control"@en ;
+    rdfs:domain grc:Asset ;
+    rdfs:range grc:Control .
+
+grc:mitigates a owl:ObjectProperty ;
+    rdfs:label "mitigates"@en ;
+    rdfs:domain grc:Control ;
+    rdfs:range grc:Vulnerability .
+
+grc:relatesToRisk a owl:ObjectProperty ;
+    rdfs:label "relates to risk"@en ;
+    rdfs:domain grc:Vulnerability ;
+    rdfs:range grc:RiskCase .
+
+grc:triggersEvent a owl:ObjectProperty ;
+    rdfs:label "triggers event"@en ;
+    rdfs:domain grc:Vulnerability ;
+    rdfs:range grc:SecurityEvent .
+
+grc:exploits a owl:ObjectProperty ;
+    rdfs:label "exploits"@en ;
+    rdfs:domain grc:Threat ;
+    rdfs:range grc:Vulnerability .
+
+grc:auditedBy a owl:ObjectProperty ;
+    rdfs:label "audited by"@en ;
+    rdfs:domain grc:RiskCase ;
+    rdfs:range grc:AuditLog .
+
+grc:linkedToContinuityPlan a owl:ObjectProperty ;
+    rdfs:label "linked to continuity plan"@en ;
+    rdfs:domain grc:RiskCase ;
+    rdfs:range grc:ContinuityPlan .
+
+grc:associatedWithControl a owl:ObjectProperty ;
+    rdfs:label "associated with control"@en ;
+    rdfs:domain grc:RiskCase ;
+    rdfs:range grc:Control .
+
+################################################################################
+# SECTION 8 — Object Properties — SafecareOnto 5-Pattern Relationships (v0.2.0)
+#
+# Pattern 1 — depends:    Service/Operation → Operation/SupportingAsset
+# Pattern 2 — supports:   SupportingAsset → BusinessAsset
+# Pattern 3 — leadsTo:    Asset → Asset  (access/communication path)
+# Pattern 4 — hostsDevice / hostsSoftware: physical + intangible containment
+# Pattern 5 — composedOf: ComplexBuilding → SimpleBuilding
+# Pattern 6 — controls:   Control → Asset (protection barrier)
+################################################################################
+
+grc:depends a owl:ObjectProperty ;
+    rdfs:label "depends"@en ;
+    rdfs:comment """Pattern 1 (SafecareOnto): A Service or Operation functionally depends on
+another Operation or a SupportingAsset.  Disruption propagates upward."""@en ;
+    rdfs:domain grc:BusinessAsset ;
+    rdfs:range [ owl:unionOf ( grc:Operation grc:SupportingAsset ) ] .
+
+grc:supports a owl:ObjectProperty ;
+    rdfs:label "supports"@en ;
+    rdfs:comment """Pattern 2 (SafecareOnto): A SupportingAsset underpins a BusinessAsset.
+Inverse of grc:depends — cascaded impactScore flows from SupportingAsset to
+BusinessAsset."""@en ;
+    rdfs:domain grc:SupportingAsset ;
+    rdfs:range grc:BusinessAsset .
+
+grc:leadsTo a owl:ObjectProperty ;
+    rdfs:label "leads to"@en ;
+    rdfs:comment """Pattern 3 (SafecareOnto): An access or communication path between two Assets.
+Models network reachability for lateral movement risk propagation."""@en ;
+    rdfs:domain grc:Asset ;
+    rdfs:range grc:Asset .
+
+grc:hostsDevice a owl:ObjectProperty ;
+    rdfs:label "hosts device"@en ;
+    rdfs:comment """Pattern 4a (SafecareOnto): A Building physically contains a HardwareAsset.
+Impact on a Device cascades to the Building."""@en ;
+    rdfs:domain grc:Building ;
+    rdfs:range grc:HardwareAsset .
+
+grc:hostsSoftware a owl:ObjectProperty ;
+    rdfs:label "hosts software"@en ;
+    rdfs:comment """Pattern 4b (SafecareOnto): A HardwareAsset runs a SoftwareAsset.
+Supports two-level stacking: Server -[hostsSoftware]-> OS -[hostsSoftware]-> App.
+A vulnerability in SharePoint (App) propagates to all Servers running the same
+Windows Server 2019 (OS) + SharePoint version combination."""@en ;
+    rdfs:domain grc:HardwareAsset ;
+    rdfs:range grc:SoftwareAsset .
+
+grc:composedOf a owl:ObjectProperty ;
+    rdfs:label "composed of"@en ;
+    rdfs:comment """Pattern 5 (SafecareOnto): A ComplexBuilding is composed of SimpleBuildings.
+Impact in a room cascades to the containing building."""@en ;
+    rdfs:domain grc:ComplexBuilding ;
+    rdfs:range grc:SimpleBuilding .
+
+grc:controls a owl:ObjectProperty ;
+    rdfs:label "controls"@en ;
+    rdfs:comment """Pattern 6 (SafecareOnto): A Control governs access to or protects an Asset.
+protectionDegree = 1.0 on the Control creates a propagation barrier
+(impactScore = 0.0) on the target Asset."""@en ;
+    rdfs:domain grc:Control ;
+    rdfs:range grc:Asset .
+
+# ── Vendor / supply-chain relationship ──────────────────────────────────────
+# Critical for cross-asset risk propagation: CVE-2025-53770 (SharePoint) or
+# any Microsoft vulnerability implicates all SoftwareAssets from the same
+# vendor running across the infrastructure.
+
+grc:providedBy a owl:ObjectProperty ;
+    rdfs:label "provided by"@en ;
+    rdfs:comment """Links a SoftwareAsset to its Vendor.
+Enables vendor-scoped risk queries: 'find all assets from vendor Microsoft
+running on Windows Server 2019 that are affected by CVE-2025-53770'."""@en ;
+    rdfs:domain grc:SoftwareAsset ;
+    rdfs:range grc:Vendor .
+
+grc:runsOn a owl:ObjectProperty ;
+    rdfs:label "runs on"@en ;
+    rdfs:comment """Links an application SoftwareAsset to the OS SoftwareAsset it runs on.
+Enables OS-scoped risk: a CVE on Windows Server 2019 implicates all
+application SoftwareAssets (IIS, SharePoint, SQL Server) that runsOn that OS."""@en ;
+    rdfs:domain grc:SoftwareAsset ;
+    rdfs:range grc:SoftwareAsset .
+
+# ── Incident / Impact event-chain properties ─────────────────────────────────
+
+grc:occursOn a owl:ObjectProperty ;
+    rdfs:label "occurs on"@en ;
+    rdfs:comment "Links an Incident to the Asset on which the event materialised."@en ;
+    rdfs:domain grc:Incident ;
+    rdfs:range grc:Asset .
+
+grc:generates a owl:ObjectProperty ;
+    rdfs:label "generates"@en ;
+    rdfs:comment "An Incident generates one or more Impact nodes."@en ;
+    rdfs:domain grc:Incident ;
+    rdfs:range grc:Impact .
+
+grc:affects a owl:ObjectProperty ;
+    rdfs:label "affects"@en ;
+    rdfs:comment "An Impact affects one or more Assets along the propagation path."@en ;
+    rdfs:domain grc:Impact ;
+    rdfs:range grc:Asset .
+
+grc:realizes a owl:ObjectProperty ;
+    rdfs:label "realizes"@en ;
+    rdfs:comment "An Incident realizes (materialises) a specific Threat."@en ;
+    rdfs:domain grc:Incident ;
+    rdfs:range grc:Threat .
+
+grc:concerns a owl:ObjectProperty ;
+    rdfs:label "concerns"@en ;
+    rdfs:comment """A Vulnerability concerns a specific Asset — the asset-scoped exposure link.
+Used for vendor-scoped propagation: one CVE can concern multiple SoftwareAssets
+sharing the same softwareName/softwareVersion across the infrastructure."""@en ;
+    rdfs:domain grc:Vulnerability ;
+    rdfs:range grc:Asset .
+
+################################################################################
+# SECTION 9 — Vendor Class (v0.2.0)
+#
+# Vendors are the supply-chain anchor.  Knowing that SharePoint is provided
+# by Microsoft, and Windows Server 2019 is also provided by Microsoft,
+# means a Microsoft-wide advisory can be checked against ALL Microsoft assets.
+################################################################################
+
+grc:Vendor a owl:Class ;
+    rdfs:label "Vendor"@en ;
+    rdfs:comment """A software or hardware vendor / manufacturer.
+Linking SoftwareAssets to their Vendor enables:
+1. Vendor-scoped vulnerability propagation (all Microsoft products in scope).
+2. GenAI-assisted threat intelligence: given a Vendor + softwareName +
+   softwareVersion, the system can autonomously query NVD, MSRC, or CVE
+   databases for matching vulnerabilities and candidate RiskCases."""@en ;
+    rdfs:subClassOf owl:Thing .
+
+grc:vendorName a owl:DatatypeProperty ;
+    rdfs:label "vendor name"@en ;
+    rdfs:comment "Common name of the vendor (e.g., 'Microsoft', 'Canonical', 'vsftpd Project')."@en ;
+    rdfs:domain grc:Vendor ;
+    rdfs:range xsd:string .
+
+grc:vendorUrl a owl:DatatypeProperty ;
+    rdfs:label "vendor URL"@en ;
+    rdfs:comment "Homepage or advisory URL of the vendor."@en ;
+    rdfs:domain grc:Vendor ;
+    rdfs:range xsd:string .
+
+################################################################################
+# SECTION 10 — Data Properties — v0.1.0 (preserved)
+################################################################################
+
+grc:assetId a owl:DatatypeProperty ;
+    rdfs:label "asset ID"@en ;
+    rdfs:domain grc:Asset ;
+    rdfs:range xsd:string .
+
+grc:assetName a owl:DatatypeProperty ;
+    rdfs:label "asset name"@en ;
+    rdfs:domain grc:Asset ;
+    rdfs:range xsd:string .
+
+grc:assetType a owl:DatatypeProperty ;
+    rdfs:label "asset type"@en ;
+    rdfs:domain grc:Asset ;
+    rdfs:range xsd:string .
+
+grc:cveId a owl:DatatypeProperty ;
+    rdfs:label "CVE ID"@en ;
+    rdfs:domain grc:Vulnerability ;
+    rdfs:range xsd:string .
+
+grc:cweId a owl:DatatypeProperty ;
+    rdfs:label "CWE ID"@en ;
+    rdfs:domain grc:Vulnerability ;
+    rdfs:range xsd:string .
+
+grc:cvssScore a owl:DatatypeProperty ;
+    rdfs:label "CVSS score"@en ;
+    rdfs:domain grc:Vulnerability ;
+    rdfs:range xsd:decimal .
+
+grc:severity a owl:DatatypeProperty ;
+    rdfs:label "severity"@en ;
+    rdfs:domain grc:Vulnerability ;
+    rdfs:range xsd:string .
+
+grc:controlId a owl:DatatypeProperty ;
+    rdfs:label "control ID"@en ;
+    rdfs:domain grc:Control ;
+    rdfs:range xsd:string .
+
+grc:controlName a owl:DatatypeProperty ;
+    rdfs:label "control name"@en ;
+    rdfs:domain grc:Control ;
+    rdfs:range xsd:string .
+
+grc:nfcrmClause a owl:DatatypeProperty ;
+    rdfs:label "NFCRM clause"@en ;
+    rdfs:domain grc:NFCRMControl ;
+    rdfs:range xsd:string .
+
+grc:iso27005Clause a owl:DatatypeProperty ;
+    rdfs:label "ISO/IEC 27005 clause"@en ;
+    rdfs:domain grc:ISO27005Control ;
+    rdfs:range xsd:string .
+
+grc:riskLevel a owl:DatatypeProperty ;
+    rdfs:label "risk level"@en ;
+    rdfs:domain grc:RiskCase ;
+    rdfs:range xsd:string .
+
+grc:likelihood a owl:DatatypeProperty ;
+    rdfs:label "likelihood"@en ;
+    rdfs:domain grc:RiskCase ;
+    rdfs:range xsd:string .
+
+grc:impact a owl:DatatypeProperty ;
+    rdfs:label "impact"@en ;
+    rdfs:domain grc:RiskCase ;
+    rdfs:range xsd:string .
+
+grc:riskId a owl:DatatypeProperty ;
+    rdfs:label "risk ID"@en ;
+    rdfs:domain grc:RiskCase ;
+    rdfs:range xsd:string .
+
+grc:auditTimestamp a owl:DatatypeProperty ;
+    rdfs:label "audit timestamp"@en ;
+    rdfs:domain grc:AuditLog ;
+    rdfs:range xsd:dateTime .
+
+grc:auditor a owl:DatatypeProperty ;
+    rdfs:label "auditor"@en ;
+    rdfs:domain grc:AuditLog ;
+    rdfs:range xsd:string .
+
+grc:provenanceSource a owl:DatatypeProperty ;
+    rdfs:label "provenance source"@en ;
+    rdfs:comment "Source of data (e.g., CMDB, NVD, manual entry)"@en ;
+    rdfs:range xsd:string .
+
+grc:provenanceTimestamp a owl:DatatypeProperty ;
+    rdfs:label "provenance timestamp"@en ;
+    rdfs:comment "Timestamp when data was ingested or created"@en ;
+    rdfs:range xsd:dateTime .
+
+grc:confidence a owl:DatatypeProperty ;
+    rdfs:label "confidence"@en ;
+    rdfs:comment "Confidence level of automated risk assessment"@en ;
+    rdfs:range xsd:decimal .
+
+################################################################################
+# SECTION 11 — Data Properties — SafecareOnto Extensions (v0.2.0)
+################################################################################
+
+# ── Asset identity and network addressing ────────────────────────────────────
+
+grc:hostname a owl:DatatypeProperty ;
+    rdfs:label "hostname"@en ;
+    rdfs:comment "DNS hostname or short name of the asset (e.g., 'web-srv-01')."@en ;
+    rdfs:domain grc:Asset ;
+    rdfs:range xsd:string .
+
+grc:ipAddress a owl:DatatypeProperty ;
+    rdfs:label "IP address"@en ;
+    rdfs:comment "IPv4 or IPv6 address of the asset (e.g., '192.168.1.10')."@en ;
+    rdfs:domain grc:Asset ;
+    rdfs:range xsd:string .
+
+# ── Server-specific OS metadata ──────────────────────────────────────────────
+
+grc:osName a owl:DatatypeProperty ;
+    rdfs:label "OS name"@en ;
+    rdfs:comment """Operating system name on a Server (e.g., 'Windows Server 2019').
+Used for cross-asset vulnerability matching: a CVE on Windows Server 2019
+implicates ALL Servers sharing the same osName + osVersion."""@en ;
+    rdfs:domain grc:Server ;
+    rdfs:range xsd:string .
+
+grc:osVersion a owl:DatatypeProperty ;
+    rdfs:label "OS version"@en ;
+    rdfs:comment "Operating system version string on a Server (e.g., '1809', '20.04')."@en ;
+    rdfs:domain grc:Server ;
+    rdfs:range xsd:string .
+
+# ── Software asset metadata ──────────────────────────────────────────────────
+
+grc:softwareName a owl:DatatypeProperty ;
+    rdfs:label "software name"@en ;
+    rdfs:comment """Product name of the software asset (e.g., 'Microsoft SharePoint', 'IIS').
+Combined with softwareVersion, this is the primary key for cross-asset CVE
+matching: all SoftwareAssets with the same name+version are co-vulnerable."""@en ;
+    rdfs:domain grc:SoftwareAsset ;
+    rdfs:range xsd:string .
+
+grc:softwareVersion a owl:DatatypeProperty ;
+    rdfs:label "software version"@en ;
+    rdfs:comment "Version string of the software asset (e.g., 'Server Subscription', '10.0', '3.0.3')."@en ;
+    rdfs:domain grc:SoftwareAsset ;
+    rdfs:range xsd:string .
+
+# ── Threat classification ────────────────────────────────────────────────────
+
+grc:attackTechniqueId a owl:DatatypeProperty ;
+    rdfs:label "attack technique ID"@en ;
+    rdfs:comment """MITRE ATT&CK technique identifier (e.g., 'T1110' Brute Force,
+'T1499' Endpoint DoS, 'T1190' Exploit Public-Facing Application).
+Maps CIC-IDS2018 attack labels to the MITRE knowledge base."""@en ;
+    rdfs:domain grc:Threat ;
+    rdfs:range xsd:string .
+
+# ── SafecareOnto butterfly effect computation properties ─────────────────────
+
+grc:protectionDegree a owl:DatatypeProperty ;
+    rdfs:label "protection degree"@en ;
+    rdfs:comment """SafecareOnto: efficiency of a Control in protecting an Asset.
+Value in [0.0, 1.0].  1.0 = complete protection (propagation barrier).
+Used in the butterfly effect formula:
+  impactScore(a) = 1 - max(protectionDegree_j(a))  in [0,1]."""@en ;
+    rdfs:domain grc:Control ;
+    rdfs:range xsd:decimal .
+
+grc:impactScore a owl:DatatypeProperty ;
+    rdfs:label "impact score"@en ;
+    rdfs:comment """SafecareOnto butterfly effect score for an Asset.
+Computed as: impactScore(a) = 1 - max(protectionDegree of controls on a).
+0.0 = propagation barrier (full protection); 1.0 = unprotected.
+Cascades upward through the ARG."""@en ;
+    rdfs:domain grc:Asset ;
+    rdfs:range xsd:decimal .
+
+grc:propagationBarrier a owl:DatatypeProperty ;
+    rdfs:label "propagation barrier"@en ;
+    rdfs:comment """Boolean flag: true when impactScore = 0.0, meaning butterfly effect
+propagation stops at this asset.  Per SafecareOnto: if ANY intermediate
+asset on a path has impactScore = 0, propagation STOPS on that path."""@en ;
+    rdfs:domain grc:Asset ;
+    rdfs:range xsd:boolean .
+
+# ── Building metadata ────────────────────────────────────────────────────────
+
+grc:buildingName a owl:DatatypeProperty ;
+    rdfs:label "building name"@en ;
+    rdfs:comment "Human-readable name of the Building (e.g., 'Data Center Building A', 'Server Room 1')."@en ;
+    rdfs:domain grc:Building ;
+    rdfs:range xsd:string .
+
+grc:buildingLevel a owl:DatatypeProperty ;
+    rdfs:label "building level"@en ;
+    rdfs:comment "Floor level of a SimpleBuilding within its ComplexBuilding (0 = ground floor)."@en ;
+    rdfs:domain grc:Building ;
+    rdfs:range xsd:integer .
+
+################################################################################
+# SECTION 8 — Generative-output entity classes (v0.3.0)
+#
+# The two shapes that validate LLM-generated artefacts (RiskScenarioShape in
+# risk-scenario.shacl.ttl, ControlRecommendationShape in
+# control-recommendation.shacl.ttl) previously targeted classes and constrained
+# properties that this ontology did not declare. The shapes carrying the entire
+# generative-grounding evaluation therefore validated a vocabulary outside the
+# ontology they were said to share with the classifier path. The twelve terms
+# are declared below.
+#
+# RiskScenario is deliberately NOT a subclass of RiskCase, and its impactLevel
+# range deliberately does not match RiskCase's impact range. RiskCase is the
+# graph-resident GRC record banded per NFCRM SS6.9 (negligible..catastrophic);
+# RiskScenario is the generative-output artefact carrying the four-value
+# severity vocabulary the generation prompts elicit (low..critical). The two
+# vocabularies are not inter-mappable and are kept distinct rather than
+# silently reconciled.
+################################################################################
+
+grc:RiskScenario a owl:Class ;
+    rdfs:label "Risk Scenario"@en ;
+    rdfs:comment """An LLM-generated risk scenario artefact. Distinct from grc:RiskCase:
+a RiskCase is a graph-resident record with NFCRM SS6.9 likelihood/impact bands, whereas a
+RiskScenario is generative output validated on production."""@en .
+
+grc:ControlRecommendation a owl:Class ;
+    rdfs:label "Control Recommendation"@en ;
+    rdfs:comment "An LLM-generated control recommendation artefact, validated against the clause set on production."@en .
+
+grc:Evidence a owl:Class ;
+    rdfs:label "Evidence"@en ;
+    rdfs:comment """Audit evidence supporting a Control or RiskCase. Declared to complete the
+Event->RiskCase->Control->Evidence traceability chain referenced in the architecture. Note that
+no shape currently constrains Evidence and the testbed graph instantiates none."""@en .
+
+grc:AttackTechnique a owl:Class ;
+    rdfs:subClassOf grc:Threat ;
+    rdfs:label "Attack Technique"@en ;
+    rdfs:comment "An adversary technique, e.g. a MITRE ATT&CK technique. Previously instantiated in the ARG without a declaring class."@en .
+
+# ── RiskScenario properties ──────────────────────────────────────────────────
+
+grc:scenarioTitle a owl:DatatypeProperty ;
+    rdfs:label "scenario title"@en ;
+    rdfs:domain grc:RiskScenario ;
+    rdfs:range xsd:string .
+
+grc:description a owl:DatatypeProperty ;
+    rdfs:label "description"@en ;
+    rdfs:comment "Free-text narrative body of a generated risk scenario."@en ;
+    rdfs:domain grc:RiskScenario ;
+    rdfs:range xsd:string .
+
+grc:threatVector a owl:DatatypeProperty ;
+    rdfs:label "threat vector"@en ;
+    rdfs:domain grc:RiskScenario ;
+    rdfs:range xsd:string .
+
+grc:impactLevel a owl:DatatypeProperty ;
+    rdfs:label "impact level"@en ;
+    rdfs:comment """Four-value severity vocabulary of generated scenarios (critical, high, medium,
+low). Deliberately distinct from grc:impact, which carries the five NFCRM SS6.9 bands."""@en ;
+    rdfs:domain grc:RiskScenario ;
+    rdfs:range xsd:string .
+
+grc:affectedAsset a owl:ObjectProperty ;
+    rdfs:label "affected asset"@en ;
+    rdfs:domain grc:RiskScenario ;
+    rdfs:range grc:Asset .
+
+grc:recommendedControl a owl:DatatypeProperty ;
+    rdfs:label "recommended control"@en ;
+    rdfs:comment "Control named by a generated scenario, carried as a literal label rather than a resolved grc:Control reference."@en ;
+    rdfs:domain grc:RiskScenario ;
+    rdfs:range xsd:string .
+
+# ── ControlRecommendation properties ─────────────────────────────────────────
+
+grc:targetAsset a owl:ObjectProperty ;
+    rdfs:label "target asset"@en ;
+    rdfs:domain grc:ControlRecommendation ;
+    rdfs:range grc:Asset .
+
+grc:threatClass a owl:DatatypeProperty ;
+    rdfs:label "threat class"@en ;
+    rdfs:comment """Attack-class label of the case a recommendation responds to. The enumeration
+constrained by ControlRecommendationShape is CIC-IDS2018-specific; reuse on another data source
+requires changing that value set."""@en ;
+    rdfs:domain grc:ControlRecommendation ;
+    rdfs:range xsd:string .
+
+grc:controlClauseId a owl:DatatypeProperty ;
+    rdfs:label "control clause identifier"@en ;
+    rdfs:comment "NFCRM-1:2025 clause identifier cited by a recommendation; validated by joining grc:Clause individuals."@en ;
+    rdfs:domain grc:ControlRecommendation ;
+    rdfs:range xsd:string .
+
+grc:justification a owl:DatatypeProperty ;
+    rdfs:label "justification"@en ;
+    rdfs:domain grc:ControlRecommendation ;
+    rdfs:range xsd:string .
+
+################################################################################
+# SECTION 9 — Graph-construction properties and ATT&CK technique terms (v0.3.0)
+#
+# grc:hasSoftware, grc:targetsAsset and grc:usesTechnique are emitted by the
+# ARG JSON-to-RDF converter but were never declared here. They were invisible to
+# the earlier shape-side vocabulary audit because no shape references them --
+# an undeclared property is only noticed when something looks for it.
+################################################################################
+
+grc:hasSoftware a owl:ObjectProperty ;
+    rdfs:label "has software"@en ;
+    rdfs:comment "Links an Asset to a SoftwareAsset installed on it (ARG edge type HAS_SOFTWARE)."@en ;
+    rdfs:domain grc:Asset ;
+    rdfs:range grc:SoftwareAsset .
+
+grc:targetsAsset a owl:ObjectProperty ;
+    rdfs:label "targets asset"@en ;
+    rdfs:comment "Links a Threat or AttackTechnique to the Asset it targets (ARG edge type TARGETS_ASSET)."@en ;
+    rdfs:domain grc:Threat ;
+    rdfs:range grc:Asset .
+
+grc:usesTechnique a owl:ObjectProperty ;
+    rdfs:label "uses technique"@en ;
+    rdfs:comment "Links a RiskCase or Threat to an AttackTechnique (ARG edge type USES_TECHNIQUE)."@en ;
+    rdfs:range grc:AttackTechnique .
+
+grc:techniqueName a owl:DatatypeProperty ;
+    rdfs:label "technique name"@en ;
+    rdfs:domain grc:AttackTechnique ;
+    rdfs:range xsd:string .
+
+grc:tactic a owl:DatatypeProperty ;
+    rdfs:label "tactic"@en ;
+    rdfs:comment "ATT&CK tactic the technique serves, e.g. Credential Access."@en ;
+    rdfs:domain grc:AttackTechnique ;
+    rdfs:range xsd:string .

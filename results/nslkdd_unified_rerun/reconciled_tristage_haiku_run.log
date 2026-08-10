@@ -1,0 +1,132 @@
+
+======================================================================
+RECONCILED TRI-STAGE (HELD-OUT TEST, N=100, real evaluation)
+======================================================================
+  [test 1/100] nslr_test_000 (U2R   ): ml=Normal/Very Low   llm=R2L   /Catastrophic -> final=Catastrophic GT=Catastrophic [OK] DISAGREE(escalate_to_llm) (24154ms)
+  [test 2/100] nslr_test_001 (Probe ): ml=Normal/Very Low   llm=R2L   /Catastrophic -> final=Catastrophic GT=High         [MISS] DISAGREE(escalate_to_llm) (17095ms)
+  [test 3/100] nslr_test_002 (R2L   ): ml=R2L   /High       llm=R2L   /High       -> final=High         GT=High         [OK] (34795ms)
+  [test 4/100] nslr_test_003 (Probe ): ml=DoS   /Catastrophic llm=R2L   /Catastrophic -> final=Catastrophic GT=High         [MISS] (25017ms)
+  [test 5/100] nslr_test_004 (Probe ): ml=Probe /Medium     llm=Probe /Medium     -> final=Medium       GT=Medium       [OK] (20414ms)
+  [test 6/100] nslr_test_005 (DoS   ): ml=DoS   /Medium     llm=DoS   /Medium     -> final=Medium       GT=Medium       [OK] (17899ms)
+  [test 7/100] nslr_test_006 (DoS   ): ml=DoS   /High       llm=DoS   /High       -> final=High         GT=High         [OK] (13203ms)
+  [test 8/100] nslr_test_007 (U2R   ): ml=Normal/Very Low   llm=R2L   /Catastrophic -> final=Catastrophic GT=Catastrophic [OK] DISAGREE(escalate_to_llm) (20140ms)
+  [test 9/100] nslr_test_008 (Normal): ml=Normal/Very Low   llm=Probe /Medium     -> final=Medium       GT=Very Low     [MISS] DISAGREE(escalate_to_llm) (20440ms)
+  [test 10/100] nslr_test_009 (Normal): ml=Normal/Very Low   llm=Probe /High       -> final=High         GT=Very Low     [MISS] DISAGREE(escalate_to_llm) (16996ms)
+  [test 11/100] nslr_test_010 (Normal): ml=Normal/Very Low   llm=Probe /Medium     -> final=Medium       GT=Very Low     [MISS] DISAGREE(escalate_to_llm) (24647ms)
+  [test 12/100] nslr_test_011 (DoS   ): ml=DoS   /High       llm=DoS   /High       -> final=High         GT=High         [OK] (17148ms)
+  [test 13/100] nslr_test_012 (R2L   ): ml=Normal/Very Low   llm=R2L   /Medium     -> final=Medium       GT=Medium       [OK] DISAGREE(escalate_to_llm) (16104ms)
+  [test 14/100] nslr_test_013 (DoS   ): ml=DoS   /Medium     llm=DoS   /Medium     -> final=Medium       GT=Medium       [OK] (18593ms)
+  [test 15/100] nslr_test_014 (U2R   ): ml=Normal/Very Low   llm=Normal/Very Low   -> final=Very Low     GT=Medium       [MISS] (32491ms)
+  [test 16/100] nslr_test_015 (Normal): ml=Normal/Very Low   llm=Probe /Medium     -> final=Medium       GT=Very Low     [MISS] DISAGREE(escalate_to_llm) (15883ms)
+  [test 17/100] nslr_test_016 (R2L   ): ml=Normal/Very Low   llm=R2L   /High       -> final=High         GT=High         [OK] DISAGREE(escalate_to_llm) (26861ms)
+  [test 18/100] nslr_test_017 (R2L   ): ml=Normal/Very Low   llm=Probe /Medium     -> final=Medium       GT=Catastrophic [MISS] DISAGREE(escalate_to_llm) (27591ms)
+  [test 19/100] nslr_test_018 (Normal): ml=Normal/Very Low   llm=Probe /Medium     -> final=Medium       GT=Very Low     [MISS] DISAGREE(escalate_to_llm) (32421ms)
+  [test 20/100] nslr_test_019 (DoS   ): ml=DoS   /Catastrophic llm=DoS   /Catastrophic -> final=Catastrophic GT=Catastrophic [OK] (21660ms)
+  [test 21/100] nslr_test_020 (Probe ): ml=Normal/Very Low   llm=R2L   /Catastrophic -> final=Catastrophic GT=Medium       [MISS] DISAGREE(escalate_to_llm) (37575ms)
+  [test 22/100] nslr_test_021 (U2R   ): ml=Normal/Very Low   llm=R2L   /Medium     -> final=Medium       GT=Medium       [OK] DISAGREE(escalate_to_llm) (17891ms)
+  [test 23/100] nslr_test_022 (DoS   ): ml=Normal/Very Low   llm=DoS   /High       -> final=High         GT=High         [OK] DISAGREE(escalate_to_llm) (17286ms)
+  [test 24/100] nslr_test_023 (Probe ): ml=DoS   /Catastrophic llm=R2L   /Catastrophic -> final=Catastrophic GT=Medium       [MISS] (23824ms)
+  [test 25/100] nslr_test_024 (R2L   ): ml=Normal/Very Low   llm=U2R   /Catastrophic -> final=Catastrophic GT=Catastrophic [OK] DISAGREE(escalate_to_llm) (21316ms)
+  [test 26/100] nslr_test_025 (Normal): ml=Normal/Very Low   llm=Normal/Very Low   -> final=Very Low     GT=Very Low     [OK] (20252ms)
+  [test 27/100] nslr_test_026 (Probe ): ml=Normal/Very Low   llm=Probe /Low        -> final=Low          GT=Low          [OK] DISAGREE(escalate_to_llm) (13029ms)
+  [test 28/100] nslr_test_027 (U2R   ): ml=Normal/Very Low   llm=Probe /Medium     -> final=Medium       GT=Catastrophic [MISS] DISAGREE(escalate_to_llm) (17902ms)
+  [test 29/100] nslr_test_028 (Normal): ml=Normal/Very Low   llm=Normal/Very Low   -> final=Very Low     GT=Very Low     [OK] (20343ms)
+  [test 30/100] nslr_test_029 (R2L   ): ml=Normal/Very Low   llm=R2L   /High       -> final=High         GT=Medium       [MISS] DISAGREE(escalate_to_llm) (15183ms)
+  [test 31/100] nslr_test_030 (Normal): ml=Normal/Very Low   llm=Probe /Low        -> final=Low          GT=Very Low     [MISS] DISAGREE(escalate_to_llm) (28474ms)
+  [test 32/100] nslr_test_031 (Probe ): ml=Normal/Very Low   llm=R2L   /High       -> final=High         GT=Medium       [MISS] DISAGREE(escalate_to_llm) (21820ms)
+  [test 33/100] nslr_test_032 (U2R   ): ml=Normal/Very Low   llm=Probe /High       -> final=High         GT=Catastrophic [MISS] DISAGREE(escalate_to_llm) (21560ms)
+  [test 34/100] nslr_test_033 (DoS   ): ml=Normal/Very Low   llm=DoS   /Medium     -> final=Medium       GT=Medium       [OK] DISAGREE(escalate_to_llm) (18030ms)
+  [test 35/100] nslr_test_034 (U2R   ): ml=Normal/Very Low   llm=R2L   /High       -> final=High         GT=High         [OK] DISAGREE(escalate_to_llm) (18462ms)
+  [test 36/100] nslr_test_035 (Normal): ml=Normal/Very Low   llm=Normal/Very Low   -> final=Very Low     GT=Very Low     [OK] (19051ms)
+  [test 37/100] nslr_test_036 (R2L   ): ml=Normal/Very Low   llm=R2L   /Catastrophic -> final=Catastrophic GT=Catastrophic [OK] DISAGREE(escalate_to_llm) (20696ms)
+  [test 38/100] nslr_test_037 (R2L   ): ml=Normal/Very Low   llm=Probe /Low        -> final=Low          GT=Medium       [MISS] DISAGREE(escalate_to_llm) (36928ms)
+  [test 39/100] nslr_test_038 (DoS   ): ml=Normal/Very Low   llm=DoS   /High       -> final=High         GT=High         [OK] DISAGREE(escalate_to_llm) (47959ms)
+  [test 40/100] nslr_test_039 (Normal): ml=Normal/Very Low   llm=Normal/Very Low   -> final=Very Low     GT=Very Low     [OK] (29828ms)
+  [test 41/100] nslr_test_040 (Probe ): ml=Probe /Medium     llm=Probe /Medium     -> final=Medium       GT=Medium       [OK] (30824ms)
+  [test 42/100] nslr_test_041 (DoS   ): ml=DoS   /High       llm=DoS   /High       -> final=High         GT=High         [OK] (28651ms)
+  [test 43/100] nslr_test_042 (Normal): ml=Normal/Very Low   llm=DoS   /Catastrophic -> final=Catastrophic GT=Very Low     [MISS] DISAGREE(escalate_to_llm) (27885ms)
+  [test 44/100] nslr_test_043 (U2R   ): ml=Normal/Very Low   llm=Probe /High       -> final=High         GT=Catastrophic [MISS] DISAGREE(escalate_to_llm) (17197ms)
+  [test 45/100] nslr_test_044 (DoS   ): ml=DoS   /High       llm=DoS   /High       -> final=High         GT=High         [OK] (23476ms)
+  [test 46/100] nslr_test_045 (Normal): ml=Normal/Very Low   llm=Normal/Very Low   -> final=Very Low     GT=Very Low     [OK] (30711ms)
+  [test 47/100] nslr_test_046 (U2R   ): ml=Normal/Very Low   llm=R2L   /Catastrophic -> final=Catastrophic GT=Catastrophic [OK] DISAGREE(escalate_to_llm) (21373ms)
+  [test 48/100] nslr_test_047 (DoS   ): ml=DoS   /Medium     llm=DoS   /Medium     -> final=Medium       GT=Medium       [OK] (15053ms)
+  [test 49/100] nslr_test_048 (R2L   ): ml=Normal/Very Low   llm=R2L   /Catastrophic -> final=Catastrophic GT=Catastrophic [OK] DISAGREE(escalate_to_llm) (27876ms)
+  [test 50/100] nslr_test_049 (Normal): ml=Normal/Very Low   llm=Probe /High       -> final=High         GT=Very Low     [MISS] DISAGREE(escalate_to_llm) (17297ms)
+  [test 51/100] nslr_test_050 (DoS   ): ml=DoS   /Catastrophic llm=DoS   /Catastrophic -> final=Catastrophic GT=Catastrophic [OK] (16910ms)
+  [test 52/100] nslr_test_051 (Normal): ml=Normal/Very Low   llm=Probe /Medium     -> final=Medium       GT=Very Low     [MISS] DISAGREE(escalate_to_llm) (20471ms)
+  [test 53/100] nslr_test_052 (Normal): ml=Normal/Very Low   llm=Probe /High       -> final=High         GT=Very Low     [MISS] DISAGREE(escalate_to_llm) (18703ms)
+  [test 54/100] nslr_test_053 (DoS   ): ml=DoS   /Catastrophic llm=DoS   /High       -> final=Catastrophic GT=Catastrophic [OK] DISAGREE(escalate_to_ml) (47970ms)
+  [test 55/100] nslr_test_054 (Normal): ml=Normal/Very Low   llm=Normal/Very Low   -> final=Very Low     GT=Very Low     [OK] (39345ms)
+  [test 56/100] nslr_test_055 (R2L   ): ml=Normal/Very Low   llm=R2L   /Catastrophic -> final=Catastrophic GT=Catastrophic [OK] DISAGREE(escalate_to_llm) (20304ms)
+  [test 57/100] nslr_test_056 (Normal): ml=Normal/Very Low   llm=Probe /High       -> final=High         GT=Very Low     [MISS] DISAGREE(escalate_to_llm) (17284ms)
+  [test 58/100] nslr_test_057 (R2L   ): ml=R2L   /High       llm=R2L   /High       -> final=High         GT=High         [OK] (36431ms)
+  [test 59/100] nslr_test_058 (DoS   ): ml=Normal/Very Low   llm=DoS   /High       -> final=High         GT=High         [OK] DISAGREE(escalate_to_llm) (64282ms)
+  [test 60/100] nslr_test_059 (U2R   ): ml=Normal/Very Low   llm=Probe /Low        -> final=Low          GT=Medium       [MISS] DISAGREE(escalate_to_llm) (20625ms)
+  [test 61/100] nslr_test_060 (Probe ): ml=Probe /High       llm=R2L   /Catastrophic -> final=Catastrophic GT=High         [MISS] DISAGREE(escalate_to_llm) (18171ms)
+  [test 62/100] nslr_test_061 (U2R   ): ml=Normal/Very Low   llm=Probe /High       -> final=High         GT=Catastrophic [MISS] DISAGREE(escalate_to_llm) (28840ms)
+  [test 63/100] nslr_test_062 (Probe ): ml=Normal/Very Low   llm=Probe /Low        -> final=Low          GT=Low          [OK] DISAGREE(escalate_to_llm) (21614ms)
+  [test 64/100] nslr_test_063 (Probe ): ml=Normal/Very Low   llm=R2L   /High       -> final=High         GT=Medium       [MISS] DISAGREE(escalate_to_llm) (25297ms)
+  [test 65/100] nslr_test_064 (Probe ): ml=Probe /Medium     llm=R2L   /High       -> final=High         GT=Medium       [MISS] DISAGREE(escalate_to_llm) (16808ms)
+  [test 66/100] nslr_test_065 (R2L   ): ml=R2L   /Catastrophic llm=R2L   /Catastrophic -> final=Catastrophic GT=Catastrophic [OK] (21764ms)
+  [test 67/100] nslr_test_066 (Probe ): ml=Probe /Medium     llm=R2L   /High       -> final=High         GT=Medium       [MISS] DISAGREE(escalate_to_llm) (21231ms)
+  [test 68/100] nslr_test_067 (R2L   ): ml=Normal/Very Low   llm=R2L   /High       -> final=High         GT=High         [OK] DISAGREE(escalate_to_llm) (21040ms)
+  [test 69/100] nslr_test_068 (R2L   ): ml=Normal/Very Low   llm=U2R   /Catastrophic -> final=Catastrophic GT=Catastrophic [OK] DISAGREE(escalate_to_llm) (30406ms)
+  [test 70/100] nslr_test_069 (U2R   ): ml=Normal/Very Low   llm=R2L   /Catastrophic -> final=Catastrophic GT=Catastrophic [OK] DISAGREE(escalate_to_llm) (39363ms)
+  [test 71/100] nslr_test_070 (R2L   ): ml=R2L   /Catastrophic llm=R2L   /Catastrophic -> final=Catastrophic GT=Catastrophic [OK] (22993ms)
+  [test 72/100] nslr_test_071 (Probe ): ml=Normal/Very Low   llm=Probe /Medium     -> final=Medium       GT=Medium       [OK] DISAGREE(escalate_to_llm) (34926ms)
+  [test 73/100] nslr_test_072 (Probe ): ml=Probe /High       llm=R2L   /Catastrophic -> final=Catastrophic GT=High         [MISS] DISAGREE(escalate_to_llm) (24102ms)
+  [test 74/100] nslr_test_073 (Probe ): ml=DoS   /Catastrophic llm=Probe /Medium     -> final=Catastrophic GT=Medium       [MISS] DISAGREE(escalate_to_ml) (104999ms)
+  [test 75/100] nslr_test_074 (U2R   ): ml=Normal/Very Low   llm=R2L   /Catastrophic -> final=Catastrophic GT=Catastrophic [OK] DISAGREE(escalate_to_llm) (32536ms)
+  [test 76/100] nslr_test_075 (Probe ): ml=Normal/Very Low   llm=Probe /Low        -> final=Low          GT=Low          [OK] DISAGREE(escalate_to_llm) (38970ms)
+  [test 77/100] nslr_test_076 (R2L   ): ml=Normal/Very Low   llm=R2L   /Catastrophic -> final=Catastrophic GT=Catastrophic [OK] DISAGREE(escalate_to_llm) (40216ms)
+  [test 78/100] nslr_test_077 (DoS   ): ml=DoS   /High       llm=DoS   /High       -> final=High         GT=High         [OK] (15829ms)
+  [test 79/100] nslr_test_078 (U2R   ): ml=Normal/Very Low   llm=R2L   /High       -> final=High         GT=High         [OK] DISAGREE(escalate_to_llm) (24780ms)
+  [test 80/100] nslr_test_079 (Probe ): ml=Probe /High       llm=Probe /High       -> final=High         GT=High         [OK] (27366ms)
+  [test 81/100] nslr_test_080 (R2L   ): ml=Normal/Very Low   llm=R2L   /Medium     -> final=Medium       GT=Medium       [OK] DISAGREE(escalate_to_llm) (24309ms)
+  [test 82/100] nslr_test_081 (U2R   ): ml=Normal/Very Low   llm=R2L   /Medium     -> final=Medium       GT=Medium       [OK] DISAGREE(escalate_to_llm) (26142ms)
+  [test 83/100] nslr_test_082 (DoS   ): ml=DoS   /Catastrophic llm=DoS   /Catastrophic -> final=Catastrophic GT=Catastrophic [OK] (20607ms)
+  [test 84/100] nslr_test_083 (DoS   ): ml=DoS   /High       llm=DoS   /High       -> final=High         GT=High         [OK] (27042ms)
+  [test 85/100] nslr_test_084 (Normal): ml=Normal/Very Low   llm=Probe /High       -> final=High         GT=Very Low     [MISS] DISAGREE(escalate_to_llm) (26459ms)
+  [test 86/100] nslr_test_085 (Probe ): ml=Probe /High       llm=R2L   /Catastrophic -> final=Catastrophic GT=High         [MISS] DISAGREE(escalate_to_llm) (26294ms)
+  [test 87/100] nslr_test_086 (DoS   ): ml=DoS   /High       llm=DoS   /High       -> final=High         GT=High         [OK] (29616ms)
+  [test 88/100] nslr_test_087 (Normal): ml=Normal/Very Low   llm=Normal/Very Low   -> final=Very Low     GT=Very Low     [OK] (28298ms)
+  [test 89/100] nslr_test_088 (DoS   ): ml=DoS   /Medium     llm=Probe /Low        -> final=Medium       GT=Medium       [OK] DISAGREE(escalate_to_ml) (62891ms)
+  [test 90/100] nslr_test_089 (U2R   ): ml=R2L   /High       llm=R2L   /High       -> final=High         GT=High         [OK] (27841ms)
+  [test 91/100] nslr_test_090 (U2R   ): ml=Normal/Very Low   llm=R2L   /Catastrophic -> final=Catastrophic GT=Catastrophic [OK] DISAGREE(escalate_to_llm) (30040ms)
+  [test 92/100] nslr_test_091 (R2L   ): ml=Normal/Very Low   llm=Probe /Medium     -> final=Medium       GT=Catastrophic [MISS] DISAGREE(escalate_to_llm) (23178ms)
+  [test 93/100] nslr_test_092 (U2R   ): ml=Normal/Very Low   llm=R2L   /Catastrophic -> final=Catastrophic GT=Catastrophic [OK] DISAGREE(escalate_to_llm) (18276ms)
+  [test 94/100] nslr_test_093 (U2R   ): ml=Normal/Very Low   llm=Probe /Low        -> final=Low          GT=Medium       [MISS] DISAGREE(escalate_to_llm) (23922ms)
+  [test 95/100] nslr_test_094 (DoS   ): ml=Normal/Very Low   llm=DoS   /Medium     -> final=Medium       GT=Medium       [OK] DISAGREE(escalate_to_llm) (16472ms)
+  [test 96/100] nslr_test_095 (R2L   ): ml=Normal/Very Low   llm=R2L   /Medium     -> final=Medium       GT=Medium       [OK] DISAGREE(escalate_to_llm) (19699ms)
+  [test 97/100] nslr_test_096 (R2L   ): ml=Normal/Very Low   llm=R2L   /Catastrophic -> final=Catastrophic GT=Catastrophic [OK] DISAGREE(escalate_to_llm) (22024ms)
+  [test 98/100] nslr_test_097 (Normal): ml=Normal/Very Low   llm=Normal/Very Low   -> final=Very Low     GT=Very Low     [OK] (17041ms)
+  [test 99/100] nslr_test_098 (U2R   ): ml=Normal/Very Low   llm=R2L   /Medium     -> final=Medium       GT=Medium       [OK] DISAGREE(escalate_to_llm) (29978ms)
+  [test 100/100] nslr_test_099 (Probe ): ml=Probe /Low        llm=Probe /Low        -> final=Low          GT=Low          [OK] (40729ms)
+
+Reconciled tri-stage (Haiku, N=100) metrics: {
+  "n": 100,
+  "exact_pct": 65.0,
+  "within1_pct": 82.0,
+  "under_escalation_pct": 10.0,
+  "over_escalation_pct": 25.0,
+  "severe_recall_pct": 93.9,
+  "severe_total": 49,
+  "worst_miss_levels": 2
+}
+XGBoost clean baseline metrics:               {
+  "n": 100,
+  "exact_pct": 49.0,
+  "within1_pct": 53.0,
+  "under_escalation_pct": 48.0,
+  "over_escalation_pct": 3.0,
+  "severe_recall_pct": 42.9,
+  "severe_total": 49,
+  "worst_miss_levels": 4
+}
+Parse errors: 0/100
+Class disagreement (LLM vs ML): 68/100
+Risk-level disagreement requiring arbitration: 67/100 (escalated_to_llm=64, escalated_to_ml=3)
+
+SPINE TEST — under-escalation McNemar, Reconciled-Tristage(Haiku) vs XGBoost(clean): b(XGB-unsafe,Reconciled-safe)=38  c(Reconciled-unsafe,XGB-safe)=0  p(1-sided)=3.638e-12
+
+Saved -> D:\01_Projects\INTERSYMBOLIC-GRC\results\nslkdd_unified_rerun\reconciled_tristage_haiku_results.json

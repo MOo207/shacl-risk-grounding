@@ -1,0 +1,93 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix grc: <https://w3id.org/grc/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+################################################################################
+# SHACL Shape for LLM-Generated Risk Scenarios
+# Validates structured output from LLM risk assessment pipelines
+################################################################################
+
+grc:RiskScenarioShape a sh:NodeShape ;
+    sh:targetClass grc:RiskScenario ;
+    sh:property [
+        sh:path grc:scenarioTitle ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "RiskScenario must have exactly one scenarioTitle of type string"
+    ] ;
+    sh:property [
+        sh:path grc:affectedAsset ;
+        sh:class grc:Asset ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "RiskScenario must reference at least one affectedAsset of class Asset"
+    ] ;
+    sh:property [
+        sh:path grc:threatVector ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "RiskScenario must have at least one threatVector of type string"
+    ] ;
+    sh:property [
+        sh:path grc:impactLevel ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:in ("critical" "high" "medium" "low") ;
+        sh:severity sh:Violation ;
+        sh:message "RiskScenario must have exactly one impactLevel (critical, high, medium, or low)"
+    ] ;
+    sh:property [
+        sh:path grc:nfcrmClause ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "RiskScenario must have at least one nfcrmClause of type string"
+    ] ;
+    sh:property [
+        sh:path grc:recommendedControl ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "RiskScenario should have at least one recommendedControl"
+    ] ;
+    sh:property [
+        sh:path grc:description ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "RiskScenario must have exactly one description of type string"
+    ] ;
+    # Referential clause validation, derived from the graph rather than restated
+    # here. An earlier revision inlined the 26 identifiers as an sh:in literal
+    # list, duplicated in this file and in control-recommendation.shacl.ttl. That
+    # is a hand-maintained copy of the clause set, not a constraint the knowledge
+    # graph supplies -- the same defect already withdrawn for grc:threatClass.
+    # This constraint instead joins each cited identifier against the grc:Clause
+    # individuals in ontology/ttl/nfcrm-clauses.ttl, which the validating harness
+    # loads into the data graph. Adding or retiring a clause there changes
+    # validation with no edit to any shape.
+    #
+    # STR() on both sides: rdflib treats a plain literal and an xsd:string-typed
+    # literal as distinct terms, so a bare term join would silently fail on a
+    # datatype mismatch rather than on a genuine unknown clause.
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:severity sh:Violation ;
+        sh:message "nfcrmClause {?value} is not a clause of NFCRM-1:2025 (no grc:Clause individual carries this grc:clauseId)" ;
+        sh:select """
+            PREFIX grc: <https://w3id.org/grc/ontology#>
+            SELECT $this ?value
+            WHERE {
+                $this grc:nfcrmClause ?value .
+                FILTER NOT EXISTS {
+                    ?c a grc:Clause ; grc:clauseId ?cid .
+                    FILTER(STR(?cid) = STR(?value))
+                }
+            }
+        """
+    ] .

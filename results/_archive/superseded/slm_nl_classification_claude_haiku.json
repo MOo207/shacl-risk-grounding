@@ -1,0 +1,25 @@
+{
+  "mode": "evaluation_partial",
+  "model": "haiku",
+  "backend": "claude_cli_haiku",
+  "dataset": "cicids",
+  "n_sampled": 180,
+  "n_completed": 30,
+  "n_valid": 30,
+  "n_errors": 0,
+  "accuracy_partial": 0.40,
+  "accuracy_at_checkpoints": {
+    "10": 0.70,
+    "20": 0.45,
+    "30": 0.40
+  },
+  "note": "Partial run stopped at 30/180. Early checkpoint at N=10 is biased toward easy classes (DoS/DDoS with strong NL signatures). Accuracy stabilises downward as harder classes (BruteForce, Benign) enter. GLM-4.7 analog at full N=180 was 47.78% (results/slm_nl_classification.json). Haiku expected range: 40-50% at N=180. Confirms modality gap: LLM ~40-47% vs ML 87.70-88.08% on tabular flow classification.",
+  "comparable_result": {
+    "model": "glm-4.7",
+    "backend": "zai_api",
+    "n_samples": 180,
+    "accuracy": 0.4778,
+    "source": "results/slm_nl_classification.json"
+  },
+  "timestamp": "2026-05-21T00:00:00"
+}

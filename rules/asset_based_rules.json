@@ -1,0 +1,60 @@
+[
+  {
+    "rule_id": "AST-001",
+    "name": "Outdated Software Version",
+    "category": "asset_based",
+    "priority": 80,
+    "description": "Software version exceeds EOL date",
+    "conditions": [
+      {
+        "field": "software_name",
+        "operator": "in",
+        "value": [
+          "Windows",
+          "Linux",
+          "RHEL"
+        ],
+        "description": ""
+      },
+      {
+        "field": "version",
+        "operator": ">",
+        "value": "EOL",
+        "description": ""
+      },
+      {
+        "field": "patch_available",
+        "operator": "==",
+        "value": false,
+        "description": ""
+      }
+    ],
+    "score_modifier": -30,
+    "explanation_template": "Asset {asset_id} uses outdated software {software_name} {version} which is past EOL with no patch available.",
+    "enabled": true
+  },
+  {
+    "rule_id": "AST-002",
+    "name": "Missing Security Controls",
+    "category": "asset_based",
+    "priority": 75,
+    "description": "Asset missing required security controls",
+    "conditions": [
+      {
+        "field": "security_control_count",
+        "operator": "<",
+        "value": 3,
+        "description": ""
+      },
+      {
+        "field": "required_controls",
+        "operator": "==",
+        "value": true,
+        "description": ""
+      }
+    ],
+    "score_modifier": -25,
+    "explanation_template": "Asset {asset_id} is missing required security controls. Only {security_control_count} controls configured.",
+    "enabled": true
+  }
+]

@@ -1,0 +1,75 @@
+{
+  "description": "Multi-study evidence synthesis for LLM paradigm advantage (Sonnet vs non-LLM baselines)",
+  "method": "Fisher combined test (k=4 independent experiments)",
+  "experiments": [
+    {
+      "id": "A",
+      "name": "CIC unified ablation",
+      "comparison": "Sonnet vs XGBoost",
+      "dataset": "CIC-IDS2018",
+      "N": 60,
+      "sonnet_acc": 1.0,
+      "baseline_acc": 0.95,
+      "discordant_b": 3,
+      "discordant_c": 0,
+      "mcnemar_p_onesided": 0.125,
+      "cohen_h": 0.451,
+      "effect_size": "medium"
+    },
+    {
+      "id": "B",
+      "name": "NSL-KDD unified ablation",
+      "comparison": "Sonnet vs XGBoost",
+      "dataset": "NSL-KDD",
+      "N": 50,
+      "sonnet_acc": 0.88,
+      "baseline_acc": 0.56,
+      "discordant_b": 16,
+      "discordant_c": 0,
+      "mcnemar_p_onesided": 1.53e-05,
+      "cohen_h": 0.743,
+      "effect_size": "large"
+    },
+    {
+      "id": "C",
+      "name": "Five-paradigm Set B",
+      "comparison": "Sonnet vs Pure Rule",
+      "dataset": "CIC-IDS2018",
+      "N": 50,
+      "sonnet_acc": 0.44,
+      "baseline_acc": 0.0,
+      "mcnemar_p_onesided": 0.0005,
+      "cohen_h": 1.45,
+      "effect_size": "very large"
+    },
+    {
+      "id": "D",
+      "name": "H8 pre-registered replication",
+      "comparison": "Sonnet vs ML",
+      "dataset": "CIC-IDS2018",
+      "N": 100,
+      "sonnet_acc": 0.44,
+      "baseline_acc": 0.2,
+      "mcnemar_p_onesided": 0.025,
+      "cohen_h": 0.52,
+      "effect_size": "medium"
+    }
+  ],
+  "fisher_combined": {
+    "k": 4,
+    "chi2": 48.919,
+    "df": 8,
+    "p_combined": 6.59e-08,
+    "interpretation": "p < 1e-7, reject null at any conventional alpha"
+  },
+  "pooled_effect": {
+    "cohen_h_weighted": 0.726,
+    "total_N": 260,
+    "effect_size_label": "large",
+    "datasets": [
+      "CIC-IDS2018",
+      "NSL-KDD"
+    ],
+    "interpretation": "Large pooled effect across two datasets and three distinct evaluation designs"
+  }
+}

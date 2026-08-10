@@ -1,0 +1,200 @@
+{"arm": "no_cve", "case_id": "nslr_test_000", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_001", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "High", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_002", "cve_id": null, "llm_level": "Very Low", "reconciled_level": "High", "gt": "High", "xgb": "High"}
+{"arm": "no_cve", "case_id": "nslr_test_003", "cve_id": null, "llm_level": "High", "reconciled_level": "Catastrophic", "gt": "High", "xgb": "Catastrophic"}
+{"arm": "no_cve", "case_id": "nslr_test_004", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Medium"}
+{"arm": "no_cve", "case_id": "nslr_test_005", "cve_id": null, "llm_level": "Low", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Medium"}
+{"arm": "no_cve", "case_id": "nslr_test_006", "cve_id": null, "llm_level": "Medium", "reconciled_level": "High", "gt": "High", "xgb": "High"}
+{"arm": "no_cve", "case_id": "nslr_test_007", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_008", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_009", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_010", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_011", "cve_id": null, "llm_level": "Medium", "reconciled_level": "High", "gt": "High", "xgb": "High"}
+{"arm": "no_cve", "case_id": "nslr_test_012", "cve_id": null, "llm_level": "Low", "reconciled_level": "Low", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_013", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Medium"}
+{"arm": "no_cve", "case_id": "nslr_test_014", "cve_id": null, "llm_level": "Very Low", "reconciled_level": "Very Low", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_015", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_016", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "High", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_017", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_018", "cve_id": null, "llm_level": "Very Low", "reconciled_level": "Very Low", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_019", "cve_id": null, "llm_level": "High", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Catastrophic"}
+{"arm": "no_cve", "case_id": "nslr_test_020", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_021", "cve_id": null, "llm_level": "Very Low", "reconciled_level": "Very Low", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_022", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "High", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_023", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Catastrophic", "gt": "Medium", "xgb": "Catastrophic"}
+{"arm": "no_cve", "case_id": "nslr_test_024", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_025", "cve_id": null, "llm_level": "Low", "reconciled_level": "Low", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_026", "cve_id": null, "llm_level": "Low", "reconciled_level": "Low", "gt": "Low", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_027", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_028", "cve_id": null, "llm_level": "Very Low", "reconciled_level": "Very Low", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_029", "cve_id": null, "llm_level": "Very Low", "reconciled_level": "Very Low", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_030", "cve_id": null, "llm_level": "Low", "reconciled_level": "Low", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_031", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_032", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_033", "cve_id": null, "llm_level": "Low", "reconciled_level": "Low", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_034", "cve_id": null, "llm_level": "Very Low", "reconciled_level": "Very Low", "gt": "High", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_035", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_036", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_037", "cve_id": null, "llm_level": "Low", "reconciled_level": "Low", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_038", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "High", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_039", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_040", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Medium"}
+{"arm": "no_cve", "case_id": "nslr_test_041", "cve_id": null, "llm_level": "Medium", "reconciled_level": "High", "gt": "High", "xgb": "High"}
+{"arm": "no_cve", "case_id": "nslr_test_042", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_043", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_044", "cve_id": null, "llm_level": "Medium", "reconciled_level": "High", "gt": "High", "xgb": "High"}
+{"arm": "no_cve", "case_id": "nslr_test_045", "cve_id": null, "llm_level": "Very Low", "reconciled_level": "Very Low", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_046", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_047", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Medium"}
+{"arm": "no_cve", "case_id": "nslr_test_048", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_049", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_050", "cve_id": null, "llm_level": "High", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Catastrophic"}
+{"arm": "no_cve", "case_id": "nslr_test_051", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_052", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_053", "cve_id": null, "llm_level": "Very Low", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Catastrophic"}
+{"arm": "no_cve", "case_id": "nslr_test_054", "cve_id": null, "llm_level": "Very Low", "reconciled_level": "Very Low", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_055", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_056", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_057", "cve_id": null, "llm_level": "Very Low", "reconciled_level": "High", "gt": "High", "xgb": "High"}
+{"arm": "no_cve", "case_id": "nslr_test_058", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "High", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_059", "cve_id": null, "llm_level": "Low", "reconciled_level": "Low", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_060", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "High", "xgb": "High"}
+{"arm": "no_cve", "case_id": "nslr_test_061", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_062", "cve_id": null, "llm_level": "Low", "reconciled_level": "Low", "gt": "Low", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_063", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_064", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Medium"}
+{"arm": "no_cve", "case_id": "nslr_test_065", "cve_id": null, "llm_level": "Very Low", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Catastrophic"}
+{"arm": "no_cve", "case_id": "nslr_test_066", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Medium"}
+{"arm": "no_cve", "case_id": "nslr_test_067", "cve_id": null, "llm_level": "Very Low", "reconciled_level": "Very Low", "gt": "High", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_068", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_069", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_070", "cve_id": null, "llm_level": "Very Low", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Catastrophic"}
+{"arm": "no_cve", "case_id": "nslr_test_071", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_072", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "High", "xgb": "High"}
+{"arm": "no_cve", "case_id": "nslr_test_073", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Catastrophic", "gt": "Medium", "xgb": "Catastrophic"}
+{"arm": "no_cve", "case_id": "nslr_test_074", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_075", "cve_id": null, "llm_level": "Low", "reconciled_level": "Low", "gt": "Low", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_076", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_077", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "High", "xgb": "High"}
+{"arm": "no_cve", "case_id": "nslr_test_078", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "High", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_079", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "High", "xgb": "High"}
+{"arm": "no_cve", "case_id": "nslr_test_080", "cve_id": null, "llm_level": "Very Low", "reconciled_level": "Very Low", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_081", "cve_id": null, "llm_level": "Very Low", "reconciled_level": "Very Low", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_082", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Catastrophic"}
+{"arm": "no_cve", "case_id": "nslr_test_083", "cve_id": null, "llm_level": "Medium", "reconciled_level": "High", "gt": "High", "xgb": "High"}
+{"arm": "no_cve", "case_id": "nslr_test_084", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_085", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "High", "xgb": "High"}
+{"arm": "no_cve", "case_id": "nslr_test_086", "cve_id": null, "llm_level": "Medium", "reconciled_level": "High", "gt": "High", "xgb": "High"}
+{"arm": "no_cve", "case_id": "nslr_test_087", "cve_id": null, "llm_level": "Low", "reconciled_level": "Low", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_088", "cve_id": null, "llm_level": "Low", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Medium"}
+{"arm": "no_cve", "case_id": "nslr_test_089", "cve_id": null, "llm_level": "Very Low", "reconciled_level": "High", "gt": "High", "xgb": "High"}
+{"arm": "no_cve", "case_id": "nslr_test_090", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_091", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_092", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_093", "cve_id": null, "llm_level": "Low", "reconciled_level": "Low", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_094", "cve_id": null, "llm_level": "Very Low", "reconciled_level": "Very Low", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_095", "cve_id": null, "llm_level": "Low", "reconciled_level": "Low", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_096", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_097", "cve_id": null, "llm_level": "Very Low", "reconciled_level": "Very Low", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_098", "cve_id": null, "llm_level": "Very Low", "reconciled_level": "Very Low", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "no_cve", "case_id": "nslr_test_099", "cve_id": null, "llm_level": "Low", "reconciled_level": "Low", "gt": "Low", "xgb": "Low"}
+{"arm": "permuted", "case_id": "nslr_test_000", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_001", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "High", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_002", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "High", "xgb": "High"}
+{"arm": "permuted", "case_id": "nslr_test_003", "cve_id": null, "llm_level": "High", "reconciled_level": "Catastrophic", "gt": "High", "xgb": "Catastrophic"}
+{"arm": "permuted", "case_id": "nslr_test_004", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Medium"}
+{"arm": "permuted", "case_id": "nslr_test_005", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Medium"}
+{"arm": "permuted", "case_id": "nslr_test_006", "cve_id": null, "llm_level": "Medium", "reconciled_level": "High", "gt": "High", "xgb": "High"}
+{"arm": "permuted", "case_id": "nslr_test_007", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_008", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_009", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_010", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_011", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "High", "xgb": "High"}
+{"arm": "permuted", "case_id": "nslr_test_012", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_013", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Medium"}
+{"arm": "permuted", "case_id": "nslr_test_014", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_015", "cve_id": null, "llm_level": "Very Low", "reconciled_level": "Very Low", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_016", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "High", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_017", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_018", "cve_id": null, "llm_level": "Very Low", "reconciled_level": "Very Low", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_019", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Catastrophic"}
+{"arm": "permuted", "case_id": "nslr_test_020", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_021", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_022", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "High", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_023", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Medium", "xgb": "Catastrophic"}
+{"arm": "permuted", "case_id": "nslr_test_024", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_025", "cve_id": null, "llm_level": "Very Low", "reconciled_level": "Very Low", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_026", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Low", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_027", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_028", "cve_id": null, "llm_level": "Very Low", "reconciled_level": "Very Low", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_029", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_030", "cve_id": null, "llm_level": "Very Low", "reconciled_level": "Very Low", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_031", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_032", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_033", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_034", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "High", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_035", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_036", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_037", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_038", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "High", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_039", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_040", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "Medium", "xgb": "Medium"}
+{"arm": "permuted", "case_id": "nslr_test_041", "cve_id": null, "llm_level": "Medium", "reconciled_level": "High", "gt": "High", "xgb": "High"}
+{"arm": "permuted", "case_id": "nslr_test_042", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_043", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_044", "cve_id": null, "llm_level": "Medium", "reconciled_level": "High", "gt": "High", "xgb": "High"}
+{"arm": "permuted", "case_id": "nslr_test_045", "cve_id": null, "llm_level": "Very Low", "reconciled_level": "Very Low", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_046", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_047", "cve_id": null, "llm_level": "Low", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Medium"}
+{"arm": "permuted", "case_id": "nslr_test_048", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_049", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_050", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Catastrophic"}
+{"arm": "permuted", "case_id": "nslr_test_051", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_052", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_053", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Catastrophic"}
+{"arm": "permuted", "case_id": "nslr_test_054", "cve_id": null, "llm_level": "Very Low", "reconciled_level": "Very Low", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_055", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_056", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_057", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "High", "xgb": "High"}
+{"arm": "permuted", "case_id": "nslr_test_058", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "High", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_059", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_060", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "High", "xgb": "High"}
+{"arm": "permuted", "case_id": "nslr_test_061", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_062", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Low", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_063", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_064", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "Medium", "xgb": "Medium"}
+{"arm": "permuted", "case_id": "nslr_test_065", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Catastrophic"}
+{"arm": "permuted", "case_id": "nslr_test_066", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "Medium", "xgb": "Medium"}
+{"arm": "permuted", "case_id": "nslr_test_067", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "High", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_068", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_069", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_070", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Catastrophic"}
+{"arm": "permuted", "case_id": "nslr_test_071", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_072", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "High", "xgb": "High"}
+{"arm": "permuted", "case_id": "nslr_test_073", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Medium", "xgb": "Catastrophic"}
+{"arm": "permuted", "case_id": "nslr_test_074", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_075", "cve_id": null, "llm_level": "Low", "reconciled_level": "Low", "gt": "Low", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_076", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_077", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "High", "xgb": "High"}
+{"arm": "permuted", "case_id": "nslr_test_078", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "High", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_079", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "High", "xgb": "High"}
+{"arm": "permuted", "case_id": "nslr_test_080", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_081", "cve_id": null, "llm_level": "Low", "reconciled_level": "Low", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_082", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Catastrophic"}
+{"arm": "permuted", "case_id": "nslr_test_083", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "High", "xgb": "High"}
+{"arm": "permuted", "case_id": "nslr_test_084", "cve_id": null, "llm_level": "Very Low", "reconciled_level": "Very Low", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_085", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "High", "xgb": "High"}
+{"arm": "permuted", "case_id": "nslr_test_086", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "High", "xgb": "High"}
+{"arm": "permuted", "case_id": "nslr_test_087", "cve_id": null, "llm_level": "Low", "reconciled_level": "Low", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_088", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Medium"}
+{"arm": "permuted", "case_id": "nslr_test_089", "cve_id": null, "llm_level": "High", "reconciled_level": "High", "gt": "High", "xgb": "High"}
+{"arm": "permuted", "case_id": "nslr_test_090", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_091", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_092", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_093", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_094", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_095", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_096", "cve_id": null, "llm_level": "Catastrophic", "reconciled_level": "Catastrophic", "gt": "Catastrophic", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_097", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Very Low", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_098", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Medium", "xgb": "Very Low"}
+{"arm": "permuted", "case_id": "nslr_test_099", "cve_id": null, "llm_level": "Medium", "reconciled_level": "Medium", "gt": "Low", "xgb": "Low"}

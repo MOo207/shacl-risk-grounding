@@ -1,0 +1,172 @@
+{
+  "seed": 42,
+  "n_cases": 80,
+  "n_set_a": 50,
+  "n_set_b": 30,
+  "cases": [
+    {
+      "case_id": "case_000",
+      "feature_row_index": 12964,
+      "true_attack_class": "Benign",
+      "rf_predicted_class": "Benign",
+      "asset": {
+        "id": "WS-018",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": null,
+      "ground_truth_risk_level": "Very Low",
+      "masked_fields": [
+        "cvss_components"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_016",
+      "feature_row_index": 12989,
+      "true_attack_class": "BruteForce",
+      "rf_predicted_class": "BruteForce",
+      "asset": {
+        "id": "WS-003",
+        "type": "workstation",
+        "criticality": "high",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2026-23760",
+        "shortDescription": "SmarterTools SmarterMail contains an authentication bypass using an alternate path or channel vulnerability in the password reset API. The force-reset-password endpoint permits anonymous requests and fails to verify the existing password or a reset token when resetting system administrator accounts. This could allow an unauthenticated attacker to supply a target administrator username and a new password to reset the account, resulting in full administrative compromise of the SmarterMail instance.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "SmarterTools",
+        "product": "SmarterMail",
+        "cvss_v3": 9.8,
+        "severity": "CRITICAL",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Catastrophic",
+      "masked_fields": [
+        "arg_neighborhood"
+      ],
+      "subset": "B"
+    },
+    {
+      "case_id": "case_064",
+      "feature_row_index": 12881,
+      "true_attack_class": "Infiltration",
+      "rf_predicted_class": "Infiltration",
+      "asset": {
+        "id": "WS-032",
+        "type": "workstation",
+        "criticality": "medium",
+        "ip_segment": "172.31.70.0/24"
+      },
+      "controls": [],
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2020-15778",
+            "cvss_v3": 7.8,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2021-41617",
+            "cvss_v3": 7.0,
+            "severity": "HIGH"
+          },
+          {
+            "id": "CVE-2015-1635",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          },
+          {
+            "id": "CVE-2021-31166",
+            "cvss_v3": 9.8,
+            "severity": "CRITICAL"
+          }
+        ]
+      },
+      "paired_cve": {
+        "cve_id": "CVE-2026-25108",
+        "shortDescription": "Soliton Systems K.K FileZen contains an OS command injection vulnerability when an user logs-in to the affected product and sends a specially crafted HTTP request.",
+        "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+        "vendor": "Soliton Systems K.K",
+        "product": "FileZen",
+        "cvss_v3": 8.8,
+        "severity": "HIGH",
+        "cwe": null,
+        "in_cisa_kev": true
+      },
+      "ground_truth_risk_level": "Medium",
+      "masked_fields": [
+        "control_coverage"
+      ],
+      "subset": "B"
+    }
+  ]
+}

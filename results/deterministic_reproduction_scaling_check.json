@@ -1,0 +1,59 @@
+{
+  "purpose": "Scaling behaviour of the OWL/SHACL constraint layer as the ARG grows. Threat-side data is real (CISA KEV + NVD + MITRE ATT&CK + NFCRM-1:2025); organisation-side inventory is synthetic and seeded. Supports claims about validation cost and conformance at scale, not about real enterprise topology.",
+  "cve_pool_size": 148,
+  "shape_triples": 541,
+  "seed": 42,
+  "rows": [
+    {
+      "n_assets": 100,
+      "seed": 42,
+      "nodes": 376,
+      "edges": 1835,
+      "edge_node_ratio": 4.88,
+      "nodes_by_type": {
+        "Asset": 100,
+        "Software": 85,
+        "CVE": 85,
+        "NFCRMControl": 26,
+        "ATTACKTechnique": 40,
+        "RiskCase": 20,
+        "AuditLog": 20
+      },
+      "build_seconds": 0.002,
+      "rdf_convert_seconds": 0.036,
+      "rdf_triples": 4103,
+      "shacl_validate_seconds": 1.916,
+      "shacl_validate_seconds_without_sparql": 0.123,
+      "sparql_constraint_share": 0.936,
+      "conforms": false,
+      "nodes_targeted": 356,
+      "shape_coverage_percent": 94.7,
+      "nodes_with_violations": 25,
+      "total_violations": 25,
+      "violations_by_message": {
+        "Every RiskCase must have at least one associated AuditLog": 20,
+        "Vulnerability must have exactly one cweId matching pattern CWE-NNNN": 5
+      },
+      "microseconds_per_triple": 466.87,
+      "topology": {
+        "assets_sampled_for_depth": 100,
+        "assets_reaching_a_control": 100,
+        "mean_hops_asset_to_control": 3,
+        "max_hops_asset_to_control": 3,
+        "mean_degree": 10.46,
+        "median_degree": 6,
+        "max_degree": 217,
+        "isolated_nodes": 25,
+        "node_types_present": {
+          "Asset": 100,
+          "Software": 85,
+          "CVE": 85,
+          "NFCRMControl": 26,
+          "ATTACKTechnique": 40,
+          "RiskCase": 20,
+          "AuditLog": 20
+        }
+      }
+    }
+  ]
+}

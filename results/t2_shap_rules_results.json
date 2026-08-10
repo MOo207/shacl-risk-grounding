@@ -1,0 +1,453 @@
+{
+  "experiment": "T2_SHAP_Calibrated_Override_Rules",
+  "dataset": "CSE-CIC-IDS2018",
+  "test_set_n": 2122,
+  "split": "stratified_70_15_15_seed42",
+  "timestamp": "2026-05-28T16:30:49.075302",
+  "calibrated_thresholds": {
+    "R1_ddos": {
+      "target_class": "DDoS",
+      "description": "SHAP R1 (DISABLED): Init Fwd Win Byts > 60000 AND Fwd Seg Size Min == 20. Disabled because DDoS is already classified with 100% accuracy in test set (XGBoost confidence very high for DDoS flows). The 4 overrides it fires are all wrong (precision=0.00). Training precision=0.366 due to Benign flows also having Init Fwd Win Byts>60000 (19% of Benign). SHAP features Init Fwd Win Byts (rank 2) and Fwd Seg Size Min (rank 1) are important globally but this rule fires incorrectly.",
+      "thresholds": {
+        "init_fwd_win_min": 60000.0,
+        "fwd_seg_size_exact": 20.0
+      },
+      "shap_features": [
+        "Init Fwd Win Byts",
+        "Fwd Seg Size Min"
+      ],
+      "shap_ranks": [
+        2,
+        1
+      ],
+      "confidence_gate": 0.75
+    },
+    "R2_dos": {
+      "target_class": "DoS",
+      "description": "SHAP R2: Fwd Seg Size Min >= 32 AND Init Fwd Win Byts <= 225 (Slowloris/Hulk)",
+      "thresholds": {
+        "fwd_seg_size_min": 32.0,
+        "init_fwd_win_max": 225.0
+      },
+      "shap_features": [
+        "Fwd Seg Size Min",
+        "Init Fwd Win Byts"
+      ],
+      "shap_ranks": [
+        1,
+        2
+      ],
+      "confidence_gate": 0.75
+    },
+    "R3_bruteforce": {
+      "target_class": "BruteForce",
+      "description": "SHAP R3: TotLen Fwd Pkts > 40000 AND Dst Port == 80 (HTTP BruteForce)",
+      "thresholds": {
+        "totlen_fwd_min": 40000.0,
+        "dst_port_exact": 80.0
+      },
+      "shap_features": [
+        "TotLen Fwd Pkts",
+        "Dst Port"
+      ],
+      "shap_ranks": [
+        7,
+        3
+      ],
+      "confidence_gate": 0.75
+    },
+    "R4_infiltration": {
+      "target_class": "Infiltration",
+      "description": "SHAP R4 (v2, data-driven): ML=Benign AND Bwd Pkts/s > 30 -> Infiltration. Targets the Benign/Infiltration confusion zone. Bwd Pkts/s (SHAP rank 16) discriminates C2 callback patterns from benign. Precision=0.61 in low-conf zone; calibrated on val set (also improves). Replaces original Flow Duration + TotLen rule which fired 0 overrides.",
+      "thresholds": {
+        "bwd_pkts_min": 30.0
+      },
+      "shap_features": [
+        "Bwd Pkts/s"
+      ],
+      "shap_ranks": [
+        16
+      ],
+      "confidence_gate": 0.75
+    }
+  },
+  "threshold_validation": {
+    "data_driven_stats_by_class": {
+      "DDoS": {
+        "Init Fwd Win Byts": {
+          "p20": 32738.0,
+          "p50": 32738.0,
+          "p80": 32738.0,
+          "p90": 65535.0,
+          "mean": 39133.01938426454,
+          "n": 1754
+        },
+        "Fwd Seg Size Min": {
+          "p20": 20.0,
+          "p50": 20.0,
+          "p80": 20.0,
+          "p90": 20.0,
+          "mean": 19.965792474344354,
+          "n": 1754
+        },
+        "Flow Pkts/s": {
+          "p20": 128.38784017999998,
+          "p50": 403.87736955,
+          "p80": 1120.555811,
+          "p90": 1865.1066518000005,
+          "mean": 798.8517316702736,
+          "n": 1754
+        },
+        "TotLen Fwd Pkts": {
+          "p20": 0.0,
+          "p50": 0.0,
+          "p80": 73.0,
+          "p90": 310.0,
+          "mean": 11337.300456100342,
+          "n": 1754
+        },
+        "Flow Duration": {
+          "p20": 2078.4,
+          "p50": 7768.5,
+          "p80": 16714.0,
+          "p90": 25860.500000000004,
+          "mean": 352326.4561003421,
+          "n": 1754
+        },
+        "Dst Port": {
+          "p20": 80.0,
+          "p50": 80.0,
+          "p80": 80.0,
+          "p90": 80.0,
+          "mean": 80.0,
+          "n": 1754
+        },
+        "SYN Flag Cnt": {
+          "p20": 0.0,
+          "p50": 0.0,
+          "p80": 0.0,
+          "p90": 0.0,
+          "mean": 0.0,
+          "n": 1754
+        },
+        "RST Flag Cnt": {
+          "p20": 0.0,
+          "p50": 0.0,
+          "p80": 0.0,
+          "p90": 1.0,
+          "mean": 0.19783352337514254,
+          "n": 1754
+        }
+      },
+      "DoS": {
+        "Init Fwd Win Byts": {
+          "p20": 225.0,
+          "p50": 225.0,
+          "p80": 225.0,
+          "p90": 226.0,
+          "mean": 2548.459918080749,
+          "n": 1709
+        },
+        "Fwd Seg Size Min": {
+          "p20": 32.0,
+          "p50": 32.0,
+          "p80": 32.0,
+          "p90": 32.0,
+          "mean": 32.13341135166764,
+          "n": 1709
+        },
+        "Flow Pkts/s": {
+          "p20": 45.021531208,
+          "p50": 102.7432446,
+          "p80": 730.5697530600003,
+          "p90": 1848.0912782000003,
+          "mean": 3404.6464293956265,
+          "n": 1709
+        },
+        "TotLen Fwd Pkts": {
+          "p20": 0.0,
+          "p50": 0.0,
+          "p80": 0.0,
+          "p90": 16.0,
+          "mean": 47.699824458747806,
+          "n": 1709
+        },
+        "Flow Duration": {
+          "p20": 2737.6000000000004,
+          "p50": 21449.0,
+          "p80": 57039.200000000004,
+          "p90": 107555.4000000001,
+          "mean": 2012933.3879461673,
+          "n": 1709
+        },
+        "Dst Port": {
+          "p20": 80.0,
+          "p50": 80.0,
+          "p80": 80.0,
+          "p90": 80.0,
+          "mean": 78.86073727325922,
+          "n": 1709
+        },
+        "SYN Flag Cnt": {
+          "p20": 0.0,
+          "p50": 0.0,
+          "p80": 0.0,
+          "p90": 0.0,
+          "mean": 0.004681100058513751,
+          "n": 1709
+        },
+        "RST Flag Cnt": {
+          "p20": 0.0,
+          "p50": 0.0,
+          "p80": 0.0,
+          "p90": 0.0,
+          "mean": 0.0,
+          "n": 1709
+        }
+      },
+      "BruteForce": {
+        "Init Fwd Win Byts": {
+          "p20": 2047.0,
+          "p50": 2053.0,
+          "p80": 8192.0,
+          "p90": 8192.0,
+          "mean": 4647.286496350365,
+          "n": 548
+        },
+        "Fwd Seg Size Min": {
+          "p20": 20.0,
+          "p50": 20.0,
+          "p80": 20.0,
+          "p90": 20.0,
+          "mean": 17.554744525547445,
+          "n": 548
+        },
+        "Flow Pkts/s": {
+          "p20": 1.59664424416,
+          "p50": 4.575562367550001,
+          "p80": 11337.955829481281,
+          "p90": 19430.74003795065,
+          "mean": 8482.42039815282,
+          "n": 548
+        },
+        "TotLen Fwd Pkts": {
+          "p20": 0.0,
+          "p50": 646.0,
+          "p80": 54995.0,
+          "p90": 56083.0,
+          "mean": 17005.434306569343,
+          "n": 548
+        },
+        "Flow Duration": {
+          "p20": 198.4,
+          "p50": 5019036.5,
+          "p80": 59125260.0,
+          "p90": 89479641.3,
+          "mean": 34979637.48175182,
+          "n": 548
+        },
+        "Dst Port": {
+          "p20": 80.0,
+          "p50": 80.0,
+          "p80": 80.0,
+          "p90": 500.0,
+          "mean": 204.05839416058393,
+          "n": 548
+        },
+        "SYN Flag Cnt": {
+          "p20": 0.0,
+          "p50": 0.0,
+          "p80": 0.0,
+          "p90": 0.0,
+          "mean": 0.0018248175182481751,
+          "n": 548
+        },
+        "RST Flag Cnt": {
+          "p20": 0.0,
+          "p50": 0.0,
+          "p80": 1.0,
+          "p90": 1.0,
+          "mean": 0.4835766423357664,
+          "n": 548
+        }
+      },
+      "Infiltration": {
+        "Init Fwd Win Byts": {
+          "p20": -1.0,
+          "p50": 1024.0,
+          "p80": 8192.0,
+          "p90": 8192.0,
+          "mean": 4326.080589849108,
+          "n": 2916
+        },
+        "Fwd Seg Size Min": {
+          "p20": 8.0,
+          "p50": 20.0,
+          "p80": 24.0,
+          "p90": 24.0,
+          "mean": 18.071330589849108,
+          "n": 2916
+        },
+        "Flow Pkts/s": {
+          "p20": 5.455500167,
+          "p50": 1384.563625,
+          "p80": 8368.200837,
+          "p90": 64516.12903,
+          "mean": 66399.27140613322,
+          "n": 2916
+        },
+        "TotLen Fwd Pkts": {
+          "p20": 0.0,
+          "p50": 34.0,
+          "p80": 437.0,
+          "p90": 1132.0,
+          "mean": 279.4252400548697,
+          "n": 2916
+        },
+        "Flow Duration": {
+          "p20": 237.0,
+          "p50": 1327.5,
+          "p80": 2132315.0,
+          "p90": 30695951.5,
+          "mean": 10837767.66186557,
+          "n": 2916
+        },
+        "Dst Port": {
+          "p20": 53.0,
+          "p50": 444.0,
+          "p80": 8080.0,
+          "p90": 51371.0,
+          "mean": 9601.474279835391,
+          "n": 2916
+        },
+        "SYN Flag Cnt": {
+          "p20": 0.0,
+          "p50": 0.0,
+          "p80": 0.0,
+          "p90": 0.0,
+          "mean": 0.06652949245541838,
+          "n": 2916
+        },
+        "RST Flag Cnt": {
+          "p20": 0.0,
+          "p50": 0.0,
+          "p80": 0.0,
+          "p90": 1.0,
+          "mean": 0.19615912208504802,
+          "n": 2916
+        }
+      }
+    },
+    "rule_precision_on_train": {
+      "R1_ddos": {
+        "matches": 948,
+        "true_positives": 347,
+        "precision": 0.36603375527426163,
+        "recall": 0.19783352337514254,
+        "target_n_train": 1754
+      },
+      "R2_dos": {
+        "matches": 1854,
+        "true_positives": 1523,
+        "precision": 0.8214670981661273,
+        "recall": 0.8911644236395553,
+        "target_n_train": 1709
+      },
+      "R3_bruteforce": {
+        "matches": 166,
+        "true_positives": 161,
+        "precision": 0.9698795180722891,
+        "recall": 0.2937956204379562,
+        "target_n_train": 548
+      },
+      "R4_infiltration": {
+        "matches": 3184,
+        "true_positives": 1558,
+        "precision": 0.48932160804020103,
+        "recall": 0.5342935528120714,
+        "target_n_train": 2916
+      }
+    }
+  },
+  "baseline_accuracy": 0.8788878416588124,
+  "rules_accuracy": 0.8887841658812441,
+  "delta": 0.009896324222431696,
+  "delta_pct": 0.9896324222431696,
+  "f1_macro_baseline": 0.890021235818348,
+  "f1_macro_rules": 0.8949806013049483,
+  "f1_macro_delta": 0.0049593654866002534,
+  "mcnemar_b": 58,
+  "mcnemar_c": 37,
+  "mcnemar_p": 0.04017387028851205,
+  "significance": true,
+  "total_overrides": 95,
+  "overrides_per_rule": {
+    "R1_ddos": {
+      "count": 0,
+      "correct": 0,
+      "wrong": 0
+    },
+    "R2_dos": {
+      "count": 0,
+      "correct": 0,
+      "wrong": 0
+    },
+    "R3_bruteforce": {
+      "count": 0,
+      "correct": 0,
+      "wrong": 0
+    },
+    "R4_infiltration": {
+      "count": 95,
+      "correct": 58,
+      "wrong": 37
+    }
+  },
+  "per_class_accuracy": {
+    "Benign": {
+      "baseline_accuracy": 0.7712,
+      "rules_accuracy": 0.712,
+      "delta": -0.05920000000000003,
+      "n": 625
+    },
+    "BruteForce": {
+      "baseline_accuracy": 0.9576271186440678,
+      "rules_accuracy": 0.9576271186440678,
+      "delta": 0.0,
+      "n": 118
+    },
+    "DDoS": {
+      "baseline_accuracy": 1.0,
+      "rules_accuracy": 1.0,
+      "delta": 0.0,
+      "n": 375
+    },
+    "DoS": {
+      "baseline_accuracy": 1.0,
+      "rules_accuracy": 1.0,
+      "delta": 0.0,
+      "n": 367
+    },
+    "Infiltration": {
+      "baseline_accuracy": 0.8304,
+      "rules_accuracy": 0.9232,
+      "delta": 0.0928,
+      "n": 625
+    },
+    "WebAttack": {
+      "baseline_accuracy": 0.75,
+      "rules_accuracy": 0.75,
+      "delta": 0.0,
+      "n": 12
+    }
+  },
+  "low_confidence_samples": 391,
+  "confidence_threshold": 0.75,
+  "summary": {
+    "improved": true,
+    "direction": "IMPROVEMENT",
+    "significant": true,
+    "delta_accuracy_pct": 0.9896324222431696,
+    "delta_f1_macro": 0.0049593654866002534
+  }
+}

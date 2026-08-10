@@ -1,0 +1,67 @@
+{
+  "generated_at": "2026-07-27T02:20:41.999034",
+  "pipeline_version": "2.0.0",
+  "provenance": "Derived from results/grc_artifact_corpus.json (rules engine over the 180 real CIC-IDS2018 cases of results/unified_ablation/test_set.json) and results/grc_artifact_corpus_validation.json (pyshacl against ontology/shapes/). Supersedes v1.0.0, whose 85/85/2/172 figures came from a deleted script that fabricated its own events and were then carried forward by this script reading its own prior output.",
+  "test_set_size": 180,
+  "total_risk_cases": 180,
+  "total_audit_logs": 180,
+  "total_controls": 4,
+  "total_artefacts": 364,
+  "arg_nodes": 138,
+  "arg_edges": 148,
+  "arg_shacl_violations": 39,
+  "arg_shacl_conforms": false,
+  "corpus_shacl_violations": 31,
+  "corpus_shacl_conforms": false,
+  "metrics": {
+    "nfcrm_clause_coverage": {
+      "metric_name": "nfcrm_clause_coverage",
+      "value": 180,
+      "total": 180,
+      "percentage": 100.0,
+      "methodology": "Percentage of RiskCases with at least one associated control having valid NFCRM-1:2025 clause reference (\u00a75.x or \u00a76.x format). Computed from 180/180 RiskCases in pipeline output."
+    },
+    "iso27005_clause_coverage": {
+      "metric_name": "iso27005_clause_coverage",
+      "value": 0,
+      "total": 180,
+      "percentage": 0.0,
+      "methodology": "Percentage of RiskCases with at least one associated control having a valid ISO/IEC 27005:2022 clause reference. Derived from attack-type \u2192 NFCRM clause \u2192 ISO clause mappings in pipeline/post_inference/grc_annotation_rules.py (W16): BruteForce\u2192\u00a76.7\u2192ISO\u00a78.2, DoS/DDoS\u2192\u00a76.9\u2192ISO\u00a78.3, WebAttack\u2192\u00a76.4\u2192ISO\u00a78.3. Infiltration (\u00a76.5) is not yet aligned. ISO-covered attack types: 872/1497 non-benign flows = 58.2% of test set. Computed from 0/180 RiskCases (proportional to test distribution)."
+    },
+    "event_risk_traceability": {
+      "metric_name": "event_risk_traceability",
+      "value": 180,
+      "total": 180,
+      "percentage": 100.0,
+      "methodology": "Percentage of RiskCases with existing RiskCase\u2192Event traceability edges in the Asset Risk Graph. Computed from 180/180 RiskCases."
+    },
+    "risk_control_linkage": {
+      "metric_name": "risk_control_linkage",
+      "value": 180,
+      "total": 180,
+      "percentage": 100.0,
+      "methodology": "Percentage of RiskCases with existing RiskCase\u2192Control linkage edges in the Asset Risk Graph. Computed from 180/180 RiskCases."
+    },
+    "shacl_conformance_rate": {
+      "metric_name": "shacl_conformance_rate",
+      "value": 346,
+      "total": 377,
+      "percentage": 91.8,
+      "methodology": "Percentage of generated GRC artifacts (RiskCases, AuditLogs, Controls) passing SHACL shape validation. Total artifacts validated: 377. Conforms: 346, Violations: 39."
+    },
+    "audit_log_completeness": {
+      "metric_name": "audit_log_completeness",
+      "value": 180,
+      "total": 180,
+      "percentage": 100.0,
+      "methodology": "Percentage of AuditLogs with non-empty justification fields and event ID references. Computed from 180/180 AuditLogs."
+    },
+    "avg_reasoning_chain_depth": {
+      "metric_name": "avg_reasoning_chain_depth",
+      "value": 690,
+      "total": 180,
+      "percentage": 3.8,
+      "methodology": "Average path length of Event\u2192RiskCase\u2192Control\u2192Evidence reasoning chains. Sum of all chain depths: 690, across 180 RiskCases. Average: 3.8 hops."
+    }
+  }
+}

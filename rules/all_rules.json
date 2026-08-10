@@ -1,0 +1,342 @@
+[
+  {
+    "rule_id": "EVT-001",
+    "name": "Critical CVE in Asset",
+    "category": "event_based",
+    "priority": 100,
+    "description": "Asset has a critical CVE with no patch applied",
+    "conditions": [
+      {
+        "field": "cve_severity",
+        "operator": "==",
+        "value": "critical",
+        "description": ""
+      },
+      {
+        "field": "patch_status",
+        "operator": "==",
+        "value": "unpatched",
+        "description": ""
+      }
+    ],
+    "score_modifier": -50,
+    "explanation_template": "Asset {asset_id} has Critical CVE {cve_id} but no patch applied. This is a severe risk.",
+    "enabled": true
+  },
+  {
+    "rule_id": "EVT-002",
+    "name": "Privileged Account No MFA",
+    "category": "event_based",
+    "priority": 90,
+    "description": "Privileged account lacks multi-factor authentication",
+    "conditions": [
+      {
+        "field": "account_type",
+        "operator": "==",
+        "value": "privileged",
+        "description": ""
+      },
+      {
+        "field": "mfa_enabled",
+        "operator": "==",
+        "value": false,
+        "description": ""
+      }
+    ],
+    "score_modifier": -40,
+    "explanation_template": "Privileged account {account_id} has no MFA enabled. This is a critical vulnerability.",
+    "enabled": true
+  },
+  {
+    "rule_id": "EVT-003",
+    "name": "Internet-facing Asset No Firewall",
+    "category": "event_based",
+    "priority": 85,
+    "description": "Asset exposed to internet without firewall rule",
+    "conditions": [
+      {
+        "field": "internet_facing",
+        "operator": "==",
+        "value": true,
+        "description": ""
+      },
+      {
+        "field": "firewall_rules",
+        "operator": "==",
+        "value": 0,
+        "description": ""
+      }
+    ],
+    "score_modifier": -35,
+    "explanation_template": "Asset {asset_id} is internet-facing with no firewall rules. This increases attack surface.",
+    "enabled": true
+  },
+  {
+    "rule_id": "EVT-004",
+    "name": "PII Data Without Encryption",
+    "category": "event_based",
+    "priority": 95,
+    "description": "Asset stores PII data without encryption at rest",
+    "conditions": [
+      {
+        "field": "data_classification",
+        "operator": "==",
+        "value": "PII",
+        "description": ""
+      },
+      {
+        "field": "encryption_at_rest",
+        "operator": "==",
+        "value": false,
+        "description": ""
+      }
+    ],
+    "score_modifier": -45,
+    "explanation_template": "Asset {asset_id} stores PII data without encryption at rest. This is a severe compliance issue.",
+    "enabled": true
+  },
+  {
+    "rule_id": "EVT-005",
+    "name": "Anomalous Traffic Pattern",
+    "category": "event_based",
+    "priority": 70,
+    "description": "Unusual network traffic pattern detected",
+    "conditions": [
+      {
+        "field": "traffic_anomaly",
+        "operator": "==",
+        "value": true,
+        "description": ""
+      },
+      {
+        "field": "anomaly_score",
+        "operator": ">",
+        "value": 0.8,
+        "description": ""
+      }
+    ],
+    "score_modifier": -20,
+    "explanation_template": "Asset {asset_id} shows anomalous traffic pattern with score {anomaly_score}. Review is required.",
+    "enabled": true
+  },
+  {
+    "rule_id": "AST-001",
+    "name": "Outdated Software Version",
+    "category": "asset_based",
+    "priority": 80,
+    "description": "Software version exceeds EOL date",
+    "conditions": [
+      {
+        "field": "software_name",
+        "operator": "in",
+        "value": [
+          "Windows",
+          "Linux",
+          "RHEL"
+        ],
+        "description": ""
+      },
+      {
+        "field": "version",
+        "operator": ">",
+        "value": "EOL",
+        "description": ""
+      },
+      {
+        "field": "patch_available",
+        "operator": "==",
+        "value": false,
+        "description": ""
+      }
+    ],
+    "score_modifier": -30,
+    "explanation_template": "Asset {asset_id} uses outdated software {software_name} {version} which is past EOL with no patch available.",
+    "enabled": true
+  },
+  {
+    "rule_id": "AST-002",
+    "name": "Missing Security Controls",
+    "category": "asset_based",
+    "priority": 75,
+    "description": "Asset missing required security controls",
+    "conditions": [
+      {
+        "field": "security_control_count",
+        "operator": "<",
+        "value": 3,
+        "description": ""
+      },
+      {
+        "field": "required_controls",
+        "operator": "==",
+        "value": true,
+        "description": ""
+      }
+    ],
+    "score_modifier": -25,
+    "explanation_template": "Asset {asset_id} is missing required security controls. Only {security_control_count} controls configured.",
+    "enabled": true
+  },
+  {
+    "rule_id": "REL-001",
+    "name": "Zero-day Vulnerability Chain",
+    "category": "relationship_based",
+    "priority": 95,
+    "description": "Multiple assets share zero-day vulnerability",
+    "conditions": [
+      {
+        "field": "vulnerability_type",
+        "operator": "==",
+        "value": "zero-day",
+        "description": ""
+      },
+      {
+        "field": "affected_assets_count",
+        "operator": ">",
+        "value": 5,
+        "description": ""
+      }
+    ],
+    "score_modifier": -50,
+    "explanation_template": "Zero-day vulnerability {vulnerability_id} affects {affected_assets_count} assets, creating widespread risk.",
+    "enabled": true
+  },
+  {
+    "rule_id": "REL-002",
+    "name": "Critical Asset Exposed to Untrusted Network",
+    "category": "relationship_based",
+    "priority": 90,
+    "description": "Critical asset connected to untrusted network",
+    "conditions": [
+      {
+        "field": "asset_criticality",
+        "operator": "==",
+        "value": "critical",
+        "description": ""
+      },
+      {
+        "field": "network_trust",
+        "operator": "==",
+        "value": "untrusted",
+        "description": ""
+      },
+      {
+        "field": "network_category",
+        "operator": "==",
+        "value": "internet",
+        "description": ""
+      }
+    ],
+    "score_modifier": -45,
+    "explanation_template": "Critical asset {asset_id} is connected to untrusted network {network_name}. This is a severe risk.",
+    "enabled": true
+  },
+  {
+    "rule_id": "CMP-001",
+    "name": "NFCRM-1:2025 Compliance Gap",
+    "category": "compliance_based",
+    "priority": 100,
+    "description": "Control from NFCRM-1:2025 not implemented",
+    "conditions": [
+      {
+        "field": "control_id",
+        "operator": "in",
+        "value": [
+          "NFCRM-1:2025-§6.7",
+          "NFCRM-1:2025-§6.9"
+        ],
+        "description": ""
+      },
+      {
+        "field": "implementation_status",
+        "operator": "==",
+        "value": "not_implemented",
+        "description": ""
+      }
+    ],
+    "score_modifier": -50,
+    "explanation_template": "NFCRM-1:2025 control {control_id} is not implemented. This is a critical compliance gap.",
+    "enabled": true
+  },
+  {
+    "rule_id": "CMP-002",
+    "name": "ISO/IEC 27005 Risk Assessment Missing",
+    "category": "compliance_based",
+    "priority": 85,
+    "description": "No risk assessment completed for asset",
+    "conditions": [
+      {
+        "field": "standard",
+        "operator": "==",
+        "value": [
+          "ISO/IEC 27005",
+          "NFCRM-1:2025"
+        ],
+        "description": ""
+      },
+      {
+        "field": "risk_assessment_complete",
+        "operator": "==",
+        "value": false,
+        "description": ""
+      }
+    ],
+    "score_modifier": -35,
+    "explanation_template": "ISO/IEC 27005 risk assessment is missing for asset {asset_id}. Compliance requires regular assessments.",
+    "enabled": true
+  },
+  {
+    "rule_id": "TIM-001",
+    "name": "Patch Not Applied in Time Window",
+    "category": "time_based",
+    "priority": 80,
+    "description": "Critical patch available but not applied after 30 days",
+    "conditions": [
+      {
+        "field": "patch_available",
+        "operator": "==",
+        "value": true,
+        "description": ""
+      },
+      {
+        "field": "days_since_patch_release",
+        "operator": ">",
+        "value": 30,
+        "description": ""
+      },
+      {
+        "field": "patch_applied",
+        "operator": "==",
+        "value": false,
+        "description": ""
+      }
+    ],
+    "score_modifier": -30,
+    "explanation_template": "Critical patch {patch_id} was released {days_since_patch_release} days ago but has not been applied.",
+    "enabled": true
+  },
+  {
+    "rule_id": "TIM-002",
+    "name": "Access Rights Not Reviewed in 90 Days",
+    "category": "time_based",
+    "priority": 70,
+    "description": "User access rights not reviewed for 90+ days",
+    "conditions": [
+      {
+        "field": "last_access_review_date",
+        "operator": "<",
+        "value": "-90",
+        "description": ""
+      },
+      {
+        "field": "access_type",
+        "operator": "==",
+        "value": "privileged",
+        "description": ""
+      }
+    ],
+    "score_modifier": -20,
+    "explanation_template": "Privileged access rights for user {user_id} have not been reviewed for {review_days} days. Periodic review is required.",
+    "enabled": true
+  }
+]

@@ -1,0 +1,55 @@
+{
+  "description": "Independent re-implementation check of the NSL-KDD Stage-1a risk_level parser.\n\nMotivation: every published NSL-KDD safety number (under-escalation, severe\nrecall, McNemar b/c) is scored by a single parser, written and run by the\nsame person who wrote the pipeline. A reviewer cannot tell whether the score\nreflects the model's actual output or a permissive/buggy extractor. This\nscript is a *second*, independently-written extractor -- different control\nflow, different library calls, no shared code with\nscripts/run_nslkdd_reconciled_tristage_haiku.py::_parse_response -- run\nover the raw LLM text already stored on disk (raw_response_stage1a field).\nAgreement rate between the two parsers on llm_risk_level is the credibility\nnumber; it does not require any new API calls.\n\nIndependent extraction method: scan the raw text with json.JSONDecoder.raw_decode\nat every '{' position (not just inside a ```json fence) until a dict containing\na \"risk_level\" key parses successfully; normalise against the fixed level set.\nThis deliberately does NOT use the fenced-block regex the original parser uses,\nso a bug/leniency specific to that regex would show up as a disagreement here.\n\nScope: the three files with raw text saved (raw_response_stage1a) --\nreconciled_tristage_{haiku,sonnet}_test.jsonl (run 1) and their run2/run3\nreplicates under results/nslkdd_unified_rerun/replicates/. The permuted-CVE\ncontrol files do not store raw text (see run_nslkdd_permuted_cve_control*.py)\nand are out of scope for this check.",
+  "files": {
+    "haiku_run1": {
+      "n": 100,
+      "agree": 100,
+      "disagree": 0,
+      "both_none": 0,
+      "agreement_pct": 100.0
+    },
+    "haiku_run2": {
+      "n": 100,
+      "agree": 100,
+      "disagree": 0,
+      "both_none": 1,
+      "agreement_pct": 100.0
+    },
+    "haiku_run3": {
+      "n": 100,
+      "agree": 100,
+      "disagree": 0,
+      "both_none": 0,
+      "agreement_pct": 100.0
+    },
+    "sonnet_run1": {
+      "n": 100,
+      "agree": 100,
+      "disagree": 0,
+      "both_none": 48,
+      "agreement_pct": 100.0
+    },
+    "sonnet_run2": {
+      "n": 100,
+      "agree": 100,
+      "disagree": 0,
+      "both_none": 0,
+      "agreement_pct": 100.0
+    },
+    "sonnet_run3": {
+      "n": 100,
+      "agree": 100,
+      "disagree": 0,
+      "both_none": 0,
+      "agreement_pct": 100.0
+    }
+  },
+  "overall": {
+    "n": 600,
+    "agree": 600,
+    "disagree": 0,
+    "both_none": 49,
+    "agreement_pct": 100.0
+  },
+  "disagreements": []
+}

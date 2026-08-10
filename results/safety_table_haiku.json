@@ -1,0 +1,200 @@
+{
+  "CIC-IDS2018 (N=60)": {
+    "paradigms": {
+      "Pure Rule": {
+        "n": 60,
+        "exact": 48.333333333333336,
+        "within1": 50.0,
+        "under": 43.333333333333336,
+        "over": 8.333333333333332,
+        "severe_recall": 53.84615384615385,
+        "sev_tot": 26,
+        "worst_miss": 4
+      },
+      "Pure ML (RF)": {
+        "n": 60,
+        "exact": 90.0,
+        "within1": 91.66666666666666,
+        "under": 10.0,
+        "over": 0.0,
+        "severe_recall": 100.0,
+        "sev_tot": 26,
+        "worst_miss": 2
+      },
+      "Pure ML (XGBoost)": {
+        "n": 60,
+        "exact": 95.0,
+        "within1": 95.0,
+        "under": 5.0,
+        "over": 0.0,
+        "severe_recall": 100.0,
+        "sev_tot": 26,
+        "worst_miss": 2
+      },
+      "Tri-stage RF": {
+        "n": 60,
+        "exact": 90.0,
+        "within1": 91.66666666666666,
+        "under": 10.0,
+        "over": 0.0,
+        "severe_recall": 100.0,
+        "sev_tot": 26,
+        "worst_miss": 2
+      },
+      "Tri-stage XGBoost": {
+        "n": 60,
+        "exact": 95.0,
+        "within1": 95.0,
+        "under": 5.0,
+        "over": 0.0,
+        "severe_recall": 100.0,
+        "sev_tot": 26,
+        "worst_miss": 2
+      },
+      "Pure LLM (Haiku)": {
+        "n": 60,
+        "exact": 73.33333333333333,
+        "within1": 81.66666666666667,
+        "under": 6.666666666666667,
+        "over": 20.0,
+        "severe_recall": 96.15384615384616,
+        "sev_tot": 26,
+        "worst_miss": 1
+      },
+      "Tri-stage LLM (Haiku)": {
+        "n": 60,
+        "exact": 100.0,
+        "within1": 100.0,
+        "under": 0.0,
+        "over": 0.0,
+        "severe_recall": 100.0,
+        "sev_tot": 26,
+        "worst_miss": 0
+      },
+      "[ref] Pure LLM (Sonnet)": {
+        "n": 60,
+        "exact": 78.33333333333333,
+        "within1": 83.33333333333334,
+        "under": 5.0,
+        "over": 16.666666666666664,
+        "severe_recall": 96.15384615384616,
+        "sev_tot": 26,
+        "worst_miss": 1
+      },
+      "[ref] Tri-stage LLM (Sonnet)": {
+        "n": 60,
+        "exact": 100.0,
+        "within1": 100.0,
+        "under": 0.0,
+        "over": 0.0,
+        "severe_recall": 100.0,
+        "sev_tot": 26,
+        "worst_miss": 0
+      }
+    },
+    "unsafe_mcnemar": {
+      "b": 3,
+      "c": 0,
+      "p": 0.125
+    }
+  },
+  "NSL-KDD (N=50)": {
+    "paradigms": {
+      "Pure Rule": {
+        "n": 50,
+        "exact": 60.0,
+        "within1": 62.0,
+        "under": 38.0,
+        "over": 2.0,
+        "severe_recall": 55.00000000000001,
+        "sev_tot": 40,
+        "worst_miss": 4
+      },
+      "Pure ML (RF)": {
+        "n": 50,
+        "exact": 52.0,
+        "within1": 52.0,
+        "under": 48.0,
+        "over": 0.0,
+        "severe_recall": 40.0,
+        "sev_tot": 40,
+        "worst_miss": 4
+      },
+      "Pure ML (XGBoost)": {
+        "n": 50,
+        "exact": 56.00000000000001,
+        "within1": 56.00000000000001,
+        "under": 44.0,
+        "over": 0.0,
+        "severe_recall": 45.0,
+        "sev_tot": 40,
+        "worst_miss": 4
+      },
+      "Tri-stage RF": {
+        "n": 50,
+        "exact": 52.0,
+        "within1": 52.0,
+        "under": 48.0,
+        "over": 0.0,
+        "severe_recall": 40.0,
+        "sev_tot": 40,
+        "worst_miss": 4
+      },
+      "Tri-stage XGBoost": {
+        "n": 50,
+        "exact": 56.00000000000001,
+        "within1": 56.00000000000001,
+        "under": 44.0,
+        "over": 0.0,
+        "severe_recall": 45.0,
+        "sev_tot": 40,
+        "worst_miss": 4
+      },
+      "Pure LLM (Haiku)": {
+        "n": 50,
+        "exact": 78.0,
+        "within1": 84.0,
+        "under": 4.0,
+        "over": 18.0,
+        "severe_recall": 97.5,
+        "sev_tot": 40,
+        "worst_miss": 2
+      },
+      "Tri-stage LLM (Haiku)": {
+        "n": 50,
+        "exact": 78.0,
+        "within1": 80.0,
+        "under": 16.0,
+        "over": 6.0,
+        "severe_recall": 82.5,
+        "sev_tot": 40,
+        "worst_miss": 4
+      },
+      "[ref] Pure LLM (Sonnet)": {
+        "n": 50,
+        "exact": 74.0,
+        "within1": 76.0,
+        "under": 20.0,
+        "over": 6.0,
+        "severe_recall": 77.5,
+        "sev_tot": 40,
+        "worst_miss": 4
+      },
+      "[ref] Tri-stage LLM (Sonnet)": {
+        "n": 50,
+        "exact": 88.0,
+        "within1": 88.0,
+        "under": 12.0,
+        "over": 0.0,
+        "severe_recall": 85.0,
+        "sev_tot": 40,
+        "worst_miss": 4
+      }
+    },
+    "unsafe_mcnemar": {
+      "b": 14,
+      "c": 0,
+      "p": 6.103515625e-05
+    }
+  }
+}

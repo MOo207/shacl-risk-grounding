@@ -1,0 +1,1704 @@
+{
+  "purpose": "Re-validate stored Experiment 2/3 outputs with real pyshacl against ontology/shapes/, replacing the hand-written validate_shacl() stand-in. No new LLM calls: the same stored parsed_response objects are re-scored.",
+  "shape_files": [
+    "control-recommendation.shacl.ttl",
+    "grc-entities.shacl.ttl",
+    "risk-scenario.shacl.ttl",
+    "technical-entities.shacl.ttl"
+  ],
+  "shape_triples": 539,
+  "findings": [
+    "Experiment 3: real SHACL rejects exactly the same 28 of 99 outputs as the Python stand-in did (100% verdict agreement). The headline rejection count is robust to swapping the validator.",
+    "Experiment 3 mechanism correction: the rejected value set is the grc:threatClass sh:in enumeration, which is authored by hand in control-recommendation.shacl.ttl (six classes, including Benign) exactly as the Python ATTACK_CLASSES list was (five classes). Moving the constraint into the shape library does not make it graph-derived; it makes it declarative and reusable across producers.",
+    "Experiment 2: real SHACL rejects 4 of 99 where the stand-in rejected 3 (99% agreement). The extra rejection is case index 74, prompted about asset SRV-009, whose affected_asset is 'SW-OWASP_Mutillidae_II-2.1.19' -- a node that exists in the ARG but is typed Software, not Asset. The stand-in tested membership in the untyped set of all node ids and passed it; the shape's sh:class grc:Asset is type-aware and catches the class confusion. This is the one measured instance where the graph-derived constraint catches an error the hand-written check misses."
+  ],
+  "experiments": [
+    {
+      "experiment": "Experiment 2: risk scenario generation",
+      "source_file": "llm_risk_generation.json",
+      "n_cases": 99,
+      "real_shacl_conforming": 95,
+      "real_shacl_conforming_pct": 96.0,
+      "real_shacl_rejected": 4,
+      "stored_pythonic_valid": 96,
+      "stored_pythonic_valid_pct": 97.0,
+      "stored_pythonic_rejected": 3,
+      "verdict_agreement": 98,
+      "verdict_agreement_pct": 99.0,
+      "violation_messages": {
+        "response is not a JSON object": 3,
+        "RiskScenario must reference at least one affectedAsset of class Asset": 1
+      },
+      "validation_seconds": 6.41,
+      "per_case": [
+        {
+          "index": 0,
+          "asset_id": "SRV-001",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 1,
+          "asset_id": "SRV-002",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 2,
+          "asset_id": "SRV-003",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 3,
+          "asset_id": "SRV-004",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 4,
+          "asset_id": "SRV-005",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 5,
+          "asset_id": "SRV-006",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "response is not a JSON object"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 6,
+          "asset_id": "SRV-007",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 7,
+          "asset_id": "SRV-008",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 8,
+          "asset_id": "SRV-009",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 9,
+          "asset_id": "SRV-010",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 10,
+          "asset_id": "SRV-011",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 11,
+          "asset_id": "SRV-012",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 12,
+          "asset_id": "SRV-013",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 13,
+          "asset_id": "SRV-014",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 14,
+          "asset_id": "SRV-015",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 15,
+          "asset_id": "SRV-016",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 16,
+          "asset_id": "SRV-017",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 17,
+          "asset_id": "SRV-018",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 18,
+          "asset_id": "SRV-019",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 19,
+          "asset_id": "SRV-020",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 20,
+          "asset_id": "SRV-021",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 21,
+          "asset_id": "SRV-022",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 22,
+          "asset_id": "SRV-023",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 23,
+          "asset_id": "SRV-024",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 24,
+          "asset_id": "SRV-025",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 25,
+          "asset_id": "SRV-026",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 26,
+          "asset_id": "SRV-027",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 27,
+          "asset_id": "SRV-028",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 28,
+          "asset_id": "SRV-029",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 29,
+          "asset_id": "SRV-030",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 30,
+          "asset_id": "SRV-031",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 31,
+          "asset_id": "SRV-032",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 32,
+          "asset_id": "SRV-033",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 33,
+          "asset_id": "SRV-001",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 34,
+          "asset_id": "SRV-002",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 35,
+          "asset_id": "SRV-003",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 36,
+          "asset_id": "SRV-004",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 37,
+          "asset_id": "SRV-005",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 38,
+          "asset_id": "SRV-006",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 39,
+          "asset_id": "SRV-007",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 40,
+          "asset_id": "SRV-008",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 41,
+          "asset_id": "SRV-009",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 42,
+          "asset_id": "SRV-010",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 43,
+          "asset_id": "SRV-011",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 44,
+          "asset_id": "SRV-012",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 45,
+          "asset_id": "SRV-013",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 46,
+          "asset_id": "SRV-014",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 47,
+          "asset_id": "SRV-015",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 48,
+          "asset_id": "SRV-016",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 49,
+          "asset_id": "SRV-017",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 50,
+          "asset_id": "SRV-018",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 51,
+          "asset_id": "SRV-019",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 52,
+          "asset_id": "SRV-020",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 53,
+          "asset_id": "SRV-021",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 54,
+          "asset_id": "SRV-022",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 55,
+          "asset_id": "SRV-023",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 56,
+          "asset_id": "SRV-024",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 57,
+          "asset_id": "SRV-025",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 58,
+          "asset_id": "SRV-026",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 59,
+          "asset_id": "SRV-027",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 60,
+          "asset_id": "SRV-028",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 61,
+          "asset_id": "SRV-029",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 62,
+          "asset_id": "SRV-030",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 63,
+          "asset_id": "SRV-031",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 64,
+          "asset_id": "SRV-032",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 65,
+          "asset_id": "SRV-033",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 66,
+          "asset_id": "SRV-001",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 67,
+          "asset_id": "SRV-002",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "response is not a JSON object"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 68,
+          "asset_id": "SRV-003",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 69,
+          "asset_id": "SRV-004",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 70,
+          "asset_id": "SRV-005",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 71,
+          "asset_id": "SRV-006",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "response is not a JSON object"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 72,
+          "asset_id": "SRV-007",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 73,
+          "asset_id": "SRV-008",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 74,
+          "asset_id": "SRV-009",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "RiskScenario must reference at least one affectedAsset of class Asset"
+          ],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 75,
+          "asset_id": "SRV-010",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 76,
+          "asset_id": "SRV-011",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 77,
+          "asset_id": "SRV-012",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 78,
+          "asset_id": "SRV-013",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 79,
+          "asset_id": "SRV-014",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 80,
+          "asset_id": "SRV-015",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 81,
+          "asset_id": "SRV-016",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 82,
+          "asset_id": "SRV-017",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 83,
+          "asset_id": "SRV-018",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 84,
+          "asset_id": "SRV-019",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 85,
+          "asset_id": "SRV-020",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 86,
+          "asset_id": "SRV-021",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 87,
+          "asset_id": "SRV-022",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 88,
+          "asset_id": "SRV-023",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 89,
+          "asset_id": "SRV-024",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 90,
+          "asset_id": "SRV-025",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 91,
+          "asset_id": "SRV-026",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 92,
+          "asset_id": "SRV-027",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 93,
+          "asset_id": "SRV-028",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 94,
+          "asset_id": "SRV-029",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 95,
+          "asset_id": "SRV-030",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 96,
+          "asset_id": "SRV-031",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 97,
+          "asset_id": "SRV-032",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 98,
+          "asset_id": "SRV-033",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        }
+      ]
+    },
+    {
+      "experiment": "Experiment 3: control recommendation",
+      "source_file": "llm_control_recommendation.json",
+      "n_cases": 99,
+      "real_shacl_conforming": 71,
+      "real_shacl_conforming_pct": 71.7,
+      "real_shacl_rejected": 28,
+      "stored_pythonic_valid": 71,
+      "stored_pythonic_valid_pct": 71.7,
+      "stored_pythonic_rejected": 28,
+      "verdict_agreement": 99,
+      "verdict_agreement_pct": 100.0,
+      "violation_messages": {
+        "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)": 28
+      },
+      "validation_seconds": 8.34,
+      "per_case": [
+        {
+          "index": 0,
+          "asset_id": "SRV-001",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 1,
+          "asset_id": "SRV-002",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 2,
+          "asset_id": "SRV-003",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 3,
+          "asset_id": "SRV-004",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 4,
+          "asset_id": "SRV-005",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 5,
+          "asset_id": "SRV-006",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 6,
+          "asset_id": "SRV-007",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 7,
+          "asset_id": "SRV-008",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 8,
+          "asset_id": "SRV-009",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 9,
+          "asset_id": "SRV-010",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 10,
+          "asset_id": "SRV-011",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 11,
+          "asset_id": "SRV-012",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 12,
+          "asset_id": "SRV-013",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 13,
+          "asset_id": "SRV-014",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 14,
+          "asset_id": "SRV-015",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 15,
+          "asset_id": "SRV-016",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 16,
+          "asset_id": "SRV-017",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 17,
+          "asset_id": "SRV-018",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 18,
+          "asset_id": "SRV-019",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 19,
+          "asset_id": "SRV-020",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 20,
+          "asset_id": "SRV-021",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 21,
+          "asset_id": "SRV-022",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 22,
+          "asset_id": "SRV-023",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 23,
+          "asset_id": "SRV-024",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 24,
+          "asset_id": "SRV-025",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 25,
+          "asset_id": "SRV-026",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 26,
+          "asset_id": "SRV-027",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 27,
+          "asset_id": "SRV-028",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 28,
+          "asset_id": "SRV-029",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 29,
+          "asset_id": "SRV-030",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 30,
+          "asset_id": "SRV-031",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 31,
+          "asset_id": "SRV-032",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 32,
+          "asset_id": "SRV-033",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 33,
+          "asset_id": "SRV-001",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 34,
+          "asset_id": "SRV-002",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 35,
+          "asset_id": "SRV-003",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 36,
+          "asset_id": "SRV-004",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 37,
+          "asset_id": "SRV-005",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 38,
+          "asset_id": "SRV-006",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 39,
+          "asset_id": "SRV-007",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 40,
+          "asset_id": "SRV-008",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 41,
+          "asset_id": "SRV-009",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 42,
+          "asset_id": "SRV-010",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 43,
+          "asset_id": "SRV-011",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 44,
+          "asset_id": "SRV-012",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 45,
+          "asset_id": "SRV-013",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 46,
+          "asset_id": "SRV-014",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 47,
+          "asset_id": "SRV-015",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 48,
+          "asset_id": "SRV-016",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 49,
+          "asset_id": "SRV-017",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 50,
+          "asset_id": "SRV-018",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 51,
+          "asset_id": "SRV-019",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 52,
+          "asset_id": "SRV-020",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 53,
+          "asset_id": "SRV-021",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 54,
+          "asset_id": "SRV-022",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 55,
+          "asset_id": "SRV-023",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 56,
+          "asset_id": "SRV-024",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 57,
+          "asset_id": "SRV-025",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 58,
+          "asset_id": "SRV-026",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 59,
+          "asset_id": "SRV-027",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 60,
+          "asset_id": "SRV-028",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 61,
+          "asset_id": "SRV-029",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 62,
+          "asset_id": "SRV-030",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 63,
+          "asset_id": "SRV-031",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 64,
+          "asset_id": "SRV-032",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 65,
+          "asset_id": "SRV-033",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 66,
+          "asset_id": "SRV-001",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 67,
+          "asset_id": "SRV-002",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 68,
+          "asset_id": "SRV-003",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 69,
+          "asset_id": "SRV-004",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 70,
+          "asset_id": "SRV-005",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 71,
+          "asset_id": "SRV-006",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 72,
+          "asset_id": "SRV-007",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 73,
+          "asset_id": "SRV-008",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 74,
+          "asset_id": "SRV-009",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 75,
+          "asset_id": "SRV-010",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 76,
+          "asset_id": "SRV-011",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 77,
+          "asset_id": "SRV-012",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 78,
+          "asset_id": "SRV-013",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 79,
+          "asset_id": "SRV-014",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 80,
+          "asset_id": "SRV-015",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 81,
+          "asset_id": "SRV-016",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 82,
+          "asset_id": "SRV-017",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 83,
+          "asset_id": "SRV-018",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 84,
+          "asset_id": "SRV-019",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 85,
+          "asset_id": "SRV-020",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 86,
+          "asset_id": "SRV-021",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 87,
+          "asset_id": "SRV-022",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 88,
+          "asset_id": "SRV-023",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 89,
+          "asset_id": "SRV-024",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 90,
+          "asset_id": "SRV-025",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 91,
+          "asset_id": "SRV-026",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 92,
+          "asset_id": "SRV-027",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 93,
+          "asset_id": "SRV-028",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 94,
+          "asset_id": "SRV-029",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 95,
+          "asset_id": "SRV-030",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 96,
+          "asset_id": "SRV-031",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        },
+        {
+          "index": 97,
+          "asset_id": "SRV-032",
+          "parseable": true,
+          "shacl_conforms": false,
+          "messages": [
+            "ControlRecommendation must have exactly one threatClass (BruteForce, DDoS, DoS, Infiltration, WebAttack, or Benign)"
+          ],
+          "stored_shacl_valid": false
+        },
+        {
+          "index": 98,
+          "asset_id": "SRV-033",
+          "parseable": true,
+          "shacl_conforms": true,
+          "messages": [],
+          "stored_shacl_valid": true
+        }
+      ]
+    }
+  ]
+}

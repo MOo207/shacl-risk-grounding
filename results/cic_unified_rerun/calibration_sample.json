@@ -1,0 +1,2753 @@
+{
+  "meta": {
+    "description": "Calibration sample for future LLM-override-threshold tuning (NOT scored in final comparison). 10 cases/class, drawn from the CIC-IDS2018 pool excluding the original 180-case unified-ablation eval set.",
+    "n": 60,
+    "n_per_class": 10,
+    "seed": 42,
+    "source": "data/processed/cleaned_dataset.csv",
+    "excludes": "results/unified_ablation/test_set.json (180 rows) + this file's own test_sample.json (120 rows, disjoint by construction)",
+    "created": "2026-07-10T17:58:39.661483"
+  },
+  "cases": [
+    {
+      "case_id": "cal_000",
+      "source_row_index": 9847,
+      "true_attack_class": "Benign",
+      "asset": {
+        "id": "asset_cal_000",
+        "hostname": "host-cal-000",
+        "criticality": "Low",
+        "asset_type": "server",
+        "os": "Windows 10"
+      },
+      "paired_cve": null,
+      "arg_neighborhood": {
+        "related_cves": []
+      },
+      "controls": [
+        "SS6.1-MON-1"
+      ],
+      "nl_description": "Flow targeting non-standard port 52123 — unusual destination for normal traffic, may indicate backdoor communication, command-and-control (C2) channel, or lateral movement associated with infiltration. Very brief contact (1.17 ms) — possible reconnaissance probe or C2 beacon. Packets: 5 forward, 2 backward. Window: 65535.",
+      "feature_subset": {
+        "Dst Port": 52123,
+        "Protocol": 6,
+        "Flow Duration": 1168.0,
+        "Tot Fwd Pkts": 5,
+        "Tot Bwd Pkts": 2,
+        "Init Fwd Win Byts": 65535,
+        "Flow Pkts/s": 5993.150685
+      },
+      "xgb_predicted_class": "Benign",
+      "xgb_confidence": 0.9997373223304749,
+      "xgb_risk_level": "Very Low",
+      "ground_truth_risk_level": "Very Low",
+      "criticality": "Low"
+    },
+    {
+      "case_id": "cal_001",
+      "source_row_index": 8876,
+      "true_attack_class": "Benign",
+      "asset": {
+        "id": "asset_cal_001",
+        "hostname": "host-cal-001",
+        "criticality": "Medium",
+        "asset_type": "workstation",
+        "os": "Windows Server"
+      },
+      "paired_cve": null,
+      "arg_neighborhood": {
+        "related_cves": []
+      },
+      "controls": [
+        "SS6.1-MON-1"
+      ],
+      "nl_description": "Network flow targeting SMB. Duration: 0.2s. Packets: 3 forward, 1 backward. TCP initial window: 8192 bytes. No payload data and minimal packet exchange — consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe.",
+      "feature_subset": {
+        "Dst Port": 445,
+        "Protocol": 6,
+        "Flow Duration": 236927.0,
+        "Tot Fwd Pkts": 3,
+        "Tot Bwd Pkts": 1,
+        "Init Fwd Win Byts": 8192,
+        "Flow Pkts/s": 16.8828373296
+      },
+      "xgb_predicted_class": "Benign",
+      "xgb_confidence": 0.5967937111854553,
+      "xgb_risk_level": "Very Low",
+      "ground_truth_risk_level": "Very Low",
+      "criticality": "Medium"
+    },
+    {
+      "case_id": "cal_002",
+      "source_row_index": 10899,
+      "true_attack_class": "DoS",
+      "asset": {
+        "id": "asset_cal_002",
+        "hostname": "host-cal-002",
+        "criticality": "Low",
+        "asset_type": "server",
+        "os": "Ubuntu"
+      },
+      "paired_cve": {
+        "id": "CVE-2011-3192",
+        "type": "CVE",
+        "cvss_v3": 7.8,
+        "severity": "",
+        "description": "Apache httpd Range header DoS (Apache Killer)",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-3192",
+            "cvss_v3": 7.8
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-NET-1"
+      ],
+      "nl_description": "HTTP flow to port 80 with TCP initial window of exactly 225 bytes — this specific window size is a known signature of Slowloris and slow-rate denial-of-service (DoS) attack tools. Flow: 2 forward packet(s), 0 backward, duration 22.6 ms. Minimal payload, no server response — consistent with DoS connection exhaustion.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 22629.0,
+        "Tot Fwd Pkts": 2,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": 225,
+        "Flow Pkts/s": 88.38216448
+      },
+      "xgb_predicted_class": "DoS",
+      "xgb_confidence": 0.9999161958694458,
+      "xgb_risk_level": "Medium",
+      "ground_truth_risk_level": "Medium",
+      "criticality": "Low"
+    },
+    {
+      "case_id": "cal_003",
+      "source_row_index": 8926,
+      "true_attack_class": "Infiltration",
+      "asset": {
+        "id": "asset_cal_003",
+        "hostname": "host-cal-003",
+        "criticality": "Low",
+        "asset_type": "server",
+        "os": "Windows Server"
+      },
+      "paired_cve": {
+        "id": "CVE-2011-2523",
+        "type": "CVE",
+        "cvss_v3": 10.0,
+        "severity": "",
+        "description": "vsftpd 2.3.4 backdoor opens shell on port 6200/tcp",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 10.0
+          }
+        ]
+      },
+      "controls": [
+        "SS6.5-NET-1"
+      ],
+      "nl_description": "Network flow targeting DNS. Duration: 1.36 ms (very short). Packets: 1 forward, 1 backward. Bytes: 33 sent, 113 received.",
+      "feature_subset": {
+        "Dst Port": 53,
+        "Protocol": 17,
+        "Flow Duration": 1364.0,
+        "Tot Fwd Pkts": 1,
+        "Tot Bwd Pkts": 1,
+        "Init Fwd Win Byts": -1,
+        "Flow Pkts/s": 1466.27566
+      },
+      "xgb_predicted_class": "Infiltration",
+      "xgb_confidence": 0.8559097647666931,
+      "xgb_risk_level": "Low",
+      "ground_truth_risk_level": "Low",
+      "criticality": "Low"
+    },
+    {
+      "case_id": "cal_004",
+      "source_row_index": 1667,
+      "true_attack_class": "BruteForce",
+      "asset": {
+        "id": "asset_cal_004",
+        "hostname": "host-cal-004",
+        "criticality": "Medium",
+        "asset_type": "workstation",
+        "os": "Ubuntu"
+      },
+      "paired_cve": {
+        "id": "CVE-2008-0166",
+        "type": "CVE",
+        "cvss_v3": 7.8,
+        "severity": "",
+        "description": "Debian OpenSSL predictable RNG allows brute-force of private keys",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2008-0166",
+            "cvss_v3": 7.8
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-AC-1"
+      ],
+      "nl_description": "Network flow targeting port 500. Duration: 1.5 min. Packets: 6 forward, 0 backward. Bytes: 3000 sent, 0 received.",
+      "feature_subset": {
+        "Dst Port": 500,
+        "Protocol": 17,
+        "Flow Duration": 89479443.0,
+        "Tot Fwd Pkts": 6,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": -1,
+        "Flow Pkts/s": 0.0670545077
+      },
+      "xgb_predicted_class": "BruteForce",
+      "xgb_confidence": 0.9981576800346375,
+      "xgb_risk_level": "High",
+      "ground_truth_risk_level": "High",
+      "criticality": "Medium"
+    },
+    {
+      "case_id": "cal_005",
+      "source_row_index": 11838,
+      "true_attack_class": "WebAttack",
+      "asset": {
+        "id": "asset_cal_005",
+        "hostname": "host-cal-005",
+        "criticality": "Medium",
+        "asset_type": "iot",
+        "os": "Linux"
+      },
+      "paired_cve": {
+        "id": "CVE-2009-1151",
+        "type": "CVE",
+        "cvss_v3": 7.5,
+        "severity": "",
+        "description": "phpMyAdmin setup.php static code injection allows RCE without auth",
+        "cwe": "",
+        "in_cisa_kev": true,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2009-1151",
+            "cvss_v3": 7.5
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-APP-1"
+      ],
+      "nl_description": "HTTP session to port 80, duration 5.0 seconds, 4 client requests and 4 server responses — slow, deliberate HTTP exchange typical of automated web attack tooling (SQL injection probes, XSS payloads, or directory traversal). Server response (1866 bytes) exceeds client payload (566 bytes) — enlarged server response is consistent with successful SQL injection or data disclosure. TCP window: 8192 bytes, PPS: 1.6 — very low rate consistent with scripted web attack tool.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 5011734.0,
+        "Tot Fwd Pkts": 4,
+        "Tot Bwd Pkts": 4,
+        "Init Fwd Win Byts": 8192,
+        "Flow Pkts/s": 1.5962539113
+      },
+      "xgb_predicted_class": "WebAttack",
+      "xgb_confidence": 0.9857184290885925,
+      "xgb_risk_level": "High",
+      "ground_truth_risk_level": "High",
+      "criticality": "Medium"
+    },
+    {
+      "case_id": "cal_006",
+      "source_row_index": 11428,
+      "true_attack_class": "DoS",
+      "asset": {
+        "id": "asset_cal_006",
+        "hostname": "host-cal-006",
+        "criticality": "Medium",
+        "asset_type": "firewall",
+        "os": "Windows 10"
+      },
+      "paired_cve": {
+        "id": "CVE-2011-3192",
+        "type": "CVE",
+        "cvss_v3": 7.8,
+        "severity": "",
+        "description": "Apache httpd Range header DoS (Apache Killer)",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-3192",
+            "cvss_v3": 7.8
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-NET-1"
+      ],
+      "nl_description": "HTTP flow to port 80 with TCP initial window of exactly 225 bytes — this specific window size is a known signature of Slowloris and slow-rate denial-of-service (DoS) attack tools. Flow: 2 forward packet(s), 0 backward, duration 0.8 ms. Minimal payload, no server response — consistent with DoS connection exhaustion.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 823.0,
+        "Tot Fwd Pkts": 2,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": 225,
+        "Flow Pkts/s": 2430.133657
+      },
+      "xgb_predicted_class": "DoS",
+      "xgb_confidence": 0.9999023675918579,
+      "xgb_risk_level": "High",
+      "ground_truth_risk_level": "High",
+      "criticality": "Medium"
+    },
+    {
+      "case_id": "cal_007",
+      "source_row_index": 3037,
+      "true_attack_class": "Infiltration",
+      "asset": {
+        "id": "asset_cal_007",
+        "hostname": "host-cal-007",
+        "criticality": "High",
+        "asset_type": "workstation",
+        "os": "Windows 10"
+      },
+      "paired_cve": {
+        "id": "CVE-2011-2523",
+        "type": "CVE",
+        "cvss_v3": 10.0,
+        "severity": "",
+        "description": "vsftpd 2.3.4 backdoor opens shell on port 6200/tcp",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 10.0
+          }
+        ]
+      },
+      "controls": [
+        "SS6.5-NET-1"
+      ],
+      "nl_description": "Flow targeting non-standard port 3351 — unusual destination for normal traffic, may indicate backdoor communication, command-and-control (C2) channel, or lateral movement associated with infiltration. Very brief contact (0.00 ms) — possible reconnaissance probe or C2 beacon. Packets: 1 forward, 1 backward. Window: 1024.",
+      "feature_subset": {
+        "Dst Port": 3351,
+        "Protocol": 6,
+        "Flow Duration": 3.0,
+        "Tot Fwd Pkts": 1,
+        "Tot Bwd Pkts": 1,
+        "Init Fwd Win Byts": 1024,
+        "Flow Pkts/s": 666666.6667
+      },
+      "xgb_predicted_class": "Infiltration",
+      "xgb_confidence": 0.9976365566253662,
+      "xgb_risk_level": "Medium",
+      "ground_truth_risk_level": "Medium",
+      "criticality": "High"
+    },
+    {
+      "case_id": "cal_008",
+      "source_row_index": 7502,
+      "true_attack_class": "BruteForce",
+      "asset": {
+        "id": "asset_cal_008",
+        "hostname": "host-cal-008",
+        "criticality": "Low",
+        "asset_type": "firewall",
+        "os": "Linux"
+      },
+      "paired_cve": {
+        "id": "CVE-2008-0166",
+        "type": "CVE",
+        "cvss_v3": 7.8,
+        "severity": "",
+        "description": "Debian OpenSSL predictable RNG allows brute-force of private keys",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2008-0166",
+            "cvss_v3": 7.8
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-AC-1"
+      ],
+      "nl_description": "Network flow targeting HTTP (web). Duration: 0.03 ms (very short). Packets: 2 forward, 0 backward. TCP initial window: 2051 bytes. Short HTTP probe with non-standard TCP window — may be DoS variant, DDoS flood packet, or scan. No payload data and minimal packet exchange — consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 25.0,
+        "Tot Fwd Pkts": 2,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": 2051,
+        "Flow Pkts/s": 80000.0
+      },
+      "xgb_predicted_class": "BruteForce",
+      "xgb_confidence": 0.9812434315681458,
+      "xgb_risk_level": "Medium",
+      "ground_truth_risk_level": "Medium",
+      "criticality": "Low"
+    },
+    {
+      "case_id": "cal_009",
+      "source_row_index": 13934,
+      "true_attack_class": "WebAttack",
+      "asset": {
+        "id": "asset_cal_009",
+        "hostname": "host-cal-009",
+        "criticality": "High",
+        "asset_type": "iot",
+        "os": "Linux"
+      },
+      "paired_cve": {
+        "id": "CVE-2009-1151",
+        "type": "CVE",
+        "cvss_v3": 7.5,
+        "severity": "",
+        "description": "phpMyAdmin setup.php static code injection allows RCE without auth",
+        "cwe": "",
+        "in_cisa_kev": true,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2009-1151",
+            "cvss_v3": 7.5
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-APP-1"
+      ],
+      "nl_description": "HTTP session to port 80, duration 5.0 seconds, 5 client requests and 5 server responses — slow, deliberate HTTP exchange typical of automated web attack tooling (SQL injection probes, XSS payloads, or directory traversal). Server response (1414 bytes) exceeds client payload (789 bytes) — enlarged server response is consistent with successful SQL injection or data disclosure. TCP window: 8192 bytes, PPS: 2.0 — very low rate consistent with scripted web attack tool.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 5028696.0,
+        "Tot Fwd Pkts": 5,
+        "Tot Bwd Pkts": 5,
+        "Init Fwd Win Byts": 8192,
+        "Flow Pkts/s": 1.9885871009
+      },
+      "xgb_predicted_class": "WebAttack",
+      "xgb_confidence": 0.726733922958374,
+      "xgb_risk_level": "Catastrophic",
+      "ground_truth_risk_level": "Catastrophic",
+      "criticality": "High"
+    },
+    {
+      "case_id": "cal_010",
+      "source_row_index": 5763,
+      "true_attack_class": "Infiltration",
+      "asset": {
+        "id": "asset_cal_010",
+        "hostname": "host-cal-010",
+        "criticality": "Critical",
+        "asset_type": "server",
+        "os": "Ubuntu"
+      },
+      "paired_cve": {
+        "id": "CVE-2014-0160",
+        "type": "CVE",
+        "cvss_v3": 10.0,
+        "severity": "",
+        "description": "Heartbleed: OpenSSL TLS heartbeat extension allows remote memory read leaking private keys and session data",
+        "cwe": "",
+        "in_cisa_kev": true,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2014-0160",
+            "cvss_v3": 10.0
+          }
+        ]
+      },
+      "controls": [
+        "SS6.5-NET-1"
+      ],
+      "nl_description": "Network flow targeting HTTPS. Duration: 44.3s. Packets: 7 forward, 5 backward. TCP initial window: 255 bytes. Bytes: 36 sent, 0 received.",
+      "feature_subset": {
+        "Dst Port": 443,
+        "Protocol": 6,
+        "Flow Duration": 44346392.0,
+        "Tot Fwd Pkts": 7,
+        "Tot Bwd Pkts": 5,
+        "Init Fwd Win Byts": 255,
+        "Flow Pkts/s": 0.270596986
+      },
+      "xgb_predicted_class": "Infiltration",
+      "xgb_confidence": 0.6810420155525208,
+      "xgb_risk_level": "High",
+      "ground_truth_risk_level": "High",
+      "criticality": "Critical"
+    },
+    {
+      "case_id": "cal_011",
+      "source_row_index": 5441,
+      "true_attack_class": "WebAttack",
+      "asset": {
+        "id": "asset_cal_011",
+        "hostname": "host-cal-011",
+        "criticality": "Low",
+        "asset_type": "iot",
+        "os": "Windows 10"
+      },
+      "paired_cve": {
+        "id": "CVE-2007-5423",
+        "type": "CVE",
+        "cvss_v3": 7.5,
+        "severity": "",
+        "description": "TikiWiki tiki-graph_formula.php PHP code injection allows RCE",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2007-5423",
+            "cvss_v3": 7.5
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-APP-1"
+      ],
+      "nl_description": "HTTP session to port 80, duration 5.0 seconds, 5 client requests and 3 server responses — slow, deliberate HTTP exchange typical of automated web attack tooling (SQL injection probes, XSS payloads, or directory traversal). Server response (1863 bytes) exceeds client payload (620 bytes) — enlarged server response is consistent with successful SQL injection or data disclosure. TCP window: 8192 bytes, PPS: 1.6 — very low rate consistent with scripted web attack tool.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 5008877.0,
+        "Tot Fwd Pkts": 5,
+        "Tot Bwd Pkts": 3,
+        "Init Fwd Win Byts": 8192,
+        "Flow Pkts/s": 1.5971643943
+      },
+      "xgb_predicted_class": "WebAttack",
+      "xgb_confidence": 0.9314560294151306,
+      "xgb_risk_level": "Medium",
+      "ground_truth_risk_level": "Medium",
+      "criticality": "Low"
+    },
+    {
+      "case_id": "cal_012",
+      "source_row_index": 13018,
+      "true_attack_class": "DoS",
+      "asset": {
+        "id": "asset_cal_012",
+        "hostname": "host-cal-012",
+        "criticality": "Medium",
+        "asset_type": "server",
+        "os": "Linux"
+      },
+      "paired_cve": {
+        "id": "CVE-2011-3192",
+        "type": "CVE",
+        "cvss_v3": 7.8,
+        "severity": "",
+        "description": "Apache httpd Range header DoS (Apache Killer)",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-3192",
+            "cvss_v3": 7.8
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-NET-1"
+      ],
+      "nl_description": "HTTP flow to port 80 with TCP initial window of exactly 225 bytes — this specific window size is a known signature of Slowloris and slow-rate denial-of-service (DoS) attack tools. Flow: 2 forward packet(s), 0 backward, duration 15.2 ms. Minimal payload, no server response — consistent with DoS connection exhaustion.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 15158.0,
+        "Tot Fwd Pkts": 2,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": 225,
+        "Flow Pkts/s": 131.9435282
+      },
+      "xgb_predicted_class": "DoS",
+      "xgb_confidence": 0.9999161958694458,
+      "xgb_risk_level": "High",
+      "ground_truth_risk_level": "High",
+      "criticality": "Medium"
+    },
+    {
+      "case_id": "cal_013",
+      "source_row_index": 5942,
+      "true_attack_class": "Benign",
+      "asset": {
+        "id": "asset_cal_013",
+        "hostname": "host-cal-013",
+        "criticality": "Medium",
+        "asset_type": "iot",
+        "os": "Linux"
+      },
+      "paired_cve": null,
+      "arg_neighborhood": {
+        "related_cves": []
+      },
+      "controls": [
+        "SS6.1-MON-1"
+      ],
+      "nl_description": "Network flow targeting DNS. Duration: 0.27 ms (very short). Packets: 1 forward, 1 backward. Bytes: 28 sent, 76 received.",
+      "feature_subset": {
+        "Dst Port": 53,
+        "Protocol": 17,
+        "Flow Duration": 271.0,
+        "Tot Fwd Pkts": 1,
+        "Tot Bwd Pkts": 1,
+        "Init Fwd Win Byts": -1,
+        "Flow Pkts/s": 7380.073801
+      },
+      "xgb_predicted_class": "Infiltration",
+      "xgb_confidence": 0.7059838175773621,
+      "xgb_risk_level": "Medium",
+      "ground_truth_risk_level": "Very Low",
+      "criticality": "Medium"
+    },
+    {
+      "case_id": "cal_014",
+      "source_row_index": 13365,
+      "true_attack_class": "WebAttack",
+      "asset": {
+        "id": "asset_cal_014",
+        "hostname": "host-cal-014",
+        "criticality": "Medium",
+        "asset_type": "firewall",
+        "os": "Windows 10"
+      },
+      "paired_cve": {
+        "id": "CVE-2012-1823",
+        "type": "CVE",
+        "cvss_v3": 7.5,
+        "severity": "",
+        "description": "PHP-CGI query string parameter injection allows RCE",
+        "cwe": "",
+        "in_cisa_kev": true,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2012-1823",
+            "cvss_v3": 7.5
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-APP-1"
+      ],
+      "nl_description": "Network flow targeting HTTP (web). Duration: 0.05 ms (very short). Packets: 2 forward, 0 backward. TCP initial window: 2053 bytes. Short HTTP probe with non-standard TCP window — may be DoS variant, DDoS flood packet, or scan. No payload data and minimal packet exchange — consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 45.0,
+        "Tot Fwd Pkts": 2,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": 2053,
+        "Flow Pkts/s": 44444.4444444444
+      },
+      "xgb_predicted_class": "WebAttack",
+      "xgb_confidence": 0.8246030807495117,
+      "xgb_risk_level": "High",
+      "ground_truth_risk_level": "High",
+      "criticality": "Medium"
+    },
+    {
+      "case_id": "cal_015",
+      "source_row_index": 5045,
+      "true_attack_class": "BruteForce",
+      "asset": {
+        "id": "asset_cal_015",
+        "hostname": "host-cal-015",
+        "criticality": "Critical",
+        "asset_type": "workstation",
+        "os": "Windows 10"
+      },
+      "paired_cve": {
+        "id": "CVE-2006-2369",
+        "type": "CVE",
+        "cvss_v3": 7.5,
+        "severity": "",
+        "description": "RealVNC 4.1.1 authentication bypass via NULL auth type",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2006-2369",
+            "cvss_v3": 7.5
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-AC-1"
+      ],
+      "nl_description": "Network flow targeting unknown port. Duration: 1.9 min. Packets: 3 forward, 0 backward.",
+      "feature_subset": {
+        "Dst Port": 0,
+        "Protocol": 0,
+        "Flow Duration": 112641186.0,
+        "Tot Fwd Pkts": 3,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": -1,
+        "Flow Pkts/s": 0.0266332423
+      },
+      "xgb_predicted_class": "Benign",
+      "xgb_confidence": 0.6189747452735901,
+      "xgb_risk_level": "Very Low",
+      "ground_truth_risk_level": "Catastrophic",
+      "criticality": "Critical"
+    },
+    {
+      "case_id": "cal_016",
+      "source_row_index": 3058,
+      "true_attack_class": "Benign",
+      "asset": {
+        "id": "asset_cal_016",
+        "hostname": "host-cal-016",
+        "criticality": "High",
+        "asset_type": "workstation",
+        "os": "Windows 10"
+      },
+      "paired_cve": null,
+      "arg_neighborhood": {
+        "related_cves": []
+      },
+      "controls": [
+        "SS6.1-MON-1"
+      ],
+      "nl_description": "Flow targeting non-standard port 17853 — unusual destination for normal traffic, may indicate backdoor communication, command-and-control (C2) channel, or lateral movement associated with infiltration. Long-running session (1.5 min) — sustained C2 or data exfiltration channel. Packets: 2 forward, 0 backward. Window: 63329.",
+      "feature_subset": {
+        "Dst Port": 17853,
+        "Protocol": 6,
+        "Flow Duration": 88123192.0,
+        "Tot Fwd Pkts": 2,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": 63329,
+        "Flow Pkts/s": 0.0226955011
+      },
+      "xgb_predicted_class": "Benign",
+      "xgb_confidence": 0.9939344525337219,
+      "xgb_risk_level": "Very Low",
+      "ground_truth_risk_level": "Very Low",
+      "criticality": "High"
+    },
+    {
+      "case_id": "cal_017",
+      "source_row_index": 5849,
+      "true_attack_class": "Benign",
+      "asset": {
+        "id": "asset_cal_017",
+        "hostname": "host-cal-017",
+        "criticality": "Low",
+        "asset_type": "workstation",
+        "os": "Windows Server"
+      },
+      "paired_cve": null,
+      "arg_neighborhood": {
+        "related_cves": []
+      },
+      "controls": [
+        "SS6.1-MON-1"
+      ],
+      "nl_description": "Flow targeting non-standard port 48006 — unusual destination for normal traffic, may indicate backdoor communication, command-and-control (C2) channel, or lateral movement associated with infiltration. Packets: 5 forward, 3 backward. Window: 219.",
+      "feature_subset": {
+        "Dst Port": 48006,
+        "Protocol": 6,
+        "Flow Duration": 4086725.0,
+        "Tot Fwd Pkts": 5,
+        "Tot Bwd Pkts": 3,
+        "Init Fwd Win Byts": 219,
+        "Flow Pkts/s": 1.957557702
+      },
+      "xgb_predicted_class": "Benign",
+      "xgb_confidence": 0.9998601675033569,
+      "xgb_risk_level": "Very Low",
+      "ground_truth_risk_level": "Very Low",
+      "criticality": "Low"
+    },
+    {
+      "case_id": "cal_018",
+      "source_row_index": 10055,
+      "true_attack_class": "Infiltration",
+      "asset": {
+        "id": "asset_cal_018",
+        "hostname": "host-cal-018",
+        "criticality": "Medium",
+        "asset_type": "firewall",
+        "os": "Windows 10"
+      },
+      "paired_cve": {
+        "id": "CVE-2010-2075",
+        "type": "CVE",
+        "cvss_v3": 10.0,
+        "severity": "",
+        "description": "UnrealIRCd 3.2.8.1 backdoor allows unauthenticated remote command execution via AB prefix",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2010-2075",
+            "cvss_v3": 10.0
+          }
+        ]
+      },
+      "controls": [
+        "SS6.5-NET-1"
+      ],
+      "nl_description": "Flow targeting non-standard port 51692 — unusual destination for normal traffic, may indicate backdoor communication, command-and-control (C2) channel, or lateral movement associated with infiltration. Very brief contact (0.01 ms) — possible reconnaissance probe or C2 beacon. Packets: 1 forward, 1 backward. Window: 980.",
+      "feature_subset": {
+        "Dst Port": 51692,
+        "Protocol": 6,
+        "Flow Duration": 14.0,
+        "Tot Fwd Pkts": 1,
+        "Tot Bwd Pkts": 1,
+        "Init Fwd Win Byts": 980,
+        "Flow Pkts/s": 142857.1429
+      },
+      "xgb_predicted_class": "Benign",
+      "xgb_confidence": 0.5544048547744751,
+      "xgb_risk_level": "Very Low",
+      "ground_truth_risk_level": "Medium",
+      "criticality": "Medium"
+    },
+    {
+      "case_id": "cal_019",
+      "source_row_index": 3713,
+      "true_attack_class": "Benign",
+      "asset": {
+        "id": "asset_cal_019",
+        "hostname": "host-cal-019",
+        "criticality": "Medium",
+        "asset_type": "iot",
+        "os": "Linux"
+      },
+      "paired_cve": null,
+      "arg_neighborhood": {
+        "related_cves": []
+      },
+      "controls": [
+        "SS6.1-MON-1"
+      ],
+      "nl_description": "Flow targeting non-standard port 7166 — unusual destination for normal traffic, may indicate backdoor communication, command-and-control (C2) channel, or lateral movement associated with infiltration. Long-running session (1.4 min) — sustained C2 or data exfiltration channel. Packets: 2 forward, 0 backward. Window: 62559.",
+      "feature_subset": {
+        "Dst Port": 7166,
+        "Protocol": 6,
+        "Flow Duration": 86165705.0,
+        "Tot Fwd Pkts": 2,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": 62559,
+        "Flow Pkts/s": 0.0232110908
+      },
+      "xgb_predicted_class": "Benign",
+      "xgb_confidence": 0.9969367980957031,
+      "xgb_risk_level": "Very Low",
+      "ground_truth_risk_level": "Very Low",
+      "criticality": "Medium"
+    },
+    {
+      "case_id": "cal_020",
+      "source_row_index": 5895,
+      "true_attack_class": "Infiltration",
+      "asset": {
+        "id": "asset_cal_020",
+        "hostname": "host-cal-020",
+        "criticality": "Medium",
+        "asset_type": "iot",
+        "os": "Ubuntu"
+      },
+      "paired_cve": {
+        "id": "CVE-2011-2523",
+        "type": "CVE",
+        "cvss_v3": 10.0,
+        "severity": "",
+        "description": "vsftpd 2.3.4 backdoor opens shell on port 6200/tcp",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 10.0
+          }
+        ]
+      },
+      "controls": [
+        "SS6.5-NET-1"
+      ],
+      "nl_description": "Flow targeting non-standard port 3918 — unusual destination for normal traffic, may indicate backdoor communication, command-and-control (C2) channel, or lateral movement associated with infiltration. Very brief contact (0.25 ms) — possible reconnaissance probe or C2 beacon. Packets: 1 forward, 1 backward. Window: 1024.",
+      "feature_subset": {
+        "Dst Port": 3918,
+        "Protocol": 6,
+        "Flow Duration": 254.0,
+        "Tot Fwd Pkts": 1,
+        "Tot Bwd Pkts": 1,
+        "Init Fwd Win Byts": 1024,
+        "Flow Pkts/s": 7874.015748
+      },
+      "xgb_predicted_class": "Infiltration",
+      "xgb_confidence": 0.9962448477745056,
+      "xgb_risk_level": "Medium",
+      "ground_truth_risk_level": "Medium",
+      "criticality": "Medium"
+    },
+    {
+      "case_id": "cal_021",
+      "source_row_index": 13178,
+      "true_attack_class": "BruteForce",
+      "asset": {
+        "id": "asset_cal_021",
+        "hostname": "host-cal-021",
+        "criticality": "High",
+        "asset_type": "workstation",
+        "os": "Windows 10"
+      },
+      "paired_cve": {
+        "id": "CVE-2008-0166",
+        "type": "CVE",
+        "cvss_v3": 7.8,
+        "severity": "",
+        "description": "Debian OpenSSL predictable RNG allows brute-force of private keys",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2008-0166",
+            "cvss_v3": 7.8
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-AC-1"
+      ],
+      "nl_description": "Network flow targeting port 500. Duration: 1.5 min. Packets: 6 forward, 0 backward. Bytes: 3000 sent, 0 received.",
+      "feature_subset": {
+        "Dst Port": 500,
+        "Protocol": 17,
+        "Flow Duration": 89479078.0,
+        "Tot Fwd Pkts": 6,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": -1,
+        "Flow Pkts/s": 0.0670547812
+      },
+      "xgb_predicted_class": "BruteForce",
+      "xgb_confidence": 0.9756374359130859,
+      "xgb_risk_level": "Catastrophic",
+      "ground_truth_risk_level": "Catastrophic",
+      "criticality": "High"
+    },
+    {
+      "case_id": "cal_022",
+      "source_row_index": 10487,
+      "true_attack_class": "DoS",
+      "asset": {
+        "id": "asset_cal_022",
+        "hostname": "host-cal-022",
+        "criticality": "Medium",
+        "asset_type": "firewall",
+        "os": "Ubuntu"
+      },
+      "paired_cve": {
+        "id": "CVE-2011-3192",
+        "type": "CVE",
+        "cvss_v3": 7.8,
+        "severity": "",
+        "description": "Apache httpd Range header DoS (Apache Killer)",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-3192",
+            "cvss_v3": 7.8
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-NET-1"
+      ],
+      "nl_description": "HTTP flow to port 80 with TCP initial window of exactly 225 bytes — this specific window size is a known signature of Slowloris and slow-rate denial-of-service (DoS) attack tools. Flow: 2 forward packet(s), 0 backward, duration 20.4 ms. Minimal payload, no server response — consistent with DoS connection exhaustion.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 20380.0,
+        "Tot Fwd Pkts": 2,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": 225,
+        "Flow Pkts/s": 98.13542689
+      },
+      "xgb_predicted_class": "DoS",
+      "xgb_confidence": 0.9999161958694458,
+      "xgb_risk_level": "High",
+      "ground_truth_risk_level": "High",
+      "criticality": "Medium"
+    },
+    {
+      "case_id": "cal_023",
+      "source_row_index": 1273,
+      "true_attack_class": "WebAttack",
+      "asset": {
+        "id": "asset_cal_023",
+        "hostname": "host-cal-023",
+        "criticality": "Critical",
+        "asset_type": "iot",
+        "os": "Windows Server"
+      },
+      "paired_cve": {
+        "id": "CVE-2012-1823",
+        "type": "CVE",
+        "cvss_v3": 7.5,
+        "severity": "",
+        "description": "PHP-CGI query string parameter injection allows RCE",
+        "cwe": "",
+        "in_cisa_kev": true,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2012-1823",
+            "cvss_v3": 7.5
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-APP-1"
+      ],
+      "nl_description": "HTTP session to port 80, duration 5.0 seconds, 5 client requests and 3 server responses — slow, deliberate HTTP exchange typical of automated web attack tooling (SQL injection probes, XSS payloads, or directory traversal). Server response (1806 bytes) exceeds client payload (453 bytes) — enlarged server response is consistent with successful SQL injection or data disclosure. TCP window: 8192 bytes, PPS: 1.6 — very low rate consistent with scripted web attack tool.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 5017729.0,
+        "Tot Fwd Pkts": 5,
+        "Tot Bwd Pkts": 3,
+        "Init Fwd Win Byts": 8192,
+        "Flow Pkts/s": 1.5943467652
+      },
+      "xgb_predicted_class": "WebAttack",
+      "xgb_confidence": 0.8375732898712158,
+      "xgb_risk_level": "Catastrophic",
+      "ground_truth_risk_level": "Catastrophic",
+      "criticality": "Critical"
+    },
+    {
+      "case_id": "cal_024",
+      "source_row_index": 7197,
+      "true_attack_class": "DDoS",
+      "asset": {
+        "id": "asset_cal_024",
+        "hostname": "host-cal-024",
+        "criticality": "Medium",
+        "asset_type": "firewall",
+        "os": "Ubuntu"
+      },
+      "paired_cve": {
+        "id": "CVE-2017-7679",
+        "type": "CVE",
+        "cvss_v3": 7.5,
+        "severity": "",
+        "description": "Apache mod_mime buffer overread allows DoS or information disclosure",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2017-7679",
+            "cvss_v3": 7.5
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-NET-2"
+      ],
+      "nl_description": "Network flow targeting HTTP (web). Duration: 0.0s. Packets: 2 forward, 0 backward. TCP initial window: 32738 bytes. Short HTTP probe with non-standard TCP window — may be DoS variant, DDoS flood packet, or scan. No payload data and minimal packet exchange — consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 18648.0,
+        "Tot Fwd Pkts": 2,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": 32738,
+        "Flow Pkts/s": 107.2501073
+      },
+      "xgb_predicted_class": "DDoS",
+      "xgb_confidence": 0.9998384714126587,
+      "xgb_risk_level": "High",
+      "ground_truth_risk_level": "High",
+      "criticality": "Medium"
+    },
+    {
+      "case_id": "cal_025",
+      "source_row_index": 5323,
+      "true_attack_class": "WebAttack",
+      "asset": {
+        "id": "asset_cal_025",
+        "hostname": "host-cal-025",
+        "criticality": "High",
+        "asset_type": "workstation",
+        "os": "Ubuntu"
+      },
+      "paired_cve": {
+        "id": "CVE-2012-1823",
+        "type": "CVE",
+        "cvss_v3": 7.5,
+        "severity": "",
+        "description": "PHP-CGI query string parameter injection allows RCE",
+        "cwe": "",
+        "in_cisa_kev": true,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2012-1823",
+            "cvss_v3": 7.5
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-APP-1"
+      ],
+      "nl_description": "Network flow targeting HTTP (web). Duration: 0.31 ms (very short). Packets: 2 forward, 1 backward. TCP initial window: 2053 bytes. Short HTTP probe with non-standard TCP window — may be DoS variant, DDoS flood packet, or scan. No payload data and minimal packet exchange — consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 313.0,
+        "Tot Fwd Pkts": 2,
+        "Tot Bwd Pkts": 1,
+        "Init Fwd Win Byts": 2053,
+        "Flow Pkts/s": 9584.6645367412
+      },
+      "xgb_predicted_class": "WebAttack",
+      "xgb_confidence": 0.968573272228241,
+      "xgb_risk_level": "Catastrophic",
+      "ground_truth_risk_level": "Catastrophic",
+      "criticality": "High"
+    },
+    {
+      "case_id": "cal_026",
+      "source_row_index": 11548,
+      "true_attack_class": "BruteForce",
+      "asset": {
+        "id": "asset_cal_026",
+        "hostname": "host-cal-026",
+        "criticality": "Low",
+        "asset_type": "server",
+        "os": "Windows Server"
+      },
+      "paired_cve": {
+        "id": "CVE-2008-0166",
+        "type": "CVE",
+        "cvss_v3": 7.8,
+        "severity": "",
+        "description": "Debian OpenSSL predictable RNG allows brute-force of private keys",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2008-0166",
+            "cvss_v3": 7.8
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-AC-1"
+      ],
+      "nl_description": "HTTP session to port 80, duration 5.0 seconds, 5 client requests and 3 server responses — slow, deliberate HTTP exchange typical of automated web attack tooling (SQL injection probes, XSS payloads, or directory traversal). Client sent 646 bytes in 5 packets (avg 129 B/pkt) — oversized HTTP requests may contain injection payloads. TCP window: 8192 bytes, PPS: 1.6 — very low rate consistent with scripted web attack tool.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 5007061.0,
+        "Tot Fwd Pkts": 5,
+        "Tot Bwd Pkts": 3,
+        "Init Fwd Win Byts": 8192,
+        "Flow Pkts/s": 1.5977436664
+      },
+      "xgb_predicted_class": "BruteForce",
+      "xgb_confidence": 0.9994082450866699,
+      "xgb_risk_level": "Medium",
+      "ground_truth_risk_level": "Medium",
+      "criticality": "Low"
+    },
+    {
+      "case_id": "cal_027",
+      "source_row_index": 324,
+      "true_attack_class": "DDoS",
+      "asset": {
+        "id": "asset_cal_027",
+        "hostname": "host-cal-027",
+        "criticality": "Medium",
+        "asset_type": "server",
+        "os": "Ubuntu"
+      },
+      "paired_cve": {
+        "id": "CVE-2017-7679",
+        "type": "CVE",
+        "cvss_v3": 7.5,
+        "severity": "",
+        "description": "Apache mod_mime buffer overread allows DoS or information disclosure",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2017-7679",
+            "cvss_v3": 7.5
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-NET-2"
+      ],
+      "nl_description": "Network flow targeting HTTP (web). Duration: 1.69 ms (very short). Packets: 2 forward, 0 backward. TCP initial window: 32738 bytes. Short HTTP probe with non-standard TCP window — may be DoS variant, DDoS flood packet, or scan. No payload data and minimal packet exchange — consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 1694.0,
+        "Tot Fwd Pkts": 2,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": 32738,
+        "Flow Pkts/s": 1180.637544
+      },
+      "xgb_predicted_class": "DDoS",
+      "xgb_confidence": 0.9998817443847656,
+      "xgb_risk_level": "High",
+      "ground_truth_risk_level": "High",
+      "criticality": "Medium"
+    },
+    {
+      "case_id": "cal_028",
+      "source_row_index": 8616,
+      "true_attack_class": "Benign",
+      "asset": {
+        "id": "asset_cal_028",
+        "hostname": "host-cal-028",
+        "criticality": "Critical",
+        "asset_type": "firewall",
+        "os": "Windows 10"
+      },
+      "paired_cve": null,
+      "arg_neighborhood": {
+        "related_cves": []
+      },
+      "controls": [
+        "SS6.1-MON-1"
+      ],
+      "nl_description": "Flow targeting non-standard port 64461 — unusual destination for normal traffic, may indicate backdoor communication, command-and-control (C2) channel, or lateral movement associated with infiltration. Very brief contact (0.14 ms) — possible reconnaissance probe or C2 beacon. Packets: 2 forward, 0 backward. Window: 255.",
+      "feature_subset": {
+        "Dst Port": 64461,
+        "Protocol": 6,
+        "Flow Duration": 145.0,
+        "Tot Fwd Pkts": 2,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": 255,
+        "Flow Pkts/s": 13793.1034482759
+      },
+      "xgb_predicted_class": "Benign",
+      "xgb_confidence": 0.9958146214485168,
+      "xgb_risk_level": "Very Low",
+      "ground_truth_risk_level": "Very Low",
+      "criticality": "Critical"
+    },
+    {
+      "case_id": "cal_029",
+      "source_row_index": 9427,
+      "true_attack_class": "DoS",
+      "asset": {
+        "id": "asset_cal_029",
+        "hostname": "host-cal-029",
+        "criticality": "Low",
+        "asset_type": "server",
+        "os": "Windows 10"
+      },
+      "paired_cve": {
+        "id": "CVE-2011-3192",
+        "type": "CVE",
+        "cvss_v3": 7.8,
+        "severity": "",
+        "description": "Apache httpd Range header DoS (Apache Killer)",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-3192",
+            "cvss_v3": 7.8
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-NET-1"
+      ],
+      "nl_description": "HTTP flow to port 80 with TCP initial window of exactly 225 bytes — this specific window size is a known signature of Slowloris and slow-rate denial-of-service (DoS) attack tools. Flow: 2 forward packet(s), 0 backward, duration 0.9 ms. Minimal payload, no server response — consistent with DoS connection exhaustion.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 940.0,
+        "Tot Fwd Pkts": 2,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": 225,
+        "Flow Pkts/s": 2127.659574
+      },
+      "xgb_predicted_class": "DoS",
+      "xgb_confidence": 0.9999017715454102,
+      "xgb_risk_level": "Medium",
+      "ground_truth_risk_level": "Medium",
+      "criticality": "Low"
+    },
+    {
+      "case_id": "cal_030",
+      "source_row_index": 9279,
+      "true_attack_class": "DDoS",
+      "asset": {
+        "id": "asset_cal_030",
+        "hostname": "host-cal-030",
+        "criticality": "High",
+        "asset_type": "iot",
+        "os": "Ubuntu"
+      },
+      "paired_cve": {
+        "id": "CVE-2017-0144",
+        "type": "CVE",
+        "cvss_v3": 9.3,
+        "severity": "",
+        "description": "EternalBlue: Windows SMBv1 RCE via crafted packets (MS17-010)",
+        "cwe": "",
+        "in_cisa_kev": true,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2017-0144",
+            "cvss_v3": 9.3
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-NET-2"
+      ],
+      "nl_description": "Network flow targeting HTTP (web). Duration: 3.99 ms (very short). Packets: 2 forward, 0 backward. TCP initial window: 32738 bytes. Short HTTP probe with non-standard TCP window — may be DoS variant, DDoS flood packet, or scan. No payload data and minimal packet exchange — consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 3988.0,
+        "Tot Fwd Pkts": 2,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": 32738,
+        "Flow Pkts/s": 501.5045135
+      },
+      "xgb_predicted_class": "DDoS",
+      "xgb_confidence": 0.9998818635940552,
+      "xgb_risk_level": "Catastrophic",
+      "ground_truth_risk_level": "Catastrophic",
+      "criticality": "High"
+    },
+    {
+      "case_id": "cal_031",
+      "source_row_index": 11057,
+      "true_attack_class": "BruteForce",
+      "asset": {
+        "id": "asset_cal_031",
+        "hostname": "host-cal-031",
+        "criticality": "Medium",
+        "asset_type": "server",
+        "os": "Windows 10"
+      },
+      "paired_cve": {
+        "id": "CVE-2006-2369",
+        "type": "CVE",
+        "cvss_v3": 7.5,
+        "severity": "",
+        "description": "RealVNC 4.1.1 authentication bypass via NULL auth type",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2006-2369",
+            "cvss_v3": 7.5
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-AC-1"
+      ],
+      "nl_description": "Network flow targeting port 500. Duration: 1.5 min. Packets: 6 forward, 0 backward. Bytes: 3000 sent, 0 received.",
+      "feature_subset": {
+        "Dst Port": 500,
+        "Protocol": 17,
+        "Flow Duration": 89479012.0,
+        "Tot Fwd Pkts": 6,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": -1,
+        "Flow Pkts/s": 0.0670548307
+      },
+      "xgb_predicted_class": "BruteForce",
+      "xgb_confidence": 0.9057676792144775,
+      "xgb_risk_level": "High",
+      "ground_truth_risk_level": "High",
+      "criticality": "Medium"
+    },
+    {
+      "case_id": "cal_032",
+      "source_row_index": 9943,
+      "true_attack_class": "DDoS",
+      "asset": {
+        "id": "asset_cal_032",
+        "hostname": "host-cal-032",
+        "criticality": "Medium",
+        "asset_type": "iot",
+        "os": "Windows Server"
+      },
+      "paired_cve": {
+        "id": "CVE-2017-0144",
+        "type": "CVE",
+        "cvss_v3": 9.3,
+        "severity": "",
+        "description": "EternalBlue: Windows SMBv1 RCE via crafted packets (MS17-010)",
+        "cwe": "",
+        "in_cisa_kev": true,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2017-0144",
+            "cvss_v3": 9.3
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-NET-2"
+      ],
+      "nl_description": "Network flow targeting HTTP (web). Duration: 0.66 ms (very short). Packets: 2 forward, 0 backward. TCP initial window: 32738 bytes. Short HTTP probe with non-standard TCP window — may be DoS variant, DDoS flood packet, or scan. No payload data and minimal packet exchange — consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 657.0,
+        "Tot Fwd Pkts": 2,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": 32738,
+        "Flow Pkts/s": 3044.14003
+      },
+      "xgb_predicted_class": "DDoS",
+      "xgb_confidence": 0.9998241066932678,
+      "xgb_risk_level": "High",
+      "ground_truth_risk_level": "High",
+      "criticality": "Medium"
+    },
+    {
+      "case_id": "cal_033",
+      "source_row_index": 2513,
+      "true_attack_class": "WebAttack",
+      "asset": {
+        "id": "asset_cal_033",
+        "hostname": "host-cal-033",
+        "criticality": "Medium",
+        "asset_type": "workstation",
+        "os": "Linux"
+      },
+      "paired_cve": {
+        "id": "CVE-2009-1151",
+        "type": "CVE",
+        "cvss_v3": 7.5,
+        "severity": "",
+        "description": "phpMyAdmin setup.php static code injection allows RCE without auth",
+        "cwe": "",
+        "in_cisa_kev": true,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2009-1151",
+            "cvss_v3": 7.5
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-APP-1"
+      ],
+      "nl_description": "HTTP session to port 80, duration 5.0 seconds, 4 client requests and 4 server responses — slow, deliberate HTTP exchange typical of automated web attack tooling (SQL injection probes, XSS payloads, or directory traversal). Server response (2033 bytes) exceeds client payload (704 bytes) — enlarged server response is consistent with successful SQL injection or data disclosure. TCP window: 8192 bytes, PPS: 1.6 — very low rate consistent with scripted web attack tool.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 5010548.0,
+        "Tot Fwd Pkts": 4,
+        "Tot Bwd Pkts": 4,
+        "Init Fwd Win Byts": 8192,
+        "Flow Pkts/s": 1.5966317457
+      },
+      "xgb_predicted_class": "WebAttack",
+      "xgb_confidence": 0.97672438621521,
+      "xgb_risk_level": "High",
+      "ground_truth_risk_level": "High",
+      "criticality": "Medium"
+    },
+    {
+      "case_id": "cal_034",
+      "source_row_index": 12477,
+      "true_attack_class": "BruteForce",
+      "asset": {
+        "id": "asset_cal_034",
+        "hostname": "host-cal-034",
+        "criticality": "High",
+        "asset_type": "server",
+        "os": "Linux"
+      },
+      "paired_cve": {
+        "id": "CVE-2006-2369",
+        "type": "CVE",
+        "cvss_v3": 7.5,
+        "severity": "",
+        "description": "RealVNC 4.1.1 authentication bypass via NULL auth type",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2006-2369",
+            "cvss_v3": 7.5
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-AC-1"
+      ],
+      "nl_description": "HTTP session to port 80, duration 5.0 seconds, 5 client requests and 3 server responses — slow, deliberate HTTP exchange typical of automated web attack tooling (SQL injection probes, XSS payloads, or directory traversal). Client sent 646 bytes in 5 packets (avg 129 B/pkt) — oversized HTTP requests may contain injection payloads. TCP window: 8192 bytes, PPS: 1.6 — very low rate consistent with scripted web attack tool.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 5005759.0,
+        "Tot Fwd Pkts": 5,
+        "Tot Bwd Pkts": 3,
+        "Init Fwd Win Byts": 8192,
+        "Flow Pkts/s": 1.5981592402
+      },
+      "xgb_predicted_class": "BruteForce",
+      "xgb_confidence": 0.9991348385810852,
+      "xgb_risk_level": "Catastrophic",
+      "ground_truth_risk_level": "Catastrophic",
+      "criticality": "High"
+    },
+    {
+      "case_id": "cal_035",
+      "source_row_index": 14091,
+      "true_attack_class": "DoS",
+      "asset": {
+        "id": "asset_cal_035",
+        "hostname": "host-cal-035",
+        "criticality": "High",
+        "asset_type": "workstation",
+        "os": "Linux"
+      },
+      "paired_cve": {
+        "id": "CVE-2009-0696",
+        "type": "CVE",
+        "cvss_v3": 7.1,
+        "severity": "",
+        "description": "ISC BIND 9.4.x allows remote DoS via crafted dynamic update message",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2009-0696",
+            "cvss_v3": 7.1
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-NET-1"
+      ],
+      "nl_description": "HTTP flow to port 80 with TCP initial window of exactly 225 bytes — this specific window size is a known signature of Slowloris and slow-rate denial-of-service (DoS) attack tools. Flow: 2 forward packet(s), 0 backward, duration 26.4 ms. Minimal payload, no server response — consistent with DoS connection exhaustion.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 26385.0,
+        "Tot Fwd Pkts": 2,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": 225,
+        "Flow Pkts/s": 75.80064431
+      },
+      "xgb_predicted_class": "DoS",
+      "xgb_confidence": 0.9999120235443115,
+      "xgb_risk_level": "Catastrophic",
+      "ground_truth_risk_level": "Catastrophic",
+      "criticality": "High"
+    },
+    {
+      "case_id": "cal_036",
+      "source_row_index": 4937,
+      "true_attack_class": "WebAttack",
+      "asset": {
+        "id": "asset_cal_036",
+        "hostname": "host-cal-036",
+        "criticality": "Medium",
+        "asset_type": "server",
+        "os": "Linux"
+      },
+      "paired_cve": {
+        "id": "CVE-2007-5423",
+        "type": "CVE",
+        "cvss_v3": 7.5,
+        "severity": "",
+        "description": "TikiWiki tiki-graph_formula.php PHP code injection allows RCE",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2007-5423",
+            "cvss_v3": 7.5
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-APP-1"
+      ],
+      "nl_description": "Network flow targeting HTTP (web). Duration: 0.01 ms (very short). Packets: 2 forward, 0 backward. TCP initial window: 2053 bytes. Short HTTP probe with non-standard TCP window — may be DoS variant, DDoS flood packet, or scan. No payload data and minimal packet exchange — consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 13.0,
+        "Tot Fwd Pkts": 2,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": 2053,
+        "Flow Pkts/s": 153846.153846154
+      },
+      "xgb_predicted_class": "WebAttack",
+      "xgb_confidence": 0.6419747471809387,
+      "xgb_risk_level": "High",
+      "ground_truth_risk_level": "High",
+      "criticality": "Medium"
+    },
+    {
+      "case_id": "cal_037",
+      "source_row_index": 3997,
+      "true_attack_class": "Infiltration",
+      "asset": {
+        "id": "asset_cal_037",
+        "hostname": "host-cal-037",
+        "criticality": "Critical",
+        "asset_type": "workstation",
+        "os": "Windows Server"
+      },
+      "paired_cve": {
+        "id": "CVE-2011-2523",
+        "type": "CVE",
+        "cvss_v3": 10.0,
+        "severity": "",
+        "description": "vsftpd 2.3.4 backdoor opens shell on port 6200/tcp",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 10.0
+          }
+        ]
+      },
+      "controls": [
+        "SS6.5-NET-1"
+      ],
+      "nl_description": "Network flow targeting DNS. Duration: 0.0s. Packets: 1 forward, 1 backward. Bytes: 84 sent, 166 received.",
+      "feature_subset": {
+        "Dst Port": 53,
+        "Protocol": 17,
+        "Flow Duration": 10880.0,
+        "Tot Fwd Pkts": 1,
+        "Tot Bwd Pkts": 1,
+        "Init Fwd Win Byts": -1,
+        "Flow Pkts/s": 183.8235294
+      },
+      "xgb_predicted_class": "Benign",
+      "xgb_confidence": 0.839704692363739,
+      "xgb_risk_level": "Very Low",
+      "ground_truth_risk_level": "High",
+      "criticality": "Critical"
+    },
+    {
+      "case_id": "cal_038",
+      "source_row_index": 10253,
+      "true_attack_class": "DoS",
+      "asset": {
+        "id": "asset_cal_038",
+        "hostname": "host-cal-038",
+        "criticality": "Critical",
+        "asset_type": "workstation",
+        "os": "Windows 10"
+      },
+      "paired_cve": {
+        "id": "CVE-2011-3192",
+        "type": "CVE",
+        "cvss_v3": 7.8,
+        "severity": "",
+        "description": "Apache httpd Range header DoS (Apache Killer)",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-3192",
+            "cvss_v3": 7.8
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-NET-1"
+      ],
+      "nl_description": "HTTP flow to port 80 with TCP initial window of exactly 225 bytes — this specific window size is a known signature of Slowloris and slow-rate denial-of-service (DoS) attack tools. Flow: 2 forward packet(s), 0 backward, duration 38.3 ms. Minimal payload, no server response — consistent with DoS connection exhaustion.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 38328.0,
+        "Tot Fwd Pkts": 2,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": 225,
+        "Flow Pkts/s": 52.18117303
+      },
+      "xgb_predicted_class": "DoS",
+      "xgb_confidence": 0.9999076128005981,
+      "xgb_risk_level": "Catastrophic",
+      "ground_truth_risk_level": "Catastrophic",
+      "criticality": "Critical"
+    },
+    {
+      "case_id": "cal_039",
+      "source_row_index": 5375,
+      "true_attack_class": "DDoS",
+      "asset": {
+        "id": "asset_cal_039",
+        "hostname": "host-cal-039",
+        "criticality": "Critical",
+        "asset_type": "workstation",
+        "os": "Windows 10"
+      },
+      "paired_cve": {
+        "id": "CVE-2017-0144",
+        "type": "CVE",
+        "cvss_v3": 9.3,
+        "severity": "",
+        "description": "EternalBlue: Windows SMBv1 RCE via crafted packets (MS17-010)",
+        "cwe": "",
+        "in_cisa_kev": true,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2017-0144",
+            "cvss_v3": 9.3
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-NET-2"
+      ],
+      "nl_description": "Network flow targeting HTTP (web). Duration: 1.06 ms (very short). Packets: 2 forward, 0 backward. TCP initial window: 32738 bytes. Short HTTP probe with non-standard TCP window — may be DoS variant, DDoS flood packet, or scan. No payload data and minimal packet exchange — consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 1065.0,
+        "Tot Fwd Pkts": 2,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": 32738,
+        "Flow Pkts/s": 1877.934272
+      },
+      "xgb_predicted_class": "DDoS",
+      "xgb_confidence": 0.9998759031295776,
+      "xgb_risk_level": "Catastrophic",
+      "ground_truth_risk_level": "Catastrophic",
+      "criticality": "Critical"
+    },
+    {
+      "case_id": "cal_040",
+      "source_row_index": 3608,
+      "true_attack_class": "Infiltration",
+      "asset": {
+        "id": "asset_cal_040",
+        "hostname": "host-cal-040",
+        "criticality": "Critical",
+        "asset_type": "iot",
+        "os": "Ubuntu"
+      },
+      "paired_cve": {
+        "id": "CVE-2014-0160",
+        "type": "CVE",
+        "cvss_v3": 10.0,
+        "severity": "",
+        "description": "Heartbleed: OpenSSL TLS heartbeat extension allows remote memory read leaking private keys and session data",
+        "cwe": "",
+        "in_cisa_kev": true,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2014-0160",
+            "cvss_v3": 10.0
+          }
+        ]
+      },
+      "controls": [
+        "SS6.5-NET-1"
+      ],
+      "nl_description": "Network flow targeting HTTPS. Duration: 2.0 min. Packets: 13 forward, 12 backward. TCP initial window: 8192 bytes. Bytes: 639 sent, 3903 received.",
+      "feature_subset": {
+        "Dst Port": 443,
+        "Protocol": 6,
+        "Flow Duration": 117097255.0,
+        "Tot Fwd Pkts": 13,
+        "Tot Bwd Pkts": 12,
+        "Init Fwd Win Byts": 8192,
+        "Flow Pkts/s": 0.213497746
+      },
+      "xgb_predicted_class": "Infiltration",
+      "xgb_confidence": 0.9955175518989563,
+      "xgb_risk_level": "High",
+      "ground_truth_risk_level": "High",
+      "criticality": "Critical"
+    },
+    {
+      "case_id": "cal_041",
+      "source_row_index": 4070,
+      "true_attack_class": "Benign",
+      "asset": {
+        "id": "asset_cal_041",
+        "hostname": "host-cal-041",
+        "criticality": "Critical",
+        "asset_type": "server",
+        "os": "Windows Server"
+      },
+      "paired_cve": null,
+      "arg_neighborhood": {
+        "related_cves": []
+      },
+      "controls": [
+        "SS6.1-MON-1"
+      ],
+      "nl_description": "HTTP session to port 80, duration 6.0 seconds, 4 client requests and 4 server responses — slow, deliberate HTTP exchange typical of automated web attack tooling (SQL injection probes, XSS payloads, or directory traversal). Server response (231 bytes) exceeds client payload (97 bytes) — enlarged server response is consistent with successful SQL injection or data disclosure. TCP window: 8192 bytes, PPS: 1.3 — very low rate consistent with scripted web attack tool.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 6030330.0,
+        "Tot Fwd Pkts": 4,
+        "Tot Bwd Pkts": 4,
+        "Init Fwd Win Byts": 8192,
+        "Flow Pkts/s": 1.3266272327
+      },
+      "xgb_predicted_class": "Benign",
+      "xgb_confidence": 0.9977667331695557,
+      "xgb_risk_level": "Very Low",
+      "ground_truth_risk_level": "Very Low",
+      "criticality": "Critical"
+    },
+    {
+      "case_id": "cal_042",
+      "source_row_index": 11600,
+      "true_attack_class": "DDoS",
+      "asset": {
+        "id": "asset_cal_042",
+        "hostname": "host-cal-042",
+        "criticality": "Medium",
+        "asset_type": "iot",
+        "os": "Linux"
+      },
+      "paired_cve": {
+        "id": "CVE-2017-0144",
+        "type": "CVE",
+        "cvss_v3": 9.3,
+        "severity": "",
+        "description": "EternalBlue: Windows SMBv1 RCE via crafted packets (MS17-010)",
+        "cwe": "",
+        "in_cisa_kev": true,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2017-0144",
+            "cvss_v3": 9.3
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-NET-2"
+      ],
+      "nl_description": "Network flow targeting HTTP (web). Duration: 0.0s. Packets: 2 forward, 0 backward. TCP initial window: 32738 bytes. Short HTTP probe with non-standard TCP window — may be DoS variant, DDoS flood packet, or scan. No payload data and minimal packet exchange — consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 14692.0,
+        "Tot Fwd Pkts": 2,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": 32738,
+        "Flow Pkts/s": 136.1285053
+      },
+      "xgb_predicted_class": "DDoS",
+      "xgb_confidence": 0.9998384714126587,
+      "xgb_risk_level": "High",
+      "ground_truth_risk_level": "High",
+      "criticality": "Medium"
+    },
+    {
+      "case_id": "cal_043",
+      "source_row_index": 8757,
+      "true_attack_class": "Benign",
+      "asset": {
+        "id": "asset_cal_043",
+        "hostname": "host-cal-043",
+        "criticality": "Medium",
+        "asset_type": "workstation",
+        "os": "Linux"
+      },
+      "paired_cve": null,
+      "arg_neighborhood": {
+        "related_cves": []
+      },
+      "controls": [
+        "SS6.1-MON-1"
+      ],
+      "nl_description": "Network flow targeting RDP. Duration: 3.5s. Packets: 10 forward, 7 backward. TCP initial window: 8192 bytes. Bytes: 1128 sent, 1581 received.",
+      "feature_subset": {
+        "Dst Port": 3389,
+        "Protocol": 6,
+        "Flow Duration": 3533195.0,
+        "Tot Fwd Pkts": 10,
+        "Tot Bwd Pkts": 7,
+        "Init Fwd Win Byts": 8192,
+        "Flow Pkts/s": 4.8115091298
+      },
+      "xgb_predicted_class": "Infiltration",
+      "xgb_confidence": 0.5175873637199402,
+      "xgb_risk_level": "Medium",
+      "ground_truth_risk_level": "Very Low",
+      "criticality": "Medium"
+    },
+    {
+      "case_id": "cal_044",
+      "source_row_index": 944,
+      "true_attack_class": "Infiltration",
+      "asset": {
+        "id": "asset_cal_044",
+        "hostname": "host-cal-044",
+        "criticality": "Low",
+        "asset_type": "server",
+        "os": "Windows Server"
+      },
+      "paired_cve": {
+        "id": "CVE-2014-0160",
+        "type": "CVE",
+        "cvss_v3": 10.0,
+        "severity": "",
+        "description": "Heartbleed: OpenSSL TLS heartbeat extension allows remote memory read leaking private keys and session data",
+        "cwe": "",
+        "in_cisa_kev": true,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2014-0160",
+            "cvss_v3": 10.0
+          }
+        ]
+      },
+      "controls": [
+        "SS6.5-NET-1"
+      ],
+      "nl_description": "Network flow targeting RDP. Duration: 4.0s. Packets: 14 forward, 7 backward. TCP initial window: 8192 bytes. Bytes: 1392 sent, 392 received.",
+      "feature_subset": {
+        "Dst Port": 3389,
+        "Protocol": 6,
+        "Flow Duration": 4004320.0,
+        "Tot Fwd Pkts": 14,
+        "Tot Bwd Pkts": 7,
+        "Init Fwd Win Byts": 8192,
+        "Flow Pkts/s": 5.244336117
+      },
+      "xgb_predicted_class": "Benign",
+      "xgb_confidence": 0.8476715683937073,
+      "xgb_risk_level": "Very Low",
+      "ground_truth_risk_level": "Low",
+      "criticality": "Low"
+    },
+    {
+      "case_id": "cal_045",
+      "source_row_index": 4548,
+      "true_attack_class": "DoS",
+      "asset": {
+        "id": "asset_cal_045",
+        "hostname": "host-cal-045",
+        "criticality": "Low",
+        "asset_type": "iot",
+        "os": "Linux"
+      },
+      "paired_cve": {
+        "id": "CVE-2007-6750",
+        "type": "CVE",
+        "cvss_v3": 5.0,
+        "severity": "",
+        "description": "Apache httpd allows DoS via incomplete HTTP requests (Slowloris)",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2007-6750",
+            "cvss_v3": 5.0
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-NET-1"
+      ],
+      "nl_description": "Network flow targeting HTTP (web). Duration: 9.0s. Packets: 2 forward, 0 backward. TCP initial window: 226 bytes. No payload data and minimal packet exchange — consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 8981216.0,
+        "Tot Fwd Pkts": 2,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": 226,
+        "Flow Pkts/s": 0.2226869947
+      },
+      "xgb_predicted_class": "DoS",
+      "xgb_confidence": 0.9994295239448547,
+      "xgb_risk_level": "Medium",
+      "ground_truth_risk_level": "Medium",
+      "criticality": "Low"
+    },
+    {
+      "case_id": "cal_046",
+      "source_row_index": 6137,
+      "true_attack_class": "DoS",
+      "asset": {
+        "id": "asset_cal_046",
+        "hostname": "host-cal-046",
+        "criticality": "Medium",
+        "asset_type": "firewall",
+        "os": "Windows Server"
+      },
+      "paired_cve": {
+        "id": "CVE-2009-0696",
+        "type": "CVE",
+        "cvss_v3": 7.1,
+        "severity": "",
+        "description": "ISC BIND 9.4.x allows remote DoS via crafted dynamic update message",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2009-0696",
+            "cvss_v3": 7.1
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-NET-1"
+      ],
+      "nl_description": "HTTP flow to port 80 with TCP initial window of exactly 225 bytes — this specific window size is a known signature of Slowloris and slow-rate denial-of-service (DoS) attack tools. Flow: 2 forward packet(s), 0 backward, duration 11.3 ms. Minimal payload, no server response — consistent with DoS connection exhaustion.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 11311.0,
+        "Tot Fwd Pkts": 2,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": 225,
+        "Flow Pkts/s": 176.8190257
+      },
+      "xgb_predicted_class": "DoS",
+      "xgb_confidence": 0.9999098777770996,
+      "xgb_risk_level": "High",
+      "ground_truth_risk_level": "High",
+      "criticality": "Medium"
+    },
+    {
+      "case_id": "cal_047",
+      "source_row_index": 9361,
+      "true_attack_class": "DDoS",
+      "asset": {
+        "id": "asset_cal_047",
+        "hostname": "host-cal-047",
+        "criticality": "Medium",
+        "asset_type": "workstation",
+        "os": "Ubuntu"
+      },
+      "paired_cve": {
+        "id": "CVE-2017-7679",
+        "type": "CVE",
+        "cvss_v3": 7.5,
+        "severity": "",
+        "description": "Apache mod_mime buffer overread allows DoS or information disclosure",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2017-7679",
+            "cvss_v3": 7.5
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-NET-2"
+      ],
+      "nl_description": "Network flow targeting HTTP (web). Duration: 0.0s. Packets: 2 forward, 0 backward. TCP initial window: 32738 bytes. Short HTTP probe with non-standard TCP window — may be DoS variant, DDoS flood packet, or scan. No payload data and minimal packet exchange — consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 12142.0,
+        "Tot Fwd Pkts": 2,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": 32738,
+        "Flow Pkts/s": 164.7175095
+      },
+      "xgb_predicted_class": "DDoS",
+      "xgb_confidence": 0.9998384714126587,
+      "xgb_risk_level": "High",
+      "ground_truth_risk_level": "High",
+      "criticality": "Medium"
+    },
+    {
+      "case_id": "cal_048",
+      "source_row_index": 8636,
+      "true_attack_class": "Infiltration",
+      "asset": {
+        "id": "asset_cal_048",
+        "hostname": "host-cal-048",
+        "criticality": "Critical",
+        "asset_type": "server",
+        "os": "Linux"
+      },
+      "paired_cve": {
+        "id": "CVE-2011-2523",
+        "type": "CVE",
+        "cvss_v3": 10.0,
+        "severity": "",
+        "description": "vsftpd 2.3.4 backdoor opens shell on port 6200/tcp",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 10.0
+          }
+        ]
+      },
+      "controls": [
+        "SS6.5-NET-1"
+      ],
+      "nl_description": "Flow targeting non-standard port 54686 — unusual destination for normal traffic, may indicate backdoor communication, command-and-control (C2) channel, or lateral movement associated with infiltration. Very brief contact (0.00 ms) — possible reconnaissance probe or C2 beacon. Packets: 2 forward, 0 backward. Window: 118.",
+      "feature_subset": {
+        "Dst Port": 54686,
+        "Protocol": 6,
+        "Flow Duration": 0.0,
+        "Tot Fwd Pkts": 2,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": 118,
+        "Flow Pkts/s": 0.0
+      },
+      "xgb_predicted_class": "Infiltration",
+      "xgb_confidence": 0.9892051219940186,
+      "xgb_risk_level": "High",
+      "ground_truth_risk_level": "High",
+      "criticality": "Critical"
+    },
+    {
+      "case_id": "cal_049",
+      "source_row_index": 13568,
+      "true_attack_class": "BruteForce",
+      "asset": {
+        "id": "asset_cal_049",
+        "hostname": "host-cal-049",
+        "criticality": "Critical",
+        "asset_type": "firewall",
+        "os": "Ubuntu"
+      },
+      "paired_cve": {
+        "id": "CVE-2006-2369",
+        "type": "CVE",
+        "cvss_v3": 7.5,
+        "severity": "",
+        "description": "RealVNC 4.1.1 authentication bypass via NULL auth type",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2006-2369",
+            "cvss_v3": 7.5
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-AC-1"
+      ],
+      "nl_description": "Sustained HTTP session lasting 56 seconds with 153 forward requests and 104 server responses — an extended bidirectional exchange on a web server lasting nearly a minute is characteristic of automated HTTP brute-force credential stuffing (repeated login attempts against a web application). Data transferred: 53.7 KB sent, 70.8 KB received (avg packet size 494 bytes). Consistent with repeated HTTP POST login requests. TCP window: 8192 bytes — full TCP handshake completed (real connections, not spoofed).",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 56315949.0,
+        "Tot Fwd Pkts": 153,
+        "Tot Bwd Pkts": 104,
+        "Init Fwd Win Byts": 8192,
+        "Flow Pkts/s": 4.5635384747
+      },
+      "xgb_predicted_class": "BruteForce",
+      "xgb_confidence": 0.9999340772628784,
+      "xgb_risk_level": "Catastrophic",
+      "ground_truth_risk_level": "Catastrophic",
+      "criticality": "Critical"
+    },
+    {
+      "case_id": "cal_050",
+      "source_row_index": 5492,
+      "true_attack_class": "DDoS",
+      "asset": {
+        "id": "asset_cal_050",
+        "hostname": "host-cal-050",
+        "criticality": "Critical",
+        "asset_type": "server",
+        "os": "Linux"
+      },
+      "paired_cve": {
+        "id": "CVE-2017-0144",
+        "type": "CVE",
+        "cvss_v3": 9.3,
+        "severity": "",
+        "description": "EternalBlue: Windows SMBv1 RCE via crafted packets (MS17-010)",
+        "cwe": "",
+        "in_cisa_kev": true,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2017-0144",
+            "cvss_v3": 9.3
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-NET-2"
+      ],
+      "nl_description": "Network flow targeting HTTP (web). Duration: 0.0s. Packets: 2 forward, 0 backward. TCP initial window: 32738 bytes. Short HTTP probe with non-standard TCP window — may be DoS variant, DDoS flood packet, or scan. No payload data and minimal packet exchange — consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 16456.0,
+        "Tot Fwd Pkts": 2,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": 32738,
+        "Flow Pkts/s": 121.5362178
+      },
+      "xgb_predicted_class": "DDoS",
+      "xgb_confidence": 0.9998384714126587,
+      "xgb_risk_level": "Catastrophic",
+      "ground_truth_risk_level": "Catastrophic",
+      "criticality": "Critical"
+    },
+    {
+      "case_id": "cal_051",
+      "source_row_index": 6419,
+      "true_attack_class": "BruteForce",
+      "asset": {
+        "id": "asset_cal_051",
+        "hostname": "host-cal-051",
+        "criticality": "Critical",
+        "asset_type": "server",
+        "os": "Windows Server"
+      },
+      "paired_cve": {
+        "id": "CVE-2006-2369",
+        "type": "CVE",
+        "cvss_v3": 7.5,
+        "severity": "",
+        "description": "RealVNC 4.1.1 authentication bypass via NULL auth type",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2006-2369",
+            "cvss_v3": 7.5
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-AC-1"
+      ],
+      "nl_description": "Network flow targeting port 500. Duration: 1.5 min. Packets: 6 forward, 0 backward. Bytes: 3000 sent, 0 received.",
+      "feature_subset": {
+        "Dst Port": 500,
+        "Protocol": 17,
+        "Flow Duration": 89479641.0,
+        "Tot Fwd Pkts": 6,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": -1,
+        "Flow Pkts/s": 0.0670543593
+      },
+      "xgb_predicted_class": "BruteForce",
+      "xgb_confidence": 0.9956756234169006,
+      "xgb_risk_level": "Catastrophic",
+      "ground_truth_risk_level": "Catastrophic",
+      "criticality": "Critical"
+    },
+    {
+      "case_id": "cal_052",
+      "source_row_index": 9202,
+      "true_attack_class": "WebAttack",
+      "asset": {
+        "id": "asset_cal_052",
+        "hostname": "host-cal-052",
+        "criticality": "Medium",
+        "asset_type": "firewall",
+        "os": "Windows Server"
+      },
+      "paired_cve": {
+        "id": "CVE-2012-1823",
+        "type": "CVE",
+        "cvss_v3": 7.5,
+        "severity": "",
+        "description": "PHP-CGI query string parameter injection allows RCE",
+        "cwe": "",
+        "in_cisa_kev": true,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2012-1823",
+            "cvss_v3": 7.5
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-APP-1"
+      ],
+      "nl_description": "HTTP session to port 80, duration 5.0 seconds, 4 client requests and 4 server responses — slow, deliberate HTTP exchange typical of automated web attack tooling (SQL injection probes, XSS payloads, or directory traversal). Client sent 603 bytes in 4 packets (avg 150 B/pkt) — oversized HTTP requests may contain injection payloads. TCP window: 8192 bytes, PPS: 1.6 — very low rate consistent with scripted web attack tool.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 5011561.0,
+        "Tot Fwd Pkts": 4,
+        "Tot Bwd Pkts": 4,
+        "Init Fwd Win Byts": 8192,
+        "Flow Pkts/s": 1.5963090143
+      },
+      "xgb_predicted_class": "BruteForce",
+      "xgb_confidence": 0.8484492301940918,
+      "xgb_risk_level": "High",
+      "ground_truth_risk_level": "High",
+      "criticality": "Medium"
+    },
+    {
+      "case_id": "cal_053",
+      "source_row_index": 5101,
+      "true_attack_class": "DDoS",
+      "asset": {
+        "id": "asset_cal_053",
+        "hostname": "host-cal-053",
+        "criticality": "Critical",
+        "asset_type": "iot",
+        "os": "Ubuntu"
+      },
+      "paired_cve": {
+        "id": "CVE-2017-0144",
+        "type": "CVE",
+        "cvss_v3": 9.3,
+        "severity": "",
+        "description": "EternalBlue: Windows SMBv1 RCE via crafted packets (MS17-010)",
+        "cwe": "",
+        "in_cisa_kev": true,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2017-0144",
+            "cvss_v3": 9.3
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-NET-2"
+      ],
+      "nl_description": "Network flow targeting HTTP (web). Duration: 0.0s. Packets: 2 forward, 0 backward. TCP initial window: 32738 bytes. Short HTTP probe with non-standard TCP window — may be DoS variant, DDoS flood packet, or scan. No payload data and minimal packet exchange — consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 18860.0,
+        "Tot Fwd Pkts": 2,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": 32738,
+        "Flow Pkts/s": 106.0445387
+      },
+      "xgb_predicted_class": "DDoS",
+      "xgb_confidence": 0.9998384714126587,
+      "xgb_risk_level": "Catastrophic",
+      "ground_truth_risk_level": "Catastrophic",
+      "criticality": "Critical"
+    },
+    {
+      "case_id": "cal_054",
+      "source_row_index": 1023,
+      "true_attack_class": "Benign",
+      "asset": {
+        "id": "asset_cal_054",
+        "hostname": "host-cal-054",
+        "criticality": "Medium",
+        "asset_type": "server",
+        "os": "Ubuntu"
+      },
+      "paired_cve": null,
+      "arg_neighborhood": {
+        "related_cves": []
+      },
+      "controls": [
+        "SS6.1-MON-1"
+      ],
+      "nl_description": "Flow targeting non-standard port 19042 — unusual destination for normal traffic, may indicate backdoor communication, command-and-control (C2) channel, or lateral movement associated with infiltration. Long-running session (1.4 min) — sustained C2 or data exfiltration channel. Packets: 2 forward, 0 backward. Window: 62559.",
+      "feature_subset": {
+        "Dst Port": 19042,
+        "Protocol": 6,
+        "Flow Duration": 86132251.0,
+        "Tot Fwd Pkts": 2,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": 62559,
+        "Flow Pkts/s": 0.023220106
+      },
+      "xgb_predicted_class": "Benign",
+      "xgb_confidence": 0.9967771172523499,
+      "xgb_risk_level": "Very Low",
+      "ground_truth_risk_level": "Very Low",
+      "criticality": "Medium"
+    },
+    {
+      "case_id": "cal_055",
+      "source_row_index": 8801,
+      "true_attack_class": "Infiltration",
+      "asset": {
+        "id": "asset_cal_055",
+        "hostname": "host-cal-055",
+        "criticality": "Low",
+        "asset_type": "server",
+        "os": "Linux"
+      },
+      "paired_cve": {
+        "id": "CVE-2011-2523",
+        "type": "CVE",
+        "cvss_v3": 10.0,
+        "severity": "",
+        "description": "vsftpd 2.3.4 backdoor opens shell on port 6200/tcp",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2011-2523",
+            "cvss_v3": 10.0
+          }
+        ]
+      },
+      "controls": [
+        "SS6.5-NET-1"
+      ],
+      "nl_description": "Network flow targeting DNS. Duration: 0.0s. Packets: 2 forward, 2 backward. Bytes: 96 sent, 610 received.",
+      "feature_subset": {
+        "Dst Port": 53,
+        "Protocol": 17,
+        "Flow Duration": 32718.0,
+        "Tot Fwd Pkts": 2,
+        "Tot Bwd Pkts": 2,
+        "Init Fwd Win Byts": -1,
+        "Flow Pkts/s": 122.2568617
+      },
+      "xgb_predicted_class": "Benign",
+      "xgb_confidence": 0.8720420002937317,
+      "xgb_risk_level": "Very Low",
+      "ground_truth_risk_level": "Low",
+      "criticality": "Low"
+    },
+    {
+      "case_id": "cal_056",
+      "source_row_index": 4214,
+      "true_attack_class": "BruteForce",
+      "asset": {
+        "id": "asset_cal_056",
+        "hostname": "host-cal-056",
+        "criticality": "Medium",
+        "asset_type": "firewall",
+        "os": "Ubuntu"
+      },
+      "paired_cve": {
+        "id": "CVE-2008-0166",
+        "type": "CVE",
+        "cvss_v3": 7.8,
+        "severity": "",
+        "description": "Debian OpenSSL predictable RNG allows brute-force of private keys",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2008-0166",
+            "cvss_v3": 7.8
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-AC-1"
+      ],
+      "nl_description": "Sustained HTTP session lasting 56 seconds with 153 forward requests and 104 server responses — an extended bidirectional exchange on a web server lasting nearly a minute is characteristic of automated HTTP brute-force credential stuffing (repeated login attempts against a web application). Data transferred: 53.7 KB sent, 70.8 KB received (avg packet size 494 bytes). Consistent with repeated HTTP POST login requests. TCP window: 8192 bytes — full TCP handshake completed (real connections, not spoofed).",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 56233184.0,
+        "Tot Fwd Pkts": 153,
+        "Tot Bwd Pkts": 104,
+        "Init Fwd Win Byts": 8192,
+        "Flow Pkts/s": 4.5702551718
+      },
+      "xgb_predicted_class": "BruteForce",
+      "xgb_confidence": 0.9999264478683472,
+      "xgb_risk_level": "High",
+      "ground_truth_risk_level": "High",
+      "criticality": "Medium"
+    },
+    {
+      "case_id": "cal_057",
+      "source_row_index": 12509,
+      "true_attack_class": "DDoS",
+      "asset": {
+        "id": "asset_cal_057",
+        "hostname": "host-cal-057",
+        "criticality": "Critical",
+        "asset_type": "firewall",
+        "os": "Linux"
+      },
+      "paired_cve": {
+        "id": "CVE-2017-0144",
+        "type": "CVE",
+        "cvss_v3": 9.3,
+        "severity": "",
+        "description": "EternalBlue: Windows SMBv1 RCE via crafted packets (MS17-010)",
+        "cwe": "",
+        "in_cisa_kev": true,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2017-0144",
+            "cvss_v3": 9.3
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-NET-2"
+      ],
+      "nl_description": "Network flow targeting HTTP (web). Duration: 0.0s. Packets: 2 forward, 0 backward. TCP initial window: 32738 bytes. Short HTTP probe with non-standard TCP window — may be DoS variant, DDoS flood packet, or scan. No payload data and minimal packet exchange — consistent with TCP handshake only (normal Benign keepalive) or an unanswered probe.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 11499.0,
+        "Tot Fwd Pkts": 2,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": 32738,
+        "Flow Pkts/s": 173.9281677
+      },
+      "xgb_predicted_class": "DDoS",
+      "xgb_confidence": 0.9998255372047424,
+      "xgb_risk_level": "Catastrophic",
+      "ground_truth_risk_level": "Catastrophic",
+      "criticality": "Critical"
+    },
+    {
+      "case_id": "cal_058",
+      "source_row_index": 13548,
+      "true_attack_class": "WebAttack",
+      "asset": {
+        "id": "asset_cal_058",
+        "hostname": "host-cal-058",
+        "criticality": "Medium",
+        "asset_type": "server",
+        "os": "Ubuntu"
+      },
+      "paired_cve": {
+        "id": "CVE-2009-1151",
+        "type": "CVE",
+        "cvss_v3": 7.5,
+        "severity": "",
+        "description": "phpMyAdmin setup.php static code injection allows RCE without auth",
+        "cwe": "",
+        "in_cisa_kev": true,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2009-1151",
+            "cvss_v3": 7.5
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-APP-1"
+      ],
+      "nl_description": "HTTP session to port 80, duration 5.0 seconds, 4 client requests and 4 server responses — slow, deliberate HTTP exchange typical of automated web attack tooling (SQL injection probes, XSS payloads, or directory traversal). Client sent 709 bytes in 4 packets (avg 177 B/pkt) — oversized HTTP requests may contain injection payloads. TCP window: 8192 bytes, PPS: 1.6 — very low rate consistent with scripted web attack tool.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 5007471.0,
+        "Tot Fwd Pkts": 4,
+        "Tot Bwd Pkts": 4,
+        "Init Fwd Win Byts": 8192,
+        "Flow Pkts/s": 1.5976128469
+      },
+      "xgb_predicted_class": "BruteForce",
+      "xgb_confidence": 0.9907545447349548,
+      "xgb_risk_level": "High",
+      "ground_truth_risk_level": "High",
+      "criticality": "Medium"
+    },
+    {
+      "case_id": "cal_059",
+      "source_row_index": 9644,
+      "true_attack_class": "DoS",
+      "asset": {
+        "id": "asset_cal_059",
+        "hostname": "host-cal-059",
+        "criticality": "High",
+        "asset_type": "iot",
+        "os": "Ubuntu"
+      },
+      "paired_cve": {
+        "id": "CVE-2009-0696",
+        "type": "CVE",
+        "cvss_v3": 7.1,
+        "severity": "",
+        "description": "ISC BIND 9.4.x allows remote DoS via crafted dynamic update message",
+        "cwe": "",
+        "in_cisa_kev": false,
+        "published": ""
+      },
+      "arg_neighborhood": {
+        "related_cves": [
+          {
+            "id": "CVE-2009-0696",
+            "cvss_v3": 7.1
+          }
+        ]
+      },
+      "controls": [
+        "SS6.7-NET-1"
+      ],
+      "nl_description": "HTTP flow to port 80 with TCP initial window of exactly 225 bytes — this specific window size is a known signature of Slowloris and slow-rate denial-of-service (DoS) attack tools. Flow: 3 forward packet(s), 0 backward, duration 53.9 ms. Minimal payload, no server response — consistent with DoS connection exhaustion.",
+      "feature_subset": {
+        "Dst Port": 80,
+        "Protocol": 6,
+        "Flow Duration": 53853.0,
+        "Tot Fwd Pkts": 3,
+        "Tot Bwd Pkts": 0,
+        "Init Fwd Win Byts": 225,
+        "Flow Pkts/s": 55.70720294
+      },
+      "xgb_predicted_class": "DoS",
+      "xgb_confidence": 0.99988853931427,
+      "xgb_risk_level": "Catastrophic",
+      "ground_truth_risk_level": "Catastrophic",
+      "criticality": "High"
+    }
+  ]
+}

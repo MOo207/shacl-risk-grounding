@@ -1,0 +1,995 @@
+{
+  "cmdb_version": "2.0",
+  "generated": "2026-05-17",
+  "source": "CIC-IDS2018 testbed infrastructure (Sharafaldin, Lashkari & Ghorbani, ICISSP 2018, DOI:10.5220/0006639801080116) and Metasploitable 2 Exploitability Guide (Rapid7, https://docs.rapid7.com/metasploit/metasploitable-2-exploitability-guide/). Network topology confirmed by Distrinet/KU Leuven PCAP re-analysis (https://intrusion-detection.distrinet-research.be/CNS2022/CSECICIDS2018.html).",
+  "note": "All assets are sourced from published documentation. SRV-001 to SRV-027 are the exact services documented in the Rapid7 Metasploitable 2 Exploitability Guide, deployed on Ubuntu 8.04 LTS (Hardy Heron) in the CIC testbed at 172.31.69.25. SRV-028 to SRV-033 are distinct infrastructure hosts sourced from Sharafaldin et al. (2018) and Distrinet PCAP analysis. IP addresses reflect the documented AWS VPC subnet 172.31.69.0/24.",
+  "total_assets": 33,
+  "asset_breakdown": {
+    "metasploitable2_services": 27,
+    "cic_infrastructure_hosts": 6,
+    "network_subnet": "172.31.69.0/24 (AWS VPC, CIC-IDS2018 testbed)"
+  },
+  "unique_cpes": [
+    "cpe:2.3:a:beasts:vsftpd:2.3.4:*:*:*:*:*:*:*",
+    "cpe:2.3:a:openbsd:openssh:4.7p1:*:*:*:*:*:*:*",
+    "cpe:2.3:a:apache:http_server:2.2.8:*:*:*:*:*:*:*",
+    "cpe:2.3:a:php:php:5.2.4:*:*:*:*:*:*:*",
+    "cpe:2.3:a:isc:bind:9.4.2:*:*:*:*:*:*:*",
+    "cpe:2.3:a:samba:samba:3.0.20:*:*:*:*:*:*:*",
+    "cpe:2.3:a:mysql:mysql:5.0.51a:*:*:*:*:*:*:*",
+    "cpe:2.3:a:postgresql:postgresql:8.3.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:proftpd:proftpd:1.3.1:*:*:*:*:*:*:*",
+    "cpe:2.3:a:unrealircd:unrealircd:3.2.8.1:*:*:*:*:*:*:*",
+    "cpe:2.3:a:apache:tomcat:5.5.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:phpmyadmin:phpmyadmin:2.11.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:twiki:twiki:4.2.4:*:*:*:*:*:*:*",
+    "cpe:2.3:a:tikiwiki:tikiwiki:1.9.5:*:*:*:*:*:*:*",
+    "cpe:2.3:a:openssl:openssl:1.0.1f:*:*:*:*:*:*:*",
+    "cpe:2.3:a:adobe:acrobat_reader:9.0:*:*:*:*:*:*:*",
+    "cpe:2.3:a:microsoft:internet_information_services:8.5:*:*:*:*:*:*:*",
+    "cpe:2.3:a:microsoft:internet_information_services:10.0:*:*:*:*:*:*:*"
+  ],
+  "assets": [
+    {
+      "asset_id": "SRV-001",
+      "hostname": "ftp-srv-01",
+      "ip": "172.31.69.25",
+      "port": 21,
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Rapid7 Metasploitable 2 Exploitability Guide",
+      "software": [
+        {
+          "name": "vsftpd",
+          "version": "2.3.4",
+          "cpe": "cpe:2.3:a:beasts:vsftpd:2.3.4:*:*:*:*:*:*:*",
+          "cves": [
+            {
+              "cve_id": "CVE-2011-2523",
+              "description": "vsftpd 2.3.4 backdoor opens shell on port 6200/tcp",
+              "cvss": 10.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-002",
+      "hostname": "ssh-srv-01",
+      "ip": "172.31.69.25",
+      "port": 22,
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Rapid7 Metasploitable 2 Exploitability Guide",
+      "software": [
+        {
+          "name": "OpenSSH",
+          "version": "4.7p1 Debian 8ubuntu1",
+          "cpe": "cpe:2.3:a:openbsd:openssh:4.7p1:*:*:*:*:*:*:*",
+          "cves": [
+            {
+              "cve_id": "CVE-2008-0166",
+              "description": "Debian OpenSSL predictable RNG allows brute-force of private keys",
+              "cvss": 7.8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-003",
+      "hostname": "telnet-srv-01",
+      "ip": "172.31.69.25",
+      "port": 23,
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "high",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Rapid7 Metasploitable 2 Exploitability Guide",
+      "software": [
+        {
+          "name": "Linux telnetd",
+          "version": "netkit",
+          "cpe": "cpe:2.3:a:netkit:telnetd:0.17:*:*:*:*:*:*:*",
+          "cves": [
+            {
+              "cve_id": "CVE-2001-0554",
+              "description": "Buffer overflow in BSD telnetd allows remote root via telnet options",
+              "cvss": 10.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-004",
+      "hostname": "smtp-srv-01",
+      "ip": "172.31.69.25",
+      "port": 25,
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "medium",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Rapid7 Metasploitable 2 Exploitability Guide",
+      "software": [
+        {
+          "name": "Postfix SMTP",
+          "version": "2.5.1",
+          "cpe": "cpe:2.3:a:postfix:postfix:2.5.1:*:*:*:*:*:*:*",
+          "cves": []
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-005",
+      "hostname": "dns-srv-01",
+      "ip": "172.31.69.25",
+      "port": 53,
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "high",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Rapid7 Metasploitable 2 Exploitability Guide",
+      "software": [
+        {
+          "name": "ISC BIND",
+          "version": "9.4.2",
+          "cpe": "cpe:2.3:a:isc:bind:9.4.2:*:*:*:*:*:*:*",
+          "cves": [
+            {
+              "cve_id": "CVE-2009-0696",
+              "description": "ISC BIND 9.4.x allows remote DoS via crafted dynamic update message",
+              "cvss": 7.1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-006",
+      "hostname": "http-srv-01",
+      "ip": "172.31.69.25",
+      "port": 80,
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Rapid7 Metasploitable 2 Exploitability Guide",
+      "software": [
+        {
+          "name": "Apache httpd",
+          "version": "2.2.8",
+          "cpe": "cpe:2.3:a:apache:http_server:2.2.8:*:*:*:*:*:*:*",
+          "cves": [
+            {
+              "cve_id": "CVE-2007-6750",
+              "description": "Apache httpd allows DoS via incomplete HTTP requests (Slowloris)",
+              "cvss": 5.0
+            },
+            {
+              "cve_id": "CVE-2011-3192",
+              "description": "Apache httpd Range header DoS (Apache Killer)",
+              "cvss": 7.8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-007",
+      "hostname": "php-srv-01",
+      "ip": "172.31.69.25",
+      "port": 80,
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Rapid7 Metasploitable 2 Exploitability Guide",
+      "software": [
+        {
+          "name": "PHP",
+          "version": "5.2.4",
+          "cpe": "cpe:2.3:a:php:php:5.2.4:*:*:*:*:*:*:*",
+          "cves": [
+            {
+              "cve_id": "CVE-2012-1823",
+              "description": "PHP-CGI query string parameter injection allows RCE",
+              "cvss": 7.5,
+              "in_cisa_kev": true
+            },
+            {
+              "cve_id": "CVE-2012-2311",
+              "description": "PHP CGI argument injection via crafted request",
+              "cvss": 7.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-008",
+      "hostname": "dvwa-srv-01",
+      "ip": "172.31.69.25",
+      "port": 80,
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Rapid7 Metasploitable 2 Exploitability Guide",
+      "software": [
+        {
+          "name": "DVWA (Damn Vulnerable Web Application)",
+          "version": "1.0.7",
+          "cpe": "cpe:2.3:a:dvwa:dvwa:1.0.7:*:*:*:*:*:*:*",
+          "cves": []
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-009",
+      "hostname": "mutillidae-srv-01",
+      "ip": "172.31.69.25",
+      "port": 80,
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "high",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Rapid7 Metasploitable 2 Exploitability Guide",
+      "software": [
+        {
+          "name": "OWASP Mutillidae II",
+          "version": "2.1.19",
+          "cpe": "cpe:2.3:a:owasp:mutillidae:2.1.19:*:*:*:*:*:*:*",
+          "cves": []
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-010",
+      "hostname": "phpmyadmin-srv-01",
+      "ip": "172.31.69.25",
+      "port": 80,
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "high",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Rapid7 Metasploitable 2 Exploitability Guide",
+      "software": [
+        {
+          "name": "phpMyAdmin",
+          "version": "2.11.x",
+          "cpe": "cpe:2.3:a:phpmyadmin:phpmyadmin:2.11.0:*:*:*:*:*:*:*",
+          "cves": [
+            {
+              "cve_id": "CVE-2009-1151",
+              "description": "phpMyAdmin setup.php static code injection allows RCE without auth",
+              "cvss": 7.5,
+              "in_cisa_kev": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-011",
+      "hostname": "twiki-srv-01",
+      "ip": "172.31.69.25",
+      "port": 80,
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "high",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Rapid7 Metasploitable 2 Exploitability Guide",
+      "software": [
+        {
+          "name": "TWiki",
+          "version": "4.2.4",
+          "cpe": "cpe:2.3:a:twiki:twiki:4.2.4:*:*:*:*:*:*:*",
+          "cves": [
+            {
+              "cve_id": "CVE-2008-5305",
+              "description": "TWiki rev parameter shell metacharacter injection allows RCE",
+              "cvss": 10.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-012",
+      "hostname": "tikiwiki-srv-01",
+      "ip": "172.31.69.25",
+      "port": 80,
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "high",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Rapid7 Metasploitable 2 Exploitability Guide",
+      "software": [
+        {
+          "name": "TikiWiki CMS",
+          "version": "1.9.5",
+          "cpe": "cpe:2.3:a:tikiwiki:tikiwiki:1.9.5:*:*:*:*:*:*:*",
+          "cves": [
+            {
+              "cve_id": "CVE-2007-5423",
+              "description": "TikiWiki tiki-graph_formula.php PHP code injection allows RCE",
+              "cvss": 7.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-013",
+      "hostname": "rpcbind-srv-01",
+      "ip": "172.31.69.25",
+      "port": 111,
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "medium",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Rapid7 Metasploitable 2 Exploitability Guide",
+      "software": [
+        {
+          "name": "rpcbind",
+          "version": "RPC #100000",
+          "cpe": "cpe:2.3:a:sun:rpc:4.0:*:*:*:*:*:*:*",
+          "cves": []
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-014",
+      "hostname": "smb-srv-01",
+      "ip": "172.31.69.25",
+      "port": 445,
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Rapid7 Metasploitable 2 Exploitability Guide",
+      "software": [
+        {
+          "name": "Samba",
+          "version": "3.0.20-Debian",
+          "cpe": "cpe:2.3:a:samba:samba:3.0.20:*:*:*:*:*:*:*",
+          "cves": [
+            {
+              "cve_id": "CVE-2007-2447",
+              "description": "Samba username map script command injection allows remote RCE without auth",
+              "cvss": 10.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-015",
+      "hostname": "rservices-srv-01",
+      "ip": "172.31.69.25",
+      "port": 512,
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Rapid7 Metasploitable 2 Exploitability Guide",
+      "software": [
+        {
+          "name": "netkit r-services (rexec/rlogin/rsh)",
+          "version": "0.17",
+          "cpe": "cpe:2.3:a:netkit:netkit-rsh:0.17:*:*:*:*:*:*:*",
+          "cves": [
+            {
+              "cve_id": "CVE-1999-0651",
+              "description": "rexec/rlogin/rsh enabled with .rhosts trust allowing unauthenticated remote root",
+              "cvss": 10.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-016",
+      "hostname": "rmi-srv-01",
+      "ip": "172.31.69.25",
+      "port": 1099,
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "high",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Rapid7 Metasploitable 2 Exploitability Guide",
+      "software": [
+        {
+          "name": "Java RMI Registry",
+          "version": "GNU Classpath grmiregistry",
+          "cpe": "cpe:2.3:a:sun:jre:1.6.0:*:*:*:*:*:*:*",
+          "cves": [
+            {
+              "cve_id": "CVE-2011-3556",
+              "description": "Oracle Java RMI default config allows remote RCE via deserialization",
+              "cvss": 7.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-017",
+      "hostname": "backdoor-srv-01",
+      "ip": "172.31.69.25",
+      "port": 1524,
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Rapid7 Metasploitable 2 Exploitability Guide",
+      "software": [
+        {
+          "name": "ingreslock root backdoor",
+          "version": "intentional",
+          "cpe": "cpe:2.3:a:metasploitable:backdoor:1.0:*:*:*:*:*:*:*",
+          "cves": []
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-018",
+      "hostname": "nfs-srv-01",
+      "ip": "172.31.69.25",
+      "port": 2049,
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Rapid7 Metasploitable 2 Exploitability Guide",
+      "software": [
+        {
+          "name": "NFS",
+          "version": "v2-v4",
+          "cpe": "cpe:2.3:a:linux:nfs:2.6.24:*:*:*:*:*:*:*",
+          "cves": [
+            {
+              "cve_id": "CVE-1999-0170",
+              "description": "NFS exports root filesystem allowing remote write and SSH key injection",
+              "cvss": 10.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-019",
+      "hostname": "ftp2-srv-01",
+      "ip": "172.31.69.25",
+      "port": 2121,
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "high",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Rapid7 Metasploitable 2 Exploitability Guide",
+      "software": [
+        {
+          "name": "ProFTPD",
+          "version": "1.3.1",
+          "cpe": "cpe:2.3:a:proftpd:proftpd:1.3.1:*:*:*:*:*:*:*",
+          "cves": [
+            {
+              "cve_id": "CVE-2010-4221",
+              "description": "ProFTPD TELNET IAC buffer overflow allows remote RCE",
+              "cvss": 10.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-020",
+      "hostname": "mysql-srv-01",
+      "ip": "172.31.69.25",
+      "port": 3306,
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Rapid7 Metasploitable 2 Exploitability Guide",
+      "software": [
+        {
+          "name": "MySQL",
+          "version": "5.0.51a-3ubuntu5",
+          "cpe": "cpe:2.3:a:mysql:mysql:5.0.51a:*:*:*:*:*:*:*",
+          "cves": [
+            {
+              "cve_id": "CVE-2008-0226",
+              "description": "MySQL 5.0.x allows local privilege escalation via crafted BINLOG command",
+              "cvss": 7.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-021",
+      "hostname": "distcc-srv-01",
+      "ip": "172.31.69.25",
+      "port": 3632,
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Rapid7 Metasploitable 2 Exploitability Guide",
+      "software": [
+        {
+          "name": "distccd",
+          "version": "v1 (GCC 4.2.4)",
+          "cpe": "cpe:2.3:a:distcc:distcc:3.1:*:*:*:*:*:*:*",
+          "cves": [
+            {
+              "cve_id": "CVE-2004-2687",
+              "description": "distccd allows remote code execution via EXEC request without auth",
+              "cvss": 10.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-022",
+      "hostname": "pgsql-srv-01",
+      "ip": "172.31.69.25",
+      "port": 5432,
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "high",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Rapid7 Metasploitable 2 Exploitability Guide",
+      "software": [
+        {
+          "name": "PostgreSQL",
+          "version": "8.3.0-8.3.7",
+          "cpe": "cpe:2.3:a:postgresql:postgresql:8.3.0:*:*:*:*:*:*:*",
+          "cves": [
+            {
+              "cve_id": "CVE-2013-1904",
+              "description": "PostgreSQL allows local privilege escalation via crafted SQL",
+              "cvss": 6.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-023",
+      "hostname": "vnc-srv-01",
+      "ip": "172.31.69.25",
+      "port": 5900,
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Rapid7 Metasploitable 2 Exploitability Guide",
+      "software": [
+        {
+          "name": "VNC",
+          "version": "Protocol 3.3",
+          "cpe": "cpe:2.3:a:realvnc:realvnc:4.1.1:*:*:*:*:*:*:*",
+          "cves": [
+            {
+              "cve_id": "CVE-2006-2369",
+              "description": "RealVNC 4.1.1 authentication bypass via NULL auth type",
+              "cvss": 7.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-024",
+      "hostname": "x11-srv-01",
+      "ip": "172.31.69.25",
+      "port": 6000,
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "medium",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Rapid7 Metasploitable 2 Exploitability Guide",
+      "software": [
+        {
+          "name": "X11",
+          "version": "Xorg 7.3",
+          "cpe": "cpe:2.3:a:x.org:xorg-server:1.4.0:*:*:*:*:*:*:*",
+          "cves": [
+            {
+              "cve_id": "CVE-1999-0526",
+              "description": "X11 open display allows unauthenticated connection and screen capture",
+              "cvss": 7.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-025",
+      "hostname": "irc-srv-01",
+      "ip": "172.31.69.25",
+      "port": 6667,
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Rapid7 Metasploitable 2 Exploitability Guide",
+      "software": [
+        {
+          "name": "UnrealIRCd",
+          "version": "3.2.8.1",
+          "cpe": "cpe:2.3:a:unrealircd:unrealircd:3.2.8.1:*:*:*:*:*:*:*",
+          "cves": [
+            {
+              "cve_id": "CVE-2010-2075",
+              "description": "UnrealIRCd 3.2.8.1 backdoor allows unauthenticated remote command execution via AB prefix",
+              "cvss": 10.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-026",
+      "hostname": "tomcat-srv-01",
+      "ip": "172.31.69.25",
+      "port": 8180,
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "high",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Rapid7 Metasploitable 2 Exploitability Guide",
+      "software": [
+        {
+          "name": "Apache Tomcat",
+          "version": "5.5 (AJP/1.3 on port 8009)",
+          "cpe": "cpe:2.3:a:apache:tomcat:5.5.0:*:*:*:*:*:*:*",
+          "cves": [
+            {
+              "cve_id": "CVE-2009-0580",
+              "description": "Apache Tomcat allows directory traversal via UTF-8 encoded URLs",
+              "cvss": 5.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-027",
+      "hostname": "drb-srv-01",
+      "ip": "172.31.69.25",
+      "port": 8787,
+      "os": "Ubuntu 8.04 LTS (Metasploitable 2)",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Rapid7 Metasploitable 2 Exploitability Guide",
+      "software": [
+        {
+          "name": "Ruby DRb (Distributed Ruby)",
+          "version": "1.8",
+          "cpe": "cpe:2.3:a:ruby-lang:ruby:1.8.7:*:*:*:*:*:*:*",
+          "cves": [
+            {
+              "cve_id": "CVE-2011-5330",
+              "description": "Ruby DRb allows remote RCE via instance_eval/syscall without authentication",
+              "cvss": 10.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-028",
+      "hostname": "web-dos-target-01",
+      "ip": "172.31.69.28",
+      "port": 80,
+      "os": "Ubuntu 16.04 LTS",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Sharafaldin et al. (2018) + Distrinet/KU Leuven PCAP analysis \u2014 primary DoS/DDoS/WebAttack target",
+      "software": [
+        {
+          "name": "Apache httpd",
+          "version": "2.4.18 (Ubuntu 16.04 default, 5s keep-alive)",
+          "cpe": "cpe:2.3:a:apache:http_server:2.4.18:*:*:*:*:*:*:*",
+          "cves": [
+            {
+              "cve_id": "CVE-2017-7679",
+              "description": "Apache mod_mime buffer overread allows DoS or information disclosure",
+              "cvss": 7.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-029",
+      "hostname": "heartbleed-srv-01",
+      "ip": "18.217.21.148",
+      "port": 443,
+      "os": "Ubuntu 12.04 LTS",
+      "criticality": "critical",
+      "location": "CIC AWS Region (separate EC2 instance)",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Sharafaldin et al. (2018) \u2014 Heartleech tool used against this host; OpenSSL 1.0.1f confirmed from attack tool selection",
+      "software": [
+        {
+          "name": "OpenSSL",
+          "version": "1.0.1f",
+          "cpe": "cpe:2.3:a:openssl:openssl:1.0.1f:*:*:*:*:*:*:*",
+          "cves": [
+            {
+              "cve_id": "CVE-2014-0160",
+              "description": "Heartbleed: OpenSSL TLS heartbeat extension allows remote memory read leaking private keys and session data",
+              "cvss": 10.0,
+              "in_cisa_kev": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-030",
+      "hostname": "infiltration-victim-01",
+      "ip": "172.31.69.24",
+      "port": null,
+      "os": "Windows Vista (32-bit)",
+      "criticality": "high",
+      "location": "CIC Dept 4 (Secretary/Operations)",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "workstation",
+      "source": "Sharafaldin et al. (2018) infiltration attack description \u2014 initial compromise via malicious PDF from Dropbox",
+      "software": [
+        {
+          "name": "Adobe Acrobat Reader",
+          "version": "9.0",
+          "cpe": "cpe:2.3:a:adobe:acrobat_reader:9.0:*:*:*:*:*:*:*",
+          "cves": [
+            {
+              "cve_id": "CVE-2010-0188",
+              "description": "Adobe Reader 9 integer overflow via crafted PDF allows RCE \u2014 CIC infiltration initial access vector",
+              "cvss": 9.3,
+              "in_cisa_kev": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-031",
+      "hostname": "infiltration-victim-02",
+      "ip": "172.31.69.13",
+      "port": null,
+      "os": "Windows Vista",
+      "criticality": "medium",
+      "location": "CIC Dept 4 (Secretary/Operations)",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "workstation",
+      "source": "Distrinet/KU Leuven PCAP re-analysis \u2014 confirmed as infiltration internal portscan target",
+      "software": []
+    },
+    {
+      "asset_id": "SRV-032",
+      "hostname": "win-srv-01",
+      "ip": "172.31.69.30",
+      "port": 445,
+      "os": "Windows Server 2012 R2",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Sharafaldin et al. (2018) \u2014 Windows Server 2012 R2 documented in CIC testbed server room",
+      "software": [
+        {
+          "name": "Windows SMBv1",
+          "version": "Windows Server 2012 R2",
+          "cpe": "cpe:2.3:o:microsoft:windows_server_2012:r2:*:*:*:*:*:*:*",
+          "cves": [
+            {
+              "cve_id": "CVE-2017-0144",
+              "description": "EternalBlue: Windows SMBv1 RCE via crafted packets (MS17-010)",
+              "cvss": 9.3,
+              "in_cisa_kev": true
+            }
+          ]
+        },
+        {
+          "name": "IIS",
+          "version": "8.5",
+          "cpe": "cpe:2.3:a:microsoft:internet_information_services:8.5:*:*:*:*:*:*:*",
+          "cves": []
+        }
+      ]
+    },
+    {
+      "asset_id": "SRV-033",
+      "hostname": "win-srv-02",
+      "ip": "172.31.69.31",
+      "port": 445,
+      "os": "Windows Server 2016",
+      "criticality": "critical",
+      "location": "CIC Server Room",
+      "business_unit": "CIC Testbed Infrastructure",
+      "asset_type": "server",
+      "source": "Sharafaldin et al. (2018) \u2014 Windows Server 2016 documented in CIC testbed server room",
+      "software": [
+        {
+          "name": "Windows SMBv1",
+          "version": "Windows Server 2016",
+          "cpe": "cpe:2.3:o:microsoft:windows_server_2016:-:*:*:*:*:*:*:*",
+          "cves": [
+            {
+              "cve_id": "CVE-2017-0144",
+              "description": "EternalBlue: Windows SMBv1 RCE via crafted packets (MS17-010)",
+              "cvss": 9.3,
+              "in_cisa_kev": true
+            }
+          ]
+        },
+        {
+          "name": "IIS",
+          "version": "10.0",
+          "cpe": "cpe:2.3:a:microsoft:internet_information_services:10.0:*:*:*:*:*:*:*",
+          "cves": []
+        }
+      ]
+    }
+  ],
+  "attack_asset_map": {
+    "BruteForce": [
+      "SRV-001",
+      "SRV-002"
+    ],
+    "FTP-BruteForce": [
+      "SRV-001"
+    ],
+    "SSH-BruteForce": [
+      "SRV-002"
+    ],
+    "DoS": [
+      "SRV-028"
+    ],
+    "DDoS": [
+      "SRV-028"
+    ],
+    "Heartbleed": [
+      "SRV-029"
+    ],
+    "WebAttack": [
+      "SRV-007",
+      "SRV-008"
+    ],
+    "Infiltration": [
+      "SRV-030",
+      "SRV-031"
+    ],
+    "Bot": [
+      "SRV-032",
+      "SRV-033"
+    ]
+  },
+  "attack_technique_map": {
+    "BruteForce": {
+      "technique_id": "T1110",
+      "technique_name": "Brute Force",
+      "tactic": "Credential Access"
+    },
+    "FTP-BruteForce": {
+      "technique_id": "T1110.001",
+      "technique_name": "Password Guessing (FTP/Patator)",
+      "tactic": "Credential Access"
+    },
+    "SSH-BruteForce": {
+      "technique_id": "T1110.001",
+      "technique_name": "Password Guessing (SSH/Patator)",
+      "tactic": "Credential Access"
+    },
+    "DoS": {
+      "technique_id": "T1499",
+      "technique_name": "Endpoint Denial of Service",
+      "tactic": "Impact"
+    },
+    "DDoS": {
+      "technique_id": "T1498",
+      "technique_name": "Network Denial of Service",
+      "tactic": "Impact"
+    },
+    "Heartbleed": {
+      "technique_id": "T1555",
+      "technique_name": "Credentials from Password Stores",
+      "tactic": "Credential Access"
+    },
+    "WebAttack": {
+      "technique_id": "T1190",
+      "technique_name": "Exploit Public-Facing Application",
+      "tactic": "Initial Access"
+    },
+    "Infiltration": {
+      "technique_id": "T1566.001",
+      "technique_name": "Spearphishing Attachment (PDF)",
+      "tactic": "Initial Access"
+    },
+    "Bot": {
+      "technique_id": "T1071.001",
+      "technique_name": "Web Protocols (Ares C2 port 8080)",
+      "tactic": "Command and Control"
+    }
+  },
+  "attack_nfcrm_map": {
+    "BruteForce": {
+      "clause": "6.7",
+      "description": "Currently applied controls (account lockout, auth hardening)"
+    },
+    "FTP-BruteForce": {
+      "clause": "6.7",
+      "description": "Currently applied controls (FTP lockout \u2014 CVE-2011-2523)"
+    },
+    "SSH-BruteForce": {
+      "clause": "6.7",
+      "description": "Currently applied controls (SSH key auth \u2014 CVE-2008-0166)"
+    },
+    "DoS": {
+      "clause": "6.5",
+      "description": "Threat inventory (HTTP DoS against Apache 2.4.18)"
+    },
+    "DDoS": {
+      "clause": "6.5",
+      "description": "Threat inventory (LOIC/HOIC volumetric DDoS)"
+    },
+    "Heartbleed": {
+      "clause": "6.4",
+      "description": "Vulnerability inventory (OpenSSL 1.0.1f CVE-2014-0160)"
+    },
+    "WebAttack": {
+      "clause": "6.4",
+      "description": "Vulnerability inventory (PHP 5.2.4 SQLi/XSS CVE-2012-1823)"
+    },
+    "Infiltration": {
+      "clause": "6.6",
+      "description": "Risk scenario development (Adobe Reader CVE-2010-0188 to lateral portscan)"
+    },
+    "Bot": {
+      "clause": "6.5",
+      "description": "Threat inventory (Ares botnet C2 on port 8080)"
+    }
+  }
+}

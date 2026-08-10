@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "description": "XGBoost reproducibility verification + held-out baseline metrics for the CIC-IDS2018 unified rerun."
+  },
+  "reproducibility": {
+    "n_cases": 180,
+    "xgboost_version": "3.2.0",
+    "sklearn_version": "1.6.1",
+    "match_run1_vs_run2": 180,
+    "match_run1_vs_run2_rate": 1.0,
+    "match_run1_vs_frozen_historical": 180,
+    "match_run1_vs_frozen_historical_rate": 1.0,
+    "match_run2_vs_frozen_historical": 180,
+    "match_run2_vs_frozen_historical_rate": 1.0,
+    "conclusion": "Fully reproducible: two independent retrains with the identical seed=42/data/feature pipeline produce IDENTICAL predictions to each other and to the frozen results/unified_ablation/test_set.json xgb_predicted_class values (100% match, n=180). Unlike NSL-KDD's XGBClassifier instability, CIC-IDS2018's larger training pool (hundreds of thousands of rows vs NSL-KDD's ~thousands) combined with a deterministic sklearn train_test_split(random_state=42) feeding a random_state=42 XGBClassifier yields byte-for-byte identical trees on this machine/xgboost version. No fix was required."
+  },
+  "held_out_test_sample_metrics": {
+    "n": 120,
+    "exact": 95.0,
+    "within1": 96.66666666666667,
+    "under": 3.3333333333333335,
+    "over": 1.6666666666666667,
+    "severe_recall": 96.61016949152543,
+    "sev_tot": 59,
+    "worst_miss": 4
+  },
+  "calibration_sample_metrics_reference_only": {
+    "n": 60,
+    "exact": 88.33333333333333,
+    "within1": 91.66666666666666,
+    "under": 8.333333333333332,
+    "over": 3.3333333333333335,
+    "severe_recall": 94.73684210526315,
+    "sev_tot": 38,
+    "worst_miss": 4
+  }
+}

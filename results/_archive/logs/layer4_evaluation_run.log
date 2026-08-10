@@ -1,0 +1,81 @@
+[L4-eval] Loading dataset: data/processed/cleaned_dataset.csv
+[L4-eval] Dataset shape: (14146, 80), classes: {'Infiltration': 4166, 'Benign': 4166, 'DDoS': 2505, 'DoS': 2442, 'BruteForce': 783, 'WebAttack': 84}
+  [ok] Sampled 10/2505 flows for DDoS
+  [ok] Sampled 10/2442 flows for DoS
+  [ok] Sampled 10/783 flows for BruteForce
+  [ok] Sampled 10/84 flows for WebAttack
+  [ok] Sampled 10/4166 flows for Infiltration
+[L4-eval] Total flows to evaluate: 50
+  [  1/50] DDoS            | status=OK    | CVE=Y | NFCRM=Y | words= 69 | ETA 703s
+  [  2/50] DDoS            | status=OK    | CVE=Y | NFCRM=Y | words= 62 | ETA 690s
+  [  3/50] DDoS            | status=OK    | CVE=Y | NFCRM=Y | words= 63 | ETA 756s
+  [  4/50] DDoS            | status=OK    | CVE=Y | NFCRM=Y | words= 68 | ETA 731s
+  [  5/50] DDoS            | status=OK    | CVE=Y | NFCRM=Y | words= 65 | ETA 753s
+  [  6/50] DDoS            | status=OK    | CVE=Y | NFCRM=Y | words= 62 | ETA 718s
+  [  7/50] DDoS            | status=OK    | CVE=Y | NFCRM=Y | words= 80 | ETA 717s
+  [  8/50] DDoS            | status=OK    | CVE=Y | NFCRM=Y | words= 77 | ETA 688s
+  [  9/50] DDoS            | status=OK    | CVE=Y | NFCRM=Y | words= 76 | ETA 659s
+  [ 10/50] DDoS            | status=OK    | CVE=Y | NFCRM=Y | words= 80 | ETA 635s
+  [ 11/50] DoS             | status=OK    | CVE=Y | NFCRM=Y | words= 65 | ETA 602s
+  [ 12/50] DoS             | status=OK    | CVE=Y | NFCRM=Y | words= 75 | ETA 607s
+  [ 13/50] DoS             | status=OK    | CVE=Y | NFCRM=Y | words= 87 | ETA 593s
+  [ 14/50] DoS             | status=OK    | CVE=Y | NFCRM=Y | words= 87 | ETA 565s
+  [ 15/50] DoS             | status=OK    | CVE=Y | NFCRM=Y | words= 61 | ETA 542s
+  [ 16/50] DoS             | status=OK    | CVE=Y | NFCRM=Y | words= 85 | ETA 531s
+  [ 17/50] DoS             | status=OK    | CVE=Y | NFCRM=Y | words= 77 | ETA 531s
+  [ 18/50] DoS             | status=OK    | CVE=Y | NFCRM=Y | words= 57 | ETA 520s
+  [ 19/50] DoS             | status=OK    | CVE=Y | NFCRM=Y | words= 70 | ETA 496s
+  [ 20/50] DoS             | status=OK    | CVE=Y | NFCRM=Y | words= 66 | ETA 480s
+  [ 21/50] BruteForce      | status=OK    | CVE=Y | NFCRM=Y | words= 59 | ETA 463s
+  [ 22/50] BruteForce      | status=OK    | CVE=Y | NFCRM=Y | words= 62 | ETA 452s
+  [ 23/50] BruteForce      | status=OK    | CVE=Y | NFCRM=Y | words= 59 | ETA 449s
+  [ 24/50] BruteForce      | status=OK    | CVE=Y | NFCRM=Y | words= 74 | ETA 431s
+  [ 25/50] BruteForce      | status=OK    | CVE=Y | NFCRM=Y | words= 63 | ETA 417s
+  [ 26/50] BruteForce      | status=OK    | CVE=Y | NFCRM=Y | words= 71 | ETA 393s
+  [ 27/50] BruteForce      | status=OK    | CVE=Y | NFCRM=Y | words= 69 | ETA 379s
+  [ 28/50] BruteForce      | status=OK    | CVE=Y | NFCRM=Y | words= 68 | ETA 369s
+  [ 29/50] BruteForce      | status=OK    | CVE=Y | NFCRM=Y | words= 67 | ETA 355s
+  [ 30/50] BruteForce      | status=OK    | CVE=Y | NFCRM=Y | words= 60 | ETA 339s
+  [ 31/50] WebAttack       | status=OK    | CVE=Y | NFCRM=Y | words= 72 | ETA 328s
+  [ 32/50] WebAttack       | status=OK    | CVE=Y | NFCRM=Y | words= 82 | ETA 309s
+  [ 33/50] WebAttack       | status=OK    | CVE=Y | NFCRM=Y | words=918 | ETA 294s
+  [ 34/50] WebAttack       | status=OK    | CVE=Y | NFCRM=Y | words= 70 | ETA 276s
+  [ 35/50] WebAttack       | status=OK    | CVE=Y | NFCRM=Y | words= 84 | ETA 257s
+  [ 36/50] WebAttack       | status=OK    | CVE=Y | NFCRM=Y | words=101 | ETA 240s
+  [ 37/50] WebAttack       | status=OK    | CVE=Y | NFCRM=Y | words= 66 | ETA 222s
+  [ 38/50] WebAttack       | status=OK    | CVE=Y | NFCRM=Y | words= 73 | ETA 206s
+  [ 39/50] WebAttack       | status=OK    | CVE=Y | NFCRM=Y | words= 74 | ETA 188s
+  [ 40/50] WebAttack       | status=OK    | CVE=Y | NFCRM=Y | words= 65 | ETA 170s
+  [ 41/50] Infiltration    | status=OK    | CVE=Y | NFCRM=Y | words= 81 | ETA 155s
+  [ 42/50] Infiltration    | status=OK    | CVE=Y | NFCRM=Y | words= 60 | ETA 139s
+  [ 43/50] Infiltration    | status=OK    | CVE=Y | NFCRM=Y | words= 65 | ETA 122s
+  [ 44/50] Infiltration    | status=OK    | CVE=Y | NFCRM=Y | words= 81 | ETA 104s
+  [ 45/50] Infiltration    | status=OK    | CVE=Y | NFCRM=Y | words= 71 | ETA 87s
+  [ 46/50] Infiltration    | status=OK    | CVE=Y | NFCRM=Y | words= 66 | ETA 70s
+  [ 47/50] Infiltration    | status=OK    | CVE=Y | NFCRM=Y | words= 66 | ETA 53s
+  [ 48/50] Infiltration    | status=OK    | CVE=Y | NFCRM=Y | words= 65 | ETA 35s
+  [ 49/50] Infiltration    | status=OK    | CVE=Y | NFCRM=Y | words=100 | ETA 18s
+  [ 50/50] Infiltration    | status=OK    | CVE=Y | NFCRM=Y | words= 68 | ETA 0s
+
+[L4-eval] Saved -> D:\01_Projects\INTERSYMBOLIC-GRC\results\layer4_evaluation.json
+
+============================================================
+LAYER 4 EVALUATION SUMMARY
+============================================================
+  N total          : 50
+  Parse success    : 50/50 = 100.0%  95% CI [93%, 100%]
+  CVE mention      : 50/50 = 100.0%  95% CI [93%, 100%]
+  NFCRM mention    : 50/50 = 100.0%  95% CI [93%, 100%]
+  Avg word count   : 70.4 ± 9.2
+
+  Class              N   Parse     CVE   NFCRM   Words
+  --------------- ---- ------- ------- ------- -------
+  DDoS              10    100%    100%    100%    72.3
+  DoS               10    100%    100%    100%    67.2
+  BruteForce        10    100%    100%    100%    66.1
+  WebAttack         10    100%    100%    100%    72.1
+  Infiltration      10    100%    100%    100%    74.1
+============================================================
+
+  Done in 838s (16.8s/call)
+

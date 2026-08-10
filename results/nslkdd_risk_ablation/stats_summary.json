@@ -1,0 +1,229 @@
+{
+  "n_runs": 3,
+  "n_per_run": 50,
+  "arms": {
+    "Tri-LLM+SHACL": {
+      "kind": "stochastic",
+      "pooled_k": 100,
+      "pooled_n": 150,
+      "pooled_accuracy": 0.6667,
+      "wilson_ci": [
+        0.5879,
+        0.7371
+      ],
+      "per_run_accuracy": [
+        0.66,
+        0.7,
+        0.64
+      ]
+    },
+    "LLM": {
+      "kind": "stochastic",
+      "pooled_k": 88,
+      "pooled_n": 150,
+      "pooled_accuracy": 0.5867,
+      "wilson_ci": [
+        0.5067,
+        0.6623
+      ],
+      "per_run_accuracy": [
+        0.58,
+        0.58,
+        0.6
+      ]
+    },
+    "SHACL": {
+      "kind": "deterministic",
+      "pooled_k": 72,
+      "pooled_n": 150,
+      "pooled_accuracy": 0.48,
+      "wilson_ci": [
+        0.4015,
+        0.5594
+      ],
+      "per_run_accuracy": [
+        0.48,
+        0.48,
+        0.48
+      ]
+    },
+    "Tri-ML+SHACL": {
+      "kind": "deterministic",
+      "pooled_k": 69,
+      "pooled_n": 150,
+      "pooled_accuracy": 0.46,
+      "wilson_ci": [
+        0.3822,
+        0.5398
+      ],
+      "per_run_accuracy": [
+        0.46,
+        0.46,
+        0.46
+      ]
+    },
+    "ML": {
+      "kind": "deterministic",
+      "pooled_k": 63,
+      "pooled_n": 150,
+      "pooled_accuracy": 0.42,
+      "wilson_ci": [
+        0.344,
+        0.5
+      ],
+      "per_run_accuracy": [
+        0.42,
+        0.42,
+        0.42
+      ]
+    }
+  },
+  "run_level_separation_tri_vs_llm": {
+    "tri_min": 0.64,
+    "llm_max": 0.6,
+    "fully_separated": true
+  },
+  "mcnemar_tri_vs": {
+    "LLM": {
+      "b_tri_right_x_wrong": 18,
+      "c_tri_wrong_x_right": 6,
+      "p_pooled_one_sided_exact": 0.011327922344207764,
+      "p_pooled_sig": "*",
+      "per_run": [
+        {
+          "b": 6,
+          "c": 2,
+          "p": 0.14453125
+        },
+        {
+          "b": 6,
+          "c": 0,
+          "p": 0.015625
+        },
+        {
+          "b": 6,
+          "c": 4,
+          "p": 0.376953125
+        }
+      ],
+      "wins_of_3": 3,
+      "p_sign_test": 0.125,
+      "cohens_h": 0.166
+    },
+    "SHACL": {
+      "b_tri_right_x_wrong": 38,
+      "c_tri_wrong_x_right": 10,
+      "p_pooled_one_sided_exact": 3.084820388821186e-05,
+      "p_pooled_sig": "***",
+      "per_run": [
+        {
+          "b": 12,
+          "c": 3,
+          "p": 0.017578125
+        },
+        {
+          "b": 14,
+          "c": 3,
+          "p": 0.0063629150390625
+        },
+        {
+          "b": 12,
+          "c": 4,
+          "p": 0.0384063720703125
+        }
+      ],
+      "wins_of_3": 3,
+      "p_sign_test": 0.125,
+      "cohens_h": 0.38
+    },
+    "Tri-ML+SHACL": {
+      "b_tri_right_x_wrong": 46,
+      "c_tri_wrong_x_right": 15,
+      "p_pooled_one_sided_exact": 4.418778163779378e-05,
+      "p_pooled_sig": "***",
+      "per_run": [
+        {
+          "b": 15,
+          "c": 5,
+          "p": 0.020694732666015625
+        },
+        {
+          "b": 16,
+          "c": 4,
+          "p": 0.005908966064453125
+        },
+        {
+          "b": 15,
+          "c": 6,
+          "p": 0.03917694091796875
+        }
+      ],
+      "wins_of_3": 3,
+      "p_sign_test": 0.125,
+      "cohens_h": 0.42
+    },
+    "ML": {
+      "b_tri_right_x_wrong": 50,
+      "c_tri_wrong_x_right": 13,
+      "p_pooled_one_sided_exact": 1.5079760423211688e-06,
+      "p_pooled_sig": "***",
+      "per_run": [
+        {
+          "b": 16,
+          "c": 4,
+          "p": 0.005908966064453125
+        },
+        {
+          "b": 18,
+          "c": 4,
+          "p": 0.002171754837036133
+        },
+        {
+          "b": 16,
+          "c": 5,
+          "p": 0.013301849365234375
+        }
+      ],
+      "wins_of_3": 3,
+      "p_sign_test": 0.125,
+      "cohens_h": 0.501
+    }
+  },
+  "per_class": {
+    "Tri-LLM+SHACL": {
+      "DoS": 0.9,
+      "Normal": 0.6,
+      "Probe": 0.0,
+      "R2L": 0.8,
+      "U2R": 1.0
+    },
+    "LLM": {
+      "DoS": 0.9,
+      "Normal": 0.0,
+      "Probe": 0.0,
+      "R2L": 1.0,
+      "U2R": 1.0
+    },
+    "SHACL": {
+      "DoS": 0.5,
+      "Normal": 0.9,
+      "Probe": 0.0,
+      "R2L": 0.7,
+      "U2R": 0.3
+    },
+    "Tri-ML+SHACL": {
+      "DoS": 0.8,
+      "Normal": 1.0,
+      "Probe": 0.0,
+      "R2L": 0.2,
+      "U2R": 0.3
+    },
+    "ML": {
+      "DoS": 0.8,
+      "Normal": 1.0,
+      "Probe": 0.0,
+      "R2L": 0.1,
+      "U2R": 0.2
+    }
+  }
+}

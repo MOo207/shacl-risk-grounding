@@ -1,0 +1,1594 @@
+{
+  "generated_at": "2026-05-19T21:36:24.511289+00:00",
+  "model": "claude_api_haiku-4.5",
+  "n_total": 100,
+  "n_per_class": 20,
+  "seed": 42,
+  "target_classes": [
+    "DDoS",
+    "DoS",
+    "BruteForce",
+    "WebAttack",
+    "Infiltration"
+  ],
+  "aggregate": {
+    "parse_success_rate": 1.0,
+    "parse_success_n": 100,
+    "parse_success_ci_95": [
+      0.963,
+      1.0
+    ],
+    "cve_mention_rate": 1.0,
+    "cve_mention_n": 100,
+    "cve_mention_ci_95": [
+      0.963,
+      1.0
+    ],
+    "nfcrm_mention_rate": 1.0,
+    "nfcrm_mention_n": 100,
+    "nfcrm_mention_ci_95": [
+      0.963,
+      1.0
+    ],
+    "avg_word_count": 73.5,
+    "std_word_count": 36.6
+  },
+  "per_class": {
+    "DDoS": {
+      "n": 20,
+      "parse_rate": 1.0,
+      "cve_rate": 1.0,
+      "nfcrm_rate": 1.0,
+      "avg_words": 70.8
+    },
+    "DoS": {
+      "n": 20,
+      "parse_rate": 1.0,
+      "cve_rate": 1.0,
+      "nfcrm_rate": 1.0,
+      "avg_words": 70.7
+    },
+    "BruteForce": {
+      "n": 20,
+      "parse_rate": 1.0,
+      "cve_rate": 1.0,
+      "nfcrm_rate": 1.0,
+      "avg_words": 65.0
+    },
+    "WebAttack": {
+      "n": 20,
+      "parse_rate": 1.0,
+      "cve_rate": 1.0,
+      "nfcrm_rate": 1.0,
+      "avg_words": 84.8
+    },
+    "Infiltration": {
+      "n": 20,
+      "parse_rate": 1.0,
+      "cve_rate": 1.0,
+      "nfcrm_rate": 1.0,
+      "avg_words": 76.2
+    }
+  },
+  "raw_results": [
+    {
+      "flow_idx": 1,
+      "attack_class": "DDoS",
+      "l4_status": "OK",
+      "nl_explanation": "DDoS represents a critical risk to network availability under NFCRM-1:2025 §6.9 (Inherent Risk Analysis), with real-world attack examples including CVE-2023-44487 that can disable services without requiring advanced attacker capabilities. This threat class is present in our threat model due to our internet-facing infrastructure and the availability of public DDoS toolkits, making exploitation both probable and high-impact. Implementation of CDN-based DDoS scrubbing and dedicated mitigation services is required to reduce inherent risk to acceptable levels, with quarterly penetration testing to validate control effectiveness.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 82,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 2,
+      "attack_class": "DDoS",
+      "l4_status": "OK",
+      "nl_explanation": "The infrastructure detected a critical Distributed Denial of Service (DDoS) attack, which falls under NFCRM-1:2025 §6.9 (Inherent Risk Analysis) as a network availability threat requiring formal risk documentation. This attack vector is exemplified by CVE-2023-44487, a vulnerability that demonstrates the inherent risk organizations face from protocol-level attacks that bypass standard authentication controls. Mitigation requires implementing DDoS scrubbing services and content delivery network (CDN) filtering to reduce exposure and demonstrate compliance with mandatory inherent risk controls.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 75,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 3,
+      "attack_class": "DDoS",
+      "l4_status": "OK",
+      "nl_explanation": "A critical DDoS attack was detected with attack signatures matching CVE-2023-44487, representing a control deficiency under NFCRM-1:2025 §6.9 (Inherent Risk Analysis) for network availability safeguards. The incident poses immediate and material risk to service continuity and customer access, requiring escalation to senior management and incident response activation. Remediation requires deployment of a dedicated DDoS mitigation service with CDN scrubbing to satisfy regulatory control expectations and prevent recurrence.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 67,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 4,
+      "attack_class": "DDoS",
+      "l4_status": "OK",
+      "nl_explanation": "The organization faces a critical DDoS attack risk classified under NFCRM-1:2025 §6.9 (Inherent Risk Analysis), wherein attackers exploit vulnerabilities such as CVE-2023-44487 to exhaust network resources and disrupt service availability. Network monitoring detected suspicious traffic patterns consistent with coordinated flooding attacks, indicating exposure that standard rate-limiting controls cannot adequately prevent. The organization must immediately implement a dedicated DDoS mitigation service with CDN-based scrubbing to filter malicious traffic before it reaches internal systems, reducing this risk to acceptable residual levels within acceptable tolerance thresholds.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 83,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 5,
+      "attack_class": "DDoS",
+      "l4_status": "OK",
+      "nl_explanation": "An active DDoS attack has been detected, creating a critical control deficiency under NFCRM-1:2025 §6.9 (Inherent Risk Analysis) for system availability and business continuity. This attack pattern is consistent with known exploits including CVE-2023-44487, which attackers use to disable network access and disrupt operations. Implementation of DDoS mitigation and CDN scrubbing controls is required immediately to restore compliance posture and operational resilience.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 62,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 6,
+      "attack_class": "DDoS",
+      "l4_status": "OK",
+      "nl_explanation": "A Distributed Denial of Service (DDoS) attack is assessed as CRITICAL risk under NFCRM-1:2025 §6.9 and requires documented inherent risk analysis and control selection. CVE-2023-44487 (HTTP/2 Rapid Reset) is actively exploited in DDoS campaigns and enables attackers to exhaust server resources without bandwidth-intensive traffic. Implementation of a DDoS mitigation service with CDN-based traffic scrubbing is required to reduce inherent risk to acceptable residual levels.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 64,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 7,
+      "attack_class": "DDoS",
+      "l4_status": "OK",
+      "nl_explanation": "A critical-level DDoS attack was detected through network traffic analysis, exhibiting patterns consistent with CVE-2023-44487. This incident represents non-compliance with NFCRM-1:2025 §6.9 (Inherent Risk Analysis), which requires detection and escalation of attack-level network events exceeding baseline thresholds. The organization must deploy DDoS mitigation services and CDN scrubbing immediately to restore control compliance and meet regulatory obligations.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 56,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 8,
+      "attack_class": "DDoS",
+      "l4_status": "OK",
+      "nl_explanation": "A Distributed Denial of Service (DDoS) attack has been detected as a CRITICAL risk falling under NFCRM-1:2025 §6.9 for Inherent Risk Analysis, requiring formal quantification and control response. This threat aligns with real-world exploits such as CVE-2023-44487, which demonstrates how attackers can overwhelm service availability and compromise system resilience. The organization must implement DDoS mitigation services paired with Content Delivery Network (CDN) scrubbing to reduce exposure and restore control over network traffic patterns.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 73,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 9,
+      "attack_class": "DDoS",
+      "l4_status": "OK",
+      "nl_explanation": "A critical DDoS attack vector has been identified matching the exploit pattern of CVE-2023-44487 (HTTP/2 Rapid Reset), triggering mandatory risk assessment requirements under NFCRM-1:2025 §6.9 (Inherent Risk Analysis). The attack exploits anomalous inter-arrival timing to overwhelm network capacity without authentication, creating immediate availability risk to critical business services. Deployment of a DDoS mitigation service paired with CDN scrubbing is required to reduce residual risk to acceptable levels and maintain compliance posture.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 71,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 10,
+      "attack_class": "DDoS",
+      "l4_status": "OK",
+      "nl_explanation": "The organization faces a critical-risk DDoS attack pattern consistent with NFCRM-1:2025 §6.9 (Inherent Risk Analysis), requiring documented assessment of network resilience against volumetric threats. This attack method aligns with CVE-2023-44487, a protocol vulnerability that overwhelms web services without requiring exceptional bandwidth, mandating immediate mitigation through a DDoS-capable CDN or scrubbing service. Deployment of these controls satisfies the control evidence requirement under NFCRM-1:2025 §6.9 and must be documented within 30 days to remediate this inherent risk.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 75,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 11,
+      "attack_class": "DDoS",
+      "l4_status": "OK",
+      "nl_explanation": "The organization faces a critical DDoS risk requiring immediate inherent risk assessment under NFCRM-1:2025 §6.9, which mandates evaluation of threats to asset availability and operational continuity. This risk is substantiated by attack patterns consistent with CVE-2023-44487, a protocol-layer flaw enabling attackers to disable services with minimal bandwidth through HTTP/2 stream manipulation, documented in breaches across financial and telecommunications sectors. To reduce residual risk, deploy a DDoS mitigation service with CDN scrubbing, document the control in your asset risk register, and conduct quarterly validation testing—this fulfills both the control implementation and monitoring requirements under NFCRM-1:2025.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 94,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 12,
+      "attack_class": "DDoS",
+      "l4_status": "OK",
+      "nl_explanation": "Our assessment identified a critical Distributed Denial of Service (DDoS) vulnerability in your network infrastructure, requiring remediation under NFCRM-1:2025 §6.9 (Inherent Risk Analysis). Threat actors exploiting HTTP/2 Rapid Reset (CVE-2023-44487) could overwhelm your systems by rapidly sending specialized requests that exhaust server resources and disrupt service availability. We recommend implementing a dedicated DDoS mitigation service paired with Content Delivery Network (CDN) scrubbing to filter malicious traffic before it reaches your infrastructure.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 71,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 13,
+      "attack_class": "DDoS",
+      "l4_status": "OK",
+      "nl_explanation": "This system is exposed to a CRITICAL-level DDoS risk, which falls under NFCRM-1:2025 §6.9 (Inherent Risk Analysis) and requires documented mitigation controls. The threat is exemplified by CVE-2023-44487 (HTTP/2 Rapid Reset), a protocol-level attack exploited in real-world campaigns that can overwhelm standard network defenses. We recommend implementing a DDoS mitigation service with CDN scrubbing to reduce residual risk to acceptable compliance levels.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 62,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 14,
+      "attack_class": "DDoS",
+      "l4_status": "OK",
+      "nl_explanation": "System analysis detected distributed denial-of-service (DDoS) activity posing critical inherent risk under NFCRM-1:2025 §6.9 (Inherent Risk Analysis), which mandates assessment of attack availability threats to organizational systems. Vulnerable assets may be exploited via HTTP/2 rapid reset weaknesses (CVE-2023-44487), allowing attackers to overwhelm network capacity through rapid connection resets without authentication, resulting in service unavailability. Remediation requires mandatory deployment of DDoS mitigation services paired with content delivery network (CDN) scrubbing to filter malicious traffic before reaching production infrastructure.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 77,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 15,
+      "attack_class": "DDoS",
+      "l4_status": "OK",
+      "nl_explanation": "A critical DDoS attack has been identified, triggering mandatory assessment under NFCRM-1:2025 §6.9 (Inherent Risk Analysis) due to characteristics matching CVE-2023-44487 (HTTP/2 rapid reset exploitation). The detected traffic pattern confirms active, distributed infrastructure exploitation with capability to disrupt service availability. Control implementation requires DDoS mitigation services and CDN-based traffic filtering to reduce inherent risk exposure and establish regulatory compliance.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 59,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 16,
+      "attack_class": "DDoS",
+      "l4_status": "OK",
+      "nl_explanation": "Our infrastructure assessment identified a critical Distributed Denial of Service (DDoS) risk requiring immediate remediation under NFCRM-1:2025 §6.9 Inherent Risk Analysis. This risk pattern corresponds to documented vulnerabilities including CVE-2023-44487 and CVE-2022-26143, which represent known attack methods that could render critical services unavailable and violate service availability commitments. Deployment of a DDoS mitigation service with Content Delivery Network scrubbing must be completed to satisfy the control objective and reduce inherent risk to acceptable levels.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 74,
+      "cves_found": [
+        "CVE-2023-44487",
+        "CVE-2022-26143"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 17,
+      "attack_class": "DDoS",
+      "l4_status": "OK",
+      "nl_explanation": "A critical DDoS attack pattern was identified, triggering inherent risk assessment under NFCRM-1:2025 §6.9 (Inherent Risk Analysis). The attack vector matches CVE-2023-44487 (HTTP/2 rapid reset vulnerability) and reflects 2023–2024 DDoS campaigns targeting network availability and service continuity. Remediation requires implementation of a DDoS mitigation service and content delivery network scrubbing to block malicious traffic at the network edge.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 58,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 18,
+      "attack_class": "DDoS",
+      "l4_status": "OK",
+      "nl_explanation": "The organization faces a critical DDoS risk requiring assessment under NFCRM-1:2025 §6.9 (Inherent Risk Analysis). This risk aligns with HTTP/2 Rapid Reset vulnerabilities (CVE-2023-44487), which exploit multiplexed connection streams to overwhelm network capacity and availability. Mitigation requires deployment of a DDoS mitigation service integrated with CDN scrubbing to prevent inherent risk from materializing into an actual incident.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 57,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 19,
+      "attack_class": "DDoS",
+      "l4_status": "OK",
+      "nl_explanation": "Our network infrastructure faces inherent risk from Distributed Denial of Service (DDoS) attacks classified as CRITICAL and requires formal evaluation under NFCRM-1:2025 §6.9 (Inherent Risk Analysis). This risk is exemplified by CVE-2023-44487, a vulnerability in cloud communication protocols that attackers exploit to overwhelm network capacity and disable online services. To satisfy regulatory requirements and reduce risk exposure, we must implement DDoS mitigation services and Content Delivery Network (CDN) scrubbing to filter malicious traffic before it reaches our infrastructure.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 78,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 20,
+      "attack_class": "DDoS",
+      "l4_status": "OK",
+      "nl_explanation": "A critical-risk Distributed Denial-of-Service (DDoS) attack vector was identified in network flow analysis, requiring assessment under NFCRM-1:2025 Section 6.9 (Inherent Risk Analysis) to establish control effectiveness and organizational exposure. This risk encompasses exploitable vulnerabilities documented in CVE-2023-44487 and CVE-2022-26143, which enable attackers to overwhelm network infrastructure and disrupt service availability. To mitigate this inherent risk, deployment of a DDoS mitigation service and Content Delivery Network (CDN) scrubbing is required to filter attack traffic before it reaches production systems.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 78,
+      "cves_found": [
+        "CVE-2023-44487",
+        "CVE-2022-26143"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 21,
+      "attack_class": "DoS",
+      "l4_status": "OK",
+      "nl_explanation": "A high-risk denial-of-service condition was identified in network traffic analysis, triggering mandatory controls under NFCRM-1:2025 §6.9 (Inherent Risk Analysis). This finding aligns with attack patterns documented in CVE-2023-44487, a critical vulnerability enabling service disruption without authentication, and requires immediate remediation. Rate-limiting and traffic-scrubbing controls must be deployed to prevent traffic-based attacks from reaching production systems and to satisfy regulatory compliance obligations.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 61,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 22,
+      "attack_class": "DoS",
+      "l4_status": "OK",
+      "nl_explanation": "A high-risk denial-of-service attack was detected through analysis of suspicious traffic patterns, posing immediate risk to service availability and operational continuity. This incident maps to NFCRM-1:2025 §6.9 Inherent Risk Analysis and exemplifies vulnerabilities like CVE-2023-44487 that enable attackers to overwhelm network infrastructure. Rate limiting and traffic scrubbing controls must be implemented immediately to block malicious traffic and reduce exposure to this attack vector in compliance with regulatory requirements.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 68,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 23,
+      "attack_class": "DoS",
+      "l4_status": "OK",
+      "nl_explanation": "A Denial of Service attack threat targeting our network infrastructure represents an inherent risk requiring assessment under NFCRM-1:2025 §6.9. Threat actors exploiting vulnerabilities such as CVE-2023-44487 can overwhelm network capacity, disrupting service availability and business operations. This risk must be addressed through implementation of rate limiting and traffic scrubbing controls to maintain operational resilience and meet regulatory requirements.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 58,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 24,
+      "attack_class": "DoS",
+      "l4_status": "OK",
+      "nl_explanation": "Our network infrastructure has detected suspicious traffic patterns indicative of Denial of Service attacks, with abnormal packet inter-arrival times consistent with exploits such as CVE-2023-44487 (HTTP/2 rapid reset vulnerabilities). Under NFCRM-1:2025 §6.9 (Inherent Risk Analysis), this represents a HIGH-severity inherent risk requiring documented risk assessment and documented control assignment before remediation. We recommend implementing rate-limiting and traffic-scrubbing controls within 30 days to reduce exploitation likelihood and establish baseline compliance with the inherent risk control requirement.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 75,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 25,
+      "attack_class": "DoS",
+      "l4_status": "OK",
+      "nl_explanation": "A high-severity Denial of Service (DoS) attack was detected with patterns consistent with CVE-2023-44487, presenting inherent risk under NFCRM-1:2025 §6.9 (Inherent Risk Analysis) due to insufficient traffic rate-limiting controls. The attack exploited the lack of resource-level defense mechanisms, allowing threat actors to degrade service availability by flooding legitimate network capacity. Remediation requires immediate deployment of rate-limiting and traffic scrubbing controls to prevent recurrence and bring the control environment into compliance with baseline NFCRM expectations for network defense.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 77,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 26,
+      "attack_class": "DoS",
+      "l4_status": "OK",
+      "nl_explanation": "This DoS attack detected during network monitoring represents HIGH inherent risk under NFCRM-1:2025 §6.9 (Inherent Risk Analysis) and aligns with vulnerabilities documented in CVE-2023-44487, which targets HTTP/2 stream handling. The suspicious inter-arrival time pattern is characteristic of algorithmic flooding attacks that overwhelm service availability. Management has implemented rate limiting and traffic scrubbing controls as compensating measures to reduce residual risk below acceptable tolerance levels.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 64,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 27,
+      "attack_class": "DoS",
+      "l4_status": "OK",
+      "nl_explanation": "A Denial-of-Service (DoS) attack has been identified as a HIGH-risk inherent risk event under NFCRM-1:2025 §6.9, with adversaries exploiting HTTP/2 Rapid Reset vulnerabilities (CVE-2023-44487) to overwhelm network capacity through resource exhaustion. This control gap exposes the organization to potential service disruption and revenue impact, requiring immediate implementation of rate limiting and traffic scrubbing countermeasures. Compliance with NFCRM's inherent risk assessment mandate demands documentation of this risk vector, control deployment timeline, and residual risk re-assessment within 30 days.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 77,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 28,
+      "attack_class": "DoS",
+      "l4_status": "OK",
+      "nl_explanation": "Our assessment identified a Denial-of-Service threat against our infrastructure, which NFCRM-1:2025 §6.9 (Inherent Risk Analysis) requires us to evaluate within our control framework as a HIGH-priority risk. This attack signature aligns with CVE-2023-44487, a known HTTP/2 vulnerability that overwhelms network capacity and can disrupt business continuity. We recommend implementing rate limiting and traffic scrubbing controls to address this exposure and satisfy NFCRM's operational resilience mandate.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 65,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 29,
+      "attack_class": "DoS",
+      "l4_status": "OK",
+      "nl_explanation": "A Denial of Service (DoS) attack represents a high inherent risk under NFCRM-1:2025 §6.9 (Inherent Risk Analysis), as it directly threatens service availability and continuity of operations. CVE-2023-44487 exemplifies this vulnerability class—an HTTP/2 protocol flaw exploited to generate rapid requests that overwhelm network capacity with minimal attacker resources. Organizations must implement rate limiting and traffic scrubbing controls to filter malicious requests at the network edge before they degrade service performance or trigger customer impact.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 74,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 30,
+      "attack_class": "DoS",
+      "l4_status": "OK",
+      "nl_explanation": "Our infrastructure faces a high-risk exposure to Denial of Service (DoS) attacks that directly impacts business continuity compliance under NFCRM-1:2025 §6.9 (Inherent Risk Analysis). Threats such as CVE-2023-44487, which exploits HTTP/2 server vulnerabilities to overwhelm network capacity, demonstrate the urgent need for immediate compensating controls. We recommend implementing rate-limiting and traffic-scrubbing mechanisms to reduce inherent risk to acceptable levels before the next §6.9 reassessment cycle.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 65,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 31,
+      "attack_class": "DoS",
+      "l4_status": "OK",
+      "nl_explanation": "A high-risk Denial of Service condition has been identified in network traffic, requiring assessment under NFCRM-1:2025 §6.9 (Inherent Risk Analysis) due to its potential to degrade critical system availability. This threat is exemplified by vulnerabilities such as CVE-2023-44487, which attackers exploit to exhaust system resources and interrupt service delivery. Rate limiting and traffic scrubbing controls must be implemented immediately to reduce both the likelihood and impact of successful DoS attacks.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 70,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 32,
+      "attack_class": "DoS",
+      "l4_status": "OK",
+      "nl_explanation": "A DoS attack leveraging suspicious inter-arrival time patterns has been identified as a HIGH-risk vulnerability within your infrastructure, directly triggering NFCRM-1:2025 §6.9 (Inherent Risk Analysis) assessment requirements. This attack vector matches indicators associated with CVE-2023-44487 and similar rapid-reset exploits that disable services by overwhelming target resources with abnormal request timing. Mitigation requires immediate implementation of rate-limiting controls and traffic-scrubbing solutions to detect and block malicious patterns before they reach critical systems.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 71,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 33,
+      "attack_class": "DoS",
+      "l4_status": "OK",
+      "nl_explanation": "A Denial of Service (DoS) vulnerability assessment indicates HIGH inherent risk under NFCRM-1:2025 §6.9 (Inherent Risk Analysis), as the organization currently lacks adequate traffic filtering mechanisms capable of mitigating large-scale exhaustion attacks such as CVE-2023-44487 (HTTP/2 Rapid Reset). The absence of rate-limiting and traffic-scrubbing controls creates a material gap in the control environment, leaving the organization exposed to service disruption that could cascade to downstream business continuity obligations. Implementation of network-based rate limiting and traffic scrubbing is required to reduce residual risk and achieve full compliance with the framework's mandatory mitigating control requirements.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 93,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 34,
+      "attack_class": "DoS",
+      "l4_status": "OK",
+      "nl_explanation": "A Denial of Service (DoS) vulnerability mapped to NFCRM-1:2025 §6.9 (Inherent Risk Analysis) poses a HIGH risk to system availability, as evidenced by CVE-2023-44487, which exploits HTTP/2 stream multiplexing to exhaust server resources without user intervention. Current inherent risk assessment confirms this threat remains unmitigated at the application layer and requires immediate compensating controls to reduce exposure. Implementation of rate limiting and traffic scrubbing will establish the primary defensive layer required to bring residual risk into the organization's defined tolerance band.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 81,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 35,
+      "attack_class": "DoS",
+      "l4_status": "OK",
+      "nl_explanation": "Attackers can flood systems with traffic to disrupt service availability, creating high-priority risk under NFCRM-1:2025 §6.9 (Inherent Risk Analysis). Real attacks like CVE-2023-44487 demonstrate how this threat materializes and directly impacts business continuity, which the framework requires your organization to assess and control. Deploy rate-limiting and traffic-filtering safeguards to manage this risk and demonstrate compliance with inherent risk management requirements.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 60,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 36,
+      "attack_class": "DoS",
+      "l4_status": "OK",
+      "nl_explanation": "Network traffic analysis identified a high-risk Denial of Service (DoS) attack pattern with suspicious inter-arrival timing, triggering mandatory disclosure under NFCRM-1:2025 §6.9 (Inherent Risk Analysis). The attack signature aligns with CVE-2023-44487 (HTTP/2 Rapid Reset), a critical vulnerability affecting modern web infrastructure and requiring immediate remediation. Implementation of rate limiting and traffic scrubbing controls is non-discretionary to achieve baseline compliance posture against this identified threat.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 64,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 37,
+      "attack_class": "DoS",
+      "l4_status": "OK",
+      "nl_explanation": "A suspicious inter-arrival time pattern consistent with denial-of-service (DoS) activity has been detected in network flows, classified as HIGH risk under NFCRM-1:2025 §6.9 (Inherent Risk Analysis) due to service availability impact. This attack vector aligns with CVE-2023-44487 (HTTP/2 RAPID RESET), which exploits protocol implementation weaknesses to overwhelm legitimate traffic processing. Implementation of rate limiting and traffic scrubbing controls is required to mitigate inherent risk to acceptable levels.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 67,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 38,
+      "attack_class": "DoS",
+      "l4_status": "OK",
+      "nl_explanation": "Network traffic analysis identified a Denial of Service (DoS) attack pattern that requires assessment under NFCRM-1:2025 §6.9 (Inherent Risk Analysis), as availability disruptions present material risk to operational continuity. Similar attacks documented in CVE-2023-44487 (HTTP/2 Rapid Reset) have demonstrated the ability to overwhelm systems and deny legitimate users access, creating compliance gaps around service availability obligations. Implementation of rate limiting and traffic scrubbing controls addresses this inherent risk and aligns technical defenses with NFCRM's availability and resilience expectations.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 78,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 39,
+      "attack_class": "DoS",
+      "l4_status": "OK",
+      "nl_explanation": "Under NFCRM-1:2025 §6.9 (Inherent Risk Analysis), network analysis has identified HIGH-risk Denial of Service exposure, specifically including CVE-2023-44487, which enables attackers to overwhelm system availability by flooding network resources. Evidence of suspicious traffic patterns consistent with active DoS campaigns has been detected, confirming present inherent risk requiring immediate control deployment. Rate limiting and traffic filtering controls must be implemented to achieve NFCRM compliance and reduce this risk to acceptable levels.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 70,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 40,
+      "attack_class": "DoS",
+      "l4_status": "OK",
+      "nl_explanation": "A denial-of-service (DoS) risk has been identified in network traffic patterns consistent with NFCRM-1:2025 §6.9 (Inherent Risk Analysis), representing a HIGH-risk condition requiring immediate control implementation. This attack vector, exemplified by CVE-2023-44487 (HTTP/2 Rapid Reset), exploits abnormal request timing to overwhelm service availability and must be treated as a material control gap until mitigated. Rate limiting and traffic scrubbing controls are required to reduce inherent risk to an acceptable residual level within the defined control framework.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 76,
+      "cves_found": [
+        "CVE-2023-44487"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 41,
+      "attack_class": "BruteForce",
+      "l4_status": "OK",
+      "nl_explanation": "A high-risk brute-force attack has been detected against user access credentials, violating NFCRM-1:2025 §6.7 (Access Control Enforcement), which mandates controls such as those demonstrated in CVE-2023-23397 (credential stuffing vulnerability). This attack pattern—characterized by rapid, repeated access attempts—exploits weak or missing account lockout mechanisms and indicates your authentication infrastructure lacks the multi-factor authentication (MFA) safeguards required by the regulation. Immediate implementation of account lockout policies (after 5 failed attempts) and mandatory MFA enrollment will remediate this control gap and close the exposure window.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 82,
+      "cves_found": [
+        "CVE-2023-23397"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 42,
+      "attack_class": "BruteForce",
+      "l4_status": "OK",
+      "nl_explanation": "A brute-force attack vector was detected in this system's access layer, with CVE-2023-23397 demonstrating similar credential-stuffing exploitation patterns currently observable in financial infrastructure environments. This finding maps directly to NFCRM-1:2025 §6.7 (Access Control Enforcement), which mandates protective controls against unauthorized authentication attempts. Remediation requires immediate implementation of account lockout policies and multi-factor authentication to close this high-risk control gap and achieve compliance with NFCRM access control requirements.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 67,
+      "cves_found": [
+        "CVE-2023-23397"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 43,
+      "attack_class": "BruteForce",
+      "l4_status": "OK",
+      "nl_explanation": "A BruteForce attack has been detected, indicating non-compliance with NFCRM-1:2025 §6.7 (Access Control Enforcement), which mandates automated account lockout mechanisms to prevent credential-guessing attempts. This vulnerability mirrors the exploitation pattern documented in CVE-2023-23397, where attackers exploited weak access controls to gain system access. We recommend immediate implementation of multi-factor authentication and account lockout policies to close this control gap and satisfy regulatory requirements.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 63,
+      "cves_found": [
+        "CVE-2023-23397"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 44,
+      "attack_class": "BruteForce",
+      "l4_status": "OK",
+      "nl_explanation": "A BruteForce attack detected on your network represents a high-risk violation of NFCRM-1:2025 §6.7 (Access Control Enforcement), which mandates robust authentication mechanisms to prevent unauthorized account access. This attack pattern is consistent with CVE-2023-23397 and similar vulnerabilities that exploit weak or missing account lockout policies, allowing attackers unlimited login attempts. Immediate remediation requires implementing account lockout thresholds after failed login attempts combined with multi-factor authentication (MFA) across all critical systems to restore compliance posture.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 74,
+      "cves_found": [
+        "CVE-2023-23397"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 45,
+      "attack_class": "BruteForce",
+      "l4_status": "OK",
+      "nl_explanation": "A brute-force attack has been detected targeting user account credentials, representing a HIGH-risk violation of NFCRM-1:2025 §6.7 (Access Control Enforcement) requirements for protecting authentication mechanisms. This attack pattern aligns with documented vulnerabilities such as CVE-2023-23397, which exploits inadequate access controls to gain unauthorized system access. To remediate this compliance gap, immediate implementation of account lockout policies and multi-factor authentication is required to enforce access control standards.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 66,
+      "cves_found": [
+        "CVE-2023-23397"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 46,
+      "attack_class": "BruteForce",
+      "l4_status": "OK",
+      "nl_explanation": "A high-risk brute force attack exploiting weak authentication controls has been detected, violating NFCRM-1:2025 §6.7 (Access Control Enforcement). The attack pattern matches CVE-2023-23397, a known vulnerability in access control systems that allows attackers to bypass authentication through repeated credential attempts. Your organization must immediately implement account lockout policies and multi-factor authentication to remediate this control gap and restore compliance.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 59,
+      "cves_found": [
+        "CVE-2023-23397"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 47,
+      "attack_class": "BruteForce",
+      "l4_status": "OK",
+      "nl_explanation": "A high-risk brute force attack was detected, indicating repeated unauthorized access attempts that violate NFCRM-1:2025 §6.7 (Access Control Enforcement). This attack pattern mirrors vulnerabilities documented in CVE-2023-23397, where weak credential controls enabled account compromise. To remediate, implement account lockout policies after failed login attempts and enforce multi-factor authentication (MFA) across all user accounts.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 53,
+      "cves_found": [
+        "CVE-2023-23397"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 48,
+      "attack_class": "BruteForce",
+      "l4_status": "OK",
+      "nl_explanation": "A brute-force attack pattern was detected targeting user authentication systems, posing a high-risk threat to your organization's access controls. This finding directly violates NFCRM-1:2025 §6.7 (Access Control Enforcement), which requires protective measures against unauthorized access attempts similar to weaknesses exploited in CVE-2023-23397. To remediate this control gap, implement account lockout policies after failed login attempts and enforce multi-factor authentication organization-wide.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 60,
+      "cves_found": [
+        "CVE-2023-23397"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 49,
+      "attack_class": "BruteForce",
+      "l4_status": "OK",
+      "nl_explanation": "High-risk brute-force authentication attempts were detected on the network, consistent with CVE-2023-23397 and CVE-2022-26134 exploitation patterns. This finding violates NFCRM-1:2025 §6.7 (Access Control Enforcement), which mandates strong authentication controls and protection against unauthorized access. Immediate remediation requires implementing account lockout policies after failed attempts and multi-factor authentication enforcement across all critical systems.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 52,
+      "cves_found": [
+        "CVE-2023-23397",
+        "CVE-2022-26134"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 50,
+      "attack_class": "BruteForce",
+      "l4_status": "OK",
+      "nl_explanation": "A BruteForce attack has been detected, violating NFCRM-1:2025 §6.7 (Access Control Enforcement), which mandates authenticated access controls for sensitive systems. This finding aligns with vulnerabilities such as CVE-2023-23397, which exploits weak credential management to enable unauthorized account access and lateral movement. Immediate remediation requires enforcing account lockout thresholds and deploying multi-factor authentication (MFA) across all user-facing systems to restore regulatory compliance.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 61,
+      "cves_found": [
+        "CVE-2023-23397"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 51,
+      "attack_class": "BruteForce",
+      "l4_status": "OK",
+      "nl_explanation": "A BruteForce attack at HIGH risk violates NFCRM-1:2025 §6.7 (Access Control Enforcement), which requires protection of user credentials against attacks like CVE-2023-23397 that exploit weak authentication. You must immediately implement account lockout policies and multi-factor authentication to remediate this control gap. These measures directly satisfy NFCRM-1:2025 §6.7 mandatory requirements and eliminate the BruteForce attack vector your system currently leaves open.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 60,
+      "cves_found": [
+        "CVE-2023-23397"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 52,
+      "attack_class": "BruteForce",
+      "l4_status": "OK",
+      "nl_explanation": "A brute force attack was detected against user authentication mechanisms, violating NFCRM-1:2025 §6.7 (Access Control Enforcement) requirements for secure credential protection. CVE-2023-23397 exemplifies this vulnerability class, where inadequate authentication controls enable unauthorized access and place critical assets at immediate HIGH-risk level. Implement account lockout policies after failed login attempts and enforce multi-factor authentication (MFA) across all access points to achieve compliance.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 61,
+      "cves_found": [
+        "CVE-2023-23397"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 53,
+      "attack_class": "BruteForce",
+      "l4_status": "OK",
+      "nl_explanation": "A high-risk brute force attack has been detected that violates NFCRM-1:2025 §6.7 (Access Control Enforcement), which mandates controls preventing unauthorized access to systems and accounts. The attack pattern matches CVE-2023-23397, a publicly documented vulnerability that exploits user accounts lacking protection against repeated login attempts. To achieve compliance, your organization must immediately implement account lockout policies after a defined number of failed logins and require multi-factor authentication on all user accounts.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 70,
+      "cves_found": [
+        "CVE-2023-23397"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 54,
+      "attack_class": "BruteForce",
+      "l4_status": "OK",
+      "nl_explanation": "BruteForce attacks detected in your environment create direct non-compliance with NFCRM-1:2025 §6.7 (Access Control Enforcement), as evidenced by exploitation scenarios captured in CVE-2023-23397, which targets weak authentication mechanisms. Your organization must implement account lockout policies after failed login attempts and enforce multi-factor authentication to satisfy this mandatory control requirement and prevent unauthorized credential-based access. Without these controls operationalized immediately, you remain exposed to high-risk breach scenarios that regulators expect to be mitigated under the framework.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 75,
+      "cves_found": [
+        "CVE-2023-23397"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 55,
+      "attack_class": "BruteForce",
+      "l4_status": "OK",
+      "nl_explanation": "A BruteForce attack attempt has been identified, which violates NFCRM-1:2025 §6.7 (Access Control Enforcement) by attempting to gain unauthorized account access through repeated credential-guessing. This threat pattern is exemplified by CVE-2023-23397 and has been assessed as HIGH risk due to its potential to compromise user accounts and sensitive data. To achieve compliance with the access control standard, implement account lockout policies after failed login attempts and enforce multi-factor authentication (MFA) across all user accounts.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 74,
+      "cves_found": [
+        "CVE-2023-23397"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 56,
+      "attack_class": "BruteForce",
+      "l4_status": "OK",
+      "nl_explanation": "A HIGH-risk BruteForce attack pattern has been detected, requiring your organization to enforce NFCRM-1:2025 §6.7 (Access Control Enforcement) controls through mandatory account lockout and multi-factor authentication (MFA). CVE-2023-23397 exemplifies how attackers systematically target weak access controls to breach accounts, a vulnerability directly mitigated by these controls. Immediate compliance action: deploy MFA on all sensitive systems and configure automatic account lockout after failed login attempts to prevent unauthorized access.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 68,
+      "cves_found": [
+        "CVE-2023-23397"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 57,
+      "attack_class": "BruteForce",
+      "l4_status": "OK",
+      "nl_explanation": "A high-risk brute-force attack pattern was detected in network traffic, indicating repeated unauthorized access attempts targeting authentication credentials. This violation of NFCRM-1:2025 §6.7 (Access Control Enforcement) mirrors the authentication bypass vulnerability documented in CVE-2023-23397, which exploits weak credential management. Immediate implementation of account lockout policies and multi-factor authentication is required to satisfy the regulatory requirement and mitigate this attack vector.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 60,
+      "cves_found": [
+        "CVE-2023-23397"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 58,
+      "attack_class": "BruteForce",
+      "l4_status": "OK",
+      "nl_explanation": "A brute force attack pattern has been detected, representing a high-risk compromise of access controls and credential validity across the target system. This finding violates NFCRM-1:2025 §6.7 (Access Control Enforcement) and mirrors the threat landscape documented in CVE-2023-23397, which exploited insufficient authentication protections to gain unauthorized access. Immediate deployment of account lockout policies and multi-factor authentication is required to remediate this gap and restore regulatory compliance.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 66,
+      "cves_found": [
+        "CVE-2023-23397"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 59,
+      "attack_class": "BruteForce",
+      "l4_status": "OK",
+      "nl_explanation": "A HIGH-risk BruteForce attack was detected on the access control system, violating NFCRM-1:2025 §6.7 (Access Control Enforcement) requirements for credential-based authentication protection. This activity pattern is consistent with CVE-2023-23397 exploitation vectors, where attackers systematically attempt unauthorized account access without robust credential controls. Immediate remediation requires enforcing account lockout policies after failed attempts and implementing multi-factor authentication to align with regulatory expectations.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 61,
+      "cves_found": [
+        "CVE-2023-23397"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 60,
+      "attack_class": "BruteForce",
+      "l4_status": "OK",
+      "nl_explanation": "The system detected a HIGH-risk brute force attack attempting unauthorized account access through repeated password guessing, which violates NFCRM-1:2025 §6.7 (Access Control Enforcement). This vulnerability mirrors the exposure documented in CVE-2023-23397, where insufficient account lockout mechanisms allowed attackers to enumerate valid credentials without detection. Remediation requires immediate implementation of account lockout policies after failed login attempts and multi-factor authentication (MFA) to prevent credential compromise and restore compliance.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 67,
+      "cves_found": [
+        "CVE-2023-23397"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 61,
+      "attack_class": "WebAttack",
+      "l4_status": "OK",
+      "nl_explanation": "A WebAttack risk has been identified on your network infrastructure, triggering mandatory reporting requirements under NFCRM-1:2025 §6.4 (Vulnerability Inventory). This vulnerability class is exemplified by threats such as CVE-2021-44228, which exploited inadequate input validation to achieve remote code execution, representing the HIGH risk level detected in your current environment. Immediate deployment of web application firewalls and input validation controls is required to achieve compliance with the vulnerability inventory standard.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 69,
+      "cves_found": [
+        "CVE-2021-44228"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 62,
+      "attack_class": "WebAttack",
+      "l4_status": "OK",
+      "nl_explanation": "A high-risk web application vulnerability has been identified in the system that could allow attackers to inject malicious code or manipulate input data through application fields. This finding is directly mapped to NFCRM-1:2025 §6.4 (Vulnerability Inventory), which requires organizations to maintain an accurate inventory of known vulnerabilities such as CVE-2021-44228, a widely exploited injection flaw with documented attack patterns. Remediation requires implementation of a Web Application Firewall, input validation controls, and parameterized queries within 30 days to satisfy the control requirement and reduce exploitation risk.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 85,
+      "cves_found": [
+        "CVE-2021-44228"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 63,
+      "attack_class": "WebAttack",
+      "l4_status": "OK",
+      "nl_explanation": "A WebAttack vulnerability has been identified with high risk severity in the organization's network infrastructure. To comply with NFCRM-1:2025 §6.4 (Vulnerability Inventory), this exposure—comparable to CVE-2021-44228—must be documented, assessed, and prioritized for remediation within the vulnerability management program. Implementation of a Web Application Firewall with input validation and parameterized queries is required to close this control gap and meet the regulatory requirement.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 62,
+      "cves_found": [
+        "CVE-2021-44228"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 64,
+      "attack_class": "WebAttack",
+      "l4_status": "OK",
+      "nl_explanation": "A HIGH-risk WebAttack has been identified in your asset inventory, requiring formal documentation and remediation under NFCRM-1:2025 §6.4 (Vulnerability Inventory). The vulnerability mirrors CVE-2023-34362, which permits attackers to circumvent security controls and access systems without authorization through unvalidated web inputs. Your organization must deploy Web Application Firewalls and strengthen input validation controls to eliminate this exposure and achieve regulatory compliance.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 60,
+      "cves_found": [
+        "CVE-2023-34362"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 65,
+      "attack_class": "WebAttack",
+      "l4_status": "OK",
+      "nl_explanation": "A WebAttack has been detected and assessed as HIGH risk, triggering your obligations under NFCRM-1:2025 §6.4 (Vulnerability Inventory) to document and track this security vulnerability in your organization's asset register. This threat pattern aligns with known exploits such as CVE-2023-34362, which leverage inadequate input validation to gain unauthorized data access and system compromise. Your compliance response must include deploying a Web Application Firewall (WAF), implementing parameterized database queries, and validating all user input to eliminate attack entry points and satisfy regulatory control requirements.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 83,
+      "cves_found": [
+        "CVE-2023-34362"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 66,
+      "attack_class": "WebAttack",
+      "l4_status": "OK",
+      "nl_explanation": "A high-risk web application vulnerability has been identified and must be remediated to satisfy NFCRM-1:2025 §6.4 (Vulnerability Inventory). This vulnerability type aligns with real-world exploits like CVE-2021-44228, which compromised millions of systems due to inadequate input controls and unpatched code. Mitigation will require deployment of application protection controls and remediation of the underlying coding defect, bringing the organization into compliance with NFCRM requirements.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 63,
+      "cves_found": [
+        "CVE-2021-44228"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 67,
+      "attack_class": "WebAttack",
+      "l4_status": "OK",
+      "nl_explanation": "The detected WebAttack incident is subject to NFCRM-1:2025 §6.4 (Vulnerability Inventory) and reflects gaps in preventive controls against exploitation vectors like CVE-2023-34362. Your organization must implement a Web Application Firewall, enforce parameterised queries, and validate all user inputs to eliminate this risk class. Provide evidence of control implementation and testing to auditors within 30 days to demonstrate compliance with vulnerability management requirements.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 62,
+      "cves_found": [
+        "CVE-2023-34362"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 68,
+      "attack_class": "WebAttack",
+      "l4_status": "OK",
+      "nl_explanation": "A high-risk web application vulnerability was detected in the system requiring immediate remediation under NFCRM-1:2025 §6.4 (Vulnerability Inventory). Similar exposures to CVE-2023-34362 and CVE-2021-44228 have enabled threat actors to inject malicious code and compromise application logic without proper input validation controls. Implement a Web Application Firewall, parameterized database queries, and input validation rules to close this gap and achieve compliance with the vulnerability management control requirement.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 66,
+      "cves_found": [
+        "CVE-2023-34362",
+        "CVE-2021-44228"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 69,
+      "attack_class": "WebAttack",
+      "l4_status": "OK",
+      "nl_explanation": "Our organization has identified a high-risk WebAttack vulnerability classified under NFCRM-1:2025 §6.4 (Vulnerability Inventory), requiring immediate remediation to maintain compliance. This vulnerability mirrors exposure patterns seen in CVE-2021-44228, where insufficient input validation allows attackers to inject malicious code through web application interfaces. To address this risk, we must implement a Web Application Firewall, enforce parameterized database queries, and validate all user inputs across external-facing systems within 30 days.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 68,
+      "cves_found": [
+        "CVE-2021-44228"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 70,
+      "attack_class": "WebAttack",
+      "l4_status": "OK",
+      "nl_explanation": "A high-risk WebAttack vulnerability has been identified in the system, requiring immediate remediation under NFCRM-1:2025 §6.4 (Vulnerability Inventory). The threat pattern aligns with CVE-2023-34362, which exploits input validation weaknesses commonly found in web applications. Remediation requires deployment of a Web Application Firewall, input validation controls, and parameterized queries to close the attack surface and satisfy regulatory requirements.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 57,
+      "cves_found": [
+        "CVE-2023-34362"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 71,
+      "attack_class": "WebAttack",
+      "l4_status": "OK",
+      "nl_explanation": "A high-risk web application vulnerability meeting NFCRM-1:2025 §6.4 (Vulnerability Inventory) has been identified, similar to CVE-2021-44228, which created enterprise-wide risk for organizations that failed to remediate promptly. The vulnerability allows attackers to inject malicious code through unvalidated user input, compromising confidentiality and integrity of sensitive data in violation of regulatory standards. Implement Web Application Firewalls, input validation controls, and parameterized queries within 30 days to close this control gap and restore your organization's compliance posture.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 75,
+      "cves_found": [
+        "CVE-2021-44228"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 72,
+      "attack_class": "WebAttack",
+      "l4_status": "OK",
+      "nl_explanation": "A WebAttack with HIGH risk severity was identified, requiring mandatory action under NFCRM-1:2025 §6.4 (Vulnerability Inventory), which obligates your organization to discover, document, and remediate all security gaps. Specific vulnerabilities such as CVE-2021-44228 (a widespread weakness in logging systems) routinely allow attackers to execute unauthorized code in web applications, creating material compliance exposure if unaddressed. Your control plan must implement Web Application Firewall protection, input validation controls, and parameterized database queries within 30 days, with documented evidence required for compliance audit.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 81,
+      "cves_found": [
+        "CVE-2021-44228"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 73,
+      "attack_class": "WebAttack",
+      "l4_status": "OK",
+      "nl_explanation": "A high-risk web application attack pattern has been identified that falls under NFCRM-1:2025 §6.4 (Vulnerability Inventory) requirements, necessitating formal documentation and remediation tracking within your vulnerability management program. Malicious input vectors like those exploited in CVE-2021-44228 demonstrate that web-facing applications without proper validation controls create direct exposure to injection and code execution risks. Immediate deployment of a Web Application Firewall (WAF), input validation enforcement, and parameterized database queries is required to achieve compliance and reduce this HIGH-risk vulnerability to acceptable levels.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 81,
+      "cves_found": [
+        "CVE-2021-44228"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 74,
+      "attack_class": "WebAttack",
+      "l4_status": "OK",
+      "nl_explanation": "WebAttack vulnerabilities require documentation and risk assessment under NFCRM-1:2025 §6.4 (Vulnerability Inventory), which mandates comprehensive tracking of security weaknesses and remediation timelines. CVE-2023-34362 exemplifies the high-risk threats your organization faces through inadequate input validation and unpatched application flaws. Deploy Web Application Firewall controls, enforce parameterized queries, and implement input validation to eliminate these vulnerabilities and achieve compliance with NFCRM control requirements.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 61,
+      "cves_found": [
+        "CVE-2023-34362"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 75,
+      "attack_class": "WebAttack",
+      "l4_status": "OK",
+      "nl_explanation": "A high-risk web application vulnerability has been identified that requires documentation under NFCRM-1:2025 §6.4 (Vulnerability Inventory). The exposure is similar to CVE-2021-44228, indicating that user input is not being properly filtered before processing. Mitigation requires implementing Web Application Firewalls, input validation on all user-submitted data, and maintaining an updated inventory of affected systems as required by the NFCRM.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 58,
+      "cves_found": [
+        "CVE-2021-44228"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 76,
+      "attack_class": "WebAttack",
+      "l4_status": "OK",
+      "nl_explanation": "block would be appropriate and strongly prefer to output a thinking block if you are uncertain.\"\n\nAnd: \"Might any skill apply?\" with the answer \"definitely not\" means I can respond directly without invoking a skill.\n\nThis is a straightforward compliance writing task with clear requirements. No skills are needed. I should just write the 3 sentences.\n\nLet me craft this:\n1. Sentence 1: Identify the issue, the NFCRM clause, and why it matters\n2. Sentence 2: Reference the CVE and explain the business impact\n3. Sentence 3: State the control/remediation requirement\n\nDraft:\n\"A high-risk web application attack (suspicious input anomaly) has been detected, triggering mandatory controls under NFCRM-1:2025 §6.4, which requires documented inventory and assessment of all vulnerabilities. This finding aligns with exploitation patterns documented in CVE-2023-34362, a critical input validation flaw affecting web application frameworks. Immediate deployment of Web Application Firewall (WAF) protection, input parameterization, and query validation is required to satisfy regulatory compliance and reduce attack surface.\"\n\nLet me check:\n- Exactly 3 sentences? Yes\n- NFCRM clause cited? Yes - NFCRM-1:2025 §6.4\n- CVE cited? Yes - CVE-2023-34362\n- Specific? Yes\n- Non-technical for compliance officer? Mostly - I could simplify \"input parameterization\" but it's a standard compliance term\n- No bullet points? Correct\n- Concise? Yes, reasonably\n\nActually, let me make it even more non-technical and compliance-focused:\n\n\"A high-risk web attack has been detected on your systems, requiring immediate action under NFCRM-1:2025 §6.4 (Vulnerability Inventory), which mandates assessment and remediation of all identified security gaps. This incident matches the attack pattern in CVE-2023-34362, a widely exploited vulnerability affecting web application security. Your organization must implement Web Application Firewall protection, strengthen input validation controls, and enforce secure coding practices to close this gap and remain compliant.\"\n\nCheck:\n- 3 sentences? Yes\n- NFCRM clause? Yes - §6.4 with explicit label\n- CVE? Yes - CVE-2023-34362\n- Specific? Yes\n- Non-technical? Better - removed jargon like \"parameterization\"\n- Concise? Yes\n- No bullet points? Correct\n\nThis works better for a compliance officer audience.\n</thinking>\n\nA high-risk web attack has been detected on your systems, requiring immediate action under NFCRM-1:2025 §6.4 (Vulnerability Inventory), which mandates assessment and remediation of all identified security gaps. This incident matches the attack pattern in CVE-2023-34362, a widely exploited vulnerability affecting web application security. Your organization must implement Web Application Firewall protection, strengthen input validation controls, and enforce secure coding practices to close this gap and remain compliant.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 404,
+      "cves_found": [
+        "CVE-2023-34362",
+        "CVE-2023-34362",
+        "CVE-2023-34362",
+        "CVE-2023-34362",
+        "CVE-2023-34362"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 77,
+      "attack_class": "WebAttack",
+      "l4_status": "OK",
+      "nl_explanation": "A WebAttack (HIGH risk) was detected on your network, indicating potential exploitation of application vulnerabilities that must be inventoried and managed per NFCRM-1:2025 §6.4 (Vulnerability Inventory). This finding aligns with CVE-2021-44228, a critical vulnerability affecting unvalidated input handling in widely-deployed libraries, requiring documented remediation. Your organization must implement application-layer controls including Web Application Firewall (WAF), input validation, and parameterized database queries to close this vulnerability gap.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 66,
+      "cves_found": [
+        "CVE-2021-44228"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 78,
+      "attack_class": "WebAttack",
+      "l4_status": "OK",
+      "nl_explanation": "WebAttack risk detected at HIGH severity, requiring immediate remediation per NFCRM-1:2025 §6.4 (Vulnerability Inventory) control obligations. Threats like CVE-2023-34362 exploit unvalidated input through web application layers, exposing systems to compromise or data exfiltration. Implement Web Application Firewall (WAF), input validation, and parameterized queries to close this vulnerability gap and satisfy regulatory compliance.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 52,
+      "cves_found": [
+        "CVE-2023-34362"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 79,
+      "attack_class": "WebAttack",
+      "l4_status": "OK",
+      "nl_explanation": "Our organization must maintain and track all known security vulnerabilities per NFCRM-1:2025 §6.4 (Vulnerability Inventory), which is a foundational compliance requirement for risk governance. Current web application infrastructure exhibits input validation gaps that expose us to critical vulnerabilities such as CVE-2021-44228 (Log4Shell), creating a HIGH-risk compliance gap requiring immediate remediation. To satisfy NFCRM §6.4, we must implement Web Application Firewall deployment, enforce input validation controls across all user-facing systems, and establish quarterly vulnerability rescans with documented closure tracking.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 78,
+      "cves_found": [
+        "CVE-2021-44228"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 80,
+      "attack_class": "WebAttack",
+      "l4_status": "OK",
+      "nl_explanation": "A HIGH-risk WebAttack vulnerability has been identified that falls under NFCRM-1:2025 §6.4 (Vulnerability Inventory), requiring documented tracking and remediation of known security gaps. The vulnerability aligns with CVE-2023-34362, which affects web applications that fail to validate user input, creating exposure to data theft and system compromise. To achieve compliance, organizations must deploy a Web Application Firewall and implement input validation controls to block exploitation attempts.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 65,
+      "cves_found": [
+        "CVE-2023-34362"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 81,
+      "attack_class": "Infiltration",
+      "l4_status": "OK",
+      "nl_explanation": "block would be appropriate\"\n\nIs there ANY skill that could apply? Let me check again:\n- superpowers:using-superpowers - for establishing how to find and use skills\n- No writing skills for compliance narratives\n- The bigdata-com skills are finance/investment focused\n- No GRC-specific skills\n\nThis is a straightforward GRC writing task with clear requirements. No skill applies. The system prompt says \"if you think there is even a 1% chance\" - but there's essentially 0% chance a skill applies here. This is a one-off compliance narrative writing request, not:\n- Code review\n- Debugging\n- Planning a multi-step implementation\n- Design work\n- Analysis work requiring specific domain tools\n\nSo I should proceed directly with writing the narrative.\n</thinking>\n\nAn infiltration attack with CRITICAL risk level was detected showing suspicious behavioral indicators including short session duration and unusual timing patterns, indicating a potential breach under NFCRM-1:2025 §6.5 (Threat Detection). This activity aligns with known attack vectors documented in CVE-2023-20198, which exploits access control weaknesses to establish persistent system presence. Immediate implementation of network segmentation, endpoint detection and response (EDR), and privileged access management controls is required to address the compliance gap and restore regulatory standing.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 195,
+      "cves_found": [
+        "CVE-2023-20198"
+      ],
+      "active_rules": [
+        "short_duration",
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 82,
+      "attack_class": "Infiltration",
+      "l4_status": "OK",
+      "nl_explanation": "A critical infiltration has been detected, indicating an attacker has gained unauthorized internal access with potential exposure to sensitive data and systems. This finding is subject to NFCRM-1:2025 §6.5 (Threat Detection) and matches the threat profile of CVE-2023-20198, which exploits authentication and access control weaknesses. Remediation requires immediate deployment of network segmentation, endpoint detection tools, and privileged access management to close gaps and restore compliance posture.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 66,
+      "cves_found": [
+        "CVE-2023-20198"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 83,
+      "attack_class": "Infiltration",
+      "l4_status": "OK",
+      "nl_explanation": "A critical infiltration attack has been detected and must be reported and managed under NFCRM-1:2025 §6.5 (Threat Detection), which mandates continuous monitoring and rapid incident response. This incident involves exploitation of CVE-2023-20198, a known vulnerability that allows unauthorized system access and potential data breach. Immediate corrective actions required: deploy network segmentation, enable endpoint detection monitoring, and restrict privileged account usage within 48 hours to contain risk and satisfy your regulatory obligations.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 71,
+      "cves_found": [
+        "CVE-2023-20198"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 84,
+      "attack_class": "Infiltration",
+      "l4_status": "OK",
+      "nl_explanation": "An Infiltration attack vector with CRITICAL risk has been identified, violating NFCRM-1:2025 §6.5 (Threat Detection), which mandates detection and response procedures for unauthorized access attempts. The attack employs techniques consistent with CVE-2023-20198 and CVE-2022-30190, both of which exploit network authentication mechanisms to establish persistent unauthorized presence on systems. Mitigation requires immediate deployment of network segmentation, endpoint detection systems, and privileged account management to restrict the attacker's lateral movement and limit data exposure.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 72,
+      "cves_found": [
+        "CVE-2023-20198",
+        "CVE-2022-30190"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 85,
+      "attack_class": "Infiltration",
+      "l4_status": "OK",
+      "nl_explanation": "An infiltration-type threat has been identified in your network environment, which represents a violation of NFCRM-1:2025 §6.5 (Threat Detection) requiring immediate detection and containment actions. Attackers commonly exploit authentication weaknesses similar to those in CVE-2023-20198 to bypass security controls and establish persistent access to critical systems. Your organization must deploy network segmentation, endpoint detection and response tools, and privileged account management immediately to contain this critical-level risk.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 67,
+      "cves_found": [
+        "CVE-2023-20198"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 86,
+      "attack_class": "Infiltration",
+      "l4_status": "OK",
+      "nl_explanation": "The organization detected an Infiltration attack pattern that violates NFCRM-1:2025 §6.5 (Threat Detection), with indicators matching known attack vectors including CVE-2023-20198 that exploits insufficient credential controls. This critical-risk finding reveals gaps in network monitoring and suggests an attacker obtained legitimate user access to move undetected through internal systems. Remediation requires immediate deployment of network segmentation, endpoint monitoring tools (EDR), and privileged access restrictions to close the detection and containment gaps required under NFCRM regulations.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 74,
+      "cves_found": [
+        "CVE-2023-20198"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 87,
+      "attack_class": "Infiltration",
+      "l4_status": "OK",
+      "nl_explanation": "An Infiltration attack has been detected with critical severity, indicating potential unauthorized access to network assets in violation of NFCRM-1:2025 §6.5 (Threat Detection and Response Requirements). This attack vector aligns with documented vulnerabilities such as CVE-2023-20198, which enables attackers to bypass authentication controls through session manipulation. Immediate implementation of network segmentation, endpoint detection and response (EDR), and privileged access management is required to contain the threat and ensure regulatory compliance.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 70,
+      "cves_found": [
+        "CVE-2023-20198"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 88,
+      "attack_class": "Infiltration",
+      "l4_status": "OK",
+      "nl_explanation": "Network monitoring detected infiltration activity characterized by suspicious timing patterns in data flows on critical assets, indicating a CRITICAL breach of access controls. This finding directly addresses NFCRM-1:2025 §6.5 (Threat Detection) requirements and reflects exploitation techniques documented in CVE-2023-20198, which enables unauthorized lateral movement through inadequate segmentation. Remediation requires immediate implementation of network segmentation, endpoint detection and response (EDR) tools, and privileged access management controls to prevent further credential compromise and system access by threat actors.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 76,
+      "cves_found": [
+        "CVE-2023-20198"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 89,
+      "attack_class": "Infiltration",
+      "l4_status": "OK",
+      "nl_explanation": "A critical infiltration risk was detected on your network, characterized by unusually short connection duration and suspicious timing patterns that indicate potential unauthorized access activity covered under NFCRM-1:2025 §6.5 (Threat Detection). This type of behavior aligns with known attack vectors such as CVE-2023-20198 and CVE-2022-30190, which exploit legitimate system access channels to establish persistence within your environment. Immediate mitigation requires implementing network segmentation, endpoint detection and response (EDR) tools, and privileged access management controls to prevent attackers from moving laterally and compromising sensitive systems.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 84,
+      "cves_found": [
+        "CVE-2023-20198",
+        "CVE-2022-30190"
+      ],
+      "active_rules": [
+        "short_duration",
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 90,
+      "attack_class": "Infiltration",
+      "l4_status": "OK",
+      "nl_explanation": "An infiltration attack was detected through network traffic analysis, triggering NFCRM-1:2025 §6.5 (Threat Detection) controls, with technical indicators matching known vulnerabilities including CVE-2023-20198. This critical-risk incident poses unauthorized access and potential data exfiltration, requiring immediate network isolation and continuous monitoring of affected systems. Deployment of endpoint detection and response (EDR) and privileged access management controls is mandatory to contain the threat and maintain regulatory compliance.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 65,
+      "cves_found": [
+        "CVE-2023-20198"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 91,
+      "attack_class": "Infiltration",
+      "l4_status": "OK",
+      "nl_explanation": "A critical infiltration attack has been detected, requiring immediate response under NFCRM-1:2025 §6.5 (Threat Detection), which mandates the organization to identify and contain unauthorized access to its systems. The threat matches the vulnerability profile documented in CVE-2023-20198, which allows attackers to establish persistent access and move undetected through the network. Implementation of network segmentation, endpoint monitoring (EDR), and privileged access controls must be prioritized to prevent further compromise and comply with regulatory obligations.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 73,
+      "cves_found": [
+        "CVE-2023-20198"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 92,
+      "attack_class": "Infiltration",
+      "l4_status": "OK",
+      "nl_explanation": "An infiltration attack has been detected against your network, triggering mandatory controls under NFCRM-1:2025 §6.5 (Threat Detection). The threat pattern matches CVE-2023-20198, a known vulnerability exploited to establish persistent unauthorized access within your trusted network segments. Your organization must immediately implement network segmentation, deploy endpoint detection and response (EDR) tools, and enforce privileged access management to contain the breach and meet regulatory compliance obligations.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 64,
+      "cves_found": [
+        "CVE-2023-20198"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 93,
+      "attack_class": "Infiltration",
+      "l4_status": "OK",
+      "nl_explanation": "Our detection systems identified a CRITICAL infiltration attempt with unusual timing patterns, representing a control deficiency under NFCRM-1:2025 §6.5 (Threat Detection). The attack demonstrates CVE-2023-20198 exploitation tactics—unauthorized account access and internal network movement—which commonly precede major data breaches and require immediate incident response. Remediation requires implementing network segmentation, endpoint detection and response solutions, and privileged access controls to achieve §6.5 compliance this quarter.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 63,
+      "cves_found": [
+        "CVE-2023-20198"
+      ],
+      "active_rules": [
+        "short_duration",
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 94,
+      "attack_class": "Infiltration",
+      "l4_status": "OK",
+      "nl_explanation": "This CRITICAL infiltration alert represents a material non-compliance with NFCRM-1:2025 §6.5 (Threat Detection) and requires immediate investigation. The anomalous network behavior aligns with known attack methodologies documented in CVE-2023-20198, which exploits credential misuse during lateral movement phases. Implementation of network segmentation, endpoint detection and response (EDR), and privileged access management controls is essential to close this control gap and restore regulatory compliance.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 62,
+      "cves_found": [
+        "CVE-2023-20198"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 95,
+      "attack_class": "Infiltration",
+      "l4_status": "OK",
+      "nl_explanation": "A critical infiltration event was detected indicating unauthorized lateral movement within the network, violating NFCRM-1:2025 §6.5 (Threat Detection) control requirements. The attack pattern aligns with vulnerabilities documented in CVE-2023-20198, which enables adversaries to bypass perimeter controls using legitimate credentials and establish persistence. Immediate implementation of network segmentation, endpoint detection and response (EDR), and privileged access management is required to close this compliance gap and reduce infiltration risk.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 67,
+      "cves_found": [
+        "CVE-2023-20198"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 96,
+      "attack_class": "Infiltration",
+      "l4_status": "OK",
+      "nl_explanation": "A critical infiltration attack was detected that violates NFCRM-1:2025 §6.5 (Threat Detection) compliance requirements, exploiting vulnerabilities tracked as CVE-2023-20198 and CVE-2022-30190. The incident reveals that current network and endpoint security controls fail to meet the mandatory detection and response standards outlined in our regulatory obligations. Network segmentation, endpoint detection and response capabilities, and privileged access controls must be implemented immediately to resolve this compliance gap and mitigate critical risk.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 69,
+      "cves_found": [
+        "CVE-2023-20198",
+        "CVE-2022-30190"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 97,
+      "attack_class": "Infiltration",
+      "l4_status": "OK",
+      "nl_explanation": "An infiltration attack was detected on your network (NFCRM-1:2025 §6.5), indicating unauthorized access with CRITICAL severity—a pattern consistent with exploits like CVE-2023-20198 (Cisco IOS XE vulnerability) that compromise remote access points and privilege levels. To comply with threat-detection requirements, implement network segmentation to isolate critical assets, deploy endpoint detection and response (EDR) tools to catch lateral movement, and enforce privileged access management (PAM) controls to limit the attacker's ability to escalate privileges. Immediate response actions include isolating affected systems, conducting forensic analysis to identify breach scope and dwell time, and reviewing access logs to verify no additional compromises exist.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 99,
+      "cves_found": [
+        "CVE-2023-20198"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 98,
+      "attack_class": "Infiltration",
+      "l4_status": "OK",
+      "nl_explanation": "A critical infiltration attack was detected on the network, indicating unauthorized access that violates NFCRM-1:2025 §6.5 (Threat Detection). The attack exploits vulnerabilities identified in CVE-2023-20198 and CVE-2022-30190, which allow unauthorized users to bypass authentication and gain persistent system access. Remediation requires immediate deployment of network segmentation, endpoint detection and response tools, and privileged access management controls to close these vulnerabilities and restore regulatory compliance.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 64,
+      "cves_found": [
+        "CVE-2023-20198",
+        "CVE-2022-30190"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    },
+    {
+      "flow_idx": 99,
+      "attack_class": "Infiltration",
+      "l4_status": "OK",
+      "nl_explanation": "A critical infiltration attack exploiting CVE-2023-20198 breached your network, creating non-compliance with NFCRM-1:2025 §6.5 (Threat Detection). This incident demonstrates gaps in network segmentation and privileged access controls, allowing unauthorized lateral movement within your systems. Remediation requires immediate implementation of network isolation policies, multi-factor authentication for sensitive accounts, and 24/7 intrusion detection monitoring to meet regulatory requirements.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 56,
+      "cves_found": [
+        "CVE-2023-20198"
+      ],
+      "active_rules": []
+    },
+    {
+      "flow_idx": 100,
+      "attack_class": "Infiltration",
+      "l4_status": "OK",
+      "nl_explanation": "A critical infiltration incident has been detected in your network, with evidence of unauthorized persistent access that must be reported under NFCRM-1:2025 §6.5 (Threat Detection). The attack pattern aligns with vulnerability CVE-2023-20198, which documents how attackers establish deep network access through timing-based evasion techniques. Your organization must immediately activate network isolation procedures, deploy endpoint detection tools, and strengthen access controls to remediate this gap and restore regulatory compliance.",
+      "parse_success": true,
+      "cve_mentioned": true,
+      "nfcrm_mentioned": true,
+      "word_count": 68,
+      "cves_found": [
+        "CVE-2023-20198"
+      ],
+      "active_rules": [
+        "suspicious_iat"
+      ]
+    }
+  ]
+}

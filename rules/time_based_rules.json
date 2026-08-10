@@ -1,0 +1,56 @@
+[
+  {
+    "rule_id": "TIM-001",
+    "name": "Patch Not Applied in Time Window",
+    "category": "time_based",
+    "priority": 80,
+    "description": "Critical patch available but not applied after 30 days",
+    "conditions": [
+      {
+        "field": "patch_available",
+        "operator": "==",
+        "value": true,
+        "description": ""
+      },
+      {
+        "field": "days_since_patch_release",
+        "operator": ">",
+        "value": 30,
+        "description": ""
+      },
+      {
+        "field": "patch_applied",
+        "operator": "==",
+        "value": false,
+        "description": ""
+      }
+    ],
+    "score_modifier": -30,
+    "explanation_template": "Critical patch {patch_id} was released {days_since_patch_release} days ago but has not been applied.",
+    "enabled": true
+  },
+  {
+    "rule_id": "TIM-002",
+    "name": "Access Rights Not Reviewed in 90 Days",
+    "category": "time_based",
+    "priority": 70,
+    "description": "User access rights not reviewed for 90+ days",
+    "conditions": [
+      {
+        "field": "last_access_review_date",
+        "operator": "<",
+        "value": "-90",
+        "description": ""
+      },
+      {
+        "field": "access_type",
+        "operator": "==",
+        "value": "privileged",
+        "description": ""
+      }
+    ],
+    "score_modifier": -20,
+    "explanation_template": "Privileged access rights for user {user_id} have not been reviewed for {review_days} days. Periodic review is required.",
+    "enabled": true
+  }
+]

@@ -1,0 +1,105 @@
+{
+  "description": "Natural-distribution (unbalanced, full KDDTest+ n=22,184) XGBoost under-escalation rate under the NFCRM-1:2025 \u00a76.9 class-through-lookup, computed to quantify the qualitative 'substantially lower on the natural test distribution' claim made elsewhere in the thesis relative to the N=50 balanced-sample figure (44% under-escalation).",
+  "source_confusion_matrix": "results/nslkdd_xgb_baseline.json (test split)",
+  "source_n50_balanced_figure": "results/nslkdd_ablation/ml_xgb.jsonl, results/safety_table_haiku.json",
+  "label_classes": [
+    "DoS",
+    "Normal",
+    "Probe",
+    "R2L",
+    "U2R"
+  ],
+  "n_total": 22184,
+  "xgb_test_accuracy": 0.7543274432023079,
+  "sixnine_lookup_table": {
+    "Normal": {
+      "Low": "Very Low",
+      "Medium": "Very Low",
+      "High": "Very Low",
+      "Critical": "Very Low"
+    },
+    "DoS": {
+      "Low": "Medium",
+      "Medium": "High",
+      "High": "Catastrophic",
+      "Critical": "Catastrophic"
+    },
+    "Probe": {
+      "Low": "Low",
+      "Medium": "Medium",
+      "High": "Medium",
+      "Critical": "High"
+    },
+    "R2L": {
+      "Low": "Medium",
+      "Medium": "High",
+      "High": "Catastrophic",
+      "Critical": "Catastrophic"
+    },
+    "U2R": {
+      "Low": "Medium",
+      "Medium": "High",
+      "High": "Catastrophic",
+      "Critical": "Catastrophic"
+    }
+  },
+  "class_ranks_verified_criticality_invariant": {
+    "Normal": 0,
+    "DoS": 2,
+    "Probe": 1,
+    "R2L": 2,
+    "U2R": 2
+  },
+  "methodology": "For each confusion-matrix cell (true class i, predicted class j), the case is classed as under-escalated iff the \u00a76.9 risk level of class j is strictly lower than that of class i, HOLDING CRITICALITY FIXED (identical for both lookups, since only the predicted class differs from the true class for a given flow/asset). This ordinal comparison was verified to be identical across all 4 \u00a76.9 criticality columns (Low/Medium/High/Critical) \u2014 see class_ranks_verified_criticality_invariant \u2014 so no specific per-flow criticality value needs to be assumed or imputed; the full natural KDDTest+ set does not carry per-flow asset-criticality metadata (unlike the N=50 ARG-derived ablation sample). Rate = (sum of confusion-matrix cell counts with predicted-class rank < true-class rank) / n_total, i.e. weighted by each class's actual natural frequency in KDDTest+, not a balanced/resampled distribution.",
+  "natural_distribution_under_escalation_rate": 0.2266949152542373,
+  "natural_distribution_under_escalation_pct": 22.7,
+  "natural_distribution_over_escalation_pct": 1.9,
+  "natural_distribution_exact_pct": 75.4,
+  "under_escalation_count": 5029,
+  "over_escalation_count": 418,
+  "exact_count": 16737,
+  "per_true_class": {
+    "DoS": {
+      "n": 7155,
+      "share_of_natural_distribution": 0.3225297511720159,
+      "under_escalation_count": 1464,
+      "under_escalation_rate_within_class": 0.20461215932914045
+    },
+    "Normal": {
+      "n": 9770,
+      "share_of_natural_distribution": 0.4404075009015507,
+      "under_escalation_count": 0,
+      "under_escalation_rate_within_class": 0.0
+    },
+    "Probe": {
+      "n": 2305,
+      "share_of_natural_distribution": 0.10390371438874865,
+      "under_escalation_count": 821,
+      "under_escalation_rate_within_class": 0.3561822125813449
+    },
+    "R2L": {
+      "n": 2754,
+      "share_of_natural_distribution": 0.12414352686620989,
+      "under_escalation_count": 2559,
+      "under_escalation_rate_within_class": 0.9291938997821351
+    },
+    "U2R": {
+      "n": 200,
+      "share_of_natural_distribution": 0.009015506671474938,
+      "under_escalation_count": 185,
+      "under_escalation_rate_within_class": 0.925
+    }
+  },
+  "balanced_n50_reference": {
+    "under_escalation_pct": 44.0,
+    "severe_risk_recall_pct": 45.0,
+    "n": 50,
+    "note": "10 cases per class (Normal/DoS/Probe/R2L/U2R), i.e. minority classes R2L and U2R each artificially held at 20% of the sample vs. their natural share of ~12.4% and ~0.9% respectively (see per_true_class below). Source: results/nslkdd_ablation/ml_xgb.jsonl via scripts/safety_table_haiku.py."
+  },
+  "caveats": [
+    "This is a class-through-lookup computation on the XGBoost confusion matrix, not a re-run of the tri-stage/LLM pipeline on all 22,184 flows.",
+    "Per-flow asset criticality is not available for the raw KDDTest+ set; the computation relies on the verified criticality-invariance of the \u00a76.9 under/over-escalation DIRECTION (see class_ranks_verified_criticality_invariant) rather than assuming one specific criticality value.",
+    "The \u00a76.9 lookup used is the NSL-KDD-analog table (Normal-> Benign, DoS->DoS, Probe->Infiltration, R2L->WebAttack, U2R->BruteForce) exactly as used to produce the N=50 balanced -sample figures in scripts/run_nslkdd_ablation.py \u2014 same caveats as the rest of the risk-level construct disclosure.",
+    "XGBoost only (matches the natural-distribution accuracy claim this number is attached to); not computed for the tri-stage or LLM paradigms, which were never run on the full natural KDDTest+ set."
+  ]
+}

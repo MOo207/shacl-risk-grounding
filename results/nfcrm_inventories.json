@@ -1,0 +1,659 @@
+{
+  "generated": "2026-05-17T19:13:16.878654+00:00",
+  "source_arg": "D:\\01_Projects\\INTERSYMBOLIC-GRC\\results\\multisource_arg.json",
+  "clause_reference": "NFCRM-1:2025 §6.3 (assets), §6.4 (vulnerabilities), §6.5 (threats)",
+  "assets_6_3": [
+    {
+      "asset_id": "SRV-001",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "vsftpd"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-002",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "OpenSSH"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-003",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "Linux telnetd"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-004",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "Postfix SMTP"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-005",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "ISC BIND"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-006",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "Apache httpd"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-007",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "PHP"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-008",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "DVWA (Damn Vulnerable Web Application)"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-009",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "OWASP Mutillidae II"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-010",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "phpMyAdmin"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-011",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "TWiki"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-012",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "TikiWiki CMS"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-013",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "rpcbind"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-014",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "Samba"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-015",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "netkit r-services (rexec/rlogin/rsh)"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-016",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "Java RMI Registry"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-017",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "ingreslock root backdoor"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-018",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "NFS"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-019",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "ProFTPD"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-020",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "MySQL"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-021",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "distccd"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-022",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "PostgreSQL"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-023",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "VNC"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-024",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "X11"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-025",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "UnrealIRCd"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-026",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "Apache Tomcat"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-027",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "Ruby DRb (Distributed Ruby)"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-028",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "Apache httpd"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-029",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "OpenSSL"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-030",
+      "asset_type": "workstation",
+      "classification": "Endpoint workstation",
+      "has_software": [
+        "Adobe Acrobat Reader"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-031",
+      "asset_type": "workstation",
+      "classification": "Endpoint workstation",
+      "has_software": [],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-032",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "Windows SMBv1",
+        "IIS"
+      ],
+      "notes": ""
+    },
+    {
+      "asset_id": "SRV-033",
+      "asset_type": "server",
+      "classification": "Sensitive system",
+      "has_software": [
+        "Windows SMBv1",
+        "IIS"
+      ],
+      "notes": ""
+    }
+  ],
+  "vulnerabilities_6_4": [
+    {
+      "cve_id": "CVE-2011-2523",
+      "description": "vsftpd 2.3.4 backdoor opens shell on port 6200/tcp",
+      "severity": null,
+      "affects_assets": [
+        "SW-vsftpd-2.3.4",
+        "SRV-001"
+      ],
+      "in_kev": false
+    },
+    {
+      "cve_id": "CVE-2008-0166",
+      "description": "Debian OpenSSL predictable RNG allows brute-force of private keys",
+      "severity": null,
+      "affects_assets": [
+        "SW-OpenSSH-4.7p1 Debian 8ubuntu1",
+        "SRV-002"
+      ],
+      "in_kev": false
+    },
+    {
+      "cve_id": "CVE-2001-0554",
+      "description": "Buffer overflow in BSD telnetd allows remote root via telnet options",
+      "severity": null,
+      "affects_assets": [
+        "SW-Linux_telnetd-netkit",
+        "SRV-003"
+      ],
+      "in_kev": false
+    },
+    {
+      "cve_id": "CVE-2009-0696",
+      "description": "ISC BIND 9.4.x allows remote DoS via crafted dynamic update message",
+      "severity": null,
+      "affects_assets": [
+        "SW-ISC_BIND-9.4.2",
+        "SRV-005"
+      ],
+      "in_kev": false
+    },
+    {
+      "cve_id": "CVE-2007-6750",
+      "description": "Apache httpd allows DoS via incomplete HTTP requests (Slowloris)",
+      "severity": null,
+      "affects_assets": [
+        "SW-Apache_httpd-2.2.8",
+        "SRV-006"
+      ],
+      "in_kev": false
+    },
+    {
+      "cve_id": "CVE-2011-3192",
+      "description": "Apache httpd Range header DoS (Apache Killer)",
+      "severity": null,
+      "affects_assets": [
+        "SW-Apache_httpd-2.2.8",
+        "SRV-006"
+      ],
+      "in_kev": false
+    },
+    {
+      "cve_id": "CVE-2012-1823",
+      "description": "PHP-CGI query string parameter injection allows RCE",
+      "severity": null,
+      "affects_assets": [
+        "SW-PHP-5.2.4",
+        "SRV-007"
+      ],
+      "in_kev": false
+    },
+    {
+      "cve_id": "CVE-2012-2311",
+      "description": "PHP CGI argument injection via crafted request",
+      "severity": null,
+      "affects_assets": [
+        "SW-PHP-5.2.4",
+        "SRV-007"
+      ],
+      "in_kev": false
+    },
+    {
+      "cve_id": "CVE-2009-1151",
+      "description": "phpMyAdmin setup.php static code injection allows RCE without auth",
+      "severity": null,
+      "affects_assets": [
+        "SW-phpMyAdmin-2.11.x",
+        "SRV-010"
+      ],
+      "in_kev": false
+    },
+    {
+      "cve_id": "CVE-2008-5305",
+      "description": "TWiki rev parameter shell metacharacter injection allows RCE",
+      "severity": null,
+      "affects_assets": [
+        "SW-TWiki-4.2.4",
+        "SRV-011"
+      ],
+      "in_kev": false
+    },
+    {
+      "cve_id": "CVE-2007-5423",
+      "description": "TikiWiki tiki-graph_formula.php PHP code injection allows RCE",
+      "severity": null,
+      "affects_assets": [
+        "SW-TikiWiki_CMS-1.9.5",
+        "SRV-012"
+      ],
+      "in_kev": false
+    },
+    {
+      "cve_id": "CVE-2007-2447",
+      "description": "Samba username map script command injection allows remote RCE without auth",
+      "severity": null,
+      "affects_assets": [
+        "SW-Samba-3.0.20-Debian",
+        "SRV-014"
+      ],
+      "in_kev": false
+    },
+    {
+      "cve_id": "CVE-1999-0651",
+      "description": "rexec/rlogin/rsh enabled with .rhosts trust allowing unauthenticated remote root",
+      "severity": null,
+      "affects_assets": [
+        "SW-netkit_r-services_(rexec/rlogin/rsh)-0.17",
+        "SRV-015"
+      ],
+      "in_kev": false
+    },
+    {
+      "cve_id": "CVE-2011-3556",
+      "description": "Oracle Java RMI default config allows remote RCE via deserialization",
+      "severity": null,
+      "affects_assets": [
+        "SW-Java_RMI_Registry-GNU Classpath grmiregistry",
+        "SRV-016"
+      ],
+      "in_kev": false
+    },
+    {
+      "cve_id": "CVE-1999-0170",
+      "description": "NFS exports root filesystem allowing remote write and SSH key injection",
+      "severity": null,
+      "affects_assets": [
+        "SW-NFS-v2-v4",
+        "SRV-018"
+      ],
+      "in_kev": false
+    },
+    {
+      "cve_id": "CVE-2010-4221",
+      "description": "ProFTPD TELNET IAC buffer overflow allows remote RCE",
+      "severity": null,
+      "affects_assets": [
+        "SW-ProFTPD-1.3.1",
+        "SRV-019"
+      ],
+      "in_kev": false
+    },
+    {
+      "cve_id": "CVE-2008-0226",
+      "description": "MySQL 5.0.x allows local privilege escalation via crafted BINLOG command",
+      "severity": null,
+      "affects_assets": [
+        "SW-MySQL-5.0.51a-3ubuntu5",
+        "SRV-020"
+      ],
+      "in_kev": false
+    },
+    {
+      "cve_id": "CVE-2004-2687",
+      "description": "distccd allows remote code execution via EXEC request without auth",
+      "severity": null,
+      "affects_assets": [
+        "SW-distccd-v1 (GCC 4.2.4)",
+        "SRV-021"
+      ],
+      "in_kev": false
+    },
+    {
+      "cve_id": "CVE-2013-1904",
+      "description": "PostgreSQL allows local privilege escalation via crafted SQL",
+      "severity": null,
+      "affects_assets": [
+        "SW-PostgreSQL-8.3.0-8.3.7",
+        "SRV-022"
+      ],
+      "in_kev": false
+    },
+    {
+      "cve_id": "CVE-2006-2369",
+      "description": "RealVNC 4.1.1 authentication bypass via NULL auth type",
+      "severity": null,
+      "affects_assets": [
+        "SW-VNC-Protocol 3.3",
+        "SRV-023"
+      ],
+      "in_kev": false
+    },
+    {
+      "cve_id": "CVE-1999-0526",
+      "description": "X11 open display allows unauthenticated connection and screen capture",
+      "severity": null,
+      "affects_assets": [
+        "SW-X11-Xorg 7.3",
+        "SRV-024"
+      ],
+      "in_kev": false
+    },
+    {
+      "cve_id": "CVE-2010-2075",
+      "description": "UnrealIRCd 3.2.8.1 backdoor allows unauthenticated remote command execution via AB prefix",
+      "severity": null,
+      "affects_assets": [
+        "SW-UnrealIRCd-3.2.8.1",
+        "SRV-025"
+      ],
+      "in_kev": false
+    },
+    {
+      "cve_id": "CVE-2009-0580",
+      "description": "Apache Tomcat allows directory traversal via UTF-8 encoded URLs",
+      "severity": null,
+      "affects_assets": [
+        "SW-Apache_Tomcat-5.5 (AJP/1.3 on port 8009)",
+        "SRV-026"
+      ],
+      "in_kev": false
+    },
+    {
+      "cve_id": "CVE-2011-5330",
+      "description": "Ruby DRb allows remote RCE via instance_eval/syscall without authentication",
+      "severity": null,
+      "affects_assets": [
+        "SW-Ruby_DRb_(Distributed_Ruby)-1.8",
+        "SRV-027"
+      ],
+      "in_kev": false
+    },
+    {
+      "cve_id": "CVE-2017-7679",
+      "description": "Apache mod_mime buffer overread allows DoS or information disclosure",
+      "severity": null,
+      "affects_assets": [
+        "SW-Apache_httpd-2.4.18 (Ubuntu 16.04 default, 5s keep-alive)",
+        "SRV-028"
+      ],
+      "in_kev": false
+    },
+    {
+      "cve_id": "CVE-2014-0160",
+      "description": "Heartbleed: OpenSSL TLS heartbeat extension allows remote memory read leaking private keys and session data",
+      "severity": null,
+      "affects_assets": [
+        "SW-OpenSSL-1.0.1f",
+        "SRV-029"
+      ],
+      "in_kev": false
+    },
+    {
+      "cve_id": "CVE-2010-0188",
+      "description": "Adobe Reader 9 integer overflow via crafted PDF allows RCE — CIC infiltration initial access vector",
+      "severity": null,
+      "affects_assets": [
+        "SW-Adobe_Acrobat_Reader-9.0",
+        "SRV-030"
+      ],
+      "in_kev": false
+    },
+    {
+      "cve_id": "CVE-2017-0144",
+      "description": "EternalBlue: Windows SMBv1 RCE via crafted packets (MS17-010)",
+      "severity": null,
+      "affects_assets": [
+        "SW-Windows_SMBv1-Windows Server 2012 R2",
+        "SRV-032",
+        "SW-Windows_SMBv1-Windows Server 2016",
+        "SRV-033"
+      ],
+      "in_kev": false
+    }
+  ],
+  "threats_6_5": [
+    {
+      "threat_id": "T1110",
+      "framework": "MITRE ATT&CK",
+      "description": "Brute Force",
+      "targets_assets": [
+        "SRV-001",
+        "SRV-002"
+      ]
+    },
+    {
+      "threat_id": "T1110.001",
+      "framework": "MITRE ATT&CK",
+      "description": "Password Guessing (FTP/Patator)",
+      "targets_assets": [
+        "SRV-001",
+        "SRV-002"
+      ]
+    },
+    {
+      "threat_id": "T1499",
+      "framework": "MITRE ATT&CK",
+      "description": "Endpoint Denial of Service",
+      "targets_assets": [
+        "SRV-028"
+      ]
+    },
+    {
+      "threat_id": "T1498",
+      "framework": "MITRE ATT&CK",
+      "description": "Network Denial of Service",
+      "targets_assets": [
+        "SRV-028"
+      ]
+    },
+    {
+      "threat_id": "T1555",
+      "framework": "MITRE ATT&CK",
+      "description": "Credentials from Password Stores",
+      "targets_assets": [
+        "SRV-029"
+      ]
+    },
+    {
+      "threat_id": "T1190",
+      "framework": "MITRE ATT&CK",
+      "description": "Exploit Public-Facing Application",
+      "targets_assets": [
+        "SRV-007",
+        "SRV-008"
+      ]
+    },
+    {
+      "threat_id": "T1566.001",
+      "framework": "MITRE ATT&CK",
+      "description": "Spearphishing Attachment (PDF)",
+      "targets_assets": [
+        "SRV-030",
+        "SRV-031"
+      ]
+    },
+    {
+      "threat_id": "T1071.001",
+      "framework": "MITRE ATT&CK",
+      "description": "Web Protocols (Ares C2 port 8080)",
+      "targets_assets": [
+        "SRV-032",
+        "SRV-033"
+      ]
+    }
+  ]
+}

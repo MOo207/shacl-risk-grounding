@@ -1,0 +1,129 @@
+{
+  "purpose": "Negative controls proving each repaired shape reports violations on input built to break it.",
+  "shape_triples": 541,
+  "cases_total": 8,
+  "cases_passed": 8,
+  "all_passed": true,
+  "cases": [
+    {
+      "case": "orphan_vulnerability_is_caught",
+      "expected_violation": true,
+      "constraint_reported": true,
+      "passed": true,
+      "conforms": false,
+      "messages": [
+        "Every vulnerability must be linked to at least one asset via hasVulnerability property",
+        "Vulnerability must have exactly one cvssScore of type decimal between 0.0 and 10.0"
+      ]
+    },
+    {
+      "case": "linked_vulnerability_is_accepted",
+      "expected_violation": false,
+      "constraint_reported": false,
+      "passed": true,
+      "conforms": false,
+      "messages": [
+        "Vulnerability must have exactly one cvssScore of type decimal between 0.0 and 10.0"
+      ]
+    },
+    {
+      "case": "scenario_nonexistent_clause_is_caught",
+      "expected_violation": true,
+      "constraint_reported": true,
+      "passed": true,
+      "conforms": false,
+      "messages": [
+        "Asset must have a provenanceSource indicating data origin",
+        "nfcrmClause SS5.999 is not a clause of NFCRM-1:2025 (no grc:Clause individual carries this grc:clauseId)",
+        "Asset must have a provenanceTimestamp of type dateTime",
+        "Asset must have exactly one assetType of type string (software, hardware, or network)",
+        "Asset must have exactly one assetId of type string",
+        "Asset must have exactly one assetName of type string"
+      ]
+    },
+    {
+      "case": "scenario_real_clause_is_accepted",
+      "expected_violation": false,
+      "constraint_reported": false,
+      "passed": true,
+      "conforms": false,
+      "messages": [
+        "Asset must have a provenanceTimestamp of type dateTime",
+        "Asset must have exactly one assetName of type string",
+        "Asset must have exactly one assetId of type string",
+        "Asset must have exactly one assetType of type string (software, hardware, or network)",
+        "Asset must have a provenanceSource indicating data origin"
+      ]
+    },
+    {
+      "case": "recommendation_nonexistent_clause_is_caught",
+      "expected_violation": true,
+      "constraint_reported": true,
+      "passed": true,
+      "conforms": false,
+      "messages": [
+        "Asset must have a provenanceTimestamp of type dateTime",
+        "Asset must have exactly one assetId of type string",
+        "controlClauseId SS6.99 is not a clause of NFCRM-1:2025 (no grc:Clause individual carries this grc:clauseId)",
+        "Asset must have a provenanceSource indicating data origin",
+        "Asset must have exactly one assetName of type string",
+        "Asset must have exactly one assetType of type string (software, hardware, or network)"
+      ]
+    },
+    {
+      "case": "recommendation_real_clause_is_accepted",
+      "expected_violation": false,
+      "constraint_reported": false,
+      "passed": true,
+      "conforms": false,
+      "messages": [
+        "Asset must have a provenanceTimestamp of type dateTime",
+        "Asset must have exactly one assetType of type string (software, hardware, or network)",
+        "Asset must have exactly one assetId of type string",
+        "Asset must have exactly one assetName of type string",
+        "Asset must have a provenanceSource indicating data origin"
+      ]
+    },
+    {
+      "case": "nfcrm_control_nonexistent_clause_is_caught",
+      "expected_violation": true,
+      "constraint_reported": true,
+      "passed": true,
+      "conforms": false,
+      "messages": [
+        "Every control must either mitigate a vulnerability or be associated with a risk case",
+        "nfcrmClause NFCRM-1:2025-\u00a799.99 is not a clause of NFCRM-1:2025 (no grc:Clause individual carries this grc:clauseRefNFCRM)"
+      ]
+    },
+    {
+      "case": "nfcrm_control_real_clause_is_accepted",
+      "expected_violation": false,
+      "constraint_reported": false,
+      "passed": true,
+      "conforms": false,
+      "messages": [
+        "Every control must either mitigate a vulnerability or be associated with a risk case"
+      ]
+    }
+  ],
+  "known_gaps": {
+    "forged_clause_authority": {
+      "description": "The clause join queries grc:Clause individuals in the data graph (see clause_context.py TRUST BOUNDARY note). A data graph carrying its own forged grc:Clause individual authorises its own nonexistent clause citation.",
+      "gap_confirmed_present": true,
+      "detail": {
+        "case": "KNOWN_GAP_forged_clause_authority_is_not_caught",
+        "expected_violation": true,
+        "constraint_reported": false,
+        "passed": false,
+        "conforms": false,
+        "messages": [
+          "Asset must have exactly one assetName of type string",
+          "Asset must have a provenanceSource indicating data origin",
+          "Asset must have exactly one assetType of type string (software, hardware, or network)",
+          "Asset must have exactly one assetId of type string",
+          "Asset must have a provenanceTimestamp of type dateTime"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,391 @@
+{
+  "mode": "ablation_stripped",
+  "model": "glm-4.7",
+  "backend": "zai_api",
+  "dataset": "cicids",
+  "n_samples": 60,
+  "n_valid": 60,
+  "n_errors": 0,
+  "accuracy": 0.5,
+  "per_class_accuracy": {
+    "Benign": 0.4,
+    "BruteForce": 0.4,
+    "DDoS": 0.4,
+    "DoS": 0.7,
+    "Infiltration": 0.4,
+    "WebAttack": 0.7
+  },
+  "per_class_counts": {
+    "Benign": 10,
+    "BruteForce": 10,
+    "DDoS": 10,
+    "DoS": 10,
+    "Infiltration": 10,
+    "WebAttack": 10
+  },
+  "elapsed_seconds": 11361.666959762573,
+  "note": "Ablation: stripped NL features (no signature hints) + factual few-shot examples. Held constant: random_state=42 (same 60 samples as W17 v3 run), model=glm-4.7, temperature=0. Compares against slm_nl_classification.json to isolate LLM reasoning from NL feature engineering contribution.",
+  "results": [
+    {
+      "true": "Benign",
+      "predicted": "Benign",
+      "correct": true,
+      "nl_description": "Destination: HTTP. Duration: 5.34 s. Packets: 3 forward, 1 backward. Bytes: 0 forward, 0 backward. TCP initial window: 8192. Packet rate: 0.7 pkt/s."
+    },
+    {
+      "true": "Benign",
+      "predicted": "Infiltration",
+      "correct": false,
+      "nl_description": "Destination: port 51438. Duration: 1 microseconds. Packets: 2 forward, 0 backward. Bytes: 0 forward, 0 backward. TCP initial window: 114. Packet rate: 2000000.0 pkt/s."
+    },
+    {
+      "true": "DoS",
+      "predicted": "DDoS",
+      "correct": false,
+      "nl_description": "Destination: HTTP. Duration: 16.80 ms. Packets: 3 forward, 4 backward. Bytes: 337 forward, 935 backward. TCP initial window: 26883. Packet rate: 416.6 pkt/s."
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "Benign",
+      "correct": false,
+      "nl_description": "Destination: DNS. Duration: 308 microseconds. Packets: 1 forward, 1 backward. Bytes: 43 forward, 59 backward. TCP initial window: -1. Packet rate: 6493.5 pkt/s."
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "BruteForce",
+      "correct": true,
+      "nl_description": "Destination: HTTP. Duration: 56.88 s. Packets: 203 forward, 104 backward. Bytes: 56083 forward, 189901 backward. TCP initial window: 8192. Packet rate: 5.4 pkt/s."
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "WebAttack",
+      "correct": true,
+      "nl_description": "Destination: HTTP. Duration: 5.02 s. Packets: 4 forward, 4 backward. Bytes: 603 forward, 364 backward. TCP initial window: 8192. Packet rate: 1.6 pkt/s."
+    },
+    {
+      "true": "DoS",
+      "predicted": "DoS",
+      "correct": true,
+      "nl_description": "Destination: HTTP. Duration: 26.14 ms. Packets: 2 forward, 0 backward. Bytes: 0 forward, 0 backward. TCP initial window: 225. Packet rate: 76.5 pkt/s."
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "Infiltration",
+      "correct": true,
+      "nl_description": "Destination: port 51678. Duration: 1 microseconds. Packets: 2 forward, 0 backward. Bytes: 0 forward, 0 backward. TCP initial window: 31. Packet rate: 2000000.0 pkt/s."
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "BruteForce",
+      "correct": true,
+      "nl_description": "Destination: HTTP. Duration: 56.54 s. Packets: 153 forward, 104 backward. Bytes: 54995 forward, 72483 backward. TCP initial window: 8192. Packet rate: 4.5 pkt/s."
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "WebAttack",
+      "correct": true,
+      "nl_description": "Destination: HTTP. Duration: 5.02 s. Packets: 4 forward, 4 backward. Bytes: 709 forward, 1910 backward. TCP initial window: 8192. Packet rate: 1.6 pkt/s."
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "Benign",
+      "correct": false,
+      "nl_description": "Destination: DNS. Duration: 229 microseconds. Packets: 1 forward, 1 backward. Bytes: 30 forward, 46 backward. TCP initial window: -1. Packet rate: 8733.6 pkt/s."
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "WebAttack",
+      "correct": true,
+      "nl_description": "Destination: HTTP. Duration: 5.01 s. Packets: 4 forward, 4 backward. Bytes: 483 forward, 526 backward. TCP initial window: 8192. Packet rate: 1.6 pkt/s."
+    },
+    {
+      "true": "DoS",
+      "predicted": "DoS",
+      "correct": true,
+      "nl_description": "Destination: HTTP. Duration: 1.48 ms. Packets: 2 forward, 0 backward. Bytes: 0 forward, 0 backward. TCP initial window: 225. Packet rate: 1353.2 pkt/s."
+    },
+    {
+      "true": "Benign",
+      "predicted": "Benign",
+      "correct": true,
+      "nl_description": "Destination: RDP. Duration: 1.99 s. Packets: 10 forward, 7 backward. Bytes: 670 forward, 301 backward. TCP initial window: 8192. Packet rate: 8.5 pkt/s."
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "WebAttack",
+      "correct": true,
+      "nl_description": "Destination: HTTP. Duration: 5.01 s. Packets: 4 forward, 4 backward. Bytes: 660 forward, 395 backward. TCP initial window: 8192. Packet rate: 1.6 pkt/s."
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "BruteForce",
+      "correct": true,
+      "nl_description": "Destination: HTTP. Duration: 56.35 s. Packets: 153 forward, 104 backward. Bytes: 54995 forward, 72487 backward. TCP initial window: 8192. Packet rate: 4.6 pkt/s."
+    },
+    {
+      "true": "Benign",
+      "predicted": "Infiltration",
+      "correct": false,
+      "nl_description": "Destination: port 50811. Duration: 89 microseconds. Packets: 3 forward, 0 backward. Bytes: 31 forward, 0 backward. TCP initial window: 64. Packet rate: 33707.9 pkt/s."
+    },
+    {
+      "true": "Benign",
+      "predicted": "Infiltration",
+      "correct": false,
+      "nl_description": "Destination: port 0. Duration: 112.64 s. Packets: 3 forward, 0 backward. Bytes: 0 forward, 0 backward. TCP initial window: -1. Packet rate: 0.0 pkt/s."
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "Infiltration",
+      "correct": true,
+      "nl_description": "Destination: port 54045. Duration: 2 microseconds. Packets: 1 forward, 1 backward. Bytes: 0 forward, 0 backward. TCP initial window: 1024. Packet rate: 1000000.0 pkt/s."
+    },
+    {
+      "true": "Benign",
+      "predicted": "Benign",
+      "correct": true,
+      "nl_description": "Destination: DNS. Duration: 1.06 ms. Packets: 1 forward, 1 backward. Bytes: 29 forward, 61 backward. TCP initial window: -1. Packet rate: 1893.9 pkt/s."
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "Infiltration",
+      "correct": true,
+      "nl_description": "Destination: port 20222. Duration: 267 microseconds. Packets: 1 forward, 1 backward. Bytes: 0 forward, 0 backward. TCP initial window: 1024. Packet rate: 7490.6 pkt/s."
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "DoS",
+      "correct": false,
+      "nl_description": "Destination: HTTP. Duration: 144 microseconds. Packets: 3 forward, 0 backward. Bytes: 0 forward, 0 backward. TCP initial window: 2053. Packet rate: 20833.3 pkt/s."
+    },
+    {
+      "true": "DoS",
+      "predicted": "DoS",
+      "correct": true,
+      "nl_description": "Destination: HTTP. Duration: 11.87 ms. Packets: 2 forward, 0 backward. Bytes: 0 forward, 0 backward. TCP initial window: 225. Packet rate: 168.4 pkt/s."
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "DoS",
+      "correct": false,
+      "nl_description": "Destination: HTTP. Duration: 73 microseconds. Packets: 2 forward, 0 backward. Bytes: 0 forward, 0 backward. TCP initial window: 2053. Packet rate: 27397.3 pkt/s."
+    },
+    {
+      "true": "DDoS",
+      "predicted": "DDoS",
+      "correct": true,
+      "nl_description": "Destination: HTTP. Duration: 8.73 ms. Packets: 3 forward, 4 backward. Bytes: 261 forward, 935 backward. TCP initial window: 65535. Packet rate: 801.7 pkt/s."
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "",
+      "correct": false,
+      "nl_description": "Destination: HTTP. Duration: 226 microseconds. Packets: 2 forward, 1 backward. Bytes: 0 forward, 0 backward. TCP initial window: 2051. Packet rate: 13274.3 pkt/s."
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "DoS",
+      "correct": false,
+      "nl_description": "Destination: HTTP. Duration: 107 microseconds. Packets: 2 forward, 0 backward. Bytes: 0 forward, 0 backward. TCP initial window: 2047. Packet rate: 18691.6 pkt/s."
+    },
+    {
+      "true": "DDoS",
+      "predicted": "DDoS",
+      "correct": true,
+      "nl_description": "Destination: HTTP. Duration: 2.60 ms. Packets: 3 forward, 4 backward. Bytes: 287 forward, 935 backward. TCP initial window: 65535. Packet rate: 2693.3 pkt/s."
+    },
+    {
+      "true": "Benign",
+      "predicted": "DDoS",
+      "correct": false,
+      "nl_description": "Destination: port 53017. Duration: 1.25 ms. Packets: 5 forward, 2 backward. Bytes: 935 forward, 314 backward. TCP initial window: 65535. Packet rate: 5595.5 pkt/s."
+    },
+    {
+      "true": "DoS",
+      "predicted": "DoS",
+      "correct": true,
+      "nl_description": "Destination: HTTP. Duration: 10.08 ms. Packets: 2 forward, 0 backward. Bytes: 0 forward, 0 backward. TCP initial window: 225. Packet rate: 198.4 pkt/s."
+    },
+    {
+      "true": "DDoS",
+      "predicted": "DoS",
+      "correct": false,
+      "nl_description": "Destination: HTTP. Duration: 2.70 ms. Packets: 2 forward, 0 backward. Bytes: 0 forward, 0 backward. TCP initial window: 32738. Packet rate: 740.2 pkt/s."
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "Infiltration",
+      "correct": false,
+      "nl_description": "Destination: port 500. Duration: 89.48 s. Packets: 6 forward, 0 backward. Bytes: 3000 forward, 0 backward. TCP initial window: -1. Packet rate: 0.1 pkt/s."
+    },
+    {
+      "true": "DDoS",
+      "predicted": "DoS",
+      "correct": false,
+      "nl_description": "Destination: HTTP. Duration: 1.69 ms. Packets: 2 forward, 0 backward. Bytes: 0 forward, 0 backward. TCP initial window: 32738. Packet rate: 1182.0 pkt/s."
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "WebAttack",
+      "correct": true,
+      "nl_description": "Destination: HTTP. Duration: 5.00 s. Packets: 4 forward, 4 backward. Bytes: 487 forward, 1806 backward. TCP initial window: 8192. Packet rate: 1.6 pkt/s."
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "Infiltration",
+      "correct": false,
+      "nl_description": "Destination: port 0. Duration: 112.64 s. Packets: 3 forward, 0 backward. Bytes: 0 forward, 0 backward. TCP initial window: -1. Packet rate: 0.0 pkt/s."
+    },
+    {
+      "true": "DoS",
+      "predicted": "DoS",
+      "correct": true,
+      "nl_description": "Destination: HTTP. Duration: 48.60 ms. Packets: 2 forward, 0 backward. Bytes: 0 forward, 0 backward. TCP initial window: 225. Packet rate: 41.2 pkt/s."
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "WebAttack",
+      "correct": true,
+      "nl_description": "Destination: HTTP. Duration: 8.17 s. Packets: 11 forward, 8 backward. Bytes: 2307 forward, 9011 backward. TCP initial window: 8192. Packet rate: 2.3 pkt/s."
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "Benign",
+      "correct": false,
+      "nl_description": "Destination: port 0. Duration: 1.70 s. Packets: 4 forward, 4 backward. Bytes: 0 forward, 0 backward. TCP initial window: -1. Packet rate: 4.7 pkt/s."
+    },
+    {
+      "true": "DoS",
+      "predicted": "WebAttack",
+      "correct": false,
+      "nl_description": "Destination: HTTP. Duration: 6.89 s. Packets: 5 forward, 3 backward. Bytes: 461 forward, 972 backward. TCP initial window: 26883. Packet rate: 1.2 pkt/s."
+    },
+    {
+      "true": "DDoS",
+      "predicted": "DoS",
+      "correct": false,
+      "nl_description": "Destination: HTTP. Duration: 6.31 ms. Packets: 2 forward, 0 backward. Bytes: 0 forward, 0 backward. TCP initial window: 32738. Packet rate: 316.8 pkt/s."
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "Benign",
+      "correct": false,
+      "nl_description": "Destination: DNS. Duration: 865 microseconds. Packets: 1 forward, 1 backward. Bytes: 31 forward, 106 backward. TCP initial window: -1. Packet rate: 2312.1 pkt/s."
+    },
+    {
+      "true": "Benign",
+      "predicted": "DDoS",
+      "correct": false,
+      "nl_description": "Destination: port 52230. Duration: 18.35 ms. Packets: 5 forward, 2 backward. Bytes: 935 forward, 309 backward. TCP initial window: 65535. Packet rate: 381.6 pkt/s."
+    },
+    {
+      "true": "DDoS",
+      "predicted": "DDoS",
+      "correct": true,
+      "nl_description": "Destination: HTTP. Duration: 1.45 ms. Packets: 3 forward, 4 backward. Bytes: 325 forward, 935 backward. TCP initial window: 65535. Packet rate: 4811.0 pkt/s."
+    },
+    {
+      "true": "Benign",
+      "predicted": "Benign",
+      "correct": true,
+      "nl_description": "Destination: HTTP. Duration: 927 microseconds. Packets: 3 forward, 4 backward. Bytes: 148 forward, 243 backward. TCP initial window: 8192. Packet rate: 7551.2 pkt/s."
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "Infiltration",
+      "correct": true,
+      "nl_description": "Destination: port 646. Duration: 226 microseconds. Packets: 1 forward, 1 backward. Bytes: 0 forward, 0 backward. TCP initial window: 1024. Packet rate: 8849.6 pkt/s."
+    },
+    {
+      "true": "DoS",
+      "predicted": "DoS",
+      "correct": true,
+      "nl_description": "Destination: HTTP. Duration: 510 microseconds. Packets: 2 forward, 0 backward. Bytes: 0 forward, 0 backward. TCP initial window: 225. Packet rate: 3921.6 pkt/s."
+    },
+    {
+      "true": "DoS",
+      "predicted": "DoS",
+      "correct": true,
+      "nl_description": "Destination: HTTP. Duration: 274 microseconds. Packets: 2 forward, 0 backward. Bytes: 0 forward, 0 backward. TCP initial window: 225. Packet rate: 7299.3 pkt/s."
+    },
+    {
+      "true": "DDoS",
+      "predicted": "DoS",
+      "correct": false,
+      "nl_description": "Destination: HTTP. Duration: 12.64 ms. Packets: 2 forward, 0 backward. Bytes: 0 forward, 0 backward. TCP initial window: 32738. Packet rate: 158.2 pkt/s."
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "Benign",
+      "correct": false,
+      "nl_description": "Destination: DNS. Duration: 11.22 ms. Packets: 1 forward, 1 backward. Bytes: 70 forward, 152 backward. TCP initial window: -1. Packet rate: 178.3 pkt/s."
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "DoS",
+      "correct": false,
+      "nl_description": "Destination: HTTP. Duration: 93 microseconds. Packets: 2 forward, 0 backward. Bytes: 0 forward, 0 backward. TCP initial window: 2053. Packet rate: 21505.4 pkt/s."
+    },
+    {
+      "true": "DDoS",
+      "predicted": "DoS",
+      "correct": false,
+      "nl_description": "Destination: HTTP. Duration: 3.06 ms. Packets: 2 forward, 0 backward. Bytes: 0 forward, 0 backward. TCP initial window: 32738. Packet rate: 653.8 pkt/s."
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "DoS",
+      "correct": false,
+      "nl_description": "Destination: HTTP. Duration: 94 microseconds. Packets: 2 forward, 0 backward. Bytes: 0 forward, 0 backward. TCP initial window: 2047. Packet rate: 21276.6 pkt/s."
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "WebAttack",
+      "correct": true,
+      "nl_description": "Destination: HTTP. Duration: 5.01 s. Packets: 5 forward, 3 backward. Bytes: 694 forward, 4012 backward. TCP initial window: 8192. Packet rate: 1.6 pkt/s."
+    },
+    {
+      "true": "DDoS",
+      "predicted": "DDoS",
+      "correct": true,
+      "nl_description": "Destination: HTTP. Duration: 33.43 ms. Packets: 3 forward, 4 backward. Bytes: 316 forward, 935 backward. TCP initial window: 65535. Packet rate: 209.4 pkt/s."
+    },
+    {
+      "true": "Benign",
+      "predicted": "Infiltration",
+      "correct": false,
+      "nl_description": "Destination: port 52391. Duration: 0 microseconds. Packets: 2 forward, 0 backward. Bytes: 0 forward, 0 backward. TCP initial window: 5435. Packet rate: 0.0 pkt/s."
+    },
+    {
+      "true": "Infiltration",
+      "predicted": "",
+      "correct": false,
+      "nl_description": "Destination: HTTP. Duration: 115.18 s. Packets: 16 forward, 14 backward. Bytes: 445 forward, 706 backward. TCP initial window: 8192. Packet rate: 0.3 pkt/s."
+    },
+    {
+      "true": "BruteForce",
+      "predicted": "BruteForce",
+      "correct": true,
+      "nl_description": "Destination: HTTP. Duration: 56.94 s. Packets: 153 forward, 104 backward. Bytes: 54995 forward, 72495 backward. TCP initial window: 8192. Packet rate: 4.5 pkt/s."
+    },
+    {
+      "true": "DDoS",
+      "predicted": "DoS",
+      "correct": false,
+      "nl_description": "Destination: HTTP. Duration: 1.07 ms. Packets: 2 forward, 0 backward. Bytes: 0 forward, 0 backward. TCP initial window: 32738. Packet rate: 1867.4 pkt/s."
+    },
+    {
+      "true": "WebAttack",
+      "predicted": "Benign",
+      "correct": false,
+      "nl_description": "Destination: HTTP. Duration: 5.00 s. Packets: 3 forward, 1 backward. Bytes: 0 forward, 0 backward. TCP initial window: 8192. Packet rate: 0.8 pkt/s."
+    },
+    {
+      "true": "DoS",
+      "predicted": "WebAttack",
+      "correct": false,
+      "nl_description": "Destination: HTTP. Duration: 11.84 s. Packets: 4 forward, 4 backward. Bytes: 343 forward, 972 backward. TCP initial window: 26883. Packet rate: 0.7 pkt/s."
+    }
+  ],
+  "timestamp": "2026-05-08T23:21:35.530328"
+}

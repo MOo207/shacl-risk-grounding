@@ -1,0 +1,358 @@
+{
+  "metadata": {
+    "n_samples": 2122,
+    "n_bootstrap": 1000,
+    "n_tests": 9,
+    "alpha": 0.05,
+    "bonferroni_alpha": 0.005555555555555556,
+    "comparisons_made": [
+      [
+        "baseline",
+        "tri_stage"
+      ],
+      [
+        "baseline",
+        "pre_only"
+      ],
+      [
+        "baseline",
+        "post_annotate"
+      ],
+      [
+        "pre_only",
+        "tri_stage"
+      ],
+      [
+        "post_annotate",
+        "tri_stage"
+      ]
+    ]
+  },
+  "bootstrap_intervals": {
+    "baseline": {
+      "accuracy": {
+        "value": 0.8770028275212064,
+        "ci_lower": 0.8599408123422163,
+        "ci_upper": 0.8948720782480785,
+        "ci_width": 0.03493126590586215
+      },
+      "f1_macro": {
+        "value": 0.8960207568226827,
+        "ci_lower": 0.8789485471628204,
+        "ci_upper": 0.9125046688045998,
+        "ci_width": 0.033556121641779346
+      },
+      "f1_weighted": {
+        "value": 0.8768036730595755,
+        "ci_lower": 0.8597009132323105,
+        "ci_upper": 0.8934209035108986,
+        "ci_width": 0.033719990278588186
+      }
+    },
+    "pre_only": {
+      "accuracy": {
+        "value": 0.8798303487276155,
+        "ci_lower": 0.8640868035109942,
+        "ci_upper": 0.8965863939724595,
+        "ci_width": 0.03249959046146533
+      },
+      "f1_macro": {
+        "value": 0.8879062439117251,
+        "ci_lower": 0.8703713585699421,
+        "ci_upper": 0.9040829258971638,
+        "ci_width": 0.03371156732722169
+      },
+      "f1_weighted": {
+        "value": 0.8798518263186165,
+        "ci_lower": 0.862350682421381,
+        "ci_upper": 0.89665563901197,
+        "ci_width": 0.034304956590588964
+      }
+    },
+    "post_annotate": {
+      "accuracy": {
+        "value": 0.8770028275212064,
+        "ci_lower": 0.86061313110809,
+        "ci_upper": 0.8945377814075248,
+        "ci_width": 0.03392465029943481
+      },
+      "f1_macro": {
+        "value": 0.8960207568226827,
+        "ci_lower": 0.8793353172874373,
+        "ci_upper": 0.9115547764178786,
+        "ci_width": 0.03221945913044133
+      },
+      "f1_weighted": {
+        "value": 0.8768036730595755,
+        "ci_lower": 0.8598173964409399,
+        "ci_upper": 0.8929175165485526,
+        "ci_width": 0.03310012010761265
+      }
+    },
+    "post_override": {
+      "accuracy": {
+        "value": 0.8770028275212064,
+        "ci_lower": 0.8621564219090718,
+        "ci_upper": 0.894426831285954,
+        "ci_width": 0.03227040937688219
+      },
+      "f1_macro": {
+        "value": 0.8960207568226827,
+        "ci_lower": 0.8807842741891938,
+        "ci_upper": 0.9116236767783796,
+        "ci_width": 0.030839402589185827
+      },
+      "f1_weighted": {
+        "value": 0.8768036730595755,
+        "ci_lower": 0.8602716845816145,
+        "ci_upper": 0.8929178723152805,
+        "ci_width": 0.03264618773366601
+      }
+    },
+    "tri_stage": {
+      "accuracy": {
+        "value": 0.8798303487276155,
+        "ci_lower": 0.8629643052160735,
+        "ci_upper": 0.8967356305900358,
+        "ci_width": 0.033771325373962324
+      },
+      "f1_macro": {
+        "value": 0.8879062439117251,
+        "ci_lower": 0.8729142911004937,
+        "ci_upper": 0.9051709232611758,
+        "ci_width": 0.032256632160682086
+      },
+      "f1_weighted": {
+        "value": 0.8798518263186165,
+        "ci_lower": 0.862158638421513,
+        "ci_upper": 0.8978145342914677,
+        "ci_width": 0.03565589586995477
+      }
+    }
+  },
+  "paired_tests": {
+    "baseline_vs_tri_stage": {
+      "accuracy": {
+        "baseline_accuracy": 0.8770028275212064,
+        "tri_stage_accuracy": 0.8798303487276155,
+        "difference": -0.002827521206409056,
+        "t_statistic": 0.07942409422098055,
+        "p_value": 0.7780793824563796,
+        "significant_bonferroni": false,
+        "significant_uncorrected": false
+      },
+      "f1_macro": {
+        "baseline_f1_macro": 0.8960207568226827,
+        "tri_stage_f1_macro": 0.8879062439117251,
+        "difference": 0.00811451291095755,
+        "t_statistic": 0.724974460162263,
+        "p_value": 0.39451702775966324,
+        "significant_bonferroni": false,
+        "significant_uncorrected": false
+      },
+      "f1_weighted": {
+        "baseline_f1_weighted": 0.8768036730595755,
+        "tri_stage_f1_weighted": 0.8798518263186165,
+        "difference": -0.0030481532590409532,
+        "t_statistic": 0.09224457580842967,
+        "p_value": 0.7613428032546437,
+        "significant_bonferroni": false,
+        "significant_uncorrected": false
+      }
+    },
+    "baseline_vs_pre_only": {
+      "accuracy": {
+        "baseline_accuracy": 0.8770028275212064,
+        "pre_only_accuracy": 0.8798303487276155,
+        "difference": -0.002827521206409056,
+        "t_statistic": 0.07942409422098055,
+        "p_value": 0.7780793824563796,
+        "significant_bonferroni": false,
+        "significant_uncorrected": false
+      },
+      "f1_macro": {
+        "baseline_f1_macro": 0.8960207568226827,
+        "pre_only_f1_macro": 0.8879062439117251,
+        "difference": 0.00811451291095755,
+        "t_statistic": 0.724974460162263,
+        "p_value": 0.39451702775966324,
+        "significant_bonferroni": false,
+        "significant_uncorrected": false
+      },
+      "f1_weighted": {
+        "baseline_f1_weighted": 0.8768036730595755,
+        "pre_only_f1_weighted": 0.8798518263186165,
+        "difference": -0.0030481532590409532,
+        "t_statistic": 0.09224457580842967,
+        "p_value": 0.7613428032546437,
+        "significant_bonferroni": false,
+        "significant_uncorrected": false
+      }
+    },
+    "baseline_vs_post_annotate": {
+      "accuracy": {
+        "baseline_accuracy": 0.8770028275212064,
+        "post_annotate_accuracy": 0.8770028275212064,
+        "difference": 0.0,
+        "t_statistic": 0.0,
+        "p_value": 1.0,
+        "significant_bonferroni": false,
+        "significant_uncorrected": false
+      },
+      "f1_macro": {
+        "baseline_f1_macro": 0.8960207568226827,
+        "post_annotate_f1_macro": 0.8960207568226827,
+        "difference": 0.0,
+        "t_statistic": 0.0,
+        "p_value": 1.0,
+        "significant_bonferroni": false,
+        "significant_uncorrected": false
+      },
+      "f1_weighted": {
+        "baseline_f1_weighted": 0.8768036730595755,
+        "post_annotate_f1_weighted": 0.8768036730595755,
+        "difference": 0.0,
+        "t_statistic": 0.0,
+        "p_value": 1.0,
+        "significant_bonferroni": false,
+        "significant_uncorrected": false
+      }
+    },
+    "pre_only_vs_tri_stage": {
+      "accuracy": {
+        "pre_only_accuracy": 0.8798303487276155,
+        "tri_stage_accuracy": 0.8798303487276155,
+        "difference": 0.0,
+        "t_statistic": 0.0,
+        "p_value": 1.0,
+        "significant_bonferroni": false,
+        "significant_uncorrected": false
+      },
+      "f1_macro": {
+        "pre_only_f1_macro": 0.8879062439117251,
+        "tri_stage_f1_macro": 0.8879062439117251,
+        "difference": 0.0,
+        "t_statistic": 0.0,
+        "p_value": 1.0,
+        "significant_bonferroni": false,
+        "significant_uncorrected": false
+      },
+      "f1_weighted": {
+        "pre_only_f1_weighted": 0.8798518263186165,
+        "tri_stage_f1_weighted": 0.8798518263186165,
+        "difference": 0.0,
+        "t_statistic": 0.0,
+        "p_value": 1.0,
+        "significant_bonferroni": false,
+        "significant_uncorrected": false
+      }
+    },
+    "post_annotate_vs_tri_stage": {
+      "accuracy": {
+        "post_annotate_accuracy": 0.8770028275212064,
+        "tri_stage_accuracy": 0.8798303487276155,
+        "difference": -0.002827521206409056,
+        "t_statistic": 0.07942409422098055,
+        "p_value": 0.7780793824563796,
+        "significant_bonferroni": false,
+        "significant_uncorrected": false
+      },
+      "f1_macro": {
+        "post_annotate_f1_macro": 0.8960207568226827,
+        "tri_stage_f1_macro": 0.8879062439117251,
+        "difference": 0.00811451291095755,
+        "t_statistic": 0.724974460162263,
+        "p_value": 0.39451702775966324,
+        "significant_bonferroni": false,
+        "significant_uncorrected": false
+      },
+      "f1_weighted": {
+        "post_annotate_f1_weighted": 0.8768036730595755,
+        "tri_stage_f1_weighted": 0.8798518263186165,
+        "difference": -0.0030481532590409532,
+        "t_statistic": 0.09224457580842967,
+        "p_value": 0.7613428032546437,
+        "significant_bonferroni": false,
+        "significant_uncorrected": false
+      }
+    }
+  },
+  "effect_sizes": {
+    "baseline_vs_tri_stage": {
+      "accuracy": {
+        "cohens_d": -0.008652038501795457,
+        "interpretation": "negligible"
+      },
+      "f1_macro": {
+        "cohens_d": 0.026139884341836405,
+        "interpretation": "negligible"
+      },
+      "f1_weighted": {
+        "cohens_d": -0.009324224619676465,
+        "interpretation": "negligible"
+      }
+    },
+    "baseline_vs_pre_only": {
+      "accuracy": {
+        "cohens_d": -0.008652038501795457,
+        "interpretation": "negligible"
+      },
+      "f1_macro": {
+        "cohens_d": 0.026139884341836405,
+        "interpretation": "negligible"
+      },
+      "f1_weighted": {
+        "cohens_d": -0.009324224619676465,
+        "interpretation": "negligible"
+      }
+    },
+    "baseline_vs_post_annotate": {
+      "accuracy": {
+        "cohens_d": 0.0,
+        "interpretation": "negligible"
+      },
+      "f1_macro": {
+        "cohens_d": 0.0,
+        "interpretation": "negligible"
+      },
+      "f1_weighted": {
+        "cohens_d": 0.0,
+        "interpretation": "negligible"
+      }
+    },
+    "pre_only_vs_tri_stage": {
+      "accuracy": {
+        "cohens_d": 0.0,
+        "interpretation": "negligible"
+      },
+      "f1_macro": {
+        "cohens_d": 0.0,
+        "interpretation": "negligible"
+      },
+      "f1_weighted": {
+        "cohens_d": 0.0,
+        "interpretation": "negligible"
+      }
+    },
+    "post_annotate_vs_tri_stage": {
+      "accuracy": {
+        "cohens_d": -0.008652038501795457,
+        "interpretation": "negligible"
+      },
+      "f1_macro": {
+        "cohens_d": 0.026139884341836405,
+        "interpretation": "negligible"
+      },
+      "f1_weighted": {
+        "cohens_d": -0.009324224619676465,
+        "interpretation": "negligible"
+      }
+    }
+  },
+  "significance_summary": {
+    "total_tests": 9,
+    "significant_bonferroni": 0,
+    "significant_uncorrected": 0,
+    "bonferroni_threshold": 0.005555555555555556
+  }
+}

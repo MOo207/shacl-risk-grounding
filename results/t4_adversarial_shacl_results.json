@@ -1,0 +1,522 @@
+{
+  "experiment": "T4 Adversarial SHACL vs JSON Schema",
+  "description": "Controlled adversarial test demonstrating that SHACL catches semantic violations (class constraints, property patterns, enum integrity) that JSON Schema cannot detect, and vice versa.",
+  "shacl_shapes_file": "ontology/shapes/risk-scenario.shacl.ttl",
+  "json_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": [
+      "scenario_title",
+      "affected_asset",
+      "threat_vector",
+      "impact_level",
+      "nfcrm_clause",
+      "recommended_controls",
+      "description"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "scenario_title": {
+        "type": "string",
+        "minLength": 1
+      },
+      "affected_asset": {
+        "type": "string",
+        "minLength": 1
+      },
+      "threat_vector": {
+        "type": "string",
+        "minLength": 1
+      },
+      "impact_level": {
+        "type": "string",
+        "enum": [
+          "critical",
+          "high",
+          "medium",
+          "low"
+        ]
+      },
+      "nfcrm_clause": {
+        "type": "string",
+        "minLength": 1
+      },
+      "recommended_controls": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "minItems": 1
+      },
+      "description": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "summary": {
+    "group_a_valid": {
+      "n": 10,
+      "shacl_pass_rate": 1.0,
+      "json_schema_pass_rate": 1.0
+    },
+    "group_b_shacl_violations": {
+      "n": 10,
+      "shacl_detection_rate": 1.0,
+      "json_schema_detection_rate": 0.7,
+      "shacl_exclusive_detection_rate": 0.3
+    },
+    "group_c_json_schema_violations": {
+      "n": 10,
+      "shacl_detection_rate": 0.0,
+      "json_schema_detection_rate": 1.0,
+      "json_schema_exclusive_detection_rate": 1.0
+    }
+  },
+  "samples": [
+    {
+      "group": "A",
+      "sample_id": "A-SRV-001",
+      "base_id": "SRV-001",
+      "violation_type": "none",
+      "shacl_pass": true,
+      "shacl_violations": 0,
+      "shacl_messages": [],
+      "json_schema_pass": true,
+      "json_schema_errors": []
+    },
+    {
+      "group": "A",
+      "sample_id": "A-SRV-002",
+      "base_id": "SRV-002",
+      "violation_type": "none",
+      "shacl_pass": true,
+      "shacl_violations": 0,
+      "shacl_messages": [],
+      "json_schema_pass": true,
+      "json_schema_errors": []
+    },
+    {
+      "group": "A",
+      "sample_id": "A-SRV-003",
+      "base_id": "SRV-003",
+      "violation_type": "none",
+      "shacl_pass": true,
+      "shacl_violations": 0,
+      "shacl_messages": [],
+      "json_schema_pass": true,
+      "json_schema_errors": []
+    },
+    {
+      "group": "A",
+      "sample_id": "A-SRV-004",
+      "base_id": "SRV-004",
+      "violation_type": "none",
+      "shacl_pass": true,
+      "shacl_violations": 0,
+      "shacl_messages": [],
+      "json_schema_pass": true,
+      "json_schema_errors": []
+    },
+    {
+      "group": "A",
+      "sample_id": "A-SRV-005",
+      "base_id": "SRV-005",
+      "violation_type": "none",
+      "shacl_pass": true,
+      "shacl_violations": 0,
+      "shacl_messages": [],
+      "json_schema_pass": true,
+      "json_schema_errors": []
+    },
+    {
+      "group": "A",
+      "sample_id": "A-SRV-007",
+      "base_id": "SRV-007",
+      "violation_type": "none",
+      "shacl_pass": true,
+      "shacl_violations": 0,
+      "shacl_messages": [],
+      "json_schema_pass": true,
+      "json_schema_errors": []
+    },
+    {
+      "group": "A",
+      "sample_id": "A-SRV-008",
+      "base_id": "SRV-008",
+      "violation_type": "none",
+      "shacl_pass": true,
+      "shacl_violations": 0,
+      "shacl_messages": [],
+      "json_schema_pass": true,
+      "json_schema_errors": []
+    },
+    {
+      "group": "A",
+      "sample_id": "A-SRV-009",
+      "base_id": "SRV-009",
+      "violation_type": "none",
+      "shacl_pass": true,
+      "shacl_violations": 0,
+      "shacl_messages": [],
+      "json_schema_pass": true,
+      "json_schema_errors": []
+    },
+    {
+      "group": "A",
+      "sample_id": "A-SRV-010",
+      "base_id": "SRV-010",
+      "violation_type": "none",
+      "shacl_pass": true,
+      "shacl_violations": 0,
+      "shacl_messages": [],
+      "json_schema_pass": true,
+      "json_schema_errors": []
+    },
+    {
+      "group": "A",
+      "sample_id": "A-SRV-011",
+      "base_id": "SRV-011",
+      "violation_type": "none",
+      "shacl_pass": true,
+      "shacl_violations": 0,
+      "shacl_messages": [],
+      "json_schema_pass": true,
+      "json_schema_errors": []
+    },
+    {
+      "group": "B",
+      "sample_id": "B-01",
+      "base_id": "SRV-001",
+      "violation_type": "invalid_nfcrm_clause_pattern",
+      "violation_description": "nfcrmClause 'NFCRM-\u00a799.99' does not match SHACL regex ^SS[56]\\.[0-9]+$",
+      "shacl_pass": false,
+      "shacl_violations": 1,
+      "shacl_detected": true,
+      "shacl_messages": [
+        "nfcrmClause NFCRM-\u00a799.99 is not a clause of NFCRM-1:2025 (no grc:Clause individual carries this grc:clauseId)"
+      ],
+      "json_schema_pass": true,
+      "json_schema_errors": [],
+      "json_schema_detected": false
+    },
+    {
+      "group": "B",
+      "sample_id": "B-02",
+      "base_id": "SRV-002",
+      "violation_type": "asset_wrong_rdf_class",
+      "violation_description": "affectedAsset node typed as grc:Software instead of required grc:Asset",
+      "shacl_pass": false,
+      "shacl_violations": 1,
+      "shacl_detected": true,
+      "shacl_messages": [
+        "RiskScenario must reference at least one affectedAsset of class Asset"
+      ],
+      "json_schema_pass": true,
+      "json_schema_errors": [],
+      "json_schema_detected": false
+    },
+    {
+      "group": "B",
+      "sample_id": "B-03",
+      "base_id": "SRV-003",
+      "violation_type": "missing_nfcrm_clause",
+      "violation_description": "nfcrmClause set to None so no grc:nfcrmClause triple is emitted (minCount=1 violated)",
+      "shacl_pass": false,
+      "shacl_violations": 1,
+      "shacl_detected": true,
+      "shacl_messages": [
+        "RiskScenario must have at least one nfcrmClause of type string"
+      ],
+      "json_schema_pass": false,
+      "json_schema_errors": [
+        "'nfcrm_clause' is a required property"
+      ],
+      "json_schema_detected": true
+    },
+    {
+      "group": "B",
+      "sample_id": "B-04",
+      "base_id": "SRV-004",
+      "violation_type": "impact_level_invalid_enum",
+      "violation_description": "impactLevel 'extreme' not in SHACL sh:in list (critical/high/medium/low)",
+      "shacl_pass": false,
+      "shacl_violations": 1,
+      "shacl_detected": true,
+      "shacl_messages": [
+        "RiskScenario must have exactly one impactLevel (critical, high, medium, or low)"
+      ],
+      "json_schema_pass": false,
+      "json_schema_errors": [
+        "'extreme' is not one of ['critical', 'high', 'medium', 'low']"
+      ],
+      "json_schema_detected": true
+    },
+    {
+      "group": "B",
+      "sample_id": "B-05",
+      "base_id": "SRV-005",
+      "violation_type": "missing_scenario_title",
+      "violation_description": "scenarioTitle set to None so no grc:scenarioTitle triple (minCount=1 violated)",
+      "shacl_pass": false,
+      "shacl_violations": 1,
+      "shacl_detected": true,
+      "shacl_messages": [
+        "RiskScenario must have exactly one scenarioTitle of type string"
+      ],
+      "json_schema_pass": false,
+      "json_schema_errors": [
+        "'scenario_title' is a required property"
+      ],
+      "json_schema_detected": true
+    },
+    {
+      "group": "B",
+      "sample_id": "B-06",
+      "base_id": "SRV-007",
+      "violation_type": "missing_description",
+      "violation_description": "description set to None so no grc:description triple (minCount=1 violated)",
+      "shacl_pass": false,
+      "shacl_violations": 1,
+      "shacl_detected": true,
+      "shacl_messages": [
+        "RiskScenario must have exactly one description of type string"
+      ],
+      "json_schema_pass": false,
+      "json_schema_errors": [
+        "'description' is a required property"
+      ],
+      "json_schema_detected": true
+    },
+    {
+      "group": "B",
+      "sample_id": "B-07",
+      "base_id": "SRV-008",
+      "violation_type": "missing_threat_vector",
+      "violation_description": "threatVector set to None so no grc:threatVector triple (minCount=1 violated)",
+      "shacl_pass": false,
+      "shacl_violations": 1,
+      "shacl_detected": true,
+      "shacl_messages": [
+        "RiskScenario must have at least one threatVector of type string"
+      ],
+      "json_schema_pass": false,
+      "json_schema_errors": [
+        "'threat_vector' is a required property"
+      ],
+      "json_schema_detected": true
+    },
+    {
+      "group": "B",
+      "sample_id": "B-08",
+      "base_id": "SRV-009",
+      "violation_type": "one_invalid_clause_in_list",
+      "violation_description": "nfcrmClause list contains 'INVALID-CLAUSE-99' which violates SHACL regex",
+      "shacl_pass": false,
+      "shacl_violations": 1,
+      "shacl_detected": true,
+      "shacl_messages": [
+        "nfcrmClause INVALID-CLAUSE-99 is not a clause of NFCRM-1:2025 (no grc:Clause individual carries this grc:clauseId)"
+      ],
+      "json_schema_pass": false,
+      "json_schema_errors": [
+        "['SS6.5', 'INVALID-CLAUSE-99'] is not of type 'string'"
+      ],
+      "json_schema_detected": true
+    },
+    {
+      "group": "B",
+      "sample_id": "B-09",
+      "base_id": "SRV-010",
+      "violation_type": "impact_level_wrong_case",
+      "violation_description": "impactLevel 'CRITICAL' fails SHACL sh:in (values are lowercase-only)",
+      "shacl_pass": false,
+      "shacl_violations": 1,
+      "shacl_detected": true,
+      "shacl_messages": [
+        "RiskScenario must have exactly one impactLevel (critical, high, medium, or low)"
+      ],
+      "json_schema_pass": false,
+      "json_schema_errors": [
+        "'CRITICAL' is not one of ['critical', 'high', 'medium', 'low']"
+      ],
+      "json_schema_detected": true
+    },
+    {
+      "group": "B",
+      "sample_id": "B-10",
+      "base_id": "SRV-011",
+      "violation_type": "invalid_nfcrm_section",
+      "violation_description": "nfcrmClause 'SS7.3' fails SHACL regex ^SS[56]\\.[0-9]+$ (only SS5 and SS6 allowed)",
+      "shacl_pass": false,
+      "shacl_violations": 1,
+      "shacl_detected": true,
+      "shacl_messages": [
+        "nfcrmClause SS7.3 is not a clause of NFCRM-1:2025 (no grc:Clause individual carries this grc:clauseId)"
+      ],
+      "json_schema_pass": true,
+      "json_schema_errors": [],
+      "json_schema_detected": false
+    },
+    {
+      "group": "C",
+      "sample_id": "C-01",
+      "base_id": "SRV-001",
+      "violation_type": "impact_level_wrong_type_integer",
+      "violation_description": "impact_level is integer 3 \u2014 JSON Schema requires string; SHACL sees no triple for impactLevel",
+      "shacl_pass": true,
+      "shacl_violations": 0,
+      "shacl_detected": false,
+      "shacl_messages": [],
+      "json_schema_pass": false,
+      "json_schema_errors": [
+        "3 is not of type 'string'"
+      ],
+      "json_schema_detected": true
+    },
+    {
+      "group": "C",
+      "sample_id": "C-02",
+      "base_id": "SRV-002",
+      "violation_type": "extra_property_cvss_score",
+      "violation_description": "Extra field 'cvss_score' violates JSON Schema additionalProperties:false; SHACL ignores unknown properties",
+      "shacl_pass": true,
+      "shacl_violations": 0,
+      "shacl_detected": false,
+      "shacl_messages": [],
+      "json_schema_pass": false,
+      "json_schema_errors": [
+        "Additional properties are not allowed ('cvss_score' was unexpected)"
+      ],
+      "json_schema_detected": true
+    },
+    {
+      "group": "C",
+      "sample_id": "C-03",
+      "base_id": "SRV-003",
+      "violation_type": "recommended_controls_not_array",
+      "violation_description": "recommended_controls is a string not an array \u2014 JSON Schema type:array fails; SHACL not affected",
+      "shacl_pass": true,
+      "shacl_violations": 0,
+      "shacl_detected": false,
+      "shacl_messages": [],
+      "json_schema_pass": false,
+      "json_schema_errors": [
+        "'SS6.11' is not of type 'array'"
+      ],
+      "json_schema_detected": true
+    },
+    {
+      "group": "C",
+      "sample_id": "C-04",
+      "base_id": "SRV-004",
+      "violation_type": "missing_description_json_required",
+      "violation_description": "description key absent from JSON object \u2014 JSON Schema required fails; SHACL uses shacl_scenario_override that includes description",
+      "shacl_pass": true,
+      "shacl_violations": 0,
+      "shacl_detected": false,
+      "shacl_messages": [],
+      "json_schema_pass": false,
+      "json_schema_errors": [
+        "'description' is a required property"
+      ],
+      "json_schema_detected": true
+    },
+    {
+      "group": "C",
+      "sample_id": "C-05",
+      "base_id": "SRV-005",
+      "violation_type": "scenario_title_null",
+      "violation_description": "scenario_title is null \u2014 JSON Schema rejects (type must be string); SHACL uses override with valid title",
+      "shacl_pass": true,
+      "shacl_violations": 0,
+      "shacl_detected": false,
+      "shacl_messages": [],
+      "json_schema_pass": false,
+      "json_schema_errors": [
+        "None is not of type 'string'"
+      ],
+      "json_schema_detected": true
+    },
+    {
+      "group": "C",
+      "sample_id": "C-06",
+      "base_id": "SRV-007",
+      "violation_type": "recommended_controls_empty",
+      "violation_description": "recommended_controls=[] \u2014 JSON Schema minItems:1 fails; SHACL has only sh:Warning for recommendedControl",
+      "shacl_pass": true,
+      "shacl_violations": 0,
+      "shacl_detected": false,
+      "shacl_messages": [],
+      "json_schema_pass": false,
+      "json_schema_errors": [
+        "[] should be non-empty"
+      ],
+      "json_schema_detected": true
+    },
+    {
+      "group": "C",
+      "sample_id": "C-07",
+      "base_id": "SRV-008",
+      "violation_type": "threat_vector_wrong_type",
+      "violation_description": "threat_vector is integer 42 \u2014 JSON Schema type:string fails; SHACL uses override",
+      "shacl_pass": true,
+      "shacl_violations": 0,
+      "shacl_detected": false,
+      "shacl_messages": [],
+      "json_schema_pass": false,
+      "json_schema_errors": [
+        "42 is not of type 'string'"
+      ],
+      "json_schema_detected": true
+    },
+    {
+      "group": "C",
+      "sample_id": "C-08",
+      "base_id": "SRV-009",
+      "violation_type": "two_extra_properties",
+      "violation_description": "Fields 'confidence' and 'asset_criticality' not in JSON Schema; SHACL ignores extras",
+      "shacl_pass": true,
+      "shacl_violations": 0,
+      "shacl_detected": false,
+      "shacl_messages": [],
+      "json_schema_pass": false,
+      "json_schema_errors": [
+        "Additional properties are not allowed ('asset_criticality', 'confidence' were unexpected)"
+      ],
+      "json_schema_detected": true
+    },
+    {
+      "group": "C",
+      "sample_id": "C-09",
+      "base_id": "SRV-010",
+      "violation_type": "missing_nfcrm_clause_json_required",
+      "violation_description": "nfcrm_clause key absent from JSON \u2014 JSON Schema required fails; SHACL uses override with valid clause",
+      "shacl_pass": true,
+      "shacl_violations": 0,
+      "shacl_detected": false,
+      "shacl_messages": [],
+      "json_schema_pass": false,
+      "json_schema_errors": [
+        "'nfcrm_clause' is a required property"
+      ],
+      "json_schema_detected": true
+    },
+    {
+      "group": "C",
+      "sample_id": "C-10",
+      "base_id": "SRV-011",
+      "violation_type": "affected_asset_wrong_type",
+      "violation_description": "affected_asset is integer 10 \u2014 JSON Schema type:string fails; SHACL uses override with string",
+      "shacl_pass": true,
+      "shacl_violations": 0,
+      "shacl_detected": false,
+      "shacl_messages": [],
+      "json_schema_pass": false,
+      "json_schema_errors": [
+        "10 is not of type 'string'"
+      ],
+      "json_schema_detected": true
+    }
+  ]
+}

@@ -1,0 +1,2720 @@
+{
+  "experiment": "LLM Risk Scenario Generation (Exp 2)",
+  "timestamp": "2026-05-21T12:08:03.094742",
+  "summary": {
+    "model": "haiku",
+    "n_prompts_per_run": 33,
+    "total_runs": 3,
+    "total_prompts": 99,
+    "overall_parseable_pct": 100.0,
+    "overall_json_schema_valid_pct": 97.0,
+    "overall_shacl_valid_pct": 97.0,
+    "overall_precision_pct": 100.0,
+    "avg_latency_seconds": 478.25,
+    "total_entity_hallucinations": 0,
+    "total_relationship_hallucinations": 0,
+    "per_run": [
+      {
+        "run": 1,
+        "total_prompts": 33,
+        "parseable": 33,
+        "parseable_pct": 100.0,
+        "json_schema_valid": 32,
+        "json_schema_valid_pct": 97.0,
+        "shacl_valid": 32,
+        "shacl_valid_pct": 97.0,
+        "avg_precision_pct": 100.0,
+        "avg_latency_seconds": 68.2
+      },
+      {
+        "run": 2,
+        "total_prompts": 33,
+        "parseable": 33,
+        "parseable_pct": 100.0,
+        "json_schema_valid": 33,
+        "json_schema_valid_pct": 100.0,
+        "shacl_valid": 33,
+        "shacl_valid_pct": 100.0,
+        "avg_precision_pct": 100.0,
+        "avg_latency_seconds": 1343.68
+      },
+      {
+        "run": 3,
+        "total_prompts": 33,
+        "parseable": 33,
+        "parseable_pct": 100.0,
+        "json_schema_valid": 31,
+        "json_schema_valid_pct": 93.9,
+        "shacl_valid": 31,
+        "shacl_valid_pct": 93.9,
+        "avg_precision_pct": 100.0,
+        "avg_latency_seconds": 22.87
+      }
+    ],
+    "violation_counts": {
+      "Response is not a JSON object": 3
+    }
+  },
+  "results": [
+    {
+      "run": 1,
+      "asset_id": "SRV-001",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 30.61,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Remote Code Execution via vsftpd 2.3.4 Backdoor Exploitation\",\n  \"affected_asset\": \"SRV-001\",\n  \"threat_vector\": \"CVE-2011-2523: unauthenticated remote code execution via vsftpd 2.3.4 backdoor on TCP port 6200\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.7\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.14\", \"SS6.17\"],\n  \"description\": \"SRV-001 (ftp-srv-01) runs vulnerable vsftpd 2.3.4 containing a backdoor that grants unauthenticated remote shell a",
+      "parsed_response": {
+        "scenario_title": "Remote Code Execution via vsftpd 2.3.4 Backdoor Exploitation",
+        "affected_asset": "SRV-001",
+        "threat_vector": "CVE-2011-2523: unauthenticated remote code execution via vsftpd 2.3.4 backdoor on TCP port 6200",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.7",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.14",
+          "SS6.17"
+        ],
+        "description": "SRV-001 (ftp-srv-01) runs vulnerable vsftpd 2.3.4 containing a backdoor that grants unauthenticated remote shell access on port 6200 to any attacker who sends a crafted username string (CVSS 10.0). Exploitation results in complete server compromise with root privileges, enabling full infrastructure access from the CIC Server Room. Immediate remediation through patching to vsftpd 2.3.5+ or service decommissioning is critical to eliminate this attack vector affecting critical-tier infrastructure."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-002",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 26.89,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"SSH Credential Brute Force Attack on Critical Infrastructure Server\",\n  \"affected_asset\": \"SRV-002\",\n  \"threat_vector\": \"T1110.001 - Password Guessing (SSH)\",\n  \"impact_level\": \"high\",\n  \"nfcrm_clause\": \"SS6.7\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.13\"],\n  \"description\": \"An external threat actor conducts a systematic brute force attack against the SSH service on ssh-srv-01 (SRV-002), attempting to gain administrative credentials through password gue",
+      "parsed_response": {
+        "scenario_title": "SSH Credential Brute Force Attack on Critical Infrastructure Server",
+        "affected_asset": "SRV-002",
+        "threat_vector": "T1110.001 - Password Guessing (SSH)",
+        "impact_level": "high",
+        "nfcrm_clause": "SS6.7",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.13"
+        ],
+        "description": "An external threat actor conducts a systematic brute force attack against the SSH service on ssh-srv-01 (SRV-002), attempting to gain administrative credentials through password guessing. The aging OpenSSH 4.7p1 implementation lacks modern rate limiting and account lockout mechanisms, enabling rapid credential enumeration. Successful compromise grants critical access to the CIC testbed infrastructure, enabling lateral movement, data exfiltration, and service disruption."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-003",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 20.66,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Telnet Service Buffer Overflow Leading to Remote Root Compromise\",\n  \"affected_asset\": \"SRV-003\",\n  \"threat_vector\": \"Remote buffer overflow in telnetd via malformed telnet options (CVE-2001-0554)\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.7\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.14\"],\n  \"description\": \"Unauthenticated remote attacker exploits CVE-2001-0554 buffer overflow in vulnerable netkit telnetd (v0.17) on SRV-003 to achieve remote ",
+      "parsed_response": {
+        "scenario_title": "Telnet Service Buffer Overflow Leading to Remote Root Compromise",
+        "affected_asset": "SRV-003",
+        "threat_vector": "Remote buffer overflow in telnetd via malformed telnet options (CVE-2001-0554)",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.7",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.14"
+        ],
+        "description": "Unauthenticated remote attacker exploits CVE-2001-0554 buffer overflow in vulnerable netkit telnetd (v0.17) on SRV-003 to achieve remote code execution with root privileges. This high-criticality server hosting CIC testbed infrastructure would be fully compromised, enabling lateral movement and data exfiltration. Mitigation requires immediate service deactivation or network isolation pending replacement with secure alternatives such as SSH."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-004",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 23.24,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Remote Code Execution via Postfix SMTP Buffer Overflow\",\n  \"affected_asset\": \"SRV-004\",\n  \"threat_vector\": \"Unauthenticated remote code execution through buffer overflow in Postfix mail envelope processing (CVE-2009-1293 family)\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.15\"],\n  \"description\": \"Postfix 2.5.1 (2007 EOL) contains multiple unpatched remote code execution vulnerabilities allowing unaut",
+      "parsed_response": {
+        "scenario_title": "Remote Code Execution via Postfix SMTP Buffer Overflow",
+        "affected_asset": "SRV-004",
+        "threat_vector": "Unauthenticated remote code execution through buffer overflow in Postfix mail envelope processing (CVE-2009-1293 family)",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.15"
+        ],
+        "description": "Postfix 2.5.1 (2007 EOL) contains multiple unpatched remote code execution vulnerabilities allowing unauthenticated SMTP attackers to execute arbitrary code via malformed mail headers or envelope commands. An attacker could gain shell access, compromise SMTP logs and stored messages, and pivot laterally across CIC infrastructure. Ubuntu 8.04 LTS kernel and system libraries are similarly unsupported, amplifying exposure."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-005",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 23.25,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Remote DoS via Crafted DNS Dynamic Update to ISC BIND 9.4.2\",\n  \"affected_asset\": \"SRV-005\",\n  \"threat_vector\": \"Remote Denial of Service via crafted ISC BIND 9.x dynamic update message\",\n  \"impact_level\": \"high\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.3\", \"SS6.4\", \"SS6.8\", \"SS6.11\", \"SS6.12\"],\n  \"description\": \"ISC BIND 9.4.2 running on dns-srv-01 (SRV-005, high criticality) is vulnerable to unauthenticated remote DoS attacks via crafted dynami",
+      "parsed_response": {
+        "scenario_title": "Remote DoS via Crafted DNS Dynamic Update to ISC BIND 9.4.2",
+        "affected_asset": "SRV-005",
+        "threat_vector": "Remote Denial of Service via crafted ISC BIND 9.x dynamic update message",
+        "impact_level": "high",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.3",
+          "SS6.4",
+          "SS6.8",
+          "SS6.11",
+          "SS6.12"
+        ],
+        "description": "ISC BIND 9.4.2 running on dns-srv-01 (SRV-005, high criticality) is vulnerable to unauthenticated remote DoS attacks via crafted dynamic update messages (CVE-2009-0696, CVSS 7.1). Exploitation crashes the DNS service, disrupting name resolution for dependent systems. Immediate patching to 9.4.3+ or network-level DNS validation controls required."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-006",
+      "parseable": true,
+      "json_schema_valid": false,
+      "shacl_valid": false,
+      "precision_pct": 0.0,
+      "violations": [
+        "Response is not a JSON object"
+      ],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 27.83,
+      "raw_response": "```json\n[\n  {\n    \"scenario_title\": \"Apache Range Header DoS (Apache Killer)\",\n    \"affected_asset\": \"SRV-006\",\n    \"threat_vector\": \"CVE-2011-3192 exploitation via malicious HTTP Range header requests causing memory exhaustion and service unavailability\",\n    \"impact_level\": \"high\",\n    \"nfcrm_clause\": \"SS6.6\",\n    \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.14\"],\n    \"description\": \"Unauthenticated remote attacker exploits CVE-2011-3192 in Apache httpd 2.2.8 by sending crafted Range head",
+      "parsed_response": [
+        {
+          "scenario_title": "Apache Range Header DoS (Apache Killer)",
+          "affected_asset": "SRV-006",
+          "threat_vector": "CVE-2011-3192 exploitation via malicious HTTP Range header requests causing memory exhaustion and service unavailability",
+          "impact_level": "high",
+          "nfcrm_clause": "SS6.6",
+          "recommended_controls": [
+            "SS6.11",
+            "SS6.12",
+            "SS6.14"
+          ],
+          "description": "Unauthenticated remote attacker exploits CVE-2011-3192 in Apache httpd 2.2.8 by sending crafted Range header requests, triggering denial of service on critical http-srv-01 server (CVSS 7.8). Acceptable risk threshold breached; mitigation requires immediate Apache version upgrade to 2.2.15+ or security patch application."
+        },
+        {
+          "scenario_title": "Slowloris Incomplete HTTP Request DoS",
+          "affected_asset": "SRV-006",
+          "threat_vector": "CVE-2007-6750 exploitation via Slowloris attack (incomplete HTTP requests with extended timeouts causing connection exhaustion)",
+          "impact_level": "high",
+          "nfcrm_clause": "SS6.6",
+          "recommended_controls": [
+            "SS6.11",
+            "SS6.12",
+            "SS6.13"
+          ],
+          "description": "Unauthenticated remote attacker exploits CVE-2007-6750 in Apache httpd 2.2.8 by sending slow, incomplete HTTP requests to exhaust connection pools on critical http-srv-01 server (CVSS 5.0). On critical-tier asset, service degradation causes business impact; mitigation requires Apache upgrade, request timeout hardening, and rate-limiting controls."
+        }
+      ]
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-007",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 28.86,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"PHP-CGI Remote Code Execution via Query String Injection on php-srv-01\",\n  \"affected_asset\": \"SRV-007\",\n  \"threat_vector\": \"T1190 - Exploit Public-Facing Application (CVE-2012-1823)\",\n  \"impact_level\": \"high\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.13\"],\n  \"description\": \"SRV-007 (php-srv-01) runs vulnerable PHP 5.2.4, affected by CVE-2012-1823 (CISA KEV listed), which allows unauthenticated remote code execution through mali",
+      "parsed_response": {
+        "scenario_title": "PHP-CGI Remote Code Execution via Query String Injection on php-srv-01",
+        "affected_asset": "SRV-007",
+        "threat_vector": "T1190 - Exploit Public-Facing Application (CVE-2012-1823)",
+        "impact_level": "high",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.13"
+        ],
+        "description": "SRV-007 (php-srv-01) runs vulnerable PHP 5.2.4, affected by CVE-2012-1823 (CISA KEV listed), which allows unauthenticated remote code execution through malicious HTTP query string parameters injected into the PHP CGI interpreter. External attackers without authentication can execute arbitrary commands with web server privileges, enabling complete server compromise and lateral movement within the CIC testbed infrastructure. Remediation requires immediate patching per SS6.12, vulnerability management planning per SS6.11, and implementation of input validation security controls per SS6.13."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-008",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 32.37,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Exploitation of Vulnerable DVWA Web Application via Public-Facing Server\",\n  \"affected_asset\": \"SRV-008\",\n  \"threat_vector\": \"T1190 - Exploit Public-Facing Application\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.4\", \"SS6.7\", \"SS6.11\", \"SS6.12\", \"SS6.14\", \"SS6.15\"],\n  \"description\": \"An attacker exploits known vulnerabilities in DVWA v1.0.7 running on the public-facing critical server SRV-008 (172.31.69.25, Ubuntu 8.04 ",
+      "parsed_response": {
+        "scenario_title": "Exploitation of Vulnerable DVWA Web Application via Public-Facing Server",
+        "affected_asset": "SRV-008",
+        "threat_vector": "T1190 - Exploit Public-Facing Application",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.4",
+          "SS6.7",
+          "SS6.11",
+          "SS6.12",
+          "SS6.14",
+          "SS6.15"
+        ],
+        "description": "An attacker exploits known vulnerabilities in DVWA v1.0.7 running on the public-facing critical server SRV-008 (172.31.69.25, Ubuntu 8.04 LTS Metasploitable 2) using T1190 techniques to achieve initial network access. Multiple attack vectors including SQL injection, XSS, and authentication bypass are available due to the unpatched vulnerable application and outdated operating system. Successful exploitation enables system compromise, lateral movement, and potential exfiltration of sensitive data."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-009",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 16.51,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthenticated SQL Injection and RCE via Deprecated Web Application\",\n  \"affected_asset\": \"SRV-009\",\n  \"threat_vector\": \"SQL injection in login and search forms; subsequent operating system command injection via MySQL user-defined functions on unpatched Ubuntu 8.04\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.14\"],\n  \"description\": \"OWASP Mutillidae II 2.1.19 contains unauthenticated SQL injection v",
+      "parsed_response": {
+        "scenario_title": "Unauthenticated SQL Injection and RCE via Deprecated Web Application",
+        "affected_asset": "SRV-009",
+        "threat_vector": "SQL injection in login and search forms; subsequent operating system command injection via MySQL user-defined functions on unpatched Ubuntu 8.04",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.14"
+        ],
+        "description": "OWASP Mutillidae II 2.1.19 contains unauthenticated SQL injection vulnerabilities in multiple input fields that bypass authentication and allow data exfiltration. The underlying Ubuntu 8.04 LTS (end-of-life 2013) lacks security patches and permits arbitrary code execution through deprecated MySQL functions. An unauthenticated remote attacker can exploit these combined weaknesses to gain full system compromise of SRV-009 and potentially pivot to other CIC testbed assets."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-010",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 25.08,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthenticated RCE via phpMyAdmin setup.php static code injection\",\n  \"affected_asset\": \"SRV-010\",\n  \"threat_vector\": \"Static code injection through phpMyAdmin setup.php (CVE-2009-1151) enabling unauthenticated remote code execution\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\n    \"SS6.11\",\n    \"SS6.13\",\n    \"SS6.15\"\n  ],\n  \"description\": \"An unauthenticated attacker exploits CVE-2009-1151 in phpMyAdmin 2.11.x on SRV-010 t",
+      "parsed_response": {
+        "scenario_title": "Unauthenticated RCE via phpMyAdmin setup.php static code injection",
+        "affected_asset": "SRV-010",
+        "threat_vector": "Static code injection through phpMyAdmin setup.php (CVE-2009-1151) enabling unauthenticated remote code execution",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.13",
+          "SS6.15"
+        ],
+        "description": "An unauthenticated attacker exploits CVE-2009-1151 in phpMyAdmin 2.11.x on SRV-010 to inject arbitrary code through setup.php, achieving remote code execution with web server privileges and full server compromise. Likelihood is high due to CISA KEV status, public exploits, and typical post-installation exposure of setup.php on high-criticality infrastructure. Treatment requires immediate patching to phpMyAdmin 2.11.9+, permanent removal or disabling of setup.php post-configuration, network-level access restrictions via firewall rules, and deployment of WAF signatures to block exploitation attempts."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-011",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 17.88,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Remote Code Execution via TWiki rev Parameter Injection\",\n  \"affected_asset\": \"SRV-011\",\n  \"threat_vector\": \"Shell metacharacter injection in TWiki rev parameter enabling unauthenticated RCE\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.14\"],\n  \"description\": \"An unauthenticated remote attacker exploits CVE-2008-5305 by injecting shell metacharacters into the rev parameter of TWiki 4.2.4 running on SR",
+      "parsed_response": {
+        "scenario_title": "Remote Code Execution via TWiki rev Parameter Injection",
+        "affected_asset": "SRV-011",
+        "threat_vector": "Shell metacharacter injection in TWiki rev parameter enabling unauthenticated RCE",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.14"
+        ],
+        "description": "An unauthenticated remote attacker exploits CVE-2008-5305 by injecting shell metacharacters into the rev parameter of TWiki 4.2.4 running on SRV-011, achieving arbitrary command execution with system privileges. Complete compromise of twiki-srv-01 enables lateral movement within CIC Server Room infrastructure and data exfiltration from critical testbed systems. Immediate patching or isolation of the affected service is required to reduce inherent risk from CVSS 10.0 to acceptable levels."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-012",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 20.03,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Remote Code Execution via TikiWiki PHP Code Injection\",\n  \"affected_asset\": \"SRV-012\",\n  \"threat_vector\": \"Network-based exploitation of tiki-graph_formula.php parameter injection enabling unauthenticated PHP code execution\",\n  \"impact_level\": \"high\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.6\", \"SS6.11\"],\n  \"description\": \"An unauthenticated attacker exploits CVE-2007-5423 in TikiWiki 1.9.5 by injecting PHP code through tiki-graph_formula.php, ac",
+      "parsed_response": {
+        "scenario_title": "Remote Code Execution via TikiWiki PHP Code Injection",
+        "affected_asset": "SRV-012",
+        "threat_vector": "Network-based exploitation of tiki-graph_formula.php parameter injection enabling unauthenticated PHP code execution",
+        "impact_level": "high",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.6",
+          "SS6.11"
+        ],
+        "description": "An unauthenticated attacker exploits CVE-2007-5423 in TikiWiki 1.9.5 by injecting PHP code through tiki-graph_formula.php, achieving remote code execution on SRV-012. This vulnerability (CVSS 7.5) enables complete system compromise including data exfiltration and lateral movement within CIC infrastructure. Immediate patching or application replacement is required given the asset's high criticality."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-013",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 20.11,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Remote Code Execution via Unpatched rpcbind Buffer Overflow\",\n  \"affected_asset\": \"SRV-013\",\n  \"threat_vector\": \"Buffer overflow in rpcbind RPC service handling exploitable via crafted RPC request\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.8\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.15\", \"SS6.16\"],\n  \"description\": \"The rpcbind service (RPC #100000) on Ubuntu 8.04 LTS contains unpatched memory safety vulnerabilities that permit unauthenticated remote ",
+      "parsed_response": {
+        "scenario_title": "Remote Code Execution via Unpatched rpcbind Buffer Overflow",
+        "affected_asset": "SRV-013",
+        "threat_vector": "Buffer overflow in rpcbind RPC service handling exploitable via crafted RPC request",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.8",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.15",
+          "SS6.16"
+        ],
+        "description": "The rpcbind service (RPC #100000) on Ubuntu 8.04 LTS contains unpatched memory safety vulnerabilities that permit unauthenticated remote attackers to inject and execute arbitrary code with root privileges. Successful exploitation would compromise the asset, providing foothold access to the CIC testbed infrastructure and all dependent systems, with potential lateral movement to connected assets. Immediate mitigation via service deactivation, network segmentation, or operating system upgrade is required."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-014",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 20.98,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthenticated RCE via Samba 3.0.20 Username Map Script Injection\",\n  \"affected_asset\": \"SRV-014\",\n  \"threat_vector\": \"CVE-2007-2447: Remote code execution through malicious username map script parameter in Samba SMB authentication without authentication required\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.13\", \"SS6.15\"],\n  \"description\": \"An unauthenticated attacker exploits CVE-2007-2447 in Samba 3.0.20 to",
+      "parsed_response": {
+        "scenario_title": "Unauthenticated RCE via Samba 3.0.20 Username Map Script Injection",
+        "affected_asset": "SRV-014",
+        "threat_vector": "CVE-2007-2447: Remote code execution through malicious username map script parameter in Samba SMB authentication without authentication required",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.13",
+          "SS6.15"
+        ],
+        "description": "An unauthenticated attacker exploits CVE-2007-2447 in Samba 3.0.20 to inject shell commands via the username map script parameter, achieving remote code execution on critical asset SRV-014 with service privileges. CVSS 10.0 severity and pre-authentication nature on a critical CIC infrastructure server creates extreme risk to confidentiality, integrity, and availability. Immediate treatment actions required: emergency patch deployment, network isolation, access control hardening, and monitoring for exploitation attempts."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-015",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 22.02,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthenticated Remote Root Access via netkit r-services .rhosts Trust\",\n  \"affected_asset\": \"SRV-015\",\n  \"threat_vector\": \"Remote Code Execution via rexec/rlogin/rsh service with .rhosts authentication bypass\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.13\", \"SS6.15\"],\n  \"description\": \"SRV-015 runs netkit r-services v0.17 vulnerable to CVE-1999-0651, enabling unauthenticated remote attackers to gain root acc",
+      "parsed_response": {
+        "scenario_title": "Unauthenticated Remote Root Access via netkit r-services .rhosts Trust",
+        "affected_asset": "SRV-015",
+        "threat_vector": "Remote Code Execution via rexec/rlogin/rsh service with .rhosts authentication bypass",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.13",
+          "SS6.15"
+        ],
+        "description": "SRV-015 runs netkit r-services v0.17 vulnerable to CVE-1999-0651, enabling unauthenticated remote attackers to gain root access through .rhosts trust exploitation. Successful exploitation results in complete compromise of this critical infrastructure server and lateral movement capability. Mitigation requires immediate service disablement, network segmentation, and host-based access control implementation."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-016",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 26.14,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthenticated Remote Code Execution via Java RMI Deserialization\",\n  \"affected_asset\": \"SRV-016\",\n  \"threat_vector\": \"Remote Code Execution through unsafe Java RMI Registry deserialization (CVE-2011-3556)\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.15\"],\n  \"description\": \"An attacker with network access to the Java RMI Registry service (port 1099) can exploit default unsafe deserialization in RMI to execute",
+      "parsed_response": {
+        "scenario_title": "Unauthenticated Remote Code Execution via Java RMI Deserialization",
+        "affected_asset": "SRV-016",
+        "threat_vector": "Remote Code Execution through unsafe Java RMI Registry deserialization (CVE-2011-3556)",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.15"
+        ],
+        "description": "An attacker with network access to the Java RMI Registry service (port 1099) can exploit default unsafe deserialization in RMI to execute arbitrary code with server privileges. The vulnerable Java 1.6.0 runtime on this high-criticality CIC infrastructure server lacks authentication and network access controls preventing exploitation. Immediate risk treatment via security patches and network segmentation is critical to eliminate this critical-severity vulnerability exposure."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-017",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 16.85,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthorized Remote Access via Ingreslock Root Backdoor\",\n  \"affected_asset\": \"SRV-017\",\n  \"threat_vector\": \"Exploitation of intentional ingreslock root backdoor for unauthorized remote code execution\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.14\", \"SS6.15\"],\n  \"description\": \"The Metasploitable 2 server contains an ingreslock root backdoor enabling unauthorized remote code execution with root-leve",
+      "parsed_response": {
+        "scenario_title": "Unauthorized Remote Access via Ingreslock Root Backdoor",
+        "affected_asset": "SRV-017",
+        "threat_vector": "Exploitation of intentional ingreslock root backdoor for unauthorized remote code execution",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.14",
+          "SS6.15"
+        ],
+        "description": "The Metasploitable 2 server contains an ingreslock root backdoor enabling unauthorized remote code execution with root-level privileges. An attacker exploiting this backdoor could compromise system integrity, exfiltrate CIC infrastructure data, or pivot to adjacent critical systems. Immediate mitigation through network isolation, credential rotation, vulnerability patching, or decommissioning is required to eliminate the critical risk."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-018",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 18.88,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthorized NFS Root Filesystem Access with SSH Credential Injection\",\n  \"affected_asset\": \"SRV-018\",\n  \"threat_vector\": \"Unauthenticated remote NFS export manipulation enabling root filesystem write access and SSH public key injection\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.6\", \"SS6.7\", \"SS6.11\", \"SS6.13\"],\n  \"description\": \"CVE-1999-0170 allows a remote attacker to mount and write directly to the NFS-exported ro",
+      "parsed_response": {
+        "scenario_title": "Unauthorized NFS Root Filesystem Access with SSH Credential Injection",
+        "affected_asset": "SRV-018",
+        "threat_vector": "Unauthenticated remote NFS export manipulation enabling root filesystem write access and SSH public key injection",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.6",
+          "SS6.7",
+          "SS6.11",
+          "SS6.13"
+        ],
+        "description": "CVE-1999-0170 allows a remote attacker to mount and write directly to the NFS-exported root filesystem on SRV-018, enabling persistent unauthorized access through SSH key injection or system binary modification. Given the critical asset designation in the CIC Server Room, exploitation would compromise integrity and confidentiality of the entire testbed infrastructure. Immediate mitigation requires NFS service hardening (v4 only, secure exports), network segmentation, and detective controls to identify suspicious mount attempts."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-019",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 17.09,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Remote Code Execution via ProFTPD TELNET IAC Buffer Overflow\",\n  \"affected_asset\": \"SRV-019\",\n  \"threat_vector\": \"Unauthenticated remote attacker exploits CVE-2010-4221 buffer overflow in ProFTPD TELNET IAC parsing to achieve arbitrary code execution with service privileges\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\n    \"SS6.11\",\n    \"SS6.12\",\n    \"SS6.13\"\n  ],\n  \"description\": \"An attacker sends malformed TELNET IAC sequ",
+      "parsed_response": {
+        "scenario_title": "Remote Code Execution via ProFTPD TELNET IAC Buffer Overflow",
+        "affected_asset": "SRV-019",
+        "threat_vector": "Unauthenticated remote attacker exploits CVE-2010-4221 buffer overflow in ProFTPD TELNET IAC parsing to achieve arbitrary code execution with service privileges",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.13"
+        ],
+        "description": "An attacker sends malformed TELNET IAC sequences to ftp2-srv-01 (172.31.69.25) running ProFTPD 1.3.1, triggering a buffer overflow that enables remote code execution with FTP service privileges. Compromise of this high-criticality server exposes CIC Testbed Infrastructure assets and enables lateral movement. Mitigation requires immediate patching to ProFTPD \u22651.3.2, network segmentation restricting FTP access, and disabled TELNET IAC support where feasible."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-020",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 22.14,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Local Privilege Escalation via MySQL BINLOG Command Injection\",\n  \"affected_asset\": \"SRV-020\",\n  \"threat_vector\": \"An authenticated local attacker crafts a malicious BINLOG command to exploit CVE-2008-0226, escalating privileges from database user to root level on the MySQL service.\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.14\", \"SS6.15\", \"SS6.17\"],\n  \"description\": \"A local attacker with MySQL database cre",
+      "parsed_response": {
+        "scenario_title": "Local Privilege Escalation via MySQL BINLOG Command Injection",
+        "affected_asset": "SRV-020",
+        "threat_vector": "An authenticated local attacker crafts a malicious BINLOG command to exploit CVE-2008-0226, escalating privileges from database user to root level on the MySQL service.",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.14",
+          "SS6.15",
+          "SS6.17"
+        ],
+        "description": "A local attacker with MySQL database credentials exploits CVE-2008-0226 through crafted BINLOG commands to achieve root-level privilege escalation on SRV-020, a critical asset housed in the CIC Server Room. Successful exploitation enables complete system compromise including unauthorized configuration changes, data exfiltration, and lateral movement. Immediate risk treatment through software patching, MySQL version upgrade from 5.0.51a, and restrictive access controls is required to reduce residual risk to acceptable levels."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-021",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 13.21,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthenticated Remote Code Execution via distccd Vulnerability\",\n  \"affected_asset\": \"SRV-021\",\n  \"threat_vector\": \"Network-based exploitation of CVE-2004-2687 (distccd EXEC request without authentication)\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.14\"],\n  \"description\": \"An unauthenticated attacker on the network can exploit CVE-2004-2687 to execute arbitrary code on SRV-021 (distcc-srv-01) by se",
+      "parsed_response": {
+        "scenario_title": "Unauthenticated Remote Code Execution via distccd Vulnerability",
+        "affected_asset": "SRV-021",
+        "threat_vector": "Network-based exploitation of CVE-2004-2687 (distccd EXEC request without authentication)",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.14"
+        ],
+        "description": "An unauthenticated attacker on the network can exploit CVE-2004-2687 to execute arbitrary code on SRV-021 (distcc-srv-01) by sending a crafted EXEC request to the distccd daemon listening on port 3632. Successful exploitation results in full system compromise with attacker privileges, enabling data exfiltration, lateral movement to CIC testbed infrastructure, and potential contamination of compiled artifacts. Immediate patching or network segmentation is required given the critical asset classification and CVSS 10.0 severity."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-022",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 24.77,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Local Privilege Escalation via PostgreSQL SQL Injection\",\n  \"affected_asset\": \"SRV-022\",\n  \"threat_vector\": \"Authenticated attacker exploits CVE-2013-1904 in PostgreSQL 8.3.0-8.3.7 to execute arbitrary SQL and escalate to database administrator privileges\",\n  \"impact_level\": \"high\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.15\"],\n  \"description\": \"A local or authenticated attacker can exploit CVE-2013-1904 in PostgreSQL 8.3.0-8.3.7 runnin",
+      "parsed_response": {
+        "scenario_title": "Local Privilege Escalation via PostgreSQL SQL Injection",
+        "affected_asset": "SRV-022",
+        "threat_vector": "Authenticated attacker exploits CVE-2013-1904 in PostgreSQL 8.3.0-8.3.7 to execute arbitrary SQL and escalate to database administrator privileges",
+        "impact_level": "high",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.15"
+        ],
+        "description": "A local or authenticated attacker can exploit CVE-2013-1904 in PostgreSQL 8.3.0-8.3.7 running on high-criticality server SRV-022 (pgsql-srv-01) to execute arbitrary SQL commands and escalate privileges to database administrator level. This compromise could expose sensitive data and enable lateral movement within the CIC testbed infrastructure. Recommended treatment includes immediate patching to PostgreSQL 8.4 or later and implementation of least-privilege database account controls per SS6.11, with verification per SS6.15."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-023",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 24.73,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthenticated Remote Access via RealVNC NULL Authentication Bypass\",\n  \"affected_asset\": \"SRV-023\",\n  \"threat_vector\": \"CVE-2006-2369: NULL authentication type bypass in RealVNC 4.1.1\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.13\", \"SS6.17\"],\n  \"description\": \"An attacker exploiting CVE-2006-2369 (CVSS 7.5) can bypass authentication on vnc-srv-01 (172.31.69.25) to establish unauthenticated VNC sessions, ac",
+      "parsed_response": {
+        "scenario_title": "Unauthenticated Remote Access via RealVNC NULL Authentication Bypass",
+        "affected_asset": "SRV-023",
+        "threat_vector": "CVE-2006-2369: NULL authentication type bypass in RealVNC 4.1.1",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.13",
+          "SS6.17"
+        ],
+        "description": "An attacker exploiting CVE-2006-2369 (CVSS 7.5) can bypass authentication on vnc-srv-01 (172.31.69.25) to establish unauthenticated VNC sessions, achieving remote code execution on the critical Ubuntu 8.04 Metasploitable 2 server. Successful exploitation requires only network access to VNC port 5900/TCP and results in complete system compromise. Immediate treatment includes patching RealVNC to a supported version or implementing network-level access restrictions to mitigate inherent risk from critical to acceptable levels."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-024",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 19.21,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthenticated X11 Display Access and Information Disclosure\",\n  \"affected_asset\": \"SRV-024\",\n  \"threat_vector\": \"Unauthenticated X11 Display Connection for Screen Capture and Keystroke Interception\",\n  \"impact_level\": \"high\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.14\"],\n  \"description\": \"The X11 server (Xorg 7.3) on SRV-024 permits unauthenticated remote connections, allowing attackers to capture screen content and intercep",
+      "parsed_response": {
+        "scenario_title": "Unauthenticated X11 Display Access and Information Disclosure",
+        "affected_asset": "SRV-024",
+        "threat_vector": "Unauthenticated X11 Display Connection for Screen Capture and Keystroke Interception",
+        "impact_level": "high",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.14"
+        ],
+        "description": "The X11 server (Xorg 7.3) on SRV-024 permits unauthenticated remote connections, allowing attackers to capture screen content and intercept keyboard input (CVE-1999-0526, CVSS 7.5). Compromise of the display server could enable credential theft and unauthorized access to sensitive information processed in the CIC testbed environment. Implementation of network access controls and mandatory display server authentication is required to reduce inherent risk to acceptable levels."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-025",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 22.91,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"UnrealIRCd 3.2.8.1 RCE Backdoor Exploitation on Critical IRC Server\",\n  \"affected_asset\": \"SRV-025\",\n  \"threat_vector\": \"Unauthenticated remote code execution via malformed AB prefix in IRC protocol (CVE-2010-2075)\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.3\",\n  \"recommended_controls\": [\"SS6.3\", \"SS6.9\", \"SS6.11\", \"SS6.12\"],\n  \"description\": \"UnrealIRCd 3.2.8.1 running on critical asset SRV-025 (irc-srv-01) is vulnerable to CVE-2010-2075, a critical-se",
+      "parsed_response": {
+        "scenario_title": "UnrealIRCd 3.2.8.1 RCE Backdoor Exploitation on Critical IRC Server",
+        "affected_asset": "SRV-025",
+        "threat_vector": "Unauthenticated remote code execution via malformed AB prefix in IRC protocol (CVE-2010-2075)",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.3",
+        "recommended_controls": [
+          "SS6.3",
+          "SS6.9",
+          "SS6.11",
+          "SS6.12"
+        ],
+        "description": "UnrealIRCd 3.2.8.1 running on critical asset SRV-025 (irc-srv-01) is vulnerable to CVE-2010-2075, a critical-severity (CVSS 10.0) backdoor enabling unauthenticated remote code execution via malformed AB prefix handling. An attacker could exploit this to gain complete server control and compromise testbed infrastructure. Immediate patching, version upgrade, or service deactivation is required."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-026",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 22.52,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Directory Traversal via UTF-8 URL Encoding in Apache Tomcat 5.5 AJP Connector\",\n  \"affected_asset\": \"SRV-026\",\n  \"threat_vector\": \"Unauthenticated remote directory traversal attack exploiting UTF-8 encoded URL handling in Apache Tomcat 5.5 AJP service on port 8009\",\n  \"impact_level\": \"high\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.3\", \"SS6.5\", \"SS6.7\", \"SS6.11\"],\n  \"description\": \"Attacker crafts malformed UTF-8 encoded directory traversal payloa",
+      "parsed_response": {
+        "scenario_title": "Directory Traversal via UTF-8 URL Encoding in Apache Tomcat 5.5 AJP Connector",
+        "affected_asset": "SRV-026",
+        "threat_vector": "Unauthenticated remote directory traversal attack exploiting UTF-8 encoded URL handling in Apache Tomcat 5.5 AJP service on port 8009",
+        "impact_level": "high",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.3",
+          "SS6.5",
+          "SS6.7",
+          "SS6.11"
+        ],
+        "description": "Attacker crafts malformed UTF-8 encoded directory traversal payloads targeting the Tomcat AJP connector to bypass path normalization and access files outside the intended web root (e.g., /etc/passwd, catalina.properties, user databases). Successful exploitation exposes sensitive configuration and test data on the high-criticality asset, enabling credential harvest and lateral movement. Immediate mitigation: upgrade Tomcat to patched version (5.5.34+), restrict AJP port 8009 network access, and implement input validation on URL encoding."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-027",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 17.22,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthenticated Remote Code Execution via Ruby DRb instance_eval\",\n  \"affected_asset\": \"SRV-027\",\n  \"threat_vector\": \"Unauthenticated RCE exploit targeting Ruby DRb remote method invocation, bypassing authentication via instance_eval and syscall injection\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.13\", \"SS6.14\", \"SS6.15\"],\n  \"description\": \"SRV-027 (drb-srv-01) runs unpatched Ruby DRb 1.8, exposed to CVE-201",
+      "parsed_response": {
+        "scenario_title": "Unauthenticated Remote Code Execution via Ruby DRb instance_eval",
+        "affected_asset": "SRV-027",
+        "threat_vector": "Unauthenticated RCE exploit targeting Ruby DRb remote method invocation, bypassing authentication via instance_eval and syscall injection",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.13",
+          "SS6.14",
+          "SS6.15"
+        ],
+        "description": "SRV-027 (drb-srv-01) runs unpatched Ruby DRb 1.8, exposed to CVE-2011-5330 (CVSS 10.0), enabling unauthenticated remote attackers to execute arbitrary system commands. This critical vulnerability on a production CIC testbed asset poses immediate risk to infrastructure confidentiality, integrity, and availability. Urgent patch deployment and network access restrictions are required to eliminate the vulnerability."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-028",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 22.59,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"DoS Attack on Web Server via Apache Vulnerability\",\n  \"affected_asset\": \"SRV-028\",\n  \"threat_vector\": \"T1499\",\n  \"impact_level\": \"high\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.15\"],\n  \"description\": \"Attackers may exploit CVE-2017-7679 in Apache httpd 2.4.18 to perform a buffer overread attack, leading to Endpoint Denial of Service against the critical web-dos-target-01 server. The vulnerable Apache module could be leveraged to exhaust",
+      "parsed_response": {
+        "scenario_title": "DoS Attack on Web Server via Apache Vulnerability",
+        "affected_asset": "SRV-028",
+        "threat_vector": "T1499",
+        "impact_level": "high",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.15"
+        ],
+        "description": "Attackers may exploit CVE-2017-7679 in Apache httpd 2.4.18 to perform a buffer overread attack, leading to Endpoint Denial of Service against the critical web-dos-target-01 server. The vulnerable Apache module could be leveraged to exhaust system resources and degrade service availability. Mitigation requires urgent patching of Apache httpd and implementation of DoS detection and response controls per SS6.11 treatment plans and SS6.15 execution protocols."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-029",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 1531.33,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Remote Memory Disclosure via Heartbleed leading to Credential and Cryptographic Key Compromise\",\n  \"affected_asset\": \"SRV-029\",\n  \"threat_vector\": \"CVE-2014-0160 Heartbleed (T1555 - Credentials from Password Stores)\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.4\",\n  \"recommended_controls\": [\n    \"SS6.11\",\n    \"SS6.15\",\n    \"SS6.17\"\n  ],\n  \"description\": \"SRV-029 running OpenSSL 1.0.1f on Ubuntu 12.04 LTS is vulnerable to CVE-2014-0160 (Heartbleed, CVSS 10",
+      "parsed_response": {
+        "scenario_title": "Remote Memory Disclosure via Heartbleed leading to Credential and Cryptographic Key Compromise",
+        "affected_asset": "SRV-029",
+        "threat_vector": "CVE-2014-0160 Heartbleed (T1555 - Credentials from Password Stores)",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.4",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.15",
+          "SS6.17"
+        ],
+        "description": "SRV-029 running OpenSSL 1.0.1f on Ubuntu 12.04 LTS is vulnerable to CVE-2014-0160 (Heartbleed, CVSS 10.0), enabling unauthenticated remote attackers to leak 64KB of server memory containing private TLS keys, session tokens, and cached credentials without triggering authentication logs. Exploitation facilitates credential extraction (T1555) and allows attackers to decrypt historical communications, forge certificates, and impersonate the service to downstream systems and users."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-030",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 16.16,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Remote Code Execution via Spearphishing PDF Attachment to Adobe Reader 9.0\",\n  \"affected_asset\": \"SRV-030\",\n  \"threat_vector\": \"T1566.001 - Spearphishing Attachment with CVE-2010-0188 exploit\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.14\"],\n  \"description\": \"An attacker delivers a malicious PDF via spearphishing email to a user on infiltration-victim-01 (SRV-030). The PDF exploits CVE-2010-0188 int",
+      "parsed_response": {
+        "scenario_title": "Remote Code Execution via Spearphishing PDF Attachment to Adobe Reader 9.0",
+        "affected_asset": "SRV-030",
+        "threat_vector": "T1566.001 - Spearphishing Attachment with CVE-2010-0188 exploit",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.14"
+        ],
+        "description": "An attacker delivers a malicious PDF via spearphishing email to a user on infiltration-victim-01 (SRV-030). The PDF exploits CVE-2010-0188 integer overflow in Adobe Reader 9.0, achieving remote code execution with user privileges. Compromise of this high-criticality Windows Vista workstation enables lateral movement within CIC Testbed Infrastructure and confidential data exfiltration."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-031",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 24.57,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Spearphishing Infiltration via Malicious PDF Attachment on Department Workstations\",\n  \"affected_asset\": \"SRV-030\",\n  \"threat_vector\": \"T1566.001 - Spearphishing Attachment (PDF)\",\n  \"impact_level\": \"high\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.8\", \"SS6.11\", \"SS6.12\"],\n  \"description\": \"Adversaries distribute spearphishing emails with malicious PDF attachments targeting high-criticality Windows Vista workstations in CIC Dept 4 Operations. Explo",
+      "parsed_response": {
+        "scenario_title": "Spearphishing Infiltration via Malicious PDF Attachment on Department Workstations",
+        "affected_asset": "SRV-030",
+        "threat_vector": "T1566.001 - Spearphishing Attachment (PDF)",
+        "impact_level": "high",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.8",
+          "SS6.11",
+          "SS6.12"
+        ],
+        "description": "Adversaries distribute spearphishing emails with malicious PDF attachments targeting high-criticality Windows Vista workstations in CIC Dept 4 Operations. Exploitation of unpatched Vista systems enables initial compromise and lateral movement into testbed infrastructure. Risk mitigation requires multi-layered controls: email gateway filtering, system hardening via patching, and user security awareness training (SS6.11-6.12)."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-032",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 16.09,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"EternalBlue Exploitation via SMBv1 RCE Enabling Bot C2 Takeover\",\n  \"affected_asset\": \"SRV-032\",\n  \"threat_vector\": \"CVE-2017-0144 RCE exploit on SMBv1 leading to T1071.001 Bot command and control\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.13\", \"SS6.14\"],\n  \"description\": \"Attackers exploit CVE-2017-0144 (EternalBlue, CVSS 9.3) against unpatched Windows Server 2012 R2/2016 systems running SMBv1 to ",
+      "parsed_response": {
+        "scenario_title": "EternalBlue Exploitation via SMBv1 RCE Enabling Bot C2 Takeover",
+        "affected_asset": "SRV-032",
+        "threat_vector": "CVE-2017-0144 RCE exploit on SMBv1 leading to T1071.001 Bot command and control",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.13",
+          "SS6.14"
+        ],
+        "description": "Attackers exploit CVE-2017-0144 (EternalBlue, CVSS 9.3) against unpatched Windows Server 2012 R2/2016 systems running SMBv1 to achieve remote code execution on critical CIC Testbed Infrastructure servers (SRV-032, SRV-033). Once compromised, these servers become part of a botnet using T1071.001 web protocol-based command and control, enabling lateral movement and compromise of dependent systems with potential impact to business operations. Inherent risk score: 15 (High) with likelihood 3, impact 5."
+      }
+    },
+    {
+      "run": 1,
+      "asset_id": "SRV-033",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 37.88,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"EternalBlue-to-Bot C2 Attack on Critical Windows Infrastructure\",\n  \"affected_asset\": \"SRV-033\",\n  \"threat_vector\": \"CVE-2017-0144 SMBv1 RCE enabling T1071.001 botnet command & control\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.13\", \"SS6.15\"],\n  \"description\": \"An attacker exploits the critical EternalBlue vulnerability (CVE-2017-0144, CVSS 9.3) in Windows SMBv1 on SRV-033 to achieve remote code execution an",
+      "parsed_response": {
+        "scenario_title": "EternalBlue-to-Bot C2 Attack on Critical Windows Infrastructure",
+        "affected_asset": "SRV-033",
+        "threat_vector": "CVE-2017-0144 SMBv1 RCE enabling T1071.001 botnet command & control",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.13",
+          "SS6.15"
+        ],
+        "description": "An attacker exploits the critical EternalBlue vulnerability (CVE-2017-0144, CVSS 9.3) in Windows SMBv1 on SRV-033 to achieve remote code execution and establish a persistent botnet agent. The compromised system communicates via web protocols (T1071.001) on port 8080, enabling command execution and lateral movement across CIC Server Room infrastructure. Immediate mitigation requires SMBv1 patching, network segmentation to isolate affected systems, and egress filtering to block unauthorized C2 channels."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-001",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 25.58,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Remote Code Execution via vsftpd 2.3.4 Backdoor (CVE-2011-2523)\",\n  \"affected_asset\": \"SRV-001\",\n  \"threat_vector\": \"CVE-2011-2523 FTP Service Backdoor Exploitation\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.13\"],\n  \"description\": \"An unauthenticated external attacker exploits CVE-2011-2523 (CVSS 10.0) in vsftpd 2.3.4 to establish a reverse shell on port 6200/tcp and gain root-level remote code exe",
+      "parsed_response": {
+        "scenario_title": "Remote Code Execution via vsftpd 2.3.4 Backdoor (CVE-2011-2523)",
+        "affected_asset": "SRV-001",
+        "threat_vector": "CVE-2011-2523 FTP Service Backdoor Exploitation",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.13"
+        ],
+        "description": "An unauthenticated external attacker exploits CVE-2011-2523 (CVSS 10.0) in vsftpd 2.3.4 to establish a reverse shell on port 6200/tcp and gain root-level remote code execution on critical asset SRV-001. Successful exploitation enables complete system compromise, data exfiltration, lateral movement to dependent SSH infrastructure (SRV-002), and disruption of CIC Testbed operations. Immediate patch deployment, vulnerability scanning, and network access controls are required to remediate this critical-severity exposure."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-002",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 18.05,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"SSH Brute Force Attack on Critical Server\",\n  \"affected_asset\": \"SRV-002\",\n  \"threat_vector\": \"T1110.001 - Password Guessing via SSH\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.7\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.14\", \"SS6.15\"],\n  \"description\": \"Adversaries execute automated brute force attacks against OpenSSH 4.7p1 on SRV-002 (172.31.69.25) exploiting weak credential policies to achieve unauthorized remote access and credential compromise. Su",
+      "parsed_response": {
+        "scenario_title": "SSH Brute Force Attack on Critical Server",
+        "affected_asset": "SRV-002",
+        "threat_vector": "T1110.001 - Password Guessing via SSH",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.7",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.14",
+          "SS6.15"
+        ],
+        "description": "Adversaries execute automated brute force attacks against OpenSSH 4.7p1 on SRV-002 (172.31.69.25) exploiting weak credential policies to achieve unauthorized remote access and credential compromise. Successful exploitation grants complete system control over a critical asset, enabling lateral movement and data exfiltration. Implement mandatory access control policies (SS6.11), risk-based mitigation plans (SS6.14), and execution monitoring (SS6.15)."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-003",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 19.37,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Remote Code Execution via Telnetd Buffer Overflow\",\n  \"affected_asset\": \"SRV-003\",\n  \"threat_vector\": \"Buffer overflow in telnetd options processing allowing unauthenticated remote code execution as root\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.13\", \"SS6.15\"],\n  \"description\": \"An unauthenticated remote attacker can exploit CVE-2001-0554 (CVSS 10.0) by sending specially crafted telnet protocol options to S",
+      "parsed_response": {
+        "scenario_title": "Remote Code Execution via Telnetd Buffer Overflow",
+        "affected_asset": "SRV-003",
+        "threat_vector": "Buffer overflow in telnetd options processing allowing unauthenticated remote code execution as root",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.13",
+          "SS6.15"
+        ],
+        "description": "An unauthenticated remote attacker can exploit CVE-2001-0554 (CVSS 10.0) by sending specially crafted telnet protocol options to SRV-003, triggering a buffer overflow in the netkit telnetd service that grants root shell access. This critical vulnerability on a high-criticality asset permits complete system compromise including data exfiltration, malware installation, and lateral movement. Immediate risk treatment through patch application, service disabling, or network isolation is mandatory."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-004",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 16.42,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Remote Code Execution via Postfix SMTP Buffer Overflow\",\n  \"affected_asset\": \"SRV-004\",\n  \"threat_vector\": \"Unauthenticated remote attacker exploits unpatched buffer overflow in Postfix SMTP 2.5.1 via malformed SMTP commands to achieve arbitrary code execution with mail service privileges\",\n  \"impact_level\": \"high\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\"],\n  \"description\": \"Postfix SMTP 2.5.1 on end-of-life Ubuntu 8.04 contains mul",
+      "parsed_response": {
+        "scenario_title": "Remote Code Execution via Postfix SMTP Buffer Overflow",
+        "affected_asset": "SRV-004",
+        "threat_vector": "Unauthenticated remote attacker exploits unpatched buffer overflow in Postfix SMTP 2.5.1 via malformed SMTP commands to achieve arbitrary code execution with mail service privileges",
+        "impact_level": "high",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12"
+        ],
+        "description": "Postfix SMTP 2.5.1 on end-of-life Ubuntu 8.04 contains multiple documented remote code execution vulnerabilities including CVE-2009-4493. An unauthenticated attacker can send specially crafted SMTP protocol messages to TCP 25 triggering stack corruption and code execution, enabling email interception, malware distribution, credential harvesting, and lateral network movement to adjacent CIC testbed infrastructure."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-005",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 22.36,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Remote Denial of Service via BIND 9.4.2 Dynamic Update Vulnerability\",\n  \"affected_asset\": \"SRV-005\",\n  \"threat_vector\": \"Remote attacker sends crafted DNS dynamic update message to exploit ISC BIND 9.4.2 parsing flaw (CVE-2009-0696)\",\n  \"impact_level\": \"high\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.15\", \"SS6.17\"],\n  \"description\": \"An unauthenticated remote attacker can exploit CVE-2009-0696 by sending a specially crafted dynamic upda",
+      "parsed_response": {
+        "scenario_title": "Remote Denial of Service via BIND 9.4.2 Dynamic Update Vulnerability",
+        "affected_asset": "SRV-005",
+        "threat_vector": "Remote attacker sends crafted DNS dynamic update message to exploit ISC BIND 9.4.2 parsing flaw (CVE-2009-0696)",
+        "impact_level": "high",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.15",
+          "SS6.17"
+        ],
+        "description": "An unauthenticated remote attacker can exploit CVE-2009-0696 by sending a specially crafted dynamic update packet to the exposed BIND 9.4.2 DNS server, causing service crash and denial of critical DNS resolution capabilities. The vulnerability requires no authentication and impacts all dependent systems relying on this high-criticality server. Immediate patch application, network segmentation, and continuous monitoring for exploitation attempts are required mitigations."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-006",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 19.2,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Apache Killer DoS Attack on Critical Web Server\",\n  \"affected_asset\": \"SRV-006\",\n  \"threat_vector\": \"HTTP Range Header Denial of Service (CVE-2011-3192)\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.15\"],\n  \"description\": \"Attacker sends specially crafted HTTP Range headers to Apache httpd 2.2.8, consuming excessive server memory and CPU to trigger denial of service. The critical server SRV-006 in CIC Server Ro",
+      "parsed_response": {
+        "scenario_title": "Apache Killer DoS Attack on Critical Web Server",
+        "affected_asset": "SRV-006",
+        "threat_vector": "HTTP Range Header Denial of Service (CVE-2011-3192)",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.15"
+        ],
+        "description": "Attacker sends specially crafted HTTP Range headers to Apache httpd 2.2.8, consuming excessive server memory and CPU to trigger denial of service. The critical server SRV-006 in CIC Server Room lacks security patches and is directly exposed to remote exploitation. Immediate remediation through emergency patching to httpd 2.2.16+ or service hardening (rate limiting, WAF) is required to restore acceptable risk posture."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-007",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 19.02,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Remote Code Execution via PHP CGI Parameter Injection on Critical Web Server\",\n  \"affected_asset\": \"SRV-007\",\n  \"threat_vector\": \"T1190 - Exploit Public-Facing Application (CVE-2012-1823: PHP-CGI Query String Parameter Injection)\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.4\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.15\"],\n  \"description\": \"PHP 5.2.4 on server SRV-007 (php-srv-01) is vulnerable to unauthenticated remote code execution via CVE-",
+      "parsed_response": {
+        "scenario_title": "Remote Code Execution via PHP CGI Parameter Injection on Critical Web Server",
+        "affected_asset": "SRV-007",
+        "threat_vector": "T1190 - Exploit Public-Facing Application (CVE-2012-1823: PHP-CGI Query String Parameter Injection)",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.4",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.15"
+        ],
+        "description": "PHP 5.2.4 on server SRV-007 (php-srv-01) is vulnerable to unauthenticated remote code execution via CVE-2012-1823, which exploits unsafe handling of CGI query string parameters in PHP-CGI. Attackers can inject arbitrary commands through malicious HTTP requests to achieve complete system compromise with web server process privileges. Mitigation requires immediate patching to PHP \u22655.3.9, input validation controls, and network segmentation of critical infrastructure."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-008",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 26.05,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Public-Facing Web Application Exploitation Attack\",\n  \"affected_asset\": \"SRV-008\",\n  \"threat_vector\": \"T1190 - Exploit Public-Facing Application\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.4\",\n  \"recommended_controls\": [\"SS6.13\", \"SS6.15\"],\n  \"description\": \"An adversary exploits known vulnerabilities in DVWA 1.0.7 running on dvwa-srv-01 (172.31.69.25) to bypass authentication and gain unauthorized access to the CIC testbed infrastructure. The unpatched ",
+      "parsed_response": {
+        "scenario_title": "Public-Facing Web Application Exploitation Attack",
+        "affected_asset": "SRV-008",
+        "threat_vector": "T1190 - Exploit Public-Facing Application",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.4",
+        "recommended_controls": [
+          "SS6.13",
+          "SS6.15"
+        ],
+        "description": "An adversary exploits known vulnerabilities in DVWA 1.0.7 running on dvwa-srv-01 (172.31.69.25) to bypass authentication and gain unauthorized access to the CIC testbed infrastructure. The unpatched Ubuntu 8.04 LTS system and intentionally vulnerable web application provide multiple exploitation pathways including SQL injection and authentication bypass. Successful compromise enables data exfiltration, lateral movement, and potential disruption of security research operations."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-009",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 19.25,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthorized Database Access via SQL Injection Attack\",\n  \"affected_asset\": \"SRV-009\",\n  \"threat_vector\": \"SQL Injection through unvalidated web form inputs in Mutillidae II 2.1.19 login, search, and user input parameters\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.9\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.13\", \"SS6.15\"],\n  \"description\": \"OWASP Mutillidae II 2.1.19 contains multiple SQL injection vulnerabilities in unvalidated input parameters that ",
+      "parsed_response": {
+        "scenario_title": "Unauthorized Database Access via SQL Injection Attack",
+        "affected_asset": "SRV-009",
+        "threat_vector": "SQL Injection through unvalidated web form inputs in Mutillidae II 2.1.19 login, search, and user input parameters",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.9",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.13",
+          "SS6.15"
+        ],
+        "description": "OWASP Mutillidae II 2.1.19 contains multiple SQL injection vulnerabilities in unvalidated input parameters that accept user-controlled data without sanitization or parameterized query enforcement. An attacker can exploit these vulnerabilities to execute arbitrary SQL commands, exfiltrate sensitive records from the application database, or modify critical data. The underlying Ubuntu 8.04 LTS operating system amplifies risk through end-of-life status and unpatched kernel vulnerabilities, enabling secondary compromise through privilege escalation."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-010",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 15.5,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthenticated RCE via phpMyAdmin Setup.php Exploitation\",\n  \"affected_asset\": \"SRV-010\",\n  \"threat_vector\": \"Static code injection in phpMyAdmin setup.php (CVE-2009-1151)\",\n  \"impact_level\": \"high\",\n  \"nfcrm_clause\": \"SS6.4\",\n  \"recommended_controls\": [\n    \"SS6.8\",\n    \"SS6.11\",\n    \"SS6.12\"\n  ],\n  \"description\": \"An unauthenticated attacker exploits CVE-2009-1151 to inject arbitrary PHP code via phpMyAdmin 2.11.x setup.php, achieving remote code execution on SR",
+      "parsed_response": {
+        "scenario_title": "Unauthenticated RCE via phpMyAdmin Setup.php Exploitation",
+        "affected_asset": "SRV-010",
+        "threat_vector": "Static code injection in phpMyAdmin setup.php (CVE-2009-1151)",
+        "impact_level": "high",
+        "nfcrm_clause": "SS6.4",
+        "recommended_controls": [
+          "SS6.8",
+          "SS6.11",
+          "SS6.12"
+        ],
+        "description": "An unauthenticated attacker exploits CVE-2009-1151 to inject arbitrary PHP code via phpMyAdmin 2.11.x setup.php, achieving remote code execution on SRV-010 (criticality: high). Successful exploitation grants attacker OS-level access to the server, enabling lateral movement to connected assets, data exfiltration, and persistence. Mitigation requires immediate patching to phpMyAdmin 2.11.6+ and removal of setup.php from production environments."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-011",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 27.25,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthenticated Remote Code Execution in TWiki 4.2.4 via Shell Metacharacter Injection\",\n  \"affected_asset\": \"SRV-011\",\n  \"threat_vector\": \"Exploitation of CVE-2008-5305 shell metacharacter injection in TWiki rev parameter for unauthenticated RCE\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.13\", \"SS6.15\"],\n  \"description\": \"An unauthenticated attacker can exploit CVE-2008-5305 to inject arbitrary shell metacha",
+      "parsed_response": {
+        "scenario_title": "Unauthenticated Remote Code Execution in TWiki 4.2.4 via Shell Metacharacter Injection",
+        "affected_asset": "SRV-011",
+        "threat_vector": "Exploitation of CVE-2008-5305 shell metacharacter injection in TWiki rev parameter for unauthenticated RCE",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.13",
+          "SS6.15"
+        ],
+        "description": "An unauthenticated attacker can exploit CVE-2008-5305 to inject arbitrary shell metacharacters via the TWiki rev parameter, achieving remote code execution on SRV-011 with application privileges. This critical vulnerability (CVSS 10.0) directly threatens the confidentiality, integrity, and availability of high-criticality CIC testbed infrastructure. Immediate treatment measures include planning and executing patching to TWiki 4.2.5+, implementing network isolation, and input validation controls."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-012",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 22.7,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Remote Code Execution via TikiWiki CMS PHP Injection Vulnerability\",\n  \"affected_asset\": \"SRV-012\",\n  \"threat_vector\": \"Unauthenticated remote code injection through tiki-graph_formula.php exploitation\",\n  \"impact_level\": \"high\",\n  \"nfcrm_clause\": \"SS6.7\",\n  \"recommended_controls\": [\"SS6.14\", \"SS6.15\"],\n  \"description\": \"SRV-012 runs vulnerable TikiWiki 1.9.5 software affected by CVE-2007-5423, allowing unauthenticated remote code injection via the tiki-graph_formu",
+      "parsed_response": {
+        "scenario_title": "Remote Code Execution via TikiWiki CMS PHP Injection Vulnerability",
+        "affected_asset": "SRV-012",
+        "threat_vector": "Unauthenticated remote code injection through tiki-graph_formula.php exploitation",
+        "impact_level": "high",
+        "nfcrm_clause": "SS6.7",
+        "recommended_controls": [
+          "SS6.14",
+          "SS6.15"
+        ],
+        "description": "SRV-012 runs vulnerable TikiWiki 1.9.5 software affected by CVE-2007-5423, allowing unauthenticated remote code injection via the tiki-graph_formula.php endpoint. Successful exploitation enables complete server compromise and lateral movement within the infrastructure. Immediate patching or application replacement is essential to mitigate critical risk exposure."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-013",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 17.67,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Remote Code Execution via Unpatched rpcbind Service\",\n  \"affected_asset\": \"SRV-013\",\n  \"threat_vector\": \"Exploitation of buffer overflow vulnerability in SUN RPC #100000 library through network RPC calls\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.13\"],\n  \"description\": \"The legacy rpcbind service running on unpatched Ubuntu 8.04 LTS contains multiple known vulnerabilities (CVE-2015-7236 and variant",
+      "parsed_response": {
+        "scenario_title": "Remote Code Execution via Unpatched rpcbind Service",
+        "affected_asset": "SRV-013",
+        "threat_vector": "Exploitation of buffer overflow vulnerability in SUN RPC #100000 library through network RPC calls",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.13"
+        ],
+        "description": "The legacy rpcbind service running on unpatched Ubuntu 8.04 LTS contains multiple known vulnerabilities (CVE-2015-7236 and variants) allowing unauthenticated remote code execution. An attacker on the network can enumerate the RPC service, craft malicious RPC packets, and exploit buffer overflows to achieve arbitrary code execution with root privileges. Immediate mitigation requires system decommissioning, network isolation, or deployment of compensating controls including firewall rules restricting RPC access and mandatory security patching."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-014",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 19.86,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthenticated Remote Code Execution via Samba CVE-2007-2447\",\n  \"affected_asset\": \"SRV-014\",\n  \"threat_vector\": \"Remote attacker exploits Samba 3.0.20 username map script parameter injection to execute arbitrary shell commands without authentication\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.13\"],\n  \"description\": \"CVE-2007-2447 enables an unauthenticated attacker to achieve remote code execution",
+      "parsed_response": {
+        "scenario_title": "Unauthenticated Remote Code Execution via Samba CVE-2007-2447",
+        "affected_asset": "SRV-014",
+        "threat_vector": "Remote attacker exploits Samba 3.0.20 username map script parameter injection to execute arbitrary shell commands without authentication",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.13"
+        ],
+        "description": "CVE-2007-2447 enables an unauthenticated attacker to achieve remote code execution on smb-srv-01 via malicious input to the Samba username map script feature with CVSS 10.0 severity. The attack vector is network-accessible and requires no authentication, enabling complete system compromise of this critical asset in the CIC Testbed Infrastructure. Immediate remediation through patching to Samba \u22653.0.25, network isolation, or service deactivation is required; residual risk assessment and control implementation must follow treatment protocols SS6.11-6.16."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-015",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 15.57,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthenticated Remote Root Access via Netkit R-Services CVE-1999-0651\",\n  \"affected_asset\": \"SRV-015\",\n  \"threat_vector\": \"Network exploitation of legacy rexec/rlogin/rsh services with .rhosts trust misconfig allowing unauthenticated remote root login\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\n    \"SS6.11\",\n    \"SS6.12\"\n  ],\n  \"description\": \"CVE-1999-0651 in netkit r-services v0.17 enables unauthenticated remote attacke",
+      "parsed_response": {
+        "scenario_title": "Unauthenticated Remote Root Access via Netkit R-Services CVE-1999-0651",
+        "affected_asset": "SRV-015",
+        "threat_vector": "Network exploitation of legacy rexec/rlogin/rsh services with .rhosts trust misconfig allowing unauthenticated remote root login",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12"
+        ],
+        "description": "CVE-1999-0651 in netkit r-services v0.17 enables unauthenticated remote attackers to gain root access to SRV-015 (Ubuntu 8.04 LTS) via rexec/rlogin/rsh protocols configured with .rhosts trust. With CVSS 10.0 severity on a critical-level asset in production testbed, successful exploitation results in complete system compromise, credential harvesting, and lateral movement capability across CIC infrastructure."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-016",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 17.81,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Remote Code Execution via Java RMI Deserialization Attack on Metasploitable Server\",\n  \"affected_asset\": \"SRV-016\",\n  \"threat_vector\": \"Unauthenticated remote attacker exploiting CVE-2011-3556 by sending malicious serialized Java objects to RMI Registry service (port 1099)\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.3\", \"SS6.4\", \"SS6.6\", \"SS6.9\", \"SS6.11\"],\n  \"description\": \"An attacker crafts a malicious Java serializ",
+      "parsed_response": {
+        "scenario_title": "Remote Code Execution via Java RMI Deserialization Attack on Metasploitable Server",
+        "affected_asset": "SRV-016",
+        "threat_vector": "Unauthenticated remote attacker exploiting CVE-2011-3556 by sending malicious serialized Java objects to RMI Registry service (port 1099)",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.3",
+          "SS6.4",
+          "SS6.6",
+          "SS6.9",
+          "SS6.11"
+        ],
+        "description": "An attacker crafts a malicious Java serialized object and transmits it to the RMI Registry service on SRV-016, exploiting the unsafe deserialization vulnerability (CVE-2011-3556) in Java 1.6.0 to achieve unauthenticated remote code execution with Java process privileges. Given SRV-016's high criticality designation and role in CIC Testbed Infrastructure, successful exploitation would enable complete system compromise, lateral movement to dependent assets, and potential data exfiltration. Immediate remediation requires Java runtime patching, network-based isolation of RMI services via firewall rules, and implementation of deserialization object filters to block untrusted classes."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-017",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 11.74,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthorized Root Access via Ingreslock Backdoor\",\n  \"affected_asset\": \"SRV-017\",\n  \"threat_vector\": \"Ingreslock root backdoor exploitation (CVE-2001-0144) - unauthenticated remote code execution\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.13\"],\n  \"description\": \"SRV-017 hosts an intentional ingreslock backdoor on Ubuntu 8.04 LTS (Metasploitable 2), a deliberately vulnerable test system. Exploitatio",
+      "parsed_response": {
+        "scenario_title": "Unauthorized Root Access via Ingreslock Backdoor",
+        "affected_asset": "SRV-017",
+        "threat_vector": "Ingreslock root backdoor exploitation (CVE-2001-0144) - unauthenticated remote code execution",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.13"
+        ],
+        "description": "SRV-017 hosts an intentional ingreslock backdoor on Ubuntu 8.04 LTS (Metasploitable 2), a deliberately vulnerable test system. Exploitation grants unauthenticated remote root access, enabling complete system compromise, lateral movement within CIC infrastructure, and potential data exfiltration. Immediate remediation required: isolate asset, disable backdoor, apply OS hardening, implement network segmentation with access controls."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-018",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 20.86,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthorized NFS Root Filesystem Access and SSH Key Injection\",\n  \"affected_asset\": \"SRV-018\",\n  \"threat_vector\": \"NFS root filesystem export vulnerability exploitation (CVE-1999-0170) enabling unauthorized filesystem write and SSH key injection for persistent remote access\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.14\", \"SS6.15\"],\n  \"description\": \"Unauthenticated remote attacker exploits CVE-1999",
+      "parsed_response": {
+        "scenario_title": "Unauthorized NFS Root Filesystem Access and SSH Key Injection",
+        "affected_asset": "SRV-018",
+        "threat_vector": "NFS root filesystem export vulnerability exploitation (CVE-1999-0170) enabling unauthorized filesystem write and SSH key injection for persistent remote access",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.14",
+          "SS6.15"
+        ],
+        "description": "Unauthenticated remote attacker exploits CVE-1999-0170 in NFS v2-v4 on critical asset SRV-018 to gain unauthorized write access to the root filesystem and inject SSH keys, establishing persistent root-level remote access. Complete infrastructure compromise requiring immediate risk treatment through vulnerability patching, NFS export restriction, and network isolation per SS6.11-6.15 treatment procedures."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-019",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 21.11,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthenticated Remote Code Execution via ProFTPD TELNET IAC Buffer Overflow\",\n  \"affected_asset\": \"SRV-019\",\n  \"threat_vector\": \"TELNET IAC buffer overflow in ProFTPD 1.3.1 enabling unauthenticated remote code execution\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.13\", \"SS6.14\", \"SS6.15\"],\n  \"description\": \"CVE-2010-4221 (CVSS 10.0) affects ProFTPD 1.3.1 running on SRV-019 (ftp2-srv-01, 172.31.69.25), a high-",
+      "parsed_response": {
+        "scenario_title": "Unauthenticated Remote Code Execution via ProFTPD TELNET IAC Buffer Overflow",
+        "affected_asset": "SRV-019",
+        "threat_vector": "TELNET IAC buffer overflow in ProFTPD 1.3.1 enabling unauthenticated remote code execution",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.13",
+          "SS6.14",
+          "SS6.15"
+        ],
+        "description": "CVE-2010-4221 (CVSS 10.0) affects ProFTPD 1.3.1 running on SRV-019 (ftp2-srv-01, 172.31.69.25), a high-criticality testbed server. An unauthenticated remote attacker can trigger a TELNET IAC buffer overflow to execute arbitrary code with service privileges, achieving full system compromise. This scenario poses severe risk to CIC infrastructure integrity and confidentiality given the asset's role in testbed operations."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-020",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 15.05,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"MySQL 5.0.51a Local Privilege Escalation via BINLOG Command Injection\",\n  \"affected_asset\": \"SRV-020\",\n  \"threat_vector\": \"Local privilege escalation through crafted BINLOG command exploitation (CVE-2008-0226)\",\n  \"impact_level\": \"high\",\n  \"nfcrm_clause\": \"SS6.3\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.14\"],\n  \"description\": \"An authenticated local attacker on mysql-srv-01 can exploit CVE-2008-0226 to escalate privileges by submitting a malformed BINLO",
+      "parsed_response": {
+        "scenario_title": "MySQL 5.0.51a Local Privilege Escalation via BINLOG Command Injection",
+        "affected_asset": "SRV-020",
+        "threat_vector": "Local privilege escalation through crafted BINLOG command exploitation (CVE-2008-0226)",
+        "impact_level": "high",
+        "nfcrm_clause": "SS6.3",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.14"
+        ],
+        "description": "An authenticated local attacker on mysql-srv-01 can exploit CVE-2008-0226 to escalate privileges by submitting a malformed BINLOG command to MySQL 5.0.51a, potentially acquiring database administrative access and system-level control. Given SRV-020's critical designation and role in CIC testbed infrastructure, successful exploitation compromises data integrity, confidentiality, and infrastructure availability. Immediate remediation requires version patching, privilege review, and audit logging implementation per NFCRM treatment requirements."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-021",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 21.85,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthenticated Remote Code Execution via distccd EXEC Request on Critical Infrastructure Server\",\n  \"affected_asset\": \"SRV-021\",\n  \"threat_vector\": \"Unauthenticated EXEC request to distccd service exploiting CVE-2004-2687 for arbitrary code execution\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.13\", \"SS6.14\", \"SS6.15\"],\n  \"description\": \"Server SRV-021 (distcc-srv-01, 172.31.69.25) runs vulnerable d",
+      "parsed_response": {
+        "scenario_title": "Unauthenticated Remote Code Execution via distccd EXEC Request on Critical Infrastructure Server",
+        "affected_asset": "SRV-021",
+        "threat_vector": "Unauthenticated EXEC request to distccd service exploiting CVE-2004-2687 for arbitrary code execution",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.13",
+          "SS6.14",
+          "SS6.15"
+        ],
+        "description": "Server SRV-021 (distcc-srv-01, 172.31.69.25) runs vulnerable distccd v1 (GCC 4.2.4) exposed to CVE-2004-2687, a CVSS 10.0 unauthenticated remote code execution vulnerability affecting critical CIC testbed infrastructure. An attacker can send an unauthenticated EXEC request to the distccd service to execute arbitrary code with service-level privileges, resulting in full server compromise, data breach, and potential lateral movement to dependent systems. Immediate patching, network segmentation, and access control enforcement are required to mitigate inherent risk."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-022",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 23.2,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Local Privilege Escalation via PostgreSQL SQL Injection on CIC Infrastructure\",\n  \"affected_asset\": \"SRV-022\",\n  \"threat_vector\": \"Authenticated attacker crafts malicious SQL statements to exploit CVE-2013-1904 in PostgreSQL 8.3.0-8.3.7, achieving local privilege escalation from database user to system-level access\",\n  \"impact_level\": \"high\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.13\", \"SS6.14\"],\n  \"description\": \"An attacker with data",
+      "parsed_response": {
+        "scenario_title": "Local Privilege Escalation via PostgreSQL SQL Injection on CIC Infrastructure",
+        "affected_asset": "SRV-022",
+        "threat_vector": "Authenticated attacker crafts malicious SQL statements to exploit CVE-2013-1904 in PostgreSQL 8.3.0-8.3.7, achieving local privilege escalation from database user to system-level access",
+        "impact_level": "high",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.13",
+          "SS6.14"
+        ],
+        "description": "An attacker with database access exploits CVE-2013-1904 through crafted SQL queries to escalate privileges from the PostgreSQL user context to the operating system level on pgsql-srv-01. The vulnerability affects PostgreSQL versions 8.3.0-8.3.7 on this high-criticality CIC infrastructure asset, enabling unauthorized system compromise. Remediation requires immediate patching to PostgreSQL 8.4+, implementation of least-privilege database user policies, and enhanced access monitoring."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-023",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 20.12,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthenticated Remote Access via VNC NULL Authentication Bypass\",\n  \"affected_asset\": \"SRV-023\",\n  \"threat_vector\": \"Exploitation of CVE-2006-2369 null authentication type bypass in RealVNC 4.1.1\",\n  \"impact_level\": \"high\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.14\"],\n  \"description\": \"RealVNC 4.1.1 on critical server SRV-023 (Ubuntu 8.04 LTS, 172.31.69.25) is vulnerable to authentication bypass via NULL authentication type ",
+      "parsed_response": {
+        "scenario_title": "Unauthenticated Remote Access via VNC NULL Authentication Bypass",
+        "affected_asset": "SRV-023",
+        "threat_vector": "Exploitation of CVE-2006-2369 null authentication type bypass in RealVNC 4.1.1",
+        "impact_level": "high",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.14"
+        ],
+        "description": "RealVNC 4.1.1 on critical server SRV-023 (Ubuntu 8.04 LTS, 172.31.69.25) is vulnerable to authentication bypass via NULL authentication type (CVE-2006-2369, CVSS 7.5), enabling unauthenticated remote attackers to gain complete system access without credentials. Exploitation permits unauthorized remote control, data exfiltration, and system compromise of CIC testbed infrastructure. Immediate treatment through software patching, NULL authentication disabling, and network segmentation is required per SS6.11-6.16."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-024",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 24.5,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"X11 Display Injection - Unauthenticated Screen Capture\",\n  \"affected_asset\": \"SRV-024\",\n  \"threat_vector\": \"Unauthenticated X11 display connection via TCP port 6000 allowing screen capture and keystroke interception\",\n  \"impact_level\": \"high\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.14\"],\n  \"description\": \"An attacker on the network can connect to the X11 server listening on TCP port 6000 without authentication and capture scr",
+      "parsed_response": {
+        "scenario_title": "X11 Display Injection - Unauthenticated Screen Capture",
+        "affected_asset": "SRV-024",
+        "threat_vector": "Unauthenticated X11 display connection via TCP port 6000 allowing screen capture and keystroke interception",
+        "impact_level": "high",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.14"
+        ],
+        "description": "An attacker on the network can connect to the X11 server listening on TCP port 6000 without authentication and capture screen contents, keyboard input, and graphical data from x11-srv-01. This vulnerability in Xorg 7.3 (CVE-1999-0526, CVSS 7.5) enables unauthorized information disclosure of potentially sensitive visual data and user interactions. Mitigation requires disabling network X11 display access, implementing strict network segmentation via firewall rules, and upgrading to a patched X11 version."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-025",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 17.01,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"UnrealIRCd Backdoor RCE via AB Prefix Exploitation\",\n  \"affected_asset\": \"SRV-025\",\n  \"threat_vector\": \"Unauthenticated remote code execution via AB-prefixed command injection in UnrealIRCd 3.2.8.1 backdoor\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.13\", \"SS6.14\"],\n  \"description\": \"SRV-025 runs vulnerable UnrealIRCd 3.2.8.1 which contains a critical backdoor (CVE-2010-2075, CVSS 10.0) allowing unauthenticat",
+      "parsed_response": {
+        "scenario_title": "UnrealIRCd Backdoor RCE via AB Prefix Exploitation",
+        "affected_asset": "SRV-025",
+        "threat_vector": "Unauthenticated remote code execution via AB-prefixed command injection in UnrealIRCd 3.2.8.1 backdoor",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.13",
+          "SS6.14"
+        ],
+        "description": "SRV-025 runs vulnerable UnrealIRCd 3.2.8.1 which contains a critical backdoor (CVE-2010-2075, CVSS 10.0) allowing unauthenticated remote code execution. An attacker can craft an AB-prefixed IRC command to achieve arbitrary command execution on this critical-criticality server, resulting in full system compromise, credential theft, and lateral movement capability. Immediate remediation via patching or service shutdown is mandatory; interim controls include network segmentation restricting IRC access and intrusion detection rules monitoring for AB-prefix commands."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-026",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 26.5,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Directory Traversal via UTF-8 Encoded URLs in Apache Tomcat 5.5\",\n  \"affected_asset\": \"SRV-026\",\n  \"threat_vector\": \"Unauthenticated attacker exploits CVE-2009-0580 by sending UTF-8 encoded directory traversal sequences to Tomcat AJP handler on port 8009\",\n  \"impact_level\": \"medium\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\"],\n  \"description\": \"An unauthenticated remote attacker can exploit CVE-2009-0580 to bypass directory access con",
+      "parsed_response": {
+        "scenario_title": "Directory Traversal via UTF-8 Encoded URLs in Apache Tomcat 5.5",
+        "affected_asset": "SRV-026",
+        "threat_vector": "Unauthenticated attacker exploits CVE-2009-0580 by sending UTF-8 encoded directory traversal sequences to Tomcat AJP handler on port 8009",
+        "impact_level": "medium",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12"
+        ],
+        "description": "An unauthenticated remote attacker can exploit CVE-2009-0580 to bypass directory access controls using specially crafted UTF-8 encoded URLs targeting Apache Tomcat 5.5 AJP port 8009. Successful exploitation exposes application files, configuration data, and credentials on the high-criticality CIC infrastructure asset. Immediate remediation requires patching Tomcat 5.5 to a patched version, disabling the vulnerable AJP handler if unused, and implementing strict input validation on URL parameters."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-027",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 43664.98,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthenticated Remote Code Execution via Ruby DRb Instance Evaluation\",\n  \"affected_asset\": \"SRV-027\",\n  \"threat_vector\": \"CVE-2011-5330: Remote RCE via DRb instance_eval and syscall without authentication\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.14\", \"SS6.15\"],\n  \"description\": \"Ruby DRb 1.8 on critical server drb-srv-01 (172.31.69.25) is exposed to CVE-2011-5330, enabling unauthenticated remote attacker",
+      "parsed_response": {
+        "scenario_title": "Unauthenticated Remote Code Execution via Ruby DRb Instance Evaluation",
+        "affected_asset": "SRV-027",
+        "threat_vector": "CVE-2011-5330: Remote RCE via DRb instance_eval and syscall without authentication",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.14",
+          "SS6.15"
+        ],
+        "description": "Ruby DRb 1.8 on critical server drb-srv-01 (172.31.69.25) is exposed to CVE-2011-5330, enabling unauthenticated remote attackers to execute arbitrary code via instance_eval, resulting in complete system compromise. Inherent risk is critical (CVSS 10.0) with immediate attack feasibility. Urgent remediation through patching, network segmentation, or service deactivation is required."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-028",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 15.29,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"DDoS Attack on Critical Web Server via Apache Vulnerability\",\n  \"affected_asset\": \"SRV-028\",\n  \"threat_vector\": \"T1498 Network DoS / T1499 Endpoint DoS via CVE-2017-7679 mod_mime buffer overread\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\n    \"SS6.11\",\n    \"SS6.12\",\n    \"SS6.14\"\n  ],\n  \"description\": \"An attacker exploits CVE-2017-7679 in Apache httpd 2.4.18 to trigger a buffer overread, exhausting server resources and blo",
+      "parsed_response": {
+        "scenario_title": "DDoS Attack on Critical Web Server via Apache Vulnerability",
+        "affected_asset": "SRV-028",
+        "threat_vector": "T1498 Network DoS / T1499 Endpoint DoS via CVE-2017-7679 mod_mime buffer overread",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.14"
+        ],
+        "description": "An attacker exploits CVE-2017-7679 in Apache httpd 2.4.18 to trigger a buffer overread, exhausting server resources and blocking legitimate access to web-dos-target-01. Combined network-level DDoS (T1498) and endpoint DoS (T1499) attacks are launched against the critical asset in the CIC Server Room, targeting the short 5-second keep-alive timeout. Without mitigation implementation (SS6.11-6.14), this high-likelihood (3/5) high-impact (5/5) scenario will result in service unavailability for the CIC Testbed Infrastructure business unit."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-029",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 16.62,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Remote Credential Extraction via Heartbleed TLS Heartbeat Memory Leak\",\n  \"affected_asset\": \"SRV-029\",\n  \"threat_vector\": \"CVE-2014-0160 (Heartbleed) enabling T1555 (Credentials from Password Stores) via remote memory disclosure\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.13\", \"SS6.14\"],\n  \"description\": \"An unauthenticated remote attacker exploits Heartbleed in OpenSSL 1.0.1f on SRV-029 to leak 64K",
+      "parsed_response": {
+        "scenario_title": "Remote Credential Extraction via Heartbleed TLS Heartbeat Memory Leak",
+        "affected_asset": "SRV-029",
+        "threat_vector": "CVE-2014-0160 (Heartbleed) enabling T1555 (Credentials from Password Stores) via remote memory disclosure",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.13",
+          "SS6.14"
+        ],
+        "description": "An unauthenticated remote attacker exploits Heartbleed in OpenSSL 1.0.1f on SRV-029 to leak 64KB chunks of server memory, extracting RSA private keys, TLS session tokens, and password cache entries. Compromised credentials enable persistent access, impersonation, and lateral movement. Immediate OpenSSL patching (1.0.1h+) and cryptographic material rotation are mandatory treatment controls."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-030",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 28.46,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Spearphishing-Delivered RCE via Adobe Reader 9.0 Integer Overflow\",\n  \"affected_asset\": \"SRV-030\",\n  \"threat_vector\": \"T1566.001 - Spearphishing Attachment (PDF) exploiting CVE-2010-0188\",\n  \"impact_level\": \"high\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.13\", \"SS6.16\"],\n  \"description\": \"User at infiltration-victim-01 receives a spearphishing email with a crafted PDF attachment, triggering an integer overflow in Adobe Reader 9.0 (CVE-20",
+      "parsed_response": {
+        "scenario_title": "Spearphishing-Delivered RCE via Adobe Reader 9.0 Integer Overflow",
+        "affected_asset": "SRV-030",
+        "threat_vector": "T1566.001 - Spearphishing Attachment (PDF) exploiting CVE-2010-0188",
+        "impact_level": "high",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.13",
+          "SS6.16"
+        ],
+        "description": "User at infiltration-victim-01 receives a spearphishing email with a crafted PDF attachment, triggering an integer overflow in Adobe Reader 9.0 (CVE-2010-0188, CVSS 9.3) that achieves Remote Code Execution. The Windows Vista 32-bit workstation lacks modern security mitigations (ASLR, DEP), increasing exploit success probability. Urgent patching, email content filtering, and user security awareness training are required to reduce residual risk."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-031",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 33.24,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Spearphishing Infiltration via Malicious PDF Attachment\",\n  \"affected_asset\": \"SRV-030\",\n  \"threat_vector\": \"T1566.001 - Spearphishing Attachment (PDF)\",\n  \"impact_level\": \"high\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.13\", \"SS6.14\"],\n  \"description\": \"Adversaries conduct spearphishing campaigns targeting operations staff at infiltration-victim-01 (SRV-030), delivering malicious PDF attachments via email to gain initial acces",
+      "parsed_response": {
+        "scenario_title": "Spearphishing Infiltration via Malicious PDF Attachment",
+        "affected_asset": "SRV-030",
+        "threat_vector": "T1566.001 - Spearphishing Attachment (PDF)",
+        "impact_level": "high",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.13",
+          "SS6.14"
+        ],
+        "description": "Adversaries conduct spearphishing campaigns targeting operations staff at infiltration-victim-01 (SRV-030), delivering malicious PDF attachments via email to gain initial access to the CIC Testbed Infrastructure. The attack exploits user trust and outdated Windows Vista systems lacking modern email security and endpoint protection. Successful exploitation would result in high-impact compromise of operations workstations and facilitate reconnaissance for lateral movement."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-032",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 24.66,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"EternalBlue RCE Enabling Botnet Command & Control via Web Protocols\",\n  \"affected_asset\": \"SRV-032\",\n  \"threat_vector\": \"T1071.001 (Web Protocols C2) exploiting CVE-2017-0144 (EternalBlue SMBv1 RCE)\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.8\",\n  \"recommended_controls\": [\"SS6.8\", \"SS6.11\", \"SS6.12\", \"SS6.17\", \"SS6.19\"],\n  \"description\": \"Attacker exploits CVE-2017-0144 (EternalBlue, CVSS 9.3) on Windows Server 2012 R2 via unpatched SMBv1 to achieve rem",
+      "parsed_response": {
+        "scenario_title": "EternalBlue RCE Enabling Botnet Command & Control via Web Protocols",
+        "affected_asset": "SRV-032",
+        "threat_vector": "T1071.001 (Web Protocols C2) exploiting CVE-2017-0144 (EternalBlue SMBv1 RCE)",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.8",
+        "recommended_controls": [
+          "SS6.8",
+          "SS6.11",
+          "SS6.12",
+          "SS6.17",
+          "SS6.19"
+        ],
+        "description": "Attacker exploits CVE-2017-0144 (EternalBlue, CVSS 9.3) on Windows Server 2012 R2 via unpatched SMBv1 to achieve remote code execution on win-srv-01 (SRV-032), then establishes persistent botnet command & control communication through web protocols (port 8080) that blend with legitimate IIS 8.5 traffic to evade detection. Successful compromise results in data exfiltration, lateral movement across CIC testbed infrastructure, and operational disruption of critical systems housed in CIC Server Room."
+      }
+    },
+    {
+      "run": 2,
+      "asset_id": "SRV-033",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 34.53,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"EternalBlue RCE via SMBv1 Enabling Botnet Compromise\",\n  \"affected_asset\": \"SRV-032\",\n  \"threat_vector\": \"CVE-2017-0144 RCE with T1071.001 Command-and-Control\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.15\", \"SS6.16\"],\n  \"description\": \"An adversary exploits CVE-2017-0144 (EternalBlue, CVSS 9.3) on unpatched Windows SMBv1 to achieve remote code execution on critical server SRV-032 in the CIC Server Room. Following init",
+      "parsed_response": {
+        "scenario_title": "EternalBlue RCE via SMBv1 Enabling Botnet Compromise",
+        "affected_asset": "SRV-032",
+        "threat_vector": "CVE-2017-0144 RCE with T1071.001 Command-and-Control",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.15",
+          "SS6.16"
+        ],
+        "description": "An adversary exploits CVE-2017-0144 (EternalBlue, CVSS 9.3) on unpatched Windows SMBv1 to achieve remote code execution on critical server SRV-032 in the CIC Server Room. Following initial compromise, bot malware is deployed using T1071.001 for command-and-control communication on port 8080, enabling lateral movement to SRV-033. Immediate patching, SMBv1 disablement, and treatment plan execution per NFCRM-1:2025 \u00a76.15 are required."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-001",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 22.12,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Remote Code Execution via vsftpd 2.3.4 Backdoor\",\n  \"affected_asset\": \"SRV-001\",\n  \"threat_vector\": \"CVE-2011-2523 (vsftpd Backdoor Remote Code Execution)\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.7\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.13\"],\n  \"description\": \"SRV-001 (ftp-srv-01) hosts vsftpd 2.3.4, which contains CVE-2011-2523, a critical backdoor vulnerability (CVSS 10.0) exploitable without authentication. An attacker crafting a mal",
+      "parsed_response": {
+        "scenario_title": "Remote Code Execution via vsftpd 2.3.4 Backdoor",
+        "affected_asset": "SRV-001",
+        "threat_vector": "CVE-2011-2523 (vsftpd Backdoor Remote Code Execution)",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.7",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.13"
+        ],
+        "description": "SRV-001 (ftp-srv-01) hosts vsftpd 2.3.4, which contains CVE-2011-2523, a critical backdoor vulnerability (CVSS 10.0) exploitable without authentication. An attacker crafting a malicious FTP login with embedded shell characters gains instantaneous remote code execution on port 6200/tcp with full system privileges. This enables complete asset compromise, unauthorized data access, and lateral movement across the CIC Testbed Infrastructure."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-002",
+      "parseable": true,
+      "json_schema_valid": false,
+      "shacl_valid": false,
+      "precision_pct": 0.0,
+      "violations": [
+        "Response is not a JSON object"
+      ],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 20.96,
+      "raw_response": "```json\n[\n  {\n    \"scenario_title\": \"SSH Brute Force Attack on Critical SSH Server\",\n    \"affected_asset\": \"SRV-002\",\n    \"threat_vector\": \"T1110.001 - Password Guessing via SSH\",\n    \"impact_level\": \"critical\",\n    \"nfcrm_clause\": \"SS6.7\",\n    \"recommended_controls\": [\n      \"SS6.11 - Implement account lockout policies after failed login attempts\",\n      \"SS6.12 - Deploy multi-factor authentication for SSH access\",\n      \"SS6.13 - Enable rate limiting and IP-based access restrictions\",\n      \"S",
+      "parsed_response": [
+        {
+          "scenario_title": "SSH Brute Force Attack on Critical SSH Server",
+          "affected_asset": "SRV-002",
+          "threat_vector": "T1110.001 - Password Guessing via SSH",
+          "impact_level": "critical",
+          "nfcrm_clause": "SS6.7",
+          "recommended_controls": [
+            "SS6.11 - Implement account lockout policies after failed login attempts",
+            "SS6.12 - Deploy multi-factor authentication for SSH access",
+            "SS6.13 - Enable rate limiting and IP-based access restrictions",
+            "SS6.14 - Conduct vulnerability assessment and patch OpenSSH 4.7p1 to current version",
+            "SS6.15 - Deploy intrusion detection system (IDS) monitoring SSH traffic",
+            "SS6.16 - Implement security information and event management (SIEM) for SSH log analysis"
+          ],
+          "description": "Ubuntu 8.04 LTS Metasploitable 2 running OpenSSH 4.7p1 (affected by CVE-2008-0166) is exposed to brute force attacks via SSH protocol. Adversaries can enumerate valid usernames and guess weak passwords to gain unauthorized administrative access. Successful compromise of this critical asset would enable lateral movement across the CIC Testbed Infrastructure and potential data exfiltration."
+        },
+        {
+          "scenario_title": "FTP Brute Force Attack on Critical FTP Server",
+          "affected_asset": "SRV-001",
+          "threat_vector": "T1110.001 - Password Guessing via FTP",
+          "impact_level": "critical",
+          "nfcrm_clause": "SS6.7",
+          "recommended_controls": [
+            "SS6.11 - Disable FTP service and migrate to SFTP/FTPS with encryption",
+            "SS6.12 - If FTP required, implement account lockout after 3 failed attempts",
+            "SS6.13 - Restrict FTP access to specific IP ranges via firewall rules",
+            "SS6.14 - Replace Ubuntu 8.04 LTS with current-generation OS and patched FTP daemon",
+            "SS6.15 - Monitor FTP access logs for repeated failed authentication attempts",
+            "SS6.16 - Implement network-based IDS signatures for FTP brute force detection"
+          ],
+          "description": "FTP service on Ubuntu 8.04 LTS Metasploitable 2 (SRV-001) lacks modern authentication controls and is vulnerable to credential brute force attacks. Legacy FTP transmits credentials in plaintext, enabling passive credential harvesting. Compromise would grant file system access and potential code execution capability on a critical testbed server."
+        },
+        {
+          "scenario_title": "OpenSSL Predictable RNG Exploitation Leading to Key Recovery",
+          "affected_asset": "SRV-002",
+          "threat_vector": "CVE-2008-0166 - Debian OpenSSL Predictable PRNG",
+          "impact_level": "critical",
+          "nfcrm_clause": "SS6.7",
+          "recommended_controls": [
+            "SS6.11 - Regenerate all SSH host and user keys immediately after patching",
+            "SS6.12 - Upgrade to patched OpenSSL and OpenSSH versions without delay",
+            "SS6.13 - Implement certificate-based authentication as supplementary control",
+            "SS6.14 - Audit and revoke any compromised cryptographic material",
+            "SS6.15 - Establish continuous vulnerability scanning to detect such flaws",
+            "SS6.16 - Implement compensating control: require SSH key passphrase + firewall IP whitelist"
+          ],
+          "description": "Debian OpenSSL PRNG vulnerability (CVE-2008-0166) on SRV-002 renders SSH private keys recoverable through brute force, bypassing standard authentication mechanisms entirely. An attacker can predict the cryptographic material and impersonate legitimate users without needing to crack passwords. This represents a complete authentication bypass on a critical asset."
+        }
+      ]
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-003",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 19.12,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Remote Root Access via Telnet Buffer Overflow\",\n  \"affected_asset\": \"SRV-003\",\n  \"threat_vector\": \"Unauthenticated remote buffer overflow exploitation via telnet protocol options\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.13\"],\n  \"description\": \"CVE-2001-0554 exposes telnet-srv-01 to remote code execution with root privileges due to a buffer overflow in BSD telnetd option processing. An unauthentic",
+      "parsed_response": {
+        "scenario_title": "Remote Root Access via Telnet Buffer Overflow",
+        "affected_asset": "SRV-003",
+        "threat_vector": "Unauthenticated remote buffer overflow exploitation via telnet protocol options",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.13"
+        ],
+        "description": "CVE-2001-0554 exposes telnet-srv-01 to remote code execution with root privileges due to a buffer overflow in BSD telnetd option processing. An unauthenticated attacker can exploit this vulnerability over the network to achieve complete system compromise, affecting all assets in the CIC Server Room. Immediate remediation through service decommissioning, patching, or network isolation is required given the maximum CVSS 3.1 score of 10.0 and exposed critical asset status."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-004",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 26.55,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Remote Code Execution via Postfix 2.5.1 SMTP Service\",\n  \"affected_asset\": \"SRV-004\",\n  \"threat_vector\": \"Exploitation of known CVEs in Postfix 2.5.1 (e.g., improper input validation in SMTP command processing enabling RCE without authentication)\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.15\", \"SS6.16\"],\n  \"description\": \"Postfix SMTP 2.5.1 running on unsupported Ubuntu 8.04 LTS contains multiple publicly di",
+      "parsed_response": {
+        "scenario_title": "Remote Code Execution via Postfix 2.5.1 SMTP Service",
+        "affected_asset": "SRV-004",
+        "threat_vector": "Exploitation of known CVEs in Postfix 2.5.1 (e.g., improper input validation in SMTP command processing enabling RCE without authentication)",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.15",
+          "SS6.16"
+        ],
+        "description": "Postfix SMTP 2.5.1 running on unsupported Ubuntu 8.04 LTS contains multiple publicly disclosed remote code execution vulnerabilities requiring no authentication. An attacker can craft malicious SMTP messages to achieve arbitrary code execution with mail service privileges, compromising the server and enabling lateral movement. Immediate patching to current Postfix version and OS upgrade are critical treatment priorities."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-005",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 22.35,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"DNS Service Denial of Service via Crafted Dynamic Update\",\n  \"affected_asset\": \"SRV-005\",\n  \"threat_vector\": \"Remote Denial of Service via Crafted Dynamic Update Message\",\n  \"impact_level\": \"high\",\n  \"nfcrm_clause\": \"SS6.7\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.14\"],\n  \"description\": \"An unauthenticated remote attacker can exploit CVE-2009-0696 in ISC BIND 9.4.2 by crafting a malicious dynamic update message and transmitting it to the DNS server. Successful ex",
+      "parsed_response": {
+        "scenario_title": "DNS Service Denial of Service via Crafted Dynamic Update",
+        "affected_asset": "SRV-005",
+        "threat_vector": "Remote Denial of Service via Crafted Dynamic Update Message",
+        "impact_level": "high",
+        "nfcrm_clause": "SS6.7",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.14"
+        ],
+        "description": "An unauthenticated remote attacker can exploit CVE-2009-0696 in ISC BIND 9.4.2 by crafting a malicious dynamic update message and transmitting it to the DNS server. Successful exploitation causes the BIND service to crash or become unresponsive, rendering the DNS server unavailable and potentially disrupting critical network services. Remediation requires immediate patching of ISC BIND to a fixed version and implementation of network-level access controls to restrict dynamic update message sources."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-006",
+      "parseable": true,
+      "json_schema_valid": false,
+      "shacl_valid": false,
+      "precision_pct": 0.0,
+      "violations": [
+        "Response is not a JSON object"
+      ],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 18.61,
+      "raw_response": "```json\n[\n  {\n    \"scenario_title\": \"Apache Killer (Range Header) DoS Attack on http-srv-01\",\n    \"affected_asset\": \"SRV-006\",\n    \"threat_vector\": \"HTTP Range header crafted request causing memory exhaustion and process crash via CVE-2011-3192\",\n    \"impact_level\": \"critical\",\n    \"nfcrm_clause\": \"SS6.7\",\n    \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.13\"],\n    \"description\": \"Attacker sends malformed HTTP Range headers to Apache httpd 2.2.8, triggering unbounded memory allocation and CP",
+      "parsed_response": [
+        {
+          "scenario_title": "Apache Killer (Range Header) DoS Attack on http-srv-01",
+          "affected_asset": "SRV-006",
+          "threat_vector": "HTTP Range header crafted request causing memory exhaustion and process crash via CVE-2011-3192",
+          "impact_level": "critical",
+          "nfcrm_clause": "SS6.7",
+          "recommended_controls": [
+            "SS6.11",
+            "SS6.12",
+            "SS6.13"
+          ],
+          "description": "Attacker sends malformed HTTP Range headers to Apache httpd 2.2.8, triggering unbounded memory allocation and CPU exhaustion, rendering the critical web service unavailable. Risk register entry required under SS6.9. Mitigation controls must address input validation and resource limits (SS6.12 treatment execution)."
+        },
+        {
+          "scenario_title": "Slowloris Incomplete Request DoS on http-srv-01",
+          "affected_asset": "SRV-006",
+          "threat_vector": "Partial HTTP request transmission exhausting Apache connection pool via CVE-2007-6750",
+          "impact_level": "high",
+          "nfcrm_clause": "SS6.7",
+          "recommended_controls": [
+            "SS6.11",
+            "SS6.13",
+            "SS6.20"
+          ],
+          "description": "Attacker opens slow partial HTTP connections to Apache httpd 2.2.8, consuming available worker threads and denying service to legitimate users. Inherent risk scoring (SS6.9) requires 5\u00d75 matrix evaluation. Monitoring (SS6.20) must track connection state anomalies."
+        }
+      ]
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-007",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 26.58,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Remote Code Execution via PHP-CGI Argument Injection on Legacy Public Web Server\",\n  \"affected_asset\": \"SRV-007\",\n  \"threat_vector\": \"T1190 - Exploit Public-Facing Application (CVE-2012-1823: PHP-CGI Query String Parameter Injection RCE)\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.14\"],\n  \"description\": \"An unauthenticated attacker exploits CVE-2012-1823 in PHP 5.2.4 running on the public-facing php",
+      "parsed_response": {
+        "scenario_title": "Remote Code Execution via PHP-CGI Argument Injection on Legacy Public Web Server",
+        "affected_asset": "SRV-007",
+        "threat_vector": "T1190 - Exploit Public-Facing Application (CVE-2012-1823: PHP-CGI Query String Parameter Injection RCE)",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.14"
+        ],
+        "description": "An unauthenticated attacker exploits CVE-2012-1823 in PHP 5.2.4 running on the public-facing php-srv-01 server by crafting malicious query string parameters to the CGI interface, achieving remote code execution with server privileges. The vulnerability permits arbitrary command injection due to improper sanitization in PHP-CGI argument handling. Successful exploitation enables complete system compromise, lateral movement within CIC infrastructure, and exfiltration of sensitive data."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-008",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 22.34,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Exploitation of Unpatched DVWA via Public-Facing Application Vulnerability\",\n  \"affected_asset\": \"SRV-008\",\n  \"threat_vector\": \"T1190 - Exploit Public-Facing Application\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.4\",\n  \"recommended_controls\": [\"SS6.6\", \"SS6.11\", \"SS6.13\"],\n  \"description\": \"An attacker exploits known vulnerabilities in DVWA 1.0.7 running on the unpatched Ubuntu 8.04 LTS system (dvwa-srv-01, 172.31.69.25) to achieve initial network acces",
+      "parsed_response": {
+        "scenario_title": "Exploitation of Unpatched DVWA via Public-Facing Application Vulnerability",
+        "affected_asset": "SRV-008",
+        "threat_vector": "T1190 - Exploit Public-Facing Application",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.4",
+        "recommended_controls": [
+          "SS6.6",
+          "SS6.11",
+          "SS6.13"
+        ],
+        "description": "An attacker exploits known vulnerabilities in DVWA 1.0.7 running on the unpatched Ubuntu 8.04 LTS system (dvwa-srv-01, 172.31.69.25) to achieve initial network access. The combination of legacy OS and intentionally vulnerable web application creates multiple exploitation vectors including SQL injection, authentication bypass, and remote code execution. Remediation requires immediate patching, vulnerability assessment, and implementation of network segmentation controls to mitigate this critical-severity risk."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-009",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 18.38,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"SQL Injection Attack on Mutillidae II Application\",\n  \"affected_asset\": \"SW-OWASP_Mutillidae_II-2.1.19\",\n  \"threat_vector\": \"Unauthenticated SQL injection via HTTP POST to vulnerable input fields (user/password login forms)\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.7\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.13\", \"SS6.14\"],\n  \"description\": \"OWASP Mutillidae II 2.1.19 contains documented SQL injection vulnerabilities in user input validation, enablin",
+      "parsed_response": {
+        "scenario_title": "SQL Injection Attack on Mutillidae II Application",
+        "affected_asset": "SW-OWASP_Mutillidae_II-2.1.19",
+        "threat_vector": "Unauthenticated SQL injection via HTTP POST to vulnerable input fields (user/password login forms)",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.7",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.13",
+          "SS6.14"
+        ],
+        "description": "OWASP Mutillidae II 2.1.19 contains documented SQL injection vulnerabilities in user input validation, enabling attackers to bypass authentication controls and execute arbitrary SQL commands against the backend database. Network-accessible threat actors can craft malicious SQL payloads to escalate privileges, extract sensitive data, or modify application logic. Exploitation is critical risk due to: (1) deliberate vulnerability presence in application design, (2) outdated OS (Ubuntu 8.04 LTS, 2008) with no security patches, and (3) high asset criticality designation, indicating elevated business impact from compromise."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-010",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 27.77,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthenticated Remote Code Execution via phpMyAdmin Setup.php\",\n  \"affected_asset\": \"SRV-010\",\n  \"threat_vector\": \"Static code injection in phpMyAdmin 2.11.x setup.php enabling remote code execution without authentication\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.14\"],\n  \"description\": \"SRV-010 (phpmyadmin-srv-01) hosts phpMyAdmin 2.11.x, affected by CVE-2009-1151, a critical CISA KEV-listed unau",
+      "parsed_response": {
+        "scenario_title": "Unauthenticated Remote Code Execution via phpMyAdmin Setup.php",
+        "affected_asset": "SRV-010",
+        "threat_vector": "Static code injection in phpMyAdmin 2.11.x setup.php enabling remote code execution without authentication",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.14"
+        ],
+        "description": "SRV-010 (phpmyadmin-srv-01) hosts phpMyAdmin 2.11.x, affected by CVE-2009-1151, a critical CISA KEV-listed unauthenticated RCE vulnerability in setup.php. An unauthenticated network attacker can execute arbitrary system commands on this high-criticality database server via static code injection, achieving complete system compromise. Risk treatment must prioritize immediate patching to version \u22652.11.1 or removal of setup.php to reduce residual risk."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-011",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 23.35,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Remote Code Execution via TWiki rev Parameter Injection\",\n  \"affected_asset\": \"SRV-011\",\n  \"threat_vector\": \"Shell metacharacter injection through TWiki rev parameter\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.14\", \"SS6.18\"],\n  \"description\": \"An unauthenticated attacker can exploit CVE-2008-5305 in TWiki 4.2.4 to inject shell metacharacters via the rev parameter, achieving remote code execution on SRV-011 w",
+      "parsed_response": {
+        "scenario_title": "Remote Code Execution via TWiki rev Parameter Injection",
+        "affected_asset": "SRV-011",
+        "threat_vector": "Shell metacharacter injection through TWiki rev parameter",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.14",
+          "SS6.18"
+        ],
+        "description": "An unauthenticated attacker can exploit CVE-2008-5305 in TWiki 4.2.4 to inject shell metacharacters via the rev parameter, achieving remote code execution on SRV-011 with system privileges. This critical vulnerability (CVSS 10.0) poses immediate threat to the CIC Testbed Infrastructure and requires urgent remediation through patching or network isolation. Treatment implementation and continuous monitoring are mandatory to reduce residual risk to acceptable levels."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-012",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 24.77,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Remote Code Execution via TikiWiki PHP Code Injection (CVE-2007-5423)\",\n  \"affected_asset\": \"SRV-012\",\n  \"threat_vector\": \"Unauthenticated attacker exploits PHP code injection vulnerability in tiki-graph_formula.php to execute arbitrary remote commands with application privileges\",\n  \"impact_level\": \"high\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.13\"],\n  \"description\": \"TikiWiki CMS v1.9.5 running on high-criticality server SR",
+      "parsed_response": {
+        "scenario_title": "Remote Code Execution via TikiWiki PHP Code Injection (CVE-2007-5423)",
+        "affected_asset": "SRV-012",
+        "threat_vector": "Unauthenticated attacker exploits PHP code injection vulnerability in tiki-graph_formula.php to execute arbitrary remote commands with application privileges",
+        "impact_level": "high",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.13"
+        ],
+        "description": "TikiWiki CMS v1.9.5 running on high-criticality server SRV-012 contains an unpatched remote code execution vulnerability (CVE-2007-5423, CVSS 7.5) in the tiki-graph_formula.php component. Successful exploitation allows an unauthenticated attacker to inject and execute arbitrary PHP code, resulting in complete compromise of the server and its hosted services. Immediate remediation through patching, application decommissioning, or network isolation is required to reduce inherent risk to acceptable levels."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-013",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 14.94,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"RPC Buffer Overflow Exploitation Leading to Remote Code Execution\",\n  \"affected_asset\": \"SRV-013\",\n  \"threat_vector\": \"Exploitation of buffer overflow vulnerability in rpcbind RPC service (RPC #100000) via unauthenticated network access\",\n  \"impact_level\": \"high\",\n  \"nfcrm_clause\": \"SS6.3\",\n  \"recommended_controls\": [\"SS6.3\", \"SS6.9\", \"SS6.11\"],\n  \"description\": \"A threat actor sends a specially crafted RPC request to the exposed rpcbind service on the unpatched Ub",
+      "parsed_response": {
+        "scenario_title": "RPC Buffer Overflow Exploitation Leading to Remote Code Execution",
+        "affected_asset": "SRV-013",
+        "threat_vector": "Exploitation of buffer overflow vulnerability in rpcbind RPC service (RPC #100000) via unauthenticated network access",
+        "impact_level": "high",
+        "nfcrm_clause": "SS6.3",
+        "recommended_controls": [
+          "SS6.3",
+          "SS6.9",
+          "SS6.11"
+        ],
+        "description": "A threat actor sends a specially crafted RPC request to the exposed rpcbind service on the unpatched Ubuntu 8.04 system, exploiting known buffer overflow vulnerabilities to achieve unauthenticated remote code execution. Successful exploitation allows arbitrary command execution with privileges of the RPC service daemon, enabling lateral movement, data exfiltration, or persistence establishment within the network segment."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-014",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 22.7,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthenticated Remote Code Execution via Samba Username Map Script Injection\",\n  \"affected_asset\": \"SRV-014\",\n  \"threat_vector\": \"Unauthenticated remote command injection through CVE-2007-2447 in Samba username map script parameter\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.6\", \"SS6.9\", \"SS6.11\", \"SS6.12\"],\n  \"description\": \"An attacker with network access to port 445 (SMB) can exploit CVE-2007-2447 to inject arbitra",
+      "parsed_response": {
+        "scenario_title": "Unauthenticated Remote Code Execution via Samba Username Map Script Injection",
+        "affected_asset": "SRV-014",
+        "threat_vector": "Unauthenticated remote command injection through CVE-2007-2447 in Samba username map script parameter",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.6",
+          "SS6.9",
+          "SS6.11",
+          "SS6.12"
+        ],
+        "description": "An attacker with network access to port 445 (SMB) can exploit CVE-2007-2447 to inject arbitrary shell commands through the username map script feature in Samba 3.0.20, achieving immediate remote code execution without authentication. Successful exploitation results in complete compromise of smb-srv-01 with critical impact to CIC testbed infrastructure. Immediate patching, software replacement, or network isolation is mandatory; requires assessment under SS6.9 and urgent treatment prioritization under SS6.11-SS6.12."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-015",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 19.8,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthenticated Remote Root Access via Legacy r-services\",\n  \"affected_asset\": \"SRV-015\",\n  \"threat_vector\": \"CVE-1999-0651 exploitation: .rhosts-trusting rexec/rlogin/rsh enabling unauthenticated remote code execution with root privileges\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.7\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.14\", \"SS6.15\", \"SS6.18\"],\n  \"description\": \"An external attacker exploits CVE-1999-0651 by targeting misconfigured rexec/rlogin/",
+      "parsed_response": {
+        "scenario_title": "Unauthenticated Remote Root Access via Legacy r-services",
+        "affected_asset": "SRV-015",
+        "threat_vector": "CVE-1999-0651 exploitation: .rhosts-trusting rexec/rlogin/rsh enabling unauthenticated remote code execution with root privileges",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.7",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.14",
+          "SS6.15",
+          "SS6.18"
+        ],
+        "description": "An external attacker exploits CVE-1999-0651 by targeting misconfigured rexec/rlogin/rsh services on SRV-015, leveraging .rhosts trust to gain unauthenticated root access. This enables complete system compromise, unauthorized data access, and lateral movement within CIC testbed infrastructure. Immediate remediation requires disabling r-services, applying network segmentation controls, prioritizing for high-impact treatment execution, and establishing continuous vulnerability monitoring."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-016",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 22.4,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Remote Code Execution via Java RMI Registry Deserialization Exploit\",\n  \"affected_asset\": \"SRV-016\",\n  \"threat_vector\": \"Attacker sends malicious serialized Java object to RMI Registry (port 1099) triggering unsafe deserialization and arbitrary code execution on rmi-srv-01\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.15\", \"SS6.16\"],\n  \"description\": \"CVE-2011-3556 in Java RMI Registry (JRE 1.6.0) permits unauthenticated",
+      "parsed_response": {
+        "scenario_title": "Remote Code Execution via Java RMI Registry Deserialization Exploit",
+        "affected_asset": "SRV-016",
+        "threat_vector": "Attacker sends malicious serialized Java object to RMI Registry (port 1099) triggering unsafe deserialization and arbitrary code execution on rmi-srv-01",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.15",
+          "SS6.16"
+        ],
+        "description": "CVE-2011-3556 in Java RMI Registry (JRE 1.6.0) permits unauthenticated remote attackers to achieve code execution on high-criticality server SRV-016 via crafted serialized objects. Successful exploitation grants attacker system-level access, enabling data exfiltration, lateral movement, and service disruption across CIC testbed infrastructure. Remediation: immediate Java runtime patching to 1.8.0 or later, restrict RMI Registry network access via firewall rules, and implement deserialization filtering."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-017",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 24.17,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthorized Root Access via Ingreslock Backdoor on Critical Asset\",\n  \"affected_asset\": \"SRV-017\",\n  \"threat_vector\": \"Remote root-level code execution through intentional ingreslock backdoor\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.7\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.13\", \"SS6.15\"],\n  \"description\": \"SRV-017 (backdoor-srv-01), designated as critical infrastructure, hosts an intentional ingreslock root backdoor enabling unauthenticated remo",
+      "parsed_response": {
+        "scenario_title": "Unauthorized Root Access via Ingreslock Backdoor on Critical Asset",
+        "affected_asset": "SRV-017",
+        "threat_vector": "Remote root-level code execution through intentional ingreslock backdoor",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.7",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.13",
+          "SS6.15"
+        ],
+        "description": "SRV-017 (backdoor-srv-01), designated as critical infrastructure, hosts an intentional ingreslock root backdoor enabling unauthenticated remote access with full system privileges. Exploitation would result in immediate compromise of the server, enabling lateral movement across the CIC testbed network and potential data exfiltration from connected systems. Removal of the backdoor and implementation of compensating controls is required to transition from critical inherent risk to acceptable residual risk."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-018",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 20.89,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthenticated NFS Root Export Leading to SSH Key Injection and RCE\",\n  \"affected_asset\": \"SRV-018\",\n  \"threat_vector\": \"Remote exploitation of misconfigured NFS export allowing unauthenticated root filesystem write access and SSH credential injection\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.13\", \"SS6.15\"],\n  \"description\": \"CVE-1999-0170 enables unauthenticated remote attackers to mount the NFS root file",
+      "parsed_response": {
+        "scenario_title": "Unauthenticated NFS Root Export Leading to SSH Key Injection and RCE",
+        "affected_asset": "SRV-018",
+        "threat_vector": "Remote exploitation of misconfigured NFS export allowing unauthenticated root filesystem write access and SSH credential injection",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.13",
+          "SS6.15"
+        ],
+        "description": "CVE-1999-0170 enables unauthenticated remote attackers to mount the NFS root filesystem and inject SSH keys, granting immediate root-level remote code execution on SRV-018. This CVSS 10.0 critical exposure directly threatens complete infrastructure compromise of the CIC testbed. Treatment requires immediate NFS version patching, restrictive NFS export ACLs per client IP, and network-level access controls."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-019",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 23.53,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Remote Code Execution via ProFTPD TELNET IAC Buffer Overflow\",\n  \"affected_asset\": \"SRV-019\",\n  \"threat_vector\": \"Network-based remote exploitation of CVE-2010-4221 TELNET IAC buffer overflow in ProFTPD 1.3.1\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.9\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.15\"],\n  \"description\": \"An unauthenticated attacker exploits CVE-2010-4221 (CVSS 10.0) in ProFTPD 1.3.1 via crafted TELNET IAC sequences to trigger a buffer ov",
+      "parsed_response": {
+        "scenario_title": "Remote Code Execution via ProFTPD TELNET IAC Buffer Overflow",
+        "affected_asset": "SRV-019",
+        "threat_vector": "Network-based remote exploitation of CVE-2010-4221 TELNET IAC buffer overflow in ProFTPD 1.3.1",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.9",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.15"
+        ],
+        "description": "An unauthenticated attacker exploits CVE-2010-4221 (CVSS 10.0) in ProFTPD 1.3.1 via crafted TELNET IAC sequences to trigger a buffer overflow and achieve remote code execution on ftp2-srv-01. This high-criticality server in the CIC Testbed Infrastructure could become a pivot point for lateral movement or data exfiltration. Immediate risk treatment including software patching and network access controls is required per SS6.11-SS6.15."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-020",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 22.69,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"MySQL Local Privilege Escalation via BINLOG Command\",\n  \"affected_asset\": \"SRV-020\",\n  \"threat_vector\": \"Local privilege escalation via crafted BINLOG command (CVE-2008-0226)\",\n  \"impact_level\": \"high\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.13\", \"SS6.17\"],\n  \"description\": \"Attackers with local access to mysql-srv-01 can craft malicious BINLOG commands to escalate privileges from MySQL user context to system-level access. The MySQL 5.",
+      "parsed_response": {
+        "scenario_title": "MySQL Local Privilege Escalation via BINLOG Command",
+        "affected_asset": "SRV-020",
+        "threat_vector": "Local privilege escalation via crafted BINLOG command (CVE-2008-0226)",
+        "impact_level": "high",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.13",
+          "SS6.17"
+        ],
+        "description": "Attackers with local access to mysql-srv-01 can craft malicious BINLOG commands to escalate privileges from MySQL user context to system-level access. The MySQL 5.0.51a version contains CVE-2008-0226 (CVSS 7.5) enabling this attack path on a critical infrastructure asset. Successful exploitation would compromise the entire server, requiring immediate software patching, strict privilege boundary enforcement, and continuous vulnerability monitoring."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-021",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 30.05,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthenticated Remote Code Execution via distccd\",\n  \"affected_asset\": \"SRV-021\",\n  \"threat_vector\": \"Network-based exploitation of CVE-2004-2687 (unauthenticated EXEC request to distccd)\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.9\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.15\"],\n  \"description\": \"An attacker with network access to SRV-021 can exploit CVE-2004-2687 to execute arbitrary code with distccd service privileges, achieving complet",
+      "parsed_response": {
+        "scenario_title": "Unauthenticated Remote Code Execution via distccd",
+        "affected_asset": "SRV-021",
+        "threat_vector": "Network-based exploitation of CVE-2004-2687 (unauthenticated EXEC request to distccd)",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.9",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.15"
+        ],
+        "description": "An attacker with network access to SRV-021 can exploit CVE-2004-2687 to execute arbitrary code with distccd service privileges, achieving complete system compromise. This unpatched critical vulnerability (CVSS 10.0) on a critical-tier asset poses immediate operational risk to CIC testbed infrastructure. Mitigation requires immediate patching, network isolation of distcc-srv-01, or decommissioning of the vulnerable distccd service."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-022",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 23.21,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"PostgreSQL Local Privilege Escalation on CIC Database Server\",\n  \"affected_asset\": \"SRV-022\",\n  \"threat_vector\": \"Crafted SQL statements exploiting CVE-2013-1904 to achieve local privilege escalation from unprivileged user to database administrator\",\n  \"impact_level\": \"high\",\n  \"nfcrm_clause\": \"SS6.9\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.14\"],\n  \"description\": \"An attacker with local access to SRV-022 can exploit CVE-2013-1904 in the unpatched Postg",
+      "parsed_response": {
+        "scenario_title": "PostgreSQL Local Privilege Escalation on CIC Database Server",
+        "affected_asset": "SRV-022",
+        "threat_vector": "Crafted SQL statements exploiting CVE-2013-1904 to achieve local privilege escalation from unprivileged user to database administrator",
+        "impact_level": "high",
+        "nfcrm_clause": "SS6.9",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.14"
+        ],
+        "description": "An attacker with local access to SRV-022 can exploit CVE-2013-1904 in the unpatched PostgreSQL 8.3.x installation to escalate privileges to database administrator, enabling unauthorized data access, manipulation, or service disruption. Immediate patching to PostgreSQL 8.4 or later and enforcement of least-privilege database accounts are critical mitigations for this high-severity risk affecting the CIC Testbed Infrastructure."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-023",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 21.0,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Authentication Bypass on VNC Server via NULL Auth Type\",\n  \"affected_asset\": \"SRV-023\",\n  \"threat_vector\": \"RealVNC authentication bypass via NULL auth type (CVE-2006-2369)\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.6\", \"SS6.8\", \"SS6.11\", \"SS6.12\"],\n  \"description\": \"A remote attacker can exploit CVE-2006-2369 in RealVNC 4.1.1 running on critical server SRV-023 to bypass authentication via NULL auth type, enabling una",
+      "parsed_response": {
+        "scenario_title": "Authentication Bypass on VNC Server via NULL Auth Type",
+        "affected_asset": "SRV-023",
+        "threat_vector": "RealVNC authentication bypass via NULL auth type (CVE-2006-2369)",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.6",
+          "SS6.8",
+          "SS6.11",
+          "SS6.12"
+        ],
+        "description": "A remote attacker can exploit CVE-2006-2369 in RealVNC 4.1.1 running on critical server SRV-023 to bypass authentication via NULL auth type, enabling unauthorized remote access and complete system control. This vulnerability on Metasploitable 2 (Ubuntu 8.04 LTS) in the CIC Server Room creates an uncontrolled risk to critical infrastructure. Immediate mitigation requires patching to RealVNC versions 4.1.2 or later, implementing network access controls restricting VNC ports, or disabling VNC service until patched."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-024",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 18.52,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthenticated X11 Display Access and Screen Capture\",\n  \"affected_asset\": \"SRV-024\",\n  \"threat_vector\": \"Remote unauthenticated connection to X11 display socket; screen capture via XGetImage or similar X11 protocol calls\",\n  \"impact_level\": \"high\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\n    \"SS6.6\",\n    \"SS6.11\"\n  ],\n  \"description\": \"CVE-1999-0526 allows an unauthenticated remote attacker to connect to the open X11 display on port 6000 and captur",
+      "parsed_response": {
+        "scenario_title": "Unauthenticated X11 Display Access and Screen Capture",
+        "affected_asset": "SRV-024",
+        "threat_vector": "Remote unauthenticated connection to X11 display socket; screen capture via XGetImage or similar X11 protocol calls",
+        "impact_level": "high",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.6",
+          "SS6.11"
+        ],
+        "description": "CVE-1999-0526 allows an unauthenticated remote attacker to connect to the open X11 display on port 6000 and capture screen contents, exposing sensitive data or credentials. The Metasploitable 2 testbed environment (Ubuntu 8.04 LTS) runs X11 Xorg 7.3 without access controls. Mitigation requires disabling network access to X11, enforcing X11 authentication (xauth), or applying network segmentation to restrict display socket exposure."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-025",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 19.37,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthenticated Remote Command Execution via UnrealIRCd Backdoor\",\n  \"affected_asset\": \"SRV-025\",\n  \"threat_vector\": \"Exploitation of CVE-2010-2075 (UnrealIRCd 3.2.8.1 AB prefix backdoor) for unauthenticated remote command execution\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.13\"],\n  \"description\": \"SRV-025 hosts vulnerable UnrealIRCd 3.2.8.1 software with CVSS 10.0 backdoor vulnerability enabling u",
+      "parsed_response": {
+        "scenario_title": "Unauthenticated Remote Command Execution via UnrealIRCd Backdoor",
+        "affected_asset": "SRV-025",
+        "threat_vector": "Exploitation of CVE-2010-2075 (UnrealIRCd 3.2.8.1 AB prefix backdoor) for unauthenticated remote command execution",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.13"
+        ],
+        "description": "SRV-025 hosts vulnerable UnrealIRCd 3.2.8.1 software with CVSS 10.0 backdoor vulnerability enabling unauthenticated attackers to execute arbitrary commands via AB prefix exploitation. Successful exploitation results in complete system compromise and lateral movement capability within CIC Testbed Infrastructure. Immediate risk treatment plan required for patching, software replacement, or decommissioning under SS6.11-SS6.16 treatment protocol."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-026",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 20.21,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"UTF-8 Directory Traversal via Apache Tomcat 5.5 AJP Listener\",\n  \"affected_asset\": \"SRV-026\",\n  \"threat_vector\": \"CVE-2009-0580: Directory traversal via UTF-8 encoded URLs on Tomcat 5.5 AJP/1.3 (port 8009)\",\n  \"impact_level\": \"high\",\n  \"nfcrm_clause\": \"SS6.9\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.14\"],\n  \"description\": \"An attacker sends specially crafted UTF-8 encoded HTTP requests to the Tomcat AJP listener on port 8009, bypassing path normalizatio",
+      "parsed_response": {
+        "scenario_title": "UTF-8 Directory Traversal via Apache Tomcat 5.5 AJP Listener",
+        "affected_asset": "SRV-026",
+        "threat_vector": "CVE-2009-0580: Directory traversal via UTF-8 encoded URLs on Tomcat 5.5 AJP/1.3 (port 8009)",
+        "impact_level": "high",
+        "nfcrm_clause": "SS6.9",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.14"
+        ],
+        "description": "An attacker sends specially crafted UTF-8 encoded HTTP requests to the Tomcat AJP listener on port 8009, bypassing path normalization and gaining unauthorized access to sensitive application files and system directories. Given SRV-026's high criticality status within the CIC testbed, such a compromise could expose infrastructure credentials, configuration data, and enable lateral movement attacks. Immediate remediation requires upgrading Tomcat to version 5.5.33+ and implementing network access controls restricting AJP port 8009 exposure."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-027",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 18.63,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Unauthenticated Remote Code Execution via Ruby DRb\",\n  \"affected_asset\": \"SRV-027\",\n  \"threat_vector\": \"Remote Code Execution via DRb instance_eval without authentication\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.9\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.15\"],\n  \"description\": \"Ruby DRb 1.8 on SRV-027 (drb-srv-01) is vulnerable to CVE-2011-5330 (CVSS 10.0), allowing unauthenticated remote attackers to execute arbitrary code via instance_e",
+      "parsed_response": {
+        "scenario_title": "Unauthenticated Remote Code Execution via Ruby DRb",
+        "affected_asset": "SRV-027",
+        "threat_vector": "Remote Code Execution via DRb instance_eval without authentication",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.9",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.15"
+        ],
+        "description": "Ruby DRb 1.8 on SRV-027 (drb-srv-01) is vulnerable to CVE-2011-5330 (CVSS 10.0), allowing unauthenticated remote attackers to execute arbitrary code via instance_eval/syscall. Exploitation would result in complete compromise of a critical CIC infrastructure server and potential lateral movement. Immediate mitigation through software update, network isolation, or service decommission is required."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-028",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 20.81,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Network Denial of Service Attack on Critical Apache Web Server\",\n  \"affected_asset\": \"SRV-028\",\n  \"threat_vector\": \"T1498 Network DoS leveraging CVE-2017-7679\",\n  \"impact_level\": \"high\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.13\", \"SS6.14\"],\n  \"description\": \"SRV-028 (web-dos-target-01, critical asset in CIC Server Room) hosts Apache httpd 2.4.18, which is vulnerable to CVE-2017-7679 allowing buffer overread attacks. Attackers using te",
+      "parsed_response": {
+        "scenario_title": "Network Denial of Service Attack on Critical Apache Web Server",
+        "affected_asset": "SRV-028",
+        "threat_vector": "T1498 Network DoS leveraging CVE-2017-7679",
+        "impact_level": "high",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.13",
+          "SS6.14"
+        ],
+        "description": "SRV-028 (web-dos-target-01, critical asset in CIC Server Room) hosts Apache httpd 2.4.18, which is vulnerable to CVE-2017-7679 allowing buffer overread attacks. Attackers using technique T1498 could conduct network-level DoS attacks to degrade service availability to users. Risk treatment requires vulnerability patching, network traffic filtering, and implementation of DoS mitigation controls per NFCRM-1:2025 treatment phase requirements."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-029",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 43.7,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Critical Heartbleed Vulnerability Enables Memory Leakage and Credential Extraction\",\n  \"affected_asset\": \"SRV-029\",\n  \"threat_vector\": \"CVE-2014-0160 (Heartbleed) exploitation enabling T1555 (Credentials from Password Stores)\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.4\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.15\", \"SS6.16\"],\n  \"description\": \"The Heartbleed vulnerability (CVE-2014-0160) in OpenSSL 1.0.1f allows remote attackers to leak up to 64KB of",
+      "parsed_response": {
+        "scenario_title": "Critical Heartbleed Vulnerability Enables Memory Leakage and Credential Extraction",
+        "affected_asset": "SRV-029",
+        "threat_vector": "CVE-2014-0160 (Heartbleed) exploitation enabling T1555 (Credentials from Password Stores)",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.4",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.15",
+          "SS6.16"
+        ],
+        "description": "The Heartbleed vulnerability (CVE-2014-0160) in OpenSSL 1.0.1f allows remote attackers to leak up to 64KB of server memory without authentication, potentially exposing TLS private keys and stored credentials. An attacker exploiting this vulnerability can extract sensitive credentials and use them for unauthorized access attempts (T1555), compromising the confidentiality and integrity of the critical infrastructure server. Immediate mitigation requires patching OpenSSL to version 1.0.1g or later, regenerating all cryptographic keys, and rotating compromised credentials across dependent systems."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-030",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 23.41,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Spearphishing PDF Infiltration via Adobe Reader 9.0 Integer Overflow\",\n  \"affected_asset\": \"SRV-030\",\n  \"threat_vector\": \"T1566.001 (Spearphishing Attachment) exploiting CVE-2010-0188\",\n  \"impact_level\": \"high\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.3\", \"SS6.5\", \"SS6.11\", \"SS6.12\"],\n  \"description\": \"A malicious PDF attachment crafted to exploit CVE-2010-0188 (Adobe Reader 9 integer overflow, CVSS 9.3) is sent to infiltration-victim-01 via spea",
+      "parsed_response": {
+        "scenario_title": "Spearphishing PDF Infiltration via Adobe Reader 9.0 Integer Overflow",
+        "affected_asset": "SRV-030",
+        "threat_vector": "T1566.001 (Spearphishing Attachment) exploiting CVE-2010-0188",
+        "impact_level": "high",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.3",
+          "SS6.5",
+          "SS6.11",
+          "SS6.12"
+        ],
+        "description": "A malicious PDF attachment crafted to exploit CVE-2010-0188 (Adobe Reader 9 integer overflow, CVSS 9.3) is sent to infiltration-victim-01 via spearphishing email targeting CIC Dept 4 Secretary/Operations personnel. Successful exploitation grants remote code execution, enabling lateral movement within CIC Testbed Infrastructure and compromise of operational data. Mitigation requires immediate security patching of Adobe Reader, email content filtering, and user security awareness training."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-031",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 23.65,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"Spearphishing Email with Malicious PDF Attachment Targeting High-Criticality Workstation\",\n  \"affected_asset\": \"SRV-030\",\n  \"threat_vector\": \"T1566.001 - Spearphishing Attachment (PDF)\",\n  \"impact_level\": \"high\",\n  \"nfcrm_clause\": \"SS6.6\",\n  \"recommended_controls\": [\"SS6.8\", \"SS6.11\", \"SS6.12\"],\n  \"description\": \"A targeted spearphishing campaign delivers malicious PDF attachments to users of the high-criticality workstation SRV-030 (infiltration-victim-01), exploi",
+      "parsed_response": {
+        "scenario_title": "Spearphishing Email with Malicious PDF Attachment Targeting High-Criticality Workstation",
+        "affected_asset": "SRV-030",
+        "threat_vector": "T1566.001 - Spearphishing Attachment (PDF)",
+        "impact_level": "high",
+        "nfcrm_clause": "SS6.6",
+        "recommended_controls": [
+          "SS6.8",
+          "SS6.11",
+          "SS6.12"
+        ],
+        "description": "A targeted spearphishing campaign delivers malicious PDF attachments to users of the high-criticality workstation SRV-030 (infiltration-victim-01), exploiting social engineering to bypass technical controls. Successful compromise would disrupt operational continuity in CIC Dept 4 and potentially facilitate lateral movement through the CIC Testbed Infrastructure. Mitigation requires email gateway filtering, user awareness training, and application execution controls per NFCRM-1:2025 treatment framework."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-032",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 25.15,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"EternalBlue RCE Leading to Botnet Command & Control on Critical Infrastructure\",\n  \"affected_asset\": \"SRV-032\",\n  \"threat_vector\": \"CVE-2017-0144 (EternalBlue SMBv1 RCE) followed by T1071.001 (Web Protocols C2)\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.11\", \"SS6.12\", \"SS6.13\", \"SS6.14\"],\n  \"description\": \"An unauthenticated attacker exploits EternalBlue vulnerability (CVE-2017-0144, CVSS 9.3) in Windows SMBv1 on win-",
+      "parsed_response": {
+        "scenario_title": "EternalBlue RCE Leading to Botnet Command & Control on Critical Infrastructure",
+        "affected_asset": "SRV-032",
+        "threat_vector": "CVE-2017-0144 (EternalBlue SMBv1 RCE) followed by T1071.001 (Web Protocols C2)",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.11",
+          "SS6.12",
+          "SS6.13",
+          "SS6.14"
+        ],
+        "description": "An unauthenticated attacker exploits EternalBlue vulnerability (CVE-2017-0144, CVSS 9.3) in Windows SMBv1 on win-srv-01 (SRV-032, Windows Server 2012 R2) to achieve remote code execution. Attacker deploys botnet malware establishing persistent command-and-control communication via HTTP/HTTPS protocols on port 8080 using T1071.001 technique. With critical system compromised in CIC Server Room, attacker gains foothold for lateral movement, data exfiltration, and propagation to SRV-033."
+      }
+    },
+    {
+      "run": 3,
+      "asset_id": "SRV-033",
+      "parseable": true,
+      "json_schema_valid": true,
+      "shacl_valid": true,
+      "precision_pct": 100.0,
+      "violations": [],
+      "entity_hallucinations": [],
+      "relationship_hallucinations": [],
+      "latency_seconds": 23.07,
+      "raw_response": "```json\n{\n  \"scenario_title\": \"EternalBlue Exploitation via Bot C2 on Critical Windows Servers\",\n  \"affected_asset\": \"SRV-032\",\n  \"threat_vector\": \"CVE-2017-0144 EternalBlue RCE via T1071.001 Bot-initiated C2\",\n  \"impact_level\": \"critical\",\n  \"nfcrm_clause\": \"SS6.5\",\n  \"recommended_controls\": [\"SS6.12\", \"SS6.13\", \"SS6.14\"],\n  \"description\": \"Bot-infected systems execute T1071.001 command-and-control communications to deliver EternalBlue (CVE-2017-0144) exploit packets against unpatched Windows S",
+      "parsed_response": {
+        "scenario_title": "EternalBlue Exploitation via Bot C2 on Critical Windows Servers",
+        "affected_asset": "SRV-032",
+        "threat_vector": "CVE-2017-0144 EternalBlue RCE via T1071.001 Bot-initiated C2",
+        "impact_level": "critical",
+        "nfcrm_clause": "SS6.5",
+        "recommended_controls": [
+          "SS6.12",
+          "SS6.13",
+          "SS6.14"
+        ],
+        "description": "Bot-infected systems execute T1071.001 command-and-control communications to deliver EternalBlue (CVE-2017-0144) exploit packets against unpatched Windows SMBv1 services on critical infrastructure (SRV-032, SRV-033). Successful exploitation grants unauthenticated remote code execution with SYSTEM privileges, compromising CIC testbed operations. Mitigation requires immediate MS17-010 patching, SMBv1 service disablement, network-based C2 blocking, and quarantine of infected hosts."
+      }
+    }
+  ]
+}

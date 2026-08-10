@@ -1,0 +1,31 @@
+{
+  "title": "Grounding Machine Learning and LLM-Based Risk Inference in a Shared SHACL Knowledge Layer: An NFCRM-1:2025 Case Study",
+  "upload_type": "software",
+  "license": "MIT",
+  "creators": [
+    {
+      "name": "Alamawy, Mohammed Ismail",
+      "affiliation": "Faculty of Computer and Information Systems, Islamic University of Madinah, Madinah, Saudi Arabia"
+    },
+    {
+      "name": "Hamdi, Fayçal",
+      "affiliation": "Faculty of Computer and Information Systems, Islamic University of Madinah, Madinah, Saudi Arabia",
+      "orcid": "0000-0002-5314-1419"
+    },
+    {
+      "name": "Binsalleeh, Hamad",
+      "affiliation": "Department of Computer Science, Imam Mohammad Ibn Saud Islamic University (IMSIU), Riyadh, Saudi Arabia",
+      "orcid": "0000-0002-0886-6314"
+    }
+  ],
+  "description": "<p>This repository provides the reproducibility package for the manuscript \"Grounding Machine Learning and LLM-Based Risk Inference in a Shared SHACL Knowledge Layer: An NFCRM-1:2025 Case Study.\"</p><p>It contains the implementation and experimental artefacts used to evaluate the proposed knowledge-grounding architecture, including the OWL/RDF cybersecurity knowledge model, SHACL constraint profiles, preprocessing and evaluation scripts, machine-learning and LLM workflows, saved validation and evaluation results, and figure-generation code.</p><p>The package supports reproduction and audit of the reported knowledge-layer validation, GRC artefact conformance, schema-comparison experiments, CIC-IDS2018 and NSL-KDD evaluations, and associated ablation and control experiments. Original third-party benchmark datasets are not redistributed and must be obtained from their respective sources where required by their distribution terms.</p><p>NFCRM-1:2025 serves as the evaluated regulatory profile. The repository is intended to support transparency, reproducibility, and independent verification of the experimental findings reported in the accompanying article.</p>",
+  "keywords": [
+    "knowledge graphs",
+    "SHACL",
+    "ontology engineering",
+    "neuro-symbolic AI",
+    "cybersecurity GRC",
+    "standards traceability",
+    "NFCRM-1:2025"
+  ]
+}

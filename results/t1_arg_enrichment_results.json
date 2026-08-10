@@ -1,0 +1,153 @@
+{
+  "timestamp": "2026-05-28T16:38:30.859607",
+  "experiment": "T1 ARG Enrichment -- XGBoost + dst_criticality + dst_max_cvss",
+  "data_split": {
+    "source": "data/processed/cleaned_dataset.csv",
+    "split_type": "chronological_70_15_15",
+    "train_n": 9902,
+    "val_n": 2121,
+    "test_n": 2123,
+    "train_classes": [
+      "Benign",
+      "BruteForce",
+      "DDoS",
+      "DoS",
+      "Infiltration",
+      "WebAttack"
+    ],
+    "all_classes": [
+      "Benign",
+      "BruteForce",
+      "DDoS",
+      "DoS",
+      "Infiltration",
+      "WebAttack"
+    ]
+  },
+  "arg_enrichment": {
+    "port_lookup_size": 26,
+    "features_added": [
+      "dst_criticality",
+      "dst_max_cvss"
+    ],
+    "feature_source": "Dst Port -> ARG Asset (criticality score, max CVSSv3)",
+    "note": "CIC-IDS2018 CSVs have no Src/Dst IP columns (stripped by CICFlowMeter). Port-to-ARG mapping used: each Dst Port is mapped to the ARG asset(s) that run the corresponding service, taking MAX criticality/CVSS when multiple assets share a port."
+  },
+  "baseline_accuracy": 0.885539,
+  "enriched_accuracy": 0.88601,
+  "delta": 0.000471,
+  "f1_macro_baseline": 0.846275,
+  "f1_macro_enriched": 0.846534,
+  "f1_macro_delta": 0.000259,
+  "mcnemar_p": 1.0,
+  "mcnemar_b": 20,
+  "mcnemar_c": 19,
+  "arg_coverage_pct": 67.17,
+  "per_class_f1_baseline": {
+    "Benign": 0.8057,
+    "BruteForce": 0.9535,
+    "DDoS": 1.0,
+    "DoS": 1.0,
+    "Infiltration": 0.8185,
+    "WebAttack": 0.5
+  },
+  "per_class_f1_enriched": {
+    "Benign": 0.806,
+    "BruteForce": 0.9535,
+    "DDoS": 1.0,
+    "DoS": 1.0,
+    "Infiltration": 0.8197,
+    "WebAttack": 0.5
+  },
+  "arg_feature_importance": {
+    "dst_criticality": 0.007096645887941122,
+    "dst_max_cvss": 0.13731732964515686,
+    "combined_pct_of_total": 14.4414
+  },
+  "top15_features": [
+    {
+      "feature": "Fwd Seg Size Min",
+      "importance": 0.334214,
+      "is_arg": false
+    },
+    {
+      "feature": "dst_max_cvss",
+      "importance": 0.137317,
+      "is_arg": true
+    },
+    {
+      "feature": "Fwd Pkt Len Max",
+      "importance": 0.070669,
+      "is_arg": false
+    },
+    {
+      "feature": "Fwd Pkt Len Mean",
+      "importance": 0.067111,
+      "is_arg": false
+    },
+    {
+      "feature": "PSH Flag Cnt",
+      "importance": 0.06618,
+      "is_arg": false
+    },
+    {
+      "feature": "Fwd Header Len",
+      "importance": 0.031617,
+      "is_arg": false
+    },
+    {
+      "feature": "Init Fwd Win Byts",
+      "importance": 0.030677,
+      "is_arg": false
+    },
+    {
+      "feature": "Fwd IAT Mean",
+      "importance": 0.025112,
+      "is_arg": false
+    },
+    {
+      "feature": "Dst Port",
+      "importance": 0.024995,
+      "is_arg": false
+    },
+    {
+      "feature": "RST Flag Cnt",
+      "importance": 0.019398,
+      "is_arg": false
+    },
+    {
+      "feature": "Bwd Pkt Len Std",
+      "importance": 0.0175,
+      "is_arg": false
+    },
+    {
+      "feature": "Pkt Len Max",
+      "importance": 0.010232,
+      "is_arg": false
+    },
+    {
+      "feature": "Active Std",
+      "importance": 0.009155,
+      "is_arg": false
+    },
+    {
+      "feature": "Fwd Pkt Len Std",
+      "importance": 0.009143,
+      "is_arg": false
+    },
+    {
+      "feature": "Flow IAT Max",
+      "importance": 0.007251,
+      "is_arg": false
+    }
+  ],
+  "xgb_params": {
+    "max_depth": 6,
+    "learning_rate": 0.1,
+    "n_estimators": 500,
+    "random_state": 42,
+    "n_jobs": -1,
+    "verbosity": 0
+  },
+  "interpretation": "Enriched XGBoost: 88.60% vs baseline 88.55% (delta=+0.05pp). F1-macro: 0.8465 vs 0.8463 (+0.0003). McNemar p=1.0000 (not significant p>0.05). ARG features covered 67.2% of test flows. Combined ARG feature importance: 14.4% of total."
+}

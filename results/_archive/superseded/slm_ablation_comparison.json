@@ -1,0 +1,42 @@
+{
+  "full": {
+    "n": 60,
+    "overall": {
+      "point": 0.55,
+      "lo": 0.4166666666666667,
+      "hi": 0.6833333333333333
+    },
+    "per_class": {
+      "Benign": 0.4,
+      "BruteForce": 0.4,
+      "DDoS": 0.7,
+      "DoS": 0.7,
+      "Infiltration": 0.4,
+      "WebAttack": 0.7
+    }
+  },
+  "stripped": {
+    "n": 60,
+    "overall": {
+      "point": 0.5,
+      "lo": 0.38333333333333336,
+      "hi": 0.6166666666666667
+    },
+    "per_class": {
+      "Benign": 0.4,
+      "BruteForce": 0.4,
+      "DDoS": 0.4,
+      "DoS": 0.7,
+      "Infiltration": 0.4,
+      "WebAttack": 0.7
+    }
+  },
+  "delta": 0.050000000000000044,
+  "mcnemar": {
+    "b": 4,
+    "c": 1,
+    "p_two_sided": 0.375
+  },
+  "n_boot": 1000,
+  "seed": 42
+}

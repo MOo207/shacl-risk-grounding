@@ -1,0 +1,923 @@
+{
+  "description": "Constant-DoS pessimism dummy: standalone and most-severe-wins arbitration vs fixed XGBoost baseline, scored identically to the tri-stage arms on the clean N=100 NSL-KDD sample.",
+  "lookup_source": "results/nslkdd_natural_underescalation.json:sixnine_lookup_table",
+  "ground_truth_source": "results/nslkdd_unified_rerun/reconciled_tristage_haiku_test.jsonl",
+  "standalone_constant_dos": {
+    "n": 100,
+    "under_escalation_rate": 0.0,
+    "over_escalation_rate": 0.4,
+    "exact_accuracy": 0.6,
+    "severe_recall": 1.0,
+    "n_severe_gt": 49
+  },
+  "arbitrated_constant_dos_vs_xgb": {
+    "n": 100,
+    "under_escalation_rate": 0.0,
+    "over_escalation_rate": 0.4,
+    "exact_accuracy": 0.6,
+    "severe_recall": 1.0,
+    "n_severe_gt": 49
+  },
+  "per_case": [
+    {
+      "case_id": "nslr_test_000",
+      "true_class": "U2R",
+      "criticality": "Critical",
+      "gt": "Catastrophic",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_001",
+      "true_class": "Probe",
+      "criticality": "Critical",
+      "gt": "High",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_002",
+      "true_class": "R2L",
+      "criticality": "Medium",
+      "gt": "High",
+      "dummy_level": "High",
+      "ml_level": "High",
+      "arbitrated_level": "High"
+    },
+    {
+      "case_id": "nslr_test_003",
+      "true_class": "Probe",
+      "criticality": "Critical",
+      "gt": "High",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Catastrophic",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_004",
+      "true_class": "Probe",
+      "criticality": "Medium",
+      "gt": "Medium",
+      "dummy_level": "High",
+      "ml_level": "Medium",
+      "arbitrated_level": "High"
+    },
+    {
+      "case_id": "nslr_test_005",
+      "true_class": "DoS",
+      "criticality": "Low",
+      "gt": "Medium",
+      "dummy_level": "Medium",
+      "ml_level": "Medium",
+      "arbitrated_level": "Medium"
+    },
+    {
+      "case_id": "nslr_test_006",
+      "true_class": "DoS",
+      "criticality": "Medium",
+      "gt": "High",
+      "dummy_level": "High",
+      "ml_level": "High",
+      "arbitrated_level": "High"
+    },
+    {
+      "case_id": "nslr_test_007",
+      "true_class": "U2R",
+      "criticality": "Critical",
+      "gt": "Catastrophic",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_008",
+      "true_class": "Normal",
+      "criticality": "Medium",
+      "gt": "Very Low",
+      "dummy_level": "High",
+      "ml_level": "Very Low",
+      "arbitrated_level": "High"
+    },
+    {
+      "case_id": "nslr_test_009",
+      "true_class": "Normal",
+      "criticality": "Critical",
+      "gt": "Very Low",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_010",
+      "true_class": "Normal",
+      "criticality": "High",
+      "gt": "Very Low",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_011",
+      "true_class": "DoS",
+      "criticality": "Medium",
+      "gt": "High",
+      "dummy_level": "High",
+      "ml_level": "High",
+      "arbitrated_level": "High"
+    },
+    {
+      "case_id": "nslr_test_012",
+      "true_class": "R2L",
+      "criticality": "Low",
+      "gt": "Medium",
+      "dummy_level": "Medium",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Medium"
+    },
+    {
+      "case_id": "nslr_test_013",
+      "true_class": "DoS",
+      "criticality": "Low",
+      "gt": "Medium",
+      "dummy_level": "Medium",
+      "ml_level": "Medium",
+      "arbitrated_level": "Medium"
+    },
+    {
+      "case_id": "nslr_test_014",
+      "true_class": "U2R",
+      "criticality": "Low",
+      "gt": "Medium",
+      "dummy_level": "Medium",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Medium"
+    },
+    {
+      "case_id": "nslr_test_015",
+      "true_class": "Normal",
+      "criticality": "Medium",
+      "gt": "Very Low",
+      "dummy_level": "High",
+      "ml_level": "Very Low",
+      "arbitrated_level": "High"
+    },
+    {
+      "case_id": "nslr_test_016",
+      "true_class": "R2L",
+      "criticality": "Medium",
+      "gt": "High",
+      "dummy_level": "High",
+      "ml_level": "Very Low",
+      "arbitrated_level": "High"
+    },
+    {
+      "case_id": "nslr_test_017",
+      "true_class": "R2L",
+      "criticality": "High",
+      "gt": "Catastrophic",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_018",
+      "true_class": "Normal",
+      "criticality": "High",
+      "gt": "Very Low",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_019",
+      "true_class": "DoS",
+      "criticality": "Critical",
+      "gt": "Catastrophic",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Catastrophic",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_020",
+      "true_class": "Probe",
+      "criticality": "High",
+      "gt": "Medium",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_021",
+      "true_class": "U2R",
+      "criticality": "Low",
+      "gt": "Medium",
+      "dummy_level": "Medium",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Medium"
+    },
+    {
+      "case_id": "nslr_test_022",
+      "true_class": "DoS",
+      "criticality": "Medium",
+      "gt": "High",
+      "dummy_level": "High",
+      "ml_level": "Very Low",
+      "arbitrated_level": "High"
+    },
+    {
+      "case_id": "nslr_test_023",
+      "true_class": "Probe",
+      "criticality": "High",
+      "gt": "Medium",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Catastrophic",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_024",
+      "true_class": "R2L",
+      "criticality": "High",
+      "gt": "Catastrophic",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_025",
+      "true_class": "Normal",
+      "criticality": "Low",
+      "gt": "Very Low",
+      "dummy_level": "Medium",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Medium"
+    },
+    {
+      "case_id": "nslr_test_026",
+      "true_class": "Probe",
+      "criticality": "Low",
+      "gt": "Low",
+      "dummy_level": "Medium",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Medium"
+    },
+    {
+      "case_id": "nslr_test_027",
+      "true_class": "U2R",
+      "criticality": "High",
+      "gt": "Catastrophic",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_028",
+      "true_class": "Normal",
+      "criticality": "High",
+      "gt": "Very Low",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_029",
+      "true_class": "R2L",
+      "criticality": "Low",
+      "gt": "Medium",
+      "dummy_level": "Medium",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Medium"
+    },
+    {
+      "case_id": "nslr_test_030",
+      "true_class": "Normal",
+      "criticality": "Low",
+      "gt": "Very Low",
+      "dummy_level": "Medium",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Medium"
+    },
+    {
+      "case_id": "nslr_test_031",
+      "true_class": "Probe",
+      "criticality": "Medium",
+      "gt": "Medium",
+      "dummy_level": "High",
+      "ml_level": "Very Low",
+      "arbitrated_level": "High"
+    },
+    {
+      "case_id": "nslr_test_032",
+      "true_class": "U2R",
+      "criticality": "Critical",
+      "gt": "Catastrophic",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_033",
+      "true_class": "DoS",
+      "criticality": "Low",
+      "gt": "Medium",
+      "dummy_level": "Medium",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Medium"
+    },
+    {
+      "case_id": "nslr_test_034",
+      "true_class": "U2R",
+      "criticality": "Medium",
+      "gt": "High",
+      "dummy_level": "High",
+      "ml_level": "Very Low",
+      "arbitrated_level": "High"
+    },
+    {
+      "case_id": "nslr_test_035",
+      "true_class": "Normal",
+      "criticality": "High",
+      "gt": "Very Low",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_036",
+      "true_class": "R2L",
+      "criticality": "High",
+      "gt": "Catastrophic",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_037",
+      "true_class": "R2L",
+      "criticality": "Low",
+      "gt": "Medium",
+      "dummy_level": "Medium",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Medium"
+    },
+    {
+      "case_id": "nslr_test_038",
+      "true_class": "DoS",
+      "criticality": "Medium",
+      "gt": "High",
+      "dummy_level": "High",
+      "ml_level": "Very Low",
+      "arbitrated_level": "High"
+    },
+    {
+      "case_id": "nslr_test_039",
+      "true_class": "Normal",
+      "criticality": "Critical",
+      "gt": "Very Low",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_040",
+      "true_class": "Probe",
+      "criticality": "High",
+      "gt": "Medium",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Medium",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_041",
+      "true_class": "DoS",
+      "criticality": "Medium",
+      "gt": "High",
+      "dummy_level": "High",
+      "ml_level": "High",
+      "arbitrated_level": "High"
+    },
+    {
+      "case_id": "nslr_test_042",
+      "true_class": "Normal",
+      "criticality": "Critical",
+      "gt": "Very Low",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_043",
+      "true_class": "U2R",
+      "criticality": "Critical",
+      "gt": "Catastrophic",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_044",
+      "true_class": "DoS",
+      "criticality": "Medium",
+      "gt": "High",
+      "dummy_level": "High",
+      "ml_level": "High",
+      "arbitrated_level": "High"
+    },
+    {
+      "case_id": "nslr_test_045",
+      "true_class": "Normal",
+      "criticality": "High",
+      "gt": "Very Low",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_046",
+      "true_class": "U2R",
+      "criticality": "High",
+      "gt": "Catastrophic",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_047",
+      "true_class": "DoS",
+      "criticality": "Low",
+      "gt": "Medium",
+      "dummy_level": "Medium",
+      "ml_level": "Medium",
+      "arbitrated_level": "Medium"
+    },
+    {
+      "case_id": "nslr_test_048",
+      "true_class": "R2L",
+      "criticality": "High",
+      "gt": "Catastrophic",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_049",
+      "true_class": "Normal",
+      "criticality": "Critical",
+      "gt": "Very Low",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_050",
+      "true_class": "DoS",
+      "criticality": "Critical",
+      "gt": "Catastrophic",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Catastrophic",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_051",
+      "true_class": "Normal",
+      "criticality": "Medium",
+      "gt": "Very Low",
+      "dummy_level": "High",
+      "ml_level": "Very Low",
+      "arbitrated_level": "High"
+    },
+    {
+      "case_id": "nslr_test_052",
+      "true_class": "Normal",
+      "criticality": "Critical",
+      "gt": "Very Low",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_053",
+      "true_class": "DoS",
+      "criticality": "High",
+      "gt": "Catastrophic",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Catastrophic",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_054",
+      "true_class": "Normal",
+      "criticality": "High",
+      "gt": "Very Low",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_055",
+      "true_class": "R2L",
+      "criticality": "High",
+      "gt": "Catastrophic",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_056",
+      "true_class": "Normal",
+      "criticality": "Critical",
+      "gt": "Very Low",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_057",
+      "true_class": "R2L",
+      "criticality": "Medium",
+      "gt": "High",
+      "dummy_level": "High",
+      "ml_level": "High",
+      "arbitrated_level": "High"
+    },
+    {
+      "case_id": "nslr_test_058",
+      "true_class": "DoS",
+      "criticality": "Medium",
+      "gt": "High",
+      "dummy_level": "High",
+      "ml_level": "Very Low",
+      "arbitrated_level": "High"
+    },
+    {
+      "case_id": "nslr_test_059",
+      "true_class": "U2R",
+      "criticality": "Low",
+      "gt": "Medium",
+      "dummy_level": "Medium",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Medium"
+    },
+    {
+      "case_id": "nslr_test_060",
+      "true_class": "Probe",
+      "criticality": "Critical",
+      "gt": "High",
+      "dummy_level": "Catastrophic",
+      "ml_level": "High",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_061",
+      "true_class": "U2R",
+      "criticality": "Critical",
+      "gt": "Catastrophic",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_062",
+      "true_class": "Probe",
+      "criticality": "Low",
+      "gt": "Low",
+      "dummy_level": "Medium",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Medium"
+    },
+    {
+      "case_id": "nslr_test_063",
+      "true_class": "Probe",
+      "criticality": "Medium",
+      "gt": "Medium",
+      "dummy_level": "High",
+      "ml_level": "Very Low",
+      "arbitrated_level": "High"
+    },
+    {
+      "case_id": "nslr_test_064",
+      "true_class": "Probe",
+      "criticality": "Medium",
+      "gt": "Medium",
+      "dummy_level": "High",
+      "ml_level": "Medium",
+      "arbitrated_level": "High"
+    },
+    {
+      "case_id": "nslr_test_065",
+      "true_class": "R2L",
+      "criticality": "Critical",
+      "gt": "Catastrophic",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Catastrophic",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_066",
+      "true_class": "Probe",
+      "criticality": "Medium",
+      "gt": "Medium",
+      "dummy_level": "High",
+      "ml_level": "Medium",
+      "arbitrated_level": "High"
+    },
+    {
+      "case_id": "nslr_test_067",
+      "true_class": "R2L",
+      "criticality": "Medium",
+      "gt": "High",
+      "dummy_level": "High",
+      "ml_level": "Very Low",
+      "arbitrated_level": "High"
+    },
+    {
+      "case_id": "nslr_test_068",
+      "true_class": "R2L",
+      "criticality": "Critical",
+      "gt": "Catastrophic",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_069",
+      "true_class": "U2R",
+      "criticality": "Critical",
+      "gt": "Catastrophic",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_070",
+      "true_class": "R2L",
+      "criticality": "Critical",
+      "gt": "Catastrophic",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Catastrophic",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_071",
+      "true_class": "Probe",
+      "criticality": "High",
+      "gt": "Medium",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_072",
+      "true_class": "Probe",
+      "criticality": "Critical",
+      "gt": "High",
+      "dummy_level": "Catastrophic",
+      "ml_level": "High",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_073",
+      "true_class": "Probe",
+      "criticality": "High",
+      "gt": "Medium",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Catastrophic",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_074",
+      "true_class": "U2R",
+      "criticality": "Critical",
+      "gt": "Catastrophic",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_075",
+      "true_class": "Probe",
+      "criticality": "Low",
+      "gt": "Low",
+      "dummy_level": "Medium",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Medium"
+    },
+    {
+      "case_id": "nslr_test_076",
+      "true_class": "R2L",
+      "criticality": "High",
+      "gt": "Catastrophic",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_077",
+      "true_class": "DoS",
+      "criticality": "Medium",
+      "gt": "High",
+      "dummy_level": "High",
+      "ml_level": "High",
+      "arbitrated_level": "High"
+    },
+    {
+      "case_id": "nslr_test_078",
+      "true_class": "U2R",
+      "criticality": "Medium",
+      "gt": "High",
+      "dummy_level": "High",
+      "ml_level": "Very Low",
+      "arbitrated_level": "High"
+    },
+    {
+      "case_id": "nslr_test_079",
+      "true_class": "Probe",
+      "criticality": "Critical",
+      "gt": "High",
+      "dummy_level": "Catastrophic",
+      "ml_level": "High",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_080",
+      "true_class": "R2L",
+      "criticality": "Low",
+      "gt": "Medium",
+      "dummy_level": "Medium",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Medium"
+    },
+    {
+      "case_id": "nslr_test_081",
+      "true_class": "U2R",
+      "criticality": "Low",
+      "gt": "Medium",
+      "dummy_level": "Medium",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Medium"
+    },
+    {
+      "case_id": "nslr_test_082",
+      "true_class": "DoS",
+      "criticality": "High",
+      "gt": "Catastrophic",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Catastrophic",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_083",
+      "true_class": "DoS",
+      "criticality": "Medium",
+      "gt": "High",
+      "dummy_level": "High",
+      "ml_level": "High",
+      "arbitrated_level": "High"
+    },
+    {
+      "case_id": "nslr_test_084",
+      "true_class": "Normal",
+      "criticality": "Critical",
+      "gt": "Very Low",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_085",
+      "true_class": "Probe",
+      "criticality": "Critical",
+      "gt": "High",
+      "dummy_level": "Catastrophic",
+      "ml_level": "High",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_086",
+      "true_class": "DoS",
+      "criticality": "Medium",
+      "gt": "High",
+      "dummy_level": "High",
+      "ml_level": "High",
+      "arbitrated_level": "High"
+    },
+    {
+      "case_id": "nslr_test_087",
+      "true_class": "Normal",
+      "criticality": "Low",
+      "gt": "Very Low",
+      "dummy_level": "Medium",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Medium"
+    },
+    {
+      "case_id": "nslr_test_088",
+      "true_class": "DoS",
+      "criticality": "Low",
+      "gt": "Medium",
+      "dummy_level": "Medium",
+      "ml_level": "Medium",
+      "arbitrated_level": "Medium"
+    },
+    {
+      "case_id": "nslr_test_089",
+      "true_class": "U2R",
+      "criticality": "Medium",
+      "gt": "High",
+      "dummy_level": "High",
+      "ml_level": "High",
+      "arbitrated_level": "High"
+    },
+    {
+      "case_id": "nslr_test_090",
+      "true_class": "U2R",
+      "criticality": "High",
+      "gt": "Catastrophic",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_091",
+      "true_class": "R2L",
+      "criticality": "High",
+      "gt": "Catastrophic",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_092",
+      "true_class": "U2R",
+      "criticality": "High",
+      "gt": "Catastrophic",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_093",
+      "true_class": "U2R",
+      "criticality": "Low",
+      "gt": "Medium",
+      "dummy_level": "Medium",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Medium"
+    },
+    {
+      "case_id": "nslr_test_094",
+      "true_class": "DoS",
+      "criticality": "Low",
+      "gt": "Medium",
+      "dummy_level": "Medium",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Medium"
+    },
+    {
+      "case_id": "nslr_test_095",
+      "true_class": "R2L",
+      "criticality": "Low",
+      "gt": "Medium",
+      "dummy_level": "Medium",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Medium"
+    },
+    {
+      "case_id": "nslr_test_096",
+      "true_class": "R2L",
+      "criticality": "Critical",
+      "gt": "Catastrophic",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_097",
+      "true_class": "Normal",
+      "criticality": "High",
+      "gt": "Very Low",
+      "dummy_level": "Catastrophic",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Catastrophic"
+    },
+    {
+      "case_id": "nslr_test_098",
+      "true_class": "U2R",
+      "criticality": "Low",
+      "gt": "Medium",
+      "dummy_level": "Medium",
+      "ml_level": "Very Low",
+      "arbitrated_level": "Medium"
+    },
+    {
+      "case_id": "nslr_test_099",
+      "true_class": "Probe",
+      "criticality": "Low",
+      "gt": "Low",
+      "dummy_level": "Medium",
+      "ml_level": "Low",
+      "arbitrated_level": "Medium"
+    }
+  ]
+}

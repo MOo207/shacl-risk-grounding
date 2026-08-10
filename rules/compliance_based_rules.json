@@ -1,0 +1,56 @@
+[
+  {
+    "rule_id": "CMP-001",
+    "name": "NFCRM-1:2025 Compliance Gap",
+    "category": "compliance_based",
+    "priority": 100,
+    "description": "Control from NFCRM-1:2025 not implemented",
+    "conditions": [
+      {
+        "field": "control_id",
+        "operator": "in",
+        "value": [
+          "NFCRM-1:2025-§6.7",
+          "NFCRM-1:2025-§6.9"
+        ],
+        "description": ""
+      },
+      {
+        "field": "implementation_status",
+        "operator": "==",
+        "value": "not_implemented",
+        "description": ""
+      }
+    ],
+    "score_modifier": -50,
+    "explanation_template": "NFCRM-1:2025 control {control_id} is not implemented. This is a critical compliance gap.",
+    "enabled": true
+  },
+  {
+    "rule_id": "CMP-002",
+    "name": "ISO/IEC 27005 Risk Assessment Missing",
+    "category": "compliance_based",
+    "priority": 85,
+    "description": "No risk assessment completed for asset",
+    "conditions": [
+      {
+        "field": "standard",
+        "operator": "==",
+        "value": [
+          "ISO/IEC 27005",
+          "NFCRM-1:2025"
+        ],
+        "description": ""
+      },
+      {
+        "field": "risk_assessment_complete",
+        "operator": "==",
+        "value": false,
+        "description": ""
+      }
+    ],
+    "score_modifier": -35,
+    "explanation_template": "ISO/IEC 27005 risk assessment is missing for asset {asset_id}. Compliance requires regular assessments.",
+    "enabled": true
+  }
+]
