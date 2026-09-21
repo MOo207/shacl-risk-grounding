@@ -218,6 +218,21 @@ def artefacts_to_rdf(risk_cases, audit_logs, controls):
                    Literal(rc["provenance_timestamp"], datatype=XSD.dateTime)))
             g.add((v, GRC.relatesToRisk, n))
 
+        # A RiskCase built from a Benign-labelled flow (or any case with no
+        # matched CVE) has no vulnerability to link -- there is nothing to
+        # exploit. grc:RiskCaseMustLinkToVulnerabilityOrEventConstraint's
+        # second disjunct exists for exactly this: it is a triaged security
+        # observation (the flow-classification event itself), not a
+        # vulnerability finding. Emit that event rather than leaving the
+        # disjunct permanently unsatisfiable.
+        if not rc.get("related_cves"):
+            evt = GRC[f"{rc['risk_id']}-EVT"]
+            g.add((evt, RDF.type, GRC.SecurityEvent))
+            lit(evt, GRC.provenanceSource, rc["provenance_source"])
+            g.add((evt, GRC.provenanceTimestamp,
+                   Literal(rc["provenance_timestamp"], datatype=XSD.dateTime)))
+            g.add((evt, GRC.triggersEvent, n))
+
     for al in audit_logs:
         n = GRC[al["audit_id"]]
         g.add((n, RDF.type, GRC.AuditLog))

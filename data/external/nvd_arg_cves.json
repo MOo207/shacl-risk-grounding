@@ -33,7 +33,7 @@
   "cves": {
     "CVE-1999-0170": {
       "cve_id": "CVE-1999-0170",
-      "cwe": "",
+      "cwe": "NVD-CWE-Other",
       "cvss_score": 7.5,
       "cvss_version": "2.0",
       "severity": "high",
@@ -42,7 +42,7 @@
     },
     "CVE-1999-0526": {
       "cve_id": "CVE-1999-0526",
-      "cwe": "",
+      "cwe": "NVD-CWE-Other",
       "cvss_score": 10.0,
       "cvss_version": "2.0",
       "severity": "high",
@@ -51,7 +51,7 @@
     },
     "CVE-1999-0651": {
       "cve_id": "CVE-1999-0651",
-      "cwe": "",
+      "cwe": "NVD-CWE-Other",
       "cvss_score": 7.5,
       "cvss_version": "2.0",
       "severity": "high",
@@ -87,7 +87,7 @@
     },
     "CVE-2007-2447": {
       "cve_id": "CVE-2007-2447",
-      "cwe": "",
+      "cwe": "NVD-CWE-Other",
       "cvss_score": 6.0,
       "cvss_version": "2.0",
       "severity": "medium",
@@ -168,7 +168,7 @@
     },
     "CVE-2010-0188": {
       "cve_id": "CVE-2010-0188",
-      "cwe": "",
+      "cwe": "NVD-CWE-noinfo",
       "cvss_score": 7.8,
       "cvss_version": "3.1",
       "severity": "high",
@@ -213,7 +213,7 @@
     },
     "CVE-2011-3556": {
       "cve_id": "CVE-2011-3556",
-      "cwe": "",
+      "cwe": "NVD-CWE-noinfo",
       "cvss_score": 7.5,
       "cvss_version": "2.0",
       "severity": "high",
@@ -222,7 +222,7 @@
     },
     "CVE-2011-5330": {
       "cve_id": "CVE-2011-5330",
-      "cwe": "",
+      "cwe": "NVD-CWE-noinfo",
       "cvss_score": 9.8,
       "cvss_version": "3.1",
       "severity": "critical",
@@ -267,7 +267,7 @@
     },
     "CVE-2017-0144": {
       "cve_id": "CVE-2017-0144",
-      "cwe": "",
+      "cwe": "NVD-CWE-noinfo",
       "cvss_score": 8.8,
       "cvss_version": "3.1",
       "severity": "high",
@@ -300,5 +300,8 @@
       "CVE-2011-5330",
       "CVE-2017-0144"
     ]
-  }
+  },
+  "notes": [
+    "2026-09-21: 8 CVEs re-verified live against NVD REST API 2.0; NVD itself assigns no CWE-NNNN for these (legacy/no-info records) and instead tags NVD-CWE-Other or NVD-CWE-noinfo. Recorded verbatim rather than left blank or guessed; grc:VulnerabilityShape's cweId pattern updated to accept these NVD placeholder values alongside CWE-NNNN."
+  ]
 }

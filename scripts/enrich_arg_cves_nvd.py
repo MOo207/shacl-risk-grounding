@@ -65,16 +65,23 @@ def fetch_one(cve_id):
         return None
     cve = vulns[0]["cve"]
 
-    # CWE: first non-informational weakness description
+    # CWE: prefer a real CWE-NNNN weakness description; if NVD assigns none
+    # (common for legacy/no-info records), record its own placeholder value
+    # (NVD-CWE-Other / NVD-CWE-noinfo) verbatim rather than leaving the field
+    # blank or guessing a CWE the NVD record does not itself carry.
     cwe = ""
+    fallback = ""
     for w in cve.get("weaknesses", []):
         for d in w.get("description", []):
             v = d.get("value", "")
             if v.startswith("CWE-"):
                 cwe = v
                 break
+            elif v.startswith("NVD-CWE-") and not fallback:
+                fallback = v
         if cwe:
             break
+    cwe = cwe or fallback
 
     # CVSS: prefer v3.1, then v3.0, then v2. Record which one was used --
     # a v2-only CVE has no v3 base score and saying otherwise would be wrong.

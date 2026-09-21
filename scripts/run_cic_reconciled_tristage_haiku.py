@@ -236,16 +236,45 @@ def main():
                          "channel-independent; if it degrades toward XGBoost's "
                          "3.33%, the class-paired CVE channel is load-bearing "
                          "on CIC as on NSL-KDD. Everything else identical.")
+    ap.add_argument("--permute-cve", action="store_true",
+                    help="CVE-identity control arm (added for the IEEE Access "
+                         "R1.3 response: class-specific CVE assignment is an "
+                         "indirect class signal): paired_cve values are shuffled "
+                         "(numpy default_rng seed 42) across the attack cases "
+                         "that carry one; Benign cases stay CVE-free. This "
+                         "breaks CVE-identity->class while preserving "
+                         "presence->attack, isolating identity leakage from the "
+                         "--ablate-cve arm's presence removal. Outputs go to "
+                         "*_cve_permuted files. PRE-REGISTERED interpretation "
+                         "(fixed before running): if under-escalation stays near "
+                         "the unablated 0.83% (not the --ablate-cve arm's "
+                         "3.33%), the reconciled result does not depend on CVE "
+                         "identity specifically; if it reverts toward XGBoost's "
+                         "3.33% baseline, CVE-identity leakage is load-bearing.")
     args = ap.parse_args()
+    if args.ablate_cve and args.permute_cve:
+        raise SystemExit("--ablate-cve and --permute-cve are mutually exclusive")
     if args.ablate_cve:
         OUT_JSONL = OUT_DIR / "reconciled_tristage_haiku_cve_ablated_raw.jsonl"
         OUT_SUMMARY = OUT_DIR / "reconciled_tristage_haiku_cve_ablated_results.json"
+    elif args.permute_cve:
+        OUT_JSONL = OUT_DIR / "reconciled_tristage_haiku_cve_permuted_raw.jsonl"
+        OUT_SUMMARY = OUT_DIR / "reconciled_tristage_haiku_cve_permuted_results.json"
 
     test_out = json.loads(TEST_SAMPLE_PATH.read_text(encoding="utf-8"))
     cases = test_out["cases"]
     if args.limit:
         cases = cases[:args.limit]
     print(f"Loaded {len(cases)} cases from {TEST_SAMPLE_PATH}")
+
+    permuted_cve_by_case_id: dict[str, Optional[dict]] = {}
+    if args.permute_cve:
+        rng = np.random.default_rng(42)
+        cve_case_idx = [i for i, c in enumerate(cases) if c.get("paired_cve")]
+        cves = [cases[i]["paired_cve"] for i in cve_case_idx]
+        perm = rng.permutation(len(cves))
+        for slot, src in zip(cve_case_idx, perm):
+            permuted_cve_by_case_id[cases[slot]["case_id"]] = cves[src]
 
     df = pd.read_csv(DATA_PATH, low_memory=False)
     df = df.replace([np.inf, -np.inf], 0).fillna(0)
@@ -266,7 +295,7 @@ def main():
             crit = case["criticality"]
             gt = case["ground_truth_risk_level"]
             true_cls = case["true_attack_class"]
-            cve = case.get("paired_cve")
+            cve = permuted_cve_by_case_id.get(cid) if args.permute_cve else case.get("paired_cve")
 
             row = df.loc[case["source_row_index"]]
             nl_desc_clean = clean_features_to_nl(row)

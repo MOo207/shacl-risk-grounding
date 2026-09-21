@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-06T02:16:34.602372",
-  "build_time_seconds": 0.637,
+  "generated": "2026-09-21T19:32:24.488922",
+  "build_time_seconds": 0.706,
   "statistics": {
     "total_nodes": 138,
     "total_edges": 148,
@@ -68,7 +68,7 @@
       "confidence": 1.0,
       "confidence_basis": "deterministic rule derivation",
       "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "RISK-FTP-BruteForce",
@@ -83,7 +83,7 @@
       "confidence": 1.0,
       "confidence_basis": "deterministic rule derivation",
       "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "RISK-SSH-BruteForce",
@@ -98,7 +98,7 @@
       "confidence": 1.0,
       "confidence_basis": "deterministic rule derivation",
       "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "RISK-DoS",
@@ -113,7 +113,7 @@
       "confidence": 1.0,
       "confidence_basis": "deterministic rule derivation",
       "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "RISK-DDoS",
@@ -128,7 +128,7 @@
       "confidence": 1.0,
       "confidence_basis": "deterministic rule derivation",
       "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "RISK-Heartbleed",
@@ -143,7 +143,7 @@
       "confidence": 1.0,
       "confidence_basis": "deterministic rule derivation",
       "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "RISK-WebAttack",
@@ -158,7 +158,7 @@
       "confidence": 1.0,
       "confidence_basis": "deterministic rule derivation",
       "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "RISK-Infiltration",
@@ -173,7 +173,7 @@
       "confidence": 1.0,
       "confidence_basis": "deterministic rule derivation",
       "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "RISK-Bot",
@@ -188,7 +188,7 @@
       "confidence": 1.0,
       "confidence_basis": "deterministic rule derivation",
       "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     }
   ],
   "nodes": [
@@ -204,7 +204,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-vsftpd-2.3.4",
@@ -213,7 +213,7 @@
       "version": "2.3.4",
       "cpe": "cpe:2.3:a:beasts:vsftpd:2.3.4:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "CVE-2011-2523",
@@ -226,7 +226,7 @@
       "in_cisa_kev": false,
       "published": "2019-11-27T21:15:12.387",
       "provenance_source": "NVD API 2.0",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-002",
@@ -240,7 +240,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-OpenSSH-4.7p1 Debian 8ubuntu1",
@@ -249,7 +249,7 @@
       "version": "4.7p1 Debian 8ubuntu1",
       "cpe": "cpe:2.3:a:openbsd:openssh:4.7p1:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "CVE-2008-0166",
@@ -262,7 +262,7 @@
       "in_cisa_kev": false,
       "published": "2008-05-13T17:20:00.000",
       "provenance_source": "NVD API 2.0",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-003",
@@ -276,7 +276,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-Linux_telnetd-netkit",
@@ -285,7 +285,7 @@
       "version": "netkit",
       "cpe": "cpe:2.3:a:netkit:telnetd:0.17:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "CVE-2001-0554",
@@ -298,7 +298,7 @@
       "in_cisa_kev": false,
       "published": "2001-08-14T04:00:00.000",
       "provenance_source": "NVD API 2.0",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-004",
@@ -312,7 +312,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-Postfix_SMTP-2.5.1",
@@ -321,7 +321,7 @@
       "version": "2.5.1",
       "cpe": "cpe:2.3:a:postfix:postfix:2.5.1:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-005",
@@ -335,7 +335,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-ISC_BIND-9.4.2",
@@ -344,7 +344,7 @@
       "version": "9.4.2",
       "cpe": "cpe:2.3:a:isc:bind:9.4.2:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "CVE-2009-0696",
@@ -357,7 +357,7 @@
       "in_cisa_kev": false,
       "published": "2009-07-29T17:30:00.920",
       "provenance_source": "NVD API 2.0",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-006",
@@ -371,7 +371,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-Apache_httpd-2.2.8",
@@ -380,7 +380,7 @@
       "version": "2.2.8",
       "cpe": "cpe:2.3:a:apache:http_server:2.2.8:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "CVE-2007-6750",
@@ -393,7 +393,7 @@
       "in_cisa_kev": false,
       "published": "2011-12-27T18:55:00.970",
       "provenance_source": "NVD API 2.0",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "CVE-2011-3192",
@@ -406,7 +406,7 @@
       "in_cisa_kev": false,
       "published": "2011-08-29T15:55:02.017",
       "provenance_source": "NVD API 2.0",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-007",
@@ -420,7 +420,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-PHP-5.2.4",
@@ -429,7 +429,7 @@
       "version": "5.2.4",
       "cpe": "cpe:2.3:a:php:php:5.2.4:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "CVE-2012-1823",
@@ -442,7 +442,7 @@
       "in_cisa_kev": true,
       "published": "2012-05-11T10:15:48.043",
       "provenance_source": "NVD API 2.0",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "CVE-2012-2311",
@@ -455,7 +455,7 @@
       "in_cisa_kev": false,
       "published": "2012-05-11T10:15:48.107",
       "provenance_source": "NVD API 2.0",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-008",
@@ -469,7 +469,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-DVWA_(Damn_Vulnerable_Web_Application)-1.0.7",
@@ -478,7 +478,7 @@
       "version": "1.0.7",
       "cpe": "cpe:2.3:a:dvwa:dvwa:1.0.7:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-009",
@@ -492,7 +492,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-OWASP_Mutillidae_II-2.1.19",
@@ -501,7 +501,7 @@
       "version": "2.1.19",
       "cpe": "cpe:2.3:a:owasp:mutillidae:2.1.19:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-010",
@@ -515,7 +515,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-phpMyAdmin-2.11.x",
@@ -524,7 +524,7 @@
       "version": "2.11.x",
       "cpe": "cpe:2.3:a:phpmyadmin:phpmyadmin:2.11.0:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "CVE-2009-1151",
@@ -537,7 +537,7 @@
       "in_cisa_kev": true,
       "published": "2009-03-26T14:30:00.267",
       "provenance_source": "NVD API 2.0",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-011",
@@ -551,7 +551,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-TWiki-4.2.4",
@@ -560,7 +560,7 @@
       "version": "4.2.4",
       "cpe": "cpe:2.3:a:twiki:twiki:4.2.4:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "CVE-2008-5305",
@@ -573,7 +573,7 @@
       "in_cisa_kev": false,
       "published": "2008-12-10T00:30:00.283",
       "provenance_source": "NVD API 2.0",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-012",
@@ -587,7 +587,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-TikiWiki_CMS-1.9.5",
@@ -596,7 +596,7 @@
       "version": "1.9.5",
       "cpe": "cpe:2.3:a:tikiwiki:tikiwiki:1.9.5:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "CVE-2007-5423",
@@ -609,7 +609,7 @@
       "in_cisa_kev": false,
       "published": "2007-10-12T23:17:00.000",
       "provenance_source": "NVD API 2.0",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-013",
@@ -623,7 +623,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-rpcbind-RPC #100000",
@@ -632,7 +632,7 @@
       "version": "RPC #100000",
       "cpe": "cpe:2.3:a:sun:rpc:4.0:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-014",
@@ -646,7 +646,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-Samba-3.0.20-Debian",
@@ -655,7 +655,7 @@
       "version": "3.0.20-Debian",
       "cpe": "cpe:2.3:a:samba:samba:3.0.20:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "CVE-2007-2447",
@@ -664,11 +664,11 @@
       "cvss_version": "2.0",
       "severity": "medium",
       "description": "Samba username map script command injection allows remote RCE without auth",
-      "cwe": "",
+      "cwe": "NVD-CWE-Other",
       "in_cisa_kev": false,
       "published": "2007-05-14T21:19:00.000",
       "provenance_source": "NVD API 2.0",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-015",
@@ -682,7 +682,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-netkit_r-services_(rexec/rlogin/rsh)-0.17",
@@ -691,7 +691,7 @@
       "version": "0.17",
       "cpe": "cpe:2.3:a:netkit:netkit-rsh:0.17:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "CVE-1999-0651",
@@ -700,11 +700,11 @@
       "cvss_version": "2.0",
       "severity": "high",
       "description": "rexec/rlogin/rsh enabled with .rhosts trust allowing unauthenticated remote root",
-      "cwe": "",
+      "cwe": "NVD-CWE-Other",
       "in_cisa_kev": false,
       "published": "1999-01-01T05:00:00.000",
       "provenance_source": "NVD API 2.0",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-016",
@@ -718,7 +718,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-Java_RMI_Registry-GNU Classpath grmiregistry",
@@ -727,7 +727,7 @@
       "version": "GNU Classpath grmiregistry",
       "cpe": "cpe:2.3:a:sun:jre:1.6.0:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "CVE-2011-3556",
@@ -736,11 +736,11 @@
       "cvss_version": "2.0",
       "severity": "high",
       "description": "Oracle Java RMI default config allows remote RCE via deserialization",
-      "cwe": "",
+      "cwe": "NVD-CWE-noinfo",
       "in_cisa_kev": false,
       "published": "2011-10-19T21:55:01.613",
       "provenance_source": "NVD API 2.0",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-017",
@@ -754,7 +754,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-ingreslock_root_backdoor-intentional",
@@ -763,7 +763,7 @@
       "version": "intentional",
       "cpe": "cpe:2.3:a:metasploitable:backdoor:1.0:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-018",
@@ -777,7 +777,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-NFS-v2-v4",
@@ -786,7 +786,7 @@
       "version": "v2-v4",
       "cpe": "cpe:2.3:a:linux:nfs:2.6.24:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "CVE-1999-0170",
@@ -795,11 +795,11 @@
       "cvss_version": "2.0",
       "severity": "high",
       "description": "NFS exports root filesystem allowing remote write and SSH key injection",
-      "cwe": "",
+      "cwe": "NVD-CWE-Other",
       "in_cisa_kev": false,
       "published": "1997-01-01T05:00:00.000",
       "provenance_source": "NVD API 2.0",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-019",
@@ -813,7 +813,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-ProFTPD-1.3.1",
@@ -822,7 +822,7 @@
       "version": "1.3.1",
       "cpe": "cpe:2.3:a:proftpd:proftpd:1.3.1:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "CVE-2010-4221",
@@ -835,7 +835,7 @@
       "in_cisa_kev": false,
       "published": "2010-11-09T21:00:06.383",
       "provenance_source": "NVD API 2.0",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-020",
@@ -849,7 +849,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-MySQL-5.0.51a-3ubuntu5",
@@ -858,7 +858,7 @@
       "version": "5.0.51a-3ubuntu5",
       "cpe": "cpe:2.3:a:mysql:mysql:5.0.51a:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "CVE-2008-0226",
@@ -871,7 +871,7 @@
       "in_cisa_kev": false,
       "published": "2008-01-10T23:46:00.000",
       "provenance_source": "NVD API 2.0",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-021",
@@ -885,7 +885,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-distccd-v1 (GCC 4.2.4)",
@@ -894,7 +894,7 @@
       "version": "v1 (GCC 4.2.4)",
       "cpe": "cpe:2.3:a:distcc:distcc:3.1:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "CVE-2004-2687",
@@ -907,7 +907,7 @@
       "in_cisa_kev": false,
       "published": "2004-12-31T05:00:00.000",
       "provenance_source": "NVD API 2.0",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-022",
@@ -921,7 +921,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-PostgreSQL-8.3.0-8.3.7",
@@ -930,7 +930,7 @@
       "version": "8.3.0-8.3.7",
       "cpe": "cpe:2.3:a:postgresql:postgresql:8.3.0:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "CVE-2013-1904",
@@ -943,7 +943,7 @@
       "in_cisa_kev": false,
       "published": "2014-02-08T00:55:05.957",
       "provenance_source": "NVD API 2.0",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-023",
@@ -957,7 +957,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-VNC-Protocol 3.3",
@@ -966,7 +966,7 @@
       "version": "Protocol 3.3",
       "cpe": "cpe:2.3:a:realvnc:realvnc:4.1.1:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "CVE-2006-2369",
@@ -979,7 +979,7 @@
       "in_cisa_kev": false,
       "published": "2006-05-15T16:06:00.000",
       "provenance_source": "NVD API 2.0",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-024",
@@ -993,7 +993,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-X11-Xorg 7.3",
@@ -1002,7 +1002,7 @@
       "version": "Xorg 7.3",
       "cpe": "cpe:2.3:a:x.org:xorg-server:1.4.0:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "CVE-1999-0526",
@@ -1011,11 +1011,11 @@
       "cvss_version": "2.0",
       "severity": "high",
       "description": "X11 open display allows unauthenticated connection and screen capture",
-      "cwe": "",
+      "cwe": "NVD-CWE-Other",
       "in_cisa_kev": false,
       "published": "1997-07-01T04:00:00.000",
       "provenance_source": "NVD API 2.0",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-025",
@@ -1029,7 +1029,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-UnrealIRCd-3.2.8.1",
@@ -1038,7 +1038,7 @@
       "version": "3.2.8.1",
       "cpe": "cpe:2.3:a:unrealircd:unrealircd:3.2.8.1:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "CVE-2010-2075",
@@ -1051,7 +1051,7 @@
       "in_cisa_kev": false,
       "published": "2010-06-15T14:04:26.327",
       "provenance_source": "NVD API 2.0",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-026",
@@ -1065,7 +1065,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-Apache_Tomcat-5.5 (AJP/1.3 on port 8009)",
@@ -1074,7 +1074,7 @@
       "version": "5.5 (AJP/1.3 on port 8009)",
       "cpe": "cpe:2.3:a:apache:tomcat:5.5.0:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "CVE-2009-0580",
@@ -1087,7 +1087,7 @@
       "in_cisa_kev": false,
       "published": "2009-06-05T16:00:00.233",
       "provenance_source": "NVD API 2.0",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-027",
@@ -1101,7 +1101,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-Ruby_DRb_(Distributed_Ruby)-1.8",
@@ -1110,7 +1110,7 @@
       "version": "1.8",
       "cpe": "cpe:2.3:a:ruby-lang:ruby:1.8.7:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "CVE-2011-5330",
@@ -1119,11 +1119,11 @@
       "cvss_version": "3.1",
       "severity": "critical",
       "description": "Ruby DRb allows remote RCE via instance_eval/syscall without authentication",
-      "cwe": "",
+      "cwe": "NVD-CWE-noinfo",
       "in_cisa_kev": false,
       "published": "2019-11-18T18:15:09.727",
       "provenance_source": "NVD API 2.0",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-028",
@@ -1137,7 +1137,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-Apache_httpd-2.4.18 (Ubuntu 16.04 default, 5s keep-alive)",
@@ -1146,7 +1146,7 @@
       "version": "2.4.18 (Ubuntu 16.04 default, 5s keep-alive)",
       "cpe": "cpe:2.3:a:apache:http_server:2.4.18:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "CVE-2017-7679",
@@ -1159,7 +1159,7 @@
       "in_cisa_kev": false,
       "published": "2017-06-20T01:29:00.423",
       "provenance_source": "NVD API 2.0",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-029",
@@ -1173,7 +1173,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-OpenSSL-1.0.1f",
@@ -1182,7 +1182,7 @@
       "version": "1.0.1f",
       "cpe": "cpe:2.3:a:openssl:openssl:1.0.1f:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "CVE-2014-0160",
@@ -1195,7 +1195,7 @@
       "in_cisa_kev": true,
       "published": "2014-04-07T22:55:03.893",
       "provenance_source": "NVD API 2.0",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-030",
@@ -1209,7 +1209,7 @@
       "asset_type": "workstation",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-Adobe_Acrobat_Reader-9.0",
@@ -1218,7 +1218,7 @@
       "version": "9.0",
       "cpe": "cpe:2.3:a:adobe:acrobat_reader:9.0:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "CVE-2010-0188",
@@ -1227,11 +1227,11 @@
       "cvss_version": "3.1",
       "severity": "high",
       "description": "Adobe Reader 9 integer overflow via crafted PDF allows RCE \u2014 CIC infiltration initial access vector",
-      "cwe": "",
+      "cwe": "NVD-CWE-noinfo",
       "in_cisa_kev": true,
       "published": "2010-02-22T13:00:02.127",
       "provenance_source": "NVD API 2.0",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-031",
@@ -1245,7 +1245,7 @@
       "asset_type": "workstation",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-032",
@@ -1259,7 +1259,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-Windows_SMBv1-Windows Server 2012 R2",
@@ -1268,7 +1268,7 @@
       "version": "Windows Server 2012 R2",
       "cpe": "cpe:2.3:o:microsoft:windows_server_2012:r2:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "CVE-2017-0144",
@@ -1277,11 +1277,11 @@
       "cvss_version": "3.1",
       "severity": "high",
       "description": "EternalBlue: Windows SMBv1 RCE via crafted packets (MS17-010)",
-      "cwe": "",
+      "cwe": "NVD-CWE-noinfo",
       "in_cisa_kev": true,
       "published": "2017-03-17T00:59:04.010",
       "provenance_source": "NVD API 2.0",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-IIS-8.5",
@@ -1290,7 +1290,7 @@
       "version": "8.5",
       "cpe": "cpe:2.3:a:microsoft:internet_information_services:8.5:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SRV-033",
@@ -1304,7 +1304,7 @@
       "asset_type": "server",
       "ontology_asset_type": "hardware",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-Windows_SMBv1-Windows Server 2016",
@@ -1313,7 +1313,7 @@
       "version": "Windows Server 2016",
       "cpe": "cpe:2.3:o:microsoft:windows_server_2016:-:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "SW-IIS-10.0",
@@ -1322,7 +1322,7 @@
       "version": "10.0",
       "cpe": "cpe:2.3:a:microsoft:internet_information_services:10.0:*:*:*:*:*:*:*",
       "provenance_source": "CIC-IDS2018 testbed CMDB",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "T1110",
@@ -1420,7 +1420,7 @@
       "phase": "national_responsibilities",
       "standard": "NFCRM-1:2025",
       "provenance_source": "NFCRM-1:2025",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "NFCRM-5-2",
@@ -1430,7 +1430,7 @@
       "phase": "national_responsibilities",
       "standard": "NFCRM-1:2025",
       "provenance_source": "NFCRM-1:2025",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "NFCRM-5-3",
@@ -1440,7 +1440,7 @@
       "phase": "national_responsibilities",
       "standard": "NFCRM-1:2025",
       "provenance_source": "NFCRM-1:2025",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "NFCRM-5-4",
@@ -1450,7 +1450,7 @@
       "phase": "national_responsibilities",
       "standard": "NFCRM-1:2025",
       "provenance_source": "NFCRM-1:2025",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "NFCRM-5-5",
@@ -1460,7 +1460,7 @@
       "phase": "national_responsibilities",
       "standard": "NFCRM-1:2025",
       "provenance_source": "NFCRM-1:2025",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "NFCRM-5-6",
@@ -1470,7 +1470,7 @@
       "phase": "national_responsibilities",
       "standard": "NFCRM-1:2025",
       "provenance_source": "NFCRM-1:2025",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "NFCRM-6-1",
@@ -1480,7 +1480,7 @@
       "phase": "methodology_setup",
       "standard": "NFCRM-1:2025",
       "provenance_source": "NFCRM-1:2025",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "NFCRM-6-2",
@@ -1490,7 +1490,7 @@
       "phase": "methodology_setup",
       "standard": "NFCRM-1:2025",
       "provenance_source": "NFCRM-1:2025",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "NFCRM-6-3",
@@ -1500,7 +1500,7 @@
       "phase": "identification",
       "standard": "NFCRM-1:2025",
       "provenance_source": "NFCRM-1:2025",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "NFCRM-6-4",
@@ -1510,7 +1510,7 @@
       "phase": "identification",
       "standard": "NFCRM-1:2025",
       "provenance_source": "NFCRM-1:2025",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "NFCRM-6-5",
@@ -1520,7 +1520,7 @@
       "phase": "identification",
       "standard": "NFCRM-1:2025",
       "provenance_source": "NFCRM-1:2025",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "NFCRM-6-6",
@@ -1530,7 +1530,7 @@
       "phase": "identification",
       "standard": "NFCRM-1:2025",
       "provenance_source": "NFCRM-1:2025",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "NFCRM-6-7",
@@ -1540,7 +1540,7 @@
       "phase": "identification",
       "standard": "NFCRM-1:2025",
       "provenance_source": "NFCRM-1:2025",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "NFCRM-6-8",
@@ -1550,7 +1550,7 @@
       "phase": "identification",
       "standard": "NFCRM-1:2025",
       "provenance_source": "NFCRM-1:2025",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "NFCRM-6-9",
@@ -1560,7 +1560,7 @@
       "phase": "assessment",
       "standard": "NFCRM-1:2025",
       "provenance_source": "NFCRM-1:2025",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "NFCRM-6-10",
@@ -1570,7 +1570,7 @@
       "phase": "assessment",
       "standard": "NFCRM-1:2025",
       "provenance_source": "NFCRM-1:2025",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "NFCRM-6-11",
@@ -1580,7 +1580,7 @@
       "phase": "treatment",
       "standard": "NFCRM-1:2025",
       "provenance_source": "NFCRM-1:2025",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "NFCRM-6-12",
@@ -1590,7 +1590,7 @@
       "phase": "treatment",
       "standard": "NFCRM-1:2025",
       "provenance_source": "NFCRM-1:2025",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "NFCRM-6-13",
@@ -1600,7 +1600,7 @@
       "phase": "treatment",
       "standard": "NFCRM-1:2025",
       "provenance_source": "NFCRM-1:2025",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "NFCRM-6-14",
@@ -1610,7 +1610,7 @@
       "phase": "treatment",
       "standard": "NFCRM-1:2025",
       "provenance_source": "NFCRM-1:2025",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "NFCRM-6-15",
@@ -1620,7 +1620,7 @@
       "phase": "treatment",
       "standard": "NFCRM-1:2025",
       "provenance_source": "NFCRM-1:2025",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "NFCRM-6-16",
@@ -1630,7 +1630,7 @@
       "phase": "treatment",
       "standard": "NFCRM-1:2025",
       "provenance_source": "NFCRM-1:2025",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "NFCRM-6-17",
@@ -1640,7 +1640,7 @@
       "phase": "monitoring",
       "standard": "NFCRM-1:2025",
       "provenance_source": "NFCRM-1:2025",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "NFCRM-6-18",
@@ -1650,7 +1650,7 @@
       "phase": "monitoring",
       "standard": "NFCRM-1:2025",
       "provenance_source": "NFCRM-1:2025",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "NFCRM-6-19",
@@ -1660,7 +1660,7 @@
       "phase": "monitoring",
       "standard": "NFCRM-1:2025",
       "provenance_source": "NFCRM-1:2025",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "NFCRM-6-20",
@@ -1670,7 +1670,7 @@
       "phase": "monitoring",
       "standard": "NFCRM-1:2025",
       "provenance_source": "NFCRM-1:2025",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "RISK-BruteForce",
@@ -1685,7 +1685,7 @@
       "confidence": 1.0,
       "confidence_basis": "deterministic rule derivation",
       "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "RISK-FTP-BruteForce",
@@ -1700,7 +1700,7 @@
       "confidence": 1.0,
       "confidence_basis": "deterministic rule derivation",
       "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "RISK-SSH-BruteForce",
@@ -1715,7 +1715,7 @@
       "confidence": 1.0,
       "confidence_basis": "deterministic rule derivation",
       "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "RISK-DoS",
@@ -1730,7 +1730,7 @@
       "confidence": 1.0,
       "confidence_basis": "deterministic rule derivation",
       "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "RISK-DDoS",
@@ -1745,7 +1745,7 @@
       "confidence": 1.0,
       "confidence_basis": "deterministic rule derivation",
       "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "RISK-Heartbleed",
@@ -1760,7 +1760,7 @@
       "confidence": 1.0,
       "confidence_basis": "deterministic rule derivation",
       "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "RISK-WebAttack",
@@ -1775,7 +1775,7 @@
       "confidence": 1.0,
       "confidence_basis": "deterministic rule derivation",
       "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "RISK-Infiltration",
@@ -1790,7 +1790,7 @@
       "confidence": 1.0,
       "confidence_basis": "deterministic rule derivation",
       "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     },
     {
       "id": "RISK-Bot",
@@ -1805,7 +1805,7 @@
       "confidence": 1.0,
       "confidence_basis": "deterministic rule derivation",
       "provenance_source": "NFCRM-1:2025 \u00a76.9 rule engine",
-      "provenance_timestamp": "2026-08-06T02:16:33"
+      "provenance_timestamp": "2026-09-21T19:32:23"
     }
   ],
   "edges": [

@@ -117,9 +117,13 @@ grc:VulnerabilityShape a sh:NodeShape ;
         sh:path grc:cweId ;
         sh:datatype xsd:string ;
         sh:minCount 1 ;
-        sh:pattern "^CWE-[0-9]+$" ;
+        # NVD does not assign a CWE-NNNN to every CVE -- legacy/no-info records
+        # instead carry NVD's own placeholder value (NVD-CWE-Other or
+        # NVD-CWE-noinfo). Both are accepted here rather than requiring a CWE
+        # number NVD itself does not provide.
+        sh:pattern "^(CWE-[0-9]+|NVD-CWE-(Other|noinfo))$" ;
         sh:severity sh:Violation ;
-        sh:message "Vulnerability must have exactly one cweId matching pattern CWE-NNNN"
+        sh:message "Vulnerability must have exactly one cweId matching pattern CWE-NNNN or an NVD placeholder (NVD-CWE-Other/NVD-CWE-noinfo)"
     ] ;
     sh:property [
         sh:path grc:cvssScore ;
